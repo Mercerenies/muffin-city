@@ -41,6 +41,7 @@ namespace eval City::District {
             return {::City::Robbery::jumped ::City::District::shopping}
         }
         prompt {} {
+            {"Enter the pawn shop" yes ::City::Shopping::pawnShop}
             {"Enter the elevator" yes {::Underworld::Elevator::lift ::City::District::shopping}}
             {"Go back to the plaza" yes entrance}
         }
