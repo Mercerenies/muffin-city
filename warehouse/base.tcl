@@ -1,0 +1,2 @@
+
+source ./warehouse/outside.tcl

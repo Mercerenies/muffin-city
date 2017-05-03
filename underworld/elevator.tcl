@@ -14,7 +14,6 @@ namespace eval Underworld::Elevator {
     }
 
     proc balcony {} {
-        # //// Probably have an option here to jump down, leading to a different region of the Underworld
         puts "== Underworld Balcony =="
         puts -nonewline "The room you enter is very large. You find yourself on a small glowing balcony\
         overlooking a vast pool of flames."
@@ -28,6 +27,7 @@ namespace eval Underworld::Elevator {
         prompt {} {
             {"Talk to the man" {![state get talked-to-johnny]} ::Underworld::Johnny::talk}
             {"Talk to Johnny" {[state get talked-to-johnny]} ::Underworld::Johnny::talk}
+            {"Leap over the edge" yes ::Underworld::Pits::fireEntry}
             {"Exit toward the stairs" yes staircase}
         }
     }
