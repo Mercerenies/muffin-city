@@ -3,8 +3,8 @@ namespace eval Underworld::Lobby {
 
     proc murder {} {
         puts "== Murder Room =="
-        puts "You find yourself in a strange room with human skeletal remains scattered about haphazardously.\
-        There is a single door on one of the walls."
+        puts "You find yourself in a strange room with human skeletal remains scattered about\
+        haphazardously. There is a single door on one of the walls."
         prompt {} {
             {"Step out the door" yes hub}
         }
@@ -31,9 +31,9 @@ namespace eval Underworld::Lobby {
 
     proc other {} {
         puts "== Other Room =="
-        puts "You find yourself in a rather strange room with odd implements scattered throughout. On one\
-        side, there are some basic dental instruments. On a table near the back, there are some children's\
-        toys. There seems to only be one door leading out of this room."
+        puts "You find yourself in a rather strange room with odd implements scattered throughout. On\
+        one side, there are some basic dental instruments. On a table near the back, there are some\
+        children's toys. There seems to only be one door leading out of this room."
         prompt {} {
             {"Step out the door" yes hub}
         }
@@ -42,10 +42,10 @@ namespace eval Underworld::Lobby {
     proc hub {} {
         puts "== Underworld Lobby =="
         if {[state get lobby-door] eq {yes}} then {
-            puts "You enter the small rounded lobby. There are a few basic chairs and office amenities here.\
-            There is a door leading to a large staircase on one side. On the opposite side of the room, there\
-            are several doors, each with a label above them: \"Murder\", \"Wildlife Attack\", \"Blogging\
-            Accident\", and \"Other\"."
+            puts "You enter the small rounded lobby. There are a few basic chairs and office\
+            amenities here. There is a door leading to a large staircase on one side. On the\
+            opposite side of the room, there are several doors, each with a label above\
+            them: \"Murder\", \"Wildlife Attack\", \"Blogging Accident\", and \"Other\"."
             prompt {} {
                 {"Enter Murder Room" yes murder}
                 {"Enter Wildlife Room" yes wildlife}
@@ -57,12 +57,14 @@ namespace eval Underworld::Lobby {
             if {[state get lobby-door] eq {no}} then {
                 set doorComment "None of the doors appear to be accessible, however."
             } else {
-                set doorComment "Only the [state get lobby-door] door seems to be open at the moment, however."
+                set doorComment "Only the [state get lobby-door] door seems to be open at the moment,\
+                                 however."
             }
-            puts "You enter the small rounded lobby. There are a few basic chairs and office amenities here.\
-            There is a door leading to a large staircase on one side. On the opposite side of the room, there\
-            are several doors, each with a label above them: \"Murder\", \"Wildlife Attack\", \"Blogging\
-            Accident\", and \"Other\". $doorComment"
+            puts "You enter the small rounded lobby. There are a few basic chairs and office\
+            amenities here. There is a door leading to a large staircase on one side. On the\
+            opposite side of the room, there are several doors, each with a label above\
+            them: \"Murder\", \"Wildlife Attack\", \"Blogging Accident\", and \"Other\".\
+            $doorComment"
             prompt {} {
                 {"Enter Murder Room" {[state get lobby-door] eq {murder}} murder}
                 {"Enter Wildlife Room" {[state get lobby-door] eq {wildlife}} wildlife}
