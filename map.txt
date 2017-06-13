@@ -1,0 +1,438 @@
+
+-------- MAJOR REGIONS --------
+
++++ City Area +++
+* Big City
+* Big City (giant form)
+* Big City (inverse form)
+* Big City (past form)
+
++++ Greater World +++
+* Outer Space
+* Warehouse
+* Prehistory
+* Prison
+
++++ Metaspace +++
+* Underworld
+* Dream World
+* Subspace
+* The Console Room
+
+-------- MINOR REGIONS --------
+
+[City]
+* [District]
+  - entrance
+  - hotel
+  - shopping
+  - police
+  - shadyAlley
+  - alleyCoin
+* [Robbery]
+  - jumped <district>
+  - giveAway <item> <district>
+  - haveNone <district>
+  - refuse
+* [Courthouse]
+  - entrance
+  - knocking
+  - trial
+  - guilty
+  - innocent
+* [Police]
+  - station
+  - followed
+  - robbed
+  - arrested
+  - recovered
+* [Hotel]
+  - shabbyJack
+  - shabbyRoom
+  - shabbyTalk
+  - shabbyPay
+  - shabbyNoPay
+  - ritzyInn
+  - ritzyHall
+  - ritzyRoom
+  - ritzyTalk
+  - ritzyTalkScience
+  - ritzyGetRoom
+  - ritzyGetRoom1
+* [Science]
+  - mainRoom
+  - talkTo
+  - clubRoom
+  - heartRoom
+  - diamondRoom
+  - spadeRoom
+* [Shopping]
+  - pawnShop
+  - pawnTalk
+
+[Prison]
+* [South]
+  - gate
+  - hallway
+  - cellblock
+  - janitorDoor
+  - janitorDoor1
+  - janitorDoor2
+  - janitorDoor3
+  - janitorCloset
+  - cell
+  - cellButler
+  - entry
+  - cooperate
+  - flee
+* [North]
+  - hallway
+  - restroom
+  - dining
+  - diningTalk
+* [Guard]
+  - talk
+  - fired
+  - free
+* [Exercise]
+  - fields
+  - talking
+  - attention
+  - insult
+  - backOff
+  - fight
+  - stealing
+* [Forest]
+  - gate
+  - trees
+  - river
+  - riverReach
+  - cave
+  - bus
+
+[Underworld]
+* [Lobby]
+  - murder
+  - wildlife
+  - blogging
+  - other
+  - hub
+* [Elevator]
+  - staircase
+  - balcony
+  - tunnel
+  - scienceLab
+  - lift <back>
+  - cipherTalk
+  - cipherExplain <answer>
+  - cipherErase
+* [Johnny]
+  - talk
+  - okay
+  - given <soultype>
+* [Pits]
+  - fire
+  - fireEntry
+
+[Dream]
+* [Transit]
+  - cargo
+  - third
+  - second
+  - kitchen
+  - first
+  - engine
+  - secondGate
+  - firstGate
+  - toThird
+  - toKitchen
+  - thirdRoom
+  - secondRoom
+  - firstRoom
+  - thirdTalk
+  - awaken <room>
+  - sleep <room>
+* [Destination]
+  - third
+  - second
+  - first
+  - thirdRoom
+  - secondRoom
+  - firstRoom
+  - locked <back>
+  - offTrain
+  - takeMuffin
+
+[Warehouse]
+* [Outside]
+  - north
+  - south
+  - east
+  - west
+
+-------- ITEMS --------
+
+* Silver Coin (x2)
+* Platinum Card
+* Soul Crystal
+* Elevator Access Key
+* Upgraded Elevator Access Key
+* Inmate's Soul
+* Ritzy Inn Room Key
+* Motel Room Key
+* Spade Key
+* Diamond Key
+* Heart Key
+* Club Key
+
+(Money Sources / Sinks)
++ Shady Alley (sa-coin)
++ Forest River (forest-river)
+- Robbery Event (city-thug)
+- Gate Guard Event (prison-guard)
+- Shabby Jack's (motel-room)
+
+-------- MUFFINS --------
+
+* Maple Muffin (forest-river)
+* Blueberry Muffin (muffin-second)
+Banana Nut
+Cream Cheese
+Apple Pecan
+Egg
+Spud
+Sweet Potato
+Cinnamon
+Buttermilk
+Chocolate Chip
+Coffee
+Walnut
+Pumpkin
+Bran
+Chocolate
+Orange
+Cranberry
+Cheddar
+Bacon
+Snickerdoodle
+Sausage
+Lemon
+Peanut Butter
+Banana
+Corn
+Carrot Cake
+Raspberry
+Oatmeal
+Apple Cider
+Grape
+Cherry
+Pumpkin Spice
+Coffee Cake
+Pineapple
+Mango
+Oatmeal Raisin
+
+-------- STATES --------
+
+Events:
+ * city-thug {no stalking chasing island hiding hunted caught}
+ * trial-crime {no court prison}
+ * prison-guard {no paid fired search}
+ * johnny-quest {no accepted 1 2 done}
+ * butler-game {no cell}
+
+Item / Money States:
+ * stolen-good {{} {Silver Coin} {Platinum Card}}
+ * thug-card {{} {Platinum Card}}
+ * sa-coin {no yes}
+ * forest-river {0 1 2 3}
+ * muffin-second {no yes}
+
+World States:
+ * trial-reason {{} murder escape}
+ * janitor-door {no yes}
+ * been-to-prison {no yes}
+ * awaiting-bus {no trees yes}
+ * lobby-door {no murder wildlife blogging other yes}
+ * talked-to-johnny {no yes}
+ * exercise-soul {no yes}
+ * talked-to-cipher {no yes}
+ * second-class-door {no yes}
+ * first-class-door {no yes}
+ * motel-room {no yes}
+ * inn-room {no yes}
+ * heard-science {no told yes}
+ * talked-to-louis {no yes}
+
+-------- CHARACTERS --------
+
+The Robber
+The Judge
+Mustached Guard
+Johnny Death
+Exercise Field Inmate
+Dr. Cipher
+Shabby Jack
+Carl the Employee
+The Butler
+Pawnbroker
+
+-------- EVENTS --------
+
+1. Robbery Event (city-thug)
+  (*) no
+      After the first visit to the Shady Alley, the player will be told that someone is watching them.
+      The game proceeds to state `stalking`.
+  (*) stalking
+      If he goes to the police station, he will have the option of telling the police he is being
+      followed, resulting in state `chasing`. If the player goes to the shopping or hotel districts,
+      then the robber leaps out and strikes, pointing a gun in the player's face and demanding money.
+      The player can cooperate (if they actually have money), refuse, or claim to have none.
+      - Cooperate - The player gives up either a silver coin or a platinum credit card and the robber
+        runs off. The game moves to state `island`.
+      - Claim (truthfully) - If the player truthfully has no money, the robber will let him go and
+        return to state `no`.
+      - Claim (falsely) - The robber will call the player on his lie and act as though he refused.
+      - Refuse - The player will be shot and will go to Underworld. The robber will go hide out on
+        Dream Train to avoid the police. Move to state `hiding`.
+  (*) chasing ////
+      The robber will keep a low profile and will not be able to be found. In this state, the Shady
+      Alley will reveal a silver coin.
+      //// Something should reset the Robbery Event
+  (*) island ////
+      The robber will end up on the Warehouse island. The player can talk to him. The robber will
+      say that he ended up not needing the player's money and will return whatever he stole
+      (stolen-good). He will then leave and the game will revert to `no`. Alternatively, telling
+      the police will result in the `hunted` state.
+  (*) hiding ////
+      The robber will be on the Dream Train. The player can talk to him, where he will apologize for
+      shooting the player and claim that it was "just business". The game then moves to `no` as the
+      robber leaves the train.
+      //// What then?
+  (*) hunted
+      The robber will be caught and moved to the dining hall in the prison. If the player talks to
+      him, the game moves to `caught`.
+  (*) caught
+      If the player talks to the police (with a clean criminal record, according to the Trial Event),
+      they will present him with the stolen good he lost. If the Platinum Card has not been obtained
+      (thug-card), they will also present him with that, and he will be asked to choose which one was
+      his. After doing so, the game reverts to `no`.
+
+2. Trial Event (trial-crime)
+  (*) no
+      The player has not been arrested. When the player is arrested for confessing to murder, the
+      game will go to state `murder` and the player is moved to the courtroom, where the trial
+      will proceed. If the player should end up in prison in this state, he can speak to the
+      warden, who will promptly release him with an apology.
+      //// Warden stuff is not in the game right now
+  (*) court
+      The player is given the option to plead guilty or innocent. If he pleads guilty, he is
+      convicted. If he pleads innocent and lacks a lawyer, he will be convicted anyway. In the case of
+      conviction, the game moves to `prison` and the player is moved to prison. Once again, if the
+      player ends up in prison, the warden will happily release him. Alternatively, he can use Dr.
+      Cipher in the Underworld to reset this state to `no`.
+      //// Lawyer?
+  (*) prison
+      In this state, if the player moves to the police station, he will be apprehended and tried in
+      court, moving back to state `court`. If the player visits Dr. Cipher, his Document
+      Transmogrifier will reset this to `no`.
+      //// Lawyer?
+
+3. Gate Guard Event (prison-guard)
+  (*) no
+      The prison guard stands at the gate. The player can talk to him and bribe the guard with a
+      Silver Coin, releasing the player back to the city and moving to `paid`. Note that even though
+      the player has been freed from prison, he does not have a clean record and will be arrested on
+      sight if he returns to the police station.
+  (*) paid ////
+      If the player ends up in prison again, the guard will still be there. He will initially resist
+      releasing the player but will relent when reminded of the bribe. The player is released and the
+      game moves to `fired`.
+  (*) fired ////
+      The third time the player is in prison, there will be a female guard in place of the original
+      guard. She will not be amenable to bribes and will not release the player. When the player
+      speaks to her, the game moves to `search`.
+  (*) search
+      //// Where is the guard? We need to find him and give him a lawyer
+
+4. Johnny Death Event (johnny-quest)
+  (*) no
+      Johnny Death is in the Underworld balcony and is seeking souls for his display case. When the
+      player encounters him, he will ask for help stealing souls for his display. If the player
+      accepts, he will be given the Soul Crystal and the Elevator Access Key so that he can exit
+      the Underworld. The game moves to `accepted`.
+  (*) accepted
+      Johnny is waiting to receive souls from the player. The souls that are available are in the prison
+      exercise fields (exercise-soul), ... ////
+      //// Rewards the player with each advanced state
+  (*) 1 ////
+  (*) 2 ////
+  (*) done ////
+
+5. The Butler's Event (butler-game)
+  (*) no
+      The butler is nowhere to be found. The game will move from this state to `cell` when the following
+      three conditions are met.
+      - The player has just been arrested and moved to the prison.
+      - The player has been arrested before (been-to-prison).
+      - The player has at least one item.
+  (*) cell
+      The butler is in the player's prison cell. When he talks to him, he will tell the player about the
+      science lab and how to get to it.
+      //// Whatever the next condition is...
+
+a. Shady Alley Silver Coin (sa-coin)
+  (*) no
+      The coin has not been collected. It will only show itself if city-thug is `chasing`. When
+      collected, the game moves to `yes`.
+  (*) yes
+      The coin has been collected. It will not show itself.
+
+b. River Treasures (forest-river)
+  (*) 0
+      The river has not been explored yet. Exploring the river will give a Silver Coin and move to `1`.
+  (*) 1
+      Exploring the river in this state will not yield anything but will move to `2`.
+  (*) 2
+      Exploring the river in this state will yield the Maple Muffin and move to `3`.
+  (*) 3
+      Nothing of use comes from exploring the river in this state.
+
+c. Exercise Field Soul (exercise-soul)
+  (*) no
+      The soul has not been collected. Talking to the exercise field inmate will result in the player
+      being killed unless he backs off. If the player has the Soul Crystal, he can claim his soul,
+      giving him {Inmate's Soul} and moving to `yes`.
+  (*) yes
+      The inmate's soul has been taken. Talking to him will result in a rather depressed response and
+      nothing of interest happening.
+
+d. Second Class Muffin (muffin-second)
+  (*) no
+      The muffin has not been collected yet. It will be available in the 2nd class car of the dream
+      train, but only after the train has reached its destination of the big city. Collecting it
+      moves to state `yes`.
+  (*) yes
+      The muffin has been collected and will not appear again.
+
+e. Dr. Louis Introduction (talked-to-louis)
+  (*) no
+      The player has not spoken to Dr. Louis. When he does so, she will introduce herself and give him
+      the Club Key. The game will then move to `yes`.
+  (*) yes
+      The player has spoken to Dr. Louis.
+
+TEST:
+ * Johnny Death, start to finish (by hacking in the soul items)
+
+NOTES:
+ * Cave will lead somewhere cool if you have a light (inverse city)
+ * Given gift if falsely imprisoned (according to Warden)
+ * -- Shrinking item but requires certain power port (purple outlets) to use --
+ * On the opposite side of the narrow tunnel in the Underworld (accessible with shrinking item), you can access the secret elevator which goes to the warehouse island
+
+SCIENCE:
+ *    Club Room - Time Machine  - Free on First Access
+ *   Spade Room - Time Machine+ - ???
+ *   Heart Room - Shrinking     - Dr. Cipher Quest
+ * Diamond Room - Rocket        - ???
