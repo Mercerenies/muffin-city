@@ -29,6 +29,8 @@ namespace eval Underworld::Johnny {
         }
     }
 
+    # ///// The Butler's second encounter, where you get the fireproof suit, if jumped into fire and some other condition
+
     proc okay {} {
         state put johnny-quest accepted
         inv add {Soul Crystal}
