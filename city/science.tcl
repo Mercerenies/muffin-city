@@ -6,10 +6,10 @@ namespace eval City::Science {
         if {[state get talked-to-louis]} then {
             puts "You enter the research lab and see Dr. Louis working on a small robot."
         } else {
-            puts "You enter the basement and find yourself in a strange research lab. There are several gizmos\
-            and machines on all of the counters surrounding the room. Everything looks incredibly futuristic,\
-            and you can see everything from test tubes to rocket parts sitting about. There is a young woman\
-            in a lab coat working on a small robot."
+            puts "You enter the basement and find yourself in a strange research lab. There are\
+            several gizmos and machines on all of the counters surrounding the room. Everything\
+            looks incredibly futuristic, and you can see everything from test tubes to rocket parts\
+            sitting about. There is a young woman in a lab coat working on a small robot."
         }
         prompt {} {
             {"Talk to Dr. Louis" {[state get talked-to-louis]} talkTo}
@@ -29,8 +29,8 @@ namespace eval City::Science {
                 {"\"Not right now.\"" yes mainRoom}
             }
         } else {
-            puts "\"Oh, wonderful! They told me they'd been sending an extra pair of hands down here. We need\
-            you to test out the time machine. Here's the key to the Club Room.\""
+            puts "\"Oh, wonderful! They told me they'd been sending an extra pair of hands down here.\
+            We need you to test out the time machine. Here's the key to the Club Room.\""
             puts "The woman hands you the Club Key."
             state put talked-to-louis yes
             inv add {Club Key}
@@ -48,10 +48,10 @@ namespace eval City::Science {
             return mainRoom
         }
         puts "== Club Room =="
-        puts "You enter a small, round room. The room is completely empty, save for a single blue button on\
-        a stand in the middle of the room. The walls look heavily reinforced; you doubt any sounds would\
-        get through them. Immediately below the blue button, there is a digital display with yesterday's\
-        date on it."
+        puts "You enter a small, round room. The room is completely empty, save for a single blue\
+        button on a stand in the middle of the room. The walls look heavily reinforced; you doubt\
+        any sounds would get through them. Immediately below the blue button, there is a digital\
+        display with yesterday's date on it."
         prompt {} {
             {"Hit the blue button" yes ::Empty::place}
             {"Go back out" yes mainRoom}
