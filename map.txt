@@ -431,9 +431,11 @@ TEST:
 
 NOTES:
  * Cave will lead somewhere cool if you have a light (inverse city)
- * Given gift if falsely imprisoned (according to Warden)
+ * Given gift if falsely imprisoned (according to Warden), maybe Religious Artifact
  * -- Shrinking item but requires certain power port (purple outlets) to use --
  * On the opposite side of the narrow tunnel in the Underworld (accessible with shrinking item), you can access the secret elevator which goes to the warehouse island
+ * Attorney-Man and the three clients (player, guard, and robber)
+ * Merchant-bot has two items (one at a ridiculous price); there is a quest to kill him, which leads to the warehouse office. At that time, Merchant-bot 2 takes over and sells the expensive one for less
 
 SCIENCE:
  *    Club Room - Time Machine  - Free on First Access
