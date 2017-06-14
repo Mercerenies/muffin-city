@@ -130,9 +130,11 @@
   - talk
   - okay
   - given <soultype>
+  - climbed
 * [Pits]
   - fire
   - fireEntry
+  - fireEntryRun
 
 [Dream]
 * [Transit]
@@ -176,14 +178,15 @@
 * Platinum Card
 * Soul Crystal
 * Elevator Access Key
-* Upgraded Elevator Access Key
+* Upgraded Elevator Access Key (TBA)
 * Inmate's Soul
 * Ritzy Inn Room Key
 * Motel Room Key
-* Spade Key
-* Diamond Key
-* Heart Key
+* Spade Key (TBA)
+* Diamond Key (TBA)
+* Heart Key (TBA)
 * Club Key
+* Fireproof Suit (TBA)
 
 (Money Sources / Sinks)
 + Shady Alley (sa-coin)
@@ -263,6 +266,7 @@ World States:
  * inn-room {no yes}
  * heard-science {no told yes}
  * talked-to-louis {no yes}
+ * jumped-into-fire {no yes}
 
 -------- CHARACTERS --------
 
