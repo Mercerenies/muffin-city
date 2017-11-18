@@ -148,6 +148,10 @@ namespace eval Prison::South {
             puts "You run off into the treeline, but the man is quicker. He and a woman standing guard\
             at the gate immediately pounce you, sending you toppling to the ground. They drag you into\
             the prison gates."
+        } elseif {[state get prison-guard] eq {search}} then {
+            puts "You run off into the treeline, but the man is quicker. He and the woman standing\
+            guard at the gate immediately pounce you, sending you toppling to the ground. They drag\
+            you into the prison gates."
         } else {
             puts "You run off into the treeline, but the man is quicker. He and a mustached guard\
             immediately pounce on you, sending you toppling to the ground. They quickly drag you over into\

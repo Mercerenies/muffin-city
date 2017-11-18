@@ -27,6 +27,7 @@ namespace eval State {
         butler-game no
         talked-to-louis no
         jumped-into-fire no
+        collected-suit no
     }]
 
     proc get {args} {
