@@ -46,7 +46,6 @@ namespace eval Dream::Destination {
     }
 
     proc secondRoom {} {
-        # //// Reward that is only accessible now?
         puts "== 2nd Class Room =="
         puts -nonewline "It seems that the train has stopped moving. You must have reached your destination."
         if {![state get muffin-second]} then {

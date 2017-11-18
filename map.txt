@@ -450,6 +450,7 @@ NOTES:
  * Past the fire pits, there should be multiple rooms which are accessible, not just the freight elevator
  * Attorney-Man and the three clients (player, guard, and robber)
  * Merchant-bot has two items (one at a ridiculous price); there is a quest to kill him, which leads to the warehouse office. At that time, Merchant-bot 2 takes over and sells the expensive one for less
+ * Going to the past and requesting an item from the pawnbroker will result in that item being available the next day
 
 SCIENCE:
  *    Club Room - Time Machine  - Free on First Access
