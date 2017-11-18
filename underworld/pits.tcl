@@ -1,14 +1,50 @@
 
 namespace eval Underworld::Pits {
 
+    proc freight {} {
+        puts "== Freight Elevator =="
+        puts "The freight elevator is large, obviously designed to carry significant\
+        amounts of cargo. There are only two buttons on the elevator's controls."
+        prompt {} {
+            {"Go to the storage room" yes backRoom}
+            {"Go to the warehouse" yes ::Warehouse::Outside::west}
+        }
+    }
+
+    proc backRoom {} {
+        puts "== Underworld Storage =="
+        puts "You find yourself in a small room with cardboard boxes lining the\
+        walls. There is an elevator in the back labeled \"Freight Elevator\". An\
+        opening on the opposite side leads to pits of fire."
+        prompt {} {
+            {"Go toward the fire pits" yes fire}
+            {"Enter the elevator" yes freight}
+        }
+    }
+
     proc fire {} {
-        # ////
+        if {[inv has {Fireproof Suit}]} then {
+            puts "== Fire Pits =="
+            puts "There is fire all around you, but it seems to cower away from you.\
+            The balcony is too high to climb onto, so the only way out of the pits is\
+            through the back exit."
+            prompt {} {
+                {"Exit through the back" yes backRoom}
+            }
+        } else {
+            puts "The fire burns all around you, but you feel no pain. In a blind panic,\
+            you rush toward the nearest exit."
+            puts {}
+            return backRoom
+        }
     }
 
     proc fireEntry {} {
         if {[inv has {Fireproof Suit}]} then {
-            # ////
-            return -gameover
+            puts "You don your Fireproof Suit and leap into the fire pits. The fire sways outward,\
+            almost as though it's actively avoiding you."
+            puts {}
+            return fire
         } else {
             if {[state get talked-to-johnny]} then {
                 set johnny "Johnny Death"
