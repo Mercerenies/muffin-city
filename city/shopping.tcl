@@ -23,8 +23,9 @@ namespace eval City::Shopping {
     }
 
     proc pawnTalk {} {
-        puts "\"Hey. You're not a cop, are ya? ... ... Nah, of course not. Listen, I do business with... special\
-        goods here. I'll let you know if I end up with any goods you'd be interested in.\""
+        puts "\"Hey. You're not a cop, are ya? ... ... Nah, of course not. Listen, I do\
+        business with... special goods here. I'll let you know if I end up with any goods\
+        you'd be interested in.\""
         prompt {} {
             {"\"Okay.\"" yes pawnShop}
         }
@@ -42,6 +43,73 @@ namespace eval City::Shopping {
         }
         puts {}
         return pawnShop
+    }
+
+    proc market {} {
+        puts "== Market =="
+        switch [state get merchant-bot] {
+            no {
+                set bot0 "A robot"
+                set bot1 "the robot"
+            }
+            met {
+                set bot0 "Merchant-bot"
+                set bot1 "Merchant-bot"
+            }
+        }
+        puts "The market is neatly organized, with shelves full of various objects. $bot0 is\
+        hovering behind the counter, and a man with glasses typing at a computer off\
+        in the corner."
+        # //// Opportunity to talk to Todd
+        prompt {} {
+            {"Talk to the robot" yes marketBot}
+            {"Go back outside" yes ::City::District::shopping}
+        }
+    }
+
+    proc marketBot {} {
+        switch [state get merchant-bot] {
+            no {
+                puts "\"BZZT! I am MERCHANT-BOT! How may I be of service? BZZT!\""
+                puts "Merchant-bot's chest switches to a display containing the\
+                items available for purchase."
+                state put merchant-bot met
+            }
+            met {
+                puts "\"BZZT! Welcome back! How may I be of service? BZZT!\""
+                puts "Merchant-bot's chest switches to a display containing the\
+                items available for purchase."
+            }
+        }
+        # //// Expensive item as well (possibly the lantern?)
+        prompt {} {
+            {"Buy a Green Olive (1 Silver Coin)" {![state get olive-bought]} marketOlive}
+            {"\"Never mind.\"" yes market}
+        }
+    }
+
+    proc marketOlive {} {
+        if {[inv has {Silver Coin}]} then {
+            switch [state get merchant-bot] {
+                no - met {
+                    puts "A slot opens in the top of Merchant-bot's head. You insert a\
+                    Silver Coin in the slot."
+                    puts "\"BZZT! Payment accepted! Enjoy your GREEN OLIVE! BZZT!\""
+                    puts "You collect the Green Olive."
+                    inv remove {Silver Coin}
+                    inv add {Green Olive}
+                    state put olive-bought yes
+                }
+            }
+        } else {
+            switch [state get merchant-bot] {
+                no - met {
+                    puts "\"BZZT! You cannot afford a GREEN OLIVE! BZZT!\""
+                }
+            }
+        }
+        puts {}
+        return market
     }
 
 }

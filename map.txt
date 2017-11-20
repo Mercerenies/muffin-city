@@ -70,6 +70,9 @@
   - pawnShop
   - pawnTalk
   - pawnButler
+  - market
+  - marketBot
+  - marketOlive
 
 [Prison]
 * [South]
@@ -196,6 +199,8 @@
 * Heart Key (TBA)
 * Club Key
 * Fireproof Suit
+* Green Olive
+* Lantern (TBA)
 
 (Money Sources / Sinks)
 + Shady Alley (sa-coin)
@@ -204,6 +209,7 @@
 - Robbery Event (city-thug)
 - Gate Guard Event (prison-guard)
 - Shabby Jack's (motel-room)
+- Merchant-bot Cheap Item (olive-bought)
 
 -------- MUFFINS --------
 
@@ -262,6 +268,7 @@ Item / Money States:
  * muffin-second {no yes}
  * collected-suit {no yes}
  * fe-coin {no exists yes}
+ * olive-bought {no yes}
 
 World States:
  * trial-reason {{} murder escape}
@@ -279,6 +286,7 @@ World States:
  * heard-science {no told yes}
  * talked-to-louis {no yes}
  * jumped-into-fire {no yes}
+ * merchant-bot {no met}
 
 -------- CHARACTERS --------
 
@@ -470,6 +478,8 @@ NOTES:
  * Merchant-bot has two items (one at a ridiculous price); there is a quest to kill him, which leads to the warehouse office. At that time, Merchant-bot 2 takes over and sells the expensive one for less
  * Going to the past and requesting an item from the pawnbroker will result in that item being available the next day
  * Trade in the fireproof suit for a scuba suit (and vice versa) at some shop
+ * Todd wants to rebel against Merchant-bot and leaves clues to help you do so
+ * Todd works mornings at the Ritzy Inn
 
 SCIENCE:
  *    Club Room - Time Machine  - Free on First Access

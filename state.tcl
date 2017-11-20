@@ -29,6 +29,8 @@ namespace eval State {
         jumped-into-fire no
         collected-suit no
         fe-coin no
+        merchant-bot no
+        olive-bought no
     }]
 
     proc get {args} {
