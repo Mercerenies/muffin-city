@@ -19,8 +19,7 @@ namespace eval Past::Science {
         and you feel electricity coursing through your veins."
         state put lobby-door other
         puts {}
-        # //// A "past" area within the underworld
-        return ::Empty::place
+        return ::Underworld::Pits::mysteryRoom
     }
 
 }

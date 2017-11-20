@@ -31,6 +31,7 @@ namespace eval State {
         fe-coin no
         merchant-bot no
         olive-bought no
+        secret-chamber-door no
     }]
 
     proc get {args} {

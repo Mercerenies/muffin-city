@@ -31,25 +31,27 @@ namespace eval Underworld::Pits {
         walls. There is an elevator in the back labeled \"Freight Elevator\". An\
         opening on the opposite side leads to pits of fire."
         prompt {} {
-            {"Go toward the fire pits" yes fire}
+            {"Go toward the fire pits" yes {fire backRoom}}
             {"Enter the elevator" yes freight}
         }
     }
 
-    proc fire {} {
+    proc fire {room} {
         if {[inv has {Fireproof Suit}]} then {
             puts "== Fire Pits =="
             puts "There is fire all around you, but it seems to cower away from you.\
             The balcony is too high to climb onto, so the only way out of the pits is\
-            through the back exit."
+            through one of the two exits on the back wall."
+            # //// Not sure if {fire backRoom} is right here, but it works for now
             prompt {} {
-                {"Exit through the back" yes backRoom}
+                {"Head toward the storage room" yes backRoom}
+                {"Head toward the secret chamber" yes "secretRoomEnter {fire backRoom}"}
             }
         } else {
             puts "The fire burns all around you, but you feel no pain. In a blind panic,\
             you rush toward the nearest exit."
             puts {}
-            return backRoom
+            return $room
         }
     }
 
@@ -58,7 +60,7 @@ namespace eval Underworld::Pits {
             puts "You don your Fireproof Suit and leap into the fire pits. The fire sways outward,\
             almost as though it's actively avoiding you."
             puts {}
-            return fire
+            return {fire backRoom}
         } else {
             if {[state get talked-to-johnny]} then {
                 set johnny "Johnny Death"
@@ -81,6 +83,70 @@ namespace eval Underworld::Pits {
         of the immediate area."
         prompt {} {
             {"Climb the rope" yes ::Underworld::Johnny::climbed}
+        }
+    }
+
+    proc secretRoomEnter {room} {
+        if {[state get secret-chamber-door]} then {
+            return secretRoom
+        } else {
+            puts "An invisible barrier prevents your entry into the secret chamber."
+            puts {}
+            return $room
+        }
+    }
+
+    proc secretRoomExit {} {
+        if {[state get secret-chamber-door]} then {
+            return {fire secretRoom}
+        } else {
+            puts "An invisible barrier prevents you from passing."
+            puts {}
+            return secretRoom
+        }
+    }
+
+    proc secretRoom {} {
+        puts "== Secret Chamber =="
+        if {[state get secret-chamber-door]} then {
+            set lever "Additionally, there is a lever on the wall next to the fire pits in the\
+            OFF poisiton."
+        } else {
+            set lever "Additionally, there is a lever on the wall next to the fire pits in the\
+            ON poisiton, accompanied by the quiet hum of a machine."
+        }
+        puts "You approach the large, square room. The chamber is mostly empty, but there is a\
+        door leading out the back and a staircase leading down further into the chamber, as well\
+        as a tunnel leading to a room full of fire. $lever"
+        prompt {} {
+            {"Head downstairs" yes ::Empty::place}
+            {"Head out the door" yes mysteryRoom}
+            {"Switch the lever on" {[state get secret-chamber-door]} secretLeverOn}
+            {"Switch the lever off" {![state get secret-chamber-door]} secretLeverOff}
+            {"Go to the fire pits" yes secretRoomExit}
+        }
+    }
+
+    proc secretLeverOff {} {
+        puts "You switch the lever off. The sound of machinery within the walls disappears."
+        state put secret-chamber-door yes
+        puts {}
+        return secretRoom
+    }
+
+    proc secretLeverOn {} {
+        puts "You switch the lever on. The quiet hum of a strange machine sounds."
+        state put secret-chamber-door no
+        puts {}
+        return secretRoom
+    }
+
+    proc mysteryRoom {} {
+        puts "== Mystery Room =="
+        puts "You find yourself in a small room with several puzzles scattered about\
+        and riddles pinned to the walls. There is a single door leading out of the room."
+        prompt {} {
+            {"Step out the door" yes secretRoom}
         }
     }
 
