@@ -45,6 +45,9 @@ namespace eval Warehouse::Outside {
 
     proc west {} {
         puts "== Secret Island - West =="
+        if {[state get fe-coin] eq {no}} then {
+            state put fe-coin exists
+        }
         puts "The western edge of the island is deserted, aside from a few gulls flying to\
         and fro. There is a large outhouse-like structure with the words \"Freight Elevator\"\
         written on the front."
@@ -64,12 +67,19 @@ namespace eval Warehouse::Outside {
     proc dock {} {
         puts "== Island Dock =="
         # //// Dream ship
-        # //// Jump in
         puts "The dock is small and deserted. It doesn't look like there have been any ships\
         here in some time."
         prompt {} {
             {"Leave the dock" yes east}
+            {"Jump into the water" yes diveIn}
         }
+    }
+
+    proc diveIn {} {
+        puts "You leap into the water without a second thought."
+        state put lobby-door other
+        puts {}
+        return ::Underworld::Lobby::other
     }
 
     proc northTalk {} {

@@ -109,6 +109,7 @@
   - river
   - riverReach
   - cave
+  - caveDeath
   - bus
 
 [Underworld]
@@ -134,6 +135,7 @@
   - climbed
 * [Pits]
   - freight
+  - freightCoin
   - backRoom
   - fire
   - fireEntry
@@ -176,6 +178,7 @@
   - west
   - enterDoor
   - dock
+  - diveIn
   - northTalk
 
 -------- ITEMS --------
@@ -197,6 +200,7 @@
 (Money Sources / Sinks)
 + Shady Alley (sa-coin)
 + Forest River (forest-river)
++ Freight Elevator (fe-coin)
 - Robbery Event (city-thug)
 - Gate Guard Event (prison-guard)
 - Shabby Jack's (motel-room)
@@ -257,6 +261,7 @@ Item / Money States:
  * forest-river {0 1 2 3}
  * muffin-second {no yes}
  * collected-suit {no yes}
+ * fe-coin {no exists yes}
 
 World States:
  * trial-reason {{} murder escape}
@@ -442,6 +447,16 @@ e. Dr. Louis Introduction (talked-to-louis)
   (*) yes
       The player has spoken to Dr. Louis.
 
+e. Freight Elevator Coin (fe-coin)
+  (*) no
+      The coin is not available yet. When the player visits the west edge of the warehouse,
+      the game will move to `exists`.
+  (*) exists
+      The coin exists in the freight elevator and can be collected. When collected, the game
+      moves to `yes`.
+  (*) yes
+      The coin has been collected and will not appear again.
+
 TEST:
  * Johnny Death, start to finish (by hacking in the soul items)
 
@@ -454,6 +469,7 @@ NOTES:
  * Attorney-Man and the three clients (player, guard, and robber)
  * Merchant-bot has two items (one at a ridiculous price); there is a quest to kill him, which leads to the warehouse office. At that time, Merchant-bot 2 takes over and sells the expensive one for less
  * Going to the past and requesting an item from the pawnbroker will result in that item being available the next day
+ * Trade in the fireproof suit for a scuba suit (and vice versa) at some shop
 
 SCIENCE:
  *    Club Room - Time Machine  - Free on First Access

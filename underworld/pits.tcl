@@ -3,12 +3,26 @@ namespace eval Underworld::Pits {
 
     proc freight {} {
         puts "== Freight Elevator =="
-        puts "The freight elevator is large, obviously designed to carry significant\
+        puts -nonewline "The freight elevator is large, obviously designed to carry significant\
         amounts of cargo. There are only two buttons on the elevator's controls."
+        if {[state get fe-coin] eq {exists}} then {
+            puts " Someone left a Silver Coin on the floor of the elevator."
+        } else {
+            puts {}
+        }
         prompt {} {
             {"Go to the storage room" yes backRoom}
             {"Go to the warehouse" yes ::Warehouse::Outside::west}
+            {"Pick up the coin" {[state get fe-coin] eq {exists}} freightCoin}
         }
+    }
+
+    proc freightCoin {} {
+        puts "You collect the Silver Coin."
+        state put fe-coin yes
+        inv add {Silver Coin}
+        puts {}
+        return freight
     }
 
     proc backRoom {} {

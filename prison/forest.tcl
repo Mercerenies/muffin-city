@@ -79,9 +79,16 @@ namespace eval Prison::Forest {
         puts "The cave is pitch black, leaving you completely blind. You vaguely hear growling in the\
         distance."
         prompt {} {
-            {"Press onward" yes ::Empty::place}
+            {"Press onward" yes caveDeath}
             {"Exit the cave" yes trees}
         }
+    }
+
+    proc caveDeath {} {
+        puts "You press onward. The growling gets louder, and you can see nothing."
+        state put lobby-door wildlife
+        puts {}
+        return ::Underworld::Lobby::wildlife
     }
 
     proc bus {} {
