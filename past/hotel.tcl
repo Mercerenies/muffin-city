@@ -32,13 +32,14 @@ namespace eval Past::Hotel {
         prompt {} {
             {"Talk to Todd" yes ritzyTalk}
             {"Go toward the hallway" yes ritzyHall}
-            {"Leave" yes ::Empty::place}
+            {"Leave" yes ::Past::District::hotel}
         }
     }
 
     proc ritzyTalk {} {
         puts "\"I'm terribly sorry, but we don't have any vacancies at the moment. Please\
         come back at one o'clock after today's guests have departed.\""
+        # //// Something else for Todd to do (show him his note to go to subspace?)
         prompt {} {
             {"\"Never mind.\"" yes ritzyInn}
         }

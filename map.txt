@@ -203,7 +203,13 @@
   - ritzyHall
   - ritzyRoom
   - ritzyInn
+  - ritzyTalk
 * [District]
+  - entrance
+  - hotel
+  - shopping
+  - police
+  - shadyAlley
 
 -------- ITEMS --------
 
