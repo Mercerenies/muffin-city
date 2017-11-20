@@ -45,4 +45,99 @@ namespace eval Past::Hotel {
         }
     }
 
+    proc shabbyJack {} {
+        puts "== Shabby Jack's - Past =="
+        puts -nonewline "The facility is clearly a low-class establishment, but it has a\
+        certain rustic charm to it. There is a hallway leading back with a sign that\
+        says \"Guests Only\", and behind a wooden counter there is a man with a nametag\
+        reading \"Shabby Jack\"."
+        switch [state get attorney-man] {
+            no {
+                puts " A man in an elaborate superhero costume and a red cape and mask is\
+                sitting on a chair in the corner."
+            }
+            default {
+                puts " Attorney-Man is sitting on a chair in the corner, his hands folded in\
+                his lap."
+            }
+        }
+        prompt {} {
+            {"Talk to Shabby Jack" yes shabbyTalk}
+            {"Talk to the superhero" {[state get attorney-man] eq {no}} shabbyAttorney}
+            {"Talk to Attorney-Man" {[state get attorney-man] ne {no}} shabbyAttorney}
+            {"Enter your room" {[inv has {Motel Room Key}]} shabbyRoom}
+            {"Leave" yes ::Past::District::hotel}
+        }
+    }
+
+    proc shabbyAttorney {} {
+        switch [state get attorney-man] {
+            no {
+                puts "\"Leave me alone.\""
+                prompt {} {
+                    {"\"Who are you?\"" yes shabbyAttorney1}
+                    {"\"Okay, sorry.\"" yes shabbyJack}
+                }
+            }
+            met {
+                puts "\"Leave me alone.\""
+                prompt {} {
+                    {"\"You can do it!\"" yes shabbyAttorneyYes}
+                    {"\"Okay, sorry.\"" yes shabbyJack}
+                }
+            }
+            default {
+                puts "\"Today, I'm going to go change the world!\""
+                puts {}
+                return shabbyJack
+            }
+        }
+    }
+
+    proc shabbyAttorney1 {} {
+        state put attorney-man met
+        puts "\"Well, if you must know...\""
+        puts "The strange man rises from his chair and strikes a heroic pose with his hands\
+        on his hips."
+        puts "\"I'm Attorney-Man! Evildoers beware! I defend mankind's rights under the law!\
+        I'll take on any client, no matter how hopeless! And I've never lost a case!\""
+        puts "Attorney-Man sits back down."
+        puts "\"But... the judge threw me out of the courtroom. I think he's tired of dealing\
+        with me...\""
+        prompt {} {
+            {"\"You can do it!\"" yes shabbyAttorneyYes}
+            {"\"I'm sorry...\"" yes shabbyAttorneyNo}
+        }
+    }
+
+    proc shabbyAttorneyYes {} {
+        state put attorney-man talked
+        puts "\"You know what? You're right! That judge can throw me out of every case\
+        but I won't quit! Because I fight for justice and I won't let any judges get in\
+        my way! Today, I'm going to go find a new client and bring justice for all!\""
+        puts {}
+        return shabbyJack
+    }
+
+    proc shabbyAttorneyNo {} {
+        puts "\"I'll be fine. Just leave me alone...\""
+        puts {}
+        return shabbyJack
+    }
+
+    proc shabbyTalk {} {
+        puts "\"Welcome to Shabby Jack's Streetside Motel! We haven't finished cleaning\
+        the rooms yet, so you'll have to come back in a few hours.\""
+        prompt {} {
+            {"\"Oh, okay.\"" yes shabbyJack}
+        }
+    }
+
+    proc shabbyRoom {} {
+        puts "\"Whoa, hold on there! We still need to clean up the rooms before we can\
+        have any guests back there. You'll have to come back in a bit.\""
+        puts {}
+        return shabbyJack
+    }
+
 }

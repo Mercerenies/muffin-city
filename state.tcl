@@ -32,6 +32,7 @@ namespace eval State {
         merchant-bot no
         olive-bought no
         secret-chamber-door no
+        attorney-man no
     }]
 
     proc get {args} {

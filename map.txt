@@ -204,6 +204,13 @@
   - ritzyRoom
   - ritzyInn
   - ritzyTalk
+  - shabbyJack
+  - shabbyAttorney
+  - shabbyAttorney1
+  - shabbyAttorneyYes
+  - shabbyAttorneyNo
+  - shabbyTalk
+  - shabbyRoom
 * [District]
   - entrance
   - hotel
@@ -286,6 +293,7 @@ Events:
  * prison-guard {no paid fired search}
  * johnny-quest {no accepted 1 2 done}
  * butler-game {no cell pawn}
+ * attorney-man {no met talked fed 1 2 done}
 
 Item / Money States:
  * stolen-good {{} {Silver Coin} {Platinum Card}}
@@ -328,6 +336,9 @@ Shabby Jack
 Carl the Employee
 The Butler
 Pawnbroker
+Merchant-bot
+Todd the Office Worker
+Attorney-Man
 
 -------- EVENTS --------
 
@@ -441,6 +452,26 @@ Pawnbroker
       The butler is in the pawn shop in the present. When he talks to him, he will give the
       player a Fireproof Suit.
       //// Next state
+
+6. Attorney-Man's Career (attorney-man)
+  (*) no
+      Attorney-Man has not been spoken to, so he will only appear in Shabby Jack's in the past.
+      After he introduces himself, the player can encourage him or walk away. In the first case,
+      the game moves to `talked`. In the second case, it moves to `met`.
+      ////
+  (*) met
+      The player has spoken to Attorney-Man. If he speaks to him again, the same options as in `no`
+      will be presented. If the player walks away, nothing happens. If the player encourages him, the
+      game moves to `talked`.
+      ////
+  (*) talked
+      Attorney-Man in the past will say simply that he will embark on a journey soon. In the present,
+      Attorney-Man appears (somewhere)
+      //// Finish me
+  (*) fed ////
+  (*) 1 ////
+  (*) 2 ////
+  (*) done ////
 
 a. Shady Alley Silver Coin (sa-coin)
   (*) no

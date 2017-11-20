@@ -3,9 +3,9 @@ namespace eval City::Hotel {
 
     proc shabbyJack {} {
         puts "== Shabby Jack's =="
-        puts "The facility is clearly a low-class establishment, but it has a certain rustic charm to it.\
-        There is a hallway leading back with a sign that says \"Guests Only\", and behind a wooden counter\
-        there is a man with a nametag reading \"Shabby Jack\"."
+        puts "The facility is clearly a low-class establishment, but it has a certain rustic charm\
+        to it. There is a hallway leading back with a sign that says \"Guests Only\", and behind\
+        a wooden counter there is a man with a nametag reading \"Shabby Jack\"."
         prompt {} {
             {"Talk to Shabby Jack" yes shabbyTalk}
             {"Enter your room" {[inv has {Motel Room Key}]} shabbyRoom}
@@ -32,7 +32,7 @@ namespace eval City::Hotel {
             }
         } else {
             puts "\"Welcome to Shabby Jack's Streetside Motel! Do you need somewhere to stay for\
-            the night? Just one silver coin.\""
+            the night? Just one Silver Coin.\""
             prompt {} {
                 {"Give him a Silver Coin" {[inv has {Silver Coin}]} shabbyPay}
                 {"Show him your Platinum Card" {[inv has {Platinum Card}]} shabbyNoPay}

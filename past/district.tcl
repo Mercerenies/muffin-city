@@ -20,7 +20,7 @@ namespace eval Past::District {
         prompt {} {
             {"Go back to the plaza" yes entrance}
             {"Enter the Ritzy Inn & Suites" yes ::Past::Hotel::ritzyInn}
-            {"Enter Shabby Jack's Streetside Motel" yes ::Empty::place}
+            {"Enter Shabby Jack's Streetside Motel" yes ::Past::Hotel::shabbyJack}
         }
     }
 
