@@ -5,12 +5,18 @@ namespace eval Warehouse::Outside {
 
     proc north {} {
         puts "== Secret Island - North =="
-        puts "The path leads around the back of the warehouse. There is nothing of interest\
-        here except a few trees."
+        puts -nonewline "The path leads around the back of the warehouse. There is nothing of\
+        interest here except a few trees."
+        if {[state get city-thug] eq {island}} then {
+            puts " The man who robbed you back in the city is sitting on a rock down by the sea."
+        } else {
+            puts {}
+        }
         # //// Something interesting here
         prompt {} {
             {"Head east" yes east}
             {"Head west" yes west}
+            {"Talk to the robber" {[state get city-thug] eq {island}} northTalk}
         }
     }
 
@@ -64,6 +70,17 @@ namespace eval Warehouse::Outside {
         prompt {} {
             {"Leave the dock" yes east}
         }
+    }
+
+    proc northTalk {} {
+        puts "\"Huh?! Ya found me?! Well yer good, I'll give ya that. Here, have yer\
+        [state get stolen-good] back and leave me alone!\""
+        puts "The robber hands you your [state get stolen-good] and runs off."
+        puts {}
+        inv add [state get stolen-good]
+        state put stolen-good {}
+        state put city-thug no
+        return north
     }
 
 }

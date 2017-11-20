@@ -176,6 +176,7 @@
   - west
   - enterDoor
   - dock
+  - northTalk
 
 -------- ITEMS --------
 
@@ -309,7 +310,7 @@ Pawnbroker
       The robber will keep a low profile and will not be able to be found. In this state, the Shady
       Alley will reveal a silver coin.
       //// Something should reset the Robbery Event
-  (*) island ////
+  (*) island
       The robber will end up on the Warehouse island. The player can talk to him. The robber will
       say that he ended up not needing the player's money and will return whatever he stole
       (stolen-good). He will then leave and the game will revert to `no`. Alternatively, telling
