@@ -13,6 +13,7 @@ set mapping {
     Underworld ./underworld/base.tcl
     Dream ./dream/base.tcl
     Warehouse ./warehouse/base.tcl
+    Past ./past/base.tcl
 }
 
 proc handleMapping {loc} {

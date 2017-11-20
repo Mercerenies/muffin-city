@@ -40,6 +40,13 @@ namespace eval City::Science {
         }
     }
 
+    proc clubRoomJump {} {
+        puts "You hit the blue button. The entire room suddenly lights up in a blindingly bright\
+        white, forcing you to close your eyes. When you reopen them, everything has gone dark."
+        puts {}
+        return ::Past::Science::clubRoom
+    }
+
     proc clubRoom {} {
         # ///// Shops and then the past
         if {![inv has {Club Key}]} then {
@@ -48,12 +55,12 @@ namespace eval City::Science {
             return mainRoom
         }
         puts "== Club Room =="
-        puts "You enter a small, round room. The room is completely empty, save for a single blue\
+        puts "You are in a small, round room. The room is completely empty, save for a single blue\
         button on a stand in the middle of the room. The walls look heavily reinforced; you doubt\
         any sounds would get through them. Immediately below the blue button, there is a digital\
         display with yesterday's date on it."
         prompt {} {
-            {"Hit the blue button" yes ::Empty::place}
+            {"Hit the blue button" yes clubRoomJump}
             {"Go back out" yes mainRoom}
         }
     }
