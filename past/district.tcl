@@ -25,15 +25,34 @@ namespace eval Past::District {
     }
 
     proc shopping {} {
-        return -gameover
+        puts "== Shopping District - Past =="
+        puts "At this early hour, many of the shops have yet to open. The elevator looks\
+        equally out of place at this time of day."
+        # //// Elevator, market, pawn shop
+        prompt {} {
+            {"Go back to the plaza" yes entrance}
+        }
     }
 
     proc police {} {
-        return -gameover
+        puts "== Police District - Past =="
+        puts "The police district is fairly large but unified. There is a large station for\
+        the officers and a courthouse that towers over the center of the town. The courthouse\
+        doors appear to be wide open."
+        # //// Police station and courthouse
+        prompt {} {
+            {"Go back to the plaza" yes entrance}
+        }
     }
 
     proc shadyAlley {} {
-        return -gameover
+        puts "== Shady Alley - Past =="
+        puts "You enter the alley. It isn't terribly intimidating during the\
+        day, as the sunlight ensures that it is well-illuminated."
+        # //// Something interesting
+        prompt {} {
+            {"Go back to the plaza" yes entrance}
+        }
     }
 
 }

@@ -50,8 +50,8 @@ namespace eval City::District {
 
     proc police {} {
         puts "== Police District =="
-        puts "The police district is fairly large but unified. There is a large station for the officers\
-        and a courthouse that towers over the center of the town."
+        puts "The police district is fairly large but unified. There is a large station for\
+        the officers and a courthouse that towers over the center of the town."
         prompt {} {
             {"Go back to the plaza" yes entrance}
             {"Go to the police station" yes ::City::Police::station}
