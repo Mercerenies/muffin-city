@@ -4,12 +4,16 @@ namespace eval City::Science {
     proc mainRoom {} {
         puts "== Research Facility =="
         if {[state get talked-to-louis]} then {
-            puts "You enter the research lab and see Dr. Louis working on a small robot."
+            puts "You enter the research lab and see Dr. Louis working on a small robot. There\
+            are several various machines and gizmos lying about on all the surfaces in the room.\
+            On the back wall, there are four doors, each containing the emblem of a playing card\
+            suit."
         } else {
             puts "You enter the basement and find yourself in a strange research lab. There are\
             several gizmos and machines on all of the counters surrounding the room. Everything\
             looks incredibly futuristic, and you can see everything from test tubes to rocket parts\
-            sitting about. There is a young woman in a lab coat working on a small robot."
+            sitting about. There is a young woman in a lab coat working on a small robot. On the back\
+            wall, there are four doors, each containing the emblem of a playing card suit."
         }
         prompt {} {
             {"Talk to Dr. Louis" {[state get talked-to-louis]} talkTo}
@@ -72,6 +76,7 @@ namespace eval City::Science {
             return mainRoom
         }
         puts "== Heart Room =="
+        # ////
         prompt {} {
             {"Go back out" yes mainRoom}
         }
@@ -84,6 +89,7 @@ namespace eval City::Science {
             return mainRoom
         }
         puts "== Diamond Room =="
+        # ////
         prompt {} {
             {"Go back out" yes mainRoom}
         }
@@ -96,6 +102,7 @@ namespace eval City::Science {
             return mainRoom
         }
         puts "== Spade Room =="
+        # ////
         prompt {} {
             {"Go back out" yes mainRoom}
         }

@@ -193,9 +193,16 @@
 
 [Past]
 * [Science]
-  - clubRoom
+  - mainRoom
   - clubRoomBoom
+  - clubRoom
+  - heartRoom
+  - diamondRoom
+  - spadeRoom
 * [Hotel]
+  - ritzyHall
+  - ritzyRoom
+  - ritzyInn
 * [District]
 
 -------- ITEMS --------

@@ -60,9 +60,9 @@ namespace eval City::Hotel {
 
     proc ritzyInn {} {
         puts "== Ritzy Inn =="
-        puts "This is obviously a high-class building. There are several people moving to and fro, all of\
-        them dressed in the finest garb. Behind a large \"Guest Services\" counter sits a single man. The\
-        bronze nameplate in front of him informs you that his name is Carl."
+        puts "This is obviously a high-class building. There are several people moving to and fro,\
+        all of them dressed in the finest garb. Behind a large \"Guest Services\" counter sits a\
+        single man. The bronze nameplate in front of him informs you that his name is Carl."
         prompt {} {
             {"Talk to Carl" yes ritzyTalk}
             {"Go toward the hallway" yes ritzyHall}
@@ -72,8 +72,8 @@ namespace eval City::Hotel {
 
     proc ritzyHall {} {
         puts "== Ritzy Inn - Hallway =="
-        puts -nonewline "The hallway stretches on for quite a ways, and there appear to be several floors above\
-        this one."
+        puts -nonewline "The hallway stretches on for quite a ways, and there appear to be\
+        several floors above this one."
         if {[inv has {Ritzy Inn Room Key}]} then {
             puts {}
         } else {
@@ -88,8 +88,9 @@ namespace eval City::Hotel {
 
     proc ritzyRoom {} {
         puts "== Ritzy Inn - Bedroom =="
-        puts "You enter your prestigious room at the Ritzy Inn & Suites. There is a king-sized bed accompanied\
-        by a large sofa and a color television. The adjoining restroom has a large bathtub and a double sink."
+        puts "You enter your prestigious room at the Ritzy Inn & Suites. There is a king-sized\
+        bed accompanied by a large sofa and a color television. The adjoining restroom has a\
+        large bathtub and a double sink."
         prompt {} {
             {"Go to sleep" yes ::Dream::Transit::firstRoom}
             {"Exit the room" yes ritzyHall}
@@ -100,8 +101,8 @@ namespace eval City::Hotel {
         if {[state get inn-room]} then {
             puts "\"Welcome back. How may I be of assistance?\""
         } else {
-            puts "\"Good evening. We at the Ritzy Inn & Suites strive for the best possible customer service. How\
-            may I be of assistance?\""
+            puts "\"Good evening. We at the Ritzy Inn & Suites strive for the best possible\
+            customer service. How may I be of assistance?\""
         }
         prompt {} {
             {"\"I would like a room.\"" {![state get inn-room]} ritzyGetRoom}
