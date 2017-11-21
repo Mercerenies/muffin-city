@@ -552,6 +552,7 @@ NOTES:
  * Trade in the fireproof suit for a scuba suit (and vice versa) at some shop
  * Todd wants to rebel against Merchant-bot and leaves clues to help you do so
  * Todd works mornings at the Ritzy Inn
+ * Help someone escape from prison by creating a diversion on entry
 
 SCIENCE:
  *    Club Room - Time Machine  - Free on First Access
