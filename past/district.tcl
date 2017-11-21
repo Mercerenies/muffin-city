@@ -50,12 +50,33 @@ namespace eval Past::District {
 
     proc shadyAlley {} {
         puts "== Shady Alley - Past =="
-        puts "You enter the alley. It isn't terribly intimidating during the\
+        puts -nonewline "You enter the alley. It isn't terribly intimidating during the\
         day, as the sunlight ensures that it is well-illuminated."
         # //// Something interesting
+        if {[state get courtroom-key] ne {no}} then {
+            puts " The young man from the courtroom is sitting on a crate in the corner."
+        } else {
+            puts {}
+        }
         prompt {} {
+            {"Talk to the young man" {[state get courtroom-key] ne {no}} alleyTalk}
             {"Go back to the plaza" yes entrance}
         }
+    }
+
+    proc alleyTalk {} {
+        switch [state get courtroom-key] {
+            has {
+                puts "\"'Ey, listen! Hold onto dat key. I don't care what ya do with it; I just\
+                don't want dat stuck-up judge havin' it.\""
+                state put courtroom-key yes
+            }
+            yes {
+                puts "\"When da sun goes down, dis is my alley. Ya better get lost before den.\""
+            }
+        }
+        puts {}
+        return shadyAlley
     }
 
     proc marketClosed {} {

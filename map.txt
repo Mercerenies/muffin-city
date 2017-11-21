@@ -217,6 +217,7 @@
   - shopping
   - police
   - shadyAlley
+  - alleyTalk
   - marketClosed
 * [Shopping]
   - pawnShopEntry
@@ -226,6 +227,7 @@
   - courthouse
   - courthouseInside
   - courthouseHall
+  - courtroom
 
 -------- ITEMS --------
 
@@ -244,6 +246,7 @@
 * Fireproof Suit
 * Green Olive
 * Lantern (TBA)
+* Courthouse Key
 
 (Money Sources / Sinks)
 + Shady Alley (sa-coin)
@@ -313,6 +316,7 @@ Item / Money States:
  * collected-suit {no yes}
  * fe-coin {no exists yes}
  * olive-bought {no yes}
+ * courtroom-key {no has yes}
 
 World States:
  * trial-reason {{} murder escape}
