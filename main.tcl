@@ -14,6 +14,7 @@ set mapping {
     Dream ./dream/base.tcl
     Warehouse ./warehouse/base.tcl
     Past ./past/base.tcl
+    Subspace ./subspace/base.tcl
 }
 
 proc handleMapping {loc} {

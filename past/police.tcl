@@ -5,11 +5,18 @@ namespace eval Past::Police {
         puts "== Police Station - Past =="
         puts "There are several officers on duty, many wandering about and others sitting at\
         desks filing paperwork."
-        # //// Subspace if you confess to a crime
         prompt {} {
             {"Go back outside" yes ::Past::District::police}
-            {"\"I killed a man!\"" yes ::Empty::place}
+            {"\"I killed a man!\"" yes stationConfess}
         }
+    }
+
+    proc stationConfess {} {
+        puts "As soon as you open your mouth to confess, the entire room fades to white.\
+        Everyone and everything around you disappears, and you find yourself in a strange\
+        new location."
+        puts {}
+        return ::Subspace::Hub::hub
     }
 
     proc courthouse {} {

@@ -224,10 +224,19 @@
   - pawnShopKick
 * [Police]
   - station
+  - stationConfess
   - courthouse
   - courthouseInside
   - courthouseHall
   - courtroom
+
+[Subspace]
+* [Hub]
+  - hub
+  - tacoShop
+  - bank
+  - portalRoom
+  - storm
 
 -------- ITEMS --------
 
