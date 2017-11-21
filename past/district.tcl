@@ -26,10 +26,12 @@ namespace eval Past::District {
 
     proc shopping {} {
         puts "== Shopping District - Past =="
-        puts "At this early hour, many of the shops have yet to open. The elevator looks\
-        equally out of place at this time of day."
-        # //// Elevator, market, pawn shop
+        puts "At this early hour, many of the shops have yet to open. The elevator still\
+        looks out of place at this time of day."
+        # //// Elevator
         prompt {} {
+            {"Enter the market" yes marketClosed}
+            {"Enter the pawn shop" yes ::Past::Shopping::pawnShopEntry}
             {"Go back to the plaza" yes entrance}
         }
     }
@@ -39,9 +41,10 @@ namespace eval Past::District {
         puts "The police district is fairly large but unified. There is a large station for\
         the officers and a courthouse that towers over the center of the town. The courthouse\
         doors appear to be wide open."
-        # //// Police station and courthouse
         prompt {} {
             {"Go back to the plaza" yes entrance}
+            {"Go to the police station" yes ::Past::Police::station}
+            {"Go to the courthouse" yes ::Past::Police::courthouse}
         }
     }
 
@@ -53,6 +56,13 @@ namespace eval Past::District {
         prompt {} {
             {"Go back to the plaza" yes entrance}
         }
+    }
+
+    proc marketClosed {} {
+        # //// If you have the key (from Todd, probably), you can get in here
+        puts "The market has a sign on the door indicating that it is currently closed."
+        puts {}
+        return shopping
     }
 
 }

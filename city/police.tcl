@@ -18,8 +18,8 @@ namespace eval City::Police {
             }
         }
         puts "== Police Station =="
-        puts "Even this late at night, several officers are on duty. A few of them look at you as you enter,\
-        but most of them just go about their business."
+        puts "Even this late at night, several officers are on duty. A few of them look at you as\
+        you enter, but most of them just go about their business."
         prompt {} {
             {"Go back outside" yes ::City::District::police}
             {"\"Did you recover my stuff?\"" {[state get city-thug] eq {caught}} recovered}

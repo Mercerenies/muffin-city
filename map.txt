@@ -217,6 +217,15 @@
   - shopping
   - police
   - shadyAlley
+  - marketClosed
+* [Shopping]
+  - pawnShopEntry
+  - pawnShopKick
+* [Police]
+  - station
+  - courthouse
+  - courthouseInside
+  - courthouseHall
 
 -------- ITEMS --------
 
