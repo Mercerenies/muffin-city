@@ -115,11 +115,11 @@ namespace eval Underworld::Pits {
             set lever "Additionally, there is a lever on the wall next to the fire pits in the\
             ON poisiton, accompanied by the quiet hum of a machine."
         }
-        puts "You approach the large, square room. The chamber is mostly empty, but there is a\
+        puts "You enter the large, square room. The chamber is mostly empty, but there is a\
         door leading out the back and a staircase leading down further into the chamber, as well\
         as a tunnel leading to a room full of fire. $lever"
         prompt {} {
-            {"Head downstairs" yes ::Empty::place}
+            {"Head downstairs" yes ::Subspace::Hub::attic}
             {"Head out the door" yes mysteryRoom}
             {"Switch the lever on" {[state get secret-chamber-door]} secretLeverOn}
             {"Switch the lever off" {![state get secret-chamber-door]} secretLeverOff}

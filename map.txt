@@ -237,6 +237,8 @@
   - bank
   - portalRoom
   - storm
+  - attic
+  - atticExpand
 
 -------- ITEMS --------
 
@@ -345,6 +347,7 @@ World States:
  * jumped-into-fire {no yes}
  * merchant-bot {no met}
  * secret-chamber-door {no yes}
+ * subspace-attic {no yes}
 
 -------- CHARACTERS --------
 
