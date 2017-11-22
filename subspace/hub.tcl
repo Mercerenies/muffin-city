@@ -1,6 +1,8 @@
 
 namespace eval Subspace::Hub {
 
+    # ///// Need a way out of here
+
     proc hub {} {
         puts "== Subspace Hub =="
         puts -nonewline "The white void extends indefinitely in all directions. To the north,\

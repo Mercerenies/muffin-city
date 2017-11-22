@@ -565,6 +565,7 @@ NOTES:
  * Todd wants to rebel against Merchant-bot and leaves clues to help you do so
  * Todd works mornings at the Ritzy Inn
  * Help someone escape from prison by creating a diversion on entry
+ * The subspace bank forecloses some important building or structure, requiring you to break into their vault to get the key and reopen it
 
 SCIENCE:
  *    Club Room - Time Machine  - Free on First Access
