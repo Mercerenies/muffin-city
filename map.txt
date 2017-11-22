@@ -268,6 +268,7 @@
 * Green Olive
 * Lantern (TBA)
 * Courthouse Key
+* Stolen Suitcase
 
 (Money Sources / Sinks)
 + Shady Alley (sa-coin)
@@ -339,6 +340,7 @@ Item / Money States:
  * fe-coin {no exists yes}
  * olive-bought {no yes}
  * courtroom-key {no has yes}
+ * has-suitcase {no yes}
 
 World States:
  * trial-reason {{} murder escape}
@@ -592,11 +594,11 @@ NOTES:
  * Attorney-Man and the three clients (player, guard, and robber)
  * Merchant-bot has two items (one at a ridiculous price); there is a quest to kill him, which leads to the warehouse office. At that time, Merchant-bot 2 takes over and sells the expensive one for less
  * Going to the past and requesting an item from the pawnbroker will result in that item being available the next day
- * Trade in the fireproof suit for a scuba suit (and vice versa) at some shop
+ * Trade in the fireproof suit for a scuba suit (and vice versa) with Todd
  * Todd wants to rebel against Merchant-bot and leaves clues to help you do so
- * Todd works mornings at the Ritzy Inn
  * Help someone escape from prison by creating a diversion on entry
  * The subspace bank forecloses some important building or structure, requiring you to break into their vault to get the key and reopen it
+ * The stolen luggage will let you hide in the cargo hold of the dream train to make it back to the dream world
 
 SCIENCE:
  *    Club Room - Time Machine  - Free on First Access

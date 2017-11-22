@@ -14,13 +14,28 @@ namespace eval Past::Hotel {
 
     proc ritzyRoom {} {
         puts "== Past Ritzy Inn - Bedroom =="
-        puts "The key card to Room 211 opens the door. There is another party's luggage laying on\
-        the floor of the room. Clearly, someone else has the room right now."
-        # //// Something in the luggage to steal
+        if {[state get has-suitcase] eq {yes}} then {
+            puts "Room 211 looks rather pristine, but it is still obvious that another party\
+            is staying here right now."
+        } else {
+            puts "There is another party's luggage laying on\
+            the floor of the room. Clearly, someone else has the room right now."
+        }
         prompt {} {
+            {"Take the luggage" {[state get has-suitcase] eq {no}} ritzyLuggage}
             {"Go to sleep" yes ::Dream::Transit::firstRoom}
             {"Exit the room" yes ritzyHall}
         }
+    }
+
+    proc ritzyLuggage {} {
+        puts "You take the luggage for yourself."
+        puts "You got a Stolen Suitcase!"
+        inv add {Stolen Suitcase}
+        state put has-suitcase yes
+        # //// The real owners of the suitcase should do something in the present, like tell the cops
+        puts {}
+        return ritzyRoom
     }
 
     proc ritzyInn {} {

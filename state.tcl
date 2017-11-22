@@ -37,6 +37,7 @@ namespace eval State {
         subspace-attic no
         taco-shop no
         pawn-shop-pass no
+        has-suitcase no
     }]
 
     proc get {args} {
