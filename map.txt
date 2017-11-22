@@ -235,17 +235,18 @@
   - hub
   - hubJoe
   - hubJoeTaco
-  - tacoShop
-  - tacoJoe
-  - tacoJoe1
-  - tacoMan
-  - tacoExplain
-  - tacoOlive
   - bank
   - portalRoom
   - storm
   - attic
   - atticExpand
+* [Taco]
+  - shop
+  - joe
+  - joe1
+  - tacoMan
+  - explain
+  - olive
 
 -------- ITEMS --------
 
