@@ -30,14 +30,14 @@ namespace eval Subspace::Taco {
         prompt {} {
             {"Talk to the bearded man" {[state get taco-shop] eq {no}} tacoMan}
             {"Talk to the Taco Man" {[state get taco-shop] ne {no}} tacoMan}
-            {"Talk to the man at the table" {([state get taco-shop] eq {fed}) && (![state get pawn-shop-pass])} joe}
-            {"Talk to Joe" {([state get taco-shop] eq {fed}) && ([state get pawn-shop-pass])} joe}
+            {"Talk to the man at the table" {([state get taco-shop] eq {fed}) && ([state get pawn-shop-pass] eq {no})} joe}
+            {"Talk to Joe" {([state get taco-shop] eq {fed}) && ([state get pawn-shop-pass] ne {no})} joe}
             {"Head back outside" yes ::Subspace::Hub::hub}
         }
     }
 
     proc joe {} {
-        if {[state get pawn-shop-pass]} then {
+        if {[state get pawn-shop-pass] ne {no}} then {
             puts "\"Remember, the pawn shop password is 'bowling tournament'. I traveled back in\
             time to tell my past self the password. That's how I ended up here. Hopefully, you'll\
             be able to make more use of the password.\""
@@ -56,7 +56,7 @@ namespace eval Subspace::Taco {
         As thanks, I'll give you a little tip. The pawn shop in the shopping district\
         is never really closed. If the door is locked, just tell him the password\
         is 'bowling tournament'. He'll let you in.\""
-        state put pawn-shop-pass yes
+        state put pawn-shop-pass has
         puts {}
         return shop
     }

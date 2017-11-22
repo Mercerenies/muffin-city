@@ -222,6 +222,8 @@
 * [Shopping]
   - pawnShopEntry
   - pawnShopKick
+  - pawnShopAccept
+  - pawnShop
 * [Police]
   - station
   - stationConfess
@@ -357,7 +359,7 @@ World States:
  * merchant-bot {no met}
  * secret-chamber-door {no yes}
  * subspace-attic {no yes}
- * pawn-shop-pass {no yes}
+ * pawn-shop-pass {no has yes}
 
 -------- CHARACTERS --------
 
