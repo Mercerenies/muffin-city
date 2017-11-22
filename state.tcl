@@ -35,6 +35,8 @@ namespace eval State {
         attorney-man no
         courtroom-key no
         subspace-attic no
+        taco-shop no
+        pawn-shop-pass no
     }]
 
     proc get {args} {

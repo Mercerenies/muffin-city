@@ -52,7 +52,6 @@ namespace eval City::Science {
     }
 
     proc clubRoom {} {
-        # ///// Shops and then the past
         if {![inv has {Club Key}]} then {
             puts "The door is locked."
             puts {}

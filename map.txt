@@ -233,7 +233,14 @@
 [Subspace]
 * [Hub]
   - hub
+  - hubJoe
+  - hubJoeTaco
   - tacoShop
+  - tacoJoe
+  - tacoJoe1
+  - tacoMan
+  - tacoExplain
+  - tacoOlive
   - bank
   - portalRoom
   - storm
@@ -317,6 +324,7 @@ Events:
  * johnny-quest {no accepted 1 2 done}
  * butler-game {no cell pawn}
  * attorney-man {no met talked fed 1 2 done}
+ * taco-shop {no spoken olive fed}
 
 Item / Money States:
  * stolen-good {{} {Silver Coin} {Platinum Card}}
@@ -348,6 +356,7 @@ World States:
  * merchant-bot {no met}
  * secret-chamber-door {no yes}
  * subspace-attic {no yes}
+ * pawn-shop-pass {no yes}
 
 -------- CHARACTERS --------
 
@@ -364,6 +373,8 @@ Pawnbroker
 Merchant-bot
 Todd the Office Worker
 Attorney-Man
+The Taco Man
+Joe the Time-Traveler
 
 -------- EVENTS --------
 
@@ -497,6 +508,23 @@ Attorney-Man
   (*) 1 ////
   (*) 2 ////
   (*) done ////
+
+7. The Taco Shop (taco-shop)
+  (*) no
+      The player has not spoken to the taco shop manager. When he does so, the game moves to `spoken`
+      or to `olive` if the player has an olive. Joe the Time-Traveler will be in the subspace hub
+      and will simply complain about hunger.
+  (*) spoken
+      The player has spoken to the taco shop manager but has not presented him with an olive. The
+      taco shop manager will be looking for an olive. When presented with one, the game will move
+      to `olive`. Joe the Time-Traveler will still complain about hunger.
+  (*) olive
+      The player has presented the taco shop manager with an olive. If the player talks to Joe
+      the Time-Traveler, the game will move to `fed` and Joe will move to the taco shop.
+  (*) fed
+      Joe the Time-Traveler will, upon being asked, tell the player about the secret password
+      to the pawn shop in the past. The game will remember that he has done so (pawn-shop-pass).
+      //// More to this quest
 
 a. Shady Alley Silver Coin (sa-coin)
   (*) no
