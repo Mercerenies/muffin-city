@@ -27,7 +27,7 @@ namespace eval Subspace::Hub {
             {"Enter the bank" yes bank}
             {"Go upstairs" {[state get subspace-attic] eq {yes}} attic}
             {"Head toward the storm" yes storm}
-            {"Head to the projection room" yes portalRoom}
+            {"Head to the projection room" yes ::Subspace::Portal::portalRoom}
         }
     }
 
@@ -61,16 +61,6 @@ namespace eval Subspace::Hub {
         # ////
         prompt {} {
             {"Head back outside" yes hub}
-        }
-    }
-
-    proc portalRoom {} {
-        puts "== Subspace Projection Room =="
-        puts "The projector sits in the middle of the room and appears to currently be\
-        inactive."
-        # ////
-        prompt {} {
-            {"Head back to the hub" yes hub}
         }
     }
 

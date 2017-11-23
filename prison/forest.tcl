@@ -33,10 +33,17 @@ namespace eval Prison::Forest {
 
     proc river {} {
         puts "== Forest River =="
-        puts "A peaceful, flowing river cuts the forest into two parts. The water seems cold enough that\
-        you wouldn't want to have to ford it."
+        puts -nonewline "A peaceful, flowing river cuts the forest into two parts. The water\
+        seems cold enough that you wouldn't want to have to ford it."
+        if {[state get subspace-portal] eq {river}} then {
+            puts " There is a portal floating in the air next to the river. The portal\
+            seems to lead to an empty white void."
+        } else {
+            puts {}
+        }
         prompt {} {
             {"Reach a hand into the river" yes riverReach}
+            {"Pass through the portal" {[state get subspace-portal] eq {river}} ::Subspace::Portal::portalRoom}
             {"Head into the forest" yes trees}
         }
     }

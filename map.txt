@@ -238,7 +238,6 @@
   - hubJoe
   - hubJoeTaco
   - bank
-  - portalRoom
   - storm
   - attic
   - atticExpand
@@ -249,6 +248,12 @@
   - tacoMan
   - explain
   - olive
+* [Portal]
+  - portalRoom
+  - portal
+  - atheena
+  - atheenaIntro
+  - basicPortal
 
 -------- ITEMS --------
 
@@ -362,6 +367,9 @@ World States:
  * secret-chamber-door {no yes}
  * subspace-attic {no yes}
  * pawn-shop-pass {no has yes}
+ * hero-blade {no met talked yes}
+ * hero-crystal {no intro bank}
+ * subspace-portal {no river}
 
 -------- CHARACTERS --------
 
@@ -380,6 +388,7 @@ Todd the Office Worker
 Attorney-Man
 The Taco Man
 Joe the Time-Traveler
+Atheena the Hero
 
 -------- EVENTS --------
 
@@ -581,6 +590,28 @@ e. Freight Elevator Coin (fe-coin)
       moves to `yes`.
   (*) yes
       The coin has been collected and will not appear again.
+
+f. The Hero's Blade (hero-blade)
+  (*) no
+      The player has not spoken to Atheena yet. When spoken to, she will introduce herself and
+      the game will move to `met`. At this time, she will activate the portal
+      (`subspace-portal`).
+  (*) met
+      The player has met Atheena. She will
+      ////
+  (*) yes
+      ////
+
+g. The Hero's Crystal (hero-crystal)
+  (*) no
+      The player does not know about the crystal yet. If he talks to Atheena in state `met` or
+      `yes`, he will have the option to ask her about the projector, which will move the game to
+      `intro`.
+  (*) intro
+      The player knows that the bank has the crystal. He can confront the bank about it, which will
+      move the game to state `bank`.
+  (*) bank
+      ////
 
 TEST:
  * Johnny Death, start to finish (by hacking in the soul items)

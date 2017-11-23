@@ -38,6 +38,9 @@ namespace eval State {
         taco-shop no
         pawn-shop-pass no
         has-suitcase no
+        hero-blade no
+        hero-crystal no
+        subspace-portal no
     }]
 
     proc get {args} {
