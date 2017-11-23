@@ -190,6 +190,7 @@
   - dock
   - diveIn
   - northTalk
+  - northAttorney
 
 [Past]
 * [Science]
@@ -238,6 +239,10 @@
   - hubJoe
   - hubJoeTaco
   - bank
+  - bankOffice
+  - bankTalk
+  - bankCrystal
+  - bankNoWay
   - storm
   - attic
   - atticExpand
@@ -332,7 +337,7 @@ Events:
  * prison-guard {no paid fired search}
  * johnny-quest {no accepted 1 2 done}
  * butler-game {no cell pawn}
- * attorney-man {no met talked fed 1 2 done}
+ * attorney-man {no met talked talked1 fed 1 2 done}
  * taco-shop {no spoken olive fed}
 
 Item / Money States:
@@ -508,16 +513,15 @@ Atheena the Hero
       Attorney-Man has not been spoken to, so he will only appear in Shabby Jack's in the past.
       After he introduces himself, the player can encourage him or walk away. In the first case,
       the game moves to `talked`. In the second case, it moves to `met`.
-      ////
   (*) met
       The player has spoken to Attorney-Man. If he speaks to him again, the same options as in `no`
       will be presented. If the player walks away, nothing happens. If the player encourages him, the
       game moves to `talked`.
-      ////
   (*) talked
       Attorney-Man in the past will say simply that he will embark on a journey soon. In the present,
       Attorney-Man appears (somewhere)
       //// Finish me
+  (*) talked1
   (*) fed ////
   (*) 1 ////
   (*) 2 ////

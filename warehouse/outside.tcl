@@ -8,15 +8,26 @@ namespace eval Warehouse::Outside {
         puts -nonewline "The path leads around the back of the warehouse. There is nothing of\
         interest here except a few trees."
         if {[state get city-thug] eq {island}} then {
-            puts " The man who robbed you back in the city is sitting on a rock down by the sea."
-        } else {
-            puts {}
+            puts -nonewline " The man who robbed you back in the city is sitting on a rock down\
+            by the sea."
         }
+        switch [state get attorney-man] {
+            no - met {}
+            talked {
+                puts -nonewline " Attorney-Man is lying on the ground, seemingly asleep."
+            }
+            talked1 {
+                puts -nonewline " Attorney-Man is lying on the ground, staring up at\
+                the sky."
+            }
+        }
+        puts {}
         # //// Something interesting here
         prompt {} {
             {"Head east" yes east}
             {"Head west" yes west}
             {"Talk to the robber" {[state get city-thug] eq {island}} northTalk}
+            {"Talk to Attorney-Man" {[state get attorney-man] in {talked talked1}} northAttorney}
         }
     }
 
@@ -91,6 +102,29 @@ namespace eval Warehouse::Outside {
         state put stolen-good {}
         state put city-thug no
         return north
+    }
+
+    proc northAttorney {} {
+        switch [state get attorney-man] {
+            no - met {}
+            talked {
+                puts "Attorney-Man jerks awake when you say his name."
+                puts "\"Aha! Justice awaits! But... I'm so hungry... I can't\
+                enact the trademarked Attorney-Man fist of justice without eating\
+                a super special beef 'n' cheese taco first!\""
+                state put attorney-man talked1
+                prompt {} {
+                    {"\"I see...\"" yes north}
+                }
+            }
+            talked1 {
+                puts "\"My fist of justice must be fed. A super special beef 'n' cheese\
+                taco would do. But where could I possibly get one?\""
+                prompt {} {
+                    {"\"Good question...\"" yes north}
+                }
+            }
+        }
     }
 
 }
