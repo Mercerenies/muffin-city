@@ -257,7 +257,7 @@
 
 -------- ITEMS --------
 
-* Silver Coin (x2)
+* Silver Coin (x3)
 * Platinum Card
 * Soul Crystal
 * Elevator Access Key

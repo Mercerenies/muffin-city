@@ -57,11 +57,46 @@ namespace eval Subspace::Hub {
     proc bank {} {
         puts "== Subspace Bank =="
         puts "The bank is very orderly, with neat rows of seats for waiting\
-        customers."
-        # ////
+        customers. There are several offices off to the side, each containing one or\
+        two bankers doing various work. One of the offices is open."
         prompt {} {
+            {"Enter the office" yes bankOffice}
             {"Head back outside" yes hub}
         }
+    }
+
+    proc bankOffice {} {
+        puts "== Subspace Bank - Office =="
+        puts "The banker's office is as orderly as the main room of the bank. A single man\
+        sits behind the desk. He glances in your direction as you enter."
+        prompt {} {
+            {"\"Hi.\"" yes bankTalk}
+            {"Leave the room" yes bank}
+        }
+    }
+
+    proc bankTalk {} {
+        puts "\"What can I help you with?\""
+        prompt {} {
+            {"\"Where is Atheena's diamond?\"" {[state get hero-crystal] eq {intro}} bankCrystal}
+            {"\"Nothing right now.\"" yes bankOffice}
+        }
+    }
+
+    proc bankCrystal {} {
+        puts "\"All repossessed items are kept in the bank's vault, secured beyond the subspace\
+        storm. If you want to reclaim it, you'll have to repay Atheena's debt of... 4000 Silver\
+        Coins.\""
+        prompt {} {
+            {"Give him 4000 Silver Coins" {[inv count {Silver Coin}] >= 4000} bankNoWay}
+            {"\"I can't afford that.\"" yes bankOffice}
+        }
+    }
+
+    proc bankNoWay {} {
+        puts "\"I don't believe you got all of that money without hacking the game.\""
+        puts {}
+        return bankOffice
     }
 
     proc storm {} {

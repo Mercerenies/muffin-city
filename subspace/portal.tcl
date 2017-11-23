@@ -22,7 +22,7 @@ namespace eval Subspace::Portal {
             {"Talk to the woman" {[state get hero-blade] eq {no}} atheena}
             {"Talk to Atheena" {[state get hero-blade] ne {no}} atheena}
             {"Pass through the portal" {[state get subspace-portal] ne {no}} portal}
-            {"Head back to the hub" yes hub}
+            {"Head back to the hub" yes ::Subspace::Hub::hub}
         }
     }
 
@@ -55,6 +55,7 @@ namespace eval Subspace::Portal {
                 puts "\"Greetings!\""
                 prompt {} {
                     {"\"Could you turn the portal on?\"" {[state get subspace-portal] eq {no}} basicPortal}
+                    {"\"Is that the only place the portal can go?\"" {([state get subspace-portal] ne {no}) && ([state get hero-crystal] eq {no})} atheenaCrystal}
                     {"\"Goodbye.\"" yes portalRoom}
                 }
             }
@@ -74,6 +75,15 @@ namespace eval Subspace::Portal {
             {"\"Please turn it on.\"" yes basicPortal}
             {"\"Maybe later.\"" yes portalRoom}
         }
+    }
+
+    proc atheenaCrystal {} {
+        puts "\"Once upon a time, it could be modified. The projector is operated by a\
+        specially-cut diamond. But the bank claimed my diamond as collateral a long time ago.\
+        I haven't been able to redirect the portal since then.\""
+        state put hero-crystal intro
+        puts {}
+        return portalRoom
     }
 
     proc basicPortal {} {

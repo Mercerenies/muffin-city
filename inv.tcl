@@ -32,9 +32,13 @@ namespace eval Inv {
         return $impl
     }
 
-    proc count {} {
+    proc count {{match {}}} {
         variable impl
-        llength $impl
+        if {[string length $match] eq {}} then {
+            llength $impl
+        } else {
+            llength [lsearch -all -exact $impl $match]
+        }
     }
 
     namespace export add remove has all count
