@@ -54,8 +54,8 @@ namespace eval City::Courthouse {
     proc guilty {} {
         switch [state get trial-reason] {
             murder {
-                puts "\"Excellent. Then that makes this easy. I declare the suspect guilty. You will be\
-                sentenced to twenty years in prison.\""
+                puts "\"Excellent. Then that makes this easy. I declare the suspect guilty. You\
+                will be sentenced to twenty years in prison.\""
             }
             escape {
                 puts "\"Right. Then that'll be an additional year added to the end of your sentence.\""
