@@ -31,7 +31,7 @@ namespace eval Warehouse::Outside {
             {"Head east" yes east}
             {"Head west" yes west}
             {"Talk to the robber" {[state get city-thug] eq {island}} northTalk}
-            {"Talk to Attorney-Man" {[state get attorney-man] in {talked talked1}} northAttorney}
+            {"Talk to Attorney-Man" {[state get attorney-man] ni {no met}} northAttorney}
         }
     }
 
@@ -129,13 +129,22 @@ namespace eval Warehouse::Outside {
                     {"\"Good question...\"" yes north}
                 }
             }
-            fed {
+            fed - 1 - 2 {
                 puts "\"Let me know if you know of any cases I could take on.\""
                 prompt {} {
+                    {"\"You could represent me.\"" {[state get attorney-self] eq {no}} northSelf}
                     {"\"Okay.\"" yes north}
                 }
             }
         }
+    }
+
+    proc northSelf {} {
+        puts "\"Ah, an excellent idea! I can repay my debt for the taco in the form of\
+        true justice! If you are ever in a trial, just give me a call!\""
+        state put attorney-self okay
+        puts {}
+        return north
     }
 
     proc northFood {} {

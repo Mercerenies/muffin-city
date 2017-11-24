@@ -41,6 +41,11 @@ namespace eval State {
         hero-blade no
         hero-crystal no
         subspace-portal no
+        attorney-self no
+        attorney-thug no
+        attorney-guard no
+        courthouse-door no
+        judge-muffin no
     }]
 
     proc get {args} {
