@@ -26,7 +26,6 @@ namespace eval Subspace::Taco {
                 }
             }
         }
-        # ////
         prompt {} {
             {"Talk to the bearded man" {[state get taco-shop] eq {no}} tacoMan}
             {"Talk to the Taco Man" {[state get taco-shop] ne {no}} tacoMan}
@@ -81,10 +80,19 @@ namespace eval Subspace::Taco {
             olive - fed {
                 puts "\"Thank you so much! You saved our shop!\""
                 prompt {} {
+                    {"\"Can I get a super special beef 'n' cheese taco?\"" {([state get attorney-man] eq {talked1}) && ![inv has {Super Taco}]} tacoAttorney}
                     {"\"All in a day's work.\"" yes shop}
                 }
             }
         }
+    }
+
+    proc tacoAttorney {} {
+        puts "\"Ah, but of course! You saved our shop! It's the least I can do!\""
+        puts "You got a Super Taco!"
+        inv add {Super Taco}
+        puts {}
+        return shop
     }
 
     proc explain {} {

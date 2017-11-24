@@ -191,6 +191,7 @@
   - diveIn
   - northTalk
   - northAttorney
+  - northFood
 
 [Past]
 * [Science]
@@ -251,6 +252,7 @@
   - joe
   - joe1
   - tacoMan
+  - tacoAttorney
   - explain
   - olive
 * [Portal]
@@ -279,6 +281,7 @@
 * Lantern (TBA)
 * Courthouse Key
 * Stolen Suitcase
+* Super Taco
 
 (Money Sources / Sinks)
 + Shady Alley (sa-coin)
@@ -519,9 +522,13 @@ Atheena the Hero
       game moves to `talked`.
   (*) talked
       Attorney-Man in the past will say simply that he will embark on a journey soon. In the present,
-      Attorney-Man appears (somewhere)
-      //// Finish me
+      Attorney-Man appears on the northern side of the warehouse island. When spoken to, he will ask
+      for a taco and the game will move to `talked1`.
   (*) talked1
+      Attorney-Man in the past will continue saying he will embark soon. In the present, Attorney-Man
+      remains on the warehouse island and continues asking for food. If the player has given the
+      Taco Man an olive (taco-shop is `olive` or `fed`), then the player can request a taco from
+      the Taco Man. Delivering this taco to Attorney-Man moves to the game to `fed`.
   (*) fed ////
   (*) 1 ////
   (*) 2 ////

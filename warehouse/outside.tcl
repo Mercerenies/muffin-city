@@ -20,6 +20,10 @@ namespace eval Warehouse::Outside {
                 puts -nonewline " Attorney-Man is lying on the ground, staring up at\
                 the sky."
             }
+            fed {
+                puts -nonewline " Attorney-Man is standing up, his arms folded, ready to\
+                deliver justice."
+            }
         }
         puts {}
         # //// Something interesting here
@@ -121,10 +125,27 @@ namespace eval Warehouse::Outside {
                 puts "\"My fist of justice must be fed. A super special beef 'n' cheese\
                 taco would do. But where could I possibly get one?\""
                 prompt {} {
+                    {"Give him a Super Taco" {[inv has {Super Taco}]} northFood}
                     {"\"Good question...\"" yes north}
                 }
             }
+            fed {
+                puts "\"Let me know if you know of any cases I could take on.\""
+                prompt {} {
+                    {"\"Okay.\"" yes north}
+                }
+            }
         }
+    }
+
+    proc northFood {} {
+        puts "You hand Attorney-Man a Super Taco."
+        inv remove {Super Taco}
+        state put attorney-man fed
+        puts "\"Ahhhh! Perfect! If you ever have anyone in need of a lawyer, let me\
+        know!\""
+        puts {}
+        return north
     }
 
 }
