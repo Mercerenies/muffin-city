@@ -8,7 +8,8 @@ namespace eval Prison::South {
                 set guardDesc "A lone woman stands guarding the gate."
             }
             default {
-                set guardDesc "A mustached man stands alone, guarding the prison gate."
+                set guardDesc "A mustached man stands alone, guarding the prison gate, with a\
+                donut in each hand."
             }
         }
         puts "You find yourself on the inside of the prison gate, just a thick chainlink fence shielding\
