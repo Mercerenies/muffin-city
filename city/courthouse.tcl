@@ -119,9 +119,15 @@ namespace eval City::Courthouse {
 
     proc inside {} {
         puts "== Courthouse Foyer =="
-        puts "At this hour, the courthouse is deserted. The foyer consists of two floors.\
-        Upstairs, the courtroom doors are still open. Downstairs, there is a row of\
-        offices down a hallway."
+        puts -nonewline "At this hour, the courthouse is deserted. The foyer consists of\
+        two floors. Upstairs, the courtroom doors are still open. Downstairs, there is a\
+        row of offices down a hallway."
+        if {[state get courtroom-key] eq {no}} then {
+            puts {}
+        } else {
+            puts " A window off to the left is broken and has been hastily repaired with\
+            some wooden beams."
+        }
         prompt {} {
             {"Go upstairs" yes courtroom}
             {"Go down the hall" yes halls}

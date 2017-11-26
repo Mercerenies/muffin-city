@@ -666,6 +666,7 @@ NOTES:
  * Help someone escape from prison by creating a diversion on entry
  * The subspace bank forecloses some important building or structure, requiring you to break into their vault to get the key and reopen it
  * The stolen luggage will let you hide in the cargo hold of the dream train to make it back to the dream world
+ * Diving into the warehouse island water with scuba suit will result in an underwater merfolk cavern
 
 SCIENCE:
  *    Club Room - Time Machine  - Free on First Access
