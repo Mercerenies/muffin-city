@@ -7,6 +7,10 @@ namespace eval Warehouse::Outside {
         puts "== Secret Island - North =="
         puts -nonewline "The path leads around the back of the warehouse. There is nothing of\
         interest here except a few trees."
+        if {([state get city-thug] eq {island}) &&
+            ([state get attorney-man] in {fed 1 2 done complete})} then {
+            return northEncounter
+        }
         if {[state get city-thug] eq {island}} then {
             puts -nonewline " The man who robbed you back in the city is sitting on a rock down\
             by the sea."
@@ -20,7 +24,7 @@ namespace eval Warehouse::Outside {
                 puts -nonewline " Attorney-Man is lying on the ground, staring up at\
                 the sky."
             }
-            fed {
+            fed 1 2 done complete {
                 puts -nonewline " Attorney-Man is standing up, his arms folded, ready to\
                 deliver justice."
             }
@@ -136,6 +140,14 @@ namespace eval Warehouse::Outside {
                     {"\"Okay.\"" yes north}
                 }
             }
+            done {
+                # ////
+                return -gameover
+            }
+            complete {
+                # ////
+                return -gameover
+            }
         }
     }
 
@@ -155,6 +167,32 @@ namespace eval Warehouse::Outside {
         know!\""
         puts {}
         return north
+    }
+
+    proc northEncounter {} {
+        puts {}
+        puts "Attorney-Man and the robber from the city are both here. Attorney-Man approaches\
+        the robber with his usual flamboyant attitude and begins preaching to him about justice."
+        puts "\"Okay! Fine! I'll give it back! Ya hear! I'm givin' it back!\""
+        puts "The robber tosses your [state get stolen-good] at you."
+        puts "You got a [state get stolen-good]!"
+        puts "\"Excellent! Justice has been served! Now go confess to your crimes, and\
+        Attorney-Man will be there to defend your honor!\""
+        puts "The robber runs off."
+        inv add [state get stolen-good]
+        state put stolen-good {}
+        state put city-thug no
+        if {[state get attorney-thug] eq {no}} then {
+            state put attorney-thug yes
+            state put attorney-man [switch [state get attorney-man] {
+                fed 1
+                1 2
+                2 done
+            }]
+        }
+        prompt {} {
+            {"\"Thank you.\"" yes north}
+        }
     }
 
 }

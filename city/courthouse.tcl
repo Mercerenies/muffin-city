@@ -99,7 +99,7 @@ namespace eval City::Courthouse {
         if {[state get attorney-self] eq {okay}} then {
             state put attorney-self yes
             state put attorney-man [switch [state get attorney-man] {
-                accepted 1
+                fed 1
                 1 2
                 2 done
             }]

@@ -201,6 +201,7 @@
   - northAttorney
   - northSelf
   - northFood
+  - northEncounter
 
 [Past]
 * [Science]
@@ -440,7 +441,10 @@ Atheena the Hero
       The robber will end up on the Warehouse island. The player can talk to him. The robber will
       say that he ended up not needing the player's money and will return whatever he stole
       (stolen-good). He will then leave and the game will revert to `no`. Alternatively, telling
-      the police will result in the `hunted` state.
+      the police will result in the `hunted` state. If the player approaches the Warehouse island
+      while Attorney-Man is also serving justice there (attorney-man in state `fed` or above),
+      Attorney-Man will automatically chastise him, sending the game back to `no` and returning
+      the stolen item.
   (*) hiding ////
       The robber will be on the Dream Train. The player can talk to him, where he will apologize for
       shooting the player and claim that it was "just business". The game then moves to `no` as the
