@@ -193,6 +193,13 @@
 * [World]
   - suitcase
   - unclaimed
+  - commons
+  - station
+  - pier
+  - airport
+  - conductor
+  - third
+  - thirdRoom
 
 [Warehouse]
 * [Outside]
