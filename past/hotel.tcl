@@ -23,7 +23,7 @@ namespace eval Past::Hotel {
         }
         prompt {} {
             {"Take the luggage" {[state get has-suitcase] eq {no}} ritzyLuggage}
-            {"Go to sleep" yes ::Dream::Transit::firstRoom}
+            {"Go to sleep" yes {::Dream::Transit::awaken ::Dream::Transit::firstRoom}}
             {"Exit the room" yes ritzyHall}
         }
     }

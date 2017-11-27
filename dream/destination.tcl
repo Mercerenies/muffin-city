@@ -3,8 +3,8 @@ namespace eval Dream::Destination {
 
     proc third {} {
         puts "== 3rd Class Car =="
-        puts "The car is completely abandoned and the lights appear to be off. The door exiting the train is\
-        open."
+        puts "The car is completely abandoned and the lights appear to be off. The door exiting\
+        the train is open."
         prompt {} {
             {"Go backward one car" yes {locked third}}
             {"Go forward one car" yes {locked third}}
@@ -15,8 +15,8 @@ namespace eval Dream::Destination {
 
     proc second {} {
         puts "== 2nd Class Car =="
-        puts "The car is completely abandoned and the lights appear to be off. The door exiting the train is\
-        open."
+        puts "The car is completely abandoned and the lights appear to be off. The door exiting\
+        the train is open."
         prompt {} {
             {"Go backward one car" yes {locked second}}
             {"Go forward one car" yes {locked second}}
@@ -27,8 +27,8 @@ namespace eval Dream::Destination {
 
     proc first {} {
         puts "== 1st Class Car =="
-        puts "The car is completely abandoned and the lights appear to be off. The door exiting the train is\
-        open."
+        puts "The car is completely abandoned and the lights appear to be off. The door\
+        exiting the train is open."
         prompt {} {
             {"Go backward one car" yes {locked first}}
             {"Go forward one car" yes {locked first}}
@@ -47,7 +47,8 @@ namespace eval Dream::Destination {
 
     proc secondRoom {} {
         puts "== 2nd Class Room =="
-        puts -nonewline "It seems that the train has stopped moving. You must have reached your destination."
+        puts -nonewline "It seems that the train has stopped moving. You must have reached\
+        your destination."
         if {![state get muffin-second]} then {
             puts " There is a muffin sitting on the nightstand next to your bed."
         } else {
@@ -75,11 +76,11 @@ namespace eval Dream::Destination {
     }
 
     proc offTrain {} {
-        puts "You step off the train and are greeted by a man who could easily be the caption of the dictionary\
-        entry for \"train conductor\", complete with the hat and button-down suit."
+        puts "You step off the train and are greeted by a man who could easily be the caption\
+        of the dictionary entry for \"train conductor\", complete with the hat and button-down suit."
         puts "\"Good evening. We sincerely hope you enjoyed your ride.\""
-        puts "The conductor ushers you off the train, before stepping back in and signalling to the engineer\
-        that it is time to go. The train sets off, leaving you alone."
+        puts "The conductor ushers you off the train, before stepping back in and signalling to\
+        the engineer that it is time to go. The train sets off, leaving you alone."
         puts {}
         return ::City::District::entrance
     }

@@ -19,7 +19,7 @@ namespace eval City::Hotel {
         desk lamp sitting on a desk adjacent to it. You have a connected restroom with a small shower and\
         nothing more."
         prompt {} {
-            {"Go to sleep" yes ::Dream::Transit::thirdRoom}
+            {"Go to sleep" yes {::Dream::Transit::awaken ::Dream::Transit::thirdRoom}}
             {"Go back out" yes shabbyJack}
         }
     }
@@ -92,7 +92,7 @@ namespace eval City::Hotel {
         bed accompanied by a large sofa and a color television. The adjoining restroom has a\
         large bathtub and a double sink."
         prompt {} {
-            {"Go to sleep" yes ::Dream::Transit::firstRoom}
+            {"Go to sleep" yes {::Dream::Transit::awaken ::Dream::Transit::firstRoom}}
             {"Exit the room" yes ritzyHall}
         }
     }

@@ -175,6 +175,9 @@
   - secondRoom
   - firstRoom
   - thirdTalk
+  - hideFail
+  - hideSuccess
+  - suitcase
   - awaken <room>
   - sleep <room>
 * [Destination]
@@ -187,6 +190,9 @@
   - locked <back>
   - offTrain
   - takeMuffin
+* [World]
+  - suitcase
+  - unclaimed
 
 [Warehouse]
 * [Outside]
