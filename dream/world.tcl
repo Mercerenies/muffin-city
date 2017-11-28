@@ -18,22 +18,47 @@ namespace eval Dream::World {
         other suitcases and boxes here. A staircase leads up and out of the area."
         # /////
         prompt {} {
-            {"Go up the stairs" yes commons}
+            {"Go up the stairs" yes {commons 1}}
         }
     }
 
-    proc commons {} {
+    proc commons {depth} {
         puts "== Floating Commons =="
-        puts "You are on a central platform with several modes of transportation surrounding\
-        it. The area, and especially the horizon, is odd, and your eyes can't properly focus\
-        on any single object. There appears to be a train station to the left, a pier to the\
-        right, and an airport straight ahead. A set of stairs leads down into an underground\
-        room. The platform seems to be suspended in midair, held above an empty void by nothing."
-        prompt {} {
-            {"Go to the station" yes station}
-            {"Go to the pier" yes pier}
-            {"Go to the airport" yes airport}
-            {"Go downstairs" yes unclaimed}
+        switch $depth {
+            1 {
+                puts "You are on a central platform with several modes of transportation surrounding\
+                it. The area, and especially the horizon, is odd, and your eyes can't properly focus\
+                on any single object. There appears to be a train station to the left, a pier to the\
+                right, and an airport straight ahead. A set of stairs leads down into an underground\
+                room. The platform seems to be suspended in midair, held above an empty void by\
+                nothing."
+                prompt {} {
+                    {"Go to the station" yes station}
+                    {"Go to the pier" yes {pier 1}}
+                    {"Go to the airport" yes airport}
+                    {"Go downstairs" yes unclaimed}
+                }
+            }
+            2 {
+                puts "The commons is more blurry than usual. Your vision is very unfocused."
+                prompt {} {
+                    {"Go to the station" yes {clear station}}
+                    {"Go to the pier" yes {pier 2}}
+                    {"Go to the airport" yes {clear airport}}
+                    {"Go downstairs" yes {clear unclaimed}}
+                }
+            }
+            3 {
+                puts "You can barely see anything. If not for the fact that you've been\
+                here before, it is unlikely that you would be able to navigate the area\
+                cleanly."
+                prompt {} {
+                    {"Go to the station" yes {clear station}}
+                    {"Go to the pier" yes {pier 3}}
+                    {"Go to the airport" yes {clear airport}}
+                    {"Go downstairs" yes {clear unclaimed}}
+                }
+            }
         }
     }
 
@@ -44,23 +69,39 @@ namespace eval Dream::World {
         prompt {} {
             {"Talk to the conductor" yes conductor}
             {"Board the train" yes third}
-            {"Go back to the commons" yes commons}
+            {"Go back to the commons" yes {commons 1}}
         }
     }
 
-    proc pier {} {
+    proc pier {depth} {
         puts "== Floating Pier =="
-        # ////
-        prompt {} {
-            {"Go back to the commons" yes commons}
-        }
+        puts "The pier floats over an infinite void. You fail to see how a boat could sail\
+        on this void, as there seems to be no water."
+        # //// Boat
+        set option1 "{Leap over the edge} yes {pierEdge $depth}"
+        set option2 "{Go back to the commons} yes {commons $depth}"
+        prompt {} [list $option1 $option2]
     }
 
     proc airport {} {
         puts "== Airport =="
         # ////
         prompt {} {
-            {"Go back to the commons" yes commons}
+            {"Go back to the commons" yes {commons 1}}
+        }
+    }
+
+    proc pierEdge {depth} {
+        if {$depth >= 3} then {
+            puts "You leap into the infinite void and fall. After falling for a time, you land\
+            in a strange room where the only sound in the hum of several computers."
+            # //// Console room
+            return -gameover
+        } else {
+            puts "You leap into the infinite void and fall. After falling for a time, you land\
+            very suddenly in the common area near the pier."
+            puts {}
+            return "commons [expr {$depth + 1}]"
         }
     }
 
@@ -91,6 +132,12 @@ namespace eval Dream::World {
             {"Go to sleep" yes {::Dream::Transit::sleep ::Dream::Destination::thirdRoom}}
             {"Exit the room" yes third}
         }
+    }
+
+    proc clear {room} {
+        puts "Your vision suddenly clears."
+        puts {}
+        return $room
     }
 
 }

@@ -193,13 +193,15 @@
 * [World]
   - suitcase
   - unclaimed
-  - commons
+  - commons <depth>
   - station
-  - pier
+  - pier <depth>
   - airport
+  - pierEdge <depth>
   - conductor
   - third
   - thirdRoom
+  - clear <room>
 
 [Warehouse]
 * [Outside]
@@ -427,6 +429,7 @@ Attorney-Man
 The Taco Man
 Joe the Time-Traveler
 Atheena the Hero
+Train Conductor
 
 -------- EVENTS --------
 

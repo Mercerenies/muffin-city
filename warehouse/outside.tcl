@@ -1,7 +1,7 @@
 
 namespace eval Warehouse::Outside {
 
-    # /////
+    # ///// Attorney-Man guard
 
     proc north {} {
         puts "== Secret Island - North =="
