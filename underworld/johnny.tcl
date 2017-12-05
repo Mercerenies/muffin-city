@@ -18,6 +18,7 @@ namespace eval Underworld::Johnny {
                 puts "\"Oh, it's you! Do you have any souls for me today?\""
                 prompt {} {
                     {"Give him Inmate's Soul" {[inv has {Inmate's Soul}]} {given {Inmate's Soul}}}
+                    {"Give him Guard's Soul" {[inv has {Guard's Soul}]} {given {Guard's Soul}}}
                     {"\"Not right now.\"" yes ::Underworld::Elevator::balcony}
                 }
             }
@@ -55,6 +56,10 @@ namespace eval Underworld::Johnny {
                 set desc "Ah, the soul of a prison inmate! A wonderful dominating force to keep\
                 the other souls in check."
             }
+            {Guard's Soul} {
+                set desc "Ooh, a prison guard's soul! Every good collection needs one of these,\
+                to keep things civil."
+            }
             default {
                 set desc "Marvelous! I've never seen this kind of soul before!"
             }
@@ -69,7 +74,15 @@ namespace eval Underworld::Johnny {
                 state put johnny-quest 1
             }
             1 {
-                # ////
+                puts "\"$desc Excellent! Just one more soul and my collection will be perfect!\""
+                puts "\"Hey, let me see that Elevator Access Key for a sec.\""
+                puts "Johnny takes your Elevator Access Key and breathes on it. His breath\
+                materializes as thick smoke. When he is done, he hands you the Upgraded Elevator\
+                Access Key."
+                inv remove {Elevator Access Key}
+                inv add {Upgraded Elevator Access Key}
+                puts "\"Now you can use more of the buttons on the elevator.\""
+                state put johnny-quest 2
             }
             2 - default {
                 # ////

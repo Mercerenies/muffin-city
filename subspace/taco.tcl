@@ -5,6 +5,15 @@ namespace eval Subspace::Taco {
         puts "== Subspace Taco Shop =="
         puts -nonewline "The pleasant aroma of tacos is a refreshing break from the\
         emptiness of the remainder of subspace."
+        if {[state get prison-guard] eq {cleared}} then {
+            if {[state get guard-soul] eq {yes}} then {
+                puts -nonewline " The woman guard from the prison is sitting at a table,\
+                staring down at the table."
+            } else {
+                puts -nonewline " The woman guard from the prison is sitting at a table,\
+                looking rather annoyed."
+            }
+        }
         switch [state get taco-shop] {
             no {
                 puts " An older, bearded man behind the counter is panicking and looking\
@@ -31,8 +40,36 @@ namespace eval Subspace::Taco {
             {"Talk to the Taco Man" {[state get taco-shop] ne {no}} tacoMan}
             {"Talk to the man at the table" {([state get taco-shop] eq {fed}) && ([state get pawn-shop-pass] eq {no})} joe}
             {"Talk to Joe" {([state get taco-shop] eq {fed}) && ([state get pawn-shop-pass] ne {no})} joe}
+            {"Talk to the woman" {[state get prison-guard] eq {cleared}} woman}
             {"Head back outside" yes ::Subspace::Hub::hub}
         }
+    }
+
+    proc woman {} {
+        if {[state get guard-soul] eq {yes}} then {
+            puts "The woman does not make eye contact with you and does not respond\
+            as you greet her."
+            puts {}
+            return shop
+        } else {
+            puts "\"What do you want?\""
+            if {![state get guard-soul] && [inv has {Soul Crystal}]} then {
+                puts "... Your Soul Crystal starts vibrating in your pocket."
+            }
+            prompt {} {
+                {"Use the Soul Crystal" {![state get guard-soul] && [inv has {Soul Crystal}]} stealing}
+                {"\"Never mind.\"" yes shop}
+            }
+        }
+    }
+
+    proc stealing {} {
+        puts "You activate your Soul Crystal, and a floating essence emerges from the guard,\
+        not unlike the essences in Johnny Death's display case. You got the Guard's Soul!"
+        inv add {Guard's Soul}
+        state put guard-soul yes
+        puts {}
+        return shop
     }
 
     proc joe {} {

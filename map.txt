@@ -279,6 +279,8 @@
   - atticExpand
 * [Taco]
   - shop
+  - woman
+  - stealing
   - joe
   - joe1
   - tacoMan
@@ -298,7 +300,7 @@
 * Platinum Card
 * Soul Crystal
 * Elevator Access Key
-* Upgraded Elevator Access Key (TBA)
+* Upgraded Elevator Access Key
 * Inmate's Soul
 * Ritzy Inn Room Key
 * Motel Room Key
@@ -312,6 +314,7 @@
 * Courthouse Key
 * Stolen Suitcase
 * Super Taco
+* Guard's Soul
 
 (Money Sources / Sinks)
 + Shady Alley (sa-coin)
@@ -415,6 +418,7 @@ World States:
  * attorney-thug {no yes}
  * attorney-guard {no okay seen yes}
  * courthouse-door {no yes}
+ * guard-soul {no yes}
 
 -------- CHARACTERS --------
 
@@ -572,9 +576,15 @@ Train Conductor
       remains on the warehouse island and continues asking for food. If the player has given the
       Taco Man an olive (taco-shop is `olive` or `fed`), then the player can request a taco from
       the Taco Man. Delivering this taco to Attorney-Man moves to the game to `fed`.
-  (*) fed ////
-  (*) 1 ////
-  (*) 2 ////
+  (*) fed
+      In this state, Attorney-Man will wait for cases. The player can deliver his own case
+      (attorney-self), the robber's case (attorney-thug), and the prison guard's case
+      (attorney-guard). Each of these moves the game forward, first into `1`, then `2`,
+      then `done`.
+  (*) 1
+      See `fed`.
+  (*) 2
+      See `fed`.
   (*) done ////
   (*) complete ////
 

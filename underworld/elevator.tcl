@@ -71,7 +71,7 @@ namespace eval Underworld::Elevator {
     }
 
     proc lift {back} {
-        if {[inv has {Elevator Access Key}]} then {
+        if {[inv has {Elevator Access Key}] || [inv has {Upgraded Elevator Access Key}]} then {
             puts "== Elevator =="
             puts "The elevator is relatively small, only big enough for two or three people. There\
             are a handful of buttons on the panel, but only a few of them are lit up."
