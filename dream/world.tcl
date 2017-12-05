@@ -85,10 +85,51 @@ namespace eval Dream::World {
 
     proc airport {} {
         puts "== Airport =="
-        # ////
+        puts -nonewline "The airport is indoors, but as you look around you feel as\
+        though the walls are thin and possibly not even there."
+        if {[state get prison-guard] eq {search}} then {
+            puts " The mustached prison guard is sitting on a bench in the corner.\
+            Despite the saddened look on his face, he is still holding a donut in each\
+            hand."
+        } else {
+            puts {}
+        }
         prompt {} {
+            {"Talk to the guard" {[state get prison-guard] eq {search}} airportGuard}
+            {"Pass through the walls" yes airportWall}
             {"Go back to the commons" yes {commons 1}}
         }
+    }
+
+    proc airportWall {} {
+        puts "You pass effortlessly through the wall and end up on the other side of\
+        the room."
+        # //// If you have a specific item, this goes elsewhere
+        puts {}
+        return airport
+    }
+
+    proc airportGuard {} {
+        if {[state get attorney-guard] eq {okay}} then {
+            puts "\"Ngh... thanks...\""
+            puts {}
+            return airport
+        } else {
+            puts "\"Ngh... such a pain... fired for taking bribes... I need a lawyer...\
+            such a pain...\""
+            # //// Attorney-Man!
+            prompt {} {
+                {"Tell him about Attorney-Man" {([state get attorney-man] in {fed 1 2 done}) && ([state get attorney-guard] eq {no})} airportGuardOkay}
+                {"\"I'm sorry.\"" yes airport}
+            }
+        }
+    }
+
+    proc airportGuardOkay {} {
+        puts "\"Hm? ... ... a lawyer... okay... fine...\""
+        state put attorney-guard okay
+        puts {}
+        return airport
     }
 
     proc pierEdge {depth} {

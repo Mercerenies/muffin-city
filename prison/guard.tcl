@@ -17,6 +17,14 @@ namespace eval Prison::Guard {
                     {"\"What if the warden were to find out about our little bribe?\"" yes free}
                 }
             }
+            cleared {
+                puts "\"Ngh... good to be back...\""
+                prompt {} {
+                    {"Go inside" yes ::Prison::South::hallway}
+                    {"\"Did Attorney-Man help you?\"" {[state get attorney-guard] ne {yes}} attorney}
+                    {"\"Can you open the gate?\"" {[state get attorney-guard] eq {yes}} free1}
+                }
+            }
             default {
                 puts "\"Ngh... all these prisoners... so much work...\""
                 prompt {} {
@@ -24,6 +32,19 @@ namespace eval Prison::Guard {
                     {"Bribe the guard with a Silver Coin" {[inv has {Silver Coin}]} bribe}
                 }
             }
+        }
+    }
+
+    proc attorney {} {
+        puts "\"Huh...? Oh... yeah... he's a good lawyer...\""
+        state put attorney-guard yes
+        state put attorney-man [switch [state get attorney-man] {
+            fed 1
+            1 2
+            2 done
+        }]
+        prompt {} {
+            {"Go inside" yes ::Prison::South::hallway}
         }
     }
 
@@ -39,6 +60,15 @@ namespace eval Prison::Guard {
         puts "\"... Ugh... what a pain. You can go... just don't come back...\""
         puts "The guard opens the prison gate."
         state put prison-guard fired
+        state put awaiting-bus trees
+        prompt {} {
+            {"Leave the prison" yes ::Prison::Forest::gate}
+        }
+    }
+
+    proc free1 {} {
+        puts "\"... Oh, sure... just for helping me... ngh...\""
+        puts "The guard opens the prison gate."
         state put awaiting-bus trees
         prompt {} {
             {"Leave the prison" yes ::Prison::Forest::gate}

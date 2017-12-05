@@ -3,6 +3,10 @@ namespace eval Prison::South {
 
     proc gate {} {
         puts "== Prison Gate - Inside =="
+        if {[state get attorney-guard] eq {okay}} then {
+            state put attorney-guard seen
+            state put prison-guard cleared
+        }
         switch [state get prison-guard] {
             fired - search {
                 set guardDesc "A lone woman stands guarding the gate."

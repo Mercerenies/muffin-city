@@ -105,8 +105,11 @@
   - diningTalk
 * [Guard]
   - talk
+  - attorney
   - fired
   - free
+  - free1
+  - bribe
 * [Exercise]
   - fields
   - talking
@@ -197,6 +200,8 @@
   - station
   - pier <depth>
   - airport
+  - airportWall
+  - airportGuard
   - pierEdge <depth>
   - conductor
   - third
@@ -362,7 +367,7 @@ Oatmeal Raisin
 Events:
  * city-thug {no stalking chasing island hiding hunted caught}
  * trial-crime {no court prison}
- * prison-guard {no paid fired search}
+ * prison-guard {no paid fired search cleared}
  * johnny-quest {no accepted 1 2 done}
  * butler-game {no cell pawn}
  * attorney-man {no met talked talked1 fed 1 2 done complete}
@@ -408,7 +413,7 @@ World States:
  * subspace-portal {no river}
  * attorney-self {no okay yes}
  * attorney-thug {no yes}
- * attorney-guard {no okay yes}
+ * attorney-guard {no okay seen yes}
  * courthouse-door {no yes}
 
 -------- CHARACTERS --------
@@ -502,16 +507,18 @@ Train Conductor
       Silver Coin, releasing the player back to the city and moving to `paid`. Note that even though
       the player has been freed from prison, he does not have a clean record and will be arrested on
       sight if he returns to the police station.
-  (*) paid ////
+  (*) paid
       If the player ends up in prison again, the guard will still be there. He will initially resist
       releasing the player but will relent when reminded of the bribe. The player is released and the
       game moves to `fired`.
-  (*) fired ////
+  (*) fired
       The third time the player is in prison, there will be a female guard in place of the original
       guard. She will not be amenable to bribes and will not release the player. When the player
       speaks to her, the game moves to `search`.
   (*) search
       //// Where is the guard? We need to find him and give him a lawyer
+  (*) cleared
+      ////
 
 4. Johnny Death Event (johnny-quest)
   (*) no
@@ -670,7 +677,9 @@ h. The Courthouse Door (courthouse-door)
       will be locked again and the game will move to `no`.
 
 TEST:
- * Johnny Death, start to finish (by hacking in the soul items)
+ * Johnny Death, start to finish
+ * Attorney-Man, start to finish
+ * Merchant-bot, I'm just happy these lines line up so nicely
 
 NOTES:
  * Cave will lead somewhere cool if you have a light (inverse city)
