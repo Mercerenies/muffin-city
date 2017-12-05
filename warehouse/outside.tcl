@@ -30,7 +30,7 @@ namespace eval Warehouse::Outside {
             }
         }
         puts {}
-        # //// Something interesting here
+        # //// What happens if you've completed all the quests and talk to him (state = done)?
         prompt {} {
             {"Head east" yes east}
             {"Head west" yes west}
