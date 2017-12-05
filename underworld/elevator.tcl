@@ -70,7 +70,7 @@ namespace eval Underworld::Elevator {
         }
     }
 
-    # //// The rest of Johnny Death
+    # ///// The rest of Johnny Death, then space
 
     proc lift {back} {
         if {[inv has {Elevator Access Key}] || [inv has {Upgraded Elevator Access Key}]} then {
