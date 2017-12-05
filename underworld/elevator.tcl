@@ -70,15 +70,23 @@ namespace eval Underworld::Elevator {
         }
     }
 
+    # //// The rest of Johnny Death
+
     proc lift {back} {
         if {[inv has {Elevator Access Key}] || [inv has {Upgraded Elevator Access Key}]} then {
             puts "== Elevator =="
-            puts "The elevator is relatively small, only big enough for two or three people. There\
-            are a handful of buttons on the panel, but only a few of them are lit up."
+            puts -nonewline "The elevator is relatively small, only big enough for two or\
+            three people."
+            if {[inv has {Upgraded Elevator Access Key}]} then {
+                puts "As you enter the elevator, all of the buttons on the panel light up."
+            } else {
+                puts "There are a handful of buttons on the panel, but only a few of them are lit up."
+            }
             # //// There will be an outer space option here eventually
             prompt {} {
                 {"Go to the underworld" yes tunnel}
                 {"Go to the overworld" yes ::City::District::shopping}
+                {"Go to outer space" yes ::Empty::place}
             }
         } else {
             puts "The elevator seems to require a key to operate..."

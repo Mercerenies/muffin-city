@@ -532,10 +532,13 @@ Train Conductor
       the Underworld. The game moves to `accepted`.
   (*) accepted
       Johnny is waiting to receive souls from the player. The souls that are available are in
-      the prison exercise fields (exercise-soul), ... ////
-      When the first soul is brought to him, Johnny will tell the player about Dr. Cipher's invention
-      //// Rewards the player with each advanced state
-  (*) 1 ////
+      the prison exercise fields (exercise-soul), the subspace taco shop (guard-soul), and ...
+      When the first soul is brought to him, Johnny will tell the player about Dr. Cipher's
+      invention and the game will move to `1`.
+  (*) 1
+      Johnny is waiting to receive more souls. When the second soul is brought to him, Johnny
+      will upgrade the player's Elevator Access Key into an Upgraded Elevator Access Key. The
+      game will then move to `2`.
   (*) 2 ////
   (*) done ////
 
