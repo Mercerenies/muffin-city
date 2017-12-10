@@ -19,6 +19,7 @@ namespace eval Underworld::Johnny {
                 prompt {} {
                     {"Give him Inmate's Soul" {[inv has {Inmate's Soul}]} {given {Inmate's Soul}}}
                     {"Give him Guard's Soul" {[inv has {Guard's Soul}]} {given {Guard's Soul}}}
+                    {"Give him Hunter's Soul" {[inv has {Hunter's Soul}]} {given {Hunter's Soul}}}
                     {"\"Not right now.\"" yes ::Underworld::Elevator::balcony}
                 }
             }
@@ -60,6 +61,10 @@ namespace eval Underworld::Johnny {
                 set desc "Ooh, a prison guard's soul! Every good collection needs one of these,\
                 to keep things civil."
             }
+            {Hunter's Soul} {
+                set desc "Hm, a hunter's soul! This should certainly shake things up in my...\
+                collection."
+            }
             default {
                 set desc "Marvelous! I've never seen this kind of soul before!"
             }
@@ -84,8 +89,15 @@ namespace eval Underworld::Johnny {
                 puts "\"Now you can use more of the buttons on the elevator.\""
                 state put johnny-quest 2
             }
-            2 - default {
-                # ////
+            2 {
+                puts "\"$desc It's done! My collection is perfect!\""
+                puts "\"Listen, I want to thank you. I'll open up all the rooms in the\
+                lobby. You can visit them anytime you want.\""
+                state put lobby-door yes
+                state put johnny-quest done
+            }
+            default {
+                puts "\"Thank you!\""
             }
         }
         puts {}

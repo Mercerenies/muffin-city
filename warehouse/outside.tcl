@@ -94,7 +94,9 @@ namespace eval Warehouse::Outside {
 
     proc diveIn {} {
         puts "You leap into the water without a second thought."
-        state put lobby-door other
+        if {[state get lobby-door] ne {yes}} then {
+            state put lobby-door other
+        }
         puts {}
         return ::Underworld::Lobby::other
     }

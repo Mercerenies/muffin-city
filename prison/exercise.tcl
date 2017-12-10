@@ -57,7 +57,9 @@ namespace eval Prison::Exercise {
     proc fight {} {
         puts "\"That's it. You're going down!\""
         puts "The prisoner takes a small dagger from his boot and thrusts it into your chest."
-        state put lobby-door murder
+        if {[state get lobby-door] ne {yes}} then {
+            state put lobby-door murder
+        }
         puts {}
         return ::Underworld::Lobby::murder
     }

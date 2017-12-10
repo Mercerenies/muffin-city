@@ -4,12 +4,13 @@ namespace eval Prison::Forest {
     proc gate {} {
         puts "== Prison Gate - Outside =="
         if {[state get awaiting-bus] eq {yes}} then {
-            puts "You are on the outside of the prison gate. There is a bus parked on the curb. The bus driver\
-            is waving you down."
-            puts "\"Oi! You're that prisoner who was just released, right? I'm here to take you back into town!\""
+            puts "You are on the outside of the prison gate. There is a bus parked on the curb. The\
+            bus driver is waving you down."
+            puts "\"Oi! You're that prisoner who was just released, right? I'm here to take you\
+            back into town!\""
         } else {
-            puts "You are on the outside of the prison gate. There is a single road running outside the prison,\
-            and opposite it sits a large forest."
+            puts "You are on the outside of the prison gate. There is a single road running outside\
+            the prison, and opposite it sits a large forest."
         }
         prompt {} {
             {"Go into the forest" yes trees}
@@ -22,13 +23,53 @@ namespace eval Prison::Forest {
         if {[state get awaiting-bus] eq {trees}} then {
             state put awaiting-bus yes
         }
-        puts "The forest treeline is very thick, but a rough path seems to run across it, leaading to a river\
-        on one side and a cave on the other."
+        if {[state get hunter-trail] eq {no}} then {
+            state put hunter-trail visited
+        }
+        puts -nonewline "The forest treeline is very thick, but a rough path seems to run\
+        across it, leaading to a river on one side and a cave on the other."
+        if {[state get hunter-trail] eq {forest}} then {
+            puts " The hunter from Shabby Jack's is standing by a tree."
+        } else {
+            puts {}
+        }
         prompt {} {
+            {"Talk to the hunter" {[state get hunter-trail] eq {forest}} hunter}
             {"Go back to the prison" yes gate}
             {"Enter the cave" yes cave}
             {"Head toward the river" yes river}
         }
+    }
+
+    proc hunter {} {
+        puts "\"Hey, you were right! This is great huntin' spot!\""
+        prompt {} {
+            {"\"You should check out that cave.\"" yes hunter1}
+            {"\"Glad I could help.\"" yes trees}
+        }
+    }
+
+    proc hunter1 {} {
+        puts "\"Huh? That cave is pitch black. I dunno that that's such a good idea...\""
+        prompt {} {
+            {"\"Sure it is. You've got your gun!\"" yes hunter2}
+            {"\"Maybe you're right...\"" yes trees}
+        }
+    }
+
+    proc hunter2 {} {
+        puts "\"Nah, I think I should stay out here...\""
+        prompt {} {
+            {"\"Fair enough...\"" yes trees}
+            {"\"Chicken!\"" yes hunter3}
+        }
+    }
+
+    proc hunter3 {} {
+        puts "The hunter races into the cave without another word."
+        state put hunter-trail under
+        puts {}
+        return trees
     }
 
     proc river {} {
@@ -93,7 +134,9 @@ namespace eval Prison::Forest {
 
     proc caveDeath {} {
         puts "You press onward. The growling gets louder, and you can see nothing."
-        state put lobby-door wildlife
+        if {[state get lobby-door] ne {yes}} then {
+            state put lobby-door wildlife
+        }
         puts {}
         return ::Underworld::Lobby::wildlife
     }

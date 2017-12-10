@@ -12,13 +12,31 @@ namespace eval Underworld::Lobby {
 
     proc wildlife {} {
         puts "== Wildlife Room =="
-        puts "You find yourself in a rounded room. There are stuffed bears and lions mounted on the\
-        walls. Between two rather intimidating bears, there is a single door leading out of the room."
+        puts -nonewline "You find yourself in a rounded room. There are stuffed bears and\
+        lions mounted on the walls. Between two rather intimidating bears, there is a single\
+        door leading out of the room."
+        if {[state get hunter-trail] eq {under}} then {
+            if {[state get hunter-soul] eq {no}} then {
+                puts " The hunter is sitting on the floor, understandably confused."
+                if {[inv has {Soul Crystal}]} then {
+                    puts "... Your Soul Crystal starts vibrating in your pocket."
+                }
+            } else {
+                puts " The hunter is sitting on the floor, looking mostly bored and\
+                slightly sad."
+            }
+        } else {
+            puts {}
+        }
+        # ////
         prompt {} {
+            {"Talk to the hunter" {[state get hunter-trail] eq {under}} hunter}
+            {"Use the Soul Crystal" {([state get hunter-trail] eq {under}) && ![state get hunter-soul] && [inv has {Soul Crystal}]} stealing}
             {"Step out the door" yes hub}
         }
     }
 
+    # ///// Muffin in this room
     proc blogging {} {
         puts "== Blogging Room =="
         puts "You enter a small room with several computers scattered about. Unfortunately, they seem\
@@ -37,6 +55,25 @@ namespace eval Underworld::Lobby {
         prompt {} {
             {"Step out the door" yes hub}
         }
+    }
+
+    proc hunter {} {
+        if {[state get hunter-soul] eq {no}} then {
+            puts "\"I went into the cave like ya said. I dunno how I ended up here...\""
+        } else {
+            puts "\"...\""
+        }
+        puts {}
+        return wildlife
+    }
+
+    proc stealing {} {
+        puts "You activate your Soul Crystal, and a floating essence emerges from the guard,\
+        not unlike the essences in Johnny Death's display case. You got the Hunter's Soul!"
+        inv add {Hunter's Soul}
+        state put hunter-soul yes
+        puts {}
+        return wildlife
     }
 
     proc hub {} {

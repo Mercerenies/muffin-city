@@ -25,7 +25,9 @@ namespace eval City::Robbery {
     proc refuse {} {
         puts "The robber pulls the trigger."
         state put city-thug hiding
-        state put lobby-door murder
+        if {[state get lobby-door] ne {yes}} then {
+            state put lobby-door murder
+        }
         puts {}
         return ::Underworld::Lobby::murder
     }
@@ -35,7 +37,9 @@ namespace eval City::Robbery {
             puts "\"Yer lyin'!\""
             puts "The robber pulls the trigger on his gun."
             state put city-thug hiding
-            state put lobby-door murder
+            if {[state get lobby-door] ne {yes}} then {
+                state put lobby-door murder
+            }
             puts {}
             return ::Underworld::Lobby::murder
         } else {

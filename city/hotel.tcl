@@ -3,11 +3,19 @@ namespace eval City::Hotel {
 
     proc shabbyJack {} {
         puts "== Shabby Jack's =="
-        puts "The facility is clearly a low-class establishment, but it has a certain rustic charm\
-        to it. There is a hallway leading back with a sign that says \"Guests Only\", and behind\
-        a wooden counter there is a man with a nametag reading \"Shabby Jack\"."
+        puts -nonewline "The facility is clearly a low-class establishment, but it has a\
+        certain rustic charm to it. There is a hallway leading back with a sign that\
+        says \"Guests Only\", and behind a wooden counter there is a man with a nametag\
+        reading \"Shabby Jack\"."
+        if {[state get hunter-trail] in {no visited}} then {
+            puts " A man with a cowboy hat and an assault rifle is sitting on a chair\
+            in the corner."
+        } else {
+            puts {}
+        }
         prompt {} {
             {"Talk to Shabby Jack" yes shabbyTalk}
+            {"Talk to the armed man" {[state get hunter-trail] in {no visited}} shabbyHunter}
             {"Enter your room" {[inv has {Motel Room Key}]} shabbyRoom}
             {"Leave" yes ::City::District::hotel}
         }
@@ -15,13 +23,30 @@ namespace eval City::Hotel {
 
     proc shabbyRoom {} {
         puts "== Shabby Jack's - Bedroom =="
-        puts "The motel room you've been given is very basic, as expected. There is a small bed, with a\
-        desk lamp sitting on a desk adjacent to it. You have a connected restroom with a small shower and\
-        nothing more."
+        puts "The motel room you've been given is very basic, as expected. There is a small bed,\
+        with a desk lamp sitting on a desk adjacent to it. You have a connected restroom with a\
+        small shower and nothing more."
         prompt {} {
             {"Go to sleep" yes {::Dream::Transit::awaken ::Dream::Transit::thirdRoom}}
             {"Go back out" yes shabbyJack}
         }
+    }
+
+    proc shabbyHunter {} {
+        puts "\"I been lookin' for a good huntin' spot. If ya know of a forest nearby, let me\
+        know!\""
+        prompt {} {
+            {"\"There's a forest by the prison.\"" {[state get hunter-trail] eq {visited}} shabbyHunter1}
+            {"\"Okay, I will.\"" yes shabbyJack}
+        }
+    }
+
+    proc shabbyHunter1 {} {
+        puts "\"That sounds great! Thanks!\""
+        puts "The hunter storms out of the motel."
+        puts {}
+        state put hunter-trail forest
+        return shabbyJack
     }
 
     proc shabbyTalk {} {

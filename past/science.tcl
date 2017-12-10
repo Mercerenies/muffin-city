@@ -19,7 +19,6 @@ namespace eval Past::Science {
     proc clubRoomBoom {} {
         puts "You ignore the warning and press down on the blue button. The machine sparks\
         and you feel electricity coursing through your veins."
-        state put lobby-door other
         puts {}
         return ::Underworld::Pits::mysteryRoom
     }

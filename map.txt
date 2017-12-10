@@ -57,6 +57,8 @@
 * [Hotel]
   - shabbyJack
   - shabbyRoom
+  - shabbyHunter
+  - shabbyHunter1
   - shabbyTalk
   - shabbyPay
   - shabbyNoPay
@@ -121,6 +123,10 @@
 * [Forest]
   - gate
   - trees
+  - hunter
+  - hunter1
+  - hunter2
+  - hunter3
   - river
   - riverReach
   - cave
@@ -133,6 +139,8 @@
   - wildlife
   - blogging
   - other
+  - hunter
+  - stealing
   - hub
 * [Elevator]
   - staircase
@@ -315,6 +323,7 @@
 * Stolen Suitcase
 * Super Taco
 * Guard's Soul
+* Hunter's Soul
 
 (Money Sources / Sinks)
 + Shady Alley (sa-coin)
@@ -375,6 +384,7 @@ Events:
  * butler-game {no cell pawn}
  * attorney-man {no met talked talked1 fed 1 2 done complete}
  * taco-shop {no spoken olive fed}
+ * hunter-trail {no visited forest under}
 
 Item / Money States:
  * stolen-good {{} {Silver Coin} {Platinum Card}}
@@ -419,6 +429,7 @@ World States:
  * attorney-guard {no okay seen yes}
  * courthouse-door {no yes}
  * guard-soul {no yes}
+ * hunter-soul {no yes}
 
 -------- CHARACTERS --------
 
@@ -440,6 +451,7 @@ Joe the Time-Traveler
 Atheena the Hero
 Train Conductor
 Female Prison Guard
+The Hunter
 
 -------- EVENTS --------
 
@@ -608,6 +620,22 @@ Female Prison Guard
       Joe the Time-Traveler will, upon being asked, tell the player about the secret password
       to the pawn shop in the past. The game will remember that he has done so (pawn-shop-pass).
       //// More to this quest
+
+8. The Hunter's Adventure (hunter-trail)
+  (*) no
+      The player has not visited the forest outside the prison yet. The Hunter is at Shabby
+      Jack's and will simply say he is looking for a good forest to hunt in. When the player
+      visits the forest, the game will move to `visited`.
+  (*) visited
+      The player has visited the forest but not told the Hunter about it. When the player tells
+      the Hunter, who is still at Shabby Jack's, about it, the game will move to `forest` and
+      the Hunter will move to the forest.
+  (*) forest
+      The Hunter is in the forest. When the player speaks to him here, the player will have
+      the option of suggesting that the Hunter go to the cave. If he does so, the game will
+      move to `under` and the Hunter will move to the Underworld.
+  (*) under
+      The Hunter is in the Underworld.
 
 a. Shady Alley Silver Coin (sa-coin)
   (*) no
