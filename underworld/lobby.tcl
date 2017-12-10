@@ -36,13 +36,18 @@ namespace eval Underworld::Lobby {
         }
     }
 
-    # ///// Muffin in this room
-    proc blogging {} {
-        puts "== Blogging Room =="
-        puts "You enter a small room with several computers scattered about. Unfortunately, they seem\
-        to be purely decorative, as the insides have been stripped out of them. There is a single door\
-        leading out of the room."
+    proc mercury {} {
+        puts "== Mercury Room =="
+        puts -nonewline "You enter a small room with dangerous looking silver liquid flowing\
+        down from the walls. There is a single door leading out of the room."
+        if {[state get mercury-muffin] eq {no}} then {
+            puts " There is a muffin sitting in the middle of the room, seemingly untouched\
+            by the flowing liquids."
+        } else {
+            puts {}
+        }
         prompt {} {
+            {"Take the muffin" {[state get mercury-muffin] eq {no}} mercuryMuffin}
             {"Step out the door" yes hub}
         }
     }
@@ -55,6 +60,15 @@ namespace eval Underworld::Lobby {
         prompt {} {
             {"Step out the door" yes hub}
         }
+    }
+
+    proc mercuryMuffin {} {
+        puts "You claim the muffin in the center of the room."
+        puts "You got the Cream Cheese Muffin!"
+        state put mercury-muffin yes
+        muffin add {Cream Cheese Muffin}
+        puts {}
+        return mercury
     }
 
     proc hunter {} {
@@ -82,11 +96,11 @@ namespace eval Underworld::Lobby {
             puts "You enter the small rounded lobby. There are a few basic chairs and office\
             amenities here. There is a door leading to a large staircase on one side. On the\
             opposite side of the room, there are several doors, each with a label above\
-            them: \"Murder\", \"Wildlife Attack\", \"Blogging Accident\", and \"Other\"."
+            them: \"Murder\", \"Wildlife Attack\", \"Mercury Poisoning\", and \"Other\"."
             prompt {} {
                 {"Enter Murder Room" yes murder}
                 {"Enter Wildlife Room" yes wildlife}
-                {"Enter Blogging Room" yes blogging}
+                {"Enter Mercury Room" yes mercury}
                 {"Enter Other Room" yes other}
                 {"Go toward the staircase" yes ::Underworld::Elevator::staircase}
             }
@@ -100,12 +114,12 @@ namespace eval Underworld::Lobby {
             puts "You enter the small rounded lobby. There are a few basic chairs and office\
             amenities here. There is a door leading to a large staircase on one side. On the\
             opposite side of the room, there are several doors, each with a label above\
-            them: \"Murder\", \"Wildlife Attack\", \"Blogging Accident\", and \"Other\".\
+            them: \"Murder\", \"Wildlife Attack\", \"Mercury Poisoning\", and \"Other\".\
             $doorComment"
             prompt {} {
                 {"Enter Murder Room" {[state get lobby-door] eq {murder}} murder}
                 {"Enter Wildlife Room" {[state get lobby-door] eq {wildlife}} wildlife}
-                {"Enter Blogging Room" {[state get lobby-door] eq {blogging}} blogging}
+                {"Enter Mercury Room" {[state get lobby-door] eq {mercury}} mercury}
                 {"Enter Other Room" {[state get lobby-door] eq {other}} other}
                 {"Go toward the staircase" yes ::Underworld::Elevator::staircase}
             }

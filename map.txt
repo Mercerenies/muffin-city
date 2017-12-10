@@ -137,8 +137,9 @@
 * [Lobby]
   - murder
   - wildlife
-  - blogging
+  - mercury
   - other
+  - mercuryMuffin
   - hunter
   - stealing
   - hub
@@ -339,7 +340,7 @@
 * Maple Muffin (forest-river)
 * Blueberry Muffin (muffin-second)
 * Banana Nut (judge-muffin)
-Cream Cheese
+* Cream Cheese (mercury-muffin)
 Apple Pecan
 Egg
 Spud
@@ -400,13 +401,14 @@ Muffin States:
  * forest-river {0 1 2 3}
  * muffin-second {no yes}
  * judge-muffin {no yes}
+ * mercury-muffin {no yes}
 
 World States:
  * trial-reason {{} murder escape}
  * janitor-door {no yes}
  * been-to-prison {no yes}
  * awaiting-bus {no trees yes}
- * lobby-door {no murder wildlife blogging other yes}
+ * lobby-door {no murder wildlife mercury other yes}
  * talked-to-johnny {no yes}
  * exercise-soul {no yes}
  * talked-to-cipher {no yes}

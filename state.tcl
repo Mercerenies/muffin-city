@@ -49,6 +49,7 @@ namespace eval State {
         guard-soul no
         hunter-trail no
         hunter-soul no
+        mercury-muffin no
     }]
 
     proc get {args} {
