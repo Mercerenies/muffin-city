@@ -16,7 +16,6 @@ namespace eval Dream::World {
         the focus of your eyes changes. There is a sign overhead that reads \"Magical Deluge\
         Gun\", or something like it; you can't quite focus on the sign very well. There are\
         other suitcases and boxes here. A staircase leads up and out of the area."
-        # /////
         prompt {} {
             {"Go up the stairs" yes {commons 1}}
         }

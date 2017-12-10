@@ -1,8 +1,6 @@
 
 namespace eval Warehouse::Outside {
 
-    # ///// Attorney-Man guard
-
     proc north {} {
         puts "== Secret Island - North =="
         puts -nonewline "The path leads around the back of the warehouse. There is nothing of\
