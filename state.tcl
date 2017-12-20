@@ -51,6 +51,7 @@ namespace eval State {
         hunter-soul no
         mercury-muffin no
         moon-teleport no
+        moon-mechanic no
     }]
 
     proc get {args} {

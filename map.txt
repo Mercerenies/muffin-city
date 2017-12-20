@@ -307,8 +307,15 @@
 * [Satellite]
   - elevatorRoom
   - transportBay
+  - mechanic
+  - teleporter
+  - commonArea
+  - astronauts
+  - recruitNo
+  - recruitYes
 * [Moon]
   - humanBase
+  - teleporter
 
 -------- ITEMS --------
 
@@ -332,6 +339,7 @@
 * Super Taco
 * Guard's Soul
 * Hunter's Soul
+* Oxygen Tank
 
 (Money Sources / Sinks)
 + Shady Alley (sa-coin)
@@ -440,6 +448,7 @@ World States:
  * guard-soul {no yes}
  * hunter-soul {no yes}
  * moon-teleport {no yes}
+ * moon-mechanic {no present talked}
 
 -------- CHARACTERS --------
 
@@ -462,6 +471,8 @@ Atheena the Hero
 Train Conductor
 Female Prison Guard
 The Hunter
+Dr. Louis
+The Mechanic
 
 -------- EVENTS --------
 
@@ -748,7 +759,8 @@ NOTES:
  * The subspace bank forecloses some important building or structure, requiring you to break into their vault to get the key and reopen it
  * The stolen luggage will let you hide in the cargo hold of the dream train to make it back to the dream world
  * Diving into the warehouse island water with scuba suit will result in an underwater merfolk cavern
- * Hunter, inmate, and second prison guard souls for Johnny Death.
+ * Hunter, inmate, and second prison guard souls for Johnny Death
+ * The mechanic is missing his Golden Wrench, which is (probably) in the undersea kingdom. With it, he can repair the player's broken objects
 
 SCIENCE:
  *    Club Room - Time Machine  - Free on First Access
