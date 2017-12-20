@@ -303,6 +303,13 @@
   - atheenaIntro
   - basicPortal
 
+[Space]
+* [Satellite]
+  - elevatorRoom
+  - transportBay
+* [Moon]
+  - humanBase
+
 -------- ITEMS --------
 
 * Silver Coin (x3)
@@ -432,6 +439,7 @@ World States:
  * courthouse-door {no yes}
  * guard-soul {no yes}
  * hunter-soul {no yes}
+ * moon-teleport {no yes}
 
 -------- CHARACTERS --------
 
@@ -473,10 +481,10 @@ The Hunter
       - Claim (falsely) - The robber will call the player on his lie and act as though he refused.
       - Refuse - The player will be shot and will go to Underworld. The robber will go hide out on
         Dream Train to avoid the police. Move to state `hiding`.
-  (*) chasing ////
+  (*) chasing
       The robber will keep a low profile and will not be able to be found. In this state, the Shady
-      Alley will reveal a silver coin.
-      //// Something should reset the Robbery Event
+      Alley will reveal a Silver Coin. If the Shady Alley coin has been collected (sa-coin) and
+      the player goes to the Underworld hub, then the game moves to `no`.
   (*) island
       The robber will end up on the Warehouse island. The player can talk to him. The robber will
       say that he ended up not needing the player's money and will return whatever he stole

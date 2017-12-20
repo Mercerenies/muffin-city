@@ -70,7 +70,7 @@ namespace eval Underworld::Elevator {
         }
     }
 
-    # ///// The rest of Johnny Death, then space
+    # ///// The rest of Johnny Death, then space (space - moon, satellite, deep space, alien colony, plant monster)
 
     proc lift {back} {
         if {[inv has {Elevator Access Key}] || [inv has {Upgraded Elevator Access Key}]} then {
@@ -82,11 +82,10 @@ namespace eval Underworld::Elevator {
             } else {
                 puts "There are a handful of buttons on the panel, but only a few of them are lit up."
             }
-            # //// There will be an outer space option here eventually
             prompt {} {
                 {"Go to the underworld" yes tunnel}
                 {"Go to the overworld" yes ::City::District::shopping}
-                {"Go to outer space" yes ::Empty::place}
+                {"Go to outer space" {[inv has {Upgraded Elevator Access Key}]} ::Space::Satellite::elevatorRoom}
             }
         } else {
             puts "The elevator seems to require a key to operate..."
