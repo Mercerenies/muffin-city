@@ -22,4 +22,6 @@ namespace eval Space::Moon {
         }
     }
 
+    # ///// The rest of the moon
+
 }
