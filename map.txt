@@ -314,8 +314,13 @@
   - recruitNo
   - recruitYes
 * [Moon]
+  - noOxygen
   - humanBase
   - teleporter
+  - lightSide <oxygen>
+  - crater <oxygen>
+  - rocks <oxygen>
+  - darkSide <oxygen>
 
 -------- ITEMS --------
 
@@ -340,6 +345,7 @@
 * Guard's Soul
 * Hunter's Soul
 * Oxygen Tank
+* Oxygen Pocket Dimension (TBA)
 
 (Money Sources / Sinks)
 + Shady Alley (sa-coin)
