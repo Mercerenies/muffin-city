@@ -13,7 +13,6 @@ namespace eval Dream::Transit {
     }
 
     proc third {} {
-        # //// Pulling the emergency brake goes... somewhere
         puts "== 3rd Class Car =="
         puts -nonewline "You enter the train car and find yourself in a relatively dingy\
         hallway without much adornment. One of the bedrooms is open."
@@ -27,6 +26,7 @@ namespace eval Dream::Transit {
             {"Go backward one car" yes cargo}
             {"Go forward one car" yes secondGate}
             {"Enter the room" yes thirdRoom}
+            {"Pull the emergency brake" yes ::Space::Moon::crashing}
             {"Talk to the robber" {[state get city-thug] eq {hiding}} thirdTalk}
         }
     }
@@ -183,6 +183,7 @@ namespace eval Dream::Transit {
         puts {}
         puts "...And awaken sometime later on a train."
         puts {}
+        state put moon-train no
         return $room
     }
 

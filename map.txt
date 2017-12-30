@@ -317,6 +317,8 @@
   - noOxygen
   - humanBase
   - teleporter
+  - crashedTrain
+  - crashing
   - lightSide <oxygen>
   - crater <oxygen>
   - rocks <oxygen>
@@ -455,6 +457,7 @@ World States:
  * hunter-soul {no yes}
  * moon-teleport {no yes}
  * moon-mechanic {no present talked}
+ * moon-train {no yes}
 
 -------- CHARACTERS --------
 
@@ -510,10 +513,11 @@ The Mechanic
       while Attorney-Man is also serving justice there (attorney-man in state `fed` or above),
       Attorney-Man will automatically chastise him, sending the game back to `no` and returning
       the stolen item.
-  (*) hiding ////
+  (*) hiding
       The robber will be on the Dream Train. The player can talk to him, where he will apologize for
       shooting the player and claim that it was "just business". The game then moves to `no` as the
-      robber leaves the train.
+      robber leaves the train. Alternatively, if the player pulls the emergency brake, the robber
+      will run off into the moonscape, and the game will move to `no`.
       //// What then?
   (*) hunted
       The robber will be caught and moved to the dining hall in the prison. If the player talks to
@@ -767,6 +771,8 @@ NOTES:
  * Diving into the warehouse island water with scuba suit will result in an underwater merfolk cavern
  * Hunter, inmate, and second prison guard souls for Johnny Death
  * The mechanic is missing his Golden Wrench, which is (probably) in the undersea kingdom. With it, he can repair the player's broken objects
+ * Steve's Smash-a-Lock (only open in the past), where you can have Steve break open the vault lock to get Atheena's crystal back. Also, Steve may give you a Suspicious Briefcase that you must deliver to present-day Steve in the prison.
+ * Evil flame spirit appears in the fire pits after N visits. After appeasing him by giving him something, ... I dunno, something happens ...
 
 SCIENCE:
  *    Club Room - Time Machine  - Free on First Access

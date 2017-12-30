@@ -63,12 +63,20 @@ namespace eval Dream::World {
 
     proc station {} {
         puts "== Train Station =="
-        puts "The train station is slightly elevated from the remainder of the commons. A\
-        conductor is standing by the train, which is sitting stationary on the tracks."
-        prompt {} {
-            {"Talk to the conductor" yes conductor}
-            {"Board the train" yes third}
-            {"Go back to the commons" yes {commons 1}}
+        if {[state get moon-train] eq {yes}} then {
+            puts "The train station is slightly elevated from the remainder of the commons.\
+            The area is deserted, and there is no train on the tracks."
+            prompt {} {
+                {"Go back to the commons" yes {commons 1}}
+            }
+        } else {
+            puts "The train station is slightly elevated from the remainder of the commons. A\
+            conductor is standing by the train, which is sitting stationary on the tracks."
+            prompt {} {
+                {"Talk to the conductor" yes conductor}
+                {"Board the train" yes third}
+                {"Go back to the commons" yes {commons 1}}
+            }
         }
     }
 

@@ -20,6 +20,43 @@ namespace eval Space::Moon {
         }
     }
 
+    proc crashedTrain {} {
+        puts "== 3rd Class Car =="
+        puts "The lights are dimmed and red. The door exiting the train is open."
+        prompt {} {
+            {"Go backward one car" yes {::Dream::Destination::locked ::Space::Moon::crashedTrain}}
+            {"Go forward one car" yes {::Dream::Destination::locked ::Space::Moon::crashedTrain}}
+            {"Enter the room" yes {::Dream::Destination::locked ::Space::Moon::crashedTrain}}
+            {"Get off the train" yes offTrain}
+        }
+    }
+
+    proc crashing {} {
+        puts -nonewline "You pull the emergency brake, and a loud screeching\
+        noise alerts you to the fact that the train is slowing down. Suddenly,\
+        the car begins to jerk to and fro, before crashing into a surface. You\
+        fall toward one of the walls as the doors exiting the train open,\
+        revealing a lunar landscape. It would seem that you crashed into\
+        the moon."
+        if {[state get city-thug] eq {hiding}} then {
+            # //// The robber should drop something interesting in this case
+            puts " The robber immediately leaps out the open door and runs off\
+            into the distance."
+            state put city-thug no
+        } else {
+            puts {}
+        }
+        puts {}
+        state put moon-train yes
+        return crashedTrain
+    }
+
+    proc offTrain {} {
+        puts "You step off the train and onto the moon."
+        puts {}
+        return {crater high}
+    }
+
     proc teleporter {} {
         if {[state get moon-teleport] eq {yes}} then {
             puts "You step inside the teleportation device. A white light engulfs you,\
@@ -75,13 +112,20 @@ namespace eval Space::Moon {
             return noOxygen
         }
         puts "== Moon Crater =="
-        puts "A large crater stands before you. You cannot see the bottom."
+        if {[state get moon-train] eq {yes}} then {
+            puts "A large crater stands before you. You cannot see the bottom.\
+            There is a large train crashed into the surface of the moon next to the\
+            crater."
+        } else {
+            puts "A large crater stands before you. You cannot see the bottom."
+        }
         # //// Option to head into the crater
         switch $oxygen {
             high {
                 prompt {} {
                     {"Head toward the dark side" yes {rocks low}}
                     {"Head toward the light side" yes {lightSide low}}
+                    {"Enter the train" {[state get moon-train] eq {yes}} crashedTrain}
                 }
             }
             low {
@@ -89,6 +133,7 @@ namespace eval Space::Moon {
                 prompt {} {
                     {"Head toward the dark side" yes {rocks none}}
                     {"Head toward the light side" yes {lightSide none}}
+                    {"Enter the train" {[state get moon-train] eq {yes}} crashedTrain}
                 }
             }
         }
