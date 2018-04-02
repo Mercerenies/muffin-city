@@ -309,6 +309,7 @@
   - matthew
   - matthewStudy
   - sanctuary
+  - minister
 
 [Space]
 * [Satellite]

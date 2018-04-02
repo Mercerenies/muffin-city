@@ -71,10 +71,37 @@ namespace eval Subspace::Temple {
 
     proc sanctuary {} {
         puts "== Subspace Temple - Sanctuary =="
-        # /////
+        puts "The sanctuary is very quiet. In the center of the room, a bearded man is\
+        sitting, cross-legged, hovering slightly in the air with his eyes closed."
         prompt {} {
-            {"Talk to the Ancient Minister" yes ::Empty::place}
+            {"Talk to the Ancient Minister" yes minister}
             {"Exit the sanctuary" yes altar}
+        }
+    }
+
+    proc minister {} {
+        switch [state get subspace-reason] {
+            no {
+                puts "The Minister's voice is very hoarse."
+                puts "\"I see... purity in your soul... you are clean, my\
+                child...\""
+                puts "The Minister's eyes open slowly."
+                puts "\"Thank you... for coming to see me...\""
+                # //// Something happens here, he'll let you explore or something.
+                prompt {} {
+                    {"\"You are very welcome.\"" yes sanctuary}
+                }
+            }
+            arrest {
+                puts "The Minister's voice is very hoarse."
+                puts "\"I see... the ways of the paradox... in your soul...\
+                You have... confessed your crime to the authorities...\
+                in the past... after speaking to them in the present...\
+                You must cleanse your soul, my child...\""
+                prompt {} {
+                    {"\"Thank you.\"" yes sanctuary}
+                }
+            }
         }
     }
 
