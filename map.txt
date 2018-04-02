@@ -458,6 +458,7 @@ World States:
  * moon-teleport {no yes}
  * moon-mechanic {no present talked}
  * moon-train {no yes}
+ * subspace-reason {no arrest}
 
 -------- CHARACTERS --------
 
@@ -668,6 +669,16 @@ The Mechanic
   (*) under
       The Hunter is in the Underworld.
 
+9. Trip to Subspace (subspace-reason)
+  (*) no
+      The player has not been sent to subspace yet. If the player ends up in subspace in this
+      state, he has done so without causing a paradox or otherwise. When the player is sent to
+      subspace, depending on the reason, the game will move to `arrest`.
+  (*) arrest
+      The player was sent to subspace as a result of confessing to a crime in the past. This
+      implies that the player had an unclean criminal record at the start of the present day,
+      which contradicts the order of events.
+
 a. Shady Alley Silver Coin (sa-coin)
   (*) no
       The coin has not been collected. It will only show itself if city-thug is `chasing`. When
@@ -772,7 +783,7 @@ NOTES:
  * Hunter, inmate, and second prison guard souls for Johnny Death
  * The mechanic is missing his Golden Wrench, which is (probably) in the undersea kingdom. With it, he can repair the player's broken objects
  * Steve's Smash-a-Lock (only open in the past), where you can have Steve break open the vault lock to get Atheena's crystal back. Also, Steve may give you a Suspicious Briefcase that you must deliver to present-day Steve in the prison.
- * Evil flame spirit appears in the fire pits after N visits. After appeasing him by giving him something, ... I dunno, something happens ...
+ * Evil flame spirit appears in the fire pits after N visits. After appeasing him by giving him something, ... I dunno, something happens ... (Necromancy Certificate? Joe?)
 
 SCIENCE:
  *    Club Room - Time Machine  - Free on First Access

@@ -16,6 +16,7 @@ namespace eval Past::Police {
         Everyone and everything around you disappears, and you find yourself in a strange\
         new location."
         puts {}
+        state put subspace-reason arrest
         return ::Subspace::Hub::hub
     }
 
