@@ -84,6 +84,7 @@
   - market
   - marketBot
   - marketOlive
+  - boarded
 
 [Prison]
 * [South]
@@ -495,6 +496,7 @@ Dr. Louis
 The Mechanic
 Matthew the Acolyte
 The Ancient Minister
+Steve (Steve's Smash-a-Lock)
 
 -------- EVENTS --------
 

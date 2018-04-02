@@ -112,4 +112,21 @@ namespace eval City::Shopping {
         return market
     }
 
+    proc boarded {} {
+        puts "== Boarded Building =="
+        puts "The relatively small building has wooden boards nailed to the doors and\
+        all of the windows. The sign which used to contain the name of the business\
+        seems to have been taken away."
+        prompt {} {
+            {"Force the door" yes boardedForce}
+            {"Go back" yes ::City::District::shopping}
+        }
+    }
+
+    proc boardedForce {} {
+        puts "The boards do not budge, no matter how hard you shove them."
+        puts {}
+        return boarded
+    }
+
 }

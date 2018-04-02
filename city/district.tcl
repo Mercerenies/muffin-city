@@ -39,7 +39,8 @@ namespace eval City::District {
     proc shopping {} {
         puts "== Shopping District =="
         puts "There are a handful of shops here that appear to be open, as well as an\
-        elevator that seems somewhat out of place in the middle of a city block."
+        elevator that seems somewhat out of place in the middle of a city block. One\
+        particular building appears to have been recently boarded up."
         if {[state get city-thug] eq {stalking}} then {
             return {::City::Robbery::jumped ::City::District::shopping}
         }
@@ -47,6 +48,7 @@ namespace eval City::District {
             {"Enter the market" yes ::City::Shopping::market}
             {"Enter the pawn shop" yes ::City::Shopping::pawnShop}
             {"Enter the elevator" yes {::Underworld::Elevator::lift ::City::District::shopping}}
+            {"Investigate the boarded building" yes ::City::Shopping::boarded}
             {"Go back to the plaza" yes entrance}
         }
     }
