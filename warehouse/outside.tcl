@@ -22,7 +22,7 @@ namespace eval Warehouse::Outside {
                 puts -nonewline " Attorney-Man is lying on the ground, staring up at\
                 the sky."
             }
-            fed 1 2 done complete {
+            fed - 1 - 2 - done - complete {
                 puts -nonewline " Attorney-Man is standing up, his arms folded, ready to\
                 deliver justice."
             }
