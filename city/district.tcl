@@ -11,6 +11,9 @@ namespace eval City::District {
                 puts "... You still feel as though you are being watched."
             }
         }
+        if {[state get fire-pit] eq {odd}} then {
+            state put fire-pit even
+        }
         prompt {} {
             {"Go to the hotel district" yes hotel}
             {"Go to the shopping district" yes shopping}

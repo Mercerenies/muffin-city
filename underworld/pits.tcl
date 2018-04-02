@@ -42,6 +42,9 @@ namespace eval Underworld::Pits {
             puts "There is fire all around you, but it seems to cower away from you.\
             The balcony is too high to climb onto, so the only way out of the pits is\
             through one of the two exits on the back wall."
+            if {[state get fire-pit] eq {no}} then {
+                state put fire-pit odd
+            }
             # //// Not sure if {fire backRoom} is right here, but it works for now
             prompt {} {
                 {"Head toward the storage room" yes backRoom}

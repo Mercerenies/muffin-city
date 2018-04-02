@@ -468,6 +468,7 @@ World States:
  * moon-train {no yes}
  * subspace-reason {no arrest}
  * talked-to-acolyte {no yes}
+ * fire-pit {no odd even next seen talked}
 
 -------- CHARACTERS --------
 
@@ -689,6 +690,23 @@ The Ancient Minister
       The player was sent to subspace as a result of confessing to a crime in the past. This
       implies that the player had an unclean criminal record at the start of the present day,
       which contradicts the order of events.
+
+10. Evil Flame Spirit (fire-pit)
+  (*) no
+      The player has not begun to approach the evil flame spirit. When the player visits the
+      fire pits with the Fireproof Suit, the game will move to `odd`.
+  (*) odd
+      The player has been to the fire pits successfully once. When the player visits the starting
+      area of the big city, the game will move to `even`.
+  (*) even
+      The player has been to the pits and back once. (//// Player must have at least two
+      science keys)
+  (*) next
+      ////
+  (*) seen
+      ////
+  (*) talked
+      //// And the rest ...
 
 a. Shady Alley Silver Coin (sa-coin)
   (*) no
