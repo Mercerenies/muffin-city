@@ -54,6 +54,7 @@ namespace eval State {
         moon-mechanic no
         moon-train no
         subspace-reason no
+        talked-to-acolyte no
     }]
 
     proc get {args} {

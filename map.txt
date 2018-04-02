@@ -306,6 +306,8 @@
   - hill
   - outside
   - altar
+  - matthew
+  - matthewStudy
   - sanctuary
 
 [Space]
@@ -464,6 +466,7 @@ World States:
  * moon-mechanic {no present talked}
  * moon-train {no yes}
  * subspace-reason {no arrest}
+ * talked-to-acolyte {no yes}
 
 -------- CHARACTERS --------
 
@@ -488,8 +491,8 @@ Female Prison Guard
 The Hunter
 Dr. Louis
 The Mechanic
-Acolyte (name tbd)
-Ancient Minister
+Matthew the Acolyte
+The Ancient Minister
 
 -------- EVENTS --------
 
@@ -767,6 +770,13 @@ h. The Courthouse Door (courthouse-door)
       The door is unlocked and can be entered from either side. If a trial begins, the door
       will be locked again and the game will move to `no`.
 
+i. The Acolyte (talked-to-acolyte)
+  (*) no
+      The player has not spoken to the acolyte, Matthew, at the subspace temple altar yet.
+      When the player does so, the game moves to `yes`.
+  (*) yes
+      The player has spoken to Matthew. The sanctuary is now available.
+
 TEST:
  * Johnny Death, start to finish
  * Attorney-Man, start to finish
@@ -791,6 +801,7 @@ NOTES:
  * The mechanic is missing his Golden Wrench, which is (probably) in the undersea kingdom. With it, he can repair the player's broken objects
  * Steve's Smash-a-Lock (only open in the past), where you can have Steve break open the vault lock to get Atheena's crystal back. Also, Steve may give you a Suspicious Briefcase that you must deliver to present-day Steve in the prison.
  * Evil flame spirit appears in the fire pits after N visits. After appeasing him by giving him something, ... I dunno, something happens ... (Necromancy Certificate? Joe?)
+ * The Ancient Minister will tell you how you ended up in subspace (mainly to help the player understand). If the player has no record of entering subspace in any "standard" way, then his heart will be pure and the Minister will speak to him more frankly, and then.... something.... (the record of entering subspace can be cleared with Dr. Cipher's help)
 
 SCIENCE:
  *    Club Room - Time Machine  - Free on First Access
