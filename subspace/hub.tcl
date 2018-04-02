@@ -6,7 +6,8 @@ namespace eval Subspace::Hub {
         puts -nonewline "The white void extends indefinitely in all directions. To the north,\
         there is an unnatural storm containing some sort of energy. To the east, there is\
         an enclosed room containing a projector and some other equipment. To the south, there is\
-        a taco shop and a bank."
+        a taco shop and a bank. Off to the northeast, there is a lone hill accompanied by a \
+        large temple."
         if {[state get subspace-attic] eq {yes}} then {
             puts -nonewline " A set of stairs hangs down from above, leading to an\
             unusual floating room in the sky."
@@ -24,6 +25,7 @@ namespace eval Subspace::Hub {
             {"Enter the taco shop" yes ::Subspace::Taco::shop}
             {"Enter the bank" yes bank}
             {"Go upstairs" {[state get subspace-attic] eq {yes}} attic}
+            {"Head toward the hill" yes ::Subspace::Temple::hill}
             {"Head toward the storm" yes storm}
             {"Head to the projection room" yes ::Subspace::Portal::portalRoom}
         }

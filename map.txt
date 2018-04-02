@@ -302,6 +302,11 @@
   - atheena
   - atheenaIntro
   - basicPortal
+* [Temple]
+  - hill
+  - outside
+  - altar
+  - sanctuary
 
 [Space]
 * [Satellite]
@@ -483,6 +488,8 @@ Female Prison Guard
 The Hunter
 Dr. Louis
 The Mechanic
+Acolyte (name tbd)
+Ancient Minister
 
 -------- EVENTS --------
 
