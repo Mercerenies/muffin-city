@@ -27,7 +27,7 @@ namespace eval Subspace::Temple {
         puts -nonewline "Within the main room of the temple, there are rows of\
         pews facing a large altar. The candles at the front of the altar are\
         lit,"
-        if {[state get talked-to-acolyte] eq {yes}} then {
+        if {[state get talked-to-acolyte] ne {no}} then {
             puts " and Matthew is standing beside them. Behind him, the door to the\
             sanctuary is open."
         } else {
@@ -35,14 +35,14 @@ namespace eval Subspace::Temple {
         }
         prompt {} {
             {"Talk to the acylote" {[state get talked-to-acolyte] eq {no}} matthew}
-            {"Talk to Matthew" {[state get talked-to-acolyte] eq {yes}} matthew}
-            {"Enter the sanctuary" {[state get talked-to-acolyte] eq {yes}} sanctuary}
+            {"Talk to Matthew" {[state get talked-to-acolyte] ne {no}} matthew}
+            {"Enter the sanctuary" {[state get talked-to-acolyte] ne {no}} sanctuary}
             {"Exit the altar" yes outside}
         }
     }
 
     proc matthew {} {
-        if {[state get talked-to-acolyte] eq {yes}} then {
+        if {[state get talked-to-acolyte] ne {no}} then {
             puts "\"Good day. The Ancient Minister is meditating in his sanctuary.\""
             prompt {} {
                 {"\"What does this temple worship?\"" yes matthewStudy}
@@ -53,7 +53,7 @@ namespace eval Subspace::Temple {
             are interested in conversion, please speak to the Ancient Minister in his\
             sanctuary.\""
             puts "Matthew gestures to an open door behind him."
-            state put talked-to-acolyte yes
+            state put talked-to-acolyte started
             prompt {} {
                 {"\"What does this temple worship?\"" yes matthewStudy}
                 {"\"Thank you.\"" yes altar}
@@ -80,6 +80,9 @@ namespace eval Subspace::Temple {
     }
 
     proc minister {} {
+        if {[state get talked-to-acolyte] eq {started}} then {
+            state put talked-to-acolyte yes
+        }
         switch [state get subspace-reason] {
             no {
                 puts "The Minister's voice is very hoarse."

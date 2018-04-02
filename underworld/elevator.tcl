@@ -99,6 +99,7 @@ namespace eval Underworld::Elevator {
             puts "\"Heyyyy it's good to see you again! Would you like me to erase your records?\""
             prompt {} {
                 {"\"Yes, please.\"" yes cipherErase}
+                {"Tell him about the Ancient Minister." {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
                 {"\"Not right now.\"" yes scienceLab}
             }
         } else {
@@ -128,10 +129,21 @@ namespace eval Underworld::Elevator {
         }
     }
 
+    proc cipherMinister {} {
+        puts "\"What's that? An ancient minister is judging you for nearly ending the universe?\
+        Happens all the time! Just one use of the Document Transmogrifier, and he'll forget\
+        all about it!\""
+        prompt {} {
+            {"\"Okay. I'd like to use the machine.\"" yes cipherErase}
+            {"\"Maybe later.\"" yes scienceLab}
+        }
+    }
+
     proc cipherErase {} {
         puts "Dr. Cipher presses a big red button, and a loud whirring sound pierces your ears."
         puts "\"It is done!\""
         state put trial-crime no
+        state put subspace-reason no
         puts {}
         return scienceLab
     }

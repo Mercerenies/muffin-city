@@ -467,7 +467,7 @@ World States:
  * moon-mechanic {no present talked}
  * moon-train {no yes}
  * subspace-reason {no arrest}
- * talked-to-acolyte {no yes}
+ * talked-to-acolyte {no started yes}
  * fire-pit {no odd even next seen talked}
 
 -------- CHARACTERS --------
