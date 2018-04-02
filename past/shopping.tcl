@@ -6,7 +6,6 @@ namespace eval Past::Shopping {
             return pawnShop
         }
         puts "The door to the pawn shop is locked."
-        # //// Password to get in
         puts "\"Oi! We're closed right now!\""
         prompt {} {
             {"Kick down the door" yes pawnShopKick}
@@ -46,6 +45,45 @@ namespace eval Past::Shopping {
         you.\""
         prompt {} {
             {"\"Thank you.\"" yes pawnShop}
+        }
+    }
+
+    proc locksmithEntry {} {
+        # //// Will not be allowed to enter once the police have raided
+        return locksmith
+    }
+
+    proc locksmith {} {
+        puts "== Steve's Smash-a-Lock =="
+        puts -nonewline "The locksmith's shop is very disorganized, with various locks, keys,\
+        and other objects scattered around the floor. "
+        if {[state get talked-to-steve] eq {yes}} then {
+            puts "Steve is standing behind the counter, fiddling with a small\
+            padlock."
+        } else {
+            puts "A young woman with glasses and hair in a ponytail is standing behind the\
+            counter."
+        }
+        prompt {} {
+            {"Talk to Steve" {[state get talked-to-steve] eq {yes}} steve}
+            {"Talk to the woman" {[state get talked-to-steve] eq {no}} steve}
+            {"Leave" yes ::Past::District::shopping}
+        }
+    }
+
+    proc steve {} {
+        if {[state get talked-to-steve] eq {yes}} then {
+            puts "\"If you've got a lock, we'll smash it!\""
+            prompt {} {
+                {"\"Have a nice day.\"" yes locksmith}
+            }
+        } else {
+            state put talked-to-steve yes
+            puts "\"Hi, there! I'm Steve, of Steve's Smash-a-Lock! If you've got a lock,\
+            we'll smash it! What can I do for you?\""
+            prompt {} {
+                {"\"Nothing right now. Thank you.\"" yes locksmith}
+            }
         }
     }
 

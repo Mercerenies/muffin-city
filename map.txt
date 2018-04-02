@@ -267,6 +267,9 @@
   - pawnShopKick
   - pawnShopAccept
   - pawnShop
+  - locksmithEntry
+  - locksmith
+  - steve
 * [Police]
   - station
   - stationConfess
@@ -471,6 +474,7 @@ World States:
  * subspace-reason {no arrest}
  * talked-to-acolyte {no started yes}
  * fire-pit {no odd even next seen talked}
+ * talked-to-steve {no yes}
 
 -------- CHARACTERS --------
 

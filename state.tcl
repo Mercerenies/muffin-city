@@ -56,6 +56,7 @@ namespace eval State {
         subspace-reason no
         talked-to-acolyte no
         fire-pit no
+        talked-to-steve no
     }]
 
     proc get {args} {

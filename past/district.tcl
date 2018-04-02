@@ -26,12 +26,15 @@ namespace eval Past::District {
 
     proc shopping {} {
         puts "== Shopping District - Past =="
-        puts "At this early hour, many of the shops have yet to open. The elevator still\
-        looks out of place at this time of day."
+        puts "At this early hour, many of the shops have yet to open. A locksmith's shop\
+        which was not there later in the day is open, with a large sign reading \"Steve's\
+        Smash-a-Lock\" above the door. The elevator still looks out of place at this\
+        time of day."
         # //// Elevator
         prompt {} {
             {"Enter the market" yes marketClosed}
             {"Enter the pawn shop" yes ::Past::Shopping::pawnShopEntry}
+            {"Enter Steve's Smash-a-Lock" yes ::Past::Shopping::locksmithEntry}
             {"Go back to the plaza" yes entrance}
         }
     }
