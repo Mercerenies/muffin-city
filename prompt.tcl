@@ -3,10 +3,6 @@
 
 set debugMode true
 
-proc moveTo {loc} {
-    return -level 3 -code return $loc
-}
-
 ## END DEBUG CODE ##
 
 proc handleSpecial {answer} {
