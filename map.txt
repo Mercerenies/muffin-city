@@ -85,6 +85,7 @@
   - marketBot
   - marketOlive
   - boarded
+  - boardedForce
 
 [Prison]
 * [South]
