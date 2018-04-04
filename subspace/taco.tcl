@@ -16,21 +16,21 @@ namespace eval Subspace::Taco {
         }
         switch [state get taco-shop] {
             no {
-                puts " An older, bearded man behind the counter is panicking and looking\
-                for something."
+                puts " An older, bearded man in a taco costume behind the\
+                counter is panicking and looking for something."
             }
             spoken {
-                puts " The manager is still frantically running about behind the counter."
+                puts " The Taco Man is still frantically running about behind the counter."
             }
             olive {
-                puts " The manager stands behind the counter, smiling."
+                puts " The Taco Man stands behind the counter, smiling."
             }
             fed {
                 if {[state get pawn-shop-pass] eq {no}} then {
-                    puts " The manager stands behind the counter, smiling. The strange, hungry man\
-                    from outside is sitting at one of the tables."
+                    puts " The Taco Man stands behind the counter, smiling. The strange,\
+                    hungry man from outside is sitting at one of the tables."
                 } else {
-                    puts " The manager stands behind the counter, smiling. Joe the Time-Traveler\
+                    puts " The Taco Man stands behind the counter, smiling. Joe the Time-Traveler\
                     is sitting at one of the tables."
                 }
             }
