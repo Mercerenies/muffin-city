@@ -475,6 +475,7 @@ World States:
  * talked-to-acolyte {no started yes}
  * fire-pit {no odd even next seen talked}
  * talked-to-steve {no yes}
+ * necro-cipher {no spoken}
 
 -------- CHARACTERS --------
 
@@ -728,6 +729,23 @@ Steve (Steve's Smash-a-Lock)
   (*) talked
       //// And the rest ...
 
+11. The Necromancy Certificate (necro-cipher)
+  (*) no
+      The player has not spoken to Dr. Cipher about his Necromancy Certificate yet. If the
+      player talks to Dr. Cipher after the Butler's second event (butler-game is `pawn` or
+      beyond) and after using the pawn shop password (pawn-shop-pass is `yes`), Dr. Cipher
+      will seem mildly alarmed by something. If the player asks what is wrong, Dr. Cipher
+      will explain that his Necromancy Certificate has been stolen. ////
+  (*) spoken
+      //// So the player will go to Dr. Cipher, who doesn't know who has stolen it. Then, if
+      the player sees Joe, he will notice a mysterious scroll that Joe is reading. If confronted,
+      Joe will say it's a family heirloom. The player will have to go back to Dr. Cipher, who will
+      confirm that it is the Certificate. When the player next confronts Joe after this, he will
+      insist that Cipher is the bad guy. The player can choose to disbelieve him (he'll be ignored)
+      or to confront Cipher. Cipher will once again send the player back to Joe, who has now begun
+      summoning the spirits of the dead. They will kill the player if he approaches Joe, so he must
+      seek the help of Atheena, who will save the world with her Hero's Blade.
+
 a. Shady Alley Silver Coin (sa-coin)
   (*) no
       The coin has not been collected. It will only show itself if city-thug is `chasing`. When
@@ -836,6 +854,7 @@ NOTES:
  * Steve's Smash-a-Lock (only open in the past), where you can have Steve break open the vault lock to get Atheena's crystal back. Also, Steve may give you a Suspicious Briefcase that you must deliver to present-day Steve in the prison.
  * Evil flame spirit appears in the fire pits after N visits. After appeasing him by giving him something, ... I dunno, something happens ... (Necromancy Certificate? Joe?)
  * The Ancient Minister will tell you how you ended up in subspace (mainly to help the player understand). If the player has no record of entering subspace in any "standard" way, then his heart will be pure and the Minister will speak to him more frankly, and then.... something.... (the record of entering subspace can be cleared with Dr. Cipher's help)
+ * Dr. Cipher wants his Necromancy Certificate back from Joe. Is Joe secretly a supervillain who wants to use the Certificate to rule the world? If so, the player probably has to go call on Atheena to save the world from him
 
  * Hunter, inmate, and second prison guard souls for Johnny Death
  * Attorney-Man and the three clients (player, guard, and robber)
