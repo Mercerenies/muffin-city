@@ -34,12 +34,19 @@ namespace eval Underworld::Elevator {
 
     proc tunnel {} {
         puts "== Underworld Tunnel =="
-        puts "The strange tunnel stretches on for a long while, but it quickly becomes too narrow\
-        for you to proceed. There is an elevator and a door that appears to lead to a science lab.\
-        The other doors are on the other side of the narrow tunnel and are inaccessible to you."
+        puts -nonewline "The strange tunnel stretches on for a long while, but it\
+        quickly becomes too narrow for you to proceed. There is an elevator and a\
+        door that appears to lead to a science lab. The other doors are on the other\
+        side of the narrow tunnel and are inaccessible to you."
+        if {[state get golden-arches]} then {
+            puts " Next to the science lab, there is a shining golden arch."
+        } else {
+            puts {}
+        }
         prompt {} {
             {"Enter the science lab" yes scienceLab}
             {"Enter the elevator" yes {lift ::Underworld::Elevator::tunnel}}
+            {"Pass through the golden arch" {[state get golden-arches]} ::Console::Hall::future}
             {"Go back" yes staircase}
         }
     }
@@ -57,7 +64,7 @@ namespace eval Underworld::Elevator {
                            ([state get butler-game] ni {no cell}) &&
                            ([state get talked-to-cipher] eq {yes}) &&
                            ([state get pawn-shop-pass] eq {yes}) &&
-                           ([state get necro-cipher] eq {no})}]
+                           ([state get necro-cipher] in {no spoken})}]
                 if {$necro} then {
                     set cipher "Dr. Cipher is pacing back and forth, looking\
                     fairly annoyed."

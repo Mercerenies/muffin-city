@@ -62,6 +62,8 @@ namespace eval Console::Hall {
             Behind you, there is a futuristic looking electronic door."
         }
         prompt {} {
+            {"Enter the underworld" {[state get golden-arches]} ::Underworld::Elevator::tunnel}
+            {"Enter subspace" {[state get golden-arches]} ::Subspace::Hub::bank}
             {"Go back to the main room" yes main}
         }
     }

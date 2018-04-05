@@ -56,11 +56,18 @@ namespace eval Subspace::Hub {
 
     proc bank {} {
         puts "== Subspace Bank =="
-        puts "The bank is very orderly, with neat rows of seats for waiting\
-        customers. There are several offices off to the side, each containing one or\
-        two bankers doing various work. One of the offices is open."
+        puts -nonewline "The bank is very orderly, with neat rows of\
+        seats for waiting customers. There are several offices off to\
+        the side, each containing one or two bankers doing various work.\
+        One of the offices is open."
+        if {[state get golden-arches]} then {
+            puts " To the left, there is a shining golden arch covering the wall."
+        } else {
+            puts {}
+        }
         prompt {} {
             {"Enter the office" yes bankOffice}
+            {"Pass through the golden arch" {[state get golden-arches]} ::Console::Hall::future}
             {"Head back outside" yes hub}
         }
     }
