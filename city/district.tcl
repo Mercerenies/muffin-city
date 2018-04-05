@@ -55,12 +55,19 @@ namespace eval City::District {
 
     proc police {} {
         puts "== Police District =="
-        puts "The police district is fairly large but unified. There is a large station for\
-        the officers and a courthouse that towers over the center of the town."
+        puts -nonewline "The police district is fairly large but unified. There is a\
+        large station for the officers and a courthouse that towers over the center\
+        of the town."
+        if {[state get golden-arches]} then {
+            puts " A glimmering golden arch hovers just above the ground in the distance."
+        } else {
+            puts {}
+        }
         prompt {} {
             {"Go back to the plaza" yes entrance}
             {"Go to the police station" yes ::City::Police::station}
             {"Go to the courthouse" yes ::City::Courthouse::entrance}
+            {"Pass through the arch" {[state get golden-arches]} ::Console::Hall::office}
         }
     }
 

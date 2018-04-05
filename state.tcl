@@ -58,6 +58,7 @@ namespace eval State {
         fire-pit no
         talked-to-steve no
         necro-cipher no
+        golden-arches no
     }]
 
     proc get {args} {

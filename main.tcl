@@ -16,6 +16,7 @@ set mapping {
     Past ./past/base.tcl
     Subspace ./subspace/base.tcl
     Space ./space/base.tcl
+    Console ./console/base.tcl
 }
 
 proc handleMapping {loc} {
