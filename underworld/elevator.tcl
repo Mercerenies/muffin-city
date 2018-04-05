@@ -53,7 +53,15 @@ namespace eval Underworld::Elevator {
             }
             default {
                 puts "== Underworld Science Lab =="
-                if {[state get talked-to-cipher]} then {
+                set necro [expr {
+                           ([state get butler-game] ni {no cell}) &&
+                           ([state get talked-to-cipher] eq {yes}) &&
+                           ([state get pawn-shop-pass] eq {yes}) &&
+                           ([state get necro-cipher] eq {no})}]
+                if {$necro} then {
+                    set cipher "Dr. Cipher is pacing back and forth, looking\
+                    fairly annoyed."
+                } elseif {[state get talked-to-cipher]} then {
                     set cipher "Dr. Cipher is examining some strange contraption."
                 } else {
                     set cipher "There is a strange horned man in a lab coat poking and prodding at\
@@ -95,12 +103,47 @@ namespace eval Underworld::Elevator {
     }
 
     proc cipherTalk {} {
+        set necro [expr {
+                   ([state get butler-game] ni {no cell}) &&
+                   ([state get talked-to-cipher] eq {yes}) &&
+                   ([state get pawn-shop-pass] eq {yes}) }]
         if {[state get talked-to-cipher]} then {
-            puts "\"Heyyyy it's good to see you again! Would you like me to erase your records?\""
-            prompt {} {
-                {"\"Yes, please.\"" yes cipherErase}
-                {"Tell him about the Ancient Minister." {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
-                {"\"Not right now.\"" yes scienceLab}
+            if {$necro} then {
+                switch [state get necro-cipher] {
+                    no {
+                        puts "\"Hrm....\""
+                        prompt {} {
+                            {"\"Can I use the Document Transmogrifier?\"" yes cipherErase}
+                            {"\"Is something wrong?\"" yes cipherWrong}
+                            {"Tell him about the Ancient Minister." {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
+                            {"\"Later.\"" yes scienceLab}
+                        }
+                    }
+                    spoken {
+                        puts "\"Hrm...\""
+                        prompt {} {
+                            {"\"Can I use the Document Transmogrifier?\"" yes cipherErase}
+                            {"\"Tell me about this thief.\"" yes cipherDetails}
+                            {"Tell him about the Ancient Minister." {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
+                            {"\"Later.\"" yes scienceLab}
+                        }
+                    }
+                    default {
+                        puts "\"Hrm...\""
+                        prompt {} {
+                            {"\"Can I use the Document Transmogrifier?\"" yes cipherErase}
+                            {"Tell him about the Ancient Minister." {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
+                            {"\"Later.\"" yes scienceLab}
+                        }
+                    }
+                }
+            } else {
+                puts "\"Heyyyy it's good to see you again! Would you like me to erase your records?\""
+                prompt {} {
+                    {"\"Yes, please.\"" yes cipherErase}
+                    {"Tell him about the Ancient Minister." {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
+                    {"\"Not right now.\"" yes scienceLab}
+                }
             }
         } else {
             state put talked-to-cipher yes
@@ -144,6 +187,42 @@ namespace eval Underworld::Elevator {
         puts "\"It is done!\""
         state put trial-crime no
         state put subspace-reason no
+        puts {}
+        return scienceLab
+    }
+
+    proc cipherWrong {} {
+        puts "\"Hrmm... I can trust you, right?\""
+        prompt {} {
+            {"\"Of course.\"" yes cipherWrong1}
+            {"\"Not really.\"" yes cipherWrong2}
+        }
+    }
+
+    proc cipherWrong1 {} {
+        puts "\"Good. That's what I thought. You see, in addition to engineering, I\
+        also dabble in necromancy. I'm a certified necromancer, at that. But a few months\
+        ago, my Necromancy Certificate was stolen from me, and I've been unable to locate\
+        the thief. The Certificate grants the holder unimaginable power over the dead, so\
+        I fear for the overworld if they can decipher the scripts written on it. If you\
+        happen to notice anyone carrying an ancient white scroll with cursed glyphs on it,\
+        let me know.\""
+        state put necro-cipher spoken
+        prompt {} {
+            {"\"I will.\"" yes scienceLab}
+            {"\"Do you know anything about the thief?\"" yes cipherDetails}
+        }
+    }
+
+    proc cipherWrong2 {} {
+        puts "\"Very well.\""
+        puts {}
+        return scienceLab
+    }
+
+    proc cipherDetails {} {
+        puts "\"Certainly human. Yes, certainly human. He was sort of normal-looking,\
+        if you know what I mean. Not the sort to stand out in a crowd. That's all I know.\""
         puts {}
         return scienceLab
     }

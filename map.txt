@@ -154,6 +154,10 @@
   - cipherTalk
   - cipherExplain <answer>
   - cipherErase
+  - cipherWrong
+  - cipherWrong1
+  - cipherWrong2
+  - cipherDetails
 * [Johnny]
   - talk
   - okay
