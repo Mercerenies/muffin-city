@@ -135,7 +135,25 @@ namespace eval Underworld::Elevator {
                             {"\"Later.\"" yes scienceLab}
                         }
                     }
-                    default {
+                    found {
+                        puts "\"Hrm...\""
+                        prompt {} {
+                            {"\"Can I use the Document Transmogrifier?\"" yes cipherErase}
+                            {"Tell him about Joe" yes cipherJoe}
+                            {"Tell him about the Ancient Minister." {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
+                            {"\"Later.\"" yes scienceLab}
+                        }
+                    }
+                    rising {
+                        puts "\"Hrm...\""
+                        prompt {} {
+                            {"\"Can I use the Document Transmogrifier?\"" yes cipherErase}
+                            {"\"Joe is using the Certificate!\"" yes cipherDeadly}
+                            {"Tell him about the Ancient Minister." {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
+                            {"\"Later.\"" yes scienceLab}
+                        }
+                    }
+                    encouraged - default {
                         puts "\"Hrm...\""
                         prompt {} {
                             {"\"Can I use the Document Transmogrifier?\"" yes cipherErase}
@@ -154,9 +172,8 @@ namespace eval Underworld::Elevator {
             }
         } else {
             state put talked-to-cipher yes
-            puts "\"Heyyyy you're that girl who's helping ol' Johnny. Or guy, I never have the time\
-            to tell the difference.\""
-            puts "\"Anyway, I'm Dr. Cipher, and Johnny has told me all about you. Would you like to\
+            puts "\"Heyyyy ol' Johnny's friend, aren't ya? I'm Dr. Cipher, and\
+            Johnny has told me all about you. Would you like to\
             hear about my latest invention?\""
             prompt {} {
                 {"\"Yes.\"" yes {cipherExplain yes}}
@@ -232,6 +249,42 @@ namespace eval Underworld::Elevator {
         if you know what I mean. Not the sort to stand out in a crowd. That's all I know.\""
         puts {}
         return scienceLab
+    }
+
+    proc cipherJoe {} {
+        puts "\"Hm? A time traveler hiding in subspace has a white scroll? Of course! That's\
+        why I couldn't detect its energy; the clever thief hid the Certificate in subspace.\
+        You need to reclaim that Certificate for me at all costs. The fate of the world depends\
+        on it!\""
+        prompt {} {
+            {"\"You can count on me!\"" yes cipherCount}
+            {"\"Why is the whole world at stake?\"" yes cipherWhy}
+        }
+    }
+
+    proc cipherCount {} {
+        puts "\"I knew I could count on you!\""
+        state put necro-cipher encouraged
+        puts {}
+        return scienceLab
+    }
+
+    proc cipherWhy {} {
+        puts "\"This was no amateur theft. The thief knew how to hide the Certificate's\
+        energies. I can only imagine the diabolical schemes that our thief is dreaming\
+        up right now.\""
+        state put necro-cipher encouraged
+        prompt {} {
+            {"\"Okay.\"" yes scienceLab}
+        }
+    }
+
+    proc cipherDeadly {} {
+        puts "\"What?! No, you have to stop him! If he's using the Certificate, then\
+        only a true Hero's weapon will be able to defeat him!\""
+        prompt {} {
+            {"\"Okay.\"" yes scienceLab}
+        }
     }
 
 }

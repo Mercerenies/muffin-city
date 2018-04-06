@@ -158,6 +158,10 @@
   - cipherWrong1
   - cipherWrong2
   - cipherDetails
+  - cipherJoe
+  - cipherCount
+  - cipherWhy
+  - cipherDeadly
 * [Johnny]
   - talk
   - okay
@@ -301,10 +305,18 @@
   - stealing
   - joe
   - joe1
+  - joeScroll
+  - joeScroll1
+  - joeScroll2
+  - joeForce
+  - joePlot <answer>
+  - joeConfront
   - tacoMan
   - tacoAttorney
   - explain
   - olive
+  - panicTaco
+  - panicWoman
 * [Portal]
   - portalRoom
   - portal
@@ -486,7 +498,7 @@ World States:
  * talked-to-acolyte {no started yes}
  * fire-pit {no odd even next seen talked}
  * talked-to-steve {no yes}
- * necro-cipher {no spoken}
+ * necro-cipher {no spoken found encouraged rising}
  * golden-arch {no yes}
 
 -------- CHARACTERS --------
@@ -747,8 +759,19 @@ Steve (Steve's Smash-a-Lock)
       player talks to Dr. Cipher after the Butler's second event (butler-game is `pawn` or
       beyond) and after using the pawn shop password (pawn-shop-pass is `yes`), Dr. Cipher
       will seem mildly alarmed by something. If the player asks what is wrong, Dr. Cipher
-      will explain that his Necromancy Certificate has been stolen. ////
+      will explain that his Necromancy Certificate has been stolen.
   (*) spoken
+      The player has been sent to look for the Necromancy Certificate. Joe the Time-Traveler
+      will have it at the taco shop in subspace. When the player approaches him, Joe will
+      insist that it is a family heirloom, not a cursed artifact. If the player presses him,
+      he will not give, but the game will move to `found`.
+  (*) found
+      The player has found the Certificate, but Joe will not give it up. The player must return
+      to Dr. Cipher and share his findings. When the player tells Dr. Cipher, he will confirm
+      that Joe's scroll is in fact the Certificate and tell the player to claim the Certificate
+      at all costs. The game will move to `encouraged`.
+  (*) encouraged ////
+  (*) rising ////
       //// So the player will go to Dr. Cipher, who doesn't know who has stolen it. Then, if
       the player sees Joe, he will notice a mysterious scroll that Joe is reading. If confronted,
       Joe will say it's a family heirloom. The player will have to go back to Dr. Cipher, who will
@@ -866,7 +889,7 @@ NOTES:
  * Steve's Smash-a-Lock (only open in the past), where you can have Steve break open the vault lock to get Atheena's crystal back. Also, Steve may give you a Suspicious Briefcase that you must deliver to present-day Steve in the prison.
  * Evil flame spirit appears in the fire pits after N visits. After appeasing him by giving him something, ... I dunno, something happens ... (Necromancy Certificate? Joe?)
  * The Ancient Minister will tell you how you ended up in subspace (mainly to help the player understand). If the player has no record of entering subspace in any "standard" way, then his heart will be pure and the Minister will speak to him more frankly, and then.... something.... (the record of entering subspace can be cleared with Dr. Cipher's help)
- * Dr. Cipher wants his Necromancy Certificate back from Joe. Is Joe secretly a supervillain who wants to use the Certificate to rule the world? If so, the player probably has to go call on Atheena to save the world from him
+ * Dr. Cipher wants his Necromancy Certificate back from Joe. Is Joe secretly a supervillain who wants to use the Certificate to rule the world? If so, the player probably has to go call on Atheena to save the world from him. One of the rewards from defeating Joe, in addition to a Black Olive stolen from the Taco Man, is that the portal to the underworld will remain open, providing a one-way path into a new part of the underworld, filled with dark souls and evil magic.
 
  * Hunter, inmate, and second prison guard souls for Johnny Death
  * Attorney-Man and the three clients (player, guard, and robber)
