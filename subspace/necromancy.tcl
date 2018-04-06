@@ -24,7 +24,7 @@ namespace eval Subspace::Necromancy {
         if {$hp <= 0} then {
             return defeated
         } elseif {$ehp <= 0} then {
-            return -gameover
+            return victory
         }
         puts "Player HP: [format {%3d}  $hp]/100"
         puts "Joe    HP: [format {%3d} $ehp]/100"
@@ -61,7 +61,7 @@ namespace eval Subspace::Necromancy {
         if {$hp <= 0} then {
             return defeated
         } elseif {$ehp <= 0} then {
-            return -gameover
+            return victory
         }
         puts "Joe's turn."
         switch [expr {$ehp % 6}] {
@@ -83,10 +83,10 @@ namespace eval Subspace::Necromancy {
     }
 
     proc team {hp ahp ehp} {
-        if {($hp <= 0) && ($ahp <= 0)} then {
+        if {($hp <= 0) || ($ahp <= 0)} then {
             return defeated
         } elseif {$ehp <= 0} then {
-            return -gameover
+            return victory
         }
         puts "Player  HP: [format {%3d}  $hp]/100"
         puts "Atheena HP: [format {%3d} $ahp]/100"
@@ -121,7 +121,47 @@ namespace eval Subspace::Necromancy {
     }
 
     proc teamEnemyTurn {hp ahp ehp} {
-        return -gameover
+        if {($hp <= 0) || ($ahp <= 0)} then {
+            return defeated
+        } elseif {$ehp <= 0} then {
+            return victory
+        }
+        puts "Atheena's turn."
+        puts "Atheena used Blade of Heroes! Dealt 26 damage!"
+        set ehp [expr {$ehp - 26}]
+        puts {}
+        if {($hp <= 0) || ($ahp <= 0)} then {
+            return defeated
+        } elseif {$ehp <= 0} then {
+            return victory
+        }
+        puts "Joe's turn."
+        if {($ehp % 10) > 5} then {
+            set target "Player"
+            set thp0 $hp
+            set thp {hp}
+        } else {
+            set target "Atheena"
+            set thp0 $ahp
+            set thp {ahp}
+        }
+        puts "$thp0 $thp"
+        switch [expr {$ehp % 6}] {
+            0 - 1 {
+                puts "Joe used Shroud of Darkness on $target! Dealt 8 damage!"
+                set $thp [expr {$thp0 - 8}]
+            }
+            2 - 3 {
+                puts "Joe used Accursed Grip on $target! Dealt 9 damage!"
+                set $thp [expr {$thp0 - 9}]
+            }
+            4 - 5 {
+                puts "Joe used Flames from Below on $target! Dealt 11 damage!"
+                set $thp [expr {$thp0 - 11}]
+            }
+        }
+        puts {}
+        return [list team $hp $ahp $ehp]
     }
 
     proc defeated {} {
@@ -131,6 +171,48 @@ namespace eval Subspace::Necromancy {
             state put lobby-door murder
         }
         return ::Underworld::Lobby::murder
+    }
+
+    proc victory {} {
+        puts "\"No! Not like this! Not when I was so close!\""
+        puts "Atheena leaps forward and delivers one final blow.\
+        As the Blade of Heroes pierces his chest, Joe disappears in\
+        a bath of divine white light. The spirits of the dead retreat\
+        back into the hole in the ground, which remains present."
+        puts "\"Excellent teamwork!\""
+        prompt {} {
+            {"\"We did it!\"" yes {victory1 we}}
+            {"\"Thank you!\"" yes {victory1 thank}}
+        }
+    }
+
+    proc victory1 {answer} {
+        switch $answer {
+            we {
+                puts "\"Yes we did! Now, if you require any further assistance, I shall\
+                be in the projection room.\""
+            }
+            thank {
+                puts "\"You're quite welcome. Now, if you require any further assistance, I\
+                shall be in the projection room.\""
+            }
+        }
+        puts "Atheena sheathes her blade and walks back out the door calmly. After\
+        a moment, the Taco Man looks at you."
+        puts "\"You saved my shop again! Thank you so much!\""
+        prompt {} {
+            {"\"All in a day's work.\"" yes victory2}
+            {"\"Glad I could help.\"" yes victory2}
+        }
+    }
+
+    proc victory2 {} {
+        puts "\"This cursed hole in the ground may cause trouble for business. Perhaps you\
+        should investigate it. When you have the time, of course.\""
+        state put necro-cipher beaten
+        prompt {} {
+            {"\"I will.\"" yes ::Subspace::Taco::shop}
+        }
     }
 
 }

@@ -76,6 +76,9 @@ namespace eval Subspace::Taco {
                                 On the table in front of him is his grandfather's\
                                 scroll."
                             }
+                            beaten {
+                                puts " The Taco Man stands behind the counter, smiling."
+                            }
                         }
                     }
                 }
@@ -84,7 +87,7 @@ namespace eval Subspace::Taco {
                 {"Talk to the bearded man" {[state get taco-shop] eq {no}} tacoMan}
                 {"Talk to the Taco Man" {[state get taco-shop] ne {no}} tacoMan}
                 {"Talk to the man at the table" {([state get taco-shop] eq {fed}) && ([state get pawn-shop-pass] eq {no})} joe}
-                {"Talk to Joe" {([state get taco-shop] eq {fed}) && ([state get pawn-shop-pass] ne {no})} joe}
+                {"Talk to Joe" {([state get taco-shop] eq {fed}) && ([state get pawn-shop-pass] ne {no}) && ([state get necro-cipher] in {no spoken found encouraged})} joe}
                 {"Talk to the woman" {[state get prison-guard] eq {cleared}} woman}
                 {"Head back outside" yes ::Subspace::Hub::hub}
             }
@@ -205,7 +208,7 @@ namespace eval Subspace::Taco {
         puts "The spirits of the dead encircle Joe. As you approach, he ceases chanting\
         briefly."
         if {[state get necro-cipher] eq {help}} then {
-            puts "\"Atheena, it was only a matter of time before you tried to stop\
+            puts "\"Atheena! It was only a matter of time before you tried to stop\
             me. Now I can take care of both of you at once.\""
             prompt {} {
                 {"\"Let's do this!\"" yes {::Subspace::Necromancy::boss atheena}}

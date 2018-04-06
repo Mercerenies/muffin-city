@@ -137,6 +137,7 @@ namespace eval Warehouse::Outside {
                 puts "\"Let me know if you know of any cases I could take on.\""
                 prompt {} {
                     {"\"You could represent me.\"" {[state get attorney-self] eq {no}} northSelf}
+                    {"\"There's a madman raising the dead. Can you stop him?\"" {[state get necro-cipher] in {rising help}} northCrazy}
                     {"\"Okay.\"" yes north}
                 }
             }
@@ -192,6 +193,23 @@ namespace eval Warehouse::Outside {
         }
         prompt {} {
             {"\"Thank you.\"" yes north}
+        }
+    }
+
+    proc northCrazy {} {
+        puts "\"Raising the dead? Aha, another case for Attorney-Man! If you can bring this\
+        man to justice, I will see to it that he receives the maximum sentence!\""
+        prompt {} {
+            {"\"Will you help me fight him?\"" yes northCrazy1}
+            {"\"I'll do that.\"" yes north}
+        }
+    }
+
+    proc northCrazy1 {} {
+        puts "\"The Attorney-Man fist of justice is not a tool for violence! It is a tool\
+        for justice in the courtroom!\""
+        prompt {} {
+            {"\"Okay.\"" yes north}
         }
     }
 

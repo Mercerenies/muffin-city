@@ -241,6 +241,8 @@
   - northSelf
   - northFood
   - northEncounter
+  - northCrazy
+  - northCrazy1
 
 [Past]
 * [Science]
@@ -324,6 +326,7 @@
   - atheena
   - atheenaIntro
   - atheenaHelp
+  - atheenaThanks
   - atheenaCrystal
   - basicPortal
 * [Temple]
@@ -347,6 +350,8 @@
   - teamRest <hp> <ahp> <ehp>
   - teamEnemyTurn <hp> <ahp> <ehp>
   - defeated
+  - victory
+  - victory1 <answer>
 
 [Space]
 * [Satellite]
@@ -514,7 +519,7 @@ World States:
  * talked-to-acolyte {no started yes}
  * fire-pit {no odd even next seen talked}
  * talked-to-steve {no yes}
- * necro-cipher {no spoken found encouraged rising help}
+ * necro-cipher {no spoken found encouraged rising help beaten}
  * golden-arch {no yes}
 
 -------- CHARACTERS --------
