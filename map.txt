@@ -331,6 +331,13 @@
   - matthewStudy
   - sanctuary
   - minister
+* [Necromancy]
+  - boss <helper>
+  - solo <hp> <ehp>
+  - soloFist <hp> <ehp>
+  - soloKick <hp> <ehp>
+  - soloRest <hp> <ehp>
+  - defeated
 
 [Space]
 * [Satellite]

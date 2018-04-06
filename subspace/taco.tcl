@@ -200,7 +200,7 @@ namespace eval Subspace::Taco {
         briefly."
         puts "\"You think you can stop me?\""
         prompt {} {
-            {"\"I'll fight you!\"" yes ::Empty::place}
+            {"\"I'll fight you!\"" yes {::Subspace::Necromancy::boss no}}
             {"\"Goodbye, now.\"" yes shop}
         }
     }
