@@ -64,7 +64,7 @@ namespace eval Underworld::Elevator {
                            ([state get butler-game] ni {no cell}) &&
                            ([state get talked-to-cipher] eq {yes}) &&
                            ([state get pawn-shop-pass] eq {yes}) &&
-                           ([state get necro-cipher] in {no spoken})}]
+                           ([state get necro-cipher] in {no spoken found encouraged rising help})}]
                 if {$necro} then {
                     set cipher "Dr. Cipher is pacing back and forth, looking\
                     fairly annoyed."
@@ -144,7 +144,7 @@ namespace eval Underworld::Elevator {
                             {"\"Later.\"" yes scienceLab}
                         }
                     }
-                    rising {
+                    rising - help {
                         puts "\"Hrm...\""
                         prompt {} {
                             {"\"Can I use the Document Transmogrifier?\"" yes cipherErase}

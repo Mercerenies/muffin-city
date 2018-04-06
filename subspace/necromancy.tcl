@@ -13,7 +13,9 @@ namespace eval Subspace::Necromancy {
                 return {solo 100 100}
             }
             atheena {
-                return ::Empty::place
+                puts "You can feel the power of Atheena's blade protecting you."
+                puts {}
+                return {team 100 100 100}
             }
         }
     }
@@ -78,6 +80,48 @@ namespace eval Subspace::Necromancy {
         }
         puts {}
         return [list solo $hp $ehp]
+    }
+
+    proc team {hp ahp ehp} {
+        if {($hp <= 0) && ($ahp <= 0)} then {
+            return defeated
+        } elseif {$ehp <= 0} then {
+            return -gameover
+        }
+        puts "Player  HP: [format {%3d}  $hp]/100"
+        puts "Atheena HP: [format {%3d} $ahp]/100"
+        puts "Joe     HP: [format {%3d} $ehp]/100"
+        puts {}
+        puts "Player's turn."
+        set option1 "{Fist of Rage} yes {teamFist $hp $ahp $ehp}"
+        set option2 "{Righteous Roundhouse Kick} yes {teamKick $hp $ahp $ehp}"
+        set option3 "{Rest} yes {teamRest $hp $ahp $ehp}"
+        prompt {} [list $option1 $option2 $option3]
+    }
+
+    proc teamFist {hp ahp ehp} {
+        puts "Player used Fist of Rage! Dealt 2 damage!"
+        set ehp [expr {$ehp - 2}]
+        puts {}
+        return [list teamEnemyTurn $hp $ahp $ehp]
+    }
+
+    proc teamKick {hp ahp ehp} {
+        puts "Player used Righteous Roundhouse Kick! Dealt 3 damage!"
+        set ehp [expr {$ehp - 3}]
+        puts {}
+        return [list teamEnemyTurn $hp $ahp $ehp]
+    }
+
+    proc teamRest {hp ahp ehp} {
+        puts "Player rested! Healed 1 HP!"
+        set hp [expr {$hp + 1}]
+        puts {}
+        return [list teamEnemyTurn $hp $ahp $ehp]
+    }
+
+    proc teamEnemyTurn {hp ahp ehp} {
+        return -gameover
     }
 
     proc defeated {} {

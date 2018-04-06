@@ -15,12 +15,14 @@ namespace eval Subspace::Portal {
         }
         if {[state get hero-blade] eq {no}} then {
             puts " A young woman in silver armor is standing next to the projector."
+        } elseif {[state get necro-cipher] eq {help}} {
+            puts {}
         } else {
             puts " Atheena is standing next to the projector."
         }
         prompt {} {
             {"Talk to the woman" {[state get hero-blade] eq {no}} atheena}
-            {"Talk to Atheena" {[state get hero-blade] ne {no}} atheena}
+            {"Talk to Atheena" {([state get hero-blade] ne {no}) && ([state get necro-cipher] ne {help})} atheena}
             {"Pass through the portal" {[state get subspace-portal] ne {no}} portal}
             {"Head back to the hub" yes ::Subspace::Hub::hub}
         }
@@ -56,6 +58,7 @@ namespace eval Subspace::Portal {
                 prompt {} {
                     {"\"Could you turn the portal on?\"" {[state get subspace-portal] eq {no}} basicPortal}
                     {"\"Is that the only place the portal can go?\"" {([state get subspace-portal] ne {no}) && ([state get hero-crystal] eq {no})} atheenaCrystal}
+                    {"\"There's a madman at the taco shop!\"" {[state get necro-cipher] eq {rising}} atheenaHelp}
                     {"\"Goodbye.\"" yes portalRoom}
                 }
             }
@@ -75,6 +78,15 @@ namespace eval Subspace::Portal {
             {"\"Please turn it on.\"" yes basicPortal}
             {"\"Maybe later.\"" yes portalRoom}
         }
+    }
+
+    proc atheenaHelp {} {
+        puts "\"A madman?! How foul! Come, we shall defeat this villain together!\""
+        puts "Without another word, Atheena races toward the taco shop, her hand\
+        on the hilt of her blade."
+        state put necro-cipher help
+        puts {}
+        return portalRoom
     }
 
     proc atheenaCrystal {} {

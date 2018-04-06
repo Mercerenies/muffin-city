@@ -3,7 +3,7 @@ namespace eval Subspace::Taco {
 
     proc shop {} {
         puts "== Subspace Taco Shop =="
-        if {[state get necro-cipher] eq {rising}} then {
+        if {[state get necro-cipher] in {rising help}} then {
             set guard {}
             if {[state get prison-guard] eq {cleared}} then {
                 if {[state get guard-soul] eq {yes}} then {
@@ -14,13 +14,19 @@ namespace eval Subspace::Taco {
                     with the Taco Man."
                 }
             }
+            set atheena {}
+            if {[state get necro-cipher] eq {help}} then {
+                set atheena " Atheena has drawn her blade and appears to be ready for\
+                combat."
+            }
             puts "The once-refreshing taco shop is now filled with an aura of\
             evil, as Joe's accursed chanting summons more dark spirits. The Taco\
             Man, understandably panicked, is standing against the back wall of the\
-            shop.$guard"
+            shop.$guard$atheena"
             prompt {} {
                 {"Talk to the Taco Man" yes panicTaco}
                 {"Confront Joe" yes joeConfront}
+                {"Talk to Atheena" {[state get necro-cipher] eq {help}} panicAtheena}
                 {"Talk to the woman" {[state get prison-guard] eq {cleared}} panicWoman}
                 {"Head back outside" yes ::Subspace::Hub::hub}
             }
@@ -198,10 +204,19 @@ namespace eval Subspace::Taco {
     proc joeConfront {} {
         puts "The spirits of the dead encircle Joe. As you approach, he ceases chanting\
         briefly."
-        puts "\"You think you can stop me?\""
-        prompt {} {
-            {"\"I'll fight you!\"" yes {::Subspace::Necromancy::boss no}}
-            {"\"Goodbye, now.\"" yes shop}
+        if {[state get necro-cipher] eq {help}} then {
+            puts "\"Atheena, it was only a matter of time before you tried to stop\
+            me. Now I can take care of both of you at once.\""
+            prompt {} {
+                {"\"Let's do this!\"" yes {::Subspace::Necromancy::boss atheena}}
+                {"\"Hold on. I'm not ready.\"" yes shop}
+            }
+        } else {
+            puts "\"You think you can stop me?\""
+            prompt {} {
+                {"\"I'll fight you!\"" yes {::Subspace::Necromancy::boss no}}
+                {"\"Goodbye, now.\"" yes shop}
+            }
         }
     }
 
@@ -279,6 +294,12 @@ namespace eval Subspace::Taco {
             puts {}
             return shop
         }
+    }
+
+    proc panicAtheena {} {
+        puts "\"It is time to face this threat as a team!\""
+        puts {}
+        return shop
     }
 
 }

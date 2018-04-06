@@ -317,11 +317,14 @@
   - olive
   - panicTaco
   - panicWoman
+  - panicAtheena
 * [Portal]
   - portalRoom
   - portal
   - atheena
   - atheenaIntro
+  - atheenaHelp
+  - atheenaCrystal
   - basicPortal
 * [Temple]
   - hill
@@ -337,6 +340,12 @@
   - soloFist <hp> <ehp>
   - soloKick <hp> <ehp>
   - soloRest <hp> <ehp>
+  - soloEnemyTurn <hp> <ehp>
+  - team <hp> <ahp> <ehp>
+  - teamFist <hp> <ahp> <ehp>
+  - teamKick <hp> <ahp> <ehp>
+  - teamRest <hp> <ahp> <ehp>
+  - teamEnemyTurn <hp> <ahp> <ehp>
   - defeated
 
 [Space]
@@ -505,7 +514,7 @@ World States:
  * talked-to-acolyte {no started yes}
  * fire-pit {no odd even next seen talked}
  * talked-to-steve {no yes}
- * necro-cipher {no spoken found encouraged rising}
+ * necro-cipher {no spoken found encouraged rising help}
  * golden-arch {no yes}
 
 -------- CHARACTERS --------
