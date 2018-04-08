@@ -178,7 +178,8 @@ namespace eval Subspace::Necromancy {
         puts "Atheena leaps forward and delivers one final blow.\
         As the Blade of Heroes pierces his chest, Joe disappears in\
         a bath of divine white light. The spirits of the dead retreat\
-        back into the hole in the ground, which remains present."
+        back into the hole in the ground, which remains present. The\
+        Necromancy Certificate floats down into the dark hole."
         puts "\"Excellent teamwork!\""
         prompt {} {
             {"\"We did it!\"" yes {victory1 we}}

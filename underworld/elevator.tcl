@@ -74,11 +74,17 @@ namespace eval Underworld::Elevator {
                     set cipher "There is a strange horned man in a lab coat poking and prodding at\
                     a strange contraption."
                 }
+                set joe {}
+                if {[state get necro-cipher] in {beaten yes}} then {
+                    set joe " In the corner of the room, a cage hanging from the\
+                    ceiling houses Joe the Time-Traveler."
+                }
                 puts "The science lab is surprisingly futuristic looking, given the\
-                surrounded environment. $cipher"
+                surrounded environment. $cipher$joe"
                 prompt {} {
                     {"Talk to the man" {![state get talked-to-cipher]} cipherTalk}
                     {"Talk to Dr. Cipher" {[state get talked-to-cipher]} cipherTalk}
+                    {"Talk to Joe" {[state get necro-cipher] in {beaten yes}} joeTalk}
                     {"Go back out" yes tunnel}
                 }
             }
@@ -151,6 +157,25 @@ namespace eval Underworld::Elevator {
                             {"\"Joe is using the Certificate!\"" yes cipherDeadly}
                             {"Tell him about the Ancient Minister." {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
                             {"\"Later.\"" yes scienceLab}
+                        }
+                    }
+                    beaten {
+                        puts "\"Hrm...\""
+                        # //// If you have the Certificate, then option to give it to him
+                        prompt {} {
+                            {"\"Can I use the Document Transmogrifier?\"" yes cipherErase}
+                            {"\"I defeated Joe.\"" yes cipherCaught}
+                            {"Tell him about the Ancient Minister." {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
+                            {"\"Later.\"" yes scienceLab}
+                        }
+                    }
+                    yes {
+                        puts "\"Heyyyy it's good to see you again! Would you like me to erase\
+                        your records?\""
+                        prompt {} {
+                            {"\"Yes, please.\"" yes cipherErase}
+                            {"Tell him about the Ancient Minister." {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
+                            {"\"Not right now.\"" yes scienceLab}
                         }
                     }
                     encouraged - default {
@@ -284,6 +309,42 @@ namespace eval Underworld::Elevator {
         only a true Hero's weapon will be able to defeat him!\""
         prompt {} {
             {"\"Okay.\"" yes scienceLab}
+        }
+    }
+
+    proc cipherCaught {} {
+        # //// Option to give him the certificate here too
+        puts "\"Yes, he may have mentioned that in his incoherent tirades as I imprisoned\
+        him. But what of the Certificate?\""
+        prompt {} {
+            {"\"It fell into a hole.\"" yes cipherCaught1}
+        }
+    }
+
+    proc cipherCaught1 {} {
+        # //// If you have the Certificate, Dr. Cipher can detect it
+        # and gives a different response
+        puts "\"Ah, the hole created by the necromancy? That is unfortunate but not\
+        catastrophic. You should be able to safely climb into the hole and retrieve\
+        it.\""
+        prompt {} {
+            {"\"Okay.\"" yes scienceLab}
+            {"\"What about Joe?\"" yes cipherCaught2}
+        }
+    }
+
+    proc cipherCaught2 {} {
+        puts "\"Our thief? Well, as you can see, he is quite secure here. I'll\
+        make sure he can't do anything more to get in your way.\""
+        puts {}
+        return scienceLab
+    }
+
+    proc joeTalk {} {
+        puts "\"These bars will not contain me! I will escape and claim my rightful\
+        place as ruler of this world!\""
+        prompt {} {
+            {"\"Have fun with that.\"" yes scienceLab}
         }
     }
 

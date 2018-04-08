@@ -76,19 +76,22 @@ namespace eval Subspace::Taco {
                                 On the table in front of him is his grandfather's\
                                 scroll."
                             }
-                            beaten {
-                                puts " The Taco Man stands behind the counter, smiling."
+                            beaten - yes {
+                                puts " The Taco Man stands behind the counter, smiling.\
+                                The hole in the ground summoned by Joe remains there."
                             }
                         }
                     }
                 }
             }
+            # ///// The hole in the ground (after defeating Joe)
             prompt {} {
                 {"Talk to the bearded man" {[state get taco-shop] eq {no}} tacoMan}
                 {"Talk to the Taco Man" {[state get taco-shop] ne {no}} tacoMan}
                 {"Talk to the man at the table" {([state get taco-shop] eq {fed}) && ([state get pawn-shop-pass] eq {no})} joe}
                 {"Talk to Joe" {([state get taco-shop] eq {fed}) && ([state get pawn-shop-pass] ne {no}) && ([state get necro-cipher] in {no spoken found encouraged})} joe}
                 {"Talk to the woman" {[state get prison-guard] eq {cleared}} woman}
+                {"Leap into the hole" {[state get necro-cipher] in {beaten yes}} ::Underworld::Abyss::secondFloor}
                 {"Head back outside" yes ::Subspace::Hub::hub}
             }
         }

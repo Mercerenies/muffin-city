@@ -162,6 +162,10 @@
   - cipherCount
   - cipherWhy
   - cipherDeadly
+  - cipherCaught
+  - cipherCaught1
+  - cipherCaught2
+  - joeTalk
 * [Johnny]
   - talk
   - okay
@@ -180,6 +184,13 @@
   - secretLeverOff
   - secretLeverOn
   - mysteryRoom
+* [Abyss]
+  - firstFloor
+  - secondFloor
+  - void
+  - voidDirection
+  - voidFork
+  - fork
 
 [Dream]
 * [Transit]
@@ -911,8 +922,9 @@ NOTES:
  * Evil flame spirit appears in the fire pits after N visits. After appeasing him by giving him something, ... I dunno, something happens ... (Necromancy Certificate? Joe?)
  * The Ancient Minister will tell you how you ended up in subspace (mainly to help the player understand). If the player has no record of entering subspace in any "standard" way, then his heart will be pure and the Minister will speak to him more frankly, and then.... something.... (the record of entering subspace can be cleared with Dr. Cipher's help)
  * Dr. Cipher wants his Necromancy Certificate back from Joe. Is Joe secretly a supervillain who wants to use the Certificate to rule the world? If so, the player probably has to go call on Atheena to save the world from him. One of the rewards from defeating Joe, in addition to a Black Olive stolen from the Taco Man, is that the portal to the underworld will remain open, providing a one-way path into a new part of the underworld, filled with dark souls and evil magic. Perhaps the Certificate is torn? You have to get it repaired?
- * Turn-based RPG-style combat for Joe and Merchant-bot
+ * .... Science Johnson .... ?
 
+ * Turn-based RPG-style combat for Joe and Merchant-bot
  * Hunter, inmate, and second prison guard souls for Johnny Death
  * Attorney-Man and the three clients (player, guard, and robber)
  * The stolen luggage will let you hide in the cargo hold of the dream train to make it back to the dream world
