@@ -29,10 +29,11 @@ namespace eval Underworld::Abyss {
         }
     }
 
-    # //// A third floor, where the ruler is
+    # //// A third floor, where the ruler is (he has the Necromancy
+    # Certificate that fell from above)
 
     proc void {} {
-        puts "== The Void =="
+        puts "== Abyss - The Void =="
         puts "The void is pitch black. You can see nothing in any direction. Even looking\
         up, you cannot see the platform from which you dove. You are suddenly feeling very\
         drowsy."

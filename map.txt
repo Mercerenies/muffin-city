@@ -922,7 +922,7 @@ NOTES:
  * Evil flame spirit appears in the fire pits after N visits. After appeasing him by giving him something, ... I dunno, something happens ... (Necromancy Certificate? Joe?)
  * The Ancient Minister will tell you how you ended up in subspace (mainly to help the player understand). If the player has no record of entering subspace in any "standard" way, then his heart will be pure and the Minister will speak to him more frankly, and then.... something.... (the record of entering subspace can be cleared with Dr. Cipher's help)
  * Dr. Cipher wants his Necromancy Certificate back from Joe. Is Joe secretly a supervillain who wants to use the Certificate to rule the world? If so, the player probably has to go call on Atheena to save the world from him. One of the rewards from defeating Joe, in addition to a Black Olive stolen from the Taco Man, is that the portal to the underworld will remain open, providing a one-way path into a new part of the underworld, filled with dark souls and evil magic. Perhaps the Certificate is torn? You have to get it repaired?
- * .... Science Johnson .... ?
+ * Science Johnson controls the console room. His soul is in the abyss area and needs to be rescued, but once it is, he will end up outside the door to the controls in the console room and explain the goal of the game to the player, as well as possibly give him hints once he has X muffins.
 
  * Turn-based RPG-style combat for Joe and Merchant-bot
  * Hunter, inmate, and second prison guard souls for Johnny Death
