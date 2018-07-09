@@ -187,6 +187,7 @@
 * [Abyss]
   - firstFloor
   - secondFloor
+  - thirdFloor
   - void
   - voidDirection
   - voidFork
@@ -559,6 +560,7 @@ The Mechanic
 Matthew the Acolyte
 The Ancient Minister
 Steve (Steve's Smash-a-Lock)
+The Reaper
 
 -------- EVENTS --------
 
@@ -791,7 +793,8 @@ Steve (Steve's Smash-a-Lock)
       player talks to Dr. Cipher after the Butler's second event (butler-game is `pawn` or
       beyond) and after using the pawn shop password (pawn-shop-pass is `yes`), Dr. Cipher
       will seem mildly alarmed by something. If the player asks what is wrong, Dr. Cipher
-      will explain that his Necromancy Certificate has been stolen.
+      will explain that his Necromancy Certificate has been stolen. The game will then
+      proceed to `spoken`.
   (*) spoken
       The player has been sent to look for the Necromancy Certificate. Joe the Time-Traveler
       will have it at the taco shop in subspace. When the player approaches him, Joe will
@@ -802,16 +805,28 @@ Steve (Steve's Smash-a-Lock)
       to Dr. Cipher and share his findings. When the player tells Dr. Cipher, he will confirm
       that Joe's scroll is in fact the Certificate and tell the player to claim the Certificate
       at all costs. The game will move to `encouraged`.
-  (*) encouraged ////
-  (*) rising ////
-      //// So the player will go to Dr. Cipher, who doesn't know who has stolen it. Then, if
-      the player sees Joe, he will notice a mysterious scroll that Joe is reading. If confronted,
-      Joe will say it's a family heirloom. The player will have to go back to Dr. Cipher, who will
-      confirm that it is the Certificate. When the player next confronts Joe after this, he will
-      insist that Cipher is the bad guy. The player can choose to disbelieve him (he'll be ignored)
-      or to confront Cipher. Cipher will once again send the player back to Joe, who has now begun
-      summoning the spirits of the dead. They will kill the player if he approaches Joe, so he must
-      seek the help of Atheena, who will save the world with her Hero's Blade.
+  (*) encouraged
+      Having been reassured that Joe definitely has the Certificate, the player must confront
+      Joe again. When he does so, Joe will confess to stealing the Certificate but will claim
+      that Dr. Cipher is the villain. The player has the option of buying into his story, but
+      it doesn't matter, because either way, Joe will decide that the player knows too much.
+      Joe activates the Necromancy Certificate and the game moves to `rising`.
+  (*) rising
+      Joe has activated the Certificate and is summoning the spirits of the dead. The player
+      has the option to fight him then and there. If he does so, the player will enter
+      one-on-one turn-based combat with Joe, who will proceed to summarily curbstomp him,
+      sending the player to the underworld. Instead, if the player visits Atheena the Hero,
+      she will offer to help in the fight against Joe, moving the game to `help`.
+  (*) help
+      Atheena is at the taco shop waiting to confront Joe with the player. The battle will
+      now go much more smoothly, and the player and Atheena will win. Joe will be banished
+      to the underworld, where Dr. Cipher will see that justice is served. The Necromancy
+      Certificate falls into a void which leads to the abyss. Atheena will return to the
+      portal room. The game moves to `beaten`.
+  (*) beaten
+      Joe has been defeated, but the Certificate has not been recovered. It has fallen into
+      the hands of the Reaper in the abyss.
+      ////
 
 a. Shady Alley Silver Coin (sa-coin)
   (*) no
@@ -923,6 +938,8 @@ NOTES:
  * The Ancient Minister will tell you how you ended up in subspace (mainly to help the player understand). If the player has no record of entering subspace in any "standard" way, then his heart will be pure and the Minister will speak to him more frankly, and then.... something.... (the record of entering subspace can be cleared with Dr. Cipher's help)
  * Dr. Cipher wants his Necromancy Certificate back from Joe. Is Joe secretly a supervillain who wants to use the Certificate to rule the world? If so, the player probably has to go call on Atheena to save the world from him. One of the rewards from defeating Joe, in addition to a Black Olive stolen from the Taco Man, is that the portal to the underworld will remain open, providing a one-way path into a new part of the underworld, filled with dark souls and evil magic. Perhaps the Certificate is torn? You have to get it repaired?
  * Science Johnson controls the console room. His soul is in the abyss area and needs to be rescued, but once it is, he will end up outside the door to the controls in the console room and explain the goal of the game to the player, as well as possibly give him hints once he has X muffins.
+ * Crispy Joe's Sandwich Shop...?
+ * Prehistory contains a grocery store with a labyrinth underneath it. At the base of the labyrinth (explorable by subspace map?) there is a jungle dome with a passcode to get in
 
  * Turn-based RPG-style combat for Joe and Merchant-bot
  * Hunter, inmate, and second prison guard souls for Johnny Death
