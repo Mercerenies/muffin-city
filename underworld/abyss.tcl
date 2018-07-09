@@ -25,7 +25,48 @@ namespace eval Underworld::Abyss {
         # //// A third floor
         prompt {} {
             {"Head toward the tunnel" yes fork}
+            {"Go upstairs" yes thirdFloor}
             {"Go downstairs" yes firstFloor}
+        }
+    }
+
+    proc thirdFloor {} {
+        puts "== Abyss - Third Floor =="
+        puts -nonewline "Despite being immediately above the other\
+        two floors, the third floor emits a feeling of seclusion, as\
+        though it is somehow quieter and calmer than the other two.\
+        A handful of disembodied souls wander back and forth, ignoring\
+        everything around them. The bottomless pit is still visible from\
+        this floor, but it seems very far away. "
+        if {[state get talked-to-reaper] eq {yes}} then {
+            puts "Overlooking the pit, the Reaper sits emotionless\
+            in his throne."
+        } else {
+            puts "Overlooking the pit, a large throne seats a strange\
+            faceless shadow which vaguely occupies the form of a human."
+        }
+        prompt {} {
+            {"Address the shadow being" {[state get talked-to-reaper] eq {no}} reaper}
+            {"Talk to the Reaper" {[state get talked-to-reaper] eq {yes}} reaper}
+            {"Go downstairs" yes secondFloor}
+        }
+    }
+
+    proc reaper {} {
+        # //// Certificate
+        if {[state get talked-to-reaper] eq {yes}} then {
+            puts "\"Yes?\""
+            prompt {} {
+                {"\"Never mind.\"" yes thirdFloor}
+            }
+        } else {
+            state put talked-to-reaper yes
+            puts "The shadow speaks without moving, in a deep and somber tone."
+            puts "\"I am the Reaper, to whom all souls will one day return. What\
+            is it you desire?\""
+            prompt {} {
+                {"\"Nothing.\"" yes thirdFloor}
+            }
         }
     }
 
@@ -54,8 +95,7 @@ namespace eval Underworld::Abyss {
     }
 
     proc voidSleep {} {
-        puts "You wander a bit, but you don't manage to get very far before dropping to the\
-        ground and falling asleep."
+        puts "Giving in to your more primitive instincts, you decide to take a short nap."
         puts {}
         return {::Dream::Transit::awaken ::Dream::Transit::thirdRoom}
     }
