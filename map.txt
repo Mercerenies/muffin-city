@@ -942,6 +942,9 @@ NOTES:
  * Science Johnson controls the console room. His soul is in the abyss area and needs to be rescued, but once it is, he will end up outside the door to the controls in the console room and explain the goal of the game to the player, as well as possibly give him hints once he has X muffins.
  * Crispy Joe's Sandwich Shop...?
  * Prehistory contains a grocery store with a labyrinth underneath it. At the base of the labyrinth (explorable by subspace map?) there is a jungle dome with a passcode to get in
+ * The Reaper calls in the player's favor. Possibly to help retrieve a stolen item from the Ancient Minister (do they have a rivalry or something?).
+ * Attorney-Man's reward?
+ * If the Reaper has both the Black Olive and the Necromancy Certificate, then what if he only gives the player one of the two (player gets to choose) then requires a quest for the other? /////
 
  * Turn-based RPG-style combat for Joe and Merchant-bot
  * Hunter, inmate, and second prison guard souls for Johnny Death
