@@ -61,7 +61,7 @@ namespace eval Underworld::Abyss {
     }
 
     proc fork {} {
-        puts "== Underworld Tunnel - Fork"
+        puts "== Underworld Tunnel - Fork =="
         puts "The tunnel branches off in two directions. To the right, you can see\
         Dr. Cipher's lab and the elevator, but the tunnel is too narrow for you to\
         fit through. The path to the left continues for some time, and behind you is\
