@@ -189,6 +189,11 @@
   - secondFloor
   - thirdFloor
   - reaper
+  - reaperFall
+  - reaperBoth
+  - reaperCertificate
+  - reaperOlive
+  - reaperRequest
   - void
   - voidDirection
   - voidSleep
@@ -418,6 +423,8 @@
 * Hunter's Soul
 * Oxygen Tank
 * Oxygen Pocket Dimension (TBA)
+* Necromancy Certificate
+* Black Olive
 
 (Money Sources / Sinks)
 + Shady Alley (sa-coin)
@@ -532,10 +539,11 @@ World States:
  * talked-to-acolyte {no started yes}
  * fire-pit {no odd even next seen talked}
  * talked-to-steve {no yes}
- * necro-cipher {no spoken found encouraged rising help beaten}
+ * necro-cipher {no spoken found encouraged rising help beaten item}
  * golden-arch {no yes}
  * talked-to-reaper {no yes}
- * reaper-has-item {no certificate olive zero}
+ * reaper-has-item {no {Necromancy Certificate} {Black Olive} 0}
+ * reaper-helper {no}
 
 -------- CHARACTERS --------
 
@@ -831,8 +839,18 @@ The Reaper
       the hands of the Reaper in the abyss. When the player addresses the Reaper, he will
       offer the player either the Black Olive or the Necromancy Certificate. The player must
       choose one (reaper-has-item) to take for free. The other item will become available after
-      completing a quest for the Reaper.
+      completing a quest for the Reaper. Upon choosing the first item, the game moves to `item`.
+  (*) item
       ////
+
+12. The Reaper's Desire (reaper-helper)
+  (*) no
+      The player has not done anything for the Reaper yet. When the player claims an item
+      from the Reaper via necro-cipher in `beaten`, the game moves to `item`.
+  (*) item
+      The player has claimed one item from the Reaper, but the Reaper is not ready to
+      give the player a quest. If the player asks for the other item in this state, the
+      Reaper will decline to give it.
 
 a. Shady Alley Silver Coin (sa-coin)
   (*) no
@@ -949,6 +967,7 @@ NOTES:
  * The Reaper calls in the player's favor. Possibly to help retrieve a stolen item from the Ancient Minister (do they have a rivalry or something?).
  * Attorney-Man's reward?
  * If the Reaper has both the Black Olive and the Necromancy Certificate, then what if he only gives the player one of the two (player gets to choose) then requires a quest for the other? /////
+ * The True Reaper is sealed away in the Ancient Minister's temple?
 
  * Turn-based RPG-style combat for Joe and Merchant-bot
  * Hunter, inmate, and second prison guard souls for Johnny Death

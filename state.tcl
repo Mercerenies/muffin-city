@@ -61,6 +61,7 @@ namespace eval State {
         golden-arches no
         talked-to-reaper no
         reaper-has-item no
+        reaper-helper no
     }]
 
     proc get {args} {

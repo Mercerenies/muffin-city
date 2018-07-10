@@ -22,7 +22,6 @@ namespace eval Underworld::Abyss {
         wander blindly, seemingly unaware of your presence or of the\
         presence of any of the other souls. Behind you, a somewhat narrow\
         tunnel forks in two directions."
-        # //// A third floor
         prompt {} {
             {"Head toward the tunnel" yes fork}
             {"Go upstairs" yes thirdFloor}
@@ -57,6 +56,9 @@ namespace eval Underworld::Abyss {
         if {[state get talked-to-reaper] eq {yes}} then {
             puts "\"Yes?\""
             prompt {} {
+                {"\"Did something fall from above recently?\"" {[state get necro-cipher] eq {beaten}} reaperFall}
+                {"\"Can I have the Certificate now?\"" {([state get reaper-helper] eq {item}) && ([state get reaper-has-item] eq {Necromancy Certificate})} reaperRequest}
+                {"\"Can I have the Olive now?\"" {([state get reaper-helper] eq {item}) && ([state get reaper-has-item] eq {Black Olive})} reaperRequest}
                 {"\"Never mind.\"" yes thirdFloor}
             }
         } else {
@@ -65,13 +67,66 @@ namespace eval Underworld::Abyss {
             puts "\"I am the Reaper, to whom all souls will one day return. What\
             is it you desire?\""
             prompt {} {
+                {"\"Did something fall from above recently?\"" {[state get necro-cipher] eq {beaten}} reaperFall}
                 {"\"Nothing.\"" yes thirdFloor}
             }
         }
     }
 
-    # //// A third floor, where the ruler is (he has the Necromancy
-    # Certificate that fell from above)
+    proc reaperFall {} {
+        puts "\"From above? Yes, I see. Two items have fallen from above. Would\
+        you like the Necromancy Certificate or the Black Olive?\""
+        prompt {} {
+            {"\"Can't I have both?\"" yes reaperBoth}
+            {"\"The Certificate.\"" yes reaperCertificate}
+            {"\"The Black Olive.\"" yes reaperOlive}
+            {"\"Let me think about it.\"" yes thirdFloor}
+        }
+    }
+
+    proc reaperBoth {} {
+        puts "\"All things come in good time, child. Now make your choice.\""
+        prompt {} {
+            {"\"I'll take the Certificate.\"" yes reaperCertificate}
+            {"\"I'd like the Olive.\"" yes reaperOlive}
+            {"\"Let me think about it.\"" yes thirdFloor}
+        }
+    }
+
+    proc reaperCertificate {} {
+        puts "\"Very well. I believe this Certificate belongs to Dr. Cipher.\
+        Please return it to him promptly.\""
+        puts "The shadow reaches out with one of its inhuman arms and hands you\
+        Dr. Cipher's Certificate."
+        puts "You got the Necromancy Certificate."
+        inv add {Necromancy Certificate}
+        state put reaper-has-item {Black Olive}
+        state put reaper-helper item
+        state put necro-cipher item
+        puts {}
+        return thirdFloor
+    }
+
+    proc reaperOlive {} {
+        # //// The olive doesn't do anything yet
+        puts "\"Very well. The Black Olive fell shortly before the Certificate.\
+        I do not know its true owner.\""
+        puts "The shadow reaches out with one of its inhuman arms and hands you\
+        a Black Olive."
+        puts "You got a Black Olive."
+        inv add {Black Olive}
+        state put reaper-has-item {Necromancy Certificate}
+        state put reaper-helper item
+        state put necro-cipher item
+        puts {}
+        return thirdFloor
+    }
+
+    proc reaperRequest {} {
+        puts "\"In good time, child. In good time.\""
+        puts {}
+        return thirdFloor
+    }
 
     proc void {} {
         puts "== Abyss - The Void =="
