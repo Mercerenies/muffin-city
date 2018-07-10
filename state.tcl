@@ -60,6 +60,7 @@ namespace eval State {
         necro-cipher no
         golden-arches no
         talked-to-reaper no
+        reaper-has-item no
     }]
 
     proc get {args} {

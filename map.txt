@@ -535,6 +535,7 @@ World States:
  * necro-cipher {no spoken found encouraged rising help beaten}
  * golden-arch {no yes}
  * talked-to-reaper {no yes}
+ * reaper-has-item {no certificate olive zero}
 
 -------- CHARACTERS --------
 
@@ -827,7 +828,10 @@ The Reaper
       portal room. The game moves to `beaten`.
   (*) beaten
       Joe has been defeated, but the Certificate has not been recovered. It has fallen into
-      the hands of the Reaper in the abyss.
+      the hands of the Reaper in the abyss. When the player addresses the Reaper, he will
+      offer the player either the Black Olive or the Necromancy Certificate. The player must
+      choose one (reaper-has-item) to take for free. The other item will become available after
+      completing a quest for the Reaper.
       ////
 
 a. Shady Alley Silver Coin (sa-coin)
