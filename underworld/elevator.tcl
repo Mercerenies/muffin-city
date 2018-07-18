@@ -84,7 +84,7 @@ namespace eval Underworld::Elevator {
                 prompt {} {
                     {"Talk to the man" {![state get talked-to-cipher]} cipherTalk}
                     {"Talk to Dr. Cipher" {[state get talked-to-cipher]} cipherTalk}
-                    {"Talk to Joe" {[state get necro-cipher] in {beaten yes}} joeTalk}
+                    {"Talk to Joe" {[state get necro-cipher] in {beaten item yes}} joeTalk}
                     {"Go back out" yes tunnel}
                 }
             }
@@ -146,7 +146,7 @@ namespace eval Underworld::Elevator {
                         prompt {} {
                             {"\"Can I use the Document Transmogrifier?\"" yes cipherErase}
                             {"Tell him about Joe" yes cipherJoe}
-                            {"Tell him about the Ancient Minister." {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
+                            {"Tell him about the Ancient Minister" {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
                             {"\"Later.\"" yes scienceLab}
                         }
                     }
@@ -155,17 +155,18 @@ namespace eval Underworld::Elevator {
                         prompt {} {
                             {"\"Can I use the Document Transmogrifier?\"" yes cipherErase}
                             {"\"Joe is using the Certificate!\"" yes cipherDeadly}
-                            {"Tell him about the Ancient Minister." {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
+                            {"Tell him about the Ancient Minister" {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
                             {"\"Later.\"" yes scienceLab}
                         }
                     }
-                    beaten {
+                    beaten - item {
                         puts "\"Hrm...\""
                         # //// If you have the Certificate, then option to give it to him
                         prompt {} {
                             {"\"Can I use the Document Transmogrifier?\"" yes cipherErase}
                             {"\"I defeated Joe.\"" yes cipherCaught}
-                            {"Tell him about the Ancient Minister." {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
+                            {"Give him the Certificate" {[inv has {Necromancy Certificate}]} cipherCertificate}
+                            {"Tell him about the Ancient Minister" {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
                             {"\"Later.\"" yes scienceLab}
                         }
                     }
@@ -174,7 +175,7 @@ namespace eval Underworld::Elevator {
                         your records?\""
                         prompt {} {
                             {"\"Yes, please.\"" yes cipherErase}
-                            {"Tell him about the Ancient Minister." {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
+                            {"Tell him about the Ancient Minister" {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
                             {"\"Not right now.\"" yes scienceLab}
                         }
                     }
@@ -182,7 +183,7 @@ namespace eval Underworld::Elevator {
                         puts "\"Hrm...\""
                         prompt {} {
                             {"\"Can I use the Document Transmogrifier?\"" yes cipherErase}
-                            {"Tell him about the Ancient Minister." {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
+                            {"Tell him about the Ancient Minister" {([state get talked-to-acolyte] eq {yes}) && ([state get subspace-reason] ne {no})} cipherMinister}
                             {"\"Later.\"" yes scienceLab}
                         }
                     }
@@ -336,6 +337,41 @@ namespace eval Underworld::Elevator {
     proc cipherCaught2 {} {
         puts "\"Our thief? Well, as you can see, he is quite secure here. I'll\
         make sure he can't do anything more to get in your way.\""
+        puts {}
+        return scienceLab
+    }
+
+    proc cipherCertificate {} {
+        puts "You hand the Necromancy Certificate to Dr. Cipher."
+        puts "\"My Certificate! Marvelous! Excellent work! How can I ever repay you?\""
+        prompt {} {
+            {"\"A million Silver Coins?\"" yes {cipherReward million}}
+            {"\"Any cool gadgets I can have?\"" yes {cipherReward gadget}}
+            {"\"All in a day's work.\"" yes {cipherReward none}}
+        }
+    }
+
+    proc cipherReward {answer} {
+        switch $answer {
+            million {
+                puts "\"Well I'm afraid I don't have that sort of money. But I can give\
+                you something neat.\""
+            }
+            gadget {
+                puts "\"Excellent idea!\""
+            }
+            none {
+                puts "\"Well, I can't simply let you leave here empty-handed. I know!\""
+            }
+        }
+        puts "\"You see, years ago, I worked with Dr. Louis in the overworld on a few\
+        projects. I believe you've met her, actually. I believe I still have the key\
+        to one of my inventions.\""
+        puts "Dr. Cipher fumbles about with his pockets for a moment."
+        puts "\"Aha! Here you go! You're welcome to try it out anytime.\""
+        puts "Dr. Cipher hands you the Heart Key."
+        state put necro-cipher yes
+        inv add {Heart Key}
         puts {}
         return scienceLab
     }
