@@ -30,6 +30,7 @@ namespace eval City::Science {
         if {[state get talked-to-louis]} then {
             puts "\"Hey, can I help you?\""
             prompt {} {
+                {"\"The Heart Key?\"" {[inv has {Heart Key}]} heartQuestion}
                 {"\"Not right now.\"" yes mainRoom}
             }
         } else {
@@ -42,6 +43,13 @@ namespace eval City::Science {
             puts {}
             return mainRoom
         }
+    }
+
+    proc heartQuestion {} {
+        puts "\"Oh, the Heart Key? That goes to Dr. Cipher's old lab. It's right over there.\""
+        puts "Dr. Louis gestures to the Heart Room."
+        puts {}
+        return mainRoom
     }
 
     proc clubRoomJump {} {
@@ -68,6 +76,14 @@ namespace eval City::Science {
         }
     }
 
+    proc heartRoomJump {} {
+        puts "You step up onto the pedestal. The lasers immediately leap into action, firing\
+        simultaneous bursts of light in your direction. As they do so, the room appears to grow\
+        larger around you, until you are shorter than the pedestal itself."
+        puts {}
+        return -gameover ;# ////
+    }
+
     proc heartRoom {} {
         if {![inv has {Heart Key}]} then {
             puts "The door is locked."
@@ -75,8 +91,10 @@ namespace eval City::Science {
             return mainRoom
         }
         puts "== Heart Room =="
-        # ////
+        puts "A set of stairs leads down into a somewhat small room. In the center of the room\
+        is a pedestal with several floor-mounted laser-like devices pointing at it."
         prompt {} {
+            {"Stand on the pedestal" yes heartRoomJump}
             {"Go back out" yes mainRoom}
         }
     }

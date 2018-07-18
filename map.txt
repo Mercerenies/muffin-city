@@ -72,8 +72,10 @@
 * [Science]
   - mainRoom
   - talkTo
+  - heartQuestion
   - clubRoomJump
   - clubRoom
+  - heartRoomJump
   - heartRoom
   - diamondRoom
   - spadeRoom
@@ -165,6 +167,8 @@
   - cipherCaught
   - cipherCaught1
   - cipherCaught2
+  - cipherCertificate
+  - cipherReward <answer>
   - joeTalk
 * [Johnny]
   - talk
@@ -411,7 +415,7 @@
 * Motel Room Key
 * Spade Key (TBA)
 * Diamond Key (TBA)
-* Heart Key (TBA)
+* Heart Key
 * Club Key
 * Fireproof Suit
 * Green Olive
@@ -841,7 +845,13 @@ The Reaper
       choose one (reaper-has-item) to take for free. The other item will become available after
       completing a quest for the Reaper. Upon choosing the first item, the game moves to `item`.
   (*) item
-      ////
+      The player has the option to give Dr. Cipher the Certificate, if he has it. If the player
+      chose the Olive from the Reaper, he will have to wait until he completes the Reaper's quest
+      to get the other. Regardless, once the player returns the Certificate, Dr. Cipher will
+      give him the Heart Key and the game will move to `yes`.
+  (*) yes
+      Dr. Cipher has the Certificate, Joe has been captured, and the player has the Heart Key.
+      Mission accomplished.
 
 12. The Reaper's Desire (reaper-helper)
   (*) no
@@ -968,6 +978,7 @@ NOTES:
  * Attorney-Man's reward?
  * If the Reaper has both the Black Olive and the Necromancy Certificate, then what if he only gives the player one of the two (player gets to choose) then requires a quest for the other? /////
  * The True Reaper is sealed away in the Ancient Minister's temple?
+ * The Black Olive needs to do something (double subspace???)
 
  * Turn-based RPG-style combat for Joe and Merchant-bot
  * Hunter, inmate, and second prison guard souls for Johnny Death
