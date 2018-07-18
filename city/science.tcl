@@ -81,7 +81,7 @@ namespace eval City::Science {
         simultaneous bursts of light in your direction. As they do so, the room appears to grow\
         larger around you, until you are shorter than the pedestal itself."
         puts {}
-        return -gameover ;# ////
+        return ::Tiny::Vent::heartRoom
     }
 
     proc heartRoom {} {

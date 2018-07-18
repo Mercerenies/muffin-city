@@ -3,7 +3,7 @@
 
 +++ City Area +++
 * Big City
-* Big City (giant form)
+* Big City (tiny form)
 * Big City (inverse form)
 * Big City (past form)
 
@@ -403,6 +403,15 @@
   - cabin
   - future
 
+[Tiny]
+* [Vent]
+  - heartRoom
+  - heartStairs
+  - heartPedestal
+  - ventilation
+  - grigory
+  - directions
+
 -------- ITEMS --------
 
 * Silver Coin (x3)
@@ -490,6 +499,7 @@ Events:
  * attorney-man {no met talked talked1 fed 1 2 done complete}
  * taco-shop {no spoken olive fed}
  * hunter-trail {no visited forest under}
+ * necro-cipher {no spoken found encouraged rising help beaten item}
 
 Item / Money States:
  * stolen-good {{} {Silver Coin} {Platinum Card}}
@@ -543,11 +553,12 @@ World States:
  * talked-to-acolyte {no started yes}
  * fire-pit {no odd even next seen talked}
  * talked-to-steve {no yes}
- * necro-cipher {no spoken found encouraged rising help beaten item}
  * golden-arch {no yes}
  * talked-to-reaper {no yes}
  * reaper-has-item {no {Necromancy Certificate} {Black Olive} 0}
  * reaper-helper {no}
+ * stairs-tried {no yes}
+ * talked-to-grigory {no yes}
 
 -------- CHARACTERS --------
 
@@ -576,6 +587,7 @@ Matthew the Acolyte
 The Ancient Minister
 Steve (Steve's Smash-a-Lock)
 The Reaper
+Grigory the AC Repairman
 
 -------- EVENTS --------
 
@@ -979,6 +991,7 @@ NOTES:
  * If the Reaper has both the Black Olive and the Necromancy Certificate, then what if he only gives the player one of the two (player gets to choose) then requires a quest for the other? /////
  * The True Reaper is sealed away in the Ancient Minister's temple?
  * The Black Olive needs to do something (double subspace???)
+ * Heart Room in the past does something? (possibly just an easter egg; exit blocked off?)
 
  * Turn-based RPG-style combat for Joe and Merchant-bot
  * Hunter, inmate, and second prison guard souls for Johnny Death

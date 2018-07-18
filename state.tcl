@@ -62,6 +62,8 @@ namespace eval State {
         talked-to-reaper no
         reaper-has-item no
         reaper-helper no
+        stairs-tried no
+        talked-to-grigory no
     }]
 
     proc get {args} {
