@@ -46,11 +46,11 @@ namespace eval Tiny::Vent {
         } else {
             puts " A man in an air conditioning repair uniform is standing at the fork."
         }
-        # ///// Up and left
+        # ///// Up
         prompt {} {
             {"Go down" yes heartRoom}
             {"Go up" yes ::Empty::place}
-            {"Go left" yes ::Empty::place}
+            {"Go left" yes deepVent}
             {"Talk to the air conditioning man" {![state get talked-to-grigory]} grigory}
             {"Talk to Grigory" {[state get talked-to-grigory]} grigory}
         }
@@ -81,6 +81,36 @@ namespace eval Tiny::Vent {
         dangerous. There is, how you say, giant vermin in fork.\""
         puts {}
         return ventilation
+    }
+
+    proc deepVent {} {
+        puts "== Deep Ventilation Shaft =="
+        puts "Deeper into the air conditioning vents, the path winds and turns quite a\
+        bit more. If you're not careful, you could get lost in here."
+        puts {}
+        puts "A giant rat appears out of nowhere!"
+        prompt {} {
+            {"Run" yes runAway}
+            {"Fight" yes ratFight}
+        }
+    }
+
+    proc runAway {} {
+        puts "You flee back into the safety of the fork. The rat seems to get lost\
+        following you."
+        puts {}
+        return ventilation
+    }
+
+    proc ratFight {} {
+        puts "You endeavor to fight the rat, but with your current size and stature you\
+        are easily dispatched."
+        # //// Rat poison will take care of him (possibly have to keep it normal sized) (also, maybe an easter egg if you try to use Atheena's blade, although it will ultimately be ineffectual)
+        if {[state get lobby-door] ne {yes}} then {
+            state put lobby-door wildlife
+        }
+        puts {}
+        return ::Underworld::Lobby::wildlife
     }
 
 }

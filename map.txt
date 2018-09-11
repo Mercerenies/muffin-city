@@ -411,6 +411,9 @@
   - ventilation
   - grigory
   - directions
+  - deepVent
+  - runAway
+  - ratFight
 
 -------- ITEMS --------
 
@@ -985,11 +988,11 @@ NOTES:
  * Dr. Cipher wants his Necromancy Certificate back from Joe. Is Joe secretly a supervillain who wants to use the Certificate to rule the world? If so, the player probably has to go call on Atheena to save the world from him. One of the rewards from defeating Joe, in addition to a Black Olive stolen from the Taco Man, is that the portal to the underworld will remain open, providing a one-way path into a new part of the underworld, filled with dark souls and evil magic. Perhaps the Certificate is torn? You have to get it repaired?
  * Science Johnson controls the console room. His soul is in the abyss area and needs to be rescued, but once it is, he will end up outside the door to the controls in the console room and explain the goal of the game to the player, as well as possibly give him hints once he has X muffins.
  * Crispy Joe's Sandwich Shop...?
- * Prehistory contains a grocery store with a labyrinth underneath it. At the base of the labyrinth (explorable by subspace map?) there is a jungle dome with a passcode to get in
+ * Prehistory contains a grocery store with a labyrinth underneath it. At the base of the labyrinth (explorable by subspace map? what if the subspace map is just a special map that works in subspace, labyrinth, and shrunk ventilation and its not specific to subspace?) there is a jungle dome with a passcode to get in
  * The Reaper calls in the player's favor. Possibly to help retrieve a stolen item from the Ancient Minister (do they have a rivalry or something?).
  * Attorney-Man's reward?
  * If the Reaper has both the Black Olive and the Necromancy Certificate, then what if he only gives the player one of the two (player gets to choose) then requires a quest for the other? /////
- * The True Reaper is sealed away in the Ancient Minister's temple?
+ * The True Reaper is sealed away in the Ancient Minister's temple? Sealed away in a chest that only Steve's Smash-a-Lock can help with?
  * The Black Olive needs to do something (double subspace???)
  * Heart Room in the past does something? (possibly just an easter egg; exit blocked off?)
 
