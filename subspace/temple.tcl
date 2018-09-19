@@ -105,6 +105,16 @@ namespace eval Subspace::Temple {
                     {"\"Thank you.\"" yes sanctuary}
                 }
             }
+            button {
+                puts "The Minister's voice is very hoarse."
+                puts "\"I see... the ways of the paradox... in your soul...\
+                You have... demolished the time machine... at a time before\
+                you attempted to use it in the present...\
+                You must cleanse your soul, my child.\""
+                prompt {} {
+                    {"\"Thank you.\"" yes sanctuary}
+                }
+            }
         }
     }
 

@@ -441,6 +441,7 @@
 * Oxygen Pocket Dimension (TBA)
 * Necromancy Certificate
 * Black Olive
+* Scuba Suit (TBA)
 
 (Money Sources / Sinks)
 + Shady Alley (sa-coin)
@@ -552,7 +553,7 @@ World States:
  * moon-teleport {no yes}
  * moon-mechanic {no present talked}
  * moon-train {no yes}
- * subspace-reason {no arrest}
+ * subspace-reason {no arrest button}
  * talked-to-acolyte {no started yes}
  * fire-pit {no odd even next seen talked}
  * talked-to-steve {no yes}
@@ -995,6 +996,7 @@ NOTES:
  * The True Reaper is sealed away in the Ancient Minister's temple? Sealed away in a chest that only Steve's Smash-a-Lock can help with?
  * The Black Olive needs to do something (double subspace???)
  * Heart Room in the past does something? (possibly just an easter egg; exit blocked off?)
+ * Too easy to get to Underworld Mystery Room? Consider changing the past button to do something else.
 
  * Turn-based RPG-style combat for Joe and Merchant-bot
  * Hunter, inmate, and second prison guard souls for Johnny Death

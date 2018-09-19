@@ -18,9 +18,11 @@ namespace eval Past::Science {
 
     proc clubRoomBoom {} {
         puts "You ignore the warning and press down on the blue button. The machine sparks\
-        and you feel electricity coursing through your veins."
+        and you feel electricity coursing through your veins. The room around you fades to\
+        white as everything disappears. You find yourself in a strange new location."
         puts {}
-        return ::Underworld::Pits::mysteryRoom
+        state put subspace-reason button
+        return ::Subspace::Hub::hub
     }
 
     proc clubRoom {} {
