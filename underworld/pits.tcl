@@ -148,6 +148,8 @@ namespace eval Underworld::Pits {
         puts "== Mystery Room =="
         puts "You find yourself in a small room with several puzzles scattered about\
         and riddles pinned to the walls. There is a single door leading out of the room."
+        # //// The mystery room area is now unreachable; need to make
+        # it reachable from the past
         prompt {} {
             {"Step out the door" yes secretRoom}
         }
