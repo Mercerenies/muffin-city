@@ -105,7 +105,7 @@ namespace eval Tiny::Vent {
     proc ratFight {} {
         puts "You endeavor to fight the rat, but with your current size and stature you\
         are easily dispatched."
-        # //// Rat poison will take care of him (possibly have to keep it normal sized) (also, maybe an easter egg if you try to use Atheena's blade, although it will ultimately be ineffectual)
+        # //// Rat poison will take care of him (possibly have to keep it normal sized) (also, maybe an easter egg if you try to use Atheena's blade, although it will ultimately be ineffectual) (maybe not something poisonous, so you can ride him later?)
         if {[state get lobby-door] ne {yes}} then {
             state put lobby-door wildlife
         }
