@@ -62,7 +62,7 @@ namespace eval City::Shopping {
         in the corner."
         # //// Opportunity to talk to Todd
         prompt {} {
-            {"Talk to the robot" yes marketBot}
+            {"Talk to $bot1" yes marketBot}
             {"Go back outside" yes ::City::District::shopping}
         }
     }
