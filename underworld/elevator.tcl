@@ -161,7 +161,6 @@ namespace eval Underworld::Elevator {
                     }
                     beaten - item {
                         puts "\"Hrm...\""
-                        # //// If you have the Certificate, then option to give it to him
                         prompt {} {
                             {"\"Can I use the Document Transmogrifier?\"" yes cipherErase}
                             {"\"I defeated Joe.\"" yes cipherCaught}

@@ -124,7 +124,6 @@ namespace eval Dream::World {
         } else {
             puts "\"Ngh... such a pain... fired for taking bribes... I need a lawyer...\
             such a pain...\""
-            # //// Attorney-Man!
             prompt {} {
                 {"Tell him about Attorney-Man" {([state get attorney-man] in {fed 1 2 done}) && ([state get attorney-guard] eq {no})} airportGuardOkay}
                 {"\"I'm sorry.\"" yes airport}
@@ -142,7 +141,7 @@ namespace eval Dream::World {
     proc pierEdge {depth} {
         if {$depth >= 3} then {
             puts "You leap into the infinite void and fall. After falling for a time, you land\
-            in a strange room where the only sound in the hum of several computers."
+            in a strange room where the only sound is the hum of several computers."
             # //// Console room
             return -gameover
         } else {

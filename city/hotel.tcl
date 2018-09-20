@@ -26,6 +26,7 @@ namespace eval City::Hotel {
         puts "The motel room you've been given is very basic, as expected. There is a small bed,\
         with a desk lamp sitting on a desk adjacent to it. You have a connected restroom with a\
         small shower and nothing more."
+        # //// By the way, Shabby Jack's doesn't actually, ya know, do anything right now...
         prompt {} {
             {"Go to sleep" yes {::Dream::Transit::awaken ::Dream::Transit::thirdRoom}}
             {"Go back out" yes shabbyJack}
