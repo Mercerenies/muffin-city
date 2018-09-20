@@ -504,6 +504,7 @@ Events:
  * taco-shop {no spoken olive fed}
  * hunter-trail {no visited forest under}
  * necro-cipher {no spoken found encouraged rising help beaten item}
+ * captain-boat {no}
 
 Item / Money States:
  * stolen-good {{} {Silver Coin} {Platinum Card}}
@@ -560,7 +561,7 @@ World States:
  * golden-arch {no yes}
  * talked-to-reaper {no yes}
  * reaper-has-item {no {Necromancy Certificate} {Black Olive} 0}
- * reaper-helper {no}
+ * reaper-helper {no item}
  * stairs-tried {no yes}
  * talked-to-grigory {no yes}
 
@@ -877,6 +878,10 @@ Grigory the AC Repairman
       The player has claimed one item from the Reaper, but the Reaper is not ready to
       give the player a quest. If the player asks for the other item in this state, the
       Reaper will decline to give it.
+
+13. The Captain's Anchor (captain-boat)
+  (*) no
+      /////
 
 a. Shady Alley Silver Coin (sa-coin)
   (*) no
