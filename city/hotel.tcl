@@ -120,6 +120,7 @@ namespace eval City::Hotel {
 
     proc shabbyGhost {} {
         puts "\"Where do you think the Reaper meant for me to go?\""
+        # //// If he has completed all of his business, a different reaction here
         prompt {} {
             {"\"Prison.\"" {[state get motel-prison] ne {yes}} {shabbyGhost1 prison}}
             {"\"An island.\"" {[state get motel-warehouse] ne {yes}} {shabbyGhost1 warehouse}}
@@ -135,6 +136,7 @@ namespace eval City::Hotel {
                 I'm meant to be.\""
                 puts "The ghost disappears."
                 state put motel-ghost prison
+                # ////
                 puts {}
                 return shabbyRoom
             }
@@ -142,6 +144,7 @@ namespace eval City::Hotel {
                 puts "\"An island? That does sound like a nice change of scenery.\""
                 puts "The ghost disappears."
                 state put motel-ghost warehouse
+                # ////
                 puts {}
                 return shabbyRoom
             }
@@ -150,6 +153,7 @@ namespace eval City::Hotel {
                 puts "The ghost disappears."
                 # //// The ghost needs to comment on how hard it was
                 # to get there when the player sees him in Subspace
+                # //// Also, just this in general
                 state put motel-ghost subspace
                 puts {}
                 return shabbyRoom

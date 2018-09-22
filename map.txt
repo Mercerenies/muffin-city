@@ -899,9 +899,14 @@ The Motel Ghost
       the player first visits the floor of the Abyss containing the Reaper, the game moves
       to `visited`.
   (*) visited
-      ////
+      The player can now see the ghost. If the player talks to him, he will want to tell his
+      story. After hearing his story, the game will move to `motel`.
   (*) motel
-      ////
+      The player can tell the ghost where he is "meant" to go. He can send him to the
+      prison (`prison`), the island (`warehouse`), or subspace (`subspace`). In any
+      case, the game will move to the respective state. The ghost will not go to a
+      location in which he has already completed his business (respectively,
+      motel-prison, motel-warehouse, and motel-subspace).
   (*) prison
       ////
   (*) warehouse
