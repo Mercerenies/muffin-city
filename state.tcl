@@ -65,6 +65,10 @@ namespace eval State {
         stairs-tried no
         talked-to-grigory no
         captain-boat no
+        motel-ghost no
+        motel-prison no
+        motel-warehouse no
+        motel-subspace no
     }]
 
     proc get {args} {

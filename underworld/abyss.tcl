@@ -44,6 +44,9 @@ namespace eval Underworld::Abyss {
             puts "Overlooking the pit, a large throne seats a strange\
             faceless shadow which vaguely occupies the form of a human."
         }
+        if {[state get motel-ghost] eq {no}} then {
+            state put motel-ghost motel
+        }
         prompt {} {
             {"Address the shadow being" {[state get talked-to-reaper] eq {no}} reaper}
             {"Talk to the Reaper" {[state get talked-to-reaper] eq {yes}} reaper}

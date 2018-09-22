@@ -62,6 +62,11 @@
   - shabbyTalk
   - shabbyPay
   - shabbyNoPay
+  - shabbyGhostIntro
+  - shabbyGhostIntro1
+  - shabbyGhostIntro2
+  - shabbyGhost
+  - shabbyGhost1 <location>
   - ritzyInn
   - ritzyHall
   - ritzyRoom
@@ -505,6 +510,7 @@ Events:
  * hunter-trail {no visited forest under}
  * necro-cipher {no spoken found encouraged rising help beaten item}
  * captain-boat {no}
+ * motel-ghost {no visited motel prison subspace warehouse yes}
 
 Item / Money States:
  * stolen-good {{} {Silver Coin} {Platinum Card}}
@@ -564,6 +570,9 @@ World States:
  * reaper-helper {no item}
  * stairs-tried {no yes}
  * talked-to-grigory {no yes}
+ * motel-prison {no yes}
+ * motel-warehouse {no yes}
+ * motel-subspace {no yes}
 
 -------- CHARACTERS --------
 
@@ -593,6 +602,7 @@ The Ancient Minister
 Steve (Steve's Smash-a-Lock)
 The Reaper
 Grigory the AC Repairman
+The Motel Ghost
 
 -------- EVENTS --------
 
@@ -882,6 +892,22 @@ Grigory the AC Repairman
 13. The Captain's Anchor (captain-boat)
   (*) no
       /////
+
+14. Unfinished Business (motel-ghost)
+  (*) no
+      The motel ghost is invisible. The player cannot encounter him in this state. When
+      the player first visits the floor of the Abyss containing the Reaper, the game moves
+      to `visited`.
+  (*) visited
+      ////
+  (*) motel
+      ////
+  (*) prison
+      ////
+  (*) warehouse
+      ////
+  (*) subspace
+      ////
 
 a. Shady Alley Silver Coin (sa-coin)
   (*) no

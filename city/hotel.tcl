@@ -23,12 +23,21 @@ namespace eval City::Hotel {
 
     proc shabbyRoom {} {
         puts "== Shabby Jack's - Bedroom =="
-        puts "The motel room you've been given is very basic, as expected. There is a small bed,\
-        with a desk lamp sitting on a desk adjacent to it. You have a connected restroom with a\
-        small shower and nothing more."
+        puts -nonewline "The motel room you've been given is very basic, as expected. There is\
+        a small bed, with a desk lamp sitting on a desk adjacent to it. You have a\
+        connected restroom with a small shower and nothing more."
+        if {[state get motel-ghost] eq {visited}} then {
+            puts " There is a strange, ethereal entity hovering silently in the back corner."
+        } elseif {[state get motel-ghost] eq {motel}} then {
+            puts " The ghost haunting this room hovers silently in the corner."
+        } else {
+            puts {}
+        }
         # //// By the way, Shabby Jack's doesn't actually, ya know, do anything right now...
         prompt {} {
             {"Go to sleep" yes {::Dream::Transit::awaken ::Dream::Transit::thirdRoom}}
+            {"Talk to the entity" {[state get motel-ghost] eq {visited}} shabbyGhostIntro}
+            {"Talk to the ghost" {[state get motel-ghost] eq {motel}} shabbyGhost}
             {"Go back out" yes shabbyJack}
         }
     }
@@ -82,6 +91,70 @@ namespace eval City::Hotel {
         puts "\"Sorry, no can do. Cash only, here.\""
         puts {}
         return shabbyJack
+    }
+
+    proc shabbyGhostIntro {} {
+        puts "\"Hm? You can see me? Does that mean you've met the Reaper?\""
+        prompt {} {
+            {"\"Yeah, he and I are good friends.\"" yes shabbyGhostIntro1}
+            {"\"Yeah, he's creepy.\"" yes shabbyGhostIntro1}
+        }
+    }
+
+    proc shabbyGhostIntro1 {} {
+        puts "\"Ah, I see. I've been here for a long time and nobody else can see me.\""
+        prompt {} {
+            {"\"What's your story?\"" yes shabbyGhostIntro2}
+            {"\"Goodbye, now.\"" yes shabbyRoom}
+        }
+    }
+
+    proc shabbyGhostIntro2 {} {
+        state put motel-ghost motel
+        puts "\"I fell into the Reaper's pit some time ago. He told me I have unfinished\
+        business and allowed me to come back up here. But no one can see me, so I don't\
+        know what my business is.\""
+        puts {}
+        return shabbyGhost
+    }
+
+    proc shabbyGhost {} {
+        puts "\"Where do you think the Reaper meant for me to go?\""
+        prompt {} {
+            {"\"Prison.\"" {[state get motel-prison] ne {yes}} {shabbyGhost1 prison}}
+            {"\"An island.\"" {[state get motel-warehouse] ne {yes}} {shabbyGhost1 warehouse}}
+            {"\"Subspace.\"" {[state get motel-subspace] ne {yes}} {shabbyGhost1 subspace}}
+            {"\"Just stay here.\"" yes shabbyRoom}
+        }
+    }
+
+    proc shabbyGhost1 {location} {
+        switch $location {
+            prison {
+                puts "\"Prison? An interesting choice. But if you think that's where\
+                I'm meant to be.\""
+                puts "The ghost disappears."
+                state put motel-ghost prison
+                puts {}
+                return shabbyRoom
+            }
+            warehouse {
+                puts "\"An island? That does sound like a nice change of scenery.\""
+                puts "The ghost disappears."
+                state put motel-ghost warehouse
+                puts {}
+                return shabbyRoom
+            }
+            subspace {
+                puts "\"Subspace? I'm not even sure what that is... but I'll try.\""
+                puts "The ghost disappears."
+                # //// The ghost needs to comment on how hard it was
+                # to get there when the player sees him in Subspace
+                state put motel-ghost subspace
+                puts {}
+                return shabbyRoom
+            }
+        }
     }
 
     proc ritzyInn {} {
