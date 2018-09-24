@@ -44,8 +44,23 @@ namespace eval Past::Shopping {
         if ya know what I mean. Let me know if there's any merchandise I can... acquire for\
         you.\""
         prompt {} {
+            {"\"Can you get me a ship's wheel?\"" {[state get captain-boat] eq {spoken}} pawnWheel}
+            {"\"The wheel?\"" {[state get captain-boat] eq {requested}} pawnWheelNotYet}
             {"\"Thank you.\"" yes pawnShop}
         }
+    }
+
+    proc pawnWheel {} {
+        puts "\"A ship's wheel? Sure, I can get that for ya. Just gimme a few hours.\""
+        state put captain-boat requested
+        puts {}
+        return pawnShop
+    }
+
+    proc pawnWheelNotYet {} {
+        puts "\"It'll be a few more hours before your wheel gets here.\""
+        puts {}
+        return pawnShop
     }
 
     proc locksmithEntry {} {

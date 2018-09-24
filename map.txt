@@ -87,6 +87,9 @@
 * [Shopping]
   - pawnShop
   - pawnTalk
+  - pawnWheel
+  - pawnWheelBuy
+  - pawnWheelBuy1
   - pawnButler
   - market
   - marketBot
@@ -251,6 +254,7 @@
   - pierEdge <depth>
   - captain
   - captainHelp
+  - captainWheel
   - conductor
   - third
   - thirdRoom
@@ -306,6 +310,9 @@
   - pawnShopKick
   - pawnShopAccept
   - pawnShop
+  - pawnTalk
+  - pawnWheel
+  - pawnWheelNotYet
   - locksmithEntry
   - locksmith
   - steve
@@ -449,6 +456,7 @@
 * Necromancy Certificate
 * Black Olive
 * Scuba Suit (TBA)
+* Ship's Wheel
 
 (Money Sources / Sinks)
 + Shady Alley (sa-coin)
@@ -458,6 +466,7 @@
 - Gate Guard Event (prison-guard)
 - Shabby Jack's (motel-room)
 - Merchant-bot Cheap Item (olive-bought)
+- Ship's Wheel (captain-boat)
 
 -------- MUFFINS --------
 
@@ -526,7 +535,7 @@ Events:
  * taco-shop {no spoken olive fed}
  * hunter-trail {no visited forest under}
  * necro-cipher {no spoken found encouraged rising help beaten item}
- * captain-boat {no spoken}
+ * captain-boat {no spoken requested obtained yes}
  * motel-ghost {no visited motel prison subspace warehouse yes}
 
 Item / Money States:
@@ -916,6 +925,12 @@ Ship Captain
       second Butler event. When the player speaks to him, the captain will mention that
       his ship is missing its wheel, and the game will move to `spoken`.
   (*) spoken
+      ////
+  (*) requested
+      ////
+  (*) obtained
+      ////
+  (*) yes
       ////
 
 14. Unfinished Business (motel-ghost)

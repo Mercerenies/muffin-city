@@ -28,7 +28,34 @@ namespace eval City::Shopping {
         you'd be interested in.\""
         prompt {} {
             {"\"Okay.\"" yes pawnShop}
+            {"\"Do you have a ship's wheel?\"" {[state get captain-boat] eq {spoken}} pawnWheel}
+            {"\"Ship's wheel?\"" {[state get captain-boat] eq {requested}} pawnWheelBuy}
         }
+    }
+
+    proc pawnWheel {} {
+        puts "\"A ship's wheel? Can't say that I have that. If you had asked me this morning,\
+        I probably coulda had it by now.\""
+        puts {}
+        return pawnShop
+    }
+
+    proc pawnWheelBuy {} {
+        puts "\"Oh, yeah. Your wheel got here a few hours ago. That'll be one silver coin.\""
+        prompt {} {
+            {"Hand him a Silver Coin" {[inv has {Silver Coin}]} pawnWheelBuy1}
+            {"\"I'll be back.\"" yes pawnShop}
+        }
+    }
+
+    proc pawnWheelBuy1 {} {
+        puts "\"Pleasure doin' business.\""
+        puts "You hand the pawn shop owner a Silver Coin, and he hands you a Ship's Wheel."
+        inv remove {Silver Coin}
+        inv add {Ship's Wheel}
+        state put captain-boat obtained
+        puts {}
+        return pawnShop
     }
 
     proc pawnButler {} {

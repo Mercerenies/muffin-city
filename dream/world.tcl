@@ -90,7 +90,6 @@ namespace eval Dream::World {
             puts "The pier floats over an infinite void. You fail to see how a boat\
             could sail on this void, as there seems to be no water."
         }
-        # //// Boat
         set option1 "{Leap over the edge} yes {pierEdge $depth}"
         if {$depth > 1} then {
             set option2 {{Talk to the captain} {[state get butler-game] ni {no cell cell1 pawn}} {clear captain}}
@@ -176,10 +175,18 @@ namespace eval Dream::World {
                     {"\"Later.\"" yes {pier 1}}
                 }
             }
-            spoken {
+            spoken - requested - obtained {
                 puts "\"I need a wheel...\""
                 prompt {} {
+                    {"\"Here you go.\"" {[inv has {Ship's Wheel}]} captainWheel}
                     {"\"I'll let you know if I think of anything.\"" yes {pier 1}}
+                }
+            }
+            yes {
+                puts "\"Climb aboard, mate!\""
+                # //// The ship
+                prompt {} {
+                    {"\"Maybe later.\"" yes {pier 1}}
                 }
             }
         }
@@ -192,6 +199,17 @@ namespace eval Dream::World {
         state put captain-boat spoken
         prompt {} {
             {"\"I'll see what I can do.\"" yes {pier 1}}
+        }
+    }
+
+    proc captainWheel {} {
+        puts "\"A wheel? Where did you find this?\""
+        puts "You hand the Ship's Wheel to the captain."
+        inv remove {Ship's Wheel}
+        state put captain-boat yes
+        puts "\"Anytime you want, I'll sail you out to sea. What do you say?\""
+        prompt {} {
+            {"\"I'll keep that in mind.\"" yes {pier 1}}
         }
     }
 
