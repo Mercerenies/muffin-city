@@ -61,7 +61,7 @@ namespace eval Underworld::Elevator {
             default {
                 puts "== Underworld Science Lab =="
                 set necro [expr {
-                           ([state get butler-game] ni {no cell}) &&
+                           ([state get butler-game] ni {no cell cell1 pawn}) &&
                            ([state get talked-to-cipher] eq {yes}) &&
                            ([state get pawn-shop-pass] eq {yes}) &&
                            ([state get necro-cipher] in {no spoken found encouraged rising help})}]
@@ -117,7 +117,7 @@ namespace eval Underworld::Elevator {
 
     proc cipherTalk {} {
         set necro [expr {
-                   ([state get butler-game] ni {no cell}) &&
+                   ([state get butler-game] ni {no cell cell1 pawn}) &&
                    ([state get talked-to-cipher] eq {yes}) &&
                    ([state get pawn-shop-pass] eq {yes}) }]
         if {[state get talked-to-cipher]} then {

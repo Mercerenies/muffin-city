@@ -3,21 +3,21 @@ namespace eval City::Shopping {
 
     proc pawnShop {} {
         puts "== Pawn Shop =="
-        if {([state get butler-game] eq {cell}) && ([state get talked-to-louis] eq {yes}) &&
+        if {([state get butler-game] eq {cell1}) && ([state get talked-to-louis] eq {yes}) &&
             ([state get jumped-into-fire] eq {yes})} then {
             state put butler-game pawn
         }
         puts -nonewline "The pawn shop has several knick-knacks that don't seem very useful to\
         anybody. There is a shady man standing over in the corner. Presumably, he runs the shop."
-        if {[state get butler-game] eq {pawn}} then {
+        if {[state get butler-game] in {pawn pawn1}} then {
             puts " A familiar man in a butler's uniform is standing behind the door."
         } else {
             puts {}
         }
         prompt {} {
-            {"Talk to him" {[state get butler-game] ne {pawn}} pawnTalk}
-            {"Talk to the shady man" {[state get butler-game] eq {pawn}} pawnTalk}
-            {"Talk to the butler" {[state get butler-game] eq {pawn}} pawnButler}
+            {"Talk to him" {[state get butler-game] ni {pawn pawn1}} pawnTalk}
+            {"Talk to the shady man" {[state get butler-game] in {pawn pawn1}} pawnTalk}
+            {"Talk to the butler" {[state get butler-game] in {pawn pawn1}} pawnButler}
             {"Go outside" yes ::City::District::shopping}
         }
     }
@@ -40,6 +40,7 @@ namespace eval City::Shopping {
             puts "The Butler hands you a Fireproof Suit."
             inv add {Fireproof Suit}
             state put collected-suit yes
+            state put butler-game pawn1
         }
         puts {}
         return pawnShop

@@ -34,7 +34,7 @@ namespace eval Inv {
 
     proc count {{match {}}} {
         variable impl
-        if {[string length $match] eq {}} then {
+        if {[string length $match] eq 0} then {
             llength $impl
         } else {
             llength [lsearch -all -exact $impl $match]

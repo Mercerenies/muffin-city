@@ -521,7 +521,7 @@ Events:
  * trial-crime {no court prison}
  * prison-guard {no paid fired search cleared}
  * johnny-quest {no accepted 1 2 done}
- * butler-game {no cell pawn}
+ * butler-game {no cell cell1 pawn pawn1}
  * attorney-man {no met talked talked1 fed 1 2 done complete}
  * taco-shop {no spoken olive fed}
  * hunter-trail {no visited forest under}
@@ -747,14 +747,17 @@ Ship Captain
       - The player has at least one item.
   (*) cell
       The butler is in the player's prison cell. When he talks to him, he will tell the player
-      about the science lab and how to get to it. The game will move from this state to `pawn`
-      when the following three conditions are met.
+      about the science lab and how to get to it. The game then moves to `cell1`.
+  (*) cell1
+      The game will move from this state to `pawn` when the following three conditions
+      are met.
       - The player has just entered the pawn shop in the present.
       - The player has talked to Dr. Louis (talked-to-louis).
       - The player has jumped into the fire pits (jumped-into-fire).
   (*) pawn
       The butler is in the pawn shop in the present. When he talks to him, he will give the
-      player a Fireproof Suit.
+      player a Fireproof Suit. The game then moves to `pawn1`.
+  (*) pawn1
       //// Next state
 
 6. Attorney-Man's Career (attorney-man)

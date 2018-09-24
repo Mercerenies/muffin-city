@@ -95,14 +95,14 @@ namespace eval Prison::South {
         puts "== Cell F-14 =="
         puts -nonewline "You step into your cell. The amenities are basic, at best: a small toilet, a wooden\
         bedframe supporting a rough white mattress, and a rusty sink."
-        if {[state get butler-game] eq {cell}} then {
+        if {[state get butler-game] in {cell cell1}} then {
             puts " A strange man in a butler's uniform is standing in the corner."
         } else {
             puts {}
         }
         prompt {} {
             {"Go to sleep" yes {::Dream::Transit::awaken ::Dream::Transit::thirdRoom}}
-            {"Talk to the man" {[state get butler-game] eq {cell}} cellButler}
+            {"Talk to the man" {[state get butler-game] in {cell cell1}} cellButler}
             {"Go back out" yes cellblock}
         }
     }
@@ -113,6 +113,7 @@ namespace eval Prison::South {
             interest you. When you have the time, go to the Ritzy Inn & Suites, talk to Carl, and tell\
             him the Butler sent you. He will show you the way to something interesting.\""
             state put heard-science told
+            state put butler-game cell1
         } else {
             puts "\"I have nothing more to tell you now. When I have more information, I will find you.\""
         }

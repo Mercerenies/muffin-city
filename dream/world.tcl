@@ -82,7 +82,7 @@ namespace eval Dream::World {
 
     proc pier {depth} {
         puts "== Floating Pier =="
-        if {[state get butler-game] ni {no cell}} then {
+        if {[state get butler-game] ni {no cell cell1 pawn}} then {
             puts "The pier floats over an infinite void. A single ship sits at the\
             pier, floating over nothingness. The ship's captain stands at the edge,\
             in traditional sailor garb."
@@ -93,9 +93,9 @@ namespace eval Dream::World {
         # //// Boat
         set option1 "{Leap over the edge} yes {pierEdge $depth}"
         if {$depth > 1} then {
-            set option2 {{Talk to the captain} {[state get butler-game] ni {no cell}} {clear captain}}
+            set option2 {{Talk to the captain} {[state get butler-game] ni {no cell cell1 pawn}} {clear captain}}
         } else {
-            set option2 {{Talk to the captain} {[state get butler-game] ni {no cell}} captain}
+            set option2 {{Talk to the captain} {[state get butler-game] ni {no cell cell1 pawn}} captain}
         }
         set option3 "{Go back to the commons} yes {commons $depth}"
         prompt {} [list $option1 $option2 $option3]
