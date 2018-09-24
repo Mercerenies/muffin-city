@@ -93,9 +93,9 @@ namespace eval Dream::World {
         # //// Boat
         set option1 "{Leap over the edge} yes {pierEdge $depth}"
         if {$depth > 1} then {
-            set option2 "{Talk to the captain} yes {clear captain}"
+            set option2 {{Talk to the captain} {[state get butler-game] ni {no cell}} {clear captain}}
         } else {
-            set option2 "{Talk to the captain} yes captain"
+            set option2 {{Talk to the captain} {[state get butler-game] ni {no cell}} captain}
         }
         set option3 "{Go back to the commons} yes {commons $depth}"
         prompt {} [list $option1 $option2 $option3]
@@ -176,11 +176,23 @@ namespace eval Dream::World {
                     {"\"Later.\"" yes {pier 1}}
                 }
             }
+            spoken {
+                puts "\"I need a wheel...\""
+                prompt {} {
+                    {"\"I'll let you know if I think of anything.\"" yes {pier 1}}
+                }
+            }
         }
     }
 
     proc captainHelp {} {
-        return -gameover
+        puts "\"Well, y'see, it's my ship. It doesn't have a wheel. Without a wheel, I\
+        can't steer. If you can find me a ship's wheel, I'd be more than happy to let\
+        you ride.\""
+        state put captain-boat spoken
+        prompt {} {
+            {"\"I'll see what I can do.\"" yes {pier 1}}
+        }
     }
 
     proc conductor {} {

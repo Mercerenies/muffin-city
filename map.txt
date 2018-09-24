@@ -526,7 +526,7 @@ Events:
  * taco-shop {no spoken olive fed}
  * hunter-trail {no visited forest under}
  * necro-cipher {no spoken found encouraged rising help beaten item}
- * captain-boat {no}
+ * captain-boat {no spoken}
  * motel-ghost {no visited motel prison subspace warehouse yes}
 
 Item / Money States:
@@ -909,7 +909,11 @@ Ship Captain
 
 13. The Captain's Anchor (captain-boat)
   (*) no
-      /////
+      The player has not spoken to the captain yet. The captain will not appear until the
+      second Butler event. When the player speaks to him, the captain will mention that
+      his ship is missing its wheel, and the game will move to `spoken`.
+  (*) spoken
+      ////
 
 14. Unfinished Business (motel-ghost)
   (*) no
