@@ -94,6 +94,8 @@
   - market
   - marketBot
   - marketOlive
+  - marketTodd
+  - marketTrade
   - boarded
   - boardedForce
 
@@ -603,6 +605,7 @@ World States:
  * motel-warehouse {no yes}
  * motel-subspace {no yes}
  * captain-boat-place {dream warehouse}
+ * talked-to-todd {no spoken {Scuba Suit} {Fireproof Suit}}
 
 -------- CHARACTERS --------
 

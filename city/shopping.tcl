@@ -85,12 +85,19 @@ namespace eval City::Shopping {
                 set bot1 "Merchant-bot"
             }
         }
-        puts "The market is neatly organized, with shelves full of various objects. $bot0 is\
-        hovering behind the counter, and a man with glasses typing at a computer off\
-        in the corner."
+        puts -nonewline "The market is neatly organized, with shelves full of various objects.\
+        $bot0 is hovering behind the counter,"
+        if {[state get talked-to-todd] ne {no}} then {
+            puts " and Todd is sitting at his computer typing away."
+        } else {
+            puts " and a man with glasses typing at a computer off\
+            in the corner."
+        }
         # //// Opportunity to talk to Todd
         prompt {} {
             {"Talk to $bot1" yes marketBot}
+            {"Talk to the man" {[state get talked-to-todd] eq {no}} marketTodd}
+            {"Talk to Todd" {[state get talked-to-todd] ne {no}} marketTodd}
             {"Go back outside" yes ::City::District::shopping}
         }
     }
@@ -138,6 +145,88 @@ namespace eval City::Shopping {
         }
         puts {}
         return market
+    }
+
+    proc marketTodd {} {
+        switch [state get talked-to-todd] {
+            no {
+                puts "\"Hi, I'm Todd. I manage all of the inventory for this shop.\
+                Please talk to Merchant-bot if you want to make a purchase.\""
+                state put talked-to-todd spoken
+                puts {}
+                return market
+            }
+            spoken {
+                if {[inv has {Fireproof Suit}]} then {
+                    puts "\"Please talk to Merchant-bot if you w- Is that a\
+                    Fireproof Suit? I've been looking for one of those actually.\
+                    I'll trade you my Scuba Suit for your Fireproof Suit.\""
+                    state put talked-to-todd {Scuba Suit}
+                    prompt {} {
+                        {"Trade" yes marketTrade}
+                        {"\"Later.\"" yes market}
+                    }
+                } else {
+                    puts "\"Please talk to Merchant-bot if you want to make a purchase.\""
+                    puts {}
+                    return market
+                }
+            }
+            {Scuba Suit} {
+                if {[inv has {Fireproof Suit}]} then {
+                    puts "\"Want to trade? I'll give you my Scuba Suit for your Fireproof Suit.\""
+                    prompt {} {
+                        {"Trade" yes marketTrade}
+                        {"\"Later.\"" yes market}
+                    }
+                } else {
+                    puts "\"Please talk to Merchant-bot if you want to make a purchase.\""
+                    puts {}
+                    return market
+                }
+            }
+            {Fireproof Suit} {
+                if {[inv has {Scuba Suit}]} then {
+                    puts "\"Want to trade? I'll give you back your Fireproof Suit for the\
+                    Scuba Suit.\""
+                    prompt {} {
+                        {"Trade" yes marketTrade}
+                        {"\"Later.\"" yes market}
+                    }
+                } else {
+                    puts "\"Please talk to Merchant-bot if you want to make a purchase.\""
+                    puts {}
+                    return market
+                }
+            }
+        }
+    }
+
+    proc marketTrade {} {
+        switch [state get talked-to-todd] {
+            {Scuba Suit} {
+                puts "\"Excellent!\""
+                puts "You give up your Fireproof Suit and take the Scuba Suit."
+                inv remove {Fireproof Suit}
+                inv add {Scuba Suit}
+                state put talked-to-todd {Fireproof Suit}
+                puts {}
+                return market
+            }
+            {Fireproof Suit} {
+                puts "\"Excellent!\""
+                puts "You give up your Scuba Suit and take the Fireproof Suit."
+                inv remove {Scuba Suit}
+                inv add {Fireproof Suit}
+                state put talked-to-todd {Scuba Suit}
+                puts {}
+                return market
+            }
+            default {
+                puts {}
+                return market
+            }
+        }
     }
 
     proc boarded {} {
