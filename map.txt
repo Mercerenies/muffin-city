@@ -249,6 +249,8 @@
   - airportWall
   - airportGuard
   - pierEdge <depth>
+  - captain
+  - captainHelp
   - conductor
   - third
   - thirdRoom
@@ -618,6 +620,7 @@ Steve (Steve's Smash-a-Lock)
 The Reaper
 Grigory the AC Repairman
 The Motel Ghost
+Ship Captain
 
 -------- EVENTS --------
 

@@ -82,12 +82,23 @@ namespace eval Dream::World {
 
     proc pier {depth} {
         puts "== Floating Pier =="
-        puts "The pier floats over an infinite void. You fail to see how a boat could sail\
-        on this void, as there seems to be no water."
+        if {[state get butler-game] ni {no cell}} then {
+            puts "The pier floats over an infinite void. A single ship sits at the\
+            pier, floating over nothingness. The ship's captain stands at the edge,\
+            in traditional sailor garb."
+        } else {
+            puts "The pier floats over an infinite void. You fail to see how a boat\
+            could sail on this void, as there seems to be no water."
+        }
         # //// Boat
         set option1 "{Leap over the edge} yes {pierEdge $depth}"
-        set option2 "{Go back to the commons} yes {commons $depth}"
-        prompt {} [list $option1 $option2]
+        if {$depth > 1} then {
+            set option2 "{Talk to the captain} yes {clear captain}"
+        } else {
+            set option2 "{Talk to the captain} yes captain"
+        }
+        set option3 "{Go back to the commons} yes {commons $depth}"
+        prompt {} [list $option1 $option2 $option3]
     }
 
     proc airport {} {
@@ -152,9 +163,27 @@ namespace eval Dream::World {
         }
     }
 
+    proc captain {} {
+        switch [state get captain-boat] {
+            no {
+                puts "\"Climb aboard, mate! ... ... ... Or at least, that's what I'd\
+                like say. You see, I've got a slight problem.\""
+                prompt {} {
+                    {"\"What's wrong?\"" yes captainHelp}
+                    {"\"Later.\"" yes {pier 1}}
+                }
+            }
+        }
+    }
+
+    proc captainHelp {} {
+        return -gameover
+    }
+
     proc conductor {} {
         puts "\"Good evening. Feel free to step aboard the train whenever you are ready\
         to depart.\""
+        # //// He should do something
         prompt {} {
             {"\"Thank you.\"" yes station}
         }
