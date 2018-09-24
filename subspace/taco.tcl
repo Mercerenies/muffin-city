@@ -84,7 +84,6 @@ namespace eval Subspace::Taco {
                     }
                 }
             }
-            # ///// The hole in the ground (after defeating Joe)
             prompt {} {
                 {"Talk to the bearded man" {[state get taco-shop] eq {no}} tacoMan}
                 {"Talk to the Taco Man" {[state get taco-shop] ne {no}} tacoMan}

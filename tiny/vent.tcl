@@ -46,7 +46,7 @@ namespace eval Tiny::Vent {
         } else {
             puts " A man in an air conditioning repair uniform is standing at the fork."
         }
-        # ///// Up
+        # //// Up
         prompt {} {
             {"Go down" yes heartRoom}
             {"Go up" yes ::Empty::place}

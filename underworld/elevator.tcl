@@ -91,7 +91,7 @@ namespace eval Underworld::Elevator {
         }
     }
 
-    # ///// The rest of Johnny Death, then space (space - moon, satellite, deep space, alien colony, plant monster)
+    # //// The rest of Johnny Death, then space (space - moon, satellite, deep space, alien colony, plant monster)
 
     proc lift {back} {
         if {[inv has {Elevator Access Key}] || [inv has {Upgraded Elevator Access Key}]} then {
