@@ -64,6 +64,7 @@ namespace eval Console::Hall {
         prompt {} {
             {"Enter the underworld" {[state get golden-arches]} ::Underworld::Elevator::tunnel}
             {"Enter subspace" {[state get golden-arches]} ::Subspace::Hub::bank}
+            {"Enter the dream world" {[state get golden-arches]} ::Dream::World::airport}
             {"Go back to the main room" yes main}
         }
     }

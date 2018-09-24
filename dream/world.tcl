@@ -106,15 +106,18 @@ namespace eval Dream::World {
         puts -nonewline "The airport is indoors, but as you look around you feel as\
         though the walls are thin and possibly not even there."
         if {[state get prison-guard] eq {search}} then {
-            puts " The mustached prison guard is sitting on a bench in the corner.\
-            Despite the saddened look on his face, he is still holding a donut in each\
-            hand."
-        } else {
-            puts {}
+            puts -nonewline " The mustached prison guard is sitting on a bench in\
+            the corner. Despite the saddened look on his face, he is still holding a\
+            donut in each hand."
         }
+        if {[state get golden-arches]} then {
+            puts -nonewline " Next to the exit, a glimmering gold arch hovers."
+        }
+        puts {}
         prompt {} {
             {"Talk to the guard" {[state get prison-guard] eq {search}} airportGuard}
             {"Pass through the walls" yes airportWall}
+            {"Pass through the golden arch" {[state get golden-arches]} ::Console::Hall::future}
             {"Go back to the commons" yes {commons 1}}
         }
     }
