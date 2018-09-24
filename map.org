@@ -1,0 +1,935 @@
+
+* MAJOR REGIONS
+
+** City Area
+*** Big City
+*** Big City (tiny form)
+*** Big City (inverse form)
+*** Big City (past form)
+
+** Greater World
+*** Outer Space
+*** Warehouse
+*** Prehistory
+*** Prison
+
+** Metaspace
+*** Underworld
+*** Dream World
+*** Subspace
+*** The Console Room
+
+* MINOR REGIONS
+
+** [City]
+*** [District]
+**** entrance
+**** hotel
+**** shopping
+**** police
+**** shadyAlley
+**** alleyCoin
+*** [Robbery]
+**** jumped <district>
+**** giveAway <item> <district>
+**** haveNone <district>
+**** refuse
+*** [Courthouse]
+**** entrance
+**** knocking
+**** trial
+**** guilty
+**** innocent
+**** lawyer
+**** courtroom
+**** inside
+**** exitBuilding
+**** halls
+**** unlock
+**** unlock1
+**** judgeOffice
+*** [Police]
+**** station
+**** followed
+**** robbed
+**** arrested
+**** recovered
+*** [Hotel]
+**** shabbyJack
+**** shabbyRoom
+**** shabbyHunter
+**** shabbyHunter1
+**** shabbyTalk
+**** shabbyPay
+**** shabbyNoPay
+**** shabbyGhostIntro
+**** shabbyGhostIntro1
+**** shabbyGhostIntro2
+**** shabbyGhost
+**** shabbyGhost1 <location>
+**** ritzyInn
+**** ritzyHall
+**** ritzyRoom
+**** ritzyTalk
+**** ritzyTalkScience
+**** ritzyGetRoom
+**** ritzyGetRoom1
+*** [Science]
+**** mainRoom
+**** talkTo
+**** heartQuestion
+**** clubRoomJump
+**** clubRoom
+**** heartRoomJump
+**** heartRoom
+**** diamondRoom
+**** spadeRoom
+*** [Shopping]
+**** pawnShop
+**** pawnTalk
+**** pawnWheel
+**** pawnWheelBuy
+**** pawnWheelBuy1
+**** pawnButler
+**** market
+**** marketBot
+**** marketOlive
+**** marketTodd
+**** marketTrade
+**** boarded
+**** boardedForce
+** [Prison]
+*** [South]
+**** gate
+**** hallway
+**** cellblock
+**** janitorDoor
+**** janitorDoor1
+**** janitorDoor2
+**** janitorDoor3
+**** janitorCloset
+**** cell
+**** cellButler
+**** entry
+**** cooperate
+**** flee
+*** [North]
+**** hallway
+**** restroom
+**** dining
+**** diningTalk
+*** [Guard]
+**** talk
+**** attorney
+**** fired
+**** free
+**** free1
+**** bribe
+*** [Exercise]
+**** fields
+**** talking
+**** attention
+**** insult
+**** backOff
+**** fight
+**** stealing
+*** [Forest]
+**** gate
+**** trees
+**** hunter
+**** hunter1
+**** hunter2
+**** hunter3
+**** river
+**** riverReach
+**** cave
+**** caveDeath
+**** bus
+** [Underworld]
+*** [Lobby]
+**** murder
+**** wildlife
+**** mercury
+**** other
+**** mercuryMuffin
+**** hunter
+**** stealing
+**** hub
+*** [Elevator]
+**** staircase
+**** balcony
+**** tunnel
+**** scienceLab
+**** lift <back>
+**** cipherTalk
+**** cipherExplain <answer>
+**** cipherErase
+**** cipherWrong
+**** cipherWrong1
+**** cipherWrong2
+**** cipherDetails
+**** cipherJoe
+**** cipherCount
+**** cipherWhy
+**** cipherDeadly
+**** cipherCaught
+**** cipherCaught1
+**** cipherCaught2
+**** cipherCertificate
+**** cipherReward <answer>
+**** joeTalk
+*** [Johnny]
+**** talk
+**** okay
+**** given <soultype>
+**** climbed
+*** [Pits]
+**** freight
+**** freightCoin
+**** backRoom
+**** fire <room>
+**** fireEntry
+**** fireEntryRun
+**** secretRoomEnter <room>
+**** secretRoomExit
+**** secretRoom
+**** secretLeverOff
+**** secretLeverOn
+**** mysteryRoom
+*** [Abyss]
+**** firstFloor
+**** secondFloor
+**** thirdFloor
+**** reaper
+**** reaperFall
+**** reaperBoth
+**** reaperCertificate
+**** reaperOlive
+**** reaperRequest
+**** void
+**** voidDirection
+**** voidSleep
+**** fork
+** [Dream]
+*** [Transit]
+**** cargo
+**** third
+**** second
+**** kitchen
+**** first
+**** engine
+**** secondGate
+**** firstGate
+**** toThird
+**** toKitchen
+**** thirdRoom
+**** secondRoom
+**** firstRoom
+**** thirdTalk
+**** hideFail
+**** hideSuccess
+**** suitcase
+**** awaken <room>
+**** sleep <room>
+*** [Destination]
+**** third
+**** second
+**** first
+**** thirdRoom
+**** secondRoom
+**** firstRoom
+**** locked <back>
+**** offTrain
+**** takeMuffin
+*** [World]
+**** suitcase
+**** unclaimed
+**** commons <depth>
+**** station
+**** pier <depth>
+**** airport
+**** airportWall
+**** airportGuard
+**** pierEdge <depth>
+**** captain
+**** captainHelp
+**** captainWheel
+**** captainSail
+**** conductor
+**** third
+**** thirdRoom
+**** clear <room>
+** [Warehouse]
+*** [Outside]
+**** north
+**** south
+**** east
+**** west
+**** enterDoor
+**** dock
+**** captain
+**** captainSail
+**** diveIn
+**** northTalk
+**** northAttorney
+**** northSelf
+**** northFood
+**** northEncounter
+**** northCrazy
+**** northCrazy1
+** [Past]
+*** [Science]
+**** mainRoom
+**** clubRoomBoom
+**** clubRoom
+**** heartRoom
+**** diamondRoom
+**** spadeRoom
+*** [Hotel]
+**** ritzyHall
+**** ritzyRoom
+**** ritzyInn
+**** ritzyTalk
+**** shabbyJack
+**** shabbyAttorney
+**** shabbyAttorney1
+**** shabbyAttorneyYes
+**** shabbyAttorneyNo
+**** shabbyTalk
+**** shabbyRoom
+*** [District]
+**** entrance
+**** hotel
+**** shopping
+**** police
+**** shadyAlley
+**** alleyTalk
+**** marketClosed
+*** [Shopping]
+**** pawnShopEntry
+**** pawnShopKick
+**** pawnShopAccept
+**** pawnShop
+**** pawnTalk
+**** pawnWheel
+**** pawnWheelNotYet
+**** locksmithEntry
+**** locksmith
+**** steve
+*** [Police]
+**** station
+**** stationConfess
+**** courthouse
+**** courthouseInside
+**** courthouseHall
+**** courtroom
+** [Subspace]
+*** [Hub]
+**** hub
+**** hubJoe
+**** hubJoeTaco
+**** bank
+**** bankOffice
+**** bankTalk
+**** bankCrystal
+**** bankNoWay
+**** storm
+**** attic
+**** atticExpand
+*** [Taco]
+**** shop
+**** woman
+**** stealing
+**** joe
+**** joe1
+**** joeScroll
+**** joeScroll1
+**** joeScroll2
+**** joeForce
+**** joePlot <answer>
+**** joeConfront
+**** tacoMan
+**** tacoAttorney
+**** explain
+**** olive
+**** panicTaco
+**** panicWoman
+**** panicAtheena
+*** [Portal]
+**** portalRoom
+**** portal
+**** atheena
+**** atheenaIntro
+**** atheenaHelp
+**** atheenaThanks
+**** atheenaCrystal
+**** basicPortal
+*** [Temple]
+**** hill
+**** outside
+**** altar
+**** matthew
+**** matthewStudy
+**** sanctuary
+**** minister
+*** [Necromancy]
+**** boss <helper>
+**** solo <hp> <ehp>
+**** soloFist <hp> <ehp>
+**** soloKick <hp> <ehp>
+**** soloRest <hp> <ehp>
+**** soloEnemyTurn <hp> <ehp>
+**** team <hp> <ahp> <ehp>
+**** teamFist <hp> <ahp> <ehp>
+**** teamKick <hp> <ahp> <ehp>
+**** teamRest <hp> <ahp> <ehp>
+**** teamEnemyTurn <hp> <ahp> <ehp>
+**** defeated
+**** victory
+**** victory1 <answer>
+** [Space]
+*** [Satellite]
+**** elevatorRoom
+**** transportBay
+**** mechanic
+**** teleporter
+**** commonArea
+**** astronauts
+**** recruitNo
+**** recruitYes
+*** [Moon]
+**** noOxygen
+**** humanBase
+**** teleporter
+**** crashedTrain
+**** crashing
+**** lightSide <oxygen>
+**** crater <oxygen>
+**** rocks <oxygen>
+**** darkSide <oxygen>
+** [Console]
+*** [Hall]
+**** main
+**** office
+**** cabin
+**** future
+** [Tiny]
+*** [Vent]
+**** heartRoom
+**** heartStairs
+**** heartPedestal
+**** ventilation
+**** grigory
+**** directions
+**** deepVent
+**** runAway
+**** ratFight
+
+* ITEMS
+
+** Item List
+
+ + Silver Coin (x3)
+ + Platinum Card
+ + Soul Crystal
+ + Elevator Access Key
+ + Upgraded Elevator Access Key
+ + Inmate's Soul
+ + Ritzy Inn Room Key
+ + Motel Room Key
+ + Spade Key (TBA)
+ + Diamond Key (TBA)
+ + Heart Key
+ + Club Key
+ + Fireproof Suit
+ + Green Olive
+ + Lantern (TBA)
+ + Courthouse Key
+ + Stolen Suitcase
+ + Super Taco
+ + Guard's Soul
+ + Hunter's Soul
+ + Oxygen Tank
+ + Oxygen Pocket Dimension (TBA)
+ + Necromancy Certificate
+ + Black Olive
+ + Scuba Suit (TBA)
+ + Ship's Wheel
+
+** Money Sources / Sinks
+
+ + (+) Shady Alley (~sa-coin~)
+ + (+) Forest River (~forest-river~)
+ + (+) Freight Elevator (~fe-coin~)
+ + (-) Robbery Event (~city-thug~)
+ + (-) Gate Guard Event (~prison-guard~)
+ + (-) Shabby Jack's (~motel-room~)
+ + (-) Merchant-bot Cheap Item (~olive-bought~)
+ + (-) Ship's Wheel (~captain-boat~)
+
+* MUFFINS
+
+** Big City
+ + Banana Nut Muffin (~judge-muffin~)
+** Big City (tiny form)
+** Big City (inverse form)
+** Big City (past form)
+** Outer Space
+** Warehouse
+** Prehistory
+** Prison
+ + Maple Muffin (~forest-river~)
+** Underworld
+ + Cream Cheese Muffin (~mercury-muffin~)
+** Dream World
+ + Blueberry Muffin (~muffin-second~)
+** Subspace
+** The Console Room
+** Unclassified
+ + Apple Pecan Muffin
+ + Egg Muffin
+ + Spud Muffin
+ + Sweet Potato Muffin
+ + Cinnamon Muffin
+ + Buttermilk Muffin
+ + Chocolate Chip Muffin
+ + Coffee Muffin
+ + Walnut Muffin
+ + Pumpkin Muffin
+ + Bran Muffin
+ + Chocolate Muffin
+ + Orange Muffin
+ + Cranberry Muffin
+ + Cheddar Muffin
+ + Bacon Muffin
+ + Snickerdoodle Muffin
+ + Sausage Muffin
+ + Lemon Muffin
+ + Peanut Butter Muffin
+ + Banana Muffin
+ + Corn Muffin
+ + Carrot Cake Muffin
+ + Raspberry Muffin
+ + Oatmeal Muffin
+ + Apple Cider Muffin
+ + Grape Muffin
+ + Cherry Muffin
+ + Pumpkin Spice Muffin
+ + Coffee Cake Muffin
+ + Pineapple Muffin
+ + Mango Muffin
+ + Oatmeal Raisin Muffin
+* STATES / EVENTS
+
+** Events
+*** ~city-thug~
+**** no
+**** stalking
+**** chasing
+**** island
+**** hiding
+**** hunted
+**** caught
+*** ~trial-crime~
+**** no
+**** court
+**** prison
+*** ~prison-guard~
+**** no
+**** paid
+**** fired
+**** search
+**** cleared
+*** ~johnny-quest~
+**** no
+**** accepted
+**** 1
+**** 2
+**** done
+*** ~butler-game~
+**** no
+**** cell
+**** cell1
+**** pawn
+**** pawn1
+*** ~attorney-man~
+**** no
+**** met
+**** talked
+**** talked1
+**** fed
+**** 1
+**** 2
+**** done
+**** complete
+*** ~taco-shop~
+**** no
+**** spoken
+**** olive
+**** fed
+*** ~hunter-trail~
+**** no
+**** visited
+**** forest
+**** under
+*** ~necro-cipher~
+**** no
+**** spoken
+**** found
+**** encouraged
+**** rising
+**** help
+**** beaten
+**** item
+*** ~captain-boat~
+**** no
+**** spoken
+**** requested
+**** obtained
+**** yes
+*** ~motel-ghost~
+**** no
+**** visited
+**** motel
+**** prison
+**** subspace
+**** warehouse
+**** yes
+** Item / Money States
+*** ~stolen-good~
+**** {}
+**** {Silver Coin}
+**** {Platinum Card}
+*** ~sa-coin~
+**** no
+**** yes
+*** ~collected-suit~
+**** no
+**** yes
+*** ~fe-coin~
+**** no
+**** exists
+**** yes
+*** ~olive-bought~
+**** no
+**** yes
+*** ~courtroom-key~
+**** no
+**** has
+**** yes
+*** ~has-suitcase~
+**** no
+**** yes
+** Muffin States
+*** ~forest-river~
+**** 0
+**** 1
+**** 2
+**** 3
+*** ~muffin-second~
+**** no
+**** yes
+*** ~judge-muffin~
+**** no
+**** yes
+*** ~mercury-muffin~
+**** no
+**** yes
+** World States
+*** ~trial-reason~
+**** {}
+**** murder
+**** escape
+*** ~janitor-door~
+**** no
+**** yes
+*** ~been-to-prison~
+**** no
+**** yes
+*** ~awaiting-bus~
+**** no
+**** trees
+**** yes
+*** ~lobby-door~
+**** no
+**** murder
+**** wildlife
+**** mercury
+**** other
+**** yes
+*** ~talked-to-johnny~
+**** no
+**** yes
+*** ~exercise-soul~
+**** no
+**** yes
+*** ~talked-to-cipher~
+**** no
+**** yes
+*** ~second-class-door~
+**** no
+**** yes
+*** ~first-class-door~
+**** no
+**** yes
+*** ~motel-room~
+**** no
+**** yes
+*** ~inn-room~
+**** no
+**** yes
+*** ~heard-science~
+**** no
+**** told
+**** yes
+*** ~talked-to-louis~
+**** no
+**** yes
+*** ~jumped-into-fire~
+**** no
+**** yes
+*** ~merchant-bot~
+**** no
+**** met
+*** ~secret-chamber-door~
+**** no
+**** yes
+*** ~subspace-attic~
+**** no
+**** yes
+*** ~pawn-shop-pass~
+**** no
+**** has
+**** yes
+*** ~hero-blade~
+**** no
+**** met
+**** talked
+**** yes
+*** ~hero-crystal~
+**** no
+**** intro
+**** bank
+*** ~subspace-portal~
+**** no
+**** river
+*** ~attorney-self~
+**** no
+**** okay
+**** yes
+*** ~attorney-thug~
+**** no
+**** yes
+*** ~attorney-guard~
+**** no
+**** okay
+**** seen
+**** yes
+*** ~courthouse-door~
+**** no
+**** yes
+*** ~guard-soul~
+**** no
+**** yes
+*** ~hunter-soul~
+**** no
+**** yes
+*** ~moon-teleport~
+**** no
+**** yes
+*** ~moon-mechanic~
+**** no
+**** present
+**** talked
+*** ~moon-train~
+**** no
+**** yes
+*** ~subspace-reason~
+**** no
+**** arrest
+**** button
+*** ~talked-to-acolyte~
+**** no
+**** started
+**** yes
+*** ~fire-pit~
+**** no
+**** odd
+**** even
+**** next
+**** seen
+**** talked
+*** ~talked-to-steve~
+**** no
+**** yes
+*** ~golden-arch~
+**** no
+**** yes
+*** ~talked-to-reaper~
+**** no
+**** yes
+*** ~reaper-has-item~
+**** no
+**** {Necromancy Certificate}
+**** {Black Olive}
+**** 0
+*** ~reaper-helper~
+**** no
+**** item
+*** ~stairs-tried~
+**** no
+**** yes
+*** ~talked-to-grigory~
+**** no
+**** yes
+*** ~motel-prison~
+**** no
+**** yes
+*** ~motel-warehouse~
+**** no
+**** yes
+*** ~motel-subspace~
+**** no
+**** yes
+*** ~captain-boat-place~
+**** dream
+**** warehouse
+*** ~talked-to-todd~
+**** no
+**** spoken
+**** {Scuba Suit}
+**** {Fireproof Suit}
+
+* CHARACTERS
+
+** The Robber
+** The Judge
+** Mustached Guard
+** Johnny Death
+** Exercise Field Inmate
+** Dr. Cipher
+** Shabby Jack
+** Carl the Employee
+** The Butler
+** Pawnbroker
+** Merchant-bot
+** Todd the Office Worker
+** Attorney-Man
+** The Taco Man
+** Joe the Time-Traveler
+** Atheena the Hero
+** Train Conductor
+** Female Prison Guard
+** The Hunter
+** Dr. Louis
+** The Mechanic
+** Matthew the Acolyte
+** The Ancient Minister
+** Steve (Steve's Smash-a-Lock)
+** The Reaper
+** Grigory the AC Repairman
+** The Motel Ghost
+** Ship Captain
+
+* NOTES
+
+** Ideas
+ + Cave will lead somewhere cool if you have a light (inverse city)
+ + Given gift if falsely imprisoned (according to Warden), maybe
+   Religious Artifact
+ + Pirates will eventually attack the dream ship, and if you raid them
+   you'll get a Religious Artifact
+ + Past the fire pits, there should be multiple rooms which are
+   accessible, not just the freight elevator
+ + Merchant-bot has two items (one at a ridiculous price); there is a
+   quest to kill him, which leads to the warehouse office. At that
+   time, Merchant-bot 2 takes over and sells the expensive one for
+   less
+ + Going to the past and requesting an item from the pawnbroker will
+   result in that item being available the next day
+ + Todd wants to rebel against Merchant-bot and leaves clues to help
+   you do so
+ + Help someone escape from prison by creating a diversion on entry
+ + The subspace bank forecloses some important building or structure,
+   requiring you to break into their vault to get the key and reopen
+   it (Hero's Crystal)
+ + Diving into the warehouse island water with scuba suit will result
+   in an underwater merfolk cavern
+ + The mechanic is missing his Golden Wrench, which is (probably) in
+   the undersea kingdom. With it, he can repair the player's broken
+   objects
+ + Steve's Smash-a-Lock (only open in the past), where you can have
+   Steve break open the vault lock to get Atheena's crystal back.
+   Also, Steve may give you a Suspicious Briefcase that you must
+   deliver to present-day Steve in the prison.
+ + Evil flame spirit appears in the fire pits after N visits. After
+   appeasing him by giving him something, ... I dunno, something
+   happens ... (Necromancy Certificate? Joe?)
+ + The Ancient Minister will tell you how you ended up in subspace
+   (mainly to help the player understand). If the player has no record
+   of entering subspace in any "standard" way, then his heart will be
+   pure and the Minister will speak to him more frankly, and then....
+   something.... (the record of entering subspace can be cleared with
+   Dr. Cipher's help)
+ + Science Johnson controls the console room. His soul is in the abyss
+   area and needs to be rescued, but once it is, he will end up
+   outside the door to the controls in the console room and explain
+   the goal of the game to the player, as well as possibly give him
+   hints once he has X muffins.
+ + Crispy Joe's Sandwich Shop...? (Prehistory?)
+ + Prehistory contains a grocery store with a labyrinth underneath it.
+   At the base of the labyrinth (explorable by subspace map? what if
+   the subspace map is just a special map that works in subspace,
+   labyrinth, and shrunk ventilation and its not specific to
+   subspace?) there is a jungle dome with a passcode to get in
+ + The Reaper calls in the player's favor. Possibly to help retrieve a
+   stolen item from the Ancient Minister (do they have a rivalry or
+   something?).
+ + Attorney-Man's reward?
+ + If the Reaper has both the Black Olive and the Necromancy
+   Certificate, then what if he only gives the player one of the two
+   (player gets to choose) then requires a quest for the other? /////
+ + The True Reaper is sealed away in the Ancient Minister's temple?
+   Sealed away in a chest that only Steve's Smash-a-Lock can help
+   with?
+ + The Black Olive needs to do something (double subspace???)
+ + Heart Room in the past does something? (possibly just an easter
+   egg; exit blocked off?)
+** Implemented
+ + Turn-based RPG-style combat for Joe and Merchant-bot
+ + Hunter, inmate, and second prison guard souls for Johnny Death
+ + Attorney-Man and the three clients (player, guard, and robber)
+ + The stolen luggage will let you hide in the cargo hold of the dream
+   train to make it back to the dream world
+ + Trade in the fireproof suit for a scuba suit (and vice versa) with
+   Todd
+ + Dr. Cipher wants his Necromancy Certificate back from Joe. Is Joe
+   secretly a supervillain who wants to use the Certificate to rule
+   the world? If so, the player probably has to go call on Atheena to
+   save the world from him. One of the rewards from defeating Joe, in
+   addition to a Black Olive stolen from the Taco Man, is that the
+   portal to the underworld will remain open, providing a one-way path
+   into a new part of the underworld, filled with dark souls and evil
+   magic. Perhaps the Certificate is torn? You have to get it
+   repaired?
+ + Too easy to get to Underworld Mystery Room? Consider changing the
+   past button to do something else.
+** Discarded
+ + Shrinking item but requires certain power port (purple outlets) to
+   use
+ + On the opposite side of the narrow tunnel in the Underworld
+   (accessible with shrinking item), you can access the secret
+   elevator which goes to the warehouse island
+
+* MISCELLANEOUS
+
+** Test
+ + Johnny Death, start to finish
+ + Attorney-Man, start to finish
+ + Merchant-bot, I'm just happy these lines line up so nicely
+
+** Science
+ *    Club Room - Time Machine  - Free on First Access
+ *   Spade Room - Time Machine+ - ???
+ *   Heart Room - Shrinking     - Dr. Cipher Quest
+ * Diamond Room - Rocket        - ???
