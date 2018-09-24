@@ -459,10 +459,25 @@
 
 -------- MUFFINS --------
 
-* Maple Muffin (forest-river)
-* Blueberry Muffin (muffin-second)
-* Banana Nut (judge-muffin)
-* Cream Cheese (mercury-muffin)
+* Big City
+  * Banana Nut (judge-muffin)
+* Big City (tiny form)
+* Big City (inverse form)
+* Big City (past form)
+
+* Outer Space
+* Warehouse
+* Prehistory
+* Prison
+  * Maple Muffin (forest-river)
+
+* Underworld
+  * Cream Cheese (mercury-muffin)
+* Dream World
+  * Blueberry Muffin (muffin-second)
+* Subspace
+* The Console Room
+
 Apple Pecan
 Egg
 Spud
