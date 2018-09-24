@@ -84,12 +84,36 @@ namespace eval Warehouse::Outside {
     proc dock {} {
         puts "== Island Dock =="
         # //// Dream ship
-        puts "The dock is small and deserted. It doesn't look like there have been any ships\
-        here in some time."
+        if {[state get captain-boat-place] eq {warehouse}} then {
+            puts "The dock is small and mostly deserted. A large ship sits in the bay, and\
+            its captain waits at the end of the dock."
+        } else {
+            puts "The dock is small and deserted. It doesn't look like there have been any ships\
+            here in some time."
+        }
         prompt {} {
+            {"Talk to the captain" {[state get captain-boat-place] eq {warehouse}} captain}
             {"Leave the dock" yes east}
             {"Jump into the water" yes diveIn}
         }
+    }
+
+    proc captain {} {
+        puts "\"Climb aboard!\""
+        prompt {} {
+            {"Climb aboard" yes captainSail}
+            {"\"Not right now.\"" yes dock}
+        }
+    }
+
+    proc captainSail {} {
+        puts "\"And we're off.\""
+        puts "The captain hoists the anchor out of the bay and sets sail."
+        puts {}
+        puts "Some time later, you arrive in an ethereal plane."
+        state put captain-boat-place dream
+        puts {}
+        return {::Dream::World::pier 1}
     }
 
     proc diveIn {} {

@@ -255,6 +255,7 @@
   - captain
   - captainHelp
   - captainWheel
+  - captainSail
   - conductor
   - third
   - thirdRoom
@@ -268,6 +269,8 @@
   - west
   - enterDoor
   - dock
+  - captain
+  - captainSail
   - diveIn
   - northTalk
   - northAttorney
@@ -599,6 +602,7 @@ World States:
  * motel-prison {no yes}
  * motel-warehouse {no yes}
  * motel-subspace {no yes}
+ * captain-boat-place {dream warehouse}
 
 -------- CHARACTERS --------
 

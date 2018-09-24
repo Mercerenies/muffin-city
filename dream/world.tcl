@@ -82,7 +82,7 @@ namespace eval Dream::World {
 
     proc pier {depth} {
         puts "== Floating Pier =="
-        if {[state get butler-game] ni {no cell cell1 pawn}} then {
+        if {([state get butler-game] ni {no cell cell1 pawn}) && ([state get captain-boat-place] eq {dream})} then {
             puts "The pier floats over an infinite void. A single ship sits at the\
             pier, floating over nothingness. The ship's captain stands at the edge,\
             in traditional sailor garb."
@@ -92,9 +92,9 @@ namespace eval Dream::World {
         }
         set option1 "{Leap over the edge} yes {pierEdge $depth}"
         if {$depth > 1} then {
-            set option2 {{Talk to the captain} {[state get butler-game] ni {no cell cell1 pawn}} {clear captain}}
+            set option2 {{Talk to the captain} {([state get butler-game] ni {no cell cell1 pawn}) && ([state get captain-boat-place] eq {dream})} {clear captain}}
         } else {
-            set option2 {{Talk to the captain} {[state get butler-game] ni {no cell cell1 pawn}} captain}
+            set option2 {{Talk to the captain} {([state get butler-game] ni {no cell cell1 pawn}) && ([state get captain-boat-place] eq {dream})} captain}
         }
         set option3 "{Go back to the commons} yes {commons $depth}"
         prompt {} [list $option1 $option2 $option3]
@@ -184,8 +184,9 @@ namespace eval Dream::World {
             }
             yes {
                 puts "\"Climb aboard, mate!\""
-                # //// The ship
+                # //// Eventually, pirates will attack the ship after a few voyages, opening a new avenue
                 prompt {} {
+                    {"Climb aboard" yes captainSail}
                     {"\"Maybe later.\"" yes {pier 1}}
                 }
             }
@@ -211,6 +212,16 @@ namespace eval Dream::World {
         prompt {} {
             {"\"I'll keep that in mind.\"" yes {pier 1}}
         }
+    }
+
+    proc captainSail {} {
+        puts "\"And we're off.\""
+        puts "The captain hoists the anchor out of the void and sets sail."
+        puts {}
+        puts "Some time later, you arrive on a deserted island."
+        state put captain-boat-place warehouse
+        puts {}
+        return ::Warehouse::Outside::dock
     }
 
     proc conductor {} {
