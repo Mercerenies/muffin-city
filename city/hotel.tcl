@@ -33,7 +33,6 @@ namespace eval City::Hotel {
         } else {
             puts {}
         }
-        # //// By the way, Shabby Jack's doesn't actually, ya know, do anything right now...
         prompt {} {
             {"Go to sleep" yes {::Dream::Transit::awaken ::Dream::Transit::thirdRoom}}
             {"Talk to the entity" {[state get motel-ghost] eq {visited}} shabbyGhostIntro}

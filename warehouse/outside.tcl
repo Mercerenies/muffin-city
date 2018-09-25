@@ -50,7 +50,6 @@ namespace eval Warehouse::Outside {
 
     proc east {} {
         puts "== Secret Island - East =="
-        # ////
         puts "This edge of the island contains a small dock. You can see the warehouse behind\
         you, but there is no entrance on this side."
         prompt {} {
@@ -83,7 +82,6 @@ namespace eval Warehouse::Outside {
 
     proc dock {} {
         puts "== Island Dock =="
-        # //// Dream ship
         if {[state get captain-boat-place] eq {warehouse}} then {
             puts "The dock is small and mostly deserted. A large ship sits in the bay, and\
             its captain waits at the end of the dock."
