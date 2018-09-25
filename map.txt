@@ -1,4 +1,6 @@
 
+(USE `map.org` NOW)
+
 -------- MAJOR REGIONS --------
 
 +++ City Area +++
@@ -539,7 +541,10 @@ Events:
  * attorney-man {no met talked talked1 fed 1 2 done complete}
  * taco-shop {no spoken olive fed}
  * hunter-trail {no visited forest under}
- * necro-cipher {no spoken found encouraged rising help beaten item}
+ * subspace-reason {no arrest button}
+ * fire-pit {no odd even next seen talked}
+ * necro-cipher {no spoken found encouraged rising help beaten item yes}
+ * reaper-helper {no item}
  * captain-boat {no spoken requested obtained yes}
  * motel-ghost {no visited motel prison subspace warehouse yes}
 
@@ -591,14 +596,11 @@ World States:
  * moon-teleport {no yes}
  * moon-mechanic {no present talked}
  * moon-train {no yes}
- * subspace-reason {no arrest button}
  * talked-to-acolyte {no started yes}
- * fire-pit {no odd even next seen talked}
  * talked-to-steve {no yes}
  * golden-arch {no yes}
  * talked-to-reaper {no yes}
  * reaper-has-item {no {Necromancy Certificate} {Black Olive} 0}
- * reaper-helper {no item}
  * stairs-tried {no yes}
  * talked-to-grigory {no yes}
  * motel-prison {no yes}

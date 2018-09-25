@@ -522,94 +522,414 @@
 * STATES / EVENTS
 
 ** Events
-*** ~city-thug~
+*** Robbery Event (~city-thug~)
 **** no
+     After the first visit to the Shady Alley, the player will be told
+     that someone is watching them. The game proceeds to state
+     ~stalking~.
 **** stalking
+     If he goes to the police station, he will have the option of
+     telling the police he is being followed, resulting in state
+     ~chasing~. If the player goes to the shopping or hotel districts,
+     then the robber leaps out and strikes, pointing a gun in the
+     player's face and demanding money. The player can cooperate (if
+     they actually have money), refuse, or claim to have none.
+      - Cooperate - The player gives up either a silver coin or a
+        platinum credit card and the robber runs off. The game moves
+        to state ~island~.
+      - Claim (truthfully) - If the player truthfully has no money,
+        the robber will let him go and return to state ~no~.
+      - Claim (falsely) - The robber will call the player on his lie
+        and act as though he refused.
+      - Refuse - The player will be shot and will go to Underworld.
+        The robber will go hide out on Dream Train to avoid the
+        police. Move to state ~hiding~.
 **** chasing
+     The robber will keep a low profile and will not be able to be
+     found. In this state, the Shady Alley will reveal a Silver Coin.
+     If the Shady Alley coin has been collected (~sa-coin~) and the
+     player goes to the Underworld hub, then the game moves to ~no~.
 **** island
+     The robber will end up on the Warehouse island. The player can
+     talk to him. The robber will say that he ended up not needing the
+     player's money and will return whatever he stole (~stolen-good~).
+     He will then leave and the game will revert to ~no~.
+     Alternatively, telling the police will result in the `hunted`
+     state. If the player approaches the Warehouse island while
+     Attorney-Man is also serving justice there (~attorney-man~ in
+     state ~fed~ or above), Attorney-Man will automatically chastise
+     him, sending the game back to ~no~ and returning the stolen item.
 **** hiding
+     The robber will be on the Dream Train. The player can talk to
+     him, where he will apologize for shooting the player and claim
+     that it was "just business". The game then moves to ~no~ as the
+     robber leaves the train. Alternatively, if the player pulls the
+     emergency brake, the robber will run off into the moonscape, and
+     the game will move to ~no~.
+
+     //// What then?
 **** hunted
+     The robber will be caught and moved to the dining hall in the
+     prison. If the player talks to him, the game moves to ~caught~.
 **** caught
-*** ~trial-crime~
+      If the player talks to the police (with a clean criminal record,
+      according to the Trial Event), they will present him with the
+      stolen good he lost. If the Platinum Card has not been obtained
+      (~thug-card~), they will also present him with that, and he will
+      be asked to choose which one was his. After doing so, the game
+      reverts to ~no~.
+*** Trial Event (~trial-crime~)
 **** no
+     The player has not been arrested. When the player is arrested for
+     confessing to murder, the game will go to state ~court~,
+     trial-reason will go to state ~murder~, and the player is moved
+     to the courtroom, where the trial will proceed. If the player
+     should end up in prison in this state, he can speak to the
+     warden, who will promptly release him with an apology.
+
+     //// Warden stuff is not in the game right now
 **** court
+     The player is given the option to plead guilty or innocent. If he
+     pleads guilty, he is convicted. If he pleads innocent and lacks a
+     lawyer, he will be convicted anyway. In the case of conviction,
+     the game moves to ~prison~ and the player is moved to prison.
+     Once again, if the player ends up in prison, the warden will
+     happily release him. Alternatively, he can use Dr. Cipher in the
+     Underworld to reset this state to ~no~.
+
+     //// Lawyer?
 **** prison
-*** ~prison-guard~
+     In this state, if the player moves to the police station, he will
+     be apprehended and tried in court, moving back to state ~court~.
+     If the player visits Dr. Cipher, his Document Transmogrifier will
+     reset this to ~no~.
+
+     //// Lawyer?
+*** Gate Guard Event (~prison-guard~)
 **** no
+     The prison guard stands at the gate. The player can talk to him
+     and bribe the guard with a Silver Coin, releasing the player back
+     to the city and moving to `paid`. Note that even though the
+     player has been freed from prison, he does not have a clean
+     record and will be arrested on sight if he returns to the police
+     station.
 **** paid
+     If the player ends up in prison again, the guard will still be
+     there. He will initially resist releasing the player but will
+     relent when reminded of the bribe. The player is released and the
+     game moves to `fired`.
 **** fired
+     The third time the player is in prison, there will be a female
+     guard in place of the original guard. She will not be amenable to
+     bribes and will not release the player. When the player speaks to
+     her, the game moves to `search`.
 **** search
+     The mustached guard is sitting in the corner of the dream world
+     airport. The player can speak to him, and he will complain about
+     being fired. If Attorney-Man is accepting clients (attorney-man),
+     then the player will have the option to tell the guard about
+     Attorney-Man. If he does so, the attorney-guard flag will be set
+     to `okay`. In this state, when the player arrives at the prison's
+     gate, attorney-guard will be set to `seen` and the game will move
+     to `cleared`.
 **** cleared
-*** ~johnny-quest~
+     The guard is grateful to the player for helping him and will
+     release him from prison whenever he wants. If the player asks the
+     guard about Attorney-Man, attorney-guard will be set to `yes` and
+     ~attorney-man~ will be updated to reflect the new client.
+*** Johnny Death Event (~johnny-quest~)
 **** no
+     Johnny Death is in the Underworld balcony and is seeking souls
+     for his display case. When the player encounters him, he will ask
+     for help stealing souls for his display. If the player accepts,
+     he will be given the Soul Crystal and the Elevator Access Key so
+     that he can exit the Underworld. The game moves to `accepted`.
 **** accepted
+     Johnny is waiting to receive souls from the player. The souls
+     that are available are in the prison exercise fields
+     (exercise-soul), the subspace taco shop (guard-soul), and ...
+     When the first soul is brought to him, Johnny will tell the
+     player about Dr. Cipher's invention and the game will move to
+     `1`.
 **** 1
+     Johnny is waiting to receive more souls. When the second soul is
+     brought to him, Johnny will upgrade the player's Elevator Access
+     Key into an Upgraded Elevator Access Key. The game will then move
+     to `2`.
 **** 2
+     Johnny is waiting for one more soul. When the third and final
+     soul is brought to him, Johnny will open all the doors in the
+     lobby, giving the player access to all of the rooms. In
+     particular, this opens the mercury room, which contains the Cream
+     Cheese Muffin. The game also moves to `done` at this time.
 **** done
-*** ~butler-game~
+     Johnny's collection is complete. If the player speaks to him, he
+     will simply thank the player.
+*** The Butler's Event (~butler-game~)
 **** no
+     The butler is nowhere to be found. The game will move from this
+     state to `cell` when the following three conditions are met.
+      - The player has just been arrested and moved to the prison.
+      - The player has been arrested before (~been-to-prison~).
+      - The player has at least one item.
 **** cell
+     The butler is in the player's prison cell. When he talks to him,
+     he will tell the player about the science lab and how to get to
+     it. The game then moves to `cell1`.
 **** cell1
+     The game will move from this state to `pawn` when the following
+     three conditions are met.
+      - The player has just entered the pawn shop in the present.
+      - The player has talked to Dr. Louis (talked-to-louis).
+      - The player has jumped into the fire pits (jumped-into-fire).
 **** pawn
+     The butler is in the pawn shop in the present. When he talks to
+     him, he will give the player a Fireproof Suit. The game then
+     moves to `pawn1`.
 **** pawn1
-*** ~attorney-man~
+     //// Next state
+*** Attorney-Man's Career (~attorney-man~)
 **** no
+     Attorney-Man has not been spoken to, so he will only appear in
+     Shabby Jack's in the past. After he introduces himself, the
+     player can encourage him or walk away. In the first case, the
+     game moves to `talked`. In the second case, it moves to `met`.
 **** met
+     The player has spoken to Attorney-Man. If he speaks to him again,
+     the same options as in `no` will be presented. If the player
+     walks away, nothing happens. If the player encourages him, the
+     game moves to `talked`.
 **** talked
+     Attorney-Man in the past will say simply that he will embark on a
+     journey soon. In the present, Attorney-Man appears on the
+     northern side of the warehouse island. When spoken to, he will
+     ask for a taco and the game will move to `talked1`.
 **** talked1
+     Attorney-Man in the past will continue saying he will embark
+     soon. In the present, Attorney-Man remains on the warehouse
+     island and continues asking for food. If the player has given the
+     Taco Man an olive (taco-shop is `olive` or `fed`), then the
+     player can request a taco from the Taco Man. Delivering this taco
+     to Attorney-Man moves to the game to `fed`.
 **** fed
+     In this state, Attorney-Man will wait for cases. The player can
+     deliver his own case (attorney-self), the robber's case
+     (attorney-thug), and the prison guard's case (attorney-guard).
+     Each of these moves the game forward, first into `1`, then `2`,
+     then `done`.
 **** 1
+     See `fed`.
 **** 2
+     See `fed`.
 **** done
+     ////
 **** complete
-*** ~taco-shop~
+     ////
+*** The Taco Shop (~taco-shop~)
 **** no
+     The player has not spoken to the taco shop manager. When he does
+     so, the game moves to `spoken` or to `olive` if the player has an
+     olive. Joe the Time-Traveler will be in the subspace hub and will
+     simply complain about hunger.
 **** spoken
+     The player has spoken to the taco shop manager but has not
+     presented him with an olive. The taco shop manager will be
+     looking for an olive. When presented with one, the game will move
+     to `olive`. Joe the Time-Traveler will still complain about
+     hunger.
 **** olive
+     The player has presented the taco shop manager with an olive. If
+     the player talks to Joe the Time-Traveler, the game will move to
+     `fed` and Joe will move to the taco shop.
 **** fed
-*** ~hunter-trail~
+     Joe the Time-Traveler will, upon being asked, tell the player
+     about the secret password to the pawn shop in the past. The game
+     will remember that he has done so (pawn-shop-pass).
+
+     //// More to this quest (Black Olive)
+*** The Hunter's Adventure (~hunter-trail~)
 **** no
+     The player has not visited the forest outside the prison yet. The
+     Hunter is at Shabby Jack's and will simply say he is looking for
+     a good forest to hunt in. When the player visits the forest, the
+     game will move to `visited`.
 **** visited
+     The player has visited the forest but not told the Hunter about
+     it. When the player tells the Hunter, who is still at Shabby
+     Jack's, about it, the game will move to `forest` and the Hunter
+     will move to the forest.
 **** forest
+     The Hunter is in the forest. When the player speaks to him here,
+     the player will have the option of suggesting that the Hunter go
+     to the cave. If he does so, the game will move to `under` and the
+     Hunter will move to the Underworld.
 **** under
-*** ~necro-cipher~
+     The Hunter is in the Underworld.
+*** Trip to Subspace (~subspace-reason~)
 **** no
+     The player has not been sent to subspace yet. If the player ends
+     up in subspace in this state, he has done so without causing a
+     paradox or otherwise. When the player is sent to subspace,
+     depending on the reason, the game will move to `arrest`.
+**** arrest
+     The player was sent to subspace as a result of confessing to a
+     crime in the past. This implies that the player had an unclean
+     criminal record at the start of the present day, which
+     contradicts the order of events.
+**** button
+     //// Fill this in
+*** Evil Flame Spirit (~fire-pit~)
+**** no
+     The player has not begun to approach the evil flame spirit. When
+     the player visits the fire pits with the Fireproof Suit, the game
+     will move to `odd`.
+**** odd
+     The player has been to the fire pits successfully once. When the
+     player visits the starting area of the big city, the game will
+     move to `even`.
+**** even
+     The player has been to the pits and back once.
+
+     //// Player must have at least two science keys
+**** next
+     ////
+**** seen
+     ////
+**** talked
+     ////
+*** The Necromancy Certificate (~necro-cipher~)
+**** no
+     The player has not spoken to Dr. Cipher about his Necromancy
+     Certificate yet. If the player talks to Dr. Cipher after the
+     Butler's second event (butler-game is `pawn` or beyond) and after
+     using the pawn shop password (pawn-shop-pass is `yes`), Dr.
+     Cipher will seem mildly alarmed by something. If the player asks
+     what is wrong, Dr. Cipher will explain that his Necromancy
+     Certificate has been stolen. The game will then proceed to
+     `spoken`.
 **** spoken
+     The player has been sent to look for the Necromancy Certificate.
+     Joe the Time-Traveler will have it at the taco shop in subspace.
+     When the player approaches him, Joe will insist that it is a
+     family heirloom, not a cursed artifact. If the player presses
+     him, he will not give, but the game will move to `found`.
 **** found
+     The player has found the Certificate, but Joe will not give it
+     up. The player must return to Dr. Cipher and share his findings.
+     When the player tells Dr. Cipher, he will confirm that Joe's
+     scroll is in fact the Certificate and tell the player to claim
+     the Certificate at all costs. The game will move to `encouraged`.
 **** encouraged
+     Having been reassured that Joe definitely has the Certificate,
+     the player must confront Joe again. When he does so, Joe will
+     confess to stealing the Certificate but will claim that Dr.
+     Cipher is the villain. The player has the option of buying into
+     his story, but it doesn't matter, because either way, Joe will
+     decide that the player knows too much. Joe activates the
+     Necromancy Certificate and the game moves to `rising`.
 **** rising
+     Joe has activated the Certificate and is summoning the spirits of
+     the dead. The player has the option to fight him then and there.
+     If he does so, the player will enter one-on-one turn-based combat
+     with Joe, who will proceed to summarily curbstomp him, sending
+     the player to the underworld. Instead, if the player visits
+     Atheena the Hero, she will offer to help in the fight against
+     Joe, moving the game to `help`.
 **** help
+     Atheena is at the taco shop waiting to confront Joe with the
+     player. The battle will now go much more smoothly, and the player
+     and Atheena will win. Joe will be banished to the underworld,
+     where Dr. Cipher will see that justice is served. The Necromancy
+     Certificate falls into a void which leads to the abyss. Atheena
+     will return to the portal room. The game moves to `beaten`.
 **** beaten
+     Joe has been defeated, but the Certificate has not been
+     recovered. It has fallen into the hands of the Reaper in the
+     abyss. When the player addresses the Reaper, he will offer the
+     player either the Black Olive or the Necromancy Certificate. The
+     player must choose one (reaper-has-item) to take for free. The
+     other item will become available after completing a quest for the
+     Reaper. Upon choosing the first item, the game moves to `item`.
 **** item
-*** ~captain-boat~
+     The player has the option to give Dr. Cipher the Certificate, if
+     he has it. If the player chose the Olive from the Reaper, he will
+     have to wait until he completes the Reaper's quest to get the
+     other. Regardless, once the player returns the Certificate, Dr.
+     Cipher will give him the Heart Key and the game will move to
+     `yes`.
+**** yes
+     Dr. Cipher has the Certificate, Joe has been captured, and the
+     player has the Heart Key. Mission accomplished.
+*** The Reaper's Desire (~reaper-helper~)
 **** no
+     The player has not done anything for the Reaper yet. When the
+     player claims an item from the Reaper via ~necro-cipher~ in
+     `beaten`, the game moves to `item`.
+**** item
+     The player has claimed one item from the Reaper, but the Reaper
+     is not ready to give the player a quest. If the player asks for
+     the other item in this state, the Reaper will decline to give it.
+*** The Captain's Anchor (~captain-boat~)
+**** no
+     The player has not spoken to the captain yet. The captain will
+     not appear until the second Butler event. When the player speaks
+     to him, the captain will mention that his ship is missing its
+     wheel, and the game will move to `spoken`.
 **** spoken
+     ////
 **** requested
+     ////
 **** obtained
+     ////
 **** yes
-*** ~motel-ghost~
+     ////
+*** Unfinished Business (~motel-ghost~)
 **** no
+     The motel ghost is invisible. The player cannot encounter him in
+     this state. When the player first visits the floor of the Abyss
+     containing the Reaper, the game moves to `visited`.
 **** visited
+     The player can now see the ghost. If the player talks to him, he
+     will want to tell his story. After hearing his story, the game
+     will move to `motel`.
 **** motel
+     The player can tell the ghost where he is "meant" to go. He can
+     send him to the prison (`prison`), the island (`warehouse`), or
+     subspace (`subspace`). In any case, the game will move to the
+     respective state. The ghost will not go to a location in which he
+     has already completed his business (respectively, motel-prison,
+     motel-warehouse, and motel-subspace).
 **** prison
+     ////
 **** subspace
+     ////
 **** warehouse
+     ////
 **** yes
+     ////
 ** Item / Money States
 *** ~stolen-good~
 **** {}
 **** {Silver Coin}
 **** {Platinum Card}
-*** ~sa-coin~
+*** Shady Alley Silver Coin (~sa-coin~)
 **** no
+     The coin has not been collected. It will only show itself if
+     city-thug is `chasing`. When collected, the game moves to `yes`.
 **** yes
+     The coin has been collected. It will not show itself.
 *** ~collected-suit~
 **** no
 **** yes
-*** ~fe-coin~
+*** Freight Elevator Coin (~fe-coin~)
 **** no
+     The coin is not available yet. When the player visits the west
+     edge of the warehouse, the game will move to `exists`.
 **** exists
+     The coin exists in the freight elevator and can be collected.
+     When collected, the game moves to `yes`.
 **** yes
+     The coin has been collected and will not appear again.
 *** ~olive-bought~
 **** no
 **** yes
@@ -621,14 +941,26 @@
 **** no
 **** yes
 ** Muffin States
-*** ~forest-river~
+*** River Treasures (~forest-river~)
 **** 0
+     The river has not been explored yet. Exploring the river will
+     give a Silver Coin and move to `1`.
 **** 1
+     Exploring the river in this state will not yield anything but
+     will move to `2`.
 **** 2
+     Exploring the river in this state will yield the Maple Muffin and
+     move to `3`.
 **** 3
-*** ~muffin-second~
+     Nothing of use comes from exploring the river in this state.
+*** Second Class Muffin (~muffin-second~)
 **** no
+     The muffin has not been collected yet. It will be available in
+     the 2nd class car of the dream train, but only after the train
+     has reached its destination of the big city. Collecting it moves
+     to state `yes`.
 **** yes
+     The muffin has been collected and will not appear again.
 *** ~judge-muffin~
 **** no
 **** yes
@@ -660,9 +992,15 @@
 *** ~talked-to-johnny~
 **** no
 **** yes
-*** ~exercise-soul~
+*** Exercise Field Soul (~exercise-soul~)
 **** no
+     The soul has not been collected. Talking to the exercise field
+     inmate will result in the player being killed unless he backs
+     off. If the player has the Soul Crystal, he can claim his soul,
+     giving him {Inmate's Soul} and moving to `yes`.
 **** yes
+     The inmate's soul has been taken. Talking to him will result in a
+     rather depressed response and nothing of interest happening.
 *** ~talked-to-cipher~
 **** no
 **** yes
@@ -682,9 +1020,13 @@
 **** no
 **** told
 **** yes
-*** ~talked-to-louis~
+*** Dr. Louis Introduction (~talked-to-louis~)
 **** no
+     The player has not spoken to Dr. Louis. When he does so, she will
+     introduce herself and give him the Club Key. The game will then
+     move to `yes`.
 **** yes
+     The player has spoken to Dr. Louis.
 *** ~jumped-into-fire~
 **** no
 **** yes
@@ -701,15 +1043,29 @@
 **** no
 **** has
 **** yes
-*** ~hero-blade~
+*** The Hero's Blade (~hero-blade~)
 **** no
+     The player has not spoken to Atheena yet. When spoken to, she
+     will introduce herself and the game will move to `met`. At this
+     time, she will activate the portal (`subspace-portal`).
 **** met
+     The player has met Atheena. She will ...
+
+     ////
 **** talked
+     ////
 **** yes
-*** ~hero-crystal~
+     ////
+*** The Hero's Crystal (~hero-crystal~)
 **** no
+     The player does not know about the crystal yet. If he talks to
+     Atheena in state `met` or `yes`, he will have the option to ask
+     her about the projector, which will move the game to `intro`.
 **** intro
+     The player knows that the bank has the crystal. He can confront
+     the bank about it, which will move the game to state `bank`.
 **** bank
+     ////
 *** ~subspace-portal~
 **** no
 **** river
@@ -725,9 +1081,15 @@
 **** okay
 **** seen
 **** yes
-*** ~courthouse-door~
+*** The Courthouse Door (~courthouse-door~)
 **** no
+     The door is locked. If the player exits the courthouse from the
+     inside, the door will become unlocked and the game will move to
+     `yes`.
 **** yes
+     The door is unlocked and can be entered from either side. If a
+     trial begins, the door will be locked again and the game will
+     move to `no`.
 *** ~guard-soul~
 **** no
 **** yes
@@ -744,21 +1106,17 @@
 *** ~moon-train~
 **** no
 **** yes
-*** ~subspace-reason~
+*** The Acolyte (~talked-to-acolyte~)
 **** no
-**** arrest
-**** button
-*** ~talked-to-acolyte~
-**** no
+     The player has not spoken to the acolyte, Matthew, at the
+     subspace temple altar yet. When the player does so, the game
+     moves to `started`.
 **** started
+     The player has spoken to Matthew but not the Minister. When he
+     speaks to the Minister, whether or not his soul is clean, the
+     game moves to `yes`.
 **** yes
-*** ~fire-pit~
-**** no
-**** odd
-**** even
-**** next
-**** seen
-**** talked
+     ////
 *** ~talked-to-steve~
 **** no
 **** yes
@@ -773,9 +1131,6 @@
 **** {Necromancy Certificate}
 **** {Black Olive}
 **** 0
-*** ~reaper-helper~
-**** no
-**** item
 *** ~stairs-tried~
 **** no
 **** yes
