@@ -280,6 +280,13 @@
 *** [Undersea]
 **** undersea
 **** kingdomGates
+**** gatekeeper
+**** gatekeeperGuard
+**** kingdom
+**** red
+**** yellow
+**** blue
+**** castleLocked
 **** surface
 ** [Past]
 *** [Science]
@@ -1189,7 +1196,7 @@
 ** Grigory the AC Repairman
 ** The Motel Ghost
 ** Ship Captain
-
+** Kingdom Gatekeeper
 * NOTES
 
 ** Ideas
