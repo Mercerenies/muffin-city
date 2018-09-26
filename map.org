@@ -280,6 +280,7 @@
 *** [Undersea]
 **** undersea
 **** kingdomGates
+**** surface
 ** [Past]
 *** [Science]
 **** mainRoom
