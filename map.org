@@ -277,6 +277,9 @@
 **** northEncounter
 **** northCrazy
 **** northCrazy1
+*** [Undersea]
+**** undersea
+**** kingdomGates
 ** [Past]
 *** [Science]
 **** mainRoom

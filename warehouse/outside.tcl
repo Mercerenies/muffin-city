@@ -115,12 +115,18 @@ namespace eval Warehouse::Outside {
     }
 
     proc diveIn {} {
-        puts "You leap into the water without a second thought."
-        if {[state get lobby-door] ne {yes}} then {
-            state put lobby-door other
+        if {[inv has {Scuba Suit}]} then {
+            puts "You don your Scuba Suit and leap into the water."
+            puts {}
+            return ::Warehouse::Undersea::undersea
+        } else {
+            puts "You leap into the water without a second thought."
+            if {[state get lobby-door] ne {yes}} then {
+                state put lobby-door other
+            }
+            puts {}
+            return ::Underworld::Lobby::other
         }
-        puts {}
-        return ::Underworld::Lobby::other
     }
 
     proc northTalk {} {
