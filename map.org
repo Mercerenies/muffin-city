@@ -1261,6 +1261,14 @@
  + The Black Olive needs to do something (double subspace???)
  + Heart Room in the past does something? (possibly just an easter
    egg; exit blocked off?)
+ + Johnny Death's father is the True Reaper (previous to the current
+   Reaper), sealed away by the Ancient Minister?
+ + The Flaming Axe of Doom was used by the First Reaper to carve out
+   the Underworld before time itself. Possibly, we can visit this
+   place before time itself by supercharging the prehistory time
+   machine. Visiting prehistory and heading down to the Underworld
+   will encounter maybe an earlier Reaper?
+ + Queen piece converter (for Mothka game?) (and just, ya know, Mothka in general)
 ** Implemented
  + Turn-based RPG-style combat for Joe and Merchant-bot
  + Hunter, inmate, and second prison guard souls for Johnny Death
