@@ -39,12 +39,13 @@ namespace eval Prison::Guard {
         puts "\"Huh...? Oh... yeah... he's a good lawyer...\""
         state put attorney-guard yes
         state put attorney-man [switch [state get attorney-man] {
-            fed 1
-            1 2
-            2 done
+            fed {expr 1}
+            1 {expr 2}
+            2 {expr {done}}
         }]
         prompt {} {
             {"Go inside" yes ::Prison::South::hallway}
+            {"\"Can you open the gate?\"" yes free1}
         }
     }
 
