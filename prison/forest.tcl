@@ -29,12 +29,16 @@ namespace eval Prison::Forest {
         puts -nonewline "The forest treeline is very thick, but a rough path seems to run\
         across it, leaading to a river on one side and a cave on the other."
         if {[state get hunter-trail] eq {forest}} then {
-            puts " The hunter from Shabby Jack's is standing by a tree."
-        } else {
-            puts {}
+            puts -nonewline " The hunter from Shabby Jack's is standing by a tree."
         }
+        if {[state get merchant-war] ni {no}} then {
+            puts -nonewline " Upon inspection, one of the trees is taller than the rest,\
+            seeming to almost tower over them."
+        }
+        puts {}
         prompt {} {
             {"Talk to the hunter" {[state get hunter-trail] eq {forest}} hunter}
+            {"Examine the large tree" {[state get merchant-war] ni {no}} largeTree}
             {"Go back to the prison" yes gate}
             {"Enter the cave" yes cave}
             {"Head toward the river" yes river}
@@ -68,6 +72,22 @@ namespace eval Prison::Forest {
     proc hunter3 {} {
         puts "The hunter races into the cave without another word."
         state put hunter-trail under
+        puts {}
+        return trees
+    }
+
+    proc largeTree {} {
+        puts "There is nothing immediately obvious at the base of the tree."
+        prompt {} {
+            {"Dig around the tree" yes largeTreeDig}
+            {"Go back" yes trees}
+        }
+    }
+
+    proc largeTreeDig {} {
+        # //// If you have a shovel and haven't gotten the shop key, this is successful
+        puts "You attempt to shovel dirt with your bare hands, with limited\
+        success. If you had a Shovel, it would probably be easier."
         puts {}
         return trees
     }

@@ -50,12 +50,22 @@ namespace eval Warehouse::Outside {
 
     proc east {} {
         puts "== Secret Island - East =="
-        puts "This edge of the island contains a small dock. You can see the warehouse behind\
-        you, but there is no entrance on this side."
+        puts -nonewline "This edge of the island contains a small dock. You can\
+        see the warehouse behind you, but there is no entrance on this side."
+        if {[state get merchant-war] eq {no}} then {
+            if {[state get talked-to-todd] ne {no}} then {
+                puts " You notice a message scribbled into the wall of the warehouse."
+            } else {
+                puts ""
+            }
+        } else {
+            puts " The message scribbled into the warehouse wall is still there."
+        }
         prompt {} {
             {"Head south" yes south}
             {"Head north" yes north}
             {"Approach the dock" yes dock}
+            {"Read the message" {[state get talked-to-todd] ne {no}} eastMessage}
         }
     }
 
@@ -239,6 +249,18 @@ namespace eval Warehouse::Outside {
         prompt {} {
             {"\"Okay.\"" yes north}
         }
+    }
+
+    proc eastMessage {} {
+        puts "\"I am being enslaved by a sociopath to do his bidding. I have left this\
+        message in the hopes that someone can put an end to his madness. If you have\
+        the power to save me, then I have left a tool to aid you. Look beneath the\
+        largest tree in the forest to find the tool. And please hurry.\""
+        if {[state get merchant-war] eq {no}} then {
+            state put merchant-war noted
+        }
+        puts {}
+        return east
     }
 
 }
