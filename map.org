@@ -48,6 +48,8 @@
 **** unlock
 **** unlock1
 **** judgeOffice
+**** judgeMuffin
+**** judgePaperclip
 *** [Police]
 **** station
 **** followed
@@ -147,6 +149,16 @@
 **** cave
 **** caveDeath
 **** bus
+*** [Fence]
+**** approach
+**** climb
+**** climb1
+**** climbSorry
+**** climbLook
+**** climbHi
+**** climbHi1
+**** fence
+**** paperclip
 ** [Underworld]
 *** [Lobby]
 **** murder
@@ -469,7 +481,8 @@
  + Black Olive
  + Scuba Suit
  + Ship's Wheel
- + Shovel (TBA)
+ + Shovel
+ + Brass Paperclip
 
 ** Money Sources / Sinks
 
@@ -935,6 +948,24 @@
      examine it. However, the player must have the Shovel to continue
      on this quest.
      ////
+*** The Talking Fence (~the-fence~)
+**** no
+     The player has not spoken to the sentient Fence in the prison
+     yard yet. When the player attempts to climb over the Fence, it
+     will interrupt him. The Fence will then proceed to explain its
+     goal of building something and ask the player for a paperclip.
+     The game moves to ~paperclip~.
+**** paperclip
+     The Fence wants a paperclip. If the player offers the Brass
+     Paperclip, the Fence will take it and the game will move to
+     ~paperclip1~.
+**** paperclip1
+     The Fence has the paperclip. When the player enters the north
+     prison hallway, the game moves to ~shovel~.
+**** shovel
+     ////
+**** shovel1
+     ////
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -966,6 +997,9 @@
 **** has
 **** yes
 *** ~has-suitcase~
+**** no
+**** yes
+*** ~judge-paperclip~
 **** no
 **** yes
 ** Muffin States
@@ -1214,6 +1248,7 @@
 ** The Motel Ghost
 ** Ship Captain
 ** Kingdom Gatekeeper
+** The Fence
 * NOTES
 
 ** Ideas

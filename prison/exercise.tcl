@@ -11,6 +11,7 @@ namespace eval Prison::Exercise {
         }
         prompt {} {
             {"Approach the prisoners" yes talking}
+            {"Head toward the grassy patch" yes ::Prison::Fence::approach}
             {"Use the Soul Crystal" {![state get exercise-soul] && [inv has {Soul Crystal}]} stealing}
             {"Go back inside" yes ::Prison::North::hallway}
         }
@@ -65,8 +66,9 @@ namespace eval Prison::Exercise {
     }
 
     proc stealing {} {
-        puts "You activate your Soul Crystal, and a floating essence emerges from the leader of the gang\
-        of thugs, not unlike the essences in Johnny Death's display case. You got the Inmate's Soul!"
+        puts "You activate your Soul Crystal, and a floating essence emerges from the leader of the\
+        gang of thugs, not unlike the essences in Johnny Death's display case. You got the\
+        Inmate's Soul!"
         inv add {Inmate's Soul}
         state put exercise-soul yes
         puts {}

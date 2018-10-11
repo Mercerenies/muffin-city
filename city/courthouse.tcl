@@ -167,13 +167,16 @@ namespace eval City::Courthouse {
         puts -nonewline "The judge's office is very neat and tidy. There are stacks of papers\
         on the desk and on the floor behind the desk. No one is in the room at this time, aside\
         from you."
-        if {[state get judge-muffin] eq {yes}} then {
-            puts {}
-        } else {
-            puts " There is a muffin sitting on the judge's desk."
+        if {[state get judge-paperclip] eq {no}} then {
+            puts -nonewline " An oversized paperclip on the desk catches your eye."
         }
+        if {[state get judge-muffin] eq {no}} then {
+            puts -nonewline " There is a muffin sitting on the judge's desk."
+        }
+        puts {}
         prompt {} {
             {"Take the muffin" {[state get judge-muffin] eq {no}} judgeMuffin}
+            {"Take the paperclip" {[state get judge-paperclip] eq {no}} judgePaperclip}
             {"Leave the office" yes halls}
         }
     }
@@ -183,6 +186,15 @@ namespace eval City::Courthouse {
         puts "You got the Banana Nut Muffin!"
         state put judge-muffin yes
         muffin add {Banana Nut Muffin}
+        puts {}
+        return judgeOffice
+    }
+
+    proc judgePaperclip {} {
+        puts "You take the oversized paperclip."
+        puts "You got the Brass Paperclip!"
+        state put judge-paperclip yes
+        inv add {Brass Paperclip}
         puts {}
         return judgeOffice
     }

@@ -72,6 +72,8 @@ namespace eval State {
         captain-boat-place dream
         talked-to-todd no
         merchant-war no
+        judge-paperclip no
+        the-fence no
     }]
 
     proc get {args} {

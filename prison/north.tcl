@@ -3,6 +3,9 @@ namespace eval Prison::North {
 
     proc hallway {} {
         puts "== Prison Hall - North =="
+        if {[state get the-fence] eq {paperclip1}} then {
+            state put the-fence shovel
+        }
         puts "The opposite end of the hall is not much different than the first. There is a door\
         leading outside up ahead and a few other areas of interest to the left and right."
         prompt {} {
