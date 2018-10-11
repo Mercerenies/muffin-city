@@ -165,7 +165,7 @@ namespace eval City::Courthouse {
     proc judgeOffice {} {
         puts "== Judge's Office =="
         puts -nonewline "The judge's office is very neat and tidy. There are stacks of papers\
-        on the desk and on the floor behind the desk. No one is in the room at this time, aisde\
+        on the desk and on the floor behind the desk. No one is in the room at this time, aside\
         from you."
         if {[state get judge-muffin] eq {yes}} then {
             puts {}
