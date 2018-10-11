@@ -1286,6 +1286,13 @@
    machine. Visiting prehistory and heading down to the Underworld
    will encounter maybe an earlier Reaper?
  + Queen piece converter (for Mothka game?) (and just, ya know, Mothka in general)
+ + After N uses of the dream ship (probably N=2), pirates attack. If
+   you don't have the pirate hat, they kill you. If you do, they think
+   you're one of them and give you access to their ship.
+ + ........The computer RAM, infinite strip? (in the console room, an
+   isolated area?)
+ + The... Fence... trading to get things, like the shovel.
+ + Prison sink: silver coin in pipes?
 ** Implemented
  + Turn-based RPG-style combat for Joe and Merchant-bot
  + Hunter, inmate, and second prison guard souls for Johnny Death

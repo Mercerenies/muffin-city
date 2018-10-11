@@ -85,7 +85,7 @@ namespace eval Prison::Forest {
     }
 
     proc largeTreeDig {} {
-        # //// If you have a shovel and haven't gotten the shop key, this is successful
+        # ///// If you have a shovel and haven't gotten the shop key, this is successful
         puts "You attempt to shovel dirt with your bare hands, with limited\
         success. If you had a Shovel, it would probably be easier."
         puts {}
