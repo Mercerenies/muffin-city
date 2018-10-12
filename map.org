@@ -1320,7 +1320,8 @@
    place before time itself by supercharging the prehistory time
    machine. Visiting prehistory and heading down to the Underworld
    will encounter maybe an earlier Reaper?
- + Queen piece converter (for Mothka game?) (and just, ya know, Mothka in general)
+ + Queen piece converter (for Mothka game?) (and just, ya know, Mothka
+   in general)
  + After N uses of the dream ship (probably N=2), pirates attack. If
    you don't have the pirate hat, they kill you. If you do, they think
    you're one of them and give you access to their ship.
@@ -1328,6 +1329,10 @@
    isolated area?)
  + The... Fence... trading to get things, like the shovel.
  + Prison sink: silver coin in pipes?
+ + Could the Guardian of Time be chilling in Double Subspace reachable
+   with the Black Olive?
+ + Twins: the mailman and the taxman. Taxman collects a silver coin at
+   some point for tax purposes. Mailman... I dunno, delivers mail?
 ** Implemented
  + Turn-based RPG-style combat for Joe and Merchant-bot
  + Hunter, inmate, and second prison guard souls for Johnny Death
