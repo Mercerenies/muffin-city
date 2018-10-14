@@ -85,8 +85,10 @@ namespace eval Warehouse::Outside {
     proc enterDoor {} {
         # //// It may be bolted the second time (check that state)
         if {[inv has {Rusty Warehouse Key}]} then {
-            puts "The Rusty Warehouse Key opens the door."
-            puts {}
+            if {[state get merchant-war] eq {warehouse}} then {
+                puts "The Rusty Warehouse Key opens the door."
+                puts {}
+            }
             return ::Warehouse::Inside::warehouseFloor
         } else {
             puts "The warehouse entrance is bolted shut."
@@ -257,10 +259,11 @@ namespace eval Warehouse::Outside {
     }
 
     proc eastMessage {} {
-        puts "\"I am being enslaved by a sociopath to do his bidding. I have left this\
-        message in the hopes that someone can put an end to his madness. If you have\
-        the power to save me, then I have left a tool to aid you. Look beneath the\
-        largest tree in the forest to find the tool. And please hurry.\""
+        puts "\"I am being enslaved by a sociopath to do his bidding.\
+        I have left this message in the hopes that someone can put an\
+        end to his madness. If you have the power to save me, then\
+        I have left a tool to aid you. Look beneath the largest tree\
+        in the forest to find the tool. And please hurry.\""
         if {[state get merchant-war] eq {no}} then {
             state put merchant-war noted
         }
