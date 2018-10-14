@@ -1434,6 +1434,9 @@
    (accessible with shrinking item), you can access the secret
    elevator which goes to the warehouse island
 
+** ACCEPTED The Reverse Pawn Shop
+   In the inverse city, there's a pawn shop owner who wants religious
+   artifacts and will give you a muffin for them.
 * MISCELLANEOUS
 
 ** Test
