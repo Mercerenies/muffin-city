@@ -63,13 +63,17 @@ state put captain-boat yes
 con
 state put talked-to-todd {Scuba Suit}
 con
-state put merchant-war noted
+state put merchant-war warehouse
 con
 state put courthouse-door yes
+con
+state put the-fence shovel1
 con
 inv add {Courthouse Key}
 con
 inv add {Shovel}
+con
+inv add {Rusty Warehouse Key}
 3
 2
 2
