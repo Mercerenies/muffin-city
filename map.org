@@ -941,11 +941,10 @@
 *** The Great Robot War (~merchant-war~)
 **** no
      The player has not initiated the Merchant-bot quest. In this
-     state, if ~talked-to-todd~ is not ~no~ and the player visits the
-     east side of the warehouse island, he will see a message
-     scribbled into the warehouse wall, begging for help for an
-     unknown author against an oppressive mastermind. Upon reading
-     this note, the game moves to ~noted~.
+     state, if the player visits the east side of the warehouse
+     island, he will see a message scribbled into the warehouse wall,
+     begging for help for an unknown author against an oppressive
+     mastermind. Upon reading this note, the game moves to ~noted~.
 **** noted
      The player can now notice the large tree in the forest and
      examine it. However, the player must have the Shovel to continue

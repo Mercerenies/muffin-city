@@ -53,19 +53,17 @@ namespace eval Warehouse::Outside {
         puts -nonewline "This edge of the island contains a small dock. You can\
         see the warehouse behind you, but there is no entrance on this side."
         if {[state get merchant-war] eq {no}} then {
-            if {[state get talked-to-todd] ne {no}} then {
-                puts " You notice a message scribbled into the wall of the warehouse."
-            } else {
-                puts ""
-            }
+            puts " You notice a message scribbled into the wall\
+            of the warehouse."
         } else {
-            puts " The message scribbled into the warehouse wall is still there."
+            puts " The message scribbled into the warehouse wall\
+            is still there."
         }
         prompt {} {
             {"Head south" yes south}
             {"Head north" yes north}
             {"Approach the dock" yes dock}
-            {"Read the message" {[state get talked-to-todd] ne {no}} eastMessage}
+            {"Read the message" yes eastMessage}
         }
     }
 
