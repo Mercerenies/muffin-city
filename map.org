@@ -957,6 +957,8 @@
      move to ~warehouse~.
 **** warehouse
      ////
+**** unlocked
+     ////
 *** The Talking Fence (~the-fence~)
 **** no
      The player has not spoken to the sentient Fence in the prison
