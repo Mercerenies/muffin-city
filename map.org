@@ -1,4 +1,6 @@
 
+#+TODO: ACCEPTED | DONE CANCELED
+
 * MAJOR REGIONS
 
 ** City Area
@@ -1251,97 +1253,127 @@
 ** The Fence
 * NOTES
 
-** Ideas
- + Cave will lead somewhere cool if you have a light (inverse city)
- + Given gift if falsely imprisoned (according to Warden), maybe
+** ACCEPTED Cave and Lantern
+   Cave will lead somewhere cool if you have a light (inverse city)
+** ACCEPTED False Imprisonment
+   Given gift if falsely imprisoned (according to Warden), maybe
    Religious Artifact
+** ACCEPTED Pirates
  + Pirates will eventually attack the dream ship, and if you raid them
    you'll get a Religious Artifact
- + Past the fire pits, there should be multiple rooms which are
+ + After N uses of the dream ship (probably N=2), pirates attack. If
+   you don't have the pirate hat, they kill you. If you do, they think
+   you're one of them and give you access to their ship.
+** DONE Fire Pits
+   Past the fire pits, there should be multiple rooms which are
    accessible, not just the freight elevator
- + Merchant-bot has two items (one at a ridiculous price); there is a
+** ACCEPTED Shop Prices
+   Merchant-bot has two items (one at a ridiculous price); there is a
    quest to kill him, which leads to the warehouse office. At that
    time, Merchant-bot 2 takes over and sells the expensive one for
    less
- + Going to the past and requesting an item from the pawnbroker will
+** ACCEPTED Pawnbroker's Items
+   Going to the past and requesting an item from the pawnbroker will
    result in that item being available the next day
- + Todd wants to rebel against Merchant-bot and leaves clues to help
+** ACCEPTED The Merchant War
+   Todd wants to rebel against Merchant-bot and leaves clues to help
    you do so
- + Help someone escape from prison by creating a diversion on entry
- + The subspace bank forecloses some important building or structure,
+** CONSIDERING Escaping the Prison
+   Help someone escape from prison by creating a diversion on entry
+** ACCEPTED Foreclosure
+   The subspace bank forecloses some important building or structure,
    requiring you to break into their vault to get the key and reopen
    it (Hero's Crystal)
- + Diving into the warehouse island water with scuba suit will result
+** DONE Scuba Suit
+   Diving into the warehouse island water with scuba suit will result
    in an underwater merfolk cavern
- + The mechanic is missing his Golden Wrench, which is (probably) in
+** ACCEPTED The Golden Wrench
+   The mechanic is missing his Golden Wrench, which is (probably) in
    the undersea kingdom. With it, he can repair the player's broken
    objects
- + Steve's Smash-a-Lock (only open in the past), where you can have
+** ACCEPTED The Locksmith's
+   Steve's Smash-a-Lock (only open in the past), where you can have
    Steve break open the vault lock to get Atheena's crystal back.
    Also, Steve may give you a Suspicious Briefcase that you must
    deliver to present-day Steve in the prison.
- + Evil flame spirit appears in the fire pits after N visits. After
+** CONSIDERING The Flame Spirit
+   Evil flame spirit appears in the fire pits after N visits. After
    appeasing him by giving him something, ... I dunno, something
    happens ... (Necromancy Certificate? Joe?)
- + The Ancient Minister will tell you how you ended up in subspace
+** ACCEPTED The Minister's Record
+   The Ancient Minister will tell you how you ended up in subspace
    (mainly to help the player understand). If the player has no record
    of entering subspace in any "standard" way, then his heart will be
    pure and the Minister will speak to him more frankly, and then....
    something.... (the record of entering subspace can be cleared with
    Dr. Cipher's help)
- + Science Johnson controls the console room. His soul is in the abyss
+** ACCEPTED Science Johnson
+   Science Johnson controls the console room. His soul is in the abyss
    area and needs to be rescued, but once it is, he will end up
    outside the door to the controls in the console room and explain
    the goal of the game to the player, as well as possibly give him
    hints once he has X muffins.
- + Crispy Joe's Sandwich Shop...? (Prehistory?)
- + Prehistory contains a grocery store with a labyrinth underneath it.
+** CONSIDERING Crispy Joe
+   Crispy Joe's Sandwich Shop...? (Prehistory?)
+** CONSIDERING The Prehistoric Maze
+   Prehistory contains a grocery store with a labyrinth underneath it.
    At the base of the labyrinth (explorable by subspace map? what if
    the subspace map is just a special map that works in subspace,
    labyrinth, and shrunk ventilation and its not specific to
    subspace?) there is a jungle dome with a passcode to get in
+** CONSIDERING The Reaper's Favor
  + The Reaper calls in the player's favor. Possibly to help retrieve a
    stolen item from the Ancient Minister (do they have a rivalry or
    something?).
- + Attorney-Man's reward?
  + If the Reaper has both the Black Olive and the Necromancy
    Certificate, then what if he only gives the player one of the two
    (player gets to choose) then requires a quest for the other? /////
  + The True Reaper is sealed away in the Ancient Minister's temple?
    Sealed away in a chest that only Steve's Smash-a-Lock can help
    with?
+ + Johnny Death's father is the True Reaper (previous to the current
+   Reaper), sealed away by the Ancient Minister?
+** Missing Rewards, etc.
+ + Attorney-Man's reward?
  + The Black Olive needs to do something (double subspace???)
  + Heart Room in the past does something? (possibly just an easter
    egg; exit blocked off?)
- + Johnny Death's father is the True Reaper (previous to the current
-   Reaper), sealed away by the Ancient Minister?
+** CONSIDERING The Flaming Axe
  + The Flaming Axe of Doom was used by the First Reaper to carve out
    the Underworld before time itself. Possibly, we can visit this
    place before time itself by supercharging the prehistory time
    machine. Visiting prehistory and heading down to the Underworld
    will encounter maybe an earlier Reaper?
+** CONSIDERING Mothka's Challenge
  + Queen piece converter (for Mothka game?) (and just, ya know, Mothka
    in general)
- + After N uses of the dream ship (probably N=2), pirates attack. If
-   you don't have the pirate hat, they kill you. If you do, they think
-   you're one of them and give you access to their ship.
- + ........The computer RAM, infinite strip? (in the console room, an
+** CONSIDERING The RAM
+   ........The computer RAM, infinite strip? (in the console room, an
    isolated area?)
- + The... Fence... trading to get things, like the shovel.
+** DONE The Fence
+   The... Fence... trading to get things, like the shovel.
+** Possible Coins
  + Prison sink: silver coin in pipes?
- + Could the Guardian of Time be chilling in Double Subspace reachable
+** CONSIDERING The Guardian of Time
+   Could the Guardian of Time be chilling in Double Subspace reachable
    with the Black Olive?
- + Twins: the mailman and the taxman. Taxman collects a silver coin at
+** The Twins
+   Twins: the mailman and the taxman. Taxman collects a silver coin at
    some point for tax purposes. Mailman... I dunno, delivers mail?
-** Implemented
- + Turn-based RPG-style combat for Joe and Merchant-bot
- + Hunter, inmate, and second prison guard souls for Johnny Death
- + Attorney-Man and the three clients (player, guard, and robber)
- + The stolen luggage will let you hide in the cargo hold of the dream
+** DONE Turn-Based Combat
+   Turn-based RPG-style combat for Joe and Merchant-bot
+** DONE Johnny's Souls
+   Hunter, inmate, and second prison guard souls for Johnny Death
+** DONE The Three Clients
+   Attorney-Man and the three clients (player, guard, and robber)
+** DONE The Luggage
+   The stolen luggage will let you hide in the cargo hold of the dream
    train to make it back to the dream world
- + Trade in the fireproof suit for a scuba suit (and vice versa) with
+** DONE Trading with Todd
+   Trade in the fireproof suit for a scuba suit (and vice versa) with
    Todd
- + Dr. Cipher wants his Necromancy Certificate back from Joe. Is Joe
+** DONE The Necromancy Certificate
+   Dr. Cipher wants his Necromancy Certificate back from Joe. Is Joe
    secretly a supervillain who wants to use the Certificate to rule
    the world? If so, the player probably has to go call on Atheena to
    save the world from him. One of the rewards from defeating Joe, in
@@ -1350,12 +1382,20 @@
    into a new part of the underworld, filled with dark souls and evil
    magic. Perhaps the Certificate is torn? You have to get it
    repaired?
- + Too easy to get to Underworld Mystery Room? Consider changing the
-   past button to do something else.
-** Discarded
- + Shrinking item but requires certain power port (purple outlets) to
+** ACCEPTED The Underworld Mystery Room
+   Too easy to get to Underworld Mystery Room? Consider changing the
+   past button to do something else. (Currently impossible to get there)
+** CANCELED Shrinking Down
+   - Note taken on [2018-10-12 Fri 11:21] \\
+     Canceled; the shrinking item is no longer an item but a machine
+     that can only be used in one place
+   Shrinking item but requires certain power port (purple outlets) to
    use
- + On the opposite side of the narrow tunnel in the Underworld
+** CANCELED The Elevator Behind the Tunnel
+   - Note taken on [2018-10-12 Fri 11:20] \\
+     Cancelled; the warehouse island elevator is behind the fire pits
+     and the narrow tunnel leads to the abyss
+   On the opposite side of the narrow tunnel in the Underworld
    (accessible with shrinking item), you can access the secret
    elevator which goes to the warehouse island
 
