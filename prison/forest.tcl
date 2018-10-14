@@ -77,9 +77,13 @@ namespace eval Prison::Forest {
     }
 
     proc largeTree {} {
-        puts "There is nothing immediately obvious at the base of the tree."
+        if {[state get merchant-war] eq {noted}} then {
+            puts "There is nothing immediately obvious at the base of the tree."
+        } else {
+            puts "The tree still stands tall amongst the many others in the forest."
+        }
         prompt {} {
-            {"Dig around the tree" yes largeTreeDig}
+            {"Dig around the tree" {[state get merchant-war] eq {noted}} largeTreeDig}
             {"Go back" yes trees}
         }
     }
