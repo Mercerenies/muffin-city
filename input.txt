@@ -74,12 +74,3 @@ con
 inv add {Shovel}
 con
 inv add {Rusty Warehouse Key}
-3
-2
-2
-1
-1
-1
-1
-2
-2
