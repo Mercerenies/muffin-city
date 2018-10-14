@@ -78,9 +78,11 @@ namespace eval Prison::Forest {
 
     proc largeTree {} {
         if {[state get merchant-war] eq {noted}} then {
-            puts "There is nothing immediately obvious at the base of the tree."
+            puts "There is nothing immediately obvious at the base of\
+            the tree."
         } else {
-            puts "The tree still stands tall amongst the many others in the forest."
+            puts "The tree still stands tall amongst the many others\
+            in the forest, a large hole at its base."
         }
         prompt {} {
             {"Dig around the tree" {[state get merchant-war] eq {noted}} largeTreeDig}
@@ -90,16 +92,25 @@ namespace eval Prison::Forest {
 
     proc largeTreeDig {} {
         # ///// If you have a shovel and haven't gotten the shop key, this is successful
-        puts "You attempt to shovel dirt with your bare hands, with limited\
-        success. If you had a Shovel, it would probably be easier."
+        if {[inv has {Shovel}]} then {
+            puts "You use your Shovel to dig around the tree."
+            puts "Dug up a Rusty Warehouse Key!"
+            inv add {Rusty Warehouse Key}
+            state put merchant-war warehouse
+        } else {
+            puts "You attempt to shovel dirt with your bare hands,\
+            with limited success. If you had a Shovel, it would\
+            probably be easier."
+        }
         puts {}
         return trees
     }
 
     proc river {} {
         puts "== Forest River =="
-        puts -nonewline "A peaceful, flowing river cuts the forest into two parts. The water\
-        seems cold enough that you wouldn't want to have to ford it."
+        puts -nonewline "A peaceful, flowing river cuts the forest\
+        into two parts. The water seems cold enough that you\
+        wouldn't want to have to ford it."
         if {[state get subspace-portal] eq {river}} then {
             puts " There is a portal floating in the air next to the river. The portal\
             seems to lead to an empty white void."

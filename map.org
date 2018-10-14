@@ -1,5 +1,5 @@
 
-#+TODO: ACCEPTED | DONE CANCELED
+#+TODO: CONSIDERING ACCEPTED | DONE CANCELED
 
 * MAJOR REGIONS
 
@@ -485,6 +485,7 @@
  + Ship's Wheel
  + Shovel
  + Brass Paperclip
+ + Rusty Warehouse Key
 
 ** Money Sources / Sinks
 
@@ -948,7 +949,10 @@
 **** noted
      The player can now notice the large tree in the forest and
      examine it. However, the player must have the Shovel to continue
-     on this quest.
+     on this quest. If the player digs around the tree with the
+     Shovel, he will get the Rusty Warehouse Key and the game will
+     move to ~warehouse~.
+**** warehouse
      ////
 *** The Talking Fence (~the-fence~)
 **** no
@@ -1276,14 +1280,40 @@
    Going to the past and requesting an item from the pawnbroker will
    result in that item being available the next day
 ** ACCEPTED The Merchant War
-   Todd wants to rebel against Merchant-bot and leaves clues to help
+ + Todd wants to rebel against Merchant-bot and leaves clues to help
    you do so
+ + So to start with, you see Todd's writing on the warehouse wall. It
+   leads you to the forest tree, which you dig around using the Shovel
+   obtained from the Fence. This gives you the key to... (Warehouse or
+   shop). This could go a couple of different ways.
+   - *Original Plan* - The key lets you go to the shop, where you try
+     unsuccessfully to unplug Merchant-bot. He attacks you, you flee
+     and encounter Todd, who explains his plan. Then you go to the
+     warehouse and land on top by means of the dream train (maybe need
+     to collect a parachute for this). Then you go into the warehouse
+     looking for clues, and on the way out Merchant-bot attacks,
+     leading to the battle that you win with the Hero's Blade you'll
+     borrow from Atheena.
+   - *On the Other Hand* - Maybe the key leads to the warehouse. You
+     go into the warehouse, find some clues about some collectible
+     mcguffins that defeat Merchant-bot, and then get attacked. The
+     warehouse is inaccessible now, as Merchant-bot changed the lock.
+     So you have to collect the mcguffins (scattered around randomly)
+     and then get back to the warehouse by landing on top (again, by
+     the train and maybe a parachute) to plug in all of the mcguffins
+     that destroy Merchant-bot.
 ** CONSIDERING Escaping the Prison
    Help someone escape from prison by creating a diversion on entry
 ** ACCEPTED Foreclosure
-   The subspace bank forecloses some important building or structure,
+ + The subspace bank forecloses some important building or structure,
    requiring you to break into their vault to get the key and reopen
    it (Hero's Crystal)
+ + When the player gets the item back, the bank's army of lions chase
+   him and block off most areas.
+   - Get killed, blocked off.
+   - Elevator is blocked by a man who takes the item back.
+   - Must go to the mystery room, then subspace, then forest, then
+     take prison bus to get to Steve's locksmith shop.
 ** DONE Scuba Suit
    Diving into the warehouse island water with scuba suit will result
    in an underwater merfolk cavern
