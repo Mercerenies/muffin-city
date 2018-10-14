@@ -83,9 +83,16 @@ namespace eval Warehouse::Outside {
     }
 
     proc enterDoor {} {
-        puts "The warehouse entrance is bolted shut."
-        puts {}
-        return south
+        # //// It may be bolted the second time (check that state)
+        if {[inv has {Rusty Warehouse Key}]} then {
+            puts "The Rusty Warehouse Key opens the door."
+            puts {}
+            return ::Warehouse::Inside::warehouseFloor
+        } else {
+            puts "The warehouse entrance is bolted shut."
+            puts {}
+            return south
+        }
     }
 
     proc dock {} {

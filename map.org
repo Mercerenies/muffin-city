@@ -305,6 +305,10 @@
 **** blue
 **** castleLocked
 **** surface
+*** [Inside]
+**** warehouseFloor
+**** crates
+**** exitWarehouse
 ** [Past]
 *** [Science]
 **** mainRoom
