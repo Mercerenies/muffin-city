@@ -1,0 +1,81 @@
+con
+inv add {Fireproof Suit}
+con
+inv add {Silver Coin}
+con
+inv add {Upgraded Elevator Access Key}
+con
+inv add {Super Taco}
+con
+state put attorney-man fed
+con
+state put attorney-self okay
+con
+state put heard-science yes
+con
+inv add {Stolen Suitcase}
+con
+inv add {Motel Room Key}
+con
+state put prison-guard cleared
+con
+inv add {Guard's Soul}
+con
+inv add {Inmate's Soul}
+con
+state put moon-teleport yes
+con
+state put moon-mechanic talked
+con
+inv add {Oxygen Tank}
+con
+state put talked-to-louis yes
+con
+inv add {Club Key}
+con
+inv add {Heart Key}
+con
+state put talked-to-cipher yes
+con
+state put johnny-quest 2
+con
+state put butler-game pawn1
+con
+state put pawn-shop-pass yes
+con
+state put necro-cipher yes
+con
+state put golden-arches yes
+con
+state put taco-shop fed
+con
+state put talked-to-reaper yes
+con
+state put reaper-has-item {Black Olive}
+con
+state put reaper-helper item
+con
+state put motel-ghost motel
+con
+state put collected-suit yes
+con
+state put captain-boat yes
+con
+state put talked-to-todd {Scuba Suit}
+con
+state put merchant-war noted
+con
+state put courthouse-door yes
+con
+inv add {Courthouse Key}
+con
+inv add {Shovel}
+3
+2
+2
+1
+1
+1
+1
+2
+2
