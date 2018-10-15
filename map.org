@@ -1437,6 +1437,17 @@
 ** ACCEPTED The Reverse Pawn Shop
    In the inverse city, there's a pawn shop owner who wants religious
    artifacts and will give you a muffin for them.
+** CONSIDERING Merchant-bot's Friend
+   Maybe after the war with Merchant-bot, his friend from the inverse
+   world (another Merchant-bot, or some "inverse" version of
+   Merchant-bot) wants to send a letter to him. Since the regular
+   Merchant-bot is gone (in the underworld? idk. Either way, he won't
+   talk to the player), you have to get the key from (present-day)
+   Todd and go to the past to talk to past Merchant-bot at his shop.
+** ACCEPTED Bank Card
+   Just a small thing. But you should be able to /attempt/ to pay
+   Atheena's loan with the Platinum Card. It will fail, of course, but
+   it should be an option.
 * MISCELLANEOUS
 
 ** Test
