@@ -39,6 +39,7 @@ namespace eval Prison::Forest {
         prompt {} {
             {"Talk to the hunter" {[state get hunter-trail] eq {forest}} hunter}
             {"Examine the large tree" {[state get merchant-war] ni {no}} largeTree}
+            {"Run in circles around the large tree" yes dizzy}
             {"Go back to the prison" yes gate}
             {"Enter the cave" yes cave}
             {"Head toward the river" yes river}
@@ -91,7 +92,6 @@ namespace eval Prison::Forest {
     }
 
     proc largeTreeDig {} {
-        # ///// If you have a shovel and haven't gotten the shop key, this is successful
         if {[inv has {Shovel}]} then {
             puts "You use your Shovel to dig around the tree."
             puts "Dug up a Rusty Warehouse Key!"
@@ -104,6 +104,29 @@ namespace eval Prison::Forest {
         }
         puts {}
         return trees
+    }
+
+    proc dizzy {} {
+        puts "You elect to run in circles around the large tree, making yourself\
+        extremely dizzy."
+        prompt {} {
+            {"Stop and regain your composure" yes dizzyRegain}
+            {"Run blindly toward the treeline" yes dizzyRun}
+        }
+    }
+
+    proc dizzyRegain {} {
+        puts "You stop and place a hand on the tree, regaining your sense of balance."
+        puts {}
+        return trees
+    }
+
+    proc dizzyRun {} {
+        puts "You dash off in a random direction without a second thought. By the\
+        time you regain your sense of balance, you have arrived at a small cottage\
+        by a river."
+        puts {}
+        return ::Prison::Cottage::yard
     }
 
     proc river {} {

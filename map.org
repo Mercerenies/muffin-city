@@ -146,6 +146,9 @@
 **** hunter3
 **** largeTree
 **** largeTreeDig
+**** dizzy
+**** dizzyRegain
+**** dizzyRun
 **** river
 **** riverReach
 **** cave
@@ -161,6 +164,12 @@
 **** climbHi1
 **** fence
 **** paperclip
+*** [Cottage]
+**** yard
+**** cottage
+**** shed
+**** downstairs
+**** wander
 ** [Underworld]
 *** [Lobby]
 **** murder
@@ -1335,6 +1344,10 @@
    Evil flame spirit appears in the fire pits after N visits. After
    appeasing him by giving him something, ... I dunno, something
    happens ... (Necromancy Certificate? Joe?)
+
+   So not Joe, as we've already done that. Maybe after the events with
+   the cottage? The evil flame spirit is awoken because his brethren
+   were defeated?
 ** ACCEPTED The Minister's Record
    The Ancient Minister will tell you how you ended up in subspace
    (mainly to help the player understand). If the player has no record
@@ -1464,7 +1477,7 @@
    A secret underground room in the warehouse houses an Egyptian tomb
    with a bunch of mummies (or maybe skeletons) that will jump out at
    you. I don't know. This one's not /too/ well thought out yet.
-** CONSIDERING The Evil Portal
+** ACCEPTED The Evil Portal
    Okay, this one is going to be long. So there's a cottage in the
    woods reachable from the prison forest by... I haven't decided yet.
    Maybe it's something that happens automatically if you go there
@@ -1485,6 +1498,9 @@
    (she'll happily play it out with you again) to get a hidden muffin
    in the area that can't be obtained when doing the main evil portal
    quest. Whew.
+
+   Related: The cottage may have a wall that can be passed through
+   (with some item) to get to the dream world airport.
 * MISCELLANEOUS
 
 ** Test

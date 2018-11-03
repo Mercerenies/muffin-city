@@ -11,6 +11,10 @@ namespace eval Dream::World {
 
     proc unclaimed {} {
         puts "== Unclaimed Luggage Center =="
+        # //// We'd like something that's only here if you actually
+        # did just arrive in the suitcase, so that you're required to
+        # go that way at least once (I will likely allow other ways to
+        # get to the dream world)
         puts "You find yourself in a large, circular room. The walls are an odd mixture of\
         colors that you can't quite name, and it seems as though the color scheme shifts as\
         the focus of your eyes changes. There is a sign overhead that reads \"Magical Deluge\
