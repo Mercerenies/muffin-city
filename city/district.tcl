@@ -14,6 +14,9 @@ namespace eval City::District {
         if {[state get fire-pit] eq {odd}} then {
             state put fire-pit even
         }
+        if {([state get cottage-spirit] eq {evil}) && ([state get butler-game] ni {no cell})} then {
+            state put cottage-spirit starlight
+        }
         prompt {} {
             {"Go to the hotel district" yes hotel}
             {"Go to the shopping district" yes shopping}

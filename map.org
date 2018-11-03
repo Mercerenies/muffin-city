@@ -174,6 +174,15 @@
 **** farmerIdle
 **** wife
 **** son
+**** familyScared
+**** starlightIntro
+**** starlightIntro1
+**** starlightIntro2 <response>
+**** starlightIntro3
+**** starlightIntro4
+**** starlightIntro5
+**** starlightIntro6
+**** starlightTalk
 **** wander
 ** [Underworld]
 *** [Lobby]
@@ -850,10 +859,10 @@
 **** no
      The player has not spoken to Dr. Cipher about his Necromancy
      Certificate yet. If the player talks to Dr. Cipher after the
-     Butler's second event (butler-game is `pawn` or beyond) and after
-     using the pawn shop password (pawn-shop-pass is `yes`), Dr.
-     Cipher will seem mildly alarmed by something. If the player asks
-     what is wrong, Dr. Cipher will explain that his Necromancy
+     Butler's second event (~butler-game~ is ~pawn1~ or beyond) and
+     after using the pawn shop password (~pawn-shop-pass~ is ~yes~),
+     Dr. Cipher will seem mildly alarmed by something. If the player
+     asks what is wrong, Dr. Cipher will explain that his Necromancy
      Certificate has been stolen. The game will then proceed to
      `spoken`.
 **** spoken
@@ -999,6 +1008,20 @@
      needs to talk to the man of the house to advance the game to
      ~evil~.
 **** evil
+     The player has spoken to the owner of the cottage, but nothing
+     has happened yet. If the player visits the starting area and the
+     first Butler event has occured (~butler-game~ is ~cell1~ or
+     above), the game will move to ~starlight~.
+**** starlight
+     When the player returns to the cottage, the family will be
+     huddled together at the house. In the shed, Silver Starlight will
+     be searching for evil spirits. When the player talks to her, she
+     will go through a lengthy introduction and then explain that she
+     is tracing a source of evil but lost her magic scepter. She is
+     trying to build a new scepter, but she needs a crystal ball to do
+     it. When the player agrees to find a crystal ball for her, the
+     game will move to ~starlight1~.
+**** starlight1
      ////
 ** Item / Money States
 *** ~stolen-good~
