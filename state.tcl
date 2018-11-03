@@ -74,6 +74,7 @@ namespace eval State {
         merchant-war no
         judge-paperclip no
         the-fence no
+        cottage-spirit no
     }]
 
     proc get {args} {

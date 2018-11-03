@@ -169,6 +169,11 @@
 **** cottage
 **** shed
 **** downstairs
+**** farmer
+**** farmer1
+**** farmerIdle
+**** wife
+**** son
 **** wander
 ** [Underworld]
 *** [Lobby]
@@ -986,6 +991,15 @@
      ////
 **** shovel1
      ////
+*** Spirit of the Cottage (~cottage-spirit~)
+**** no
+     The cottage quest has not been initiated. Silver Starlight is not
+     yet at the cottage. When the player arrives at the cottage, the
+     family will be around, generally doing housework. The player
+     needs to talk to the man of the house to advance the game to
+     ~evil~.
+**** evil
+     ////
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -1269,6 +1283,7 @@
 ** Ship Captain
 ** Kingdom Gatekeeper
 ** The Fence
+** Silver Starlight
 * NOTES
 
 ** ACCEPTED Cave and Lantern
