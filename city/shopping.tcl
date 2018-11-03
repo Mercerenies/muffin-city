@@ -93,7 +93,6 @@ namespace eval City::Shopping {
             puts " and a man with glasses typing at a computer off\
             in the corner."
         }
-        # //// Opportunity to talk to Todd
         prompt {} {
             {"Talk to $bot1" yes marketBot}
             {"Talk to the man" {[state get talked-to-todd] eq {no}} marketTodd}
