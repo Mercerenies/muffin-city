@@ -66,20 +66,31 @@ namespace eval Past::Hotel {
         certain rustic charm to it. There is a hallway leading back with a sign that\
         says \"Guests Only\", and behind a wooden counter there is a man with a nametag\
         reading \"Shabby Jack\"."
-        switch [state get attorney-man] {
-            no {
-                puts " A man in an elaborate superhero costume and a red cape and mask is\
-                sitting on a chair in the corner."
-            }
-            default {
-                puts " Attorney-Man is sitting on a chair in the corner, his hands folded in\
-                his lap."
+        if {[state get butler-game] eq {pawn1}} then {
+            if {[inv has {Soul Crystal}] && ([state get merchant-war] ne {no}) &&
+                ([state get attorney-man] ni {no met talked})} then {
+                state put butler-game shabby
             }
         }
+        switch [state get attorney-man] {
+            no {
+                puts -nonewline " A man in an elaborate superhero costume and a red cape\
+                and mask is sitting on a chair in the corner."
+            }
+            default {
+                puts -nonewline " Attorney-Man is sitting on a chair in the corner, his\
+                hands folded in his lap."
+            }
+        }
+        if {[state get butler-game] in {shabby shabby1}} then {
+            puts -nonewline " A man in a butler's uniform is leaning against the counter."
+        }
+        puts {}
         prompt {} {
             {"Talk to Shabby Jack" yes shabbyTalk}
             {"Talk to the superhero" {[state get attorney-man] eq {no}} shabbyAttorney}
             {"Talk to Attorney-Man" {[state get attorney-man] ne {no}} shabbyAttorney}
+            {"Talk to the butler" {[state get butler-game] in {shabby shabby1}} shabbyButler}
             {"Enter your room" {[inv has {Motel Room Key}]} shabbyRoom}
             {"Leave" yes ::Past::District::hotel}
         }
@@ -136,6 +147,21 @@ namespace eval Past::Hotel {
 
     proc shabbyAttorneyNo {} {
         puts "\"I'll be fine. Just leave me alone...\""
+        puts {}
+        return shabbyJack
+    }
+
+    proc shabbyButler {} {
+        if {[state get butler-game] eq {shabby}} then {
+            puts "\"Good to see you again. I have something for you.\""
+            puts "The Butler hands you a Crystal Ball."
+            inv add {Crystal Ball}
+            state put butler-game shabby1
+        } elseif {[inv has {Crystal Ball}]} {
+            puts "\"I believe there is someone who needs that Crystal Ball about now.\""
+        } else {
+            puts "\"I am happy to see you have made good use of the Crystal Ball I gave you.\""
+        }
         puts {}
         return shabbyJack
     }

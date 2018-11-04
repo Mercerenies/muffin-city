@@ -194,6 +194,7 @@ namespace eval Prison::Cottage {
 
     proc starlightTalk {} {
         puts "\"Did you find a crystal ball?\""
+        # //// The rest of this
         prompt {} {
             {"\"Not yet.\"" yes shed}
         }

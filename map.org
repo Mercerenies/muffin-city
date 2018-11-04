@@ -350,6 +350,7 @@
 **** shabbyAttorney1
 **** shabbyAttorneyYes
 **** shabbyAttorneyNo
+**** shabbyButler
 **** shabbyTalk
 **** shabbyRoom
 *** [District]
@@ -513,6 +514,7 @@
  + Shovel
  + Brass Paperclip
  + Rusty Warehouse Key
+ + Crystal Ball
 
 ** Money Sources / Sinks
 
@@ -729,25 +731,38 @@
 *** The Butler's Event (~butler-game~)
 **** no
      The butler is nowhere to be found. The game will move from this
-     state to `cell` when the following three conditions are met.
+     state to ~cell~ when the following three conditions are met.
       - The player has just been arrested and moved to the prison.
       - The player has been arrested before (~been-to-prison~).
       - The player has at least one item.
 **** cell
      The butler is in the player's prison cell. When he talks to him,
      he will tell the player about the science lab and how to get to
-     it. The game then moves to `cell1`.
+     it. The game then moves to ~cell1~.
 **** cell1
-     The game will move from this state to `pawn` when the following
+     The game will move from this state to ~pawn~ when the following
      three conditions are met.
       - The player has just entered the pawn shop in the present.
-      - The player has talked to Dr. Louis (talked-to-louis).
-      - The player has jumped into the fire pits (jumped-into-fire).
+      - The player has talked to Dr. Louis (~talked-to-louis~).
+      - The player has jumped into the fire pits (~jumped-into-fire~).
 **** pawn
      The butler is in the pawn shop in the present. When he talks to
      him, he will give the player a Fireproof Suit. The game then
-     moves to `pawn1`.
+     moves to ~pawn1~.
 **** pawn1
+     The game will move from this state to ~shabby~ when the
+     following conditions are met.
+      - The player has just entered Shabby Jack's in the past.
+      - The player has the Soul Crystal.
+      - The player has read the note on the warehouse wall
+        (~merchant-war~ is not ~no~).
+      - The player has initiated discussion with Attorney-Man on the
+        island (~attorney-man~ is ~talked1~ or beyond).
+**** shabby
+     The butler is in Shabby Jack's in the past. When the player talks
+     to him, he will give the player a Crystal Ball. The game then
+     moves to ~shabby1~.
+**** shabby1
      //// Next state
 *** Attorney-Man's Career (~attorney-man~)
 **** no
@@ -1542,6 +1557,19 @@
 
    Related: The cottage may have a wall that can be passed through
    (with some item) to get to the dream world airport.
+
+   Also, the third Butler event will get you the Crystal Ball I think.
+** CANCELED The Crystal Ball
+   - Note taken on [2018-11-04 Sun 13:06] \\
+     Canceled; I want the Silver Starlight event to be fairly
+     early-game (as in, you can definitely do it as soon as Butler 3
+     happens, and it's not paywall locked). With those constraints,
+     it's fairly difficult to come up with a nontrivial route to
+     travel along
+   For the third Butler event, he gives the Crystal Ball. But it has a
+   rule. The Crystal Ball can't travel to the underworld with the
+   player if he dies. So he has to find a route back which doesn't
+   involve dying.
 * MISCELLANEOUS
 
 ** Test
