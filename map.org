@@ -516,14 +516,17 @@
 
 ** Money Sources / Sinks
 
- + (+) Shady Alley (~sa-coin~)
- + (+) Forest River (~forest-river~)
- + (+) Freight Elevator (~fe-coin~)
- + (-) Robbery Event (~city-thug~)
- + (-) Gate Guard Event (~prison-guard~)
- + (-) Shabby Jack's (~motel-room~)
- + (-) Merchant-bot Cheap Item (~olive-bought~)
- + (-) Ship's Wheel (~captain-boat~)
+*** Sources
+ + Shady Alley (~sa-coin~)
+ + Forest River (~forest-river~)
+ + Freight Elevator (~fe-coin~)
+
+*** Sinks
+ + Robbery Event (~city-thug~)
+ + Gate Guard Event (~prison-guard~)
+ + Shabby Jack's (~motel-room~)
+ + Merchant-bot Cheap Item (~olive-bought~)
+ + Ship's Wheel (~captain-boat~)
 
 * MUFFINS
 
