@@ -39,7 +39,7 @@ state put talked-to-cipher yes
 con
 state put johnny-quest 2
 con
-state put butler-game pawn1
+state put butler-game shabby1
 con
 state put pawn-shop-pass yes
 con
@@ -76,6 +76,10 @@ con
 inv add {Rusty Warehouse Key}
 con
 state put cottage-spirit starlight
+con
+inv add {Soul Crystal}
+con
+inv add {Crystal Ball}
 3
 2
 2
