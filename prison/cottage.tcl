@@ -68,6 +68,9 @@ namespace eval Prison::Cottage {
                         puts " Against the back wall of the shed, a glowing white portal is open.\
                         Silver Starlight is standing by the portal, ready to go."
                     }
+                    dance {
+                        puts " The glowing white portal still hangs against the back wall."
+                    }
                 }
             }
             default {
@@ -79,6 +82,7 @@ namespace eval Prison::Cottage {
             {"Talk to the woman" {[state get cottage-spirit] eq {starlight}} starlightIntro}
             {"Talk to Starlight" {[state get cottage-spirit] eq {starlight1}} starlightTalk}
             {"Talk to Starlight" {([state get cottage-spirit] eq {pocket}) && ([state get false-stage] eq {no})} starlightTalk}
+            {"Enter the portal" {[state get false-stage] ne {no}} portalWithout}
             {"Go back outside" yes yard}
         }
     }
@@ -215,7 +219,7 @@ namespace eval Prison::Cottage {
                 # //// Check where we are in things
                 puts "\"Ready to go?\""
                 prompt {} {
-                    {"\"Let's go.\"" yes ::Empty::place}
+                    {"\"Let's go.\"" yes portalWith}
                     {"\"Not yet.\"" yes shed}
                 }
             }
@@ -247,7 +251,7 @@ namespace eval Prison::Cottage {
         of pocket dimension. Let's go check it out!\""
         state put cottage-spirit pocket
         prompt {} {
-            {"\"I'm ready.\"" yes ::Empty::place}
+            {"\"I'm ready.\"" yes portalWith}
             {"\"Hold on.\"" yes shed}
         }
     }
@@ -258,6 +262,22 @@ namespace eval Prison::Cottage {
         you end up back at the cottage."
         puts {}
         return yard
+    }
+
+    proc portalWith {} {
+        puts "\"Let's do this!\""
+        state put false-stage dance
+        puts "You and Silver Starlight enter the portal together. A bright white light engulfs\
+        you, and when the light clears, you are seated in a crowded theater of some kind."
+        puts {}
+        return ::Prison::Pocket::theaterSeat
+    }
+
+    proc portalWithout {} {
+        puts "You enter the portal. A bright white light engulfs you, quickly giving\
+        way to a theater."
+        puts {}
+        return ::Prison::Pocket::theater
     }
 
 }

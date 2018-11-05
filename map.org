@@ -186,6 +186,19 @@
 **** starlightBall
 **** starlightReveal <response>
 **** wander
+**** portalWith
+**** portalWithout
+*** [Pocket]
+**** theater
+**** theaterSeat
+**** theaterBack
+**** center
+**** north
+**** south
+**** arcade
+**** bakery
+**** fadeOut
+**** enterTheater
 ** [Underworld]
 *** [Lobby]
 **** murder
@@ -1053,6 +1066,8 @@
      in the simulation world.
 *** The Simulation (~false-stage~)
 **** no
+     ////
+**** dance
      ////
 ** Item / Money States
 *** ~stolen-good~
