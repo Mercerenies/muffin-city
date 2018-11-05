@@ -1,0 +1,140 @@
+
+* Locations
+
+ + Theater
+ + Behind the theater
+ + City Center
+ + South Edge
+ + North Edge
+
+* Events
+
+** 1. The Start
+   The player arrives in the theater. Starlight is on stage, along
+   with several other performers. He has two choices.
+
+   + Stay and watch the show (2)
+   + Leave and explore (3)
+** 2. Stick Around
+   The player stays and watches the show. He has the option of
+   attempting to strike a conversation with the bald gentleman
+   adjacent him, but he will be completely ignored. However, talking
+   to this person will ensure that they are present later on.
+
+   At the end of the show, the performers will head backstage and the
+   audience will file out. The player can try to go backstage but will
+   be disallowed.
+   + Exit with the crowd (4)
+   + Hide in the shadows of the theater (7)
+** 3. Early Exploration
+   Here, the player has access to the entire area of the map. If he
+   goes out of bounds, he exits the simulation, and upon returning he
+   will be in (3) again.
+
+   The primary points of interest are the bakery and the arcade. If
+   the player enters the bakery, he will see a muffin in a display
+   case. Attempting to take the muffin will result in an attack from
+   the baker (an evil spirit) and immediate ejection from the
+   simulation. Attempting to talk to the baker will (again) result in
+   him being ignored.
+
+   The arcade doesn't have anything terribly interesting yet. Talking
+   to the gamer will engage him, but that's all he can do right now.
+   After exploring, the player returns to the theater and finishes
+   watching the show.
+   + Finish watching the show (2)
+** 4. Show's Over
+   The player exits with the crowd. Here, he has another option to
+   explore places like the bakery or the arcade. If he attempts to go
+   /back/ inside the theater, he will find it to be locked. Upon going
+   around the back of the theater, he will find Starlight waiting for
+   him. She'll say that she has lost her scepter again and that she
+   can't seem to speak to anyone at all. She wants to check out the
+   theater and the rest of the town and offers the player the choice
+   of which one he'd like to check out.
+   + Check out the town (8)
+   + Check out the theater (5)
+** 5. The Late Showing
+   The player heads back into the theater through the open back door
+   and investigates. From here, he can still head outside and has the
+   same options as in (3). At the arcade, Starlight will be
+   investigating the area. Upon returning to the theater, he hides in
+   the shadows. At this time, there is a silver coin in the theater
+   which can be obtained.
+   + Hide in the shadows (6)
+** 6. The Later Showing
+   Dark shadows begin to accumulate in the theater. After several
+   shadows accumulate, one will notice the player and drag him out
+   onto the stage. As the spirits are deciding what to do with him,
+   Starlight will burst in with her scepter and dispel the evil. The
+   duo will head back outside, where it has rapidly changed to a dark,
+   stormy atmosphere.
+   + Head outside (9)
+** 7. Hiding in the Shadows
+   The player will attempt to hide in the shadows, but he will get
+   caught. A shadow will materialize behind him into the form of a
+   lizard man and eject him from the simulation. Upon returning, he
+   will be in (4).
+** 8. The Town
+   The player heads out into the town. He can't get back into the
+   theater now, as both exits are locked. Upon entering the arcade, he
+   will have the same option of playing the slots that he did before.
+   This time, however, he will win the slots. Upon winning, a secret
+   hatch in the floor will open up, which leads to a hidden room with
+   Starlight's scepter in it. After obtaining the scepter, he must go
+   back to the theater (which is now open) and enter.
+
+   In the theater, evil spirits have apprehended Starlight and have
+   her on the stage. The player tosses her scepter to her, and she
+   dispels the spirits. The duo then heads back outside.
+   + Head outside (9)
+** 9. The Eye of the Storm
+   The town is now stormy and dark. No one is out and about. The
+   theater is open but empty. The bakery is also empty. If the baker
+   was engaged, then the muffin is available to be taken. If the baker
+   was not engaged, then the muffin is mysteriously gone as well. At
+   the arcade, the secret panel in the floor has been revealed (either
+   by the player or by Starlight). In the basement of the arcade, all
+   of the engaged NPCs are present. Then one of three things will
+   happen (not the player's choice; this is based on progress thus
+   far)
+   + Not all of the NPCs are present (10)
+   + All of the NPCs are present but the player lacks <CRUCIAL ITEM> (11)
+   + All of the NPCs are present and the player has <CRUCIAL ITEM> (12)
+** 10. Easy Difficulty
+   Silver Starlight easily dispatches the evil spirits, and the player
+   and she exit the simulation. Starlight says that she doesn't think
+   it fully worked and offers to go in again. The simulation resets
+   back to (1).
+** 11. A Difficult Loss
+   The NPCs merge together into a dark entity and threaten the duo.
+   Starlight tries to fight him, but he's too powerful. The two are
+   ejected from the simulation and it resets back to (1).
+** 12. A Difficult Victory
+   The NPCs merge together into a dark entity, but the team
+   successfully repels it. Starlight and the player are victorious and
+   exit the simulation together. Starlight rewards the player for his
+   help. She offers to go back in and replay the simulation if he
+   thinks there's good reason to, but she says the spirits are more or
+   less vanquished.
+
+* Characters
+
+  These characters can show up in the end.
+  + Bald Man - If the player engages him in the theater.
+  + Dancer - Always.
+  + Baker - If the player engages him in the bakery.
+  + Gamer - If the player engages him in the arcade.
+  + Lizard Man - If the player hides in the shadows the first time
+
+* Notes
+
+ + If you go out of bounds, you exit the "simulation"
+ + If you go back in and Starlight is still in the simulation, you
+   still show up in the theater, regardless of where everyone else is.
+ + Anyone the player or Starlight talks to is now engaged and will be
+   present at the end during the battle.
+ + A mandatory sequence break. There's something in the arcade that
+   you can only get in (8) and you lose it in (???), but in between,
+   if you exit the simulation, you can take it elsewhere (maybe the
+   Fence needs it?)
