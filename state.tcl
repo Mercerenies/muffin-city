@@ -75,6 +75,7 @@ namespace eval State {
         judge-paperclip no
         the-fence no
         cottage-spirit no
+        false-stage no
     }]
 
     proc get {args} {

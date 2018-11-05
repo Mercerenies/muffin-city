@@ -29,7 +29,7 @@ namespace eval Prison::Cottage {
                 puts " A young woman is preparing a meal, while her son waits patiently\
                 at the table."
             }
-            starlight - starlight1 {
+            starlight - starlight1 - pocket {
                 puts " The farmer, his wife, and his son are standing against the wall,\
                 somewhat nervous"
             }
@@ -41,7 +41,7 @@ namespace eval Prison::Cottage {
             {"Take a nap on the sofa" yes {::Dream::Transit::awaken ::Dream::Transit::thirdRoom}}
             {"Talk to the woman" {[state get cottage-spirit] in {no evil}} wife}
             {"Talk to the child" {[state get cottage-spirit] in {no evil}} son}
-            {"Talk to the family" {[state get cottage-spirit] in {starlight}} familyScared}
+            {"Talk to the family" {[state get cottage-spirit] in {starlight starlight1 pocket}} familyScared}
             {"Go downstairs" yes downstairs}
             {"Go back outside" yes yard}
         }
@@ -61,14 +61,24 @@ namespace eval Prison::Cottage {
                 puts " Silver Starlight is sitting on a crate in the corner,\
                 looking slightly annoyed at herself."
             }
+            pocket {
+                # //// We'll make this specific to where we are in the quest soon
+                switch [state get false-stage] {
+                    no {
+                        puts " Against the back wall of the shed, a glowing white portal is open.\
+                        Silver Starlight is standing by the portal, ready to go."
+                    }
+                }
+            }
             default {
                 puts {}
             }
         }
-        # //// The sorcerer character whom I haven't decided on a name for yet
+        # //// Enter the portal even if Starlight isn't here (if we sequence broke the simulation)
         prompt {} {
             {"Talk to the woman" {[state get cottage-spirit] eq {starlight}} starlightIntro}
             {"Talk to Starlight" {[state get cottage-spirit] eq {starlight1}} starlightTalk}
+            {"Talk to Starlight" {([state get cottage-spirit] eq {pocket}) && ([state get false-stage] eq {no})} starlightTalk}
             {"Go back outside" yes yard}
         }
     }
@@ -193,10 +203,52 @@ namespace eval Prison::Cottage {
     }
 
     proc starlightTalk {} {
-        puts "\"Did you find a crystal ball?\""
-        # //// The rest of this
+        switch [state get cottage-spirit] {
+            starlight1 {
+                puts "\"Did you find a crystal ball?\""
+                prompt {} {
+                    {"Hand her the Crystal Ball" {[inv has {Crystal Ball}]} starlightBall}
+                    {"\"Not yet.\"" yes shed}
+                }
+            }
+            pocket {
+                # //// Check where we are in things
+                puts "\"Ready to go?\""
+                prompt {} {
+                    {"\"Let's go.\"" yes ::Empty::place}
+                    {"\"Not yet.\"" yes shed}
+                }
+            }
+        }
+    }
+
+    proc starlightBall {} {
+        puts "\"Perfect!\""
+        inv remove {Crystal Ball}
+        puts "Silver Starlight takes the Crystal Ball and affixes it to the end of\
+        a long rod. After she says a few magic words, a bright light engulfs the makeshift\
+        scepter, and it transforms into a more traditional looking magic scepter."
+        puts "\"Alright! Here we go! Are you ready?\""
         prompt {} {
-            {"\"Not yet.\"" yes shed}
+            {"\"Ready!\"" yes {starlightReveal yes}}
+            {"\"Not yet.\"" yes {starlightReveal no}}
+        }
+    }
+
+    proc starlightReveal {response} {
+        if $response then {
+            puts "\"Let's go!\""
+        } else {
+            puts "\"Too late!\""
+        }
+        puts "Starlight raises her magic scepter and cries out another magic incantation.\
+        A glowing white portal appears against the back wall of the shed."
+        puts "\"Alright! Looks like the evil spirits are hiding out in some kind\
+        of pocket dimension. Let's go check it out!\""
+        state put cottage-spirit pocket
+        prompt {} {
+            {"\"I'm ready.\"" yes ::Empty::place}
+            {"\"Hold on.\"" yes shed}
         }
     }
 

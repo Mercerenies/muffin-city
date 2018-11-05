@@ -183,6 +183,8 @@
 **** starlightIntro5
 **** starlightIntro6
 **** starlightTalk
+**** starlightBall
+**** starlightReveal <response>
 **** wander
 ** [Underworld]
 *** [Lobby]
@@ -1040,6 +1042,17 @@
      it. When the player agrees to find a crystal ball for her, the
      game will move to ~starlight1~.
 **** starlight1
+     After the player obtains the Crystal Ball from the Butler, the
+     player can offer to give the Crystal Ball to Starlight. Upon
+     doing so, she will open a portal to the pocket dimension the
+     spirits are hiding in, and the game will move to ~pocket~.
+**** pocket
+     The pocket dimension is open. This is the state the game will
+     remain in as long as the spirits have not been completely
+     defeated. ~false-stage~ will detail the player's current progress
+     in the simulation world.
+*** The Simulation (~false-stage~)
+**** no
      ////
 ** Item / Money States
 *** ~stolen-good~
