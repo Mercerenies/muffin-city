@@ -4,8 +4,11 @@
  + Theater
  + Behind the theater
  + City Center
- + South Edge
- + North Edge
+ + South Block
+ + North Block
+ + Arcade
+ + Arcade Basement
+ + Bakery
 
 * Events
 
