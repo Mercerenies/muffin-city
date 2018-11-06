@@ -19,7 +19,6 @@ namespace eval Prison::Pocket {
         participant, playing along for the moment. You are in an edge seat, so it would\
         be relatively easy to leave if you so chose. The man sitting next to you is bald\
         and rather intimidating."
-        # //// Just going through with the show
         prompt {} {
             {"Enjoy the show" yes theaterShow}
             {"Talk to the bald man" yes theaterTalk}
@@ -41,9 +40,9 @@ namespace eval Prison::Pocket {
         the dances go on for quite some time. At the end, all of the performers, including\
         Starlight, file off backstage, and the audience begins to empty into the street out\
         the opposite entrance."
-        # ////
+        state put false-stage outside
         prompt {} {
-            {"Exit with the crowd" yes ::Empty::place}
+            {"Exit with the crowd" yes theaterExit}
             {"Hide in the shadows" yes theaterHide}
         }
     }
@@ -59,11 +58,77 @@ namespace eval Prison::Pocket {
         return ::Prison::Cottage::shed
     }
 
+    proc theaterExit {} {
+        puts "As soon as you exit the theater, the entire crowd is gone. There is no trace of\
+        the hundreds of people who once filled the auditorium."
+        puts {}
+        return center
+    }
+
+    proc theaterShowtime {} {
+        puts "== Theater Stage =="
+        # //// Silver Coin available here
+        puts "You find yourself on the stage of the large theater. The seats are occupied\
+        by strange shadows which shift slowly from side to side. You are standing just out of\
+        sight right now."
+        prompt {} {
+            {"Step into the light" yes theaterShowtime1}
+            {"Go outside" yes theaterBack}
+        }
+    }
+
+    proc theaterShowtime1 {} {
+        puts "At your approach, several of the shadows converge around you and grab\
+        hold of your arms and legs. One of the shadows materializes into one of the\
+        dancers from the show before."
+        puts "\"You come here unarmed and expect to defeat us? You will suffer in an\
+        eternal purgatory.\""
+        prompt {} {
+            {"\"This is all going according to plan.\"" yes {showtimePlan plan}}
+            {"\"Look out behind you!\"" yes {showtimePlan behind}}
+        }
+    }
+
+    proc showtimePlan {response} {
+        if {$response eq {plan}} then {
+            puts "\"Clearly.\""
+        } else {
+            puts "\"Is that the best you can come up with?\""
+        }
+        puts "As she says this, Silver Starlight kicks down the back door of the\
+        auditorium, magic scepter in hand."
+        puts "\"Alright! Who's first?\""
+        puts "With a single magic word and a flash of white light, Starlight dispels\
+        all of the shadows in the room."
+        puts "\"There's a secret room underneath the arcade! I think it's some sort\
+        of shrine. We need to hurry!\""
+        prompt {} {
+            {"\"Lead the way.\"" yes showtimePlan1}
+        }
+    }
+
+    proc showtimePlan1 {} {
+        puts "Starlight runs out of the theater toward the arcade."
+        puts {}
+        # //// A separate file with the "dark" versions of the areas
+        return -gameover
+    }
+
     proc theaterBack {} {
         puts "== Behind the Theater =="
-        # ////
-        # //// Also, being able to enter from the back (sometimes)
+        switch [state get false-stage] {
+            no - dance - theater - town {
+                puts "The area behind the theater is sparse and empty, with an employee entrance\
+                and not much else."
+            }
+            outside {
+                puts "The area behind the theater is sparse and empty. Silver Starlight is standing\
+                by the employee entrance, seemingly waiting for you."
+            }
+        }
         prompt {} {
+            {"Enter the theater" yes enterTheaterBack}
+            {"Talk to Starlight" {[state get false-stage] eq {outside}} starlight}
             {"Go back to the square" yes center}
         }
     }
@@ -107,10 +172,16 @@ namespace eval Prison::Pocket {
 
     proc arcade {} {
         puts "== Pastel Town - Arcade =="
-        puts "In the arcade, there are a handful of unfamiliar games. A teenager is standing\
-        against the wall."
+        puts -nonewline  "In the arcade, there are a handful of unfamiliar games. A teenager\
+        is standing against the wall."
+        if {[state get false-stage] eq {theater}} then {
+            puts " Starlight is examining the back of an arcade machine."
+        } else {
+            puts {}
+        }
         prompt {} {
             {"Play a game" yes arcadeGame}
+            {"Talk to Starlight" yes arcadeStarlight}
             {"Talk to the teenager" yes arcadeTalk}
             {"Go outside" yes north}
         }
@@ -133,10 +204,16 @@ namespace eval Prison::Pocket {
         return arcade
     }
 
+    proc arcadeStarlight {} {
+        puts "\"Go check out the theater! We'll meet up again later.\""
+        puts {}
+        return arcade
+    }
+
     proc bakery {} {
         puts "== Pastel Town - Bakery =="
         switch [state get false-stage] {
-            no - dance {
+            no - dance - outside - theater - town {
                 if {[state get spirit-muffin] eq {no}} then {
                     puts "The inside of the bakery is incredibly colorful. There are several\
                     people sitting at the tables, seemingly enjoying a pleasant snack. The baker\
@@ -150,22 +227,19 @@ namespace eval Prison::Pocket {
             }
         }
         prompt {} {
-            {"Talk to the baker" {[state get false-stage] in {no dance}} bakeryTalk}
+            {"Talk to the baker" {[state get false-stage] in {no dance outside}} bakeryTalk}
             {"Take the muffin" {[state get spirit-muffin] eq {no}} bakeryMuffin}
             {"Go outside" yes south}
         }
     }
 
     proc bakeryMuffin {} {
-        switch [state get false-stage] {
-            no - dance {
-                state put spirit-baker yes
-                puts "The baker grabs your arm and lifts a butcher's knife with his other hand.\
-                As he lowers the large knife toward you, a bright light engulfs you."
-                puts {}
-                return ::Prison::Cottage::shed
-            }
-        }
+        # //// In the right state, you get the muffin
+        state put spirit-baker yes
+        puts "The baker grabs your arm and lifts a butcher's knife with his other hand.\
+        As he lowers the large knife toward you, a bright light engulfs you."
+        puts {}
+        return ::Prison::Cottage::shed
     }
 
     proc bakeryTalk {} {
@@ -176,6 +250,41 @@ namespace eval Prison::Pocket {
         return bakery
     }
 
+    proc starlight {} {
+        puts "\"Alright, this place is weird. I tried talking to another one of the\
+        performers, but she just didn't respond. It's like she couldn't even hear me.\
+        Anyway, I... uh, I lost my scepter again on the way in, so I can't exactly\
+        figure out what's going on right now.\""
+        prompt {} {
+            {"\"What should we do?\"" yes starlight1}
+        }
+    }
+
+    proc starlight1 {} {
+        puts "\"I think it's best if we split up. One of us can stay here and check out\
+        the theater. The other should investigate the rest of the town.\""
+        prompt {} {
+            {"\"I'll take the theater.\"" yes starlightTheater}
+            {"\"I'll check out the town.\"" yes starlightTown}
+        }
+    }
+
+    proc starlightTheater {} {
+        puts "\"Sounds good! We'll meet back here later!\""
+        puts "Starlight runs off into the town."
+        state put false-stage theater
+        puts {}
+        return theaterBack
+    }
+
+    proc starlightTown {} {
+        puts "\"Sounds good! We'll meet back here later!\""
+        puts "Starlight hurries back into the theater."
+        state put false-stage town
+        puts {}
+        return theaterBack
+    }
+
     proc fadeOut {} {
         puts "A bright light engulfs you."
         puts {}
@@ -183,8 +292,29 @@ namespace eval Prison::Pocket {
     }
 
     proc enterTheater {} {
-        # //// This will discriminate based on false-stage eventually
-        return theater
+        switch [state get false-stage] {
+            no - dance {
+                return theater
+            }
+            default {
+                puts "The theater entrance is locked."
+                puts {}
+                return center
+            }
+        }
+    }
+
+    proc enterTheaterBack {} {
+        switch [state get false-stage] {
+            theater {
+                return theaterShowtime
+            }
+            default {
+                puts "The theater entrance is locked."
+                puts {}
+                return theaterBack
+            }
+        }
     }
 
 }

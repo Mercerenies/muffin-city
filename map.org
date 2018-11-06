@@ -194,6 +194,10 @@
 **** theaterTalk
 **** theaterShow
 **** theaterHide
+**** theaterExit
+**** theaterShowtime
+**** theaterShowtime1
+**** showtimePlan <response>
 **** theaterBack
 **** center
 **** north
@@ -201,11 +205,17 @@
 **** arcade
 **** arcadeGame
 **** arcadeTalk
+**** arcadeStarlight
 **** bakery
 **** bakeryMuffin
 **** bakeryTalk
+**** starlight
+**** starlight1
+**** starlightTheater
+**** starlightTown
 **** fadeOut
 **** enterTheater
+**** enterTheaterBack
 ** [Underworld]
 *** [Lobby]
 **** murder
@@ -537,6 +547,7 @@
  + Brass Paperclip
  + Rusty Warehouse Key
  + Crystal Ball
+ + Magic Scepter
 
 ** Money Sources / Sinks
 
@@ -1076,6 +1087,12 @@
      ////
 **** dance
      ////
+**** outside
+     ////
+**** theater
+     ////
+**** town
+     ///// NOT DONE AT ALL
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -1338,11 +1355,9 @@
 **** no
 **** yes
 *** ~spirit-bald~
-    ////
 **** no
 **** yes
 *** ~spirit-lizard~
-    ////
 **** no
 **** yes
 * CHARACTERS

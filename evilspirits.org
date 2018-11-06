@@ -19,7 +19,6 @@
    + Stay and watch the show (2)
    + Leave and explore (3)
 ** 2. Stick Around
-   ////
    The player stays and watches the show. He has the option of
    attempting to strike a conversation with the bald gentleman
    adjacent him, but he will be completely ignored. However, talking
@@ -48,7 +47,6 @@
    watching the show.
    + Finish watching the show (2)
 ** 4. Show's Over
-   ////
    The player exits with the crowd. Here, he has another option to
    explore places like the bakery or the arcade. If he attempts to go
    /back/ inside the theater, he will find it to be locked. Upon going
@@ -60,7 +58,6 @@
    + Check out the town (8)
    + Check out the theater (5)
 ** 5. The Late Showing
-   ////
    The player heads back into the theater through the open back door
    and investigates. From here, he can still head outside and has the
    same options as in (3). At the arcade, Starlight will be
@@ -69,7 +66,6 @@
    which can be obtained.
    + Hide in the shadows (6)
 ** 6. The Later Showing
-   ////
    Dark shadows begin to accumulate in the theater. After several
    shadows accumulate, one will notice the player and drag him out
    onto the stage. As the spirits are deciding what to do with him,
@@ -78,7 +74,6 @@
    stormy atmosphere.
    + Head outside (9)
 ** 7. Hiding in the Shadows
-   ////
    The player will attempt to hide in the shadows, but he will get
    caught. A shadow will materialize behind him into the form of a
    lizard man and eject him from the simulation. Upon returning, he
