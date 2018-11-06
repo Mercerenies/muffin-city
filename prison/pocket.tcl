@@ -21,7 +21,7 @@ namespace eval Prison::Pocket {
         and rather intimidating."
         # //// Just going through with the show
         prompt {} {
-            {"Enjoy the show" yes ::Empty::place}
+            {"Enjoy the show" yes theaterShow}
             {"Talk to the bald man" yes theaterTalk}
             {"Get up" yes theater}
         }
@@ -34,6 +34,29 @@ namespace eval Prison::Pocket {
         state put spirit-bald yes
         puts {}
         return theaterSeat
+    }
+
+    proc theaterShow {} {
+        puts "You decide to sit back and enjoy the show. The performers are quite good, and\
+        the dances go on for quite some time. At the end, all of the performers, including\
+        Starlight, file off backstage, and the audience begins to empty into the street out\
+        the opposite entrance."
+        # ////
+        prompt {} {
+            {"Exit with the crowd" yes ::Empty::place}
+            {"Hide in the shadows" yes theaterHide}
+        }
+    }
+
+    proc theaterHide {} {
+        puts "You quietly move over toward the shadows as the audience exits. Fairly quickly,\
+        you are alone in the auditorium. As you stand in silence, the shadows in the floor\
+        begin to shift toward the stage. Your own shadow leaps out of the ground, taking the\
+        form of some sort of mutant lizard. The lizard creature dives at you and strikes you\
+        with its claws. A bright white light engulfs you."
+        state put spirit-lizard yes
+        puts {}
+        return ::Prison::Cottage::shed
     }
 
     proc theaterBack {} {

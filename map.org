@@ -192,6 +192,8 @@
 **** theater
 **** theaterSeat
 **** theaterTalk
+**** theaterShow
+**** theaterHide
 **** theaterBack
 **** center
 **** north
