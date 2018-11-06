@@ -76,6 +76,11 @@ namespace eval State {
         the-fence no
         cottage-spirit no
         false-stage no
+        spirit-baker no
+        spirit-gamer no
+        spirit-bald no
+        spirit-muffin no
+        spirit-lizard no
     }]
 
     proc get {args} {

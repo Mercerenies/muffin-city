@@ -83,10 +83,45 @@ namespace eval Prison::Pocket {
 
     proc bakery {} {
         puts "== Pastel Town - Bakery =="
-        # ////
+        switch [state get false-stage] {
+            no - dance {
+                if {[state get spirit-muffin] eq {no}} then {
+                    puts "The inside of the bakery is incredibly colorful. There are several\
+                    people sitting at the tables, seemingly enjoying a pleasant snack. The baker\
+                    is standing behind the counter, and a muffin sits on a display case in front\
+                    of him."
+                } else {
+                    puts "The inside of the bakery is incredibly colorful. There are several\
+                    people sitting at the tables, seemingly enjoying a pleasant snack. The baker\
+                    is standing behind an empty display case on the counter."
+                }
+            }
+        }
         prompt {} {
+            {"Talk to the baker" {[state get false-stage] in {no dance}} bakeryTalk}
+            {"Take the muffin" {[state get spirit-muffin] eq {no}} bakeryMuffin}
             {"Go outside" yes south}
         }
+    }
+
+    proc bakeryMuffin {} {
+        switch [state get false-stage] {
+            no - dance {
+                state put spirit-baker yes
+                puts "The baker grabs your arm and lifts a butcher's knife with his other hand.\
+                As he lowers the large knife toward you, a bright light engulfs you."
+                puts {}
+                return ::Prison::Cottage::shed
+            }
+        }
+    }
+
+    proc bakeryTalk {} {
+        puts "The baker pays you no mind, no matter what you say to him. He merely\
+        goes about his business."
+        state put spirit-baker yes
+        puts {}
+        return bakery
     }
 
     proc fadeOut {} {

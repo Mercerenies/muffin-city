@@ -197,6 +197,8 @@
 **** south
 **** arcade
 **** bakery
+**** bakeryMuffin
+**** bakeryTalk
 **** fadeOut
 **** enterTheater
 ** [Underworld]
@@ -557,6 +559,7 @@
 ** Prehistory
 ** Prison
  + Maple Muffin (~forest-river~)
+ + Apple Pecan Muffin (~spirit-muffin~)
 ** Underworld
  + Cream Cheese Muffin (~mercury-muffin~)
 ** Dream World
@@ -564,7 +567,6 @@
 ** Subspace
 ** The Console Room
 ** Unclassified
- + Apple Pecan Muffin
  + Egg Muffin
  + Spud Muffin
  + Sweet Potato Muffin
@@ -1132,6 +1134,11 @@
 *** ~mercury-muffin~
 **** no
 **** yes
+*** ~spirit-muffin~
+**** no
+     ////
+**** yes
+     ////
 ** World States
 *** ~trial-reason~
 **** {}
@@ -1320,6 +1327,22 @@
 **** {Scuba Suit}
 **** {Fireproof Suit}
 
+*** ~spirit-baker~
+    ////
+**** no
+**** yes
+*** ~spirit-gamer~
+    ////
+**** no
+**** yes
+*** ~spirit-bald~
+    ////
+**** no
+**** yes
+*** ~spirit-lizard~
+    ////
+**** no
+**** yes
 * CHARACTERS
 
 ** The Robber
