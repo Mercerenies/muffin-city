@@ -75,11 +75,9 @@ inv add {Shovel}
 con
 inv add {Rusty Warehouse Key}
 con
-state put cottage-spirit starlight1
+state put cottage-spirit pocket
 con
 inv add {Soul Crystal}
-con
-inv add {Crystal Ball}
 3
 2
 2
@@ -92,3 +90,6 @@ inv add {Crystal Ball}
 1
 2
 2
+2
+1
+1

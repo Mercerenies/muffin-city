@@ -75,10 +75,30 @@ namespace eval Prison::Pocket {
 
     proc arcade {} {
         puts "== Pastel Town - Arcade =="
-        # ////
+        puts "In the arcade, there are a handful of unfamiliar games. A teenager is standing\
+        against the wall."
         prompt {} {
+            {"Play a game" yes arcadeGame}
+            {"Talk to the teenager" yes arcadeTalk}
             {"Go outside" yes north}
         }
+    }
+
+    proc arcadeGame {} {
+        # //// You'll win this if it's time
+        puts "You approach one of the games and begin to play. The display doesn't seem\
+        to make a lot of sense, and you ultimately end up losing without really knowing\
+        how to play."
+        puts {}
+        return arcade
+    }
+
+    proc arcadeTalk {} {
+        puts "You attempt to strike up conversation with the teenager, who simply stands there\
+        staring forward, not even acknowledging your presence."
+        state put spirit-gamer yes
+        puts {}
+        return arcade
     }
 
     proc bakery {} {

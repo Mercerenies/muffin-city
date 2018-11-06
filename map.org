@@ -196,6 +196,8 @@
 **** north
 **** south
 **** arcade
+**** arcadeGame
+**** arcadeTalk
 **** bakery
 **** bakeryMuffin
 **** bakeryTalk
