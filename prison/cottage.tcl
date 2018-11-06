@@ -68,7 +68,7 @@ namespace eval Prison::Cottage {
                         puts " Against the back wall of the shed, a glowing white portal is open.\
                         Silver Starlight is standing by the portal, ready to go."
                     }
-                    dance {
+                    default {
                         puts " The glowing white portal still hangs against the back wall."
                     }
                 }
@@ -277,7 +277,11 @@ namespace eval Prison::Cottage {
         puts "You enter the portal. A bright white light engulfs you, quickly giving\
         way to a theater."
         puts {}
-        return ::Prison::Pocket::theater
+        if {[state get false-stage] in {darkness}} then {
+            return ::Prison::Darkness::theater
+        } else {
+            return ::Prison::Pocket::theater
+        }
     }
 
 }

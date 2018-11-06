@@ -134,8 +134,7 @@ namespace eval Prison::Pocket {
         puts "Starlight runs out of the theater toward the arcade."
         puts {}
         state put false-stage darkness
-        # //// A separate file with the "dark" versions of the areas
-        return -gameover
+        return ::Prison::Darkness::theater
     }
 
     proc theaterBack {} {
@@ -275,19 +274,15 @@ namespace eval Prison::Pocket {
 
     proc bakery {} {
         puts "== Pastel Town - Bakery =="
-        switch [state get false-stage] {
-            no - dance - outside - theater - town {
-                if {[state get spirit-muffin] eq {no}} then {
-                    puts "The inside of the bakery is incredibly colorful. There are several\
-                    people sitting at the tables, seemingly enjoying a pleasant snack. The baker\
-                    is standing behind the counter, and a muffin sits on a display case in front\
-                    of him."
-                } else {
-                    puts "The inside of the bakery is incredibly colorful. There are several\
-                    people sitting at the tables, seemingly enjoying a pleasant snack. The baker\
-                    is standing behind an empty display case on the counter."
-                }
-            }
+        if {[state get spirit-muffin] eq {no}} then {
+            puts "The inside of the bakery is incredibly colorful. There are several\
+            people sitting at the tables, seemingly enjoying a pleasant snack. The baker\
+            is standing behind the counter, and a muffin sits on a display case in front\
+            of him."
+        } else {
+            puts "The inside of the bakery is incredibly colorful. There are several\
+            people sitting at the tables, seemingly enjoying a pleasant snack. The baker\
+            is standing behind an empty display case on the counter."
         }
         prompt {} {
             {"Talk to the baker" {[state get false-stage] in {no dance outside}} bakeryTalk}

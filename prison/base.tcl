@@ -7,3 +7,4 @@ source ./prison/forest.tcl
 source ./prison/fence.tcl
 source ./prison/cottage.tcl
 source ./prison/pocket.tcl
+source ./prison/darkness.tcl
