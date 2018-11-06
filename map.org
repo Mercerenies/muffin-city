@@ -191,6 +191,7 @@
 *** [Pocket]
 **** theater
 **** theaterSeat
+**** theaterTalk
 **** theaterBack
 **** center
 **** north
@@ -1138,7 +1139,6 @@
 **** yes
 *** ~spirit-muffin~
 **** no
-     ////
 **** yes
      ////
 ** World States
@@ -1330,11 +1330,9 @@
 **** {Fireproof Suit}
 
 *** ~spirit-baker~
-    ////
 **** no
 **** yes
 *** ~spirit-gamer~
-    ////
 **** no
 **** yes
 *** ~spirit-bald~

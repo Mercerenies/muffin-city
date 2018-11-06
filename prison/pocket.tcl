@@ -19,12 +19,21 @@ namespace eval Prison::Pocket {
         participant, playing along for the moment. You are in an edge seat, so it would\
         be relatively easy to leave if you so chose. The man sitting next to you is bald\
         and rather intimidating."
-        # //// Talking to the guy, and just going through with the show
+        # //// Just going through with the show
         prompt {} {
             {"Enjoy the show" yes ::Empty::place}
-            {"Talk to the bald man" yes ::Empty::place}
+            {"Talk to the bald man" yes theaterTalk}
             {"Get up" yes theater}
         }
+    }
+
+    proc theaterTalk {} {
+        puts "You try to talk to the bald gentleman but find yourself completely ignored.\
+        Not only does he not respond, but he doesn't even blink or turn his head in your\
+        direction."
+        state put spirit-bald yes
+        puts {}
+        return theaterSeat
     }
 
     proc theaterBack {} {
