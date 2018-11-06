@@ -89,6 +89,29 @@ namespace eval Prison::Pocket {
         }
     }
 
+    proc theaterShowtimeRev {} {
+        puts "== Theater Stage =="
+        puts "As you enter the theater, you notice packs of shifting dark shadows sliding across\
+        the walls and the chairs of the auditorium. Silver Starlight is on the stage, fending\
+        off some of the shadows."
+        prompt {} {
+            {"Throw the scepter toward her" yes theaterShowtimeRev1}
+        }
+    }
+
+    proc theaterShowtimeRev1 {} {
+        inv remove {Magic Scepter}
+        puts "You toss the scepter perfectly, and it lands on Silver Starlight's hands."
+        puts "\"Alright! Who's first?\""
+        puts "With a single magic word and a flash of white light, Starlight dispels\
+        all of the shadows in the room."
+        puts "\"Alright! I think they have some sort of hidden power source. We need\
+        to find their shrine.\""
+        prompt {} {
+            {"\"Under the arcade.\"" yes showtimePlan1}
+        }
+    }
+
     proc showtimePlan {response} {
         if {$response eq {plan}} then {
             puts "\"Clearly.\""
@@ -110,6 +133,7 @@ namespace eval Prison::Pocket {
     proc showtimePlan1 {} {
         puts "Starlight runs out of the theater toward the arcade."
         puts {}
+        state put false-stage darkness
         # //// A separate file with the "dark" versions of the areas
         return -gameover
     }
@@ -174,24 +198,41 @@ namespace eval Prison::Pocket {
         puts "== Pastel Town - Arcade =="
         puts -nonewline  "In the arcade, there are a handful of unfamiliar games. A teenager\
         is standing against the wall."
-        if {[state get false-stage] eq {theater}} then {
+        if {[state get false-stage] eq {town1}} then {
+            puts " There is a staircase against the left wall leading downward."
+        } elseif {[state get false-stage] eq {theater}} then {
             puts " Starlight is examining the back of an arcade machine."
         } else {
             puts {}
         }
         prompt {} {
             {"Play a game" yes arcadeGame}
-            {"Talk to Starlight" yes arcadeStarlight}
+            {"Talk to Starlight" {[state get false-stage] eq {theater}} arcadeStarlight}
             {"Talk to the teenager" yes arcadeTalk}
+            {"Go downstairs" {[state get false-stage] eq {town1}} arcadeDown}
             {"Go outside" yes north}
         }
     }
 
     proc arcadeGame {} {
-        # //// You'll win this if it's time
-        puts "You approach one of the games and begin to play. The display doesn't seem\
-        to make a lot of sense, and you ultimately end up losing without really knowing\
-        how to play."
+        switch [state get false-stage] {
+            town {
+                puts "You approach one of the games and begin to play. The display doesn't seem\
+                to make a lot of sense, but somehow you end up winning, as indicated by a\
+                mechanical ding."
+                puts "... A hidden panel in the floor opens behind you."
+                state put false-stage town1
+            }
+            town1 {
+                puts "The arcade machine seems to be out of order. The display is completely\
+                blank."
+            }
+            default {
+                puts "You approach one of the games and begin to play. The display doesn't seem\
+                to make a lot of sense, and you ultimately end up losing without really knowing\
+                how to play."
+            }
+        }
         puts {}
         return arcade
     }
@@ -208,6 +249,28 @@ namespace eval Prison::Pocket {
         puts "\"Go check out the theater! We'll meet up again later.\""
         puts {}
         return arcade
+    }
+
+    proc arcadeDown {} {
+        puts "== Arcade Basement =="
+        # //// Some other item (the sequence break item that you have to leave with to use)
+        puts -nonewline "The basement of the arcade seems to be a large, empty shrine."
+        if {![inv has {Magic Scepter}]} then {
+            puts -nonewline " Silver Starlight's scepter is sitting in the middle of\
+            the shrine."
+        }
+        puts {}
+        prompt {} {
+            {"Take the scepter" {![inv has {Magic Scepter}]} arcadeScepter}
+            {"Go upstairs" yes arcade}
+        }
+    }
+
+    proc arcadeScepter {} {
+        puts "You got the Magic Scepter!"
+        inv add {Magic Scepter}
+        puts {}
+        return arcadeDown
     }
 
     proc bakery {} {
@@ -234,7 +297,6 @@ namespace eval Prison::Pocket {
     }
 
     proc bakeryMuffin {} {
-        # //// In the right state, you get the muffin
         state put spirit-baker yes
         puts "The baker grabs your arm and lifts a butcher's knife with his other hand.\
         As he lowers the large knife toward you, a bright light engulfs you."
@@ -295,6 +357,15 @@ namespace eval Prison::Pocket {
         switch [state get false-stage] {
             no - dance {
                 return theater
+            }
+            town1 {
+                if {[inv has {Magic Scepter}]} then {
+                    return theaterShowtimeRev
+                } else {
+                    puts "The theater entrance is locked."
+                    puts {}
+                    return center
+                }
             }
             default {
                 puts "The theater entrance is locked."
