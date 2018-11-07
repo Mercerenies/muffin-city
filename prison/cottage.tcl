@@ -278,9 +278,9 @@ namespace eval Prison::Cottage {
         way to a theater."
         puts {}
         if {[state get false-stage] in {darkness}} then {
-            return ::Prison::Darkness::theater
+            return ::Prison::Darkness::center
         } else {
-            return ::Prison::Pocket::theater
+            return ::Prison::Pocket::center
         }
     }
 
