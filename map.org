@@ -229,6 +229,8 @@
 **** south
 **** arcade
 **** arcadeDown
+**** arcadeDownEasy
+**** arcadeDownLoss
 **** bakery
 **** bakeryMuffin
 **** fadeOut
