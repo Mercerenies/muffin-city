@@ -1655,6 +1655,12 @@
    (with some item) to get to the dream world airport.
 
    Also, the third Butler event will get you the Crystal Ball I think.
+
+   So most of this quest is done. We still need the final victory
+   condition and reward. We need to decide where the item you need is.
+   I'm thinking /maybe/ in the prehistoric jungle, but that's also
+   really late game, so I'm not sure if I want to put it off that
+   long. We'll see.
 ** CANCELED The Crystal Ball
    - Note taken on [2018-11-04 Sun 13:06] \\
      Canceled; I want the Silver Starlight event to be fairly
