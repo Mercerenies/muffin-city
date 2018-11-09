@@ -1380,6 +1380,14 @@
 *** ~spirit-lizard~
 **** no
 **** yes
+*** ~false-stage-ran~
+**** no
+     The player has not been through the ~false-stage~ simulation.
+     When he completes the simulation, with any of the three endings,
+     the game moves to ~yes~.
+**** yes
+     The player has been through ~false-stage~ at least once. Some
+     character dialogue will change to reflect this fact.
 * CHARACTERS
 
 ** The Robber

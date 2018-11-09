@@ -81,6 +81,7 @@ namespace eval State {
         spirit-bald no
         spirit-muffin no
         spirit-lizard no
+        false-stage-ran no
     }]
 
     proc get {args} {

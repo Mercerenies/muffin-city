@@ -111,12 +111,17 @@ namespace eval Prison::Darkness {
         } else {
             puts " Several smaller shadows encircle the dancer. Silver Starlight speaks first."
         }
-        puts "\"Took you long enough. You're just in time to see me finish the job!\""
+        if {[state get false-stage-ran] eq {yes}} then {
+            puts "\"Welcome to the party! You're just in time to see me finish the job!\""
+        } else {
+            puts "\"Took you long enough. You're just in time to see me finish the job!\""
+        }
         state put spirit-bald no
         state put spirit-lizard no
         state put spirit-gamer no
         state put spirit-baker no
         state put false-stage no
+        state put false-stage-ran yes
         if {[llength $engaged] >= 4} then {
             # //// There will be a second case here if you have some specific item
             puts "The five shadow beings move together and begin to morph into one\
@@ -139,8 +144,6 @@ namespace eval Prison::Darkness {
     }
 
     proc arcadeDownEasy {} {
-        # //// I need to update her dialogue the second time through to acknowledge that we've
-        # already done it all, even though everything will mechanically be the same
         puts "\"That... didn't feel like it worked. I don't think all of the spirits were\
         there. I think we need to make sure all of the spirits are down in that shrine\
         before we fight them. If you're ready to go back through and try again, just let\

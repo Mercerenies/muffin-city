@@ -105,10 +105,15 @@ namespace eval Prison::Pocket {
         puts "\"Alright! Who's first?\""
         puts "With a single magic word and a flash of white light, Starlight dispels\
         all of the shadows in the room."
-        puts "\"Alright! I think they have some sort of hidden power source. We need\
-        to find their shrine.\""
+        if {[state get false-stage-ran] eq {yes}} then {
+            puts "\"Alright. Ready to go back to the shrine at the arcade?\""
+        } else {
+            puts "\"Alright! I think they have some sort of hidden power source. We need\
+            to find their shrine.\""
+        }
         prompt {} {
-            {"\"Under the arcade.\"" yes showtimePlan1}
+            {"\"Under the arcade.\"" {[state get false-stage-ran] eq {no}} showtimePlan1}
+            {"\"Ready.\"" {[state get false-stage-ran] eq {yes}} showtimePlan1}
         }
     }
 
@@ -123,8 +128,12 @@ namespace eval Prison::Pocket {
         puts "\"Alright! Who's first?\""
         puts "With a single magic word and a flash of white light, Starlight dispels\
         all of the shadows in the room."
-        puts "\"There's a secret room underneath the arcade! I think it's some sort\
-        of shrine. We need to hurry!\""
+        if {[state get false-stage-ran] eq {yes}} then {
+            puts "\"Alright. Ready to go back to the shrine at the arcade?\""
+        } else {
+            puts "\"There's a secret room underneath the arcade! I think it's some sort\
+            of shrine. We need to hurry!\""
+        }
         prompt {} {
             {"\"Lead the way.\"" yes showtimePlan1}
         }
@@ -308,12 +317,21 @@ namespace eval Prison::Pocket {
     }
 
     proc starlight {} {
-        puts "\"Alright, this place is weird. I tried talking to another one of the\
-        performers, but she just didn't respond. It's like she couldn't even hear me.\
-        Anyway, I... uh, I lost my scepter again on the way in, so I can't exactly\
-        figure out what's going on right now.\""
-        prompt {} {
-            {"\"What should we do?\"" yes starlight1}
+        if {[state get false-stage-ran] eq {yes}} then {
+            puts "\"Alright. Here we go again. Do you want to take the the theater or the\
+            town?\""
+            prompt {} {
+                {"\"Theater.\"" yes starlightTheater}
+                {"\"Town.\"" yes starlightTown}
+            }
+        } else {
+            puts "\"Alright, this place is weird. I tried talking to another one of the\
+            performers, but she just didn't respond. It's like she couldn't even hear me.\
+            Anyway, I... uh, I lost my scepter again on the way in, so I can't exactly\
+            figure out what's going on right now.\""
+            prompt {} {
+                {"\"What should we do?\"" yes starlight1}
+            }
         }
     }
 
