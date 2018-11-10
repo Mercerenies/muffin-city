@@ -200,6 +200,7 @@
 **** theaterShowtimeRev
 **** theaterShowtimeRev1
 **** showtimePlan <response>
+**** theaterCoin
 **** theaterBack
 **** center
 **** north
@@ -573,6 +574,7 @@
  + Shady Alley (~sa-coin~)
  + Forest River (~forest-river~)
  + Freight Elevator (~fe-coin~)
+ + Theater Stage (~stage-coin~)
 
 *** Sinks
  + Robbery Event (~city-thug~)
@@ -1149,6 +1151,9 @@
 *** ~judge-paperclip~
 **** no
 **** yes
+*** ~stage-coin~
+**** no
+**** yes
 ** Muffin States
 *** River Treasures (~forest-river~)
 **** 0
@@ -1629,6 +1634,12 @@
    A secret underground room in the warehouse houses an Egyptian tomb
    with a bunch of mummies (or maybe skeletons) that will jump out at
    you. I don't know. This one's not /too/ well thought out yet.
+
+   Wait, wait, wait, wait, wait. What if the tomb is on the warehouse
+   island, and you can get to the island in prehistory too (prehistory
+   is pretty small right now, all things considered). In prehistory,
+   things are a bit different. Maybe you have to appease the mummies
+   while they're alive so that they don't attack you in the present.
 ** ACCEPTED The Evil Portal
    Okay, this one is going to be long. So there's a cottage in the
    woods reachable from the prison forest by... I haven't decided yet.

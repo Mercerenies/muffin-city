@@ -67,12 +67,17 @@ namespace eval Prison::Pocket {
 
     proc theaterShowtime {} {
         puts "== Theater Stage =="
-        # //// Silver Coin available here
-        puts "You find yourself on the stage of the large theater. The seats are occupied\
-        by strange shadows which shift slowly from side to side. You are standing just out of\
-        sight right now."
+        puts -nonewline "You find yourself on the stage of the large theater. The seats\
+        are occupied by strange shadows which shift slowly from side to side. You are standing\
+        just out of sight right now."
+        if {[state get stage-coin] eq {yes}} then {
+            puts {}
+        } else {
+            puts " There is a Silver Coin off in the corner, just barely in view."
+        }
         prompt {} {
             {"Step into the light" yes theaterShowtime1}
+            {"Take the coin" {[state get stage-coin] eq {no}} theaterCoin}
             {"Go outside" yes theaterBack}
         }
     }
@@ -137,6 +142,14 @@ namespace eval Prison::Pocket {
         prompt {} {
             {"\"Lead the way.\"" yes showtimePlan1}
         }
+    }
+
+    proc theaterCoin {} {
+        puts "You got a Silver Coin!"
+        inv add {Silver Coin}
+        state put stage-coin yes
+        puts {}
+        return theaterShowtime
     }
 
     proc showtimePlan1 {} {
@@ -262,6 +275,7 @@ namespace eval Prison::Pocket {
     proc arcadeDown {} {
         puts "== Arcade Basement =="
         # //// Some other item (the sequence break item that you have to leave with to use)
+        # Broken Joystick?
         puts -nonewline "The basement of the arcade seems to be a large, empty shrine."
         if {![inv has {Magic Scepter}]} then {
             puts -nonewline " Silver Starlight's scepter is sitting in the middle of\
