@@ -475,6 +475,7 @@
 **** hill
 **** outside
 **** altar
+**** tryStairs
 **** matthew
 **** matthewStudy
 **** sanctuary

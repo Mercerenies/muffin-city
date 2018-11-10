@@ -28,17 +28,33 @@ namespace eval Subspace::Temple {
         pews facing a large altar. The candles at the front of the altar are\
         lit,"
         if {[state get talked-to-acolyte] ne {no}} then {
-            puts " and Matthew is standing beside them. Behind him, the door to the\
-            sanctuary is open."
+            puts -nonewline " and Matthew is standing beside them. Behind him, the door\
+            to the sanctuary is open."
         } else {
-            puts " and a young acolyte is standing beside them."
+            puts -nonewline " and a young acolyte is standing beside them."
         }
+        puts {}
+        puts " A set of stairs leads down in the back corner of the altar."
         prompt {} {
             {"Talk to the acylote" {[state get talked-to-acolyte] eq {no}} matthew}
             {"Talk to Matthew" {[state get talked-to-acolyte] ne {no}} matthew}
             {"Enter the sanctuary" {[state get talked-to-acolyte] ne {no}} sanctuary}
+            {"Go downstairs" yes tryStairs}
             {"Exit the altar" yes outside}
         }
+    }
+
+    proc tryStairs {} {
+        # //// Soon
+        if {[state get talked-to-acolyte] eq {no}} then {
+            puts "The young acolyte stops you."
+        } else {
+            puts "Matthew stands in your way."
+        }
+        puts "\"I'm sorry, but only those admitted by the Ancient Minister are permitted\
+        downstairs.\""
+        puts {}
+        return altar
     }
 
     proc matthew {} {
