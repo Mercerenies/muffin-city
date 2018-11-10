@@ -1284,6 +1284,13 @@
 *** ~golden-arch~
 **** no
 **** yes
+*** ~subspace-freedom~
+**** no
+     The player does not have free reign over the subspace temple. If
+     the player visits the Ancient Minister with no paradox record
+     (~subspace-reason~ is ~no~), then the game will move to ~yes~.
+**** yes
+     The player can move freely around the subspace temple.
 ** World States
 *** ~trial-reason~
 **** {}

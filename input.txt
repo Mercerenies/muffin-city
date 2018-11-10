@@ -78,39 +78,15 @@ con
 state put cottage-spirit pocket
 con
 inv add {Soul Crystal}
+con
+state put talked-to-acolyte yes
+con
+state put subspace-freedom yes
+3
+4
+2
 3
 2
-2
-1
-1
-2
-2
-2
-1
-1
-2
-2
-2
-1
-1
-1
-1
-2
-2
-1
-1
-1
-1
-2
-1
-1
 3
-1
-con
-state put spirit-baker yes
-con
-state put spirit-lizard yes
-con
-state put spirit-gamer yes
-con
-state put spirit-bald yes
+3
+2

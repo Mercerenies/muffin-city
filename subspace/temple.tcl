@@ -45,16 +45,19 @@ namespace eval Subspace::Temple {
     }
 
     proc tryStairs {} {
-        # //// Soon
-        if {[state get talked-to-acolyte] eq {no}} then {
-            puts "The young acolyte stops you."
+        if {[state get subspace-freedom] eq {yes}} then {
+            return ::Empty::place ;# ////
         } else {
-            puts "Matthew stands in your way."
+            if {[state get talked-to-acolyte] eq {no}} then {
+                puts "The young acolyte stops you."
+            } else {
+                puts "Matthew stands in your way."
+            }
+            puts "\"I'm sorry, but only those admitted by the Ancient Minister are permitted\
+            downstairs.\""
+            puts {}
+            return altar
         }
-        puts "\"I'm sorry, but only those admitted by the Ancient Minister are permitted\
-        downstairs.\""
-        puts {}
-        return altar
     }
 
     proc matthew {} {
@@ -105,8 +108,9 @@ namespace eval Subspace::Temple {
                 puts "\"I see... purity in your soul... you are clean, my\
                 child...\""
                 puts "The Minister's eyes open slowly."
-                puts "\"Thank you... for coming to see me...\""
-                # //// Something happens here, he'll let you explore or something.
+                puts "\"Thank you... for coming to see me... You have my\
+                blessing... you may explore my temple to your heart's content...\""
+                state put subspace-freedom yes
                 prompt {} {
                     {"\"You are very welcome.\"" yes sanctuary}
                 }
