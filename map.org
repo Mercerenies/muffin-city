@@ -480,6 +480,8 @@
 **** matthewStudy
 **** sanctuary
 **** minister
+**** catacombs
+**** cellar
 *** [Necromancy]
 **** boss <helper>
 **** solo <hp> <ehp>

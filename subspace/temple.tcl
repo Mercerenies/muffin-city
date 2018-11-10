@@ -46,7 +46,7 @@ namespace eval Subspace::Temple {
 
     proc tryStairs {} {
         if {[state get subspace-freedom] eq {yes}} then {
-            return ::Empty::place ;# ////
+            return catacombs
         } else {
             if {[state get talked-to-acolyte] eq {no}} then {
                 puts "The young acolyte stops you."
@@ -135,6 +135,26 @@ namespace eval Subspace::Temple {
                     {"\"Thank you.\"" yes sanctuary}
                 }
             }
+        }
+    }
+
+    proc catacombs {} {
+        puts "== Subspace Temple - Catacombs =="
+        puts "The underground portion of the temple consists of a narrow, winding\
+        tunnel. In one direction, a set of stairs leads up to the altar. In the\
+        other, a narrow passageway leads into a cellar."
+        prompt {} {
+            {"Enter the cellar" yes cellar}
+            {"Go upstairs" yes altar}
+        }
+    }
+
+    proc cellar {} {
+        puts "== Subspace Temple - Cellar =="
+        puts "The cellar is a small, dimly-lit circular room. There are boxes and chests\
+        stacked against the outer edges of the room."
+        prompt {} {
+            {"Exit the cellar" yes catacombs}
         }
     }
 
