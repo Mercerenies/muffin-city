@@ -1185,20 +1185,56 @@
 **** no
 **** yes
      ////
-** World States
-*** ~trial-reason~
-**** {}
-**** murder
-**** escape
+** Dialogue States
+*** ~talked-to-johnny~
+**** no
+**** yes
+*** ~talked-to-cipher~
+**** no
+**** yes
+*** Dr. Louis Introduction (~talked-to-louis~)
+**** no
+     The player has not spoken to Dr. Louis. When he does so, she will
+     introduce herself and give him the Club Key. The game will then
+     move to `yes`.
+**** yes
+     The player has spoken to Dr. Louis.
+*** ~merchant-bot~
+**** no
+**** met
+*** The Acolyte (~talked-to-acolyte~)
+**** no
+     The player has not spoken to the acolyte, Matthew, at the
+     subspace temple altar yet. When the player does so, the game
+     moves to `started`.
+**** started
+     The player has spoken to Matthew but not the Minister. When he
+     speaks to the Minister, whether or not his soul is clean, the
+     game moves to `yes`.
+**** yes
+     ////
+*** ~talked-to-steve~
+**** no
+**** yes
+*** ~talked-to-reaper~
+**** no
+**** yes
+*** ~talked-to-grigory~
+**** no
+**** yes
+*** ~talked-to-todd~
+**** no
+**** spoken
+**** {Scuba Suit}
+**** {Fireproof Suit}
+
+*** ~heard-science~
+**** no
+**** told
+**** yes
+** Door / Opening States
 *** ~janitor-door~
 **** no
-**** yes
-*** ~been-to-prison~
-**** no
-**** yes
-*** ~awaiting-bus~
-**** no
-**** trees
 **** yes
 *** ~lobby-door~
 **** no
@@ -1206,21 +1242,6 @@
 **** wildlife
 **** mercury
 **** other
-**** yes
-*** ~talked-to-johnny~
-**** no
-**** yes
-*** Exercise Field Soul (~exercise-soul~)
-**** no
-     The soul has not been collected. Talking to the exercise field
-     inmate will result in the player being killed unless he backs
-     off. If the player has the Soul Crystal, he can claim his soul,
-     giving him {Inmate's Soul} and moving to `yes`.
-**** yes
-     The inmate's soul has been taken. Talking to him will result in a
-     rather depressed response and nothing of interest happening.
-*** ~talked-to-cipher~
-**** no
 **** yes
 *** ~second-class-door~
 **** no
@@ -1234,23 +1255,6 @@
 *** ~inn-room~
 **** no
 **** yes
-*** ~heard-science~
-**** no
-**** told
-**** yes
-*** Dr. Louis Introduction (~talked-to-louis~)
-**** no
-     The player has not spoken to Dr. Louis. When he does so, she will
-     introduce herself and give him the Club Key. The game will then
-     move to `yes`.
-**** yes
-     The player has spoken to Dr. Louis.
-*** ~jumped-into-fire~
-**** no
-**** yes
-*** ~merchant-bot~
-**** no
-**** met
 *** ~secret-chamber-door~
 **** no
 **** yes
@@ -1261,11 +1265,53 @@
 **** no
 **** has
 **** yes
+*** ~subspace-portal~
+**** no
+**** river
+*** The Courthouse Door (~courthouse-door~)
+**** no
+     The door is locked. If the player exits the courthouse from the
+     inside, the door will become unlocked and the game will move to
+     `yes`.
+**** yes
+     The door is unlocked and can be entered from either side. If a
+     trial begins, the door will be locked again and the game will
+     move to `no`.
+*** ~moon-teleport~
+**** no
+**** yes
+*** ~golden-arch~
+**** no
+**** yes
+** World States
+*** ~trial-reason~
+**** {}
+**** murder
+**** escape
+*** ~been-to-prison~
+**** no
+**** yes
+*** ~awaiting-bus~
+**** no
+**** trees
+**** yes
+*** Exercise Field Soul (~exercise-soul~)
+**** no
+     The soul has not been collected. Talking to the exercise field
+     inmate will result in the player being killed unless he backs
+     off. If the player has the Soul Crystal, he can claim his soul,
+     giving him {Inmate's Soul} and moving to `yes`.
+**** yes
+     The inmate's soul has been taken. Talking to him will result in a
+     rather depressed response and nothing of interest happening.
+*** ~jumped-into-fire~
+**** no
+**** yes
 *** The Hero's Blade (~hero-blade~)
 **** no
      The player has not spoken to Atheena yet. When spoken to, she
      will introduce herself and the game will move to `met`. At this
-     time, she will activate the portal (`subspace-portal`).
+     time, she will activate the portal (~subspace-portal~).
 **** met
      The player has met Atheena. She will ...
 
@@ -1284,9 +1330,6 @@
      the bank about it, which will move the game to state `bank`.
 **** bank
      ////
-*** ~subspace-portal~
-**** no
-**** river
 *** ~attorney-self~
 **** no
 **** okay
@@ -1299,22 +1342,10 @@
 **** okay
 **** seen
 **** yes
-*** The Courthouse Door (~courthouse-door~)
-**** no
-     The door is locked. If the player exits the courthouse from the
-     inside, the door will become unlocked and the game will move to
-     `yes`.
-**** yes
-     The door is unlocked and can be entered from either side. If a
-     trial begins, the door will be locked again and the game will
-     move to `no`.
 *** ~guard-soul~
 **** no
 **** yes
 *** ~hunter-soul~
-**** no
-**** yes
-*** ~moon-teleport~
 **** no
 **** yes
 *** ~moon-mechanic~
@@ -1324,35 +1355,12 @@
 *** ~moon-train~
 **** no
 **** yes
-*** The Acolyte (~talked-to-acolyte~)
-**** no
-     The player has not spoken to the acolyte, Matthew, at the
-     subspace temple altar yet. When the player does so, the game
-     moves to `started`.
-**** started
-     The player has spoken to Matthew but not the Minister. When he
-     speaks to the Minister, whether or not his soul is clean, the
-     game moves to `yes`.
-**** yes
-     ////
-*** ~talked-to-steve~
-**** no
-**** yes
-*** ~golden-arch~
-**** no
-**** yes
-*** ~talked-to-reaper~
-**** no
-**** yes
 *** ~reaper-has-item~
 **** no
 **** {Necromancy Certificate}
 **** {Black Olive}
 **** 0
 *** ~stairs-tried~
-**** no
-**** yes
-*** ~talked-to-grigory~
 **** no
 **** yes
 *** ~motel-prison~
@@ -1367,12 +1375,6 @@
 *** ~captain-boat-place~
 **** dream
 **** warehouse
-*** ~talked-to-todd~
-**** no
-**** spoken
-**** {Scuba Suit}
-**** {Fireproof Suit}
-
 *** ~spirit-baker~
 **** no
 **** yes
