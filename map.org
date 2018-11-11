@@ -486,6 +486,7 @@
 **** minister
 **** catacombs
 **** cellar
+**** blackChest
 *** [Necromancy]
 **** boss <helper>
 **** solo <hp> <ehp>
@@ -574,6 +575,7 @@
  + Rusty Warehouse Key
  + Crystal Ball
  + Magic Scepter
+ + Cursed Chest
 
 ** Money Sources / Sinks
 
@@ -1422,6 +1424,9 @@
      The player has been through ~false-stage~ at least once. Some
      character dialogue will change to reflect this fact.
 *** ~reaper-blessing~
+**** no
+**** yes
+*** ~obtained-true-reaper~
 **** no
 **** yes
 * CHARACTERS

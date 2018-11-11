@@ -82,6 +82,8 @@ con
 state put talked-to-acolyte yes
 con
 state put subspace-freedom yes
+con
+state put reaper-blessing yes
 3
 4
 2

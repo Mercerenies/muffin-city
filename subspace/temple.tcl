@@ -151,10 +151,34 @@ namespace eval Subspace::Temple {
 
     proc cellar {} {
         puts "== Subspace Temple - Cellar =="
-        puts "The cellar is a small, dimly-lit circular room. There are boxes and chests\
-        stacked against the outer edges of the room."
+        puts -nonewline "The cellar is a small, dimly-lit circular room. There are boxes\
+        and chests stacked against the outer edges of the room."
+        if {[state get obtained-true-reaper] eq {yes}} then {
+            puts {}
+        } else {
+            puts " Of particular interest is a small black chest surrounded in a strange,\
+            malevolent aura."
+        }
         prompt {} {
+            {"Take the black chest" {[state get obtained-true-reaper] eq {no}} blackChest}
             {"Exit the cellar" yes catacombs}
+        }
+    }
+
+    proc blackChest {} {
+        if {[state get reaper-blessing] eq {yes}} then {
+            puts "You got the Cursed Chest!"
+            inv add {Cursed Chest}
+            state put obtained-true-reaper yes
+            puts {}
+            return cellar
+        } else {
+            puts "As soon as you touch the chest, you feel your heart stop."
+            if {[state get lobby-door] ne {yes}} then {
+                state put lobby-door other
+            }
+            puts {}
+            return ::Underworld::Lobby::other
         }
     }
 
