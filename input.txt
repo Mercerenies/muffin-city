@@ -88,11 +88,3 @@ con
 state put obtained-true-reaper yes
 con
 inv add {Cursed Chest}
-3
-4
-2
-3
-2
-3
-3
-2

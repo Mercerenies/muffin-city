@@ -428,6 +428,11 @@
 **** locksmithEntry
 **** locksmith
 **** steve
+**** steveChest
+**** steveChest1
+**** steveChestNo
+**** steveChestYes
+**** steveChest2
 *** [Police]
 **** station
 **** stationConfess
@@ -577,6 +582,7 @@
  + Crystal Ball
  + Magic Scepter
  + Cursed Chest
+ + Suspicious Briefcase
 
 ** Money Sources / Sinks
 
@@ -1020,6 +1026,10 @@
      blessing (~reaper-blessing~).
 **** accepted
      ////
+**** locksmith
+     ///// Here, Steve will have fallen to the underworld by the
+     curse. The Reaper will send the player to Johnny ("Mr. Death",
+     ahem), and Johnny will bring her back to the Other Room.
 *** The Captain's Anchor (~captain-boat~)
 **** no
      The player has not spoken to the captain yet. The captain will
@@ -1430,6 +1440,11 @@
 *** ~obtained-true-reaper~
 **** no
 **** yes
+*** ~steve-disappeared~
+**** no
+     Steve is still present in the past. ////
+**** gone
+     ////
 * CHARACTERS
 
 ** The Robber

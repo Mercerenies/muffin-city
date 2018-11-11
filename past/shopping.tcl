@@ -72,17 +72,25 @@ namespace eval Past::Shopping {
         puts "== Steve's Smash-a-Lock =="
         puts -nonewline "The locksmith's shop is very disorganized, with various locks, keys,\
         and other objects scattered around the floor. "
-        if {[state get talked-to-steve] eq {yes}} then {
+        if {[state get steve-disappeared] ne {no}} then {
+            puts {}
+            prompt {} {
+                {"Leave" yes ::Past::District::shopping}
+            }
+        } elseif {[state get talked-to-steve] eq {yes}} then {
             puts "Steve is standing behind the counter, fiddling with a small\
             padlock."
+            prompt {} {
+                {"Talk to Steve" yes steve}
+                {"Leave" yes ::Past::District::shopping}
+            }
         } else {
             puts "A young woman with glasses and hair in a ponytail is standing behind the\
             counter."
-        }
-        prompt {} {
-            {"Talk to Steve" {[state get talked-to-steve] eq {yes}} steve}
-            {"Talk to the woman" {[state get talked-to-steve] eq {no}} steve}
-            {"Leave" yes ::Past::District::shopping}
+            prompt {} {
+                {"Talk to the woman" yes steve}
+                {"Leave" yes ::Past::District::shopping}
+            }
         }
     }
 
@@ -90,6 +98,7 @@ namespace eval Past::Shopping {
         if {[state get talked-to-steve] eq {yes}} then {
             puts "\"If you've got a lock, we'll smash it!\""
             prompt {} {
+                {"Show her the Cursed Chest" {[inv has {Cursed Chest}]} steveChest}
                 {"\"Have a nice day.\"" yes locksmith}
             }
         } else {
@@ -97,9 +106,55 @@ namespace eval Past::Shopping {
             puts "\"Hi, there! I'm Steve, of Steve's Smash-a-Lock! If you've got a lock,\
             we'll smash it! What can I do for you?\""
             prompt {} {
+                {"Show her the Cursed Chest" {[inv has {Cursed Chest}]} steveChest}
                 {"\"Nothing right now. Thank you.\"" yes locksmith}
             }
         }
+    }
+
+    proc steveChest {} {
+        puts "\"You need this chest opened? Sure, I can do that.\""
+        prompt {} {
+            {"\"What's your price?\"" yes steveChest1}
+        }
+    }
+
+    proc steveChest1 {} {
+        puts "\"Tell you what. I won't even charge anything. All you've got to do\
+        is help me out with something.\""
+        puts "Steve takes a briefcase out of a desk drawer and sets it in front of you."
+        puts "\"I just need you to hold onto this for awhile. Just make sure the police\
+        don't get their hands on it.\""
+        prompt {} {
+            {"\"It's a deal.\"" yes steveChestYes}
+            {"\"I don't feel good about this.\"" yes steveChestNo}
+        }
+    }
+
+    proc steveChestNo {} {
+        puts "\"Hm... well let me know if you change your mind.\""
+        puts {}
+        return locksmith
+    }
+
+    proc steveChestYes {} {
+        puts "You got the Suspicious Briefcase!"
+        inv add {Suspicious Briefcase}
+        puts "You set the Cursed Chest on Steve's desk."
+        inv remove {Cursed Chest}
+        puts "\"I'll get to that in just a bit. I have to finish up with this\
+        one first.\""
+        state put reaper-helper locksmith
+        prompt {} {
+            {"Warn her about the curse" yes steveChest2}
+            {"Assume she'll figure it out" yes locksmith}
+        }
+    }
+
+    proc steveChest2 {} {
+        puts "\"What's that? An ancient curse? Oh, alright. I'll be careful.\""
+        puts {}
+        return locksmith
     }
 
 }

@@ -86,6 +86,7 @@ namespace eval State {
         subspace-freedom no
         reaper-blessing no
         obtained-true-reaper no
+        steve-disappeared no
     }]
 
     proc get {args} {
