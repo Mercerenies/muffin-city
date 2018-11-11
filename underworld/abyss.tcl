@@ -63,6 +63,7 @@ namespace eval Underworld::Abyss {
                 {"\"Can I have the Certificate now?\"" {([state get reaper-helper] in {item reset}) && ([state get reaper-has-item] eq {Necromancy Certificate})} reaperRequest}
                 {"\"Can I have the Olive now?\"" {([state get reaper-helper] in {item reset}) && ([state get reaper-has-item] eq {Black Olive})} reaperRequest}
                 {"\"What am I looking for?\"" {[state get reaper-helper] eq {accepted}} reaperReminder}
+                {"Give him the Cursed Chest" {[inv has {Cursed Chest}]} reaperUnlock}
                 {"\"Never mind.\"" yes thirdFloor}
             }
         } else {
@@ -172,6 +173,13 @@ namespace eval Underworld::Abyss {
     proc reaperReminder {} {
         puts "\"If you can obtain my stolen treasure from the Ancient Minister, I shall\
         return your [state get reaper-has-item].\""
+        puts {}
+        return thirdFloor
+    }
+
+    proc reaperUnlock {} {
+        puts "The Reaper rejects the chest."
+        puts "\"You must release the lock on the chest and return to me its contents.\""
         puts {}
         return thirdFloor
     }

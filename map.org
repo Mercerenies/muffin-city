@@ -300,6 +300,7 @@
 **** reaperRequest2
 **** reaperRequest3
 **** reaperReminder
+**** reaperUnlock
 **** void
 **** voidDirection
 **** voidSleep

@@ -84,6 +84,10 @@ con
 state put subspace-freedom yes
 con
 state put reaper-blessing yes
+con
+state put obtained-true-reaper yes
+con
+inv add {Cursed Chest}
 3
 4
 2
