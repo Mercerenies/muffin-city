@@ -60,8 +60,9 @@ namespace eval Underworld::Abyss {
             puts "\"Yes?\""
             prompt {} {
                 {"\"Did something fall from above recently?\"" {[state get necro-cipher] eq {beaten}} reaperFall}
-                {"\"Can I have the Certificate now?\"" {([state get reaper-helper] eq {item}) && ([state get reaper-has-item] eq {Necromancy Certificate})} reaperRequest}
-                {"\"Can I have the Olive now?\"" {([state get reaper-helper] eq {item}) && ([state get reaper-has-item] eq {Black Olive})} reaperRequest}
+                {"\"Can I have the Certificate now?\"" {([state get reaper-helper] in {item reset}) && ([state get reaper-has-item] eq {Necromancy Certificate})} reaperRequest}
+                {"\"Can I have the Olive now?\"" {([state get reaper-helper] in {item reset}) && ([state get reaper-has-item] eq {Black Olive})} reaperRequest}
+                {"\"What am I looking for?\"" {[state get reaper-helper] eq {accepted}} reaperReminder}
                 {"\"Never mind.\"" yes thirdFloor}
             }
         } else {
@@ -126,7 +127,51 @@ namespace eval Underworld::Abyss {
     }
 
     proc reaperRequest {} {
-        puts "\"In good time, child. In good time.\""
+        if {([state get reaper-helper] eq {reset}) && ([state get butler-game] ni {no cell cell1 pawn pawn1 shabby})} then {
+            puts "\"Hm... yes, I believe I have decided. You may have the\
+            [state get reaper-has-item], after you do a small favor for me.\""
+            prompt {} {
+                {"\"I'm listening.\"" yes reaperRequest1}
+                {"\"No thanks.\"" yes thirdFloor}
+            }
+        } else {
+            puts "\"In good time, child. In good time.\""
+            puts {}
+            return thirdFloor
+        }
+    }
+
+    proc reaperRequest1 {} {
+        puts "\"In the depths of subspace, there is a temple. The Ancient Minister of that\
+        temple has had an ongoing rivalry with the underworld for some time now. A few\
+        centuries ago, he stole something very dear to me. If you can recover this object,\
+        then I will return your [state get reaper-has-item].\""
+        prompt {} {
+            {"\"What sort of item?\"" yes reaperRequest2}
+        }
+    }
+
+    proc reaperRequest2 {} {
+        puts "\"You will find what you are looking for locked in a black chest, surrounded\
+        by a cursed aura that eliminates anyone who touches it. With my blessing, you will\
+        have the power to bypass this curse. Find the chest and release the lock on it, and\
+        I shall return the [state get reaper-has-item].\""
+        prompt {} {
+            {"\"Consider it done.\"" yes reaperRequest3}
+        }
+    }
+
+    proc reaperRequest3 {} {
+        state put reaper-helper accepted
+        state put reaper-blessing yes
+        puts "\"Very well. I anticipate your return.\""
+        puts {}
+        return thirdFloor
+    }
+
+    proc reaperReminder {} {
+        puts "\"If you can obtain my stolen treasure from the Ancient Minister, I shall\
+        return your [state get reaper-has-item].\""
         puts {}
         return thirdFloor
     }

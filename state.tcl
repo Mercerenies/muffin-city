@@ -84,6 +84,7 @@ namespace eval State {
         false-stage-ran no
         stage-coin no
         subspace-freedom no
+        reaper-blessing no
     }]
 
     proc get {args} {

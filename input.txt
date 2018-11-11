@@ -53,7 +53,7 @@ state put talked-to-reaper yes
 con
 state put reaper-has-item {Black Olive}
 con
-state put reaper-helper item
+state put reaper-helper accepted
 con
 state put motel-ghost motel
 con

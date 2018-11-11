@@ -296,6 +296,10 @@
 **** reaperCertificate
 **** reaperOlive
 **** reaperRequest
+**** reaperRequest1
+**** reaperRequest2
+**** reaperRequest3
+**** reaperReminder
 **** void
 **** voidDirection
 **** voidSleep
@@ -1004,7 +1008,15 @@
      After the player reenters the starting area of the game, the game
      moves to ~reset~.
 **** reset
-     The player has been back to the hub area. /////
+     The player has been back to the hub area. If the player has
+     triggered the third butler event (~butler-game~ is ~shabby1~ or
+     beyond) and the game is in this state when he talks to the
+     Reaper, then he will offer a quest based around reclaiming an
+     item from the Ancient Minister. Upon accepting the quest, the
+     game moves to ~accepted~ and the player receives the Reaper's
+     blessing (~reaper-blessing~).
+**** accepted
+     ////
 *** The Captain's Anchor (~captain-boat~)
 **** no
      The player has not spoken to the captain yet. The captain will
@@ -1409,6 +1421,9 @@
 **** yes
      The player has been through ~false-stage~ at least once. Some
      character dialogue will change to reflect this fact.
+*** ~reaper-blessing~
+**** no
+**** yes
 * CHARACTERS
 
 ** The Robber
