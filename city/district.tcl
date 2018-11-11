@@ -17,6 +17,9 @@ namespace eval City::District {
         if {([state get cottage-spirit] eq {evil}) && ([state get butler-game] ni {no cell})} then {
             state put cottage-spirit starlight
         }
+        if {[state get reaper-helper] eq {item}} then {
+            state put reaper-helper reset
+        }
         prompt {} {
             {"Go to the hotel district" yes hotel}
             {"Go to the shopping district" yes shopping}

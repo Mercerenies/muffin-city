@@ -996,11 +996,15 @@
 **** no
      The player has not done anything for the Reaper yet. When the
      player claims an item from the Reaper via ~necro-cipher~ in
-     `beaten`, the game moves to `item`.
+     ~beaten~, the game moves to ~item~.
 **** item
      The player has claimed one item from the Reaper, but the Reaper
      is not ready to give the player a quest. If the player asks for
      the other item in this state, the Reaper will decline to give it.
+     After the player reenters the starting area of the game, the game
+     moves to ~reset~.
+**** reset
+     The player has been back to the hub area. /////
 *** The Captain's Anchor (~captain-boat~)
 **** no
      The player has not spoken to the captain yet. The captain will
