@@ -20,13 +20,16 @@ namespace eval Underworld::Johnny {
                     {"Give him Inmate's Soul" {[inv has {Inmate's Soul}]} {given {Inmate's Soul}}}
                     {"Give him Guard's Soul" {[inv has {Guard's Soul}]} {given {Guard's Soul}}}
                     {"Give him Hunter's Soul" {[inv has {Hunter's Soul}]} {given {Hunter's Soul}}}
+                    {"Ask him about Steve" {[state get steve-disappeared] in {gone gone1 resurrected}} steve}
                     {"\"Not right now.\"" yes ::Underworld::Elevator::balcony}
                 }
             }
             default {
                 puts "\"Hey, thanks for the help with my display! It looks perfect now!\""
-                puts {}
-                return ::Underworld::Elevator::balcony
+                prompt {} {
+                    {"Ask him about Steve" {[state get steve-disappeared] in {gone gone1 resurrected}} steve}
+                    {"\"You're welcome.\"" yes ::Underworld::Elevator::balcony}
+                }
             }
         }
     }
@@ -123,6 +126,30 @@ namespace eval Underworld::Johnny {
         state put jumped-into-fire yes
         puts {}
         return ::Underworld::Elevator::balcony
+    }
+
+    proc steve {} {
+        switch [state get steve-disappeared] {
+            gone {
+                puts "\"What's that? You need me to bring back your friend? Well, if she's\
+                trying to help the Reaper, then I'm happy to help. I'll deal with all of\
+                the paperwork. It'll take a little while, so come check back in later, okay?\""
+                state put steve-disappeared gone1
+                puts {}
+                return ::Underworld::Elevator::balcony
+            }
+            gone1 {
+                puts "\"It'll be a little while before the paperwork goes through. Check\
+                in later, okay?\""
+                puts {}
+                return ::Underworld::Elevator::balcony
+            }
+            resurrected {
+                puts "\"The paperwork went through. Steve is in the Other Room.\""
+                puts {}
+                return ::Underworld::Elevator::balcony
+            }
+        }
     }
 
 }

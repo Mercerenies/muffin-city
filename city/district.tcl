@@ -20,6 +20,9 @@ namespace eval City::District {
         if {[state get reaper-helper] eq {item}} then {
             state put reaper-helper reset
         }
+        if {[state get steve-disappeared] eq {gone1}} then {
+            state put steve-disappeared resurrected
+        }
         prompt {} {
             {"Go to the hotel district" yes hotel}
             {"Go to the shopping district" yes shopping}

@@ -89,4 +89,4 @@ state put obtained-true-reaper yes
 con
 inv add {Cursed Chest}
 con
-state put steve-disappeared gone
+state put steve-disappeared resurrected

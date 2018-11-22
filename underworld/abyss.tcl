@@ -64,6 +64,7 @@ namespace eval Underworld::Abyss {
                 {"\"Can I have the Olive now?\"" {([state get reaper-helper] in {item reset}) && ([state get reaper-has-item] eq {Black Olive})} reaperRequest}
                 {"\"What am I looking for?\"" {[state get reaper-helper] eq {accepted}} reaperReminder}
                 {"Give him the Cursed Chest" {[inv has {Cursed Chest}]} reaperUnlock}
+                {"Ask about Steve" {[state get steve-disappeared] eq {gone}} reaperSteve}
                 {"\"Never mind.\"" yes thirdFloor}
             }
         } else {
@@ -180,6 +181,21 @@ namespace eval Underworld::Abyss {
     proc reaperUnlock {} {
         puts "The Reaper rejects the chest."
         puts "\"You must release the lock on the chest and return to me its contents.\""
+        puts {}
+        return thirdFloor
+    }
+
+    proc reaperSteve {} {
+        puts "\"Your friend has fallen victim to the curse of my chest. I can feel her\
+        presence. Please, speak to Mr. Death. He can revive your friend.\""
+        prompt {} {
+            {"\"Mr. Death?\"" yes reaperSteve1}
+            {"\"Thank you.\"" yes thirdFloor}
+        }
+    }
+
+    proc reaperSteve1 {} {
+        puts "\"You know him as Johnny. He is the one who can revive your friend.\""
         puts {}
         return thirdFloor
     }

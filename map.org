@@ -273,6 +273,7 @@
 **** okay
 **** given <soultype>
 **** climbed
+**** steve
 *** [Pits]
 **** freight
 **** freightCoin
@@ -301,6 +302,8 @@
 **** reaperRequest3
 **** reaperReminder
 **** reaperUnlock
+**** reaperSteve
+**** reaperSteve1
 **** void
 **** voidDirection
 **** voidSleep
@@ -1458,9 +1461,17 @@
 **** yes
 *** ~steve-disappeared~
 **** no
-     Steve is still present in the past. ////
+     Steve is still present in the past. After the player (through
+     ~reaper-helper~) gives her the Cursed Chest, she will disappear
+     and the game will move to ~gone~.
 **** gone
-     ////
+     Steve has disappeared. If the player talks to the Reaper, he will
+     refer him to Johnny. Johnny, on the other hand, will happily
+     help, moving the game to ~gone1~.
+**** gone1
+     Johnny is filing the paperwork to bring Steve back. When the
+     player returns to the central hub area, the game will move to
+     ~resurrected~.
 **** resurrected
      ////
 * CHARACTERS
@@ -1753,6 +1764,16 @@
    rule. The Crystal Ball can't travel to the underworld with the
    player if he dies. So he has to find a route back which doesn't
    involve dying.
+** ACCEPTED Steve's Later Fate
+   After Steve gets taken by the curse of the True Reaper, the player
+   will have to resurrect her with Johnny's help. After that, she'll
+   be in the Other Room for a bit. Then she'll get her own room in the
+   underworld next to Dr. Cipher's, where she'll run a new locksmith
+   shop.
+
+   When the lions chase the player down after the bank robbery, Steve
+   will flee to a safe room in the Ritzy Inn, where the player will
+   have to visit her to get the bank vault unlocked.
 * MISCELLANEOUS
 
 ** Test
