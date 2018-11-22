@@ -53,10 +53,17 @@ namespace eval Underworld::Lobby {
 
     proc other {} {
         puts "== Other Room =="
-        puts "You find yourself in a rather strange room with odd implements scattered throughout. On\
-        one side, there are some basic dental instruments. On a table near the back, there are some\
-        children's toys. There seems to only be one door leading out of this room."
+        puts -nonewline "You find yourself in a rather strange room with odd implements\
+        scattered throughout. On one side, there are some basic dental instruments. On a\
+        table near the back, there are some children's toys. There seems to only be one\
+        door leading out of this room."
+        if {[state get steve-disappeared] eq {resurrected}} then {
+            puts " Steve is leaning against one of the tables, looking somewhat confused."
+        } else {
+            puts {}
+        }
         prompt {} {
+            {"Talk to Steve" yes steve}
             {"Step out the door" yes hub}
         }
     }
@@ -87,6 +94,11 @@ namespace eval Underworld::Lobby {
         state put hunter-soul yes
         puts {}
         return wildlife
+    }
+
+    proc steve {} {
+        # /////
+        return -gameover
     }
 
     proc hub {} {
