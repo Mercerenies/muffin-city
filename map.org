@@ -427,12 +427,14 @@
 **** pawnWheelNotYet
 **** locksmithEntry
 **** locksmith
+**** locksmithCurse
 **** steve
 **** steveChest
 **** steveChest1
 **** steveChestNo
 **** steveChestYes
 **** steveChest2
+**** steveChestBusy
 *** [Police]
 **** station
 **** stationConfess
@@ -1025,11 +1027,25 @@
      game moves to ~accepted~ and the player receives the Reaper's
      blessing (~reaper-blessing~).
 **** accepted
-     ////
+     The player has accepted the Reaper's quest. Now, if he attempts
+     to take the Cursed Chest from the subspace temple, he will
+     succeed. The Cursed Chest is locked, so the Reaper will not
+     accept it in its current state. Instead, the player must take the
+     Cursed Chest to Steve's. Steve will agree to open the chest in
+     exchange for the player holding onto the Suspicious Briefcase for
+     her. At that time, the game will move to ~locksmith~.
 **** locksmith
-     ///// Here, Steve will have fallen to the underworld by the
-     curse. The Reaper will send the player to Johnny ("Mr. Death",
-     ahem), and Johnny will bring her back to the Other Room.
+     Steve hasn't gotten around to working on the Cursed Chest yet.
+     When the player leaves the locksmith's shop, she will get around
+     to it, so the game will move to ~locksmith1~ and
+     ~steve-disappeared~ will move to ~gone~.
+**** locksmith1
+     Steve has disappeared and is completely inaccessible for the
+     moment. If the player speaks to the Reaper, he will refer him to
+     Johnny. Johnny can bring Steve back in the Other Room
+     (~steve-disappeared~ moves to ~resurrected~). At any point in
+     this state, the player can take the chest back from Steve's shop
+     in the past. ////
 *** The Captain's Anchor (~captain-boat~)
 **** no
      The player has not spoken to the captain yet. The captain will
@@ -1444,6 +1460,8 @@
 **** no
      Steve is still present in the past. ////
 **** gone
+     ////
+**** resurrected
      ////
 * CHARACTERS
 

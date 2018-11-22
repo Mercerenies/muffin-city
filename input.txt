@@ -53,7 +53,7 @@ state put talked-to-reaper yes
 con
 state put reaper-has-item {Black Olive}
 con
-state put reaper-helper accepted
+state put reaper-helper locksmith1
 con
 state put motel-ghost motel
 con
@@ -88,3 +88,5 @@ con
 state put obtained-true-reaper yes
 con
 inv add {Cursed Chest}
+con
+state put steve-disappeared gone

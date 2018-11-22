@@ -71,21 +71,29 @@ namespace eval Past::Shopping {
     proc locksmith {} {
         puts "== Steve's Smash-a-Lock =="
         puts -nonewline "The locksmith's shop is very disorganized, with various locks, keys,\
-        and other objects scattered around the floor. "
+        and other objects scattered around the floor."
         if {[state get steve-disappeared] ne {no}} then {
-            puts {}
-            prompt {} {
-                {"Leave" yes ::Past::District::shopping}
+            if {([state get reaper-helper] eq {locksmith1}) && (![inv has {Cursed Chest}])} then {
+                puts " The Cursed Chest is sitting on the counter."
+                prompt {} {
+                    {"Take the Cursed Chest" yes locksmithCurse}
+                    {"Leave" yes ::Past::District::shopping}
+                    }
+            } else {
+                puts {}
+                prompt {} {
+                    {"Leave" yes ::Past::District::shopping}
+                }
             }
         } elseif {[state get talked-to-steve] eq {yes}} then {
-            puts "Steve is standing behind the counter, fiddling with a small\
+            puts " Steve is standing behind the counter, fiddling with a small\
             padlock."
             prompt {} {
                 {"Talk to Steve" yes steve}
                 {"Leave" yes ::Past::District::shopping}
             }
         } else {
-            puts "A young woman with glasses and hair in a ponytail is standing behind the\
+            puts " A young woman with glasses and hair in a ponytail is standing behind the\
             counter."
             prompt {} {
                 {"Talk to the woman" yes steve}
@@ -94,11 +102,19 @@ namespace eval Past::Shopping {
         }
     }
 
+    proc locksmithCurse {} {
+        puts "You got the Cursed Chest!"
+        inv add {Cursed Chest}
+        puts {}
+        return locksmith
+    }
+
     proc steve {} {
         if {[state get talked-to-steve] eq {yes}} then {
             puts "\"If you've got a lock, we'll smash it!\""
             prompt {} {
                 {"Show her the Cursed Chest" {[inv has {Cursed Chest}]} steveChest}
+                {"\"The chest?\"" {[state get reaper-helper] eq {locksmith}} steveChestBusy}
                 {"\"Have a nice day.\"" yes locksmith}
             }
         } else {
@@ -153,6 +169,12 @@ namespace eval Past::Shopping {
 
     proc steveChest2 {} {
         puts "\"What's that? An ancient curse? Oh, alright. I'll be careful.\""
+        puts {}
+        return locksmith
+    }
+
+    proc steveChestBusy {} {
+        puts "\"I'll get on it as soon as I finish up over here.\""
         puts {}
         return locksmith
     }

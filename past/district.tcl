@@ -30,6 +30,10 @@ namespace eval Past::District {
         which was not there later in the day is open, with a large sign reading \"Steve's\
         Smash-a-Lock\" above the door. The elevator still looks out of place at this\
         time of day."
+        if {[state get reaper-helper] eq {locksmith}} then {
+            state put reaper-helper locksmith1
+            state put steve-disappeared gone
+        }
         # //// Elevator
         prompt {} {
             {"Enter the market" yes marketClosed}
