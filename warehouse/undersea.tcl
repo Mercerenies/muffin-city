@@ -17,7 +17,7 @@ namespace eval Warehouse::Undersea {
         puts "== Undersea Kingdom Gates =="
         puts "You find yourself outside a magnificent undersea kingdom. The gate to\
         the kingdom is wide open, and a young mermaid floats beside the gate."
-        # /////
+        # ////
         prompt {} {
             {"Enter the kingdom" yes kingdom}
             {"Swim toward the surface" yes undersea}

@@ -1076,7 +1076,7 @@ NOTES:
  * Prehistory contains a grocery store with a labyrinth underneath it. At the base of the labyrinth (explorable by subspace map? what if the subspace map is just a special map that works in subspace, labyrinth, and shrunk ventilation and its not specific to subspace?) there is a jungle dome with a passcode to get in
  * The Reaper calls in the player's favor. Possibly to help retrieve a stolen item from the Ancient Minister (do they have a rivalry or something?).
  * Attorney-Man's reward?
- * If the Reaper has both the Black Olive and the Necromancy Certificate, then what if he only gives the player one of the two (player gets to choose) then requires a quest for the other? /////
+ * If the Reaper has both the Black Olive and the Necromancy Certificate, then what if he only gives the player one of the two (player gets to choose) then requires a quest for the other? ////
  * The True Reaper is sealed away in the Ancient Minister's temple? Sealed away in a chest that only Steve's Smash-a-Lock can help with?
  * The Black Olive needs to do something (double subspace???)
  * Heart Room in the past does something? (possibly just an easter egg; exit blocked off?)
