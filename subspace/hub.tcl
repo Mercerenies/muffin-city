@@ -85,7 +85,7 @@ namespace eval Subspace::Hub {
     proc bankTalk {} {
         puts "\"What can I help you with?\""
         prompt {} {
-            {"\"Where is Atheena's diamond?\"" {[state get hero-crystal] eq {intro}} bankCrystal}
+            {"\"Where is Atheena's diamond?\"" {[state get hero-crystal] in {intro bank}} bankCrystal}
             {"\"Nothing right now.\"" yes bankOffice}
         }
     }
@@ -94,14 +94,22 @@ namespace eval Subspace::Hub {
         puts "\"All repossessed items are kept in the bank's vault, secured beyond the subspace\
         storm. If you want to reclaim it, you'll have to repay Atheena's debt of... 4000 Silver\
         Coins.\""
+        state put hero-crystal bank
         prompt {} {
             {"Give him 4000 Silver Coins" {[inv count {Silver Coin}] >= 4000} bankNoWay}
+            {"Take out the Platinum Card" {[inv has {Platinum Card}]} bankNoCard}
             {"\"I can't afford that.\"" yes bankOffice}
         }
     }
 
     proc bankNoWay {} {
         puts "\"I don't believe you got all of that money without hacking the game.\""
+        puts {}
+        return bankOffice
+    }
+
+    proc bankNoCard {} {
+        puts "\"Sorry, cash and coins only.\""
         puts {}
         return bankOffice
     }

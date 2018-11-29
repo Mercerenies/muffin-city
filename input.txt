@@ -90,3 +90,5 @@ con
 inv add {Cursed Chest}
 con
 state put steve-disappeared resurrected
+con
+inv add {Platinum Card}

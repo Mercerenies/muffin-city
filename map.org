@@ -456,6 +456,7 @@
 **** bankTalk
 **** bankCrystal
 **** bankNoWay
+**** bankNoCard
 **** storm
 **** attic
 **** atticExpand
@@ -1382,11 +1383,11 @@
 *** The Hero's Crystal (~hero-crystal~)
 **** no
      The player does not know about the crystal yet. If he talks to
-     Atheena in state `met` or `yes`, he will have the option to ask
-     her about the projector, which will move the game to `intro`.
+     Atheena in state ~met~ or ~yes~, he will have the option to ask
+     her about the projector, which will move the game to ~intro~.
 **** intro
      The player knows that the bank has the crystal. He can confront
-     the bank about it, which will move the game to state `bank`.
+     the bank about it, which will move the game to state ~bank~.
 **** bank
      ////
 *** ~attorney-self~
@@ -1587,6 +1588,9 @@
    So not Joe, as we've already done that. Maybe after the events with
    the cottage? The evil flame spirit is awoken because his brethren
    were defeated?
+
+   Waterproof fireball? Needed to fight the shark off the warehouse
+   island coast?
 ** ACCEPTED The Minister's Record
    The Ancient Minister will tell you how you ended up in subspace
    (mainly to help the player understand). If the player has no record
@@ -1696,7 +1700,7 @@
    Merchant-bot is gone (in the underworld? idk. Either way, he won't
    talk to the player), you have to get the key from (present-day)
    Todd and go to the past to talk to past Merchant-bot at his shop.
-** ACCEPTED Bank Card
+** DONE Bank Card
    Just a small thing. But you should be able to /attempt/ to pay
    Atheena's loan with the Platinum Card. It will fail, of course, but
    it should be an option.
@@ -1775,6 +1779,34 @@
    When the lions chase the player down after the bank robbery, Steve
    will flee to a safe room in the Ritzy Inn, where the player will
    have to visit her to get the bank vault unlocked.
+** CONSIDERING Harry the Arsonist
+   + I don't really know what I'm planning here. Just might be cool to
+     have him if we need someone who does something with fire.
+   + It's possible he could play into the evil flame spirit in some
+     way, given their obvious mutual fascination with fire.
+** CONSIDERING The Alien Factory
+   Alright, so this is sort of two different ideas that I think fit
+   well together.
+
+   Idea 1: A factory. Probably in space or on the moon. Some sort of
+   sinister plot going on here. Maybe the aliens are in cahoots with
+   the people on the top floor of the Ritzy Inn. Or maybe something
+   else. I don't really know yet.
+
+   Idea 2: A guy who locked himself into a room because he turns into
+   a giant rock monster if he is exposed to the outside air. The room
+   is filled with mirrors, as his reflection stops him from
+   transforming. The player has to transform him (which cracks the
+   mirror), lure him out of the room, and find another mirror. Then
+   he'll turn back and the player can safely visit his room, where
+   there's some useful item waiting.
+
+   So, if we combine these two, we get a guy who locked himself in a
+   room in the basement of a sinister factory (did the factory
+   experiment on him?) to protect everyone from his monster form. As
+   one task, the player has to get the item in the mirror room by
+   luring the monster out. Separately, as another task, he has to get
+   to the bottom of the factory's evil intentions.
 * MISCELLANEOUS
 
 ** Test
