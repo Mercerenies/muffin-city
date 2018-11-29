@@ -63,7 +63,7 @@ namespace eval Underworld::Lobby {
             puts {}
         }
         prompt {} {
-            {"Talk to Steve" yes steve}
+            {"Talk to Steve" {[state get steve-disappeared] eq {resurrected}} steve}
             {"Step out the door" yes hub}
         }
     }
