@@ -97,8 +97,81 @@ namespace eval Underworld::Lobby {
     }
 
     proc steve {} {
-        # /////
-        return -gameover
+        switch [state get reaper-helper] {
+            locksmith1 {
+                puts "\"Uhh....\""
+                prompt {} {
+                    {"Explain what happened" yes steve1}
+                    {"\"Later.\"" yes other}
+                }
+            }
+            locksmith2 {
+                puts "\"Got a lock for me?\""
+                prompt {} {
+                    {"Give her the Cursed Chest" {[inv has {Cursed Chest}]} steveCurse}
+                    {"\"Not yet.\"" yes other}
+                }
+            }
+            default {
+                puts "\"What can I do for you?\""
+                prompt {} {
+                    {"\"Nothing right now.\"" yes other}
+                }
+            }
+        }
+    }
+
+    proc steve1 {} {
+        puts "\"So... that chest sent me down here? Huh... that's an impressive lock in\
+        that case. But if I really am undead now, then the curse shouldn't be able to\
+        kill me again. We did have a deal, so if you can go get the Cursed Chest out of\
+        my shop, I'll unlock it for you.\""
+        state put reaper-helper locksmith2
+        prompt {} {
+            {"Give her the Cursed Chest" {[inv has {Cursed Chest}]} steveCurse}
+            {"\"I'll do it.\"" yes other}
+        }
+    }
+
+    proc steveCurse {} {
+        puts "Steve takes the Cursed Chest, which seems to have no effect on her\
+        anymore. With the help of a few of the dental instruments scattered about,\
+        Steve easily snaps the lock off the chest. As soon as the lock is released,\
+        the dark aura around the chest disappears, and a large, faceless shadow\
+        being emerges violently from the chest."
+        puts "\"I... am... awake!\""
+        prompt {} {
+            {"\"Who are you?\"" yes steveCurse1}
+        }
+    }
+
+    proc steveCurse1 {} {
+        puts "\"I am the Reaper, to whom all souls will one day return.\""
+        prompt {} {
+            {"\"The Reaper sent me...\"" yes steveCurse2}
+        }
+    }
+
+    proc steveCurse2 {} {
+        puts "\"Ah... I see. Some clarification is in order. Both of you have my\
+        deepest gratitude for facilitating my rescue. Please visit me in my chambers,\
+        and I will explain everything.\""
+        puts "The Reaper melts into the floor before you can say anything else. Steve\
+        looks understandably confused."
+        puts "\"So... was that supposed to happen?\""
+        state put reaper-helper recovered
+        prompt {} {
+            {"\"I think so.\"" yes steveCurse3}
+            {"\"I have no idea.\"" yes steveCurse3}
+        }
+    }
+
+    proc steveCurse3 {} {
+        puts "\"Huh... well, either way, I think I'm going to stay here and get my bearings.\
+        You should probably go visit the Reaper.\""
+        prompt {} {
+            {"\"Good idea.\"" yes other}
+        }
     }
 
     proc hub {} {

@@ -245,6 +245,11 @@
 **** hunter
 **** stealing
 **** steve
+**** steve1
+**** steveCurse
+**** steveCurse1
+**** steveCurse2
+**** steveCurse3
 **** hub
 *** [Elevator]
 **** staircase
@@ -1050,7 +1055,17 @@
      Johnny. Johnny can bring Steve back in the Other Room
      (~steve-disappeared~ moves to ~resurrected~). At any point in
      this state, the player can take the chest back from Steve's shop
-     in the past. ////
+     in the past. After the player talks to Steve in the Other Room,
+     the game moves to ~locksmith2~.
+**** locksmith2
+     The player has spoken to Steve in the underworld. The game will
+     remain in this state until he delivers the Cursed Chest to Steve,
+     at which time the previous Reaper will be released. The previous
+     Reaper will thank the player and fade back toward the abyss,
+     leaving Steve understandably confused. At this time, the game
+     moves to ~recovered~.
+**** recovered
+     ///// Haven't done this one yet
 *** The Captain's Anchor (~captain-boat~)
 **** no
      The player has not spoken to the captain yet. The captain will
@@ -1509,6 +1524,7 @@
 ** Kingdom Gatekeeper
 ** The Fence
 ** Silver Starlight
+** The True Reaper
 * NOTES
 
 ** ACCEPTED Cave and Lantern
@@ -1618,7 +1634,7 @@
    something?).
  + If the Reaper has both the Black Olive and the Necromancy
    Certificate, then what if he only gives the player one of the two
-   (player gets to choose) then requires a quest for the other? /////
+   (player gets to choose) then requires a quest for the other? ////
  + The True Reaper is sealed away in the Ancient Minister's temple?
    Sealed away in a chest that only Steve's Smash-a-Lock can help
    with?
@@ -1629,6 +1645,7 @@
  + The Black Olive needs to do something (double subspace???)
  + Heart Room in the past does something? (possibly just an easter
    egg; exit blocked off?)
+ + Steve's Suspicious Briefcase doesn't do anything right now.
 ** CONSIDERING The Flaming Axe
  + The Flaming Axe of Doom was used by the First Reaper to carve out
    the Underworld before time itself. Possibly, we can visit this
