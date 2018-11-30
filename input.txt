@@ -51,9 +51,9 @@ state put taco-shop fed
 con
 state put talked-to-reaper yes
 con
-state put reaper-has-item {Black Olive}
+state put reaper-has-item 0
 con
-state put reaper-helper locksmith1
+state put reaper-helper yes
 con
 state put motel-ghost motel
 con
@@ -87,10 +87,10 @@ state put reaper-blessing yes
 con
 state put obtained-true-reaper yes
 con
-inv add {Cursed Chest}
-con
 state put steve-disappeared resurrected
 con
 inv add {Platinum Card}
 con
 state put lobby-door yes
+con
+inv add {Black Olive}

@@ -310,6 +310,12 @@
 **** reaperUnlock
 **** reaperSteve
 **** reaperSteve1
+**** reaperFinished
+**** reaperBefore
+**** reaperBefore1
+**** reaperMerged
+**** reaperMerged1
+**** reaperReward
 **** void
 **** voidDirection
 **** voidSleep
@@ -1004,7 +1010,7 @@
      recovered. It has fallen into the hands of the Reaper in the
      abyss. When the player addresses the Reaper, he will offer the
      player either the Black Olive or the Necromancy Certificate. The
-     player must choose one (reaper-has-item) to take for free. The
+     player must choose one (~reaper-has-item~) to take for free. The
      other item will become available after completing a quest for the
      Reaper. Upon choosing the first item, the game moves to `item`.
 **** item
@@ -1065,7 +1071,9 @@
      leaving Steve understandably confused. At this time, the game
      moves to ~recovered~.
 **** recovered
-     ///// Haven't done this one yet
+     The two Reapers have merged. If the player visits them, they will
+     thank him and offer the item as promised. ~reaper-has-item~ will
+     move to ~0~ and the game will move to ~yes~.
 *** The Captain's Anchor (~captain-boat~)
 **** no
      The player has not spoken to the captain yet. The captain will
@@ -1824,6 +1832,58 @@
    one task, the player has to get the item in the mirror room by
    luring the monster out. Separately, as another task, he has to get
    to the bottom of the factory's evil intentions.
+** CONSIDERING Shark Attack
+   So, there's this empty area between the warehouse docks and the
+   merfolk kingdom. If you wander around there blindly, a shark will
+   find you and chase you, giving us another opportunity for a
+   dynamic, resettable interaction like that of the thug.
+
+   1. You wander around underwater. Shark appears. Your options are to
+      swim up, swim down, or swim toward the shark. Guess which of
+      these options is a bad idea.
+      - Swim up (3)
+      - Swim down (6)
+      - Swim toward (2)
+
+   2. You... swim toward the shark. Eaten alive. Have fun with that.
+      Instant death.
+
+   3. The shark chases you and finds itself beached. Probably will get
+      a fun panicked reaction out of the captain if he's there. The
+      shark will remain beached.
+      - Shove him back into the water (4)
+      - Shrink down (5)
+
+   4. Shoving him back into the water resets the state. Go to (1).
+
+   5. By going back and using the shrink machine while the shark is
+      beached, you can get back to the warehouse island (it's /not/
+      easy; you have to have fireproof suit and travel through
+      underworld which will probably be hard to get to). You can go
+      inside the shark, which... I don't know. Something cool happens
+      here, I guess. Then afterward we go back to (3).
+
+   6. You swim into the kingdom. The gatekeeper panics and closes the
+      gate, locking the shark out. She won't reopen the gate for you
+      (for obvious reasons). For this to work, there needs to be some
+      other way out of the kingdom, probably a bed. You can ask the
+      gatekeeper, and she'll tell you the shark is terrified of fire.
+      - Exit the kingdom (7)
+      - Use the fireball you got from probably the flame spirit (8)
+
+   7. Reset. The shark goes away. Everyone's happy. Go to (1).
+
+   8. You chase the shark away. You're a hero. Congratulations. The
+      castle gates are now open to you. A new area to explore, some
+      new characters, fun stuff. Go to 1.
+
+** CONSIDERING The Resistance
+   To fight the sinister government agents (probably those in the
+   Ritzy Inn), a resistance has been formed. Their secret base, for
+   safety reasons, exists in the dream plane. With a specific item,
+   you can pass through the airport walls and find them. Initially,
+   you'll encounter one of them somewhere else and that person will
+   tell you how to get in.
 * MISCELLANEOUS
 
 ** Test

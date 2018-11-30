@@ -55,8 +55,13 @@ namespace eval Underworld::Abyss {
     }
 
     proc reaper {} {
-        # //// Certificate
-        if {[state get talked-to-reaper] eq {yes}} then {
+        if {[state get reaper-helper] eq {recovered}} then {
+            puts "\"It is good to see you again.\""
+            prompt {} {
+                {"\"What was in that chest?\"" yes reaperFinished}
+                {"\"Goodbye.\"" yes thirdFloor}
+            }
+        } elseif {[state get talked-to-reaper] eq {yes}} then {
             puts "\"Yes?\""
             prompt {} {
                 {"\"Did something fall from above recently?\"" {[state get necro-cipher] eq {beaten}} reaperFall}
@@ -196,6 +201,65 @@ namespace eval Underworld::Abyss {
 
     proc reaperSteve1 {} {
         puts "\"You know him as Johnny. He is the one who can revive your friend.\""
+        puts {}
+        return thirdFloor
+    }
+
+    proc reaperFinished {} {
+        puts "\"The Reaper before me was in that chest. The Ancient Minister trapped him\
+        within it several centuries ago. Now that he has been released, our two spirits\
+        have merged into one.\""
+        prompt {} {
+            {"\"The Reaper before you?\"" yes reaperBefore}
+            {"\"Merged into one?\"" yes reaperMerged}
+        }
+    }
+
+    proc reaperBefore {} {
+        puts "\"There have been many Reapers throughout time. We Reapers have inhabited\
+        this planet far longer than you humans. When one of us becomes weary, another\
+        mortal soul steps up to claim his place. Now that the previous Reaper's soul\
+        has been recovered, the misdeed of the Ancient Minister has been set right.\""
+        prompt {} {
+            {"\"What do you mean by merged?\"" yes reaperMerged1}
+        }
+    }
+
+    proc reaperBefore1 {} {
+        puts "\"There have been many Reapers throughout time. We Reapers have inhabited\
+        this planet far longer than you humans. When one of us becomes weary, another\
+        mortal soul steps up to claim his place. Now that the previous Reaper's soul\
+        has been recovered, the misdeed of the Ancient Minister has been set right.\""
+        prompt {} {
+            {"\"Do you have something for me?\"" yes reaperReward}
+        }
+    }
+
+    proc reaperMerged {} {
+        puts "\"Our souls have combined. You are now speaking to both of the\
+        Reapers you know. With our combined life force, we can continue to\
+        maintain this realm for millennia to come. You have our gratitude.\""
+        prompt {} {
+            {"\"Are there several Reapers?\"" yes reaperBefore1}
+        }
+    }
+
+    proc reaperMerged1 {} {
+        puts "\"Our souls have combined. You are now speaking to both of the\
+        Reapers you know. With our combined life force, we can continue to\
+        maintain this realm for millennia to come. You have our gratitude.\""
+        prompt {} {
+            {"\"Do you have something for me?\"" yes reaperReward}
+        }
+    }
+
+    proc reaperReward {} {
+        puts "\"Yes, of course. We promised you the [state get reaper-has-item]\
+        for your troubles. As per our word, here you go.\""
+        puts "You got the [state get reaper-has-item]!"
+        inv add [state get reaper-has-item]
+        state put reaper-has-item 0
+        state put reaper-helper yes
         puts {}
         return thirdFloor
     }
