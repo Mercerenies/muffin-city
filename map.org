@@ -747,14 +747,18 @@
      happily release him. Alternatively, he can use Dr. Cipher in the
      Underworld to reset this state to ~no~.
 
-     //// Lawyer?
+     If the player has a lawyer, he will escape the trial. However, he
+     will be captured on sight by the police and taken back to the
+     courtroom.
 **** prison
      In this state, if the player moves to the police station, he will
      be apprehended and tried in court, moving back to state ~court~.
      If the player visits Dr. Cipher, his Document Transmogrifier will
      reset this to ~no~.
 
-     //// Lawyer?
+     If the player has a lawyer, he will escape the trial. However, he
+     will be captured on sight by the police and taken back to the
+     courtroom.
 *** Gate Guard Event (~prison-guard~)
 **** no
      The prison guard stands at the gate. The player can talk to him
@@ -903,11 +907,11 @@
 **** olive
      The player has presented the taco shop manager with an olive. If
      the player talks to Joe the Time-Traveler, the game will move to
-     `fed` and Joe will move to the taco shop.
+     ~fed~ and Joe will move to the taco shop.
 **** fed
      Joe the Time-Traveler will, upon being asked, tell the player
      about the secret password to the pawn shop in the past. The game
-     will remember that he has done so (pawn-shop-pass).
+     will remember that he has done so (~pawn-shop-pass~).
 
      //// More to this quest (Black Olive)
 *** The Hunter's Adventure (~hunter-trail~)
@@ -940,7 +944,9 @@
      criminal record at the start of the present day, which
      contradicts the order of events.
 **** button
-     //// Fill this in
+     The player caused the time machine (which did not work yet) to
+     explode in the past, making it impossible that he operate it in
+     the present.
 *** Evil Flame Spirit (~fire-pit~)
 **** no
      The player has not begun to approach the evil flame spirit. When
@@ -1081,13 +1087,13 @@
      to him, the captain will mention that his ship is missing its
      wheel, and the game will move to `spoken`.
 **** spoken
-     ////
+     //// Fill this in
 **** requested
-     ////
+     //// Fill this in
 **** obtained
-     ////
+     //// Fill this in
 **** yes
-     ////
+     //// Fill this in
 *** Unfinished Business (~motel-ghost~)
 **** no
      The motel ghost is invisible. The player cannot encounter him in
@@ -1636,18 +1642,19 @@
    the subspace map is just a special map that works in subspace,
    labyrinth, and shrunk ventilation and its not specific to
    subspace?) there is a jungle dome with a passcode to get in
-** CONSIDERING The Reaper's Favor
+** DONE The Reaper's Favor
  + The Reaper calls in the player's favor. Possibly to help retrieve a
    stolen item from the Ancient Minister (do they have a rivalry or
    something?).
  + If the Reaper has both the Black Olive and the Necromancy
    Certificate, then what if he only gives the player one of the two
-   (player gets to choose) then requires a quest for the other? ////
+   (player gets to choose) then requires a quest for the other?
  + The True Reaper is sealed away in the Ancient Minister's temple?
    Sealed away in a chest that only Steve's Smash-a-Lock can help
    with?
  + Johnny Death's father is the True Reaper (previous to the current
-   Reaper), sealed away by the Ancient Minister?
+   Reaper), sealed away by the Ancient Minister? //// (This hasn't
+   been explicitly established)
 ** Missing Rewards, etc.
  + Attorney-Man's reward?
  + The Black Olive needs to do something (double subspace???)
@@ -1799,7 +1806,7 @@
    will have to resurrect her with Johnny's help. After that, she'll
    be in the Other Room for a bit. Then she'll get her own room in the
    underworld next to Dr. Cipher's, where she'll run a new locksmith
-   shop.
+   shop. ////
 
    When the lions chase the player down after the bank robbery, Steve
    will flee to a safe room in the Ritzy Inn, where the player will

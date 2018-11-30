@@ -79,7 +79,6 @@
    lizard man and eject him from the simulation. Upon returning, he
    will be in (4).
 ** 8. The Town
-   ////
    The player heads out into the town. He can't get back into the
    theater now, as both exits are locked. Upon entering the arcade, he
    will have the same option of playing the slots that he did before.
@@ -93,7 +92,6 @@
    dispels the spirits. The duo then heads back outside.
    + Head outside (9)
 ** 9. The Eye of the Storm
-   ////
    The town is now stormy and dark. No one is out and about. The
    theater is open but empty. The bakery is also empty. If the baker
    was engaged, then the muffin is available to be taken. If the baker
@@ -107,18 +105,16 @@
    + All of the NPCs are present but the player lacks <CRUCIAL ITEM> (11)
    + All of the NPCs are present and the player has <CRUCIAL ITEM> (12)
 ** 10. Easy Difficulty
-   ////
    Silver Starlight easily dispatches the evil spirits, and the player
    and she exit the simulation. Starlight says that she doesn't think
    it fully worked and offers to go in again. The simulation resets
    back to (1).
 ** 11. A Difficult Loss
-   ////
    The NPCs merge together into a dark entity and threaten the duo.
    Starlight tries to fight him, but he's too powerful. The two are
    ejected from the simulation and it resets back to (1).
 ** 12. A Difficult Victory
-   ////
+   //// (hasn't been implemented yet)
    The NPCs merge together into a dark entity, but the team
    successfully repels it. Starlight and the player are victorious and
    exit the simulation together. Starlight rewards the player for his
