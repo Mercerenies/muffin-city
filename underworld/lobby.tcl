@@ -99,6 +99,8 @@ namespace eval Underworld::Lobby {
     proc steve {} {
         switch [state get reaper-helper] {
             locksmith1 {
+                puts "As you get a better look, you notice that Steve's eyes look\
+                strangely different. They seem to be more narrow and snake-like."
                 puts "\"Uhh....\""
                 prompt {} {
                     {"Explain what happened" yes steve1}
