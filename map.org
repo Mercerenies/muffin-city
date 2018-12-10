@@ -1680,8 +1680,8 @@
 ** CONSIDERING The Guardian of Time
    Could the Guardian of Time be chilling in Double Subspace reachable
    with the Black Olive?
-** The Twins
-   Twins: the mailman and the taxman. Taxman collects a silver coin at
+** CONSIDERING The Twins
+ + Twins: the mailman and the taxman. Taxman collects a silver coin at
    some point for tax purposes. Mailman... I dunno, delivers mail?
 ** DONE Turn-Based Combat
    Turn-based RPG-style combat for Joe and Merchant-bot
@@ -1891,6 +1891,16 @@
    you can pass through the airport walls and find them. Initially,
    you'll encounter one of them somewhere else and that person will
    tell you how to get in.
+** CONSIDERING The Best Tacos
+  After the Taco Man has both of his olives, he can make the best
+  tacos on the planet. People from all over the multiverse will come
+  to his shop. The visitors will rotate out after the player has
+  talked to them and then "reset" at the hub. Many of the visitors
+  will be available in other areas of the game as well but will act
+  more casually at the taco shop.
+
+  Possible visitors
+  + The Postman and the Taxman (together or separately?)
 * MISCELLANEOUS
 
 ** Test
