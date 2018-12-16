@@ -114,10 +114,19 @@ namespace eval Warehouse::Outside {
     }
 
     proc captain {} {
-        puts "\"Climb aboard!\""
-        prompt {} {
-            {"Climb aboard" yes captainSail}
-            {"\"Not right now.\"" yes dock}
+        if {[state get pirate-attack] eq {yes}} then {
+            puts "\"Where to?\""
+            prompt {} {
+                {"\"The dream world.\"" yes captainSail}
+                {"\"The pirate ship.\"" yes captainPirateSail}
+                {"\"Nowhere right now.\"" yes dock}
+            }
+        } else {
+            puts "\"Climb aboard!\""
+            prompt {} {
+                {"Climb aboard" yes captainSail}
+                {"\"Not right now.\"" yes dock}
+            }
         }
     }
 
@@ -129,6 +138,16 @@ namespace eval Warehouse::Outside {
         state put captain-boat-place dream
         puts {}
         return {::Dream::World::pier 1}
+    }
+
+    proc captainPirateSail {} {
+        puts "\"And we're off.\""
+        puts "The captain hoists the anchor out of the bay and sets sail."
+        puts {}
+        puts "Some time later, you arrive at the pirate ship."
+        state put captain-boat-place dream
+        puts {}
+        return ::Warehouse::Pirates::ship
     }
 
     proc diveIn {} {

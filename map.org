@@ -376,6 +376,7 @@
 **** captainHelp
 **** captainWheel
 **** captainSail
+**** captainPirateSail
 **** captainAnyway
 **** captainAnywayGo
 **** captainPirate
@@ -394,6 +395,7 @@
 **** dock
 **** captain
 **** captainSail
+**** captainPirateSail
 **** diveIn
 **** northTalk
 **** northAttorney
@@ -420,8 +422,15 @@
 **** exitWarehouse
 *** [Pirates]
 **** attack
+**** attack1
 **** fightBack
 **** surrender
+**** disguise
+**** disguiseSuccess
+**** disguiseFail
+**** leave
+**** leavePlane
+**** ship
 ** [Past]
 *** [Science]
 **** mainRoom
@@ -1248,6 +1257,8 @@
 **** hat2
      ////
 **** disguised
+     ////
+**** yes
      ////
 ** Item / Money States
 *** ~stolen-good~

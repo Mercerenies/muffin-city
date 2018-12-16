@@ -195,11 +195,19 @@ namespace eval Dream::World {
                             {"\"Later.\"" yes {pier 1}}
                         }
                     }
-                    hat {
+                    hat - hat1 - hat2 - disguised {
                         puts "\"We can sail if you like, but I can't guarantee your safety.\""
                         prompt {} {
                             {"\"Let's go.\"" yes captainSail}
                             {"\"Not now.\"" yes {pier 1}}
+                        }
+                    }
+                    yes {
+                        puts "\"Where would ya like to go?\""
+                        prompt {} {
+                            {"\"The island.\"" yes captainSail}
+                            {"\"The pirate ship.\"" yes captainPirateSail}
+                            {"\"Nowhere right now.\"" yes {pier 1}}
                         }
                     }
                     default {
@@ -239,7 +247,7 @@ namespace eval Dream::World {
         puts "\"And we're off.\""
         puts "The captain hoists the anchor out of the void and sets sail."
         switch [state get pirate-attack] {
-            ready - attacked - hat {
+            ready - attacked - hat - hat1 - hat2 - disguised {
                 puts {}
                 return ::Warehouse::Pirates::attack
             }
@@ -254,6 +262,15 @@ namespace eval Dream::World {
                 return ::Warehouse::Outside::dock
             }
         }
+    }
+
+    proc captainPirateSail {} {
+        puts "\"And we're off.\""
+        puts "The captain hoists the anchor out of the void and sets sail."
+        puts {}
+        puts "You easily locate the pirate ship and board it safely."
+        puts {}
+        return ::Warehouse::Pirates::ship
     }
 
     proc captainAnyway {} {
