@@ -187,11 +187,28 @@ namespace eval Dream::World {
                 }
             }
             yes {
-                puts "\"Climb aboard, mate!\""
-                # //// Eventually, pirates will attack the ship after a few voyages, opening a new avenue
-                prompt {} {
-                    {"Climb aboard" yes captainSail}
-                    {"\"Maybe later.\"" yes {pier 1}}
+                switch [state get pirate-attack] {
+                    attacked {
+                        puts "\"You're alive! I thought they killed you!\""
+                        prompt {} {
+                            {"\"Can I sail?\"" yes captainAnyway}
+                            {"\"Later.\"" yes {pier 1}}
+                        }
+                    }
+                    hat {
+                        puts "\"We can sail if you like, but I can't guarantee your safety.\""
+                        prompt {} {
+                            {"\"Let's go.\"" yes captainSail}
+                            {"\"Not now.\"" yes {pier 1}}
+                        }
+                    }
+                    default {
+                        puts "\"Climb aboard, mate!\""
+                        prompt {} {
+                            {"Climb aboard" yes captainSail}
+                            {"\"Maybe later.\"" yes {pier 1}}
+                        }
+                    }
                 }
             }
         }
@@ -221,11 +238,53 @@ namespace eval Dream::World {
     proc captainSail {} {
         puts "\"And we're off.\""
         puts "The captain hoists the anchor out of the void and sets sail."
+        switch [state get pirate-attack] {
+            ready - attacked - hat {
+                puts {}
+                return ::Warehouse::Pirates::attack
+            }
+            no - default {
+                if {[state get pirate-attack] eq {no}} then {
+                    state put pirate-attack ready
+                }
+                puts {}
+                puts "Some time later, you arrive on a deserted island."
+                state put captain-boat-place warehouse
+                puts {}
+                return ::Warehouse::Outside::dock
+            }
+        }
+    }
+
+    proc captainAnyway {} {
+        puts "\"Are ya sure that's a good idea? Those pirates might attack again.\""
+        prompt {} {
+            {"\"Let's do it anyway.\"" yes captainAnywayGo}
+            {"\"What can we do about them?\"" yes captainPirate}
+            {"\"That's true.\"" yes {pier 1}}
+        }
+    }
+
+    proc captainAnywayGo {} {
+        puts "\"Very well. Best of luck. Climb aboard!\""
+        prompt {} {
+            {"Climb aboard" yes captainSail}
+        }
+    }
+
+    proc captainPirate {} {
+        puts "\"There's no fighting pirates. They're just too strong. If we had a\
+        disguise, we could trick them into thinking we're one of them.\""
+        prompt {} {
+            {"\"I'll find a disguise.\"" yes captainPirate1}
+        }
+    }
+
+    proc captainPirate1 {} {
+        puts "\"Alright! Good luck!\""
+        state put pirate-attack hat
         puts {}
-        puts "Some time later, you arrive on a deserted island."
-        state put captain-boat-place warehouse
-        puts {}
-        return ::Warehouse::Outside::dock
+        return {pier 1}
     }
 
     proc conductor {} {

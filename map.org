@@ -365,6 +365,10 @@
 **** captainHelp
 **** captainWheel
 **** captainSail
+**** captainAnyway
+**** captainAnywayGo
+**** captainPirate
+**** captainPirate1
 **** conductor
 **** third
 **** thirdRoom
@@ -403,6 +407,10 @@
 **** warehouseFloor
 **** crates
 **** exitWarehouse
+*** [Pirates]
+**** attack
+**** fightBack
+**** surrender
 ** [Past]
 *** [Science]
 **** mainRoom
@@ -1197,6 +1205,25 @@
      ////
 **** darkness
      ////
+*** The Pirate Raid (~pirate-attack~)
+**** no
+     The pirates have not raided yet and will not be seen. After the
+     player rides the dream ship to the warehouse island, the game
+     will move to ~ready~.
+**** ready
+     The pirates have not raided yet but will raid next time. The
+     pirates will only raid when the captain's ship leaves from the
+     dream port, and the ship will return to the dream port after the
+     raid. Once the pirates have attacked once, the game moves to
+     ~attacked~.
+**** attacked
+     The pirates have attacked. They will continue to do so anytime
+     the player sets sail. The Captain (of the dream ship) will warn
+     him of this, and will tell him he needs to go find a pirate
+     disguise to fool them. When the Captain gives him this
+     information, the game moves to ~hat~.
+**** hat
+     ////
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -1552,6 +1579,9 @@
  + After N uses of the dream ship (probably N=2), pirates attack. If
    you don't have the pirate hat, they kill you. If you do, they think
    you're one of them and give you access to their ship.
+ + You get the pirate hat by trading with the Hatman. He wants the
+   cowboy hat from the hunter, which you can only get after you take
+   his soul.
 ** DONE Fire Pits
    Past the fire pits, there should be multiple rooms which are
    accessible, not just the freight elevator
