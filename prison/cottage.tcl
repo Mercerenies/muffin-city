@@ -89,11 +89,47 @@ namespace eval Prison::Cottage {
 
     proc downstairs {} {
         puts "== Cottage Cellar =="
-        # //// The Hatman is going to be here.
-        puts "The cellar is dimly lit and relatively small. There are some bottled\
-        beverages on a rack against the back wall."
+        puts -nonewline "The cellar is dimly lit and relatively small. There are some\
+        bottled beverages on a rack against the back wall."
+        if {[state get butler-game] ni {no cell cell1 pawn}} then {
+            if {[state get talked-to-hatman] eq {yes}} then {
+                puts " The Hatman is standing behind a table, looking shady as ever."
+            } else {
+                puts " A strange man wearing a fedora which conceals his eyes is\
+                standing behind a table."
+            }
+            prompt {} {
+                {"Talk to the stranger" {[state get talked-to-hatman] eq {no}} hatmanIntro}
+                {"Talk to the Hatman" {[state get talked-to-hatman] eq {yes}} hatman}
+                {"Go upstairs" yes cottage}
+            }
+        } else {
+            puts {}
+            prompt {} {
+                {"Go upstairs" yes cottage}
+            }
+        }
+    }
+
+    proc hatmanIntro {} {
+        puts "\"Welcome to my hideout.\""
         prompt {} {
-            {"Go upstairs" yes cottage}
+            {"\"Who are you?\"" yes hatmanIntro1}
+        }
+    }
+
+    proc hatmanIntro1 {} {
+        puts "\"I'm... the Hatman. I collect hats. If you ever need a hat, let me know.\""
+        state put talked-to-hatman yes
+        prompt {} {
+            {"\"Oooookay...\"" yes downstairs}
+        }
+    }
+
+    proc hatman {} {
+        puts "\"Do you need a hat?\""
+        prompt {} {
+            {"\"Not really.\"" yes downstairs}
         }
     }
 

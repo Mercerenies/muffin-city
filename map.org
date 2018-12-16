@@ -169,6 +169,9 @@
 **** cottage
 **** shed
 **** downstairs
+**** hatmanIntro
+**** hatmanIntro1
+**** hatman
 **** farmer
 **** farmer1
 **** farmerIdle
@@ -1341,6 +1344,13 @@
 **** no
 **** told
 **** yes
+*** ~talked-to-hatman~
+**** no
+     The player has not spoken to the Hatman. After the second Butler
+     event, the Hatman will appear in the basement of the cottage.
+     After the player speaks to him, the game moves to ~yes~.
+**** yes
+     The player has spoken to the Hatman.
 ** Door / Opening States
 *** ~janitor-door~
 **** no
@@ -1566,6 +1576,7 @@
 ** The Fence
 ** Silver Starlight
 ** The True Reaper
+** The Hatman
 * NOTES
 
 ** ACCEPTED Cave and Lantern

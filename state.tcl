@@ -88,6 +88,7 @@ namespace eval State {
         obtained-true-reaper no
         steve-disappeared no
         pirate-attack no
+        talked-to-hatman no
     }]
 
     proc get {args} {
