@@ -94,3 +94,16 @@ con
 state put lobby-door yes
 con
 inv add {Black Olive}
+con
+state put pirate-attack disguised
+con
+state put hunter-trail under
+con
+inv add {Pirate Hat}
+3
+4
+2
+3
+3
+3
+2

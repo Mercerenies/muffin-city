@@ -89,6 +89,7 @@ namespace eval State {
         steve-disappeared no
         pirate-attack no
         talked-to-hatman no
+        treasure-room no
     }]
 
     proc get {args} {

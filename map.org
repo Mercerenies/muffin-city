@@ -430,7 +430,11 @@
 **** disguiseFail
 **** leave
 **** leavePlane
+**** timeToLeave
 **** ship
+**** treasureRoom
+**** treasureRoomArtifact
+**** hold
 ** [Past]
 *** [Science]
 **** mainRoom
@@ -632,6 +636,7 @@
  + Suspicious Briefcase
  + Cowboy Hat
  + Pirate Hat
+ + Religious Artifact
 
 ** Money Sources / Sinks
 
@@ -1299,6 +1304,9 @@
 *** ~stage-coin~
 **** no
 **** yes
+*** ~treasure-room~
+**** no
+**** yes
 ** Muffin States
 *** River Treasures (~forest-river~)
 **** 0
@@ -1735,6 +1743,8 @@
  + Heart Room in the past does something? (possibly just an easter
    egg; exit blocked off?)
  + Steve's Suspicious Briefcase doesn't do anything right now.
+ + The Religious Artifact from the pirate ship does nothing. There
+   will also likely be a second (third?) one somewhere.
 ** CONSIDERING The Flaming Axe
  + The Flaming Axe of Doom was used by the First Reaper to carve out
    the Underworld before time itself. Possibly, we can visit this
