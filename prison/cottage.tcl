@@ -129,8 +129,36 @@ namespace eval Prison::Cottage {
     proc hatman {} {
         puts "\"Do you need a hat?\""
         prompt {} {
+            {"\"A pirate hat.\"" {[state get pirate-attack] eq {hat}} hatmanPirate}
+            {"\"I have the cowboy hat for you.\"" {([state get pirate-attack] eq {hat2}) && [inv has {Cowboy Hat}]} hatmanTrade}
             {"\"Not really.\"" yes downstairs}
         }
+    }
+
+    proc hatmanPirate {} {
+        puts "\"A pirate hat. I may have one of those.\""
+        prompt {} {
+            {"\"What's your price?\"" yes hatmanPirate1}
+        }
+    }
+
+    proc hatmanPirate1 {} {
+        puts "\"A trade. I've been needing a cowboy hat. Find me a cowboy hat and the pirate\
+        hat is yours.\""
+        state put pirate-attack hat1
+        prompt {} {
+            {"\"Okay.\"" yes downstairs}
+        }
+    }
+
+    proc hatmanTrade {} {
+        puts "You give up the Cowboy Hat. You got the Pirate Hat!"
+        inv remove {Cowboy Hat}
+        inv add {Pirate Hat}
+        state put pirate-attack disguised
+        puts "\"Pleasure doing business.\""
+        puts {}
+        return downstairs
     }
 
     proc farmer {} {

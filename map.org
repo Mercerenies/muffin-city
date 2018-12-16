@@ -63,6 +63,7 @@
 **** shabbyRoom
 **** shabbyHunter
 **** shabbyHunter1
+**** shabbyHat
 **** shabbyTalk
 **** shabbyPay
 **** shabbyNoPay
@@ -145,6 +146,7 @@
 **** hunter1
 **** hunter2
 **** hunter3
+**** hunterHat
 **** largeTree
 **** largeTreeDig
 **** dizzy
@@ -173,6 +175,9 @@
 **** hatmanIntro
 **** hatmanIntro1
 **** hatman
+**** hatmanPirate
+**** hatmanPirate1
+**** hatmanTrade
 **** farmer
 **** farmer1
 **** farmerIdle
@@ -247,6 +252,8 @@
 **** other
 **** mercuryMuffin
 **** hunter
+**** hunterHat
+**** hunterHat1
 **** stealing
 **** steve
 **** steve1
@@ -614,6 +621,8 @@
  + Magic Scepter
  + Cursed Chest
  + Suspicious Briefcase
+ + Cowboy Hat
+ + Pirate Hat
 
 ** Money Sources / Sinks
 
@@ -1228,6 +1237,17 @@
      disguise to fool them. When the Captain gives him this
      information, the game moves to ~hat~.
 **** hat
+     The player needs to find a pirate costume. If he talks to the
+     pawnbroker, he'll point him toward the Hatman. Upon being asked,
+     the Hatman will want a cowboy hat in return, and the game will
+     move to ~hat1~.
+**** hat1
+     The Hatman wants a cowboy hat. The player can only get it from
+     the hunter. The hunter won't give it up as long as he has a soul.
+     Once the player obtains the Cowboy Hat, the game moves to ~hat2~.
+**** hat2
+     ////
+**** disguised
      ////
 ** Item / Money States
 *** ~stolen-good~

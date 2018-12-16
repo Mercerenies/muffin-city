@@ -83,6 +83,32 @@ namespace eval Underworld::Lobby {
         } else {
             puts "\"...\""
         }
+        prompt {} {
+            {"\"Gimme your hat.\"" {[state get pirate-attack] eq {hat1}} hunterHat}
+            {"\"Goodbye.\"" yes wildlife}
+        }
+    }
+
+    proc hunterHat {} {
+        if {[state get hunter-soul] eq {no}} then {
+            puts "\"I like my hat!\""
+            puts {}
+            return wildlife
+        } else {
+            puts "The hunter doesn't react."
+            puts "..."
+            puts "You could probably take the hat."
+            prompt {} {
+                {"Take the hat" yes hunterHat1}
+                {"Stealing is wrong" yes wildlife}
+            }
+        }
+    }
+
+    proc hunterHat1 {} {
+        puts "You got the Cowboy Hat!"
+        inv add {Cowboy Hat}
+        state put pirate-attack hat2
         puts {}
         return wildlife
     }

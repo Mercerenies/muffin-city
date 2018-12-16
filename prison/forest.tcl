@@ -50,6 +50,7 @@ namespace eval Prison::Forest {
         puts "\"Hey, you were right! This is great huntin' spot!\""
         prompt {} {
             {"\"You should check out that cave.\"" yes hunter1}
+            {"\"I want your hat.\"" {[state get pirate-attack] eq {hat1}} hunterHat}
             {"\"Glad I could help.\"" yes trees}
         }
     }
@@ -73,6 +74,12 @@ namespace eval Prison::Forest {
     proc hunter3 {} {
         puts "The hunter races into the cave without another word."
         state put hunter-trail under
+        puts {}
+        return trees
+    }
+
+    proc hunterHat {} {
+        puts "\"I like my hat!\""
         puts {}
         return trees
     }

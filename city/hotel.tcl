@@ -46,6 +46,7 @@ namespace eval City::Hotel {
         know!\""
         prompt {} {
             {"\"There's a forest by the prison.\"" {[state get hunter-trail] eq {visited}} shabbyHunter1}
+            {"\"Can I have your hat?\"" {[state get pirate-attack] eq {hat1}} shabbyHat}
             {"\"Okay, I will.\"" yes shabbyJack}
         }
     }
@@ -55,6 +56,12 @@ namespace eval City::Hotel {
         puts "The hunter storms out of the motel."
         puts {}
         state put hunter-trail forest
+        return shabbyJack
+    }
+
+    proc shabbyHat {} {
+        puts "\"My hat? I like my hat!\""
+        puts {}
         return shabbyJack
     }
 
