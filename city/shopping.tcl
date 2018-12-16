@@ -28,6 +28,7 @@ namespace eval City::Shopping {
         you'd be interested in.\""
         prompt {} {
             {"\"Okay.\"" yes pawnShop}
+            {"\"Do you have a pirate costume?\"" {[state get pirate-attack] eq {hat}} pawnHat}
             {"\"Do you have a ship's wheel?\"" {[state get captain-boat] eq {spoken}} pawnWheel}
             {"\"Ship's wheel?\"" {[state get captain-boat] eq {requested}} pawnWheelBuy}
         }
@@ -54,6 +55,14 @@ namespace eval City::Shopping {
         inv remove {Silver Coin}
         inv add {Ship's Wheel}
         state put captain-boat obtained
+        puts {}
+        return pawnShop
+    }
+
+    proc pawnHat {} {
+        puts "\"Costume's ain't really my thing. But there is a guy who may be\
+        able to help. He lives in a basement in the forest by the prison. Guy's\
+        obsessed with hats. He may be able to help.\""
         puts {}
         return pawnShop
     }

@@ -94,6 +94,7 @@
 **** pawnWheel
 **** pawnWheelBuy
 **** pawnWheelBuy1
+**** pawnHat
 **** pawnButler
 **** market
 **** marketBot
@@ -451,6 +452,7 @@
 **** pawnTalk
 **** pawnWheel
 **** pawnWheelNotYet
+**** pawnHat
 **** locksmithEntry
 **** locksmith
 **** locksmithCurse
