@@ -1625,7 +1625,7 @@
 ** ACCEPTED False Imprisonment
    Given gift if falsely imprisoned (according to Warden), maybe
    Religious Artifact
-** ACCEPTED Pirates
+** DONE Pirates
  + Pirates will eventually attack the dream ship, and if you raid them
    you'll get a Religious Artifact
  + After N uses of the dream ship (probably N=2), pirates attack. If
@@ -1645,6 +1645,7 @@
 ** ACCEPTED Pawnbroker's Items
    Going to the past and requesting an item from the pawnbroker will
    result in that item being available the next day
+   + Ship's Wheel
 ** ACCEPTED The Merchant War
  + Todd wants to rebel against Merchant-bot and leaves clues to help
    you do so
@@ -1703,7 +1704,7 @@
 
    Waterproof fireball? Needed to fight the shark off the warehouse
    island coast?
-** ACCEPTED The Minister's Record
+** DONE The Minister's Record
    The Ancient Minister will tell you how you ended up in subspace
    (mainly to help the player understand). If the player has no record
    of entering subspace in any "standard" way, then his heart will be
@@ -1985,6 +1986,9 @@
 
   Possible visitors
   + The Postman and the Taxman (together or separately?)
+** CONSIDERING Cloud World
+   A part of prehistory above the clouds. Maybe the space elevator
+   hasn't made it to space yet, or maybe it's just a ladder.
 * MISCELLANEOUS
 
 ** Test
