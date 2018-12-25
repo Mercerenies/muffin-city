@@ -160,8 +160,13 @@ namespace eval Prison::South {
             you into the prison gates."
         } else {
             puts "You run off into the treeline, but the man is quicker. He and a mustached guard\
-            immediately pounce on you, sending you toppling to the ground. They quickly drag you over into\
-            the prison gates."
+            immediately pounce on you, sending you toppling to the ground. They quickly drag\
+            you over into the prison gates."
+        }
+        if {[state get harry-location] eq {breakout}} then {
+            puts "As your face hits the dirt, you see Harry slip out the open prison gate and\
+            run off into the treeline."
+            state put harry-location freedom
         }
         puts "\"Don't even think about doing that again!\""
         puts {}

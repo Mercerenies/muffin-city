@@ -122,8 +122,14 @@
 *** [North]
 **** hallway
 **** restroom
+**** harry
+**** harryIntro
+**** harryPlan
+**** harryPlan1
+**** harryPlan2
 **** dining
 **** diningTalk
+**** diningConfront
 *** [Guard]
 **** talk
 **** attorney
@@ -1583,6 +1589,21 @@
      ~resurrected~.
 **** resurrected
      ////
+*** ~harry-location~
+**** no
+     Harry is at the prison. The player can talk to him there. Once he
+     introduces himself, the game moves to ~met~.
+**** met
+     If the first Butler event has already occurred (~butler-game~ is
+     ~cell1~ or later) then Harry will say that he is planning a
+     prison break and needs the player to create a diversion. If the
+     player agrees to do so, the game moves to ~breakout~.
+**** breakout
+     Harry is ready to break out. The player has to get arrested and
+     then cause a scene at the prison gates. Then he will be told that
+     Harry escaped successfully and the game will move to ~freedom~.
+**** freedom
+     //// Not designed yet
 * CHARACTERS
 
 ** The Robber
@@ -1618,6 +1639,7 @@
 ** Silver Starlight
 ** The True Reaper
 ** The Hatman
+** Harry the Arsonist
 * NOTES
 
 ** ACCEPTED Cave and Lantern
@@ -1901,6 +1923,9 @@
      have him if we need someone who does something with fire.
    + It's possible he could play into the evil flame spirit in some
      way, given their obvious mutual fascination with fire.
+   + Maybe Harry is the guy in prison who you need to help break out.
+     After you break him out, he burns something down (the police
+     district hut?)
 ** CONSIDERING The Alien Factory
    Alright, so this is sort of two different ideas that I think fit
    well together.
@@ -1989,6 +2014,16 @@
 ** CONSIDERING Cloud World
    A part of prehistory above the clouds. Maybe the space elevator
    hasn't made it to space yet, or maybe it's just a ladder.
+** CONSIDERING Beneath the Police
+   There's a small, suspicious hut in the police district next to the
+   otherwise tall buildings. It belongs to a mysterious criminal (the
+   Mime?).
+   + The Mime is there in the past but ran away in the present for some reason.
+   + Trapped in a literal glass box in the inverse world?
+   + A refrigerator containing a sentient baby doll.
+** CONSIDERING Sentient Baby Doll
+   A chase scene? The doll keeps running away and you keep finding it.
+   Eventually, it gives you some reward for persistence.
 * MISCELLANEOUS
 
 ** Test
