@@ -6,3 +6,4 @@ source ./city/robbery.tcl
 source ./city/hotel.tcl
 source ./city/science.tcl
 source ./city/shopping.tcl
+source ./city/hut.tcl

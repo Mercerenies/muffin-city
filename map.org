@@ -58,6 +58,9 @@
 **** robbed
 **** arrested
 **** recovered
+**** regularRecover
+**** specialRecover
+**** asked
 *** [Hotel]
 **** shabbyJack
 **** shabbyRoom
@@ -104,6 +107,15 @@
 **** marketTrade
 **** boarded
 **** boardedForce
+*** [Hut]
+**** locked
+**** lockedFail
+**** lockedFail1
+**** lockedFail2
+**** rubble
+**** basement
+**** fridge
+**** doll
 ** [Prison]
 *** [South]
 **** gate
@@ -1271,6 +1283,15 @@
      ////
 **** yes
      ////
+*** Just a Toy (~baby-doll~)
+**** no
+     The player has not encountered the sentient baby doll yet. The
+     doll is in the refrigerator of the hut basement in the city. When
+     the player opens the fridge, the doll will be there. If the
+     player takes the doll, she will wake up and run off. The game
+     then moves to ~running~.
+**** running
+     //// What next?
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -1398,6 +1419,17 @@
      After the player speaks to him, the game moves to ~yes~.
 **** yes
      The player has spoken to the Hatman.
+*** ~police-hut~
+**** no
+     The player has not asked about the burned down hut. He doesn't
+     have the option, as the hut has not yet been burned down. If he
+     talks to the police while ~harry-location~ is ~freedom~ or
+     beyond, the game moves to ~ask~.
+**** ask
+     The player has not asked but has the option to. If he does, the
+     game moves to ~asked~.
+**** asked
+     The player has already asked and has no reason to ask again.
 ** Door / Opening States
 *** ~janitor-door~
 **** no
@@ -1640,6 +1672,7 @@
 ** The True Reaper
 ** The Hatman
 ** Harry the Arsonist
+** Sentient Baby Doll
 * NOTES
 
 ** ACCEPTED Cave and Lantern
@@ -2024,16 +2057,21 @@
 ** CONSIDERING Cloud World
    A part of prehistory above the clouds. Maybe the space elevator
    hasn't made it to space yet, or maybe it's just a ladder.
-** CONSIDERING Beneath the Police
+** ACCEPTED Beneath the Police
    There's a small, suspicious hut in the police district next to the
    otherwise tall buildings. It belongs to a mysterious criminal (the
    Mime?).
    + The Mime is there in the past but ran away in the present for some reason.
    + Trapped in a literal glass box in the inverse world?
    + A refrigerator containing a sentient baby doll.
-** CONSIDERING Sentient Baby Doll
+** ACCEPTED Sentient Baby Doll
    A chase scene? The doll keeps running away and you keep finding it.
    Eventually, it gives you some reward for persistence.
+
+   How did the baby doll get in the fridge to begin with? Clearly, it
+   did something bad in the past and the player locked it away. Maybe
+   stole a car and chased a nurse? I know that sounds random but it
+   makes sense in my head.
 ** CONSIDERING Traveling Circus
    That's what this game needs. It can go to a few different locations
    at different times, as you progress Butler events.

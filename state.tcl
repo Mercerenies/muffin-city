@@ -91,6 +91,8 @@ namespace eval State {
         talked-to-hatman no
         treasure-room no
         harry-location no
+        police-hut no
+        baby-doll no
     }]
 
     proc get {args} {

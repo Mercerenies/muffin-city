@@ -67,15 +67,23 @@ namespace eval City::District {
         puts -nonewline "The police district is fairly large but unified. There is a\
         large station for the officers and a courthouse that towers over the center\
         of the town."
-        if {[state get golden-arches]} then {
-            puts " A glimmering golden arch hovers just above the ground in the distance."
+        if {[state get harry-location] in {no met breakout}} then {
+            puts " A conspicuous wooden hut sits between the courthouse and the\
+            police station."
         } else {
-            puts {}
+            puts " There is a pile of ash and rubble between the courthouse and the\
+            police station."
         }
+        if {[state get golden-arches]} then {
+            puts -nonewline " A glimmering golden arch hovers just above the ground in the distance."
+        }
+        puts {}
         prompt {} {
             {"Go back to the plaza" yes entrance}
             {"Go to the police station" yes ::City::Police::station}
             {"Go to the courthouse" yes ::City::Courthouse::entrance}
+            {"Approach the hut" {[state get harry-location] in {no met breakout}} ::City::Hut::locked}
+            {"Approach the rubble" {[state get harry-location] ni {no met breakout}} ::City::Hut::rubble}
             {"Pass through the arch" {[state get golden-arches]} ::Console::Hall::office}
         }
     }

@@ -17,14 +17,22 @@ namespace eval City::Police {
                 return ::City::Courthouse::trial
             }
         }
+        if {([state get police-hut] eq {no}) &&
+            ([state get harry-location] ni {no met breakout})} then {
+            state put police-hut ask
+        }
         puts "== Police Station =="
         puts "Even this late at night, several officers are on duty. A few of them look at you as\
         you enter, but most of them just go about their business."
+        # //// Should you be able to turn Harry back in to the cops?
+        # Would be interesting. Maybe to get him to go somewhere else
+        # after the cops chase him out.
         prompt {} {
             {"Go back outside" yes ::City::District::police}
             {"\"Did you recover my stuff?\"" {[state get city-thug] eq {caught}} recovered}
             {"\"I'm being followed!\"" {[state get city-thug] eq {stalking}} followed}
             {"\"I was robbed!\"" {[state get city-thug] eq {island}} robbed}
+            {"\"What happened to that hut outside?\"" {[state get police-hut] eq {ask}} asked}
             {"\"I killed a man!\"" yes arrested}
         }
     }
@@ -98,6 +106,13 @@ namespace eval City::Police {
         state put city-thug no
         state put stolen-good {}
         state put thug-card {}
+        puts {}
+        return station
+    }
+
+    proc asked {} {
+        puts "\"Burned to the ground. We're pretty sure it was deliberate.\""
+        state put police-hut asked
         puts {}
         return station
     }
