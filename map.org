@@ -1691,6 +1691,16 @@
      and then get back to the warehouse by landing on top (again, by
      the train and maybe a parachute) to plug in all of the mcguffins
      that destroy Merchant-bot.
+ + The final battle could involve both Atheena and Starlight. Going in
+   with only one of them will result in defeat.
+   - Atheena won't be able to get close to Merchant-bot to use her
+     blade (I guess the robot has lasers for some reason?).
+   - Starlight can fire projectiles and stun Merchant-bot but can't
+     hold him at bay long enough to attach the device which disables
+     him.
+   - Together, Starlight can slow Merchant-bot down enough for Atheena
+     to stun him, which allows the player to attach the device that
+     defeats him.
 ** CONSIDERING Escaping the Prison
    Help someone escape from prison by creating a diversion on entry
 ** ACCEPTED Foreclosure
@@ -2024,6 +2034,9 @@
 ** CONSIDERING Sentient Baby Doll
    A chase scene? The doll keeps running away and you keep finding it.
    Eventually, it gives you some reward for persistence.
+** CONSIDERING Traveling Circus
+   That's what this game needs. It can go to a few different locations
+   at different times, as you progress Butler events.
 * MISCELLANEOUS
 
 ** Test

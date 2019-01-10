@@ -122,6 +122,7 @@ namespace eval Prison::Darkness {
         state put spirit-baker no
         state put false-stage no
         state put false-stage-ran yes
+        # //// Also, maybe some (cosmetic) thing if you have Atheena's blade, just for completeness?
         if {[llength $engaged] >= 4} then {
             # //// There will be a second case here if you have some specific item
             puts "The five shadow beings move together and begin to morph into one\
