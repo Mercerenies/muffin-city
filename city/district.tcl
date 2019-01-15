@@ -68,10 +68,10 @@ namespace eval City::District {
         large station for the officers and a courthouse that towers over the center\
         of the town."
         if {[state get harry-location] in {no met breakout}} then {
-            puts " A conspicuous wooden hut sits between the courthouse and the\
+            puts -nonewline " A conspicuous wooden hut sits between the courthouse and the\
             police station."
         } else {
-            puts " There is a pile of ash and rubble between the courthouse and the\
+            puts -nonewline " There is a pile of ash and rubble between the courthouse and the\
             police station."
         }
         if {[state get golden-arches]} then {

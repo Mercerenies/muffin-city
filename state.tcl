@@ -93,6 +93,7 @@ namespace eval State {
         harry-location no
         police-hut no
         baby-doll no
+        hut-password no
     }]
 
     proc get {args} {

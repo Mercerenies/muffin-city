@@ -114,6 +114,7 @@
 **** lockedFail2
 **** rubble
 **** basement
+**** note
 **** fridge
 **** doll
 ** [Prison]
@@ -508,6 +509,12 @@
 **** courthouseInside
 **** courthouseHall
 **** courtroom
+*** [Hut]
+**** locked
+**** lockedFail
+**** lockedFail1
+**** lockedFail2
+**** foyer
 ** [Subspace]
 *** [Hub]
 **** hub
@@ -1488,6 +1495,16 @@
      (~subspace-reason~ is ~no~), then the game will move to ~yes~.
 **** yes
      The player can move freely around the subspace temple.
+*** ~hut-password~
+**** no
+     The player has not read the password to the hut. When he reads it
+     in the basement of the hut (in the present), the game moves to
+     ~found~.
+**** found
+     The player has read the password. He can now use it in the past.
+     When the player uses it, the game will move to ~yes~.
+**** yes
+     The player has used the password. The hut door is unlocked.
 ** World States
 *** ~trial-reason~
 **** {}

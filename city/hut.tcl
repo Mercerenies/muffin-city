@@ -1,7 +1,7 @@
 
 namespace eval ::City::Hut {
 
-    # //// By the way, need to do all of this in the past soon.
+    # ///// By the way, need to do all of this in the past soon.
 
     proc locked {} {
         puts "== Mysterious Hut =="
@@ -45,12 +45,21 @@ namespace eval ::City::Hut {
         puts "== Mysterious Hut Basement =="
         puts "The basement is in shambles. Someone clearly left the area in a\
         hurry. All of the tables are turned over, and half of the lightbulbs\
-        hanging from the ceiling have been shattered. Of particular interest is\
-        an old refrigerator sitting in the corner of the room."
+        hanging from the ceiling have been shattered. There is a small note\
+        taped to the bottom of the trapdoor. Additionally, an old refrigerator\
+        which looks fairly used is sitting in the corner of the room."
         prompt {} {
             {"Open the refrigerator" yes fridge}
+            {"Read the note" yes note}
             {"Go back up" yes rubble}
         }
+    }
+
+    proc note {} {
+        puts "\"In case I ever forget the password to my house, it's 6872.\""
+        state put hut-password found
+        puts {}
+        return basement
     }
 
     proc fridge {} {

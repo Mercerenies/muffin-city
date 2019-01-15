@@ -47,11 +47,13 @@ namespace eval Past::District {
         puts "== Police District - Past =="
         puts "The police district is fairly large but unified. There is a large station for\
         the officers and a courthouse that towers over the center of the town. The courthouse\
-        doors appear to be wide open."
+        doors appear to be wide open. A conspicuous wooden hut sits between the courthouse\
+        and the police station."
         prompt {} {
             {"Go back to the plaza" yes entrance}
             {"Go to the police station" yes ::Past::Police::station}
             {"Go to the courthouse" yes ::Past::Police::courthouse}
+            {"Approach the hut" yes ::Past::Hut::locked}
         }
     }
 
