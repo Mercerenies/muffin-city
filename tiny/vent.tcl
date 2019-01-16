@@ -1,6 +1,9 @@
 
 namespace eval Tiny::Vent {
 
+    # //// Note: Risk of softlock if you kill the rat. Make sure
+    # there's another way out.
+
     proc heartRoom {} {
         puts "== Heart Room - Tiny =="
         puts -nonewline "The enormous set of stairs leading up to the main room of the\

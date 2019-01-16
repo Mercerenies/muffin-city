@@ -103,7 +103,7 @@ inv add {Pirate Hat}
 con
 state put harry-location freedom
 con
-state put hut-password found
+state put hut-password yes
 1
 2
 2
