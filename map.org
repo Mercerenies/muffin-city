@@ -515,6 +515,15 @@
 **** lockedFail1
 **** lockedFail2
 **** foyer
+**** underRug
+**** basement
+**** note
+**** fridge
+**** officer
+**** officerHelp
+**** mime
+**** mimeRelease
+**** mimeShrink
 ** [Subspace]
 *** [Hub]
 **** hub
@@ -622,6 +631,8 @@
 **** runAway
 **** ratFight
 
+*** [PastHut]
+**** basement
 * ITEMS
 
 ** Item List
@@ -1690,6 +1701,8 @@
 ** The Hatman
 ** Harry the Arsonist
 ** Sentient Baby Doll
+** Ricardo the Cop
+** The Mime
 * NOTES
 
 ** ACCEPTED Cave and Lantern
@@ -2092,6 +2105,21 @@
 ** CONSIDERING Traveling Circus
    That's what this game needs. It can go to a few different locations
    at different times, as you progress Butler events.
+** ACCEPTED Tiny Layout
+   So the layout of the tiny city. You'll spend most of the time in
+   the ventilation (Grigory) and the sewers (Arachnarok).
+
+   Present
+   + The ventilation is available.
+   + The sewers link the hut and the hotel. You'll meet Arachnarok.
+   + Can enter from Dr. Cipher's lab.
+
+   Past
+   + The ventilation is sealed off for some reason (maybe it's just
+     the vent is closed right now)
+   + The sewers are sealed off from the hotel side but can be forcibly
+     opened from the hut side.
+   + Can enter from Dr. Cipher's lab or by threatening the mime.
 * MISCELLANEOUS
 
 ** Test
