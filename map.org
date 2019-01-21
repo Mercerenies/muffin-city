@@ -633,6 +633,15 @@
 
 *** [PastHut]
 **** basement
+**** noMime
+**** noOfficer
+**** basementPipe
+**** sewerEast
+**** altar
+**** sewerWest
+**** kickPipe
+**** kickPipe1
+**** kickPipe2
 * ITEMS
 
 ** Item List
@@ -1516,6 +1525,9 @@
      When the player uses it, the game will move to ~yes~.
 **** yes
      The player has used the password. The hut door is unlocked.
+*** ~heart-pipe~
+**** no
+**** yes
 ** World States
 *** ~trial-reason~
 **** {}
