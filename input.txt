@@ -116,4 +116,9 @@ state put hut-password yes
 3
 1
 3
-
+4
+1
+1
+4
+1
+1

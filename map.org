@@ -2132,6 +2132,39 @@
    + The sewers are sealed off from the hotel side but can be forcibly
      opened from the hut side.
    + Can enter from Dr. Cipher's lab or by threatening the mime.
+** CONSIDERING Company Policy
+   Chuck is an accountant at some corporation (probably some place we
+   haven't seen yet). The player meets him (maybe?) at some point.
+   Then later, on the ship, the player sees Chuck being deposited into
+   the ocean by a large crane. Upon being rescued, Chuck claims that
+   it is company policy to deposit fired employees into the ocean and
+   asks to be put back. The captain refuses and takes him back to the
+   dream world.
+
+   Chuck is scared that he is going to get caught violating his
+   contract and will go to jail. The player must find him a false ID
+   so he can start a new life.
+
+   Perhaps the robber has the false ID. Maybe it falls out of his
+   pocket on the moon? Then the player takes that to Chuck who starts
+   a new life, and can be useful in some later quest after meeting
+   again by chance.
+** CONSIDERING Obsessed
+   All of this happens after ~necro-cipher~ is done (and likely some
+   other stuff).
+
+   So there's this guy named Billy. You first encounter him in a
+   common area, maybe even the central hub area. He has no idea how he
+   got there. Then, shortly after, he's murdered by a woman. Later,
+   you find him in the same spot, no memory once again. You can tell
+   him to run to different locations to escape the murder. In each
+   location, the woman will find him and kill him. Something unique
+   may happen at each location depending on where it is.
+
+   Later, you find out that the woman has stolen the Necromancy
+   Certificate and is using it to repeatedly kill Billy. Not sure why.
+   You need to get it back, after doing the miscellaneous side quest
+   stuff relating to sending Billy to the various locations.
 * MISCELLANEOUS
 
 ** Test
