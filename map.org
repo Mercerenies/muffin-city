@@ -2165,6 +2165,16 @@
    Certificate and is using it to repeatedly kill Billy. Not sure why.
    You need to get it back, after doing the miscellaneous side quest
    stuff relating to sending Billy to the various locations.
+** CONSIDERING Star of the Show
+   At some point, a major villain (potentially the wizard from
+   Atheena's past) will harness the power of a distant star and try to
+   use it to destroy the world. Likely, you will (of course) need
+   Atheena's help to stop him.
+** CONSIDERING One Word
+   A bad guy has discovered an ancient word which, if said in the
+   right conditions, will destroy the planet instantly. You go back in
+   time and enlist that bad guy's help in fighting him in the present
+   day.
 * MISCELLANEOUS
 
 ** Test
