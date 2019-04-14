@@ -2170,11 +2170,75 @@
    Atheena's past) will harness the power of a distant star and try to
    use it to destroy the world. Likely, you will (of course) need
    Atheena's help to stop him.
+
+   Surviving areas:
+   + Inverse City (totally fine, actually)
+   + Space (the areas not in our solar system)
+   + Subspace
+   + Console Room (but Science probably died in the heat death of earth)
+   + Prehistory (but Crispy Joe doesn't exist anymore)
+   + Dream World
+   We need to make sure there's some way to get between these areas
+   that doesn't visit an ignited area. Sleeping will get you to the
+   dream train and then the dream world instantly, as the train won't
+   go back to earth. Dying will... we'll have to think about that
+   given that the underworld is exploded.
+
+   Okay, second draft, and more thought out this time.
+
+   At some point super late in the game, the player goes to some
+   surviving area and finds that the ways back to the mortal world are
+   gone. He visits Atheena, who has a hunch of what's going on.
+
+   An evil wizard in medieval times harnessed the energy of a nearby
+   star and used it to threaten the king. He gave the king one week to
+   forfeit the throne to him or he would destroy the planet. The king
+   sent his best warriors, including Atheena, to fight the wizard. The
+   wizard killed most of the warriors and sent Atheena to subspace
+   (maybe he doesn't kill women?). Then, one week later, he played his
+   hand and destroyed the planet with that star. All of the
+   present-day destinations (city, past city, prison, etc.) are gone,
+   the underworld is gone, and the only areas that remain are those
+   outside of time or sufficiently far from earth. Additionally,
+   anyone originally from the present day (Science Johnson, Crispy
+   Joe, the female prison guard) ceases to exist.
+
+   Atheena somehow gets the player to the Guardian of Time, who
+   stabilizes the player's existence as he would also be wiped out
+   soon. Then the player has to navigate the six surviving areas of
+   the map (five, really, because the console room won't do you any
+   good) and create something to plant in prehistory which will
+   activate and stop the wizard in a few thousand years.
 ** CONSIDERING One Word
    A bad guy has discovered an ancient word which, if said in the
    right conditions, will destroy the planet instantly. You go back in
    time and enlist that bad guy's help in fighting him in the present
    day.
+** CONSIDERING Mind Control
+   At some point early in the game (Butler 1, maybe), the player will
+   meet an as yet unnamed evil mastermind. This mastermind has come up
+   with an evil plan to take over the world. He invites the player to
+   come visit him somewhere. When he does so, the mastermind will
+   brainwash the player. From this point, the player's choices do not
+   matter; he is led involuntarily to a confrontation that ultimately
+   results in his death. The player goes to the underworld, and he is
+   free of the mastermind's spell.
+
+   The mastermind has left his usual hideout (wherever that was). Over
+   the course of the next little while, the mastermind will kidnap and
+   brainwash a handful of characters, who will stop performing their
+   usual tasks and instead kill the player upon interaction (or maybe
+   simply mutter gibberish). Eventually, the player will find the
+   mastermind again, who will flee from him. The mastermind flees into
+   the presidential ballroom in the Ritzy Inn, where he will collect
+   all of his brainwash victims. If the player confronts him, the
+   brainwash victims will win. The player will have to do something to
+   get through the crowd (probably a special item).
+
+   Once the player gets through the crowd, the mastermind will reveal
+   his true plan: to brainwash the entire city and rule over it as
+   dictator. I don't know exactly how the player is supposed to stop
+   him from there. We'll have to think about it.
 * MISCELLANEOUS
 
 ** Test
