@@ -630,7 +630,6 @@
 **** deepVent
 **** runAway
 **** ratFight
-
 *** [PastHut]
 **** basement
 **** noMime
@@ -642,6 +641,9 @@
 **** kickPipe
 **** kickPipe1
 **** kickPipe2
+**** heartRoom
+**** ventilation
+**** heartPedestal
 * ITEMS
 
 ** Item List

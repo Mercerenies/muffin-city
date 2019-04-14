@@ -1,6 +1,8 @@
 
 namespace eval ::Tiny::PastHut {
 
+    # //// This whole place is a softlock right now: there's no way out.
+
     proc basement {} {
         puts "== Tiny Hut Basement - Past =="
         # //// Update this once the mime / officer have left the area
@@ -73,7 +75,7 @@ namespace eval ::Tiny::PastHut {
         # //// Empty
         prompt {} {
             {"Kick the weak spot in the pipe" {[state get heart-pipe] eq {no}} kickPipe}
-            {"Go through the hole" {[state get heart-pipe] eq {yes}} ::Empty::place}
+            {"Go through the hole" {[state get heart-pipe] eq {yes}} heartRoom}
             {"Go east" yes sewerEast}
         }
     }
@@ -99,9 +101,43 @@ namespace eval ::Tiny::PastHut {
         state put heart-pipe yes
         # ////
         prompt {} {
-            {"Go through the hole" yes ::Empty::place}
+            {"Go through the hole" yes heartRoom}
             {"Don't go" yes sewerWest}
         }
+    }
+
+    proc heartRoom {} {
+        puts "== Tiny Heart Room - Past =="
+        puts -nonewline "There is a set of very large stairs leading up to the main\
+        room of the research facility, but at your size you stand no chance of\
+        scaling them. The pedestal in the center of the room is low enough that\
+        you may be able to climb it. There are several lasers well above your head\
+        pointing at the pedestal, and an air vent off to the side is tightly sealed\
+        off."
+        if {[state get heart-pipe] eq {yes}} then {
+            puts " A pipe in the corner of the room has a hole large enough for you to\
+            fit through."
+        } else {
+            puts {}
+        }
+        prompt {} {
+            {"Enter the air vent" yes ventilation}
+            {"Stand on the pedestal" yes heartPedestal}
+            {"Enter the pipe" {[state get heart-pipe] eq {yes}} sewerWest}
+        }
+    }
+
+    proc ventilation {} {
+        puts "The air vent is tightly sealed off. You can't get in."
+        puts {}
+        return heartRoom
+    }
+
+    proc heartPedestal {} {
+        puts "You climb up on the pedestal, but nothing happens. The lasers don't\
+        even seem to realize you're there."
+        puts {}
+        return heartRoom
     }
 
 }
