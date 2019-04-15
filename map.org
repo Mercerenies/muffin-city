@@ -644,6 +644,17 @@
 **** heartRoom
 **** ventilation
 **** heartPedestal
+**** mothka
+**** mothkaRefuse
+**** mothkaDisrespect
+**** mothkaBow
+**** mothkaChallenge
+**** mothkaChallenge1
+**** mothkaChallenge2
+**** mothkaNoChallenge
+**** mothkaSerialMurder
+**** ratFight
+**** ratDeath
 * ITEMS
 
 ** Item List
@@ -1321,6 +1332,20 @@
      then moves to ~running~.
 **** running
      //// What next?
+*** The Moth King (~moth-king~)
+**** no
+     The player has not met Mothka yet. Upon meeting Mothka in the
+     past in the Heart Room, the game moves to ~met~ and Mothka kills
+     the player to prove a point.
+**** met
+     The player has met Mothka. When he returns to the past in the
+     Heart Room, Mothka will begin to respect the player for evading
+     death. He will then challenge him to a game of chess. Mothka
+     demands that the player meet him in the mime's basement in twelve
+     hours' time. The game moves to ~challenged~.
+**** challenged
+     If the player approaches Mothka in the past, he will simply
+     gloat. The player must confront Mothka in the present. ////
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -1848,12 +1873,13 @@
    Reaper), sealed away by the Ancient Minister? //// (This hasn't
    been explicitly established)
 ** Missing Rewards, etc.
- + Attorney-Man's reward?
- + The Black Olive needs to do something (double subspace???)
- + Heart Room in the past does something? (possibly just an easter
+ + [ ] Attorney-Man's reward?
+ + [ ] The Black Olive needs to do something (double subspace???)
+ + [X] Heart Room in the past does something? (possibly just an easter
    egg; exit blocked off?)
- + Steve's Suspicious Briefcase doesn't do anything right now.
- + The Religious Artifact from the pirate ship does nothing. There
+   - The Heart Room in the past is now the source of Mothka.
+ + [ ] Steve's Suspicious Briefcase doesn't do anything right now.
+ + [ ] The Religious Artifact from the pirate ship does nothing. There
    will also likely be a second (third?) one somewhere.
 ** CONSIDERING The Flaming Axe
  + The Flaming Axe of Doom was used by the First Reaper to carve out
@@ -1861,9 +1887,12 @@
    place before time itself by supercharging the prehistory time
    machine. Visiting prehistory and heading down to the Underworld
    will encounter maybe an earlier Reaper?
-** CONSIDERING Mothka's Challenge
+** ACCEPTED Mothka's Challenge
  + Queen piece converter (for Mothka game?) (and just, ya know, Mothka
    in general)
+
+   Mothka is in the heart room in the past. He wants to challenge you
+   in the present to a game of chess.
 ** CONSIDERING The RAM
    ........The computer RAM, infinite strip? (in the console room, an
    isolated area?)

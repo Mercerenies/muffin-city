@@ -38,6 +38,14 @@ namespace eval Past::Science {
         }
     }
 
+    proc heartRoomJump {} {
+        puts "You step up onto the pedestal. The lasers instantly leap into action, firing\
+        simultaneous bursts of light in your direction. As they do this, the room grows\
+        larger around you, until you are shorter than the pedestal itself."
+        puts {}
+        return ::Tiny::PastHut::heartRoom
+    }
+
     proc heartRoom {} {
         if {![inv has {Heart Key}]} then {
             puts "The door is locked."
@@ -45,8 +53,10 @@ namespace eval Past::Science {
             return mainRoom
         }
         puts "== Heart Room - Past =="
-        # ////
+        puts "A set of stairs leads down into a relatively small room. In the center of the room,\
+        a large pedestal rests with several floor-mounted lasers pointing at it."
         prompt {} {
+            {"Step on the pedestal" yes heartRoomJump}
             {"Go back out" yes mainRoom}
         }
     }

@@ -72,7 +72,6 @@ namespace eval ::Tiny::PastHut {
             puts "To the west, there is a hole in the pipe before it makes a 90 degree\
             turn which you could probably fit through."
         }
-        # //// Empty
         prompt {} {
             {"Kick the weak spot in the pipe" {[state get heart-pipe] eq {no}} kickPipe}
             {"Go through the hole" {[state get heart-pipe] eq {yes}} heartRoom}
@@ -99,7 +98,6 @@ namespace eval ::Tiny::PastHut {
     proc kickPipe2 {} {
         puts "The pipe suddenly gives, leaving a hole large enough for you to pass through."
         state put heart-pipe yes
-        # ////
         prompt {} {
             {"Go through the hole" yes heartRoom}
             {"Don't go" yes sewerWest}
@@ -108,12 +106,13 @@ namespace eval ::Tiny::PastHut {
 
     proc heartRoom {} {
         puts "== Tiny Heart Room - Past =="
-        puts -nonewline "There is a set of very large stairs leading up to the main\
-        room of the research facility, but at your size you stand no chance of\
-        scaling them. The pedestal in the center of the room is low enough that\
-        you may be able to climb it. There are several lasers well above your head\
-        pointing at the pedestal, and an air vent off to the side is tightly sealed\
-        off."
+        puts -nonewline "There is a pedestal in the center of the room, low enough\
+        that you may be able to climb it. The pedestal is surrounded by several tall\
+        lasers, all of them pointed at the pedestal. The stairs leading out of the\
+        room are unfortunately much too high to be scaled at your height. A small\
+        air vent in the corner of the room appears to be sealed off, and a giant\
+        moth-like creature is hovering above the ground in the opposite corner of\
+        the room."
         if {[state get heart-pipe] eq {yes}} then {
             puts " A pipe in the corner of the room has a hole large enough for you to\
             fit through."
@@ -124,6 +123,8 @@ namespace eval ::Tiny::PastHut {
             {"Enter the air vent" yes ventilation}
             {"Stand on the pedestal" yes heartPedestal}
             {"Enter the pipe" {[state get heart-pipe] eq {yes}} sewerWest}
+            {"Talk to the moth" {[state get moth-king] eq {no}} mothka}
+            {"Talk to Mothka" {[state get moth-king] ne {no}} mothka}
         }
     }
 
@@ -138,6 +139,124 @@ namespace eval ::Tiny::PastHut {
         even seem to realize you're there."
         puts {}
         return heartRoom
+    }
+
+    proc mothka {} {
+        switch [state get moth-king] {
+            no {
+                puts "\"Halt! You are trespassing on the domain of Mothka, the evil\
+                moth king! Bow before his majesty!\""
+                prompt {} {
+                    {"\"I will never!\"" yes mothkaRefuse}
+                    {"\"Who? You?\"" yes mothkaDisrespect}
+                    {"Bow before his majesty" yes mothkaBow}
+                }
+            }
+            met {
+                puts "\"Halt! You are trespassing on the domain of... ... you clever\
+                insect! You survived the execution chamber of the moth king.\""
+                prompt {} {
+                    {"\"You won't defeat me so easily, Mothka!\"" yes mothkaChallenge}
+                    {"\"That rat was your execution chamber?\"" yes mothkaChallenge}
+                }
+            }
+            default {
+                puts "\"The evil moth king anticipates his battle with you! In the\
+                meantime, you must be removed.\""
+                puts "Mothka swoops toward you and picks you up. He flies you\
+                into his execution chamber and seals the vent."
+                puts {}
+                return ratFight
+            }
+        }
+    }
+
+    proc mothkaRefuse {} {
+        puts "\"Such insolence! The evil moth king will teach you a lesson!\""
+        puts "Mothka swoops toward you suddenly and picks you up. He flies you\
+        up the stairs and into a small air vent, where he drops you and seals the vent behind you."
+        puts "\"Good luck, insolent fool! Remember this next time you defy royalty!\""
+        state put moth-king met
+        puts {}
+        return ratFight
+    }
+
+    proc mothkaDisrespect {} {
+        puts "\"The evil moth king will not be disrespected thusly! He will teach you\
+        a lesson!\""
+        puts "Mothka swoops toward you suddenly and picks you up. He flies you\
+        up the stairs and into a small air vent, where he drops you and seals the vent behind you."
+        puts "\"Good luck, insolent fool! Remember this next time you disrespect royalty!\""
+        state put moth-king met
+        puts {}
+        return ratFight
+    }
+
+    proc mothkaBow {} {
+        puts "\"Very good! For your behavior, the evil moth king grants you a swift death.\""
+        puts "Mothka swoops toward you suddenly and picks you up. He flies you\
+        up the stairs and into a small air vent, where he drops you and seals the vent behind you."
+        state put moth-king met
+        puts {}
+        return ratFight
+    }
+
+    proc mothkaChallenge {} {
+        puts "\"Indeed. The moth king shall have to try harder! In fact, the moth king\
+        challenges you to a game of intelligence!\""
+        prompt {} {
+            {"\"I'm listening.\"" yes mothkaChallenge1}
+            {"\"Not interested.\"" yes mothkaNoChallenge}
+        }
+    }
+
+    proc mothkaChallenge1 {} {
+        puts "\"Since the moth king has failed to defeat you in direct combat, he will\
+        fight you in a battle of wits. Meet the moth king in the basement on the other\
+        side of the sewers in twelve hours' time.\""
+        prompt {} {
+            {"\"I'll be there.\"" yes mothkaChallenge2}
+        }
+    }
+
+    proc mothkaChallenge2 {} {
+        puts "\"Excellent! Unfortunately, you are still trespassing on the moth king's\
+        territory.\""
+        state put moth-king challenged
+        puts "Mothka swoops toward you and picks you up. He flies you\
+        into his execution chamber and seals the vent."
+        puts {}
+        return ratFight
+    }
+
+    proc mothkaNoChallenge {} {
+        puts "\"Then the moth king has no need for you.\""
+        puts "Mothka swoops toward you and picks you up. He flies you\
+        into his execution chamber and seals the vent."
+        puts {}
+        return ratFight
+    }
+
+    proc ratFight {} {
+        puts "== Deep Ventilation Shaft =="
+        # //// Make sure that whatever lets you kill the rat in the
+        # present can't work here. This is always an instant death.
+        puts "A winding path of air vents stretches out before you. Behind you, the air vent\
+        has been sealed shut. In front of you, a giant hungry rat stares you down."
+        prompt {} {
+            {"\"Go on! Leave me alone!\"" yes ratDeath}
+            {"\"Nice kitty.\"" yes ratDeath}
+            {"\"Whatever the moth king is paying you, I'll double it.\"" yes ratDeath}
+        }
+    }
+
+    proc ratDeath {} {
+        puts "The rat eats you."
+        if {[state get lobby-door] ne {yes}} then {
+            state put lobby-door wildlife
+        }
+        puts {}
+        return ::Underworld::Lobby::wildlife
     }
 
 }

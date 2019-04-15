@@ -95,6 +95,7 @@ namespace eval State {
         baby-doll no
         hut-password no
         heart-pipe no
+        moth-king no
     }]
 
     proc get {args} {
