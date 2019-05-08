@@ -36,15 +36,19 @@ namespace eval Underworld::Elevator {
         puts "== Underworld Tunnel =="
         puts -nonewline "The strange tunnel stretches on for a long while, but it\
         quickly becomes too narrow for you to proceed. There is an elevator and a\
-        door that appears to lead to a science lab. The other doors are on the other\
-        side of the narrow tunnel and are inaccessible to you."
+        door that appears to lead to a science lab."
+        # //// Different prompt here if Steve has taken over the other room
+        puts -nonewline " Beside the science lab, there is a doorway leading to\
+        a seemingly empty room."
         if {[state get golden-arches]} then {
-            puts " Next to the science lab, there is a shining golden arch."
-        } else {
-            puts {}
+            puts -nonewline " Next to the science lab, there is a shining golden arch."
         }
+        puts " The other doors are on the other side of the narrow\
+        tunnel and are inaccessible to you."
+        # //// Prompt for the empty room (Steve)
         prompt {} {
             {"Enter the science lab" yes scienceLab}
+            {"Enter the empty room" yes emptyRoom}
             {"Enter the elevator" yes {lift ::Underworld::Elevator::tunnel}}
             {"Pass through the golden arch" {[state get golden-arches]} ::Console::Hall::future}
             {"Go back" yes staircase}
@@ -364,7 +368,7 @@ namespace eval Underworld::Elevator {
             }
         }
         puts "\"You see, years ago, I worked with Dr. Louis in the overworld on a few\
-        projects. I believe you've met her, actually. I believe I still have the key\
+        projects. I believe you've met her, actually. I may still have the key\
         to one of my inventions.\""
         puts "Dr. Cipher fumbles about with his pockets for a moment."
         puts "\"Aha! Here you go! You're welcome to try it out anytime.\""
@@ -380,6 +384,16 @@ namespace eval Underworld::Elevator {
         place as ruler of this world!\""
         prompt {} {
             {"\"Have fun with that.\"" yes scienceLab}
+        }
+    }
+
+    proc emptyRoom {} {
+        puts "== Underworld Vacant Room =="
+        puts "The room is as large and empty as it appeared from the outside. Large and\
+        square, the room contains nothing and no one of interest, and there is no way\
+        out aside from the doorway through which you just entered."
+        prompt {} {
+            {"Exit the room" yes tunnel}
         }
     }
 

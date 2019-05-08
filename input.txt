@@ -106,14 +106,6 @@ con
 state put hut-password yes
 con
 state put moth-king challenged
-1
 2
-2
-1
-4
-1
-2
-5
-1
-2
+3
 1

@@ -304,6 +304,7 @@
 **** cipherCertificate
 **** cipherReward <answer>
 **** joeTalk
+**** emptyRoom
 *** [Johnny]
 **** talk
 **** okay
@@ -2285,7 +2286,7 @@
    incredibly spicy.
    + Spicy Taco (made with Black Olive from Taco Man)
    + Spicy Chili (made by Dr. Cipher as thanks)
-   + ???
+   + Spicy Burger (made by the hotel or the train chef)
 
    Each time the player eats a spicy food, he's taken to a special
    part of subspace. There are three doors, and each time a new door
