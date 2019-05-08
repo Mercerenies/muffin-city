@@ -1742,6 +1742,7 @@
 ** Sentient Baby Doll
 ** Ricardo the Cop
 ** The Mime
+** Mothka the Evil Moth King
 * NOTES
 
 ** ACCEPTED Cave and Lantern
@@ -1903,6 +1904,10 @@
 ** CONSIDERING The Guardian of Time
    Could the Guardian of Time be chilling in Double Subspace reachable
    with the Black Olive?
+
+   + Note that we may alternatively reach the Guardian during the
+     destruction of the world by Atheena's old enemy, as that would be
+     something the Guardian would be more deeply interested in.
 ** CONSIDERING The Twins
  + Twins: the mailman and the taxman. Taxman collects a silver coin at
    some point for tax purposes. Mailman... I dunno, delivers mail?
@@ -1928,9 +1933,10 @@
    into a new part of the underworld, filled with dark souls and evil
    magic. Perhaps the Certificate is torn? You have to get it
    repaired?
-** ACCEPTED The Underworld Mystery Room
+** DONE The Underworld Mystery Room
    Too easy to get to Underworld Mystery Room? Consider changing the
-   past button to do something else. (Currently impossible to get there)
+   past button to do something else. +(Currently impossible to get there)+
+   + You can now get there thanks to Mothka
 ** CANCELED Shrinking Down
    - Note taken on [2018-10-12 Fri 11:21] \\
      Canceled; the shrinking item is no longer an item but a machine
@@ -2240,6 +2246,10 @@
    the map (five, really, because the console room won't do you any
    good) and create something to plant in prehistory which will
    activate and stop the wizard in a few thousand years.
+
+   What caused things to play out differently the second time? Someone
+   (maybe "One Word" guy) traveled back and changed things, knowing
+   full well what he was doing.
 ** CONSIDERING One Word
    A bad guy has discovered an ancient word which, if said in the
    right conditions, will destroy the planet instantly. You go back in
@@ -2270,6 +2280,30 @@
    his true plan: to brainwash the entire city and rule over it as
    dictator. I don't know exactly how the player is supposed to stop
    him from there. We'll have to think about it.
+** CONSIDERING Delicious
+   There could be three different foods in the game that are
+   incredibly spicy.
+   + Spicy Taco (made with Black Olive from Taco Man)
+   + Spicy Chili (made by Dr. Cipher as thanks)
+   + ???
+
+   Each time the player eats a spicy food, he's taken to a special
+   part of subspace. There are three doors, and each time a new door
+   opens. Behind each door is a special character.
+   + First visit: ???
+   + Second visit: ???
+   + Third visit: ???
+** CONSIDERING Headless
+   After some time passes (at least after the Green Olive, maybe some
+   more prereqs), a man without a head starts hanging out in the taco
+   shop. The player needs to somehow find a way to communicate with
+   him, so he can warn the player about his head, which is plotting to
+   build a robotic mech suit and destroy the city.
+** CONSIDERING Subspaces
+   There are a lot of different subspaces, and the Minister exists in
+   all of them. The Minister can transfer himself and others between
+   the different ones. He also decides which subspace someone ends up
+   in when they cause a paradox.
 * MISCELLANEOUS
 
 ** Test
@@ -2282,3 +2316,5 @@
  *   Spade Room - Time Machine+ - ???
  *   Heart Room - Shrinking     - Dr. Cipher Quest
  * Diamond Room - Rocket        - ???
+** Next
+   +Mothka's execution chamber should take you to the other room.+

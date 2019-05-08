@@ -1,8 +1,6 @@
 
 namespace eval ::Tiny::PastHut {
 
-    # //// This whole place is a softlock right now: there's no way out.
-
     proc basement {} {
         puts "== Tiny Hut Basement - Past =="
         # //// Update this once the mime / officer have left the area
@@ -252,11 +250,8 @@ namespace eval ::Tiny::PastHut {
 
     proc ratDeath {} {
         puts "The rat eats you."
-        if {[state get lobby-door] ne {yes}} then {
-            state put lobby-door wildlife
-        }
         puts {}
-        return ::Underworld::Lobby::wildlife
+        return ::Underworld::Pits::mysteryRoom
     }
 
 }
