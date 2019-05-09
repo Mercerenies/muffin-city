@@ -106,6 +106,7 @@ con
 state put hut-password yes
 con
 state put moth-king challenged
-2
-3
-1
+con
+state put baby-doll forest
+con
+inv add {Diamond Key}

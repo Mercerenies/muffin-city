@@ -10,6 +10,25 @@ namespace eval Prison::Cottage {
         } else {
             puts {}
         }
+        if {[state get baby-doll] eq {forest}} then {
+            # //// Once the false-stage quest is done, we may need to have the farmer reaction again
+            if {[state get cottage-spirit] in {no evil}} then {
+                puts {}
+                puts "Suddenly, the sentient baby doll leaps out from behind a tree,\
+                causing the farmer quite a fright."
+                puts "\"Heeheehee! You caught me! Bet you can't catch me again!\""
+                puts "The baby doll flees into the distance."
+                state put baby-doll outer
+            } elseif {([state get cottage-spirit] eq {pocket}) && ([state get doll-key] eq {no}) && ([state get false-stage] eq {no})} {
+                return dollKey
+            } else {
+                puts {}
+                puts "Suddenly, the sentient baby doll leaps out from behind a tree."
+                puts "\"Heeheehee! You caught me! Bet you can't catch me again!\""
+                puts "The baby doll flees into the distance."
+                state put baby-doll outer
+            }
+        }
         prompt {} {
             {"Talk to the farmer" {[state get cottage-spirit] in {no evil}} farmer}
             {"Enter the cottage" yes cottage}
@@ -31,7 +50,7 @@ namespace eval Prison::Cottage {
             }
             starlight - starlight1 - pocket {
                 puts " The farmer, his wife, and his son are standing against the wall,\
-                somewhat nervous"
+                somewhat nervous."
             }
             default {
                 puts {}
@@ -62,7 +81,6 @@ namespace eval Prison::Cottage {
                 looking slightly annoyed at herself."
             }
             pocket {
-                # //// We'll make this specific to where we are in the quest soon
                 switch [state get false-stage] {
                     no {
                         puts " Against the back wall of the shed, a glowing white portal is open.\
@@ -77,7 +95,6 @@ namespace eval Prison::Cottage {
                 puts {}
             }
         }
-        # //// Enter the portal even if Starlight isn't here (if we sequence broke the simulation)
         prompt {} {
             {"Talk to the woman" {[state get cottage-spirit] eq {starlight}} starlightIntro}
             {"Talk to Starlight" {[state get cottage-spirit] eq {starlight1}} starlightTalk}
@@ -346,6 +363,31 @@ namespace eval Prison::Cottage {
         } else {
             return ::Prison::Pocket::center
         }
+    }
+
+    proc dollKey {} {
+        puts {}
+        puts "The sentient baby doll from the refrigerator runs out from\
+        inside the shed. Silver Starlight races out of the shed and gives\
+        chase."
+        puts "\"This creepy doll tried to steal my scepter!\""
+        puts "The baby doll narrowly dodges several hastily thrown spells,\
+        before escaping into the treeline."
+        puts "\"Drat! She got away! But she did drop this key on the way\
+        out. I'm not sure what it goes too. Do you want it?\""
+        state put baby-doll outer
+        prompt {} {
+            {"Take the key" yes dollKey1}
+        }
+    }
+
+    proc dollKey1 {} {
+        puts "You got the Diamond Key!"
+        state put doll-key yes
+        inv add {Diamond Key}
+        puts "Starlight heads back into the shed."
+        puts {}
+        return yard
     }
 
 }

@@ -389,12 +389,27 @@ namespace eval Underworld::Elevator {
 
     proc emptyRoom {} {
         puts "== Underworld Vacant Room =="
-        puts "The room is as large and empty as it appeared from the outside. Large and\
-        square, the room contains nothing and no one of interest, and there is no way\
-        out aside from the doorway through which you just entered."
+        puts -nonewline "The room is as large and empty as it appeared from the outside.\
+        Large and square, the room contains nothing and no one of interest, and there\
+        is no way out aside from the doorway through which you just entered."
+        if {[state get baby-doll] eq {running}} then {
+            puts " The baby doll from the refrigerator is hiding in a corner of the room."
+        } else {
+            puts {}
+        }
         prompt {} {
+            {"Confront the baby doll" {[state get baby-doll] eq {running}} emptyRoomDoll}
             {"Exit the room" yes tunnel}
         }
+    }
+
+    proc emptyRoomDoll {} {
+        puts "\"Heeheehee! You caught me! Bet you can't catch me again!\""
+        puts "The baby doll runs out through the doorway and off into the\
+        distance."
+        puts {}
+        state put baby-doll forest
+        return emptyRoom
     }
 
 }

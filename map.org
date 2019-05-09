@@ -216,6 +216,8 @@
 **** wander
 **** portalWith
 **** portalWithout
+**** dollKey
+**** dollKey1
 *** [Pocket]
 **** theater
 **** theaterSeat
@@ -305,6 +307,7 @@
 **** cipherReward <answer>
 **** joeTalk
 **** emptyRoom
+**** emptyRoomDoll
 *** [Johnny]
 **** talk
 **** okay
@@ -669,7 +672,7 @@
  + Ritzy Inn Room Key
  + Motel Room Key
  + Spade Key (TBA)
- + Diamond Key (TBA)
+ + Diamond Key
  + Heart Key
  + Club Key
  + Fireproof Suit
@@ -1332,7 +1335,22 @@
      player takes the doll, she will wake up and run off. The game
      then moves to ~running~.
 **** running
-     //// What next?
+     The baby doll is in the vacant room in the underworld. When the
+     player encounters her, a cutscene occurs. If Steve has not
+     occupied the room yet, the baby doll will simply run away and the
+     game will move to ~forest~.
+
+     //// And if she has?
+**** forest
+     The baby doll is by the cottage in the forest. When the player
+     encounters her (in the main cottage yard area), a cutscene
+     occurs. If the farmer is out, he will panic, but nothing of
+     interest will occur. If not, then Starlight will attack the doll,
+     chasing her off and causing her to drop the Diamond Key. In
+     either case, the game moves to ~outer~. If the doll drops the
+     Diamond Key, then ~doll-key~ moves to ~yes~.
+**** outer
+     ////
 *** The Moth King (~moth-king~)
 **** no
      The player has not met Mothka yet. Upon meeting Mothka in the
@@ -1387,6 +1405,9 @@
 **** no
 **** yes
 *** ~treasure-room~
+**** no
+**** yes
+*** ~doll-key~
 **** no
 **** yes
 ** Muffin States
@@ -2316,6 +2337,6 @@
  *    Club Room - Time Machine  - Free on First Access
  *   Spade Room - Time Machine+ - ???
  *   Heart Room - Shrinking     - Dr. Cipher Quest
- * Diamond Room - Rocket        - ???
+ * Diamond Room - Rocket        - Baby Doll in the Forest
 ** Next
    +Mothka's execution chamber should take you to the other room.+
