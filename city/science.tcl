@@ -106,7 +106,7 @@ namespace eval City::Science {
             return mainRoom
         }
         puts "== Diamond Room =="
-        # //// Empty room right now
+        # ///// Empty room right now
         prompt {} {
             {"Go back out" yes mainRoom}
         }
