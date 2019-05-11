@@ -61,6 +61,12 @@ namespace eval Past::Science {
         }
     }
 
+    proc diamondRoomNo {} {
+        puts "None of the buttons or controls appear to have any effect right now."
+        puts {}
+        return diamondRoom
+    }
+
     proc diamondRoom {} {
         if {![inv has {Diamond Key}]} then {
             puts "The door is locked."
@@ -68,8 +74,12 @@ namespace eval Past::Science {
             return mainRoom
         }
         puts "== Diamond Room - Past =="
-        # ////
+        puts "The room is small and dark. There appears to be a control panel against\
+        the back wall, but all of the controls are dimmed. Above the panel, a large\
+        monitor has been switched off. It looks like this room is not being used\
+        right now."
         prompt {} {
+            {"Hit random buttons until something happens" yes diamondRoomNo}
             {"Go back out" yes mainRoom}
         }
     }

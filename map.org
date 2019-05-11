@@ -467,7 +467,9 @@
 **** mainRoom
 **** clubRoomBoom
 **** clubRoom
+**** heartRoomJump
 **** heartRoom
+**** diamondRoomNo
 **** diamondRoom
 **** spadeRoom
 *** [Hotel]
