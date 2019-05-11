@@ -30,7 +30,9 @@ namespace eval City::Science {
         if {[state get talked-to-louis]} then {
             puts "\"Hey, can I help you?\""
             prompt {} {
+                {"\"The Club Key?\"" {[inv has {Club Key}]} clubQuestion}
                 {"\"The Heart Key?\"" {[inv has {Heart Key}]} heartQuestion}
+                {"\"The Diamond Key?\"" {[inv has {Diamond Key}]} diamondQuestion}
                 {"\"Not right now.\"" yes mainRoom}
             }
         } else {
@@ -45,9 +47,23 @@ namespace eval City::Science {
         }
     }
 
+    proc clubQuestion {} {
+        puts "\"The time machine is in the Club Room. Just hit the blue button and see\
+        what happens.\""
+        puts {}
+        return mainRoom
+    }
+
     proc heartQuestion {} {
         puts "\"Oh, the Heart Key? That goes to Dr. Cipher's old lab. It's right over there.\""
         puts "Dr. Louis gestures to the Heart Room."
+        puts {}
+        return mainRoom
+    }
+
+    proc diamondQuestion {} {
+        puts "\"The Diamond Room is the control room for a space launch mission. This lab\
+        doesn't own the rocket, but we have some backup controls for emergency purposes.\""
         puts {}
         return mainRoom
     }

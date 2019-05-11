@@ -85,7 +85,9 @@
 *** [Science]
 **** mainRoom
 **** talkTo
+**** clubQuestion
 **** heartQuestion
+**** diamondQuestion
 **** clubRoomJump
 **** clubRoom
 **** heartRoomJump
