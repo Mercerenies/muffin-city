@@ -99,6 +99,21 @@ namespace eval City::Science {
         }
     }
 
+    proc diamondRoomJump {} {
+        puts "You push the launch button. On the monitor, the rocket's thrusters activate.\
+        A few moments later, the launchpad releases its hold and the rocket ascends into\
+        space."
+        state put rocket-launched yes
+        puts {}
+        return diamondRoom
+    }
+
+    proc diamondRoomNoJump {} {
+        puts "You push the launch button, but nothing seems to happen."
+        puts {}
+        return diamondRoom
+    }
+
     proc diamondRoom {} {
         if {![inv has {Diamond Key}]} then {
             puts "The door is locked."
@@ -106,8 +121,18 @@ namespace eval City::Science {
             return mainRoom
         }
         puts "== Diamond Room =="
-        # ///// Empty room right now
+        if {[state get rocket-launched] eq {yes}} then {
+            puts "The room is small and square. A monitor depicts an empty launchpad,\
+            and there is a large button labeled \"Launch\" beneat it."
+        } else {
+            puts "The room is small and square. There are several controls on a panel\
+            mounted against the back wall, and a monitor depicts a large rocket in\
+            what appears to be live footage. A large button labeled \"Launch\" catches\
+            your eye."
+        }
         prompt {} {
+            {"Hit the \"Launch\" button" {[state get rocket-launched] eq {no}} diamondRoomJump}
+            {"Hit the \"Launch\" button" {[state get rocket-launched] eq {yes}} diamondRoomNoJump}
             {"Go back out" yes mainRoom}
         }
     }

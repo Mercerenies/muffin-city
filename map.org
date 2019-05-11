@@ -90,6 +90,8 @@
 **** clubRoom
 **** heartRoomJump
 **** heartRoom
+**** diamondRoomJump
+**** diamondRoomNoJump
 **** diamondRoom
 **** spadeRoom
 *** [Shopping]
@@ -1725,6 +1727,9 @@
      Harry escaped successfully and the game will move to ~freedom~.
 **** freedom
      //// Not designed yet
+*** ~rocket-launched~
+**** no
+**** yes
 * CHARACTERS
 
 ** The Robber

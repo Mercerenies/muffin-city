@@ -97,6 +97,7 @@ namespace eval State {
         heart-pipe no
         moth-king no
         doll-key no
+        rocket-launched no
     }]
 
     proc get {args} {
