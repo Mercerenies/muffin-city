@@ -619,6 +619,9 @@
 **** teleporter
 **** crashedTrain
 **** crashing
+**** offTrain
+**** rocket
+**** teleporter
 **** lightSide <oxygen>
 **** crater <oxygen>
 **** rocks <oxygen>

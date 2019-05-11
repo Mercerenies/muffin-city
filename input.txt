@@ -110,3 +110,5 @@ con
 state put baby-doll forest
 con
 inv add {Diamond Key}
+con
+state put rocket-launched yes

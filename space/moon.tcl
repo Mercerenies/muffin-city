@@ -57,6 +57,24 @@ namespace eval Space::Moon {
         return {crater high}
     }
 
+    proc rocket {} {
+        puts "== Crashed Rocket =="
+        if {[inv has {Oxygen Pocket Dimension}]} then {
+            puts "The rocket is not very spacious, but it serves its purpose well. There is\
+            a small chair just large enough for one person. Several controls are situated in\
+            front of the chair, but they all appear to have been damaged in the crash."
+        } else {
+            puts "The rocket is not very spacious, but it serves its purpose well. As soon\
+            as the airlock closes, the room is filled with oxygen, and your Oxygen Tank\
+            immediately refills. There is a small chair, just large enough for one person.\
+            Several controls are situated in front of the chair, but they all appear to have\
+            been damaged in the crash."
+        }
+        prompt {} {
+            {"Go back outside" yes {rocks high}}
+        }
+    }
+
     proc teleporter {} {
         if {[state get moon-teleport] eq {yes}} then {
             puts "You step inside the teleportation device. A white light engulfs you,\
@@ -150,13 +168,19 @@ namespace eval Space::Moon {
             return noOxygen
         }
         puts "== Moon Rocks =="
-        puts "The terrain becomes rockier in this direction. You have to be\
-        careful where you step."
+        if {[state get rocket-launched] eq {yes}} then {
+            puts "The terrain becomes rockier in this direction. Off to one\
+            side, a large rocket has crashed."
+        } else {
+            puts "The terrain becomes rockier in this direction. You have to be\
+            careful where you step."
+        }
         switch $oxygen {
             high {
                 prompt {} {
                     {"Head toward the dark side" yes {darkSide low}}
                     {"Head toward the light side" yes {crater low}}
+                    {"Enter the rocket" {[state get rocket-launched] eq {yes}} rocket}
                 }
             }
             low {
@@ -164,6 +188,7 @@ namespace eval Space::Moon {
                 prompt {} {
                     {"Head toward the dark side" yes {darkSide none}}
                     {"Head toward the light side" yes {crater none}}
+                    {"Enter the rocket" {[state get rocket-launched] eq {yes}} rocket}
                 }
             }
         }
