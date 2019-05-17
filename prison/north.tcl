@@ -23,19 +23,28 @@ namespace eval Prison::North {
         if {[state get harry-location] in {no met breakout}} then {
             switch [state get harry-location] {
                 no {
-                    puts " A shady gentleman with black slicked back hair is leaning against\
-                    the wall."
+                    puts -nonewline " A shady gentleman with black slicked back hair is\
+                    leaning against the wall."
                 }
                 met - breakout {
-                    puts " Harry is leaning against the back wall."
+                    puts -nonewline " Harry is leaning against the back wall."
                 }
             }
-        } else {
-            puts {}
         }
+        switch [state get washroom-coin] {
+            no {
+                state put washroom-coin visited
+            }
+            ready {
+                puts -nonewline " There is a shining Silver Coin sitting on one of the\
+                sinks."
+            }
+        }
+        puts {}
         prompt {} {
             {"Talk to the gentleman" {[state get harry-location] eq {no}} harry}
             {"Talk to Harry" {[state get harry-location] in {met breakout}} harry}
+            {"Take the coin" {[state get washroom-coin] eq {ready}} restCoin}
             {"Exit the washroom" yes hallway}
         }
     }
@@ -103,6 +112,14 @@ namespace eval Prison::North {
     proc harryPlan2 {} {
         puts "\"Great! Do your thing.\""
         state put harry-location breakout
+        puts {}
+        return restroom
+    }
+
+    proc restCoin {} {
+        puts "You got a Silver Coin!"
+        state put washroom-coin yes
+        inv add {Silver Coin}
         puts {}
         return restroom
     }

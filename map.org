@@ -144,6 +144,7 @@
 **** harryPlan
 **** harryPlan1
 **** harryPlan2
+**** restCoin
 **** dining
 **** diningTalk
 **** diningConfront
@@ -716,6 +717,7 @@
  + Forest River (~forest-river~)
  + Freight Elevator (~fe-coin~)
  + Theater Stage (~stage-coin~)
+ + Washroom Coin (~washroom-coin~)
 
 *** Sinks
  + Robbery Event (~city-thug~)
@@ -1419,6 +1421,19 @@
 *** ~doll-key~
 **** no
 **** yes
+*** ~washroom-coin~
+**** no
+     The coin is not available yet. When the player enters the prison
+     washroom, the game moves to ~visited~.
+**** visited
+     The player has been to the washroom in the prison. When the
+     player revisits the hub area of the city, the game moves to
+     ~ready~.
+**** ready
+     The coin is now available. When the player collects the washroom
+     coin, the game moves to ~yes~.
+**** yes
+     The washroom coin has been collected and will not appear again.
 ** Muffin States
 *** River Treasures (~forest-river~)
 **** 0

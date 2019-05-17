@@ -23,6 +23,9 @@ namespace eval City::District {
         if {[state get steve-disappeared] eq {gone1}} then {
             state put steve-disappeared resurrected
         }
+        if {[state get washroom-coin] eq {visited}} then {
+            state put washroom-coin ready
+        }
         prompt {} {
             {"Go to the hotel district" yes hotel}
             {"Go to the shopping district" yes shopping}
