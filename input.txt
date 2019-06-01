@@ -115,9 +115,12 @@ state put rocket-launched yes
 con
 state put washroom-coin yes
 con
-state put brain-control no
+state put brain-control washroom
 3
 2
 3
 2
+1
+1
+1
 1

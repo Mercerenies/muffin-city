@@ -145,9 +145,18 @@
 **** harryPlan1
 **** harryPlan2
 **** restCoin
+**** restBald
+**** toHallway
+**** hypnoConfront
+**** hypnoConfrontAsk
+**** hypnoConfrontNoPuppet
+**** hypnoConfrontGoodbye
+**** hypnoTry
+**** hypnoNoEffect
 **** dining
 **** diningTalk
 **** diningConfront
+**** diningBald
 *** [Guard]
 **** talk
 **** attorney
@@ -1379,7 +1388,8 @@
 *** Brainwashed (~brain-control~)
 **** no
      The Mastermind quest has not started yet. The player cannot find
-     the Mastermind anywhere. In order for the Mastermind
+     the Mastermind anywhere. In this state, Mister Midas is in the
+     prison cafeteria, already hypnotized. In order for the Mastermind
      quest to start, the player must have satisfied several criteria.
      + The player must be entering the prison washroom.
      + The washroom coin muqt have already been collected
@@ -1387,10 +1397,19 @@
      + Harry must already have escaped (~harry-location~ is ~freedom~
        or beyond).
      In this case, the game moves to ~initiated~.
-**** initated
+**** initiated
      The player has satisfied the initiation criteria. When the player
      enters the underworld lobby, the game moves to ~washroom~.
 **** washroom
+     Mister Midas is now in the prison washroom for his hypnosis
+     session. When the player talks to Mister Midas, he only spouts
+     gibberish once again, but the game moves to ~washroom1~.
+**** washroom1
+     Mister Midas is still in the prison washroom. When the player
+     tries to leave the washroom, the Mastermind will confront him and
+     try to hypnotize him. When that fails, he will order Mister Midas
+     to kill him. The game then moves to ~hiding~.
+**** hiding
      ////
 ** Item / Money States
 *** ~stolen-good~
