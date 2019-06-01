@@ -112,3 +112,12 @@ con
 inv add {Diamond Key}
 con
 state put rocket-launched yes
+con
+state put washroom-coin yes
+con
+state put brain-control no
+3
+2
+3
+2
+1

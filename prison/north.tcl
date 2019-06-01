@@ -40,6 +40,11 @@ namespace eval Prison::North {
                 sinks."
             }
         }
+        if {([state get washroom-coin] eq {yes}) &&
+            ([state get harry-location] ni {no met breakout}) &&
+            ([state get brain-control] eq {no})} then {
+            state put brain-control initiated
+        }
         puts {}
         prompt {} {
             {"Talk to the gentleman" {[state get harry-location] eq {no}} harry}

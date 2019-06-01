@@ -207,6 +207,9 @@ namespace eval Underworld::Lobby {
         if {([state get city-thug] eq {chasing}) && ([state get sa-coin] eq {yes})} then {
             state put city-thug no
         }
+        if {[state get brain-control] eq {initiated}} then {
+            state put brain-control washroom
+        }
         if {[state get lobby-door] eq {yes}} then {
             puts "You enter the small rounded lobby. There are a few basic chairs and office\
             amenities here. There is a door leading to a large staircase on one side. On the\

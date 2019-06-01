@@ -1376,6 +1376,22 @@
 **** challenged
      If the player approaches Mothka in the past, he will simply
      gloat. The player must confront Mothka in the present. ////
+*** Brainwashed (~brain-control~)
+**** no
+     The Mastermind quest has not started yet. The player cannot find
+     the Mastermind anywhere. In order for the Mastermind
+     quest to start, the player must have satisfied several criteria.
+     + The player must be entering the prison washroom.
+     + The washroom coin muqt have already been collected
+       (~washroom-coin~ is ~yes~).
+     + Harry must already have escaped (~harry-location~ is ~freedom~
+       or beyond).
+     In this case, the game moves to ~initiated~.
+**** initated
+     The player has satisfied the initiation criteria. When the player
+     enters the underworld lobby, the game moves to ~washroom~.
+**** washroom
+     ////
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -1792,6 +1808,8 @@
 ** Ricardo the Cop
 ** The Mime
 ** Mothka the Evil Moth King
+** The Mastermind
+** Mister Midas
 * NOTES
 
 ** ACCEPTED Cave and Lantern
@@ -2307,7 +2325,7 @@
    right conditions, will destroy the planet instantly. You go back in
    time and enlist that bad guy's help in fighting him in the present
    day.
-** CONSIDERING Mind Control
+** ACCEPTED Mind Control
    At some point early in the game (Butler 1, maybe), the player will
    meet an as yet unnamed evil mastermind. This mastermind has come up
    with an evil plan to take over the world. He invites the player to
@@ -2356,6 +2374,11 @@
    all of them. The Minister can transfer himself and others between
    the different ones. He also decides which subspace someone ends up
    in when they cause a paradox.
+** ACCEPTED The Midas Touch
+   A common criminal who calls himself Mister Midas after the
+   mythological figure. Steals exclusively gold jewelry.
+
+   Mister Midas is Mastermind's first victim, in the prison washroom. /////
 * MISCELLANEOUS
 
 ** Test
