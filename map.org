@@ -1260,7 +1260,7 @@
      The player needs to investigate the rest of the warehouse. In the
      back, he will find a Cryptic Note that he can't decipher. Upon
      taking the note, the game moves to ~noted~.
-**** noted
+**** crypto
      ////
 *** The Talking Fence (~the-fence~)
 **** no

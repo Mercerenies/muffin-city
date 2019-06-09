@@ -50,7 +50,7 @@ namespace eval Warehouse::Inside {
     proc cratesNote1 {} {
         puts "You got the Cryptic Note!"
         inv add {Cryptic Note}
-        state put merchant-war noted
+        state put merchant-war crypto
         puts {}
         return crates
     }
