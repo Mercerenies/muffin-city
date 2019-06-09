@@ -457,6 +457,8 @@
 **** warehouseFloor
 **** crates
 **** exitWarehouse
+**** cratesNote
+**** cratesNote1
 *** [Pirates]
 **** attack
 **** attack1
@@ -682,7 +684,7 @@
 
 ** Item List
 
- + Silver Coin (x3)
+ + Silver Coin (x5)
  + Platinum Card
  + Soul Crystal
  + Elevator Access Key
@@ -718,6 +720,7 @@
  + Cowboy Hat
  + Pirate Hat
  + Religious Artifact
+ + Cryptic Note
 
 ** Money Sources / Sinks
 
@@ -1250,8 +1253,14 @@
      Shovel, he will get the Rusty Warehouse Key and the game will
      move to ~warehouse~.
 **** warehouse
-     ////
+     The player has obtained the Rusty Warehouse Key. He needs to use
+     it to unlock the warehouse front door. When he does so, the game
+     moves to ~unlocked~.
 **** unlocked
+     The player needs to investigate the rest of the warehouse. In the
+     back, he will find a Cryptic Note that he can't decipher. Upon
+     taking the note, the game moves to ~noted~.
+**** noted
      ////
 *** The Talking Fence (~the-fence~)
 **** no
@@ -2339,11 +2348,27 @@
    What caused things to play out differently the second time? Someone
    (maybe "One Word" guy) traveled back and changed things, knowing
    full well what he was doing.
+
+   So just a random thought. How do we get to the Guardian of Time?
+   Originally, I was thinking he owed Atheena a favor for something.
+   But what if he's the third spicy food visit, and you have to have
+   done the other two before getting there. Then the taco man cooks
+   something to help you.
 ** CONSIDERING One Word
    A bad guy has discovered an ancient word which, if said in the
    right conditions, will destroy the planet instantly. You go back in
    time and enlist that bad guy's help in fighting him in the present
    day.
+
+   [Ezekiel Morrow / Wordsmith]
+
+   Before going back in time, he asks for history books from the
+   player. The player cooperates, as he tells the player he is but a
+   humble professor (which is admittedly true but not the whole truth).
+   + One history book from the city
+   + One history book from the prison, perhaps?
+   + One history book from the parallel world
+   + One history book from somewhere in space
 ** ACCEPTED Mind Control
    At some point early in the game (Butler 1, maybe), the player will
    meet an as yet unnamed evil mastermind. This mastermind has come up
@@ -2382,6 +2407,9 @@
    + First visit: ???
    + Second visit: ???
    + Third visit: ???
+
+   + The Guardian of Time?
+   + The Postmaster (manages the Postman)?
 ** CONSIDERING Headless
    After some time passes (at least after the Green Olive, maybe some
    more prereqs), a man without a head starts hanging out in the taco
@@ -2398,6 +2426,10 @@
    mythological figure. Steals exclusively gold jewelry.
 
    Mister Midas is Mastermind's first victim, in the prison washroom. /////
+** CONSIDERING Below the Bottom of the Sea
+   What's below the bottom? I'm thinking that you can fire the pirate
+   cannon and it will blow a hole in one of the merfolk homes. But
+   where does that hole lead? The parallel world perhaps?
 * MISCELLANEOUS
 
 ** Test

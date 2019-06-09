@@ -18,11 +18,16 @@ namespace eval Warehouse::Inside {
 
     proc crates {} {
         puts "== Warehouse Floor - Crates =="
-        puts "There is a small space behind the crates, but it\
-        is seemingly empty."
-        # //// This is where you'll get the self-destruct protocol
-        # instructions
+        if {[state get merchant-war] eq {unlocked}} then {
+            puts "There is a small space behind the crates. A\
+            scribbled note is hastily taped to the wall, hidden\
+            carefully behind the crates."
+        } else {
+            puts "There is a small space behind the crates, but it\
+            is seemingly empty."
+        }
         prompt {} {
+            {"Read the note" {[state get merchant-war] eq {unlocked}} cratesNote}
             {"Go back" yes warehouseFloor}
         }
     }
@@ -31,6 +36,23 @@ namespace eval Warehouse::Inside {
         # //// If the door is bolted the second time, going out this
         # way opens it
         return ::Warehouse::Outside::south
+    }
+
+    proc cratesNote {} {
+        puts "Upon closer inspection, the note seems to be a gibberish string of\
+        letters and numbers, likely an encrypted message."
+        prompt {} {
+            {"Take the note" yes cratesNote1}
+            {"Never mind" yes crates}
+        }
+    }
+
+    proc cratesNote1 {} {
+        puts "You got the Cryptic Note!"
+        inv add {Cryptic Note}
+        state put merchant-war noted
+        puts {}
+        return crates
     }
 
 }
