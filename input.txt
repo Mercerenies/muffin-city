@@ -118,13 +118,5 @@ con
 state put brain-control washroom
 con
 inv add {Cryptic Note}
-2
-3
-1
-5
-1
-2
-1
-2
-2
-2
+con
+state put crypto-king met1

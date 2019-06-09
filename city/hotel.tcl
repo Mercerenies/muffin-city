@@ -172,6 +172,13 @@ namespace eval City::Hotel {
         puts "This is obviously a high-class building. There are several people moving to and fro,\
         all of them dressed in the finest garb. Behind a large \"Guest Services\" counter sits a\
         single man. The bronze nameplate in front of him informs you that his name is Carl."
+        if {[state get crypto-king] eq {ready}} then {
+            puts {}
+            puts "As you are glancing about, a man in an incredibly flashy white suit shoves you\
+            to the side and demands to check into his room, a demand which Carl immediately\
+            satisfies. Without a word, the man storms off to his room, obviously in a hurry."
+            state put crypto-king met
+        }
         prompt {} {
             {"Talk to Carl" yes ritzyTalk}
             {"Go toward the hallway" yes ritzyHall}
@@ -213,8 +220,12 @@ namespace eval City::Hotel {
             puts "\"Good evening. We at the Ritzy Inn & Suites strive for the best possible\
             customer service. How may I be of assistance?\""
         }
+        if {[state get crypto-king] eq {no}} then {
+            state put crypto-king closer
+        }
         prompt {} {
             {"\"I would like a room.\"" {![state get inn-room]} ritzyGetRoom}
+            {"\"Who was that man in the white suit?\"" {[state get crypto-king] eq {met}} ritzySuit}
             {"\"The Butler sent me.\"" {[state get heard-science] eq {told}} ritzyTalkScience}
             {"\"Never mind.\"" yes ritzyInn}
         }
@@ -245,6 +256,23 @@ namespace eval City::Hotel {
         puts "\"Alright, you will be in Room 211, down the hall and up the stairs. Enjoy your stay\""
         puts {}
         return ritzyInn
+    }
+
+    proc ritzySuit {} {
+        puts "\"That was Arthur Miles, the most famous cryptanalyst the world over. They\
+        say there's no code he can't crack.\""
+        prompt {} {
+            {"\"What room is he staying in?\"" yes ritzySuit1}
+        }
+    }
+
+    proc ritzySuit1 {} {
+        puts "\"He insisted that he be placed in Room 128. I have no idea why, to be honest.\
+        He is quite a character, however. If you go to see him, I suggest you brace yourself.\""
+        state put crypto-king met1
+        prompt {} {
+            {"\"Thank you.\"" yes ritzyInn}
+        }
     }
 
 }

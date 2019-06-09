@@ -82,6 +82,8 @@
 **** ritzyTalkScience
 **** ritzyGetRoom
 **** ritzyGetRoom1
+**** ritzySuit
+**** ritzySuit1
 *** [Science]
 **** mainRoom
 **** talkTo
@@ -1420,6 +1422,24 @@
      to kill him. The game then moves to ~hiding~.
 **** hiding
      ////
+*** Cryptography (~crypto-king~)
+**** no
+     The player has not met the Cryptographer yet. In this state, the
+     Cryptographer will not appear. When the player talks to Carl at
+     the hotel, the game moves to ~closer~.
+**** closer
+     The Cryptographer will still not appear. When the player awakens
+     on the dream train in any cabin, the game moves to ~ready~.
+**** ready
+     The player is ready to meet the Cryptographer. Next time the
+     player enters the Ritzy Inn main room, the Cryptographer will
+     storm in and check into his room. When this happens, the game
+     moves to ~met~.
+**** met
+     In this state, the player can ask Carl who the Cryptographer is.
+     After Carl explains this, the game moves to ~met1~.
+**** met1
+     ////
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -1838,6 +1858,7 @@
 ** Mothka the Evil Moth King
 ** The Mastermind
 ** Mister Midas
+** Arthur Miles (The Cryptographer)
 * NOTES
 
 ** ACCEPTED Cave and Lantern

@@ -183,6 +183,9 @@ namespace eval Dream::Transit {
         puts {}
         puts "...And awaken sometime later on a train."
         puts {}
+        if {[state get crypto-king] eq {closer}} then {
+            state put crypto-king ready
+        }
         state put moon-train no
         return $room
     }
