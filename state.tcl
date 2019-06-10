@@ -101,6 +101,7 @@ namespace eval State {
         washroom-coin no
         brain-control no
         crypto-king no
+        crypto-door no
     }]
 
     proc get {args} {

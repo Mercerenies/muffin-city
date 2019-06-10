@@ -84,6 +84,7 @@
 **** ritzyGetRoom1
 **** ritzySuit
 **** ritzySuit1
+**** ritzyCrypto
 *** [Science]
 **** mainRoom
 **** talkTo
@@ -123,6 +124,22 @@
 **** note
 **** fridge
 **** doll
+*** [Crypto]
+**** firstFloor
+**** knock
+**** kick
+**** friend
+**** note
+**** inside
+**** talking
+**** intro
+**** introHi
+**** introArt
+**** introDecrypt
+**** introNoCurrency
+**** introChicken
+**** introChicken1
+**** deciphered
 ** [Prison]
 *** [South]
 **** gate
@@ -1263,6 +1280,12 @@
      back, he will find a Cryptic Note that he can't decipher. Upon
      taking the note, the game moves to ~noted~.
 **** crypto
+     From here, the player needs to take the Cryptic Note to Arthur
+     Miles of ~crypto-king~. Upon delivering the note, the game moves
+     to ~crypto1~.
+**** crypto1
+     The player has given the Cryptic Note to Arthur. In this state,
+     Arthur has not deciphered it yet.
      ////
 *** The Talking Fence (~the-fence~)
 **** no
@@ -1424,22 +1447,26 @@
      ////
 *** Cryptography (~crypto-king~)
 **** no
-     The player has not met the Cryptographer yet. In this state, the
-     Cryptographer will not appear. When the player talks to Carl at
-     the hotel, the game moves to ~closer~.
+     The player has not met Arthur Miles yet. In this state, he will
+     not appear. When the player talks to Carl at the hotel, the game
+     moves to ~closer~.
 **** closer
-     The Cryptographer will still not appear. When the player awakens
-     on the dream train in any cabin, the game moves to ~ready~.
+     Arthur will still not appear. When the player awakens on the
+     dream train in any cabin, the game moves to ~ready~.
 **** ready
-     The player is ready to meet the Cryptographer. Next time the
-     player enters the Ritzy Inn main room, the Cryptographer will
-     storm in and check into his room. When this happens, the game
-     moves to ~met~.
+     The player is ready to meet Arthur. Next time the player enters
+     the Ritzy Inn main room, Arthur will storm in and check into his
+     room. When this happens, the game moves to ~met~.
 **** met
-     In this state, the player can ask Carl who the Cryptographer is.
-     After Carl explains this, the game moves to ~met1~.
+     In this state, the player can ask Carl who Arthur is. After Carl
+     explains this, the game moves to ~met1~.
 **** met1
-     ////
+     The player can go upstairs and talk to Arthur. In order to get
+     into his room, the player needs the Cryptic Note from
+     ~merchant-war~. After the player successfully convinces Arthur to
+     help him decrypt the message, the game moves to ~yes~.
+**** yes
+     The player has met and requested help from Arthur.
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -1665,6 +1692,9 @@
 *** ~heart-pipe~
 **** no
 **** yes
+*** ~crypto-door~
+**** no
+**** yes
 ** World States
 *** ~trial-reason~
 **** {}
@@ -1858,7 +1888,7 @@
 ** Mothka the Evil Moth King
 ** The Mastermind
 ** Mister Midas
-** Arthur Miles (The Cryptographer)
+** Arthur Miles
 * NOTES
 
 ** ACCEPTED Cave and Lantern

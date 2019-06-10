@@ -120,3 +120,5 @@ con
 inv add {Cryptic Note}
 con
 state put crypto-king met1
+con
+state put crypto-door yes

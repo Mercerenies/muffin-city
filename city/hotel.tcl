@@ -197,6 +197,7 @@ namespace eval City::Hotel {
         }
         prompt {} {
             {"Go to Room 211" {[inv has {Ritzy Inn Room Key}]} ritzyRoom}
+            {"Go to Room 128" {[state get crypto-king] ni {no closer ready met}} ::City::Crypto::firstFloor}
             {"Go to the basement" {[state get heard-science] eq {yes}} ::City::Science::mainRoom}
             {"Go back" yes ritzyInn}
         }
