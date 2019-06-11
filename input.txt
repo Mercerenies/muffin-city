@@ -63,7 +63,7 @@ state put captain-boat yes
 con
 state put talked-to-todd {Scuba Suit}
 con
-state put merchant-war noted
+state put merchant-war chip
 con
 state put courthouse-door yes
 con
@@ -116,8 +116,6 @@ con
 state put washroom-coin yes
 con
 state put brain-control washroom
-con
-inv add {Cryptic Note}
 con
 state put crypto-king met1
 con

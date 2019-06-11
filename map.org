@@ -139,7 +139,10 @@
 **** introNoCurrency
 **** introChicken
 **** introChicken1
+**** notDeciphered
 **** deciphered
+**** deciphered1
+**** cryptic
 ** [Prison]
 *** [South]
 **** gate
@@ -1278,15 +1281,21 @@
 **** unlocked
      The player needs to investigate the rest of the warehouse. In the
      back, he will find a Cryptic Note that he can't decipher. Upon
-     taking the note, the game moves to ~noted~.
+     taking the note, the game moves to ~crypto~.
 **** crypto
      From here, the player needs to take the Cryptic Note to Arthur
      Miles of ~crypto-king~. Upon delivering the note, the game moves
      to ~crypto1~.
 **** crypto1
      The player has given the Cryptic Note to Arthur. In this state,
-     Arthur has not deciphered it yet.
-     ////
+     Arthur has not deciphered it yet. When the player enters the
+     starting hub area of the map, the game moves to ~deciphered~.
+**** deciphered
+     The note has been deciphered. When the player talks to Arthur, he
+     will immediately read the deciphered note, moving the game to
+     ~chip~.
+**** chip
+     /////
 *** The Talking Fence (~the-fence~)
 **** no
      The player has not spoken to the sentient Fence in the prison

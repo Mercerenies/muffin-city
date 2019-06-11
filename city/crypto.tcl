@@ -46,10 +46,19 @@ namespace eval City::Crypto {
 
     proc inside {} {
         puts "== Ritzy Inn - Room 128 =="
-        puts "The lavish room must have cost a fortune. A king-sized bed sits\
-        in one corner, next to a large sofa and opposite a large television. A closed door to\
-        the side leads, presumably, to a restroom. Arthur Miles is standing by the door with\
-        his arms crossed."
+        puts -nonewline "The lavish room must have cost a fortune. A king-sized\
+        bed sits in one corner, next to a large sofa and opposite a large\
+        television. A closed door to the side leads, presumably, to a restroom."
+        switch [state get merchant-war] {
+            crypto1 - deciphered {
+                puts " Arthur Miles is sitting on the sofa staring intently at a\
+                sheet of paper."
+            }
+            default {
+                puts " Arthur Miles is standing by the door with\
+                his arms crossed."
+            }
+        }
         prompt {} {
             {"Talk to Arthur" yes talking}
             {"Exit the area" yes ::City::Hotel::ritzyHall}
@@ -60,9 +69,13 @@ namespace eval City::Crypto {
         if {[state get crypto-king] eq {met1}} then {
             return intro
         }
+        if {[state get merchant-war] eq {deciphered}} then {
+            return deciphered
+        }
         puts "\"What do you want\""
         prompt {} {
-            {"\"Have you deciphered the note?\"" {[state get merchant-war] in {crypto1}} deciphered}
+            {"\"Have you deciphered the note?\"" {[state get merchant-war] eq {crypto1}} notDeciphered}
+            {"\"Read me the Cryptic Note again.\"" {[state get merchant-war] ni {no noted warehouse crypto crypto1 deciphered}} cryptic}
             {"\"Goodbye.\"" yes inside}
         }
     }
@@ -132,14 +145,52 @@ namespace eval City::Crypto {
         return inside
     }
 
+    proc notDeciphered {} {
+        puts "\"Not yet. Now get lost.\""
+        puts {}
+        return inside
+    }
+
     proc deciphered {} {
-        if {[state get merchant-war] eq {crypto1}} then {
-            puts "\"Not yet. Now get lost.\""
-            puts {}
-            return inside
-        } else {
-            # ////
-            return -gameover
+        puts "\"I've figured out your note.\""
+        prompt {} {
+            {"\"What does it say?\"" yes deciphered1}
+            {"\"Goodbye.\"" yes inside}
+        }
+    }
+
+    proc deciphered1 {} {
+        puts "\"I'll read it.\""
+        puts "\"My good friend,"
+        puts "\"You were right. It seems the humans were developing a means of replacing\
+        me. Fortunately, I stole the key to all of their research and locked it in my\
+        office. I also discovered that they developed a special computer chip that\
+        would cause me to self-destruct. So I threw that into outer space, where\
+        the humans will never recover it. I appreciate your help in eliminating\
+        this threat, and I look forward to hearing about your new project soon."
+        puts "\"Sincerely, your evil twin.\""
+        puts "\"Huh. Can't say I understand what that's talking about. Sorry, but\
+        it looks like your quest is hitting a dead end. There's no way you'll be able\
+        to get to space. Anyway, if you need to hear the note again, just talk to me.\""
+        state put merchant-war chip
+        prompt {} {
+            {"\"Thank you.\"" yes inside}
+        }
+    }
+
+    proc cryptic {} {
+        puts "\"Here it is.\""
+        puts "\"My good friend,"
+        puts "\"You were right. It seems the humans were developing a means of replacing\
+        me. Fortunately, I stole the key to all of their research and locked it in my\
+        office. I also discovered that they developed a special computer chip that\
+        would cause me to self-destruct. So I threw that into outer space, where\
+        the humans will never recover it. I appreciate your help in eliminating\
+        this threat, and I look forward to hearing about your new project soon."
+        puts "\"Sincerely, your evil twin.\""
+        # //// What's the "new" project?
+        prompt {} {
+            {"\"Thanks!\"" yes inside}
         }
     }
 
