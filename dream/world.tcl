@@ -228,7 +228,15 @@ namespace eval Dream::World {
         you ride.\""
         state put captain-boat spoken
         prompt {} {
-            {"\"I'll see what I can do.\"" yes {pier 1}}
+            {"\"I'll see what I can do.\"" yes captainHelp1}
+        }
+    }
+
+    proc captainHelp1 {} {
+        puts "\"Great! I hear pawnbrokers carry strange odds and ends like that. If you\
+        know one, of course.\""
+        prompt {} {
+            {"\"Thanks.\"" yes {pier 1}}
         }
     }
 
