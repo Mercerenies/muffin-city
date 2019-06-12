@@ -35,16 +35,20 @@ namespace eval Warehouse::War {
             return noChip
         } elseif {([state get merchant-atheena] eq {no}) &&
                   ([state get merchant-starlight] eq {no})} then {
-            # ////
+            # /////
+            return -gameover
         } elseif {([state get merchant-atheena] eq {yes}) &&
                   ([state get merchant-starlight] eq {no})} then {
             # ////
+            return -gameover
         } elseif {([state get merchant-atheena] eq {no}) &&
                   ([state get merchant-starlight] eq {yes})} then {
             # ////
+            return -gameover
         } elseif {([state get merchant-atheena] eq {yes}) &&
                   ([state get merchant-starlight] eq {yes})} then {
             # ////
+            return -gameover
         } else {
             # Shouldn't happen, but meh.
             return noChip

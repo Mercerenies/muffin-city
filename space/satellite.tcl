@@ -28,14 +28,14 @@ namespace eval Space::Satellite {
                 standing by the teleporter."
             }
             talked {
-                puts " The mechanic is standing by the teleporter."
+                puts " The Mechanic is standing by the teleporter."
             }
         }
         prompt {} {
             {"Go to the elevator room" yes elevatorRoom}
             {"Go to the common area" yes commonArea}
             {"Talk to the man" {[state get moon-mechanic] eq {present}} mechanic}
-            {"Talk to the mechanic" {[state get moon-mechanic] ni {no present}} mechanic}
+            {"Talk to the Mechanic" {[state get moon-mechanic] ni {no present}} mechanic}
             {"Use the teleporter" yes teleporter}
         }
     }
@@ -46,9 +46,9 @@ namespace eval Space::Satellite {
                 return transportBay
             }
             present {
-                puts "\"You're the new recruit, huh? I'm the mechanic around here. I've\
-                turned on the teleporter for you. It'll take you down to the moon's surface.\
-                And take this Oxygen Tank. You'll need it down there.\""
+                puts "\"You're the new recruit, huh? I'm the Mechanic around here. I've\
+                turned the teleporter on for you. It'll take you down there to the moon's\
+                surface. And take this Oxygen Tank. You'll need it down there.\""
                 puts "You got an Oxygen Tank!"
                 puts {}
                 inv add {Oxygen Tank}
@@ -59,6 +59,7 @@ namespace eval Space::Satellite {
                 puts "\"Good luck down there!\""
                 # //// More here (Golden Wrench and stuff)
                 prompt {} {
+                    {"\"Have you seen a computer chip?\"" {([state get merchant-war] eq {chip}) && (![inv has {Self-Destruct Chip}])} chip}
                     {"\"Thanks!\"" yes transportBay}
                 }
             }
@@ -117,6 +118,16 @@ namespace eval Space::Satellite {
         state put moon-teleport yes
         state put moon-mechanic present
         return commonArea
+    }
+
+    proc chip {} {
+        puts "\"Funny you should ask that. One of the guys found a weird computer\
+        chip on the moon a little while ago. No idea what it does. It's yours if you\
+        want it.\""
+        puts "You got the Self-Destruct Chip!"
+        inv add {Self-Destruct Chip}
+        puts {}
+        return transportBay
     }
 
 }
