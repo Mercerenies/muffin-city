@@ -111,6 +111,8 @@
 **** marketBot
 **** marketOlive
 **** marketTodd
+**** marketToddPassive
+**** marketToddPanic
 **** marketTrade
 **** boarded
 **** boardedForce
@@ -496,6 +498,15 @@
 **** treasureRoom
 **** treasureRoomArtifact
 **** hold
+*** [War]
+**** start
+**** sociopath
+**** battle
+**** noChip
+**** noChipRush
+**** noChipRock
+**** noChipMove
+**** noChipRun
 ** [Past]
 *** [Science]
 **** mainRoom
@@ -743,6 +754,7 @@
  + Pirate Hat
  + Religious Artifact
  + Cryptic Note
+ + Self-Destruct Chip (TBA)
 
 ** Money Sources / Sinks
 
@@ -1853,6 +1865,16 @@
 **** freedom
      //// Not designed yet
 *** ~rocket-launched~
+**** no
+**** yes
+*** ~merchant-fought~
+**** no
+**** fought
+**** defeated
+*** ~merchant-atheena~
+**** no
+**** yes
+*** ~merchant-starlight~
 **** no
 **** yes
 * CHARACTERS

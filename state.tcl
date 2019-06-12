@@ -102,6 +102,9 @@ namespace eval State {
         brain-control no
         crypto-king no
         crypto-door no
+        merchant-fought no
+        merchant-atheena no
+        merchant-starlight no
     }]
 
     proc get {args} {

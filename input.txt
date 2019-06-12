@@ -120,3 +120,16 @@ con
 state put crypto-king met1
 con
 state put crypto-door yes
+con
+state put merchant-fought fought
+2
+3
+1
+5
+1
+2
+1
+1
+1
+2
+2

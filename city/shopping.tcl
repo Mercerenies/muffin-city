@@ -84,29 +84,44 @@ namespace eval City::Shopping {
 
     proc market {} {
         puts "== Market =="
-        switch [state get merchant-bot] {
-            no {
-                set bot0 "A robot"
-                set bot1 "the robot"
+        switch [state get merchant-war] {
+            chip {
+                puts -nonewline "The market is neatly organized, with shelves full\
+                of various objects."
+                if {[state get talked-to-todd] ne {no}} then {
+                    puts " Todd is sitting at his computer typing away."
+                } else {
+                    puts " A man with glasses typing at a computer off\
+                    in the corner."
+                }
+                prompt {} {
+                    {"Talk to the man" {[state get talked-to-todd] eq {no}} marketTodd}
+                    {"Talk to Todd" {[state get talked-to-todd] ne {no}} marketTodd}
+                    {"Go back outside" yes ::City::District::shopping}
+                }
             }
-            met {
-                set bot0 "Merchant-bot"
-                set bot1 "Merchant-bot"
+            default {
+                if {[state get merchant-bot] eq {no}} then {
+                    puts -nonewline "The market is neatly organized, with shelves full\
+                    of various objects. A one-eyed robot is hovering behind the counter,"
+                } else {
+                    puts -nonewline "The market is neatly organized, with shelves\
+                    full of various objects. Merchant-bot is hovering behind the counter,"
+                }
+                if {[state get talked-to-todd] ne {no}} then {
+                    puts " and Todd is sitting at his computer typing away."
+                } else {
+                    puts " and a man with glasses typing at a computer off\
+                    in the corner."
+                }
+                prompt {} {
+                    {"Talk to the robot" {[state get merchant-bot] eq {no}} marketBot}
+                    {"Talk to Merchant-bot" {[state get merchant-bot] ne {no}} marketBot}
+                    {"Talk to the man" {[state get talked-to-todd] eq {no}} marketTodd}
+                    {"Talk to Todd" {[state get talked-to-todd] ne {no}} marketTodd}
+                    {"Go back outside" yes ::City::District::shopping}
+                }
             }
-        }
-        puts -nonewline "The market is neatly organized, with shelves full of various objects.\
-        $bot0 is hovering behind the counter,"
-        if {[state get talked-to-todd] ne {no}} then {
-            puts " and Todd is sitting at his computer typing away."
-        } else {
-            puts " and a man with glasses typing at a computer off\
-            in the corner."
-        }
-        prompt {} {
-            {"Talk to $bot1" yes marketBot}
-            {"Talk to the man" {[state get talked-to-todd] eq {no}} marketTodd}
-            {"Talk to Todd" {[state get talked-to-todd] ne {no}} marketTodd}
-            {"Go back outside" yes ::City::District::shopping}
         }
     }
 
@@ -158,26 +173,36 @@ namespace eval City::Shopping {
     proc marketTodd {} {
         switch [state get talked-to-todd] {
             no {
-                puts "\"Hi, I'm Todd. I manage all of the inventory for this shop.\
-                Please talk to Merchant-bot if you want to make a purchase.\""
+                if {[state get merchant-war] eq {chip}} then {
+                    puts "\"Hi, I'm Todd. I manage all of the inventory for this shop.\
+                    My manager, Merchant-bot, is out right now, so you'll have to come\
+                    back later.\""
+                } else {
+                    puts "\"Hi, I'm Todd. I manage all of the inventory for this shop.\
+                    Please talk to Merchant-bot if you want to make a purchase.\""
+                }
                 state put talked-to-todd spoken
                 puts {}
                 return market
             }
             spoken {
                 if {[inv has {Fireproof Suit}]} then {
-                    puts "\"Please talk to Merchant-bot if you w- Is that a\
-                    Fireproof Suit? I've been looking for one of those actually.\
-                    I'll trade you my Scuba Suit for your Fireproof Suit.\""
+                    if {[state get merchant-war] eq {chip}} then {
+                        puts "\"Is that a Fireproof Suit? I've been looking\
+                        for one of those actually. I'll trade you my Scuba\
+                        Suit for your Fireproof Suit.\""
+                    } else {
+                        puts "\"Please talk to Merchant-bot if you w- Is that a\
+                        Fireproof Suit? I've been looking for one of those actually.\
+                        I'll trade you my Scuba Suit for your Fireproof Suit.\""
+                    }
                     state put talked-to-todd {Scuba Suit}
                     prompt {} {
                         {"Trade" yes marketTrade}
                         {"\"Later.\"" yes market}
                     }
                 } else {
-                    puts "\"Please talk to Merchant-bot if you want to make a purchase.\""
-                    puts {}
-                    return market
+                    return marketToddPassive
                 }
             }
             {Scuba Suit} {
@@ -185,12 +210,11 @@ namespace eval City::Shopping {
                     puts "\"Want to trade? I'll give you my Scuba Suit for your Fireproof Suit.\""
                     prompt {} {
                         {"Trade" yes marketTrade}
+                        {"\"Where is Merchant-bot?\"" {[state get merchant-war] eq {chip}} marketToddPanic}
                         {"\"Later.\"" yes market}
                     }
                 } else {
-                    puts "\"Please talk to Merchant-bot if you want to make a purchase.\""
-                    puts {}
-                    return market
+                    return marketToddPassive
                 }
             }
             {Fireproof Suit} {
@@ -199,15 +223,32 @@ namespace eval City::Shopping {
                     Scuba Suit.\""
                     prompt {} {
                         {"Trade" yes marketTrade}
+                        {"\"Where is Merchant-bot?\"" {[state get merchant-war] eq {chip}} marketToddPanic}
                         {"\"Later.\"" yes market}
                     }
                 } else {
-                    puts "\"Please talk to Merchant-bot if you want to make a purchase.\""
-                    puts {}
-                    return market
+                    return marketToddPassive
                 }
             }
         }
+    }
+
+    proc marketToddPassive {} {
+        if {[state get merchant-war] eq {chip}} then {
+            puts "\"Merchant-bot isn't here right. You'll have to come back later.\""
+        } else {
+            puts "\"Please talk to Merchant-bot if you want to make a purchase.\""
+        }
+        puts {}
+        return market
+    }
+
+    proc marketToddPanic {} {
+        puts "\"It was the strangest thing. A few minutes ago, Merchant-bot just stormed out\
+        of here without saying a word. I don't know where he went.\""
+        puts "Todd glances about the market nervously for a moment but says nothing more."
+        puts {}
+        return market
     }
 
     proc marketTrade {} {

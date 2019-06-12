@@ -41,6 +41,9 @@ namespace eval Warehouse::Outside {
         puts "== Secret Island - South =="
         # //// Unlock warehouse from inside
         puts "The southern end of the island contains the entrance to a massive warehouse."
+        if {[state get merchant-war] eq {chip}} then {
+            return ::Warehouse::War::start
+        }
         prompt {} {
             {"Head west" yes west}
             {"Head east" yes east}
