@@ -35,8 +35,13 @@ namespace eval Warehouse::War {
             return noChip
         } elseif {([state get merchant-atheena] eq {no}) &&
                   ([state get merchant-starlight] eq {no})} then {
-            # /////
-            return -gameover
+            puts "Merchant-bot pauses for a moment."
+            puts "\"BZZT! Scan complete. You have acquired the Self-Destruct Chip. BZZT!\""
+            prompt {} {
+                {"\"That's right!\"" yes chipBanter}
+                {"\"And I'll defeat you with it!\"" yes chipBanter}
+                {"Rush him" yes chipRush}
+            }
         } elseif {([state get merchant-atheena] eq {yes}) &&
                   ([state get merchant-starlight] eq {no})} then {
             # ////
@@ -111,6 +116,34 @@ namespace eval Warehouse::War {
         puts "\"BZZT! Scan complete. You do not have the Self-Destruct Chip on your\
         person. Threat level: zero. BZZT!\""
         puts "Merchant-bot looks directly at you and fires a laser out of his eye,\
+        vaporizing you instantly."
+        if {[state get lobby-door] ne {yes}} then {
+            state put lobby-door murder
+        }
+        puts {}
+        return ::Underworld::Lobby::murder
+    }
+
+    proc chipBanter {} {
+        puts "\"BZZT! Unlikely. Even if you recruit help, you will still never defeat\
+        me. BZZT!\""
+        puts "Merchant-bot looks directly at you and fires a laser from his eye,\
+        vaporizing you instantly."
+        if {[state get lobby-door] ne {yes}} then {
+            state put lobby-door murder
+        }
+        puts {}
+        return ::Underworld::Lobby::murder
+
+    }
+
+    proc chipRush {} {
+        puts "You rush in with the Self-Destruct Chip in hand. Merchant-bot fires a\
+        laser out of his eye and vaporizes a patch of ground in front of you, causing\
+        you to trip and fall."
+        puts "\"BZZT! Unlikely. Even if you recruit help, you will still never defeat\
+        me. BZZT!\""
+        puts "Merchant-bot looks directly at you and fires another laser from his eye,\
         vaporizing you instantly."
         if {[state get lobby-door] ne {yes}} then {
             state put lobby-door murder

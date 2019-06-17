@@ -507,6 +507,8 @@
 **** noChipRock
 **** noChipMove
 **** noChipRun
+**** chipBanter
+**** chipRush
 ** [Past]
 *** [Science]
 **** mainRoom
