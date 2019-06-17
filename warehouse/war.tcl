@@ -35,17 +35,10 @@ namespace eval Warehouse::War {
             return noChip
         } elseif {([state get merchant-atheena] eq {no}) &&
                   ([state get merchant-starlight] eq {no})} then {
-            puts "Merchant-bot pauses for a moment."
-            puts "\"BZZT! Scan complete. You have acquired the Self-Destruct Chip. BZZT!\""
-            prompt {} {
-                {"\"That's right!\"" yes chipBanter}
-                {"\"And I'll defeat you with it!\"" yes chipBanter}
-                {"Rush him" yes chipRush}
-            }
+            return chip
         } elseif {([state get merchant-atheena] eq {yes}) &&
                   ([state get merchant-starlight] eq {no})} then {
-            # ////
-            return -gameover
+            return atheena
         } elseif {([state get merchant-atheena] eq {no}) &&
                   ([state get merchant-starlight] eq {yes})} then {
             # ////
@@ -124,6 +117,16 @@ namespace eval Warehouse::War {
         return ::Underworld::Lobby::murder
     }
 
+    proc chip {} {
+        puts "Merchant-bot pauses for a moment."
+        puts "\"BZZT! Scan complete. You have acquired the Self-Destruct Chip. BZZT!\""
+        prompt {} {
+            {"\"That's right!\"" yes chipBanter}
+            {"\"And I'll defeat you with it!\"" yes chipBanter}
+            {"Rush him" yes chipRush}
+        }
+    }
+
     proc chipBanter {} {
         puts "\"BZZT! Unlikely. Even if you recruit help, you will still never defeat\
         me. BZZT!\""
@@ -150,6 +153,24 @@ namespace eval Warehouse::War {
         }
         puts {}
         return ::Underworld::Lobby::murder
+    }
+
+    proc atheena {} {
+        puts "To your side, a blinding white light flashes. In the midst of the\
+        light, Atheena appears, blade in hand."
+        puts "\"BZZT! You brought a companion. It matters not. BZZT!\""
+        puts "\"Your foul deeds go unchecked no longer, machine!\""
+        puts "Atheena tries to rush Merchant-bot, successfully blocking the\
+        lasers emitted from his eye with her blade. In response, several slots\
+        on Merchant-bot's body open, revealing numerous additional lasers.\
+        Atheena leaps back and grabs you by the shoulder. The two of you\
+        are quickly enveloped in a white light, and when the light clears, you\
+        find yourselves in subspace again."
+        puts "\"Alas, I cannot shield us from all of his attacks at once. We\
+        need more help. If you know of a spellcaster or sorcerer who could\
+        immobilize the robot, we may have a better chance.\""
+        puts {}
+        return ::Subspace::Portal::portalRoom
     }
 
 }

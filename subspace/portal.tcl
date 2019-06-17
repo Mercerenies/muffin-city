@@ -54,11 +54,16 @@ namespace eval Subspace::Portal {
                 }
             }
             talked {
-                puts "\"Greetings!\""
+                if {([state get merchant-fought] eq {fought}) && ([state get merchant-atheena] eq {yes})} then {
+                    puts "\"I will join you in your fight against the robot when you confront him!\""
+                } else {
+                    puts "\"Greetings!\""
+                }
                 prompt {} {
                     {"\"Could you turn the portal on?\"" {[state get subspace-portal] eq {no}} basicPortal}
                     {"\"Is that the only place the portal can go?\"" {([state get subspace-portal] ne {no}) && ([state get hero-crystal] eq {no})} atheenaCrystal}
                     {"\"There's a madman at the taco shop!\"" {[state get necro-cipher] eq {rising}} atheenaHelp}
+                    {"\"I need help fighting an evil robot.\"" {([state get merchant-fought] eq {fought}) && ([state get merchant-atheena] eq {no}) && [inv has {Self-Destruct Chip}]} atheenaMerchant}
                     {"\"Thank you for the help with Joe.\"" {[state get necro-cipher] in {beaten yes}} atheenaThanks}
                     {"\"Goodbye.\"" yes portalRoom}
                 }
@@ -97,10 +102,18 @@ namespace eval Subspace::Portal {
         return portalRoom
     }
 
+    proc atheenaMerchant {} {
+        puts "\"An evil robot?! Enslaving humans? I see no nobler cause than to vanquish the\
+        monster! I will be there when you need me! You have my word!\""
+        state put merchant-atheena yes
+        puts {}
+        return portalRoom
+    }
+
     proc atheenaCrystal {} {
         puts "\"Once upon a time, it could be modified. The projector is operated by a\
-        specially-cut diamond. But the bank claimed the diamond as collateral a long time ago.\
-        I haven't been able to redirect the portal since then.\""
+        specially-cut diamond. But the bank claimed the diamond as collateral long before\
+        I got here, and the device has been inoperable since.\""
         state put hero-crystal intro
         puts {}
         return portalRoom

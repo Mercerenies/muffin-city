@@ -507,8 +507,10 @@
 **** noChipRock
 **** noChipMove
 **** noChipRun
+**** chip
 **** chipBanter
 **** chipRush
+**** atheena
 ** [Past]
 *** [Science]
 **** mainRoom
@@ -621,6 +623,7 @@
 **** atheenaIntro
 **** atheenaHelp
 **** atheenaThanks
+**** atheenaMerchant
 **** atheenaCrystal
 **** basicPortal
 *** [Temple]
@@ -757,7 +760,8 @@
  + Pirate Hat
  + Religious Artifact
  + Cryptic Note
- + Self-Destruct Chip (TBA)
+ + Self-Destruct Chip
+ + Portal Diamond (TBA)
 
 ** Money Sources / Sinks
 
@@ -1749,13 +1753,10 @@
      will introduce herself and the game will move to `met`. At this
      time, she will activate the portal (~subspace-portal~).
 **** met
-     The player has met Atheena. She will ...
-
-     ////
+     The player has met Atheena. When he speaks to her, the game moves
+     to ~talked~.
 **** talked
-     ////
-**** yes
-     ////
+     The player has been properly introduced to Atheena. ////
 *** The Hero's Crystal (~hero-crystal~)
 **** no
      The player does not know about the crystal yet. If he talks to
@@ -1990,6 +1991,9 @@
  + The subspace bank forecloses some important building or structure,
    requiring you to break into their vault to get the key and reopen
    it (Hero's Crystal)
+ + So, thinking about having the item /not/ be the Hero's Crystal. It
+   would make more sense if the bank foreclosed on the portal room
+   long before Atheena got there.
  + When the player gets the item back, the bank's army of lions chase
    him and block off most areas.
    - Get killed, blocked off.
