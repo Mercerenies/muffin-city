@@ -63,7 +63,7 @@ state put captain-boat yes
 con
 state put talked-to-todd {Scuba Suit}
 con
-state put merchant-war chip
+state put merchant-war yes
 con
 state put courthouse-door yes
 con
@@ -121,22 +121,12 @@ state put crypto-king met1
 con
 state put crypto-door yes
 con
-state put merchant-fought fought
+state put merchant-fought defeated
 con
 inv add {Self-Destruct Chip}
 con
 state put hero-blade talked
 con
+state put merchant-starlight yes
+con
 state put merchant-atheena yes
-2
-3
-1
-5
-1
-2
-1
-1
-1
-2
-2
-

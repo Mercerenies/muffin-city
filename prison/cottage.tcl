@@ -298,10 +298,21 @@ namespace eval Prison::Cottage {
             }
             pocket {
                 # //// Check where we are in things
-                puts "\"Ready to go?\""
-                prompt {} {
-                    {"\"Let's go.\"" yes portalWith}
-                    {"\"Not yet.\"" yes shed}
+
+                if {([state get merchant-fought] eq {fought}) && ([state get merchant-starlight] eq {yes})} then {
+                    puts "\"I'm ready to help you fight the robot!\""
+                    prompt {} {
+                        {"\"Let's go into the portal.\"" yes portalWith}
+                        {"\"Later.\"" yes shed}
+                    }
+                } else {
+                    puts "\"Ready to go?\""
+                    prompt {} {
+                        {"\"Let's go.\"" yes portalWith}
+                        {"\"I need help fighting an evil robot.\"" {([state get merchant-fought] eq {fought}) && ([state get merchant-starlight] eq {no}) && [inv has {Self-Destruct Chip}]} starlightRobot}
+                        {"\"Thank you for the help with Merchant-bot.\"" {[state get merchant-war] eq {yes}} starlightThanks}
+                        {"\"Not yet.\"" yes shed}
+                    }
                 }
             }
         }
@@ -365,6 +376,22 @@ namespace eval Prison::Cottage {
         }
     }
 
+    proc starlightRobot {} {
+        puts "\"An evil robot? This sounds like a job for Silver Starlight! I'll join you in\
+        battle as soon as you're ready. Just go confront the robot and I'll be there. Oh, but\
+        remember that if I'm in the pocket dimension then I can't help you.\""
+        state put merchant-starlight yes
+        puts {}
+        return shed
+    }
+
+    proc starlightThanks {} {
+        puts "\"Don't worry about it! I had lots of fun! Tell me if you ever need anything\
+        else like that!\""
+        puts {}
+        return shed
+    }
+
     proc dollKey {} {
         puts {}
         puts "The sentient baby doll from the refrigerator runs out from\
@@ -374,7 +401,7 @@ namespace eval Prison::Cottage {
         puts "The baby doll narrowly dodges several hastily thrown spells,\
         before escaping into the treeline."
         puts "\"Drat! She got away! But she did drop this key on the way\
-        out. I'm not sure what it goes too. Do you want it?\""
+        out. I'm not sure what it goes to. Do you want it?\""
         state put baby-doll outer
         prompt {} {
             {"Take the key" yes dollKey1}

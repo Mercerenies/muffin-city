@@ -31,22 +31,19 @@ namespace eval Warehouse::War {
     proc battle {} {
         # This is a big one. Lots of different things can happen based
         # on whom you've enlisted for help.
+        set atheena [expr {[state get merchant-atheena] ne {no}}]
+        set starlight [expr {([state get merchant-starlight] ne {no}) &&
+                             ([state get false-stage] eq {no})}]
         if {![inv has {Self-Destruct Chip}]} then {
             return noChip
-        } elseif {([state get merchant-atheena] eq {no}) &&
-                  ([state get merchant-starlight] eq {no})} then {
+        } elseif {!$atheena && !$starlight} then {
             return chip
-        } elseif {([state get merchant-atheena] eq {yes}) &&
-                  ([state get merchant-starlight] eq {no})} then {
+        } elseif {$atheena && !$starlight} then {
             return atheena
-        } elseif {([state get merchant-atheena] eq {no}) &&
-                  ([state get merchant-starlight] eq {yes})} then {
-            # ////
-            return -gameover
-        } elseif {([state get merchant-atheena] eq {yes}) &&
-                  ([state get merchant-starlight] eq {yes})} then {
-            # ////
-            return -gameover
+        } elseif {!$atheena && $starlight} then {
+            return starlight
+        } elseif {$atheena && $starlight} then {
+            return teamwork
         } else {
             # Shouldn't happen, but meh.
             return noChip
@@ -156,10 +153,10 @@ namespace eval Warehouse::War {
     }
 
     proc atheena {} {
-        puts "To your side, a blinding white light flashes. In the midst of the\
+        puts "To your left, a blinding white light flashes. In the midst of the\
         light, Atheena appears, blade in hand."
         puts "\"BZZT! You brought a companion. It matters not. BZZT!\""
-        puts "\"Your foul deeds go unchecked no longer, machine!\""
+        puts "\"Your foul deeds go unchecked no longer, automaton!\""
         puts "Atheena tries to rush Merchant-bot, successfully blocking the\
         lasers emitted from his eye with her blade. In response, several slots\
         on Merchant-bot's body open, revealing numerous additional lasers.\
@@ -167,10 +164,71 @@ namespace eval Warehouse::War {
         are quickly enveloped in a white light, and when the light clears, you\
         find yourselves in subspace again."
         puts "\"Alas, I cannot shield us from all of his attacks at once. We\
-        need more help. If you know of a spellcaster or sorcerer who could\
+        need more help. If you can enlist a spellcaster or sorcerer who could\
         immobilize the robot, we may have a better chance.\""
         puts {}
         return ::Subspace::Portal::portalRoom
+    }
+
+    proc starlight {} {
+        puts "To your right, a cluster of silver sparkles emerges, and Silver Starlight\
+        steps out of the cluster."
+        puts "\"BZZT! You brought a companion. It matters not. BZZT!\""
+        puts "\"Alright! Evil robot, let's do this!\""
+        puts "Merchant-bot's body opens up, revealing an array of lasers, which he fires\
+        in your direction. Starlight points her scepter at Merchant-bot and utters\
+        an incantation. Merchant-bot slows down considerably but does not stop firing\
+        lasers."
+        puts "\"Drat! Let's get out of here.\""
+        puts "Another blast of silver sparkles launches from Starlight's scepter, and the two\
+        of you disappear into it. When the silver clears, you find yourselves at the\
+        shed in the forest."
+        puts "\"I can't stop him. We need some more help. Do you know someone who\
+        can hit hard and fast? Maybe a swordsman or something. That's what we need.\""
+        puts {}
+        return ::Prison::Cottage::shed
+    }
+
+    proc teamwork {} {
+        puts "To your left, a blinding white light appears, out of which Atheena steps.\
+        To your right, a burst of silver sparkles scatters, and Silver Starlight emerges."
+        puts "\"BZZT! It matters not how many allies you accumulate. The end will be\
+        the same. BZZT!\""
+        puts "\"Your days are numbered, automaton!\""
+        puts "\"Yeah! What she said! Let's get him!\""
+        puts "Merchant-bot's body opens up, revealing numerous lasers. He begins wildly\
+        firing at all three of you. Starlight utters an incantation, which slows Merchant-bot's\
+        movement considerably. With the robot slowed, Atheena leaps into action, blocking\
+        the remaining lasers with her sword and leaving an opening for you."
+        prompt {} {
+            {"Rush him and insert the Self-Destruct Chip" yes teamwork1}
+        }
+    }
+
+    proc teamwork1 {} {
+        puts "You rush the now defenseless robot and force the Self-Destruct Chip into a\
+        slot on his front. As soon as the chip is inserted, Merchant-bot's attacks cease,\
+        and he collapses onto the floor."
+        puts "\"BZZT! The end... will be... BZZT! You are not... a threat...\
+        BZZT! You... cannot... afford... a Green Olive...\""
+        puts "Merchant-bot stops moving, and his single large eye drops off his body\
+        and onto the floor."
+        puts "\"Alright! We did it! Great teamwork!\""
+        puts "\"Well done. Both of you. It was a pleasure working with you.\""
+        puts "Atheena disappears in a flash of white light."
+        puts "\"Oh, right! I should be getting back too. See you in the forest! Oh,\
+        and you might wanna grab that eyeball thingy. It could come in handy.\""
+        puts "Starlight disappears in a flash of silver sparkles, leaving you alone."
+        puts "You got Merchant-bot's Eye!"
+        inv remove {Self-Destruct Chip}
+        inv add {Merchant-bot's Eye}
+        state put merchant-war yes
+        state put merchant-fought defeated
+        # //// So the eye can be used to open a room in the warehouse.
+        # There's another room in the warehouse that can only be
+        # accessed by the full portal diamond.
+        puts {}
+        return ::Warehouse::Outside::south
     }
 
 }

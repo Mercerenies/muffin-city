@@ -254,6 +254,8 @@
 **** wander
 **** portalWith
 **** portalWithout
+**** starlightRobot
+**** starlightThanks
 **** dollKey
 **** dollKey1
 *** [Pocket]
@@ -511,6 +513,9 @@
 **** chipBanter
 **** chipRush
 **** atheena
+**** starlight
+**** teamwork
+**** teamwork1
 ** [Past]
 *** [Science]
 **** mainRoom
@@ -624,6 +629,7 @@
 **** atheenaHelp
 **** atheenaThanks
 **** atheenaMerchant
+**** atheenaThanksBot
 **** atheenaCrystal
 **** basicPortal
 *** [Temple]
@@ -762,6 +768,7 @@
  + Cryptic Note
  + Self-Destruct Chip
  + Portal Diamond (TBA)
+ + Merchant-bot's Eye
 
 ** Money Sources / Sinks
 
@@ -1314,7 +1321,9 @@
      will immediately read the deciphered note, moving the game to
      ~chip~.
 **** chip
-     /////
+     ////
+**** yes
+     ////
 *** The Talking Fence (~the-fence~)
 **** no
      The player has not spoken to the sentient Fence in the prison

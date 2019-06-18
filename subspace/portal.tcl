@@ -65,12 +65,9 @@ namespace eval Subspace::Portal {
                     {"\"There's a madman at the taco shop!\"" {[state get necro-cipher] eq {rising}} atheenaHelp}
                     {"\"I need help fighting an evil robot.\"" {([state get merchant-fought] eq {fought}) && ([state get merchant-atheena] eq {no}) && [inv has {Self-Destruct Chip}]} atheenaMerchant}
                     {"\"Thank you for the help with Joe.\"" {[state get necro-cipher] in {beaten yes}} atheenaThanks}
+                    {"\"Thank you for the help with Merchant-bot.\"" {[state get merchant-war] eq {yes}} atheenaThanksBot}
                     {"\"Goodbye.\"" yes portalRoom}
                 }
-            }
-            yes {
-                # ////
-                return -gameover
             }
         }
     }
@@ -106,6 +103,12 @@ namespace eval Subspace::Portal {
         puts "\"An evil robot?! Enslaving humans? I see no nobler cause than to vanquish the\
         monster! I will be there when you need me! You have my word!\""
         state put merchant-atheena yes
+        puts {}
+        return portalRoom
+    }
+
+    proc atheenaThanksBot {} {
+        puts "\"It is always my pleasure to help those in need.\""
         puts {}
         return portalRoom
     }

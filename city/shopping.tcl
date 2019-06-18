@@ -84,8 +84,9 @@ namespace eval City::Shopping {
 
     proc market {} {
         puts "== Market =="
+        # ///// Todd should interrupt you if you just defeated Merchant-bot.
         switch [state get merchant-war] {
-            chip {
+            chip - yes {
                 puts -nonewline "The market is neatly organized, with shelves full\
                 of various objects."
                 if {[state get talked-to-todd] ne {no}} then {
