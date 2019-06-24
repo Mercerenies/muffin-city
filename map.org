@@ -2508,6 +2508,7 @@
 
    + The Guardian of Time?
    + The Postmaster (manages the Postman)?
+   + The Source (magic sentient crystal that can unlock Starlight's true power)?
 ** CONSIDERING Headless
    After some time passes (at least after the Green Olive, maybe some
    more prereqs), a man without a head starts hanging out in the taco
