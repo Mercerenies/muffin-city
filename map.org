@@ -485,6 +485,11 @@
 **** exitWarehouse
 **** cratesNote
 **** cratesNote1
+**** ownerDoor
+**** managerDoor
+**** ownerWrongEye
+**** ownerRightEye
+**** ownerOffice
 *** [Pirates]
 **** attack
 **** attack1
@@ -1732,6 +1737,9 @@
 *** ~crypto-door~
 **** no
 **** yes
+*** ~warehouse-owner~
+**** no
+**** yes
 ** World States
 *** ~trial-reason~
 **** {}
@@ -2316,6 +2324,15 @@
    you can pass through the airport walls and find them. Initially,
    you'll encounter one of them somewhere else and that person will
    tell you how to get in.
+
+   Maybe the secret place in the airport has another way out in the
+   cottage? I don't know.
+
+   Also, the members of the resistance got to know each other because
+   they were all part of the same geology club / department. On paper,
+   they still are, but they use those meetings to discuss the
+   resistance. That's why all of their codenames are themed after
+   types of rocks.
 ** CONSIDERING The Best Tacos
   After the Taco Man has both of his olives, he can make the best
   tacos on the planet. People from all over the multiverse will come
@@ -2551,6 +2568,19 @@
    luck-based powers as a valuable asset. June went underground, began
    training with her abilities, and started (or joined?) a resistance
    movement against the Robot King.
+** CONSIDERING No More Dreams
+   We have the open question of what the dream world in the parallel
+   dimension looks like. One option is to have there just be one dream
+   world, and if you fall asleep in the other world, the train still
+   takes you back to the /original/ starting point of the game.
+
+   But here's an idea. What if someone or something destroyed the
+   dream world intentionally (maybe the Robot King to get rid of the
+   rebellion's hideout, maybe not). Then, whenever the player sleeps
+   in the second world, he ends up in the nuked dream world, dies
+   instantly, and wakes up in the mystery room of the (original)
+   underworld. We'd have to explore what happened to the dream world,
+   but I think it may be an interesting plot point.
 * MISCELLANEOUS
 
 ** Test

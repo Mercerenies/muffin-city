@@ -130,3 +130,14 @@ con
 state put merchant-starlight yes
 con
 state put merchant-atheena yes
+con
+inv add {Merchant-bot's Eye}
+2
+3
+1
+5
+1
+2
+1
+2
+2
