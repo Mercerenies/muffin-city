@@ -36,8 +36,6 @@ namespace eval Warehouse::Inside {
     }
 
     proc exitWarehouse {} {
-        # //// If the door is bolted the second time, going out this
-        # way opens it
         return ::Warehouse::Outside::south
     }
 
@@ -95,9 +93,30 @@ namespace eval Warehouse::Inside {
 
     proc ownerOffice {} {
         puts "== Warehouse - Owner's Office =="
-        # /////
+        puts "Compared to the rest of the warehouse, the office\
+        looks surprisingly futuristic. There are several displays on the wall,\
+        all of them powered down. Below the displays, there are several drawers,\
+        which seem to have been unlocked when the door provided you access."
         prompt {} {
+            {"Rummage through the drawers" yes ownerDrawers}
             {"Go back out" yes warehouseFloor}
+        }
+    }
+
+    proc ownerDrawers {} {
+        if {[state get owner-key] eq {no}} then {
+            puts "You find little of interest in most of the drawers, mostly scribbled notes\
+            and unreadable documents. However, you do find a key in one drawer."
+            puts "You got the Spade Key!"
+            state put owner-key yes
+            inv add {Spade Key}
+            puts {}
+            return ownerOffice
+        } else {
+            puts "You find little of interest in the drawers, mostly scribbled notes\
+            and unreadable documents."
+            puts {}
+            return ownerOffice
         }
     }
 

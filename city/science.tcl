@@ -30,8 +30,9 @@ namespace eval City::Science {
         if {[state get talked-to-louis]} then {
             puts "\"Hey, can I help you?\""
             prompt {} {
-                {"\"The Club Key?\"" {[inv has {Club Key}]} clubQuestion}
+                {"\"The Spade Key?\"" {[inv has {Spade Key}]} spadeQuestion}
                 {"\"The Heart Key?\"" {[inv has {Heart Key}]} heartQuestion}
+                {"\"The Club Key?\"" {[inv has {Club Key}]} clubQuestion}
                 {"\"The Diamond Key?\"" {[inv has {Diamond Key}]} diamondQuestion}
                 {"\"Not right now.\"" yes mainRoom}
             }
@@ -64,6 +65,14 @@ namespace eval City::Science {
     proc diamondQuestion {} {
         puts "\"The Diamond Room is the control room for a space launch mission. This lab\
         doesn't own the rocket, but we have some backup controls for emergency purposes.\""
+        puts {}
+        return mainRoom
+    }
+
+    proc spadeQuestion {} {
+        puts "\"We were working on a new Merchant-bot in the Spade Room. But the old\
+        Merchant-bot sabotaged the project. As long as Merchant-bot is alive, the new\
+        one won't work.\""
         puts {}
         return mainRoom
     }
@@ -139,7 +148,7 @@ namespace eval City::Science {
         puts "== Diamond Room =="
         if {[state get rocket-launched] eq {yes}} then {
             puts "The room is small and square. A monitor depicts an empty launchpad,\
-            and there is a large button labeled \"Launch\" beneat it."
+            and there is a large button labeled \"Launch\" beneath it."
         } else {
             puts "The room is small and square. There are several controls on a panel\
             mounted against the back wall, and a monitor depicts a large rocket in\
@@ -153,6 +162,21 @@ namespace eval City::Science {
         }
     }
 
+    proc spadeRoomJump {} {
+        if {[state get merchant-bot] in {no met}} then {
+            puts "As soon as you press the button, several lights on the side of the robot's\
+            head begin flashing."
+            state put merchant-bot rebooting
+            # //// Then what?
+            puts {}
+            return spadeRoom
+        } else {
+            puts "The button appears to have no effect."
+            puts {}
+            return spadeRoom
+        }
+    }
+
     proc spadeRoom {} {
         if {![inv has {Spade Key}]} then {
             puts "The door is locked."
@@ -160,8 +184,26 @@ namespace eval City::Science {
             return mainRoom
         }
         puts "== Spade Room =="
-        # //// Empty room right now
+        switch [state get merchant-bot] {
+            no - met {
+                puts "The room is set up like a medical lab. In the middle of the room, on\
+                an operating table, is a humanoid robot, apparently asleep. A white button\
+                below the operating table catches your eye."
+            }
+            rebooting {
+                puts "The room is set up like a medical lab. In the middle of the room, on\
+                an operating table, is a humanoid robot. The robot is unconscious, but\
+                several lights on its head are flashing. There is a white button below\
+                the operating table."
+            }
+            default {
+                puts "The room is set up like a medical lab. In the middle of the room, there\
+                is an empty operating table. A small white button occupies a spot on the\
+                underside of the table."
+            }
+        }
         prompt {} {
+            {"Press the white button" yes spadeRoomJump}
             {"Go back out" yes mainRoom}
         }
     }

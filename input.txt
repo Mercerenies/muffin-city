@@ -132,12 +132,11 @@ con
 state put merchant-atheena yes
 con
 inv add {Merchant-bot's Eye}
+con
+inv add {Spade Key}
+con
+state put merchant-bot rebooting
+1
 2
-3
-1
-5
-1
-2
-1
 2
 2

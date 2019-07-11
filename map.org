@@ -91,6 +91,7 @@
 **** clubQuestion
 **** heartQuestion
 **** diamondQuestion
+**** spadeQuestion
 **** clubRoomJump
 **** clubRoom
 **** heartRoomJump
@@ -98,6 +99,7 @@
 **** diamondRoomJump
 **** diamondRoomNoJump
 **** diamondRoom
+**** spadeRoomJump
 **** spadeRoom
 *** [Shopping]
 **** pawnShop
@@ -490,6 +492,7 @@
 **** ownerWrongEye
 **** ownerRightEye
 **** ownerOffice
+**** ownerDrawers
 *** [Pirates]
 **** attack
 **** attack1
@@ -530,6 +533,7 @@
 **** heartRoom
 **** diamondRoomNo
 **** diamondRoom
+**** spadeRoomNo
 **** spadeRoom
 *** [Hotel]
 **** ritzyHall
@@ -742,7 +746,7 @@
  + Inmate's Soul
  + Ritzy Inn Room Key
  + Motel Room Key
- + Spade Key (TBA)
+ + Spade Key
  + Diamond Key
  + Heart Key
  + Club Key
@@ -1567,6 +1571,9 @@
      coin, the game moves to ~yes~.
 **** yes
      The washroom coin has been collected and will not appear again.
+*** ~owner-key~
+**** no
+**** yes
 ** Muffin States
 *** River Treasures (~forest-river~)
 **** 0
@@ -1615,6 +1622,8 @@
 *** ~merchant-bot~
 **** no
 **** met
+**** rebooting
+**** yes
 *** The Acolyte (~talked-to-acolyte~)
 **** no
      The player has not spoken to the acolyte, Matthew, at the

@@ -106,6 +106,7 @@ namespace eval State {
         merchant-atheena no
         merchant-starlight no
         warehouse-owner no
+        owner-key no
     }]
 
     proc get {args} {

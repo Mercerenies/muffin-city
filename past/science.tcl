@@ -84,6 +84,13 @@ namespace eval Past::Science {
         }
     }
 
+    proc spadeRoomNo {} {
+        puts "The lights on the side of the robot's head light up for a moment. The\
+        circuitry sparks, and the lights go back out."
+        puts {}
+        return spadeRoom
+    }
+
     proc spadeRoom {} {
         if {![inv has {Spade Key}]} then {
             puts "The door is locked."
@@ -91,8 +98,11 @@ namespace eval Past::Science {
             return mainRoom
         }
         puts "== Spade Room - Past =="
-        # ////
+        puts "The room is set up like a medical lab. In the middle of the room, on\
+        an operating table, is a humanoid robot, apparently asleep. A white button\
+        below the operating table catches your eye."
         prompt {} {
+            {"Press the white button" yes spadeRoomNo}
             {"Go back out" yes mainRoom}
         }
     }
