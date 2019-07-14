@@ -169,9 +169,15 @@ namespace eval City::Hotel {
 
     proc ritzyInn {} {
         puts "== Ritzy Inn =="
-        puts "This is obviously a high-class building. There are several people moving to and fro,\
-        all of them dressed in the finest garb. Behind a large \"Guest Services\" counter sits a\
-        single man. The bronze nameplate in front of him informs you that his name is Carl."
+        puts -nonewline "This is obviously a high-class building. There are several people\
+        moving to and fro, all of them dressed in the finest garb. Behind a\
+        large \"Guest Services\" counter sits a single man. The bronze nameplate\
+        in front of him informs you that his name is Carl."
+        if {[state get resolved-todd] ne {no}} then {
+            puts " Todd is sitting on one of the sofas in the middle of the lobby."
+        } else {
+            puts {}
+        }
         if {[state get crypto-king] eq {ready}} then {
             puts {}
             puts "As you are glancing about, a man in an incredibly flashy white suit shoves you\
@@ -181,6 +187,7 @@ namespace eval City::Hotel {
         }
         prompt {} {
             {"Talk to Carl" yes ritzyTalk}
+            {"Talk to Todd" {[state get resolved-todd] ne {no}} ritzyTodd}
             {"Go toward the hallway" yes ritzyHall}
             {"Leave" yes ::City::District::hotel}
         }
@@ -273,6 +280,97 @@ namespace eval City::Hotel {
         state put crypto-king met1
         prompt {} {
             {"\"Thank you.\"" yes ritzyInn}
+        }
+    }
+
+    proc ritzyTodd {} {
+        switch [state get talked-to-todd] {
+            spoken {
+                if {[inv has {Fireproof Suit}]} then {
+                    puts "\"Is that a Fireproof Suit? I've been looking\
+                    for one of those actually. I'll trade you my Scuba\
+                    Suit for your Fireproof Suit.\""
+                    state put talked-to-todd {Scuba Suit}
+                    prompt {} {
+                        {"Trade" yes ritzyTrade}
+                        {"\"Your family?\"" yes ritzyFamily}
+                        {"\"Later.\"" yes ritzyInn}
+                    }
+                } else {
+                    puts "\"Thank you again for your help!\""
+                    prompt {} {
+                        {"\"Your family?\"" yes ritzyFamily}
+                        {"\"Goodbye.\"" yes ritzyInn}
+                    }
+                }
+            }
+            {Scuba Suit} {
+                if {[inv has {Fireproof Suit}]} then {
+                    puts "\"Want to trade? I'll give you my Scuba Suit for your Fireproof Suit.\""
+                    prompt {} {
+                        {"Trade" yes ritzyTrade}
+                        {"\"Your family?\"" yes ritzyFamily}
+                        {"\"Later.\"" yes ritzyInn}
+                    }
+                } else {
+                    puts "\"Thank you again for your help!\""
+                    prompt {} {
+                        {"\"Your family?\"" yes ritzyFamily}
+                        {"\"Goodbye.\"" yes ritzyInn}
+                    }
+                }
+            }
+            {Fireproof Suit} {
+                if {[inv has {Scuba Suit}]} then {
+                    puts "\"Want to trade? I'll give you back your Fireproof Suit for the\
+                    Scuba Suit.\""
+                    prompt {} {
+                        {"Trade" yes ritzyTrade}
+                        {"\"Your family?\"" yes ritzyFamily}
+                        {"\"Later.\"" yes ritzyInn}
+                    }
+                } else {
+                    puts "\"Thank you again for your help!\""
+                    prompt {} {
+                        {"\"Your family?\"" yes ritzyFamily}
+                        {"\"Goodbye.\"" yes ritzyInn}
+                    }
+                }
+            }
+        }
+    }
+
+    proc ritzyFamily {} {
+        puts "\"Still looking. Carl gave me a few names of people to talk to, so I'm\
+        just waiting to hear from them right now. If you hear anything, let me know.\""
+        puts {}
+        return ritzyInn
+    }
+
+    proc ritzyTrade {} {
+        switch [state get talked-to-todd] {
+            {Scuba Suit} {
+                puts "\"Excellent!\""
+                puts "You give up your Fireproof Suit and take the Scuba Suit."
+                inv remove {Fireproof Suit}
+                inv add {Scuba Suit}
+                state put talked-to-todd {Fireproof Suit}
+                puts {}
+                return ritzyInn
+            }
+            {Fireproof Suit} {
+                puts "\"Excellent!\""
+                puts "You give up your Scuba Suit and take the Fireproof Suit."
+                inv remove {Scuba Suit}
+                inv add {Fireproof Suit}
+                state put talked-to-todd {Scuba Suit}
+                puts {}
+                return ritzyInn
+            }
+            default {
+                puts {}
+                return ritzyInn
+            }
         }
     }
 

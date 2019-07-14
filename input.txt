@@ -61,7 +61,7 @@ state put collected-suit yes
 con
 state put captain-boat yes
 con
-state put talked-to-todd {Scuba Suit}
+state put talked-to-todd spoken
 con
 state put merchant-war yes
 con
@@ -136,7 +136,5 @@ con
 inv add {Spade Key}
 con
 state put merchant-bot rebooting
-1
-2
-2
-2
+con
+state put resolved-todd searching

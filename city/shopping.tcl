@@ -84,7 +84,12 @@ namespace eval City::Shopping {
 
     proc market {} {
         puts "== Market =="
-        # ///// Todd should interrupt you if you just defeated Merchant-bot.
+        if {([state get merchant-war] eq {yes}) && ([state get resolved-todd] eq {no})} then {
+            return marketConfession
+        }
+        if {[state get resolved-todd] ne {no}} then {
+            return marketNoTodd
+        }
         switch [state get merchant-war] {
             chip - yes {
                 puts -nonewline "The market is neatly organized, with shelves full\
@@ -279,8 +284,102 @@ namespace eval City::Shopping {
         }
     }
 
+    proc marketConfession {} {
+        if {[state get talked-to-todd] eq {no}} then {
+            puts "A man with glasses gets up from his chair and confronts\
+            you."
+        } else {
+            puts "Todd immediately gets up from his chair and confronts you."
+        }
+        puts "\"What's that in your pocket?!\""
+        puts "He points at Merchant-bot's Eye."
+        prompt {} {
+            {"\"Uhhh... nothing?\"" yes marketDeny}
+            {"\"Merchant-bot's eye.\"" yes marketAccept}
+            {"\"I killed Merchant-bot.\"" yes marketBrag}
+        }
+    }
+
+    proc marketDeny {} {
+        puts "\"That's Merchant-bot's Eye! He's dead! You killed him!\""
+        prompt {} {
+            {"\"Okay, fine, I did it.\"" yes marketBrag}
+        }
+    }
+
+    proc marketAccept {} {
+        puts "\"But that means... is he dead? Is Merchant-bot dead?\""
+        prompt {} {
+            {"\"I had to do it.\"" yes marketBrag}
+        }
+    }
+
+    proc marketBrag {} {
+        puts "\"I knew it! I knew you were the one! Merchant-bot had been acting funny lately,\
+        so I figured someone had gotten my notes.\""
+        prompt {} {
+            {"\"You left those clues for me?\"" yes marketBrag1}
+        }
+    }
+
+    proc marketBrag1 {} {
+        if {[state get talked-to-todd] eq {no}} then {
+            puts "\"I guess I should explain. My name is Todd.\""
+            state put talked-to-todd spoken
+        } else {
+            puts "\"I guess I should explain.\""
+        }
+        puts "Todd straightens his glasses nervously."
+        puts "\"I started working for Merchant-bot several years ago. About a year ago,\
+        I got a better offer and turned in my resignation. Merchant-bot wouldn't let me\
+        quit. He kidnapped my family and forced me to keep working here. I've been looking\
+        for a way out ever since. A few months ago, Merchant-bot had me deliver a message\
+        for him. It looked important, so I made a copy and left it in the warehouse for\
+        someone to find. I buried a spare key to the warehouse and left a message, hoping\
+        someone would put the pieces together. And you did! So thank you!\""
+        prompt {} {
+            {"\"What will you do now?\"" yes marketBrag2}
+        }
+    }
+
+    proc marketBrag2 {} {
+        puts "\"Well, I still need to find my family. But without Merchant-bot watching over\
+        my shoulder, that should be a lot easier. I'm definitely not staying here. Listen,\
+        if you need me for anything, I'll probably be over at the Ritzy Inn. I know some\
+        people there who may be able to help me with my search.\""
+        puts "Todd steps by you and walks out the exit."
+        state put resolved-todd searching
+        puts {}
+        return market
+    }
+
+    proc marketNoTodd {} {
+        puts -nonewline "The market is neatly organized, with shelves full\
+        of various objects. "
+        # //// Merchant-bot 2.0?
+        puts "Unfortunately, there doesn't appear to be anyone here to sell you\
+        anything right now."
+        prompt {} {
+            {"Steal everything" yes marketSteal}
+            {"Go back outside" yes ::City::District::shopping}
+        }
+    }
+
+    proc marketSteal {} {
+        puts "As soon as you touch one of the products, an automated alarm starts\
+        blasting in your ears, and the walls open up to reveal hidden lasers,\
+        which instantly vaporize you."
+        if {[state get lobby-door] ne {yes}} then {
+            state put lobby-door other
+        }
+        puts {}
+        return ::Underworld::Lobby::other
+    }
+
     proc boarded {} {
         puts "== Boarded Building =="
+        # //// This place probably shouldn't be boarded up. Maybe
+        # locked and surrounded in police tape but not boarded
         puts "The relatively small building has wooden boards nailed to the doors and\
         all of the windows. The sign which used to contain the name of the business\
         seems to have been taken away."

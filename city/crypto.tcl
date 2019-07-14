@@ -49,6 +49,7 @@ namespace eval City::Crypto {
         puts -nonewline "The lavish room must have cost a fortune. A king-sized\
         bed sits in one corner, next to a large sofa and opposite a large\
         television. A closed door to the side leads, presumably, to a restroom."
+        # //// Sleeping in the bed?
         switch [state get merchant-war] {
             crypto1 - deciphered {
                 puts " Arthur Miles is sitting on the sofa staring intently at a\

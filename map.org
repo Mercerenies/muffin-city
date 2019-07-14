@@ -84,7 +84,9 @@
 **** ritzyGetRoom1
 **** ritzySuit
 **** ritzySuit1
-**** ritzyCrypto
+**** ritzyTodd
+**** ritzyFamily
+**** ritzyTrade
 *** [Science]
 **** mainRoom
 **** talkTo
@@ -116,6 +118,14 @@
 **** marketToddPassive
 **** marketToddPanic
 **** marketTrade
+**** marketConfession
+**** marketDeny
+**** marketAccept
+**** marketBrag
+**** marketBrag1
+**** marketBrag2
+**** marketNoTodd
+**** marketSteal
 **** boarded
 **** boardedForce
 *** [Hut]
@@ -1328,7 +1338,7 @@
 **** deciphered
      The note has been deciphered. When the player talks to Arthur, he
      will immediately read the deciphered note, moving the game to
-     ~chip~.
+     ~chip~. //// Does Merchant-bot go to the underworld when he dies?
 **** chip
      ////
 **** yes
@@ -1649,7 +1659,6 @@
 **** spoken
 **** {Scuba Suit}
 **** {Fireproof Suit}
-
 *** ~heard-science~
 **** no
 **** told
@@ -1672,6 +1681,17 @@
      game moves to ~asked~.
 **** asked
      The player has already asked and has no reason to ask again.
+*** ~resolved-todd~
+**** no
+     The player has not spoken to Todd since the ~merchant-war~
+     plotline was finished. If the player enters the market when
+     ~merchant-war~ is in state ~yes~, then Todd will explain that he
+     was the one behind the messages. He will also explain that he is
+     still looking for his family. Then the game will move to
+     ~searching~. Additionally, if the player has managed to not talk
+     to Todd yet this game, ~talked-to-todd~ will move to ~spoken~.
+**** searching
+     The player has spoken to Todd. ////
 ** Door / Opening States
 *** ~janitor-door~
 **** no
