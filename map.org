@@ -2610,6 +2610,21 @@
    instantly, and wakes up in the mystery room of the (original)
    underworld. We'd have to explore what happened to the dream world,
    but I think it may be an interesting plot point.
+** CONSIDERING Johnny Logic
+   So, based on the way the quest went and the way Johnny has evolved
+   as a character, I don't really like the "I want to collect souls"
+   motivation for Johnny's initial quest. I like the quest, but the
+   reasoning just makes him (and by extension, the player, for
+   abetting) seem more evil than I intend.
+
+   Here's my thought. A hellhound (or something like it, since we're
+   not explicitly saying "hell" here) got loose and is hunting these
+   three people (inmate, guard, hunter), maybe for something they
+   haven't done yet, or maybe for something they did in a past life
+   (turns out, reincarnation is a thing in this world?). Johnny needs
+   to take their souls and put them somewhere safe. Then the player
+   has to go and contain / kill the hellhound (killing it returns it
+   to the underworld?), after which the souls are released.
 * MISCELLANEOUS
 
 ** Test
