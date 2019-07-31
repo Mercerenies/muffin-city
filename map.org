@@ -2046,6 +2046,10 @@
    - Elevator is blocked by a man who takes the item back.
    - Must go to the mystery room, then subspace, then forest, then
      take prison bus to get to Steve's locksmith shop.
+ + Okay, so maybe the bank took the portal device's key (whatever
+   we're calling it these days) from the /previous/ owner of the
+   portal device, who is now (for whatever reason) in prison. You need
+   to talk to him to get some information.
 ** DONE Scuba Suit
    Diving into the warehouse island water with scuba suit will result
    in an underwater merfolk cavern
@@ -2375,6 +2379,21 @@
 ** CONSIDERING Cloud World
    A part of prehistory above the clouds. Maybe the space elevator
    hasn't made it to space yet, or maybe it's just a ladder.
+
+   There are some cloud people there. They live on the clouds and,
+   since they're made of clouds, they can walk around on them. If you
+   try to enter their village, you'll just fall through the clouds.
+   You need the Cloud Shoes. The Cloud Shoes have been lost for
+   thousands of years and eventually fall out of the sky and hit
+   Attorney-Man in the head. He will give them to you as a reward for
+   his main quest.
+
+   Once you have the Cloud Shoes, the cloud people will tell you of
+   the prophecy that the cloud shoes will only show themselves to the
+   chosen hero of legend, whom they believe to be you.
+
+   For those of you following along at home, yes, that means the
+   chosen hero of the cloud people is Attorney-Man.
 ** ACCEPTED Beneath the Police
    There's a small, suspicious hut in the police district next to the
    otherwise tall buildings. It belongs to a mysterious criminal (the
@@ -2625,6 +2644,28 @@
    to take their souls and put them somewhere safe. Then the player
    has to go and contain / kill the hellhound (killing it returns it
    to the underworld?), after which the souls are released.
+** CONSIDERING Attorney-Man's Reward
+   So, whether or not we accept this idea, Attorney-Man needs a
+   reward. He literally has none right now.
+
+   But here's a thought. Johnny gives you a reward every time you
+   bring him a soul. So why can't Attorney-Man do the same every time
+   you bring him a client?
+   1. First client gets you the Evil Membership Card.
+   2. Second client gets you Cloud Shoes (name tbd).
+   3. Third client gets you ???
+** CONSIDERING Evil Club
+   A club in the underworld where all of the stereotypically "evil"
+   professions get together and chat and have a good time.
+   Attorney-Man got a membership card when he got his law degree, but
+   he doesn't use it because he doesn't think he's evil. He gives it
+   to you as a reward.
+
+   "Evil" professions:
+   - Lawyer (Attorney-Man)
+   - Insurance Adjuster
+   - CEO
+
 * MISCELLANEOUS
 
 ** Test
