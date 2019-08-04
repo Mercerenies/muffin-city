@@ -2031,8 +2031,9 @@
    - Together, Starlight can slow Merchant-bot down enough for Atheena
      to stun him, which allows the player to attach the device that
      defeats him.
-** CONSIDERING Escaping the Prison
-   Help someone escape from prison by creating a diversion on entry
+** DONE Escaping the Prison
+   Help someone escape from prison by creating a diversion on entry.
+   + Harry the Arsonist.
 ** ACCEPTED Foreclosure
  + The subspace bank forecloses some important building or structure,
    requiring you to break into their vault to get the key and reopen
@@ -2062,7 +2063,7 @@
    Steve break open the vault lock to get Atheena's crystal back.
    Also, Steve may give you a Suspicious Briefcase that you must
    deliver to present-day Steve in the prison.
-** CONSIDERING The Flame Spirit
+** ACCEPTED The Flame Spirit
    Evil flame spirit appears in the fire pits after N visits. After
    appeasing him by giving him something, ... I dunno, something
    happens ... (Necromancy Certificate? Joe?)
@@ -2086,7 +2087,7 @@
    outside the door to the controls in the console room and explain
    the goal of the game to the player, as well as possibly give him
    hints once he has X muffins.
-** CONSIDERING Crispy Joe
+** ACCEPTED Crispy Joe
    Crispy Joe's Sandwich Shop...? (Prehistory?)
 ** CONSIDERING The Prehistoric Maze
    Prehistory contains a grocery store with a labyrinth underneath it.
@@ -2122,6 +2123,14 @@
    place before time itself by supercharging the prehistory time
    machine. Visiting prehistory and heading down to the Underworld
    will encounter maybe an earlier Reaper?
+   - Or maybe just at the beginning of humanity? I think we've decided
+     that the Reaper's underworld is local to earth and other planets
+     have their own similar system.
+ + Later, the Flaming Axe will show up again in the present day,
+   destroying the boundary between the underworld hub and the abyss.
+ + The Flaming Axe cannot be touched by the player. If he does so, bad
+   things happen (where do you go if you're already dead?). He'll need
+   some kind of protection.
 ** ACCEPTED Mothka's Challenge
  + Queen piece converter (for Mothka game?) (and just, ya know, Mothka
    in general)
@@ -2134,7 +2143,7 @@
 ** DONE The Fence
    The... Fence... trading to get things, like the shovel.
 ** Possible Coins
- + Prison sink: silver coin in pipes?
+ + [X] Prison sink: silver coin in pipes?
 ** CONSIDERING The Guardian of Time
    Could the Guardian of Time be chilling in Double Subspace reachable
    with the Black Olive?
@@ -2188,13 +2197,18 @@
 ** ACCEPTED The Reverse Pawn Shop
    In the inverse city, there's a pawn shop owner who wants religious
    artifacts and will give you a muffin for them.
-** CONSIDERING Merchant-bot's Friend
+** ACCEPTED Merchant-bot's Friend
    Maybe after the war with Merchant-bot, his friend from the inverse
    world (another Merchant-bot, or some "inverse" version of
    Merchant-bot) wants to send a letter to him. Since the regular
    Merchant-bot is gone (in the underworld? idk. Either way, he won't
    talk to the player), you have to get the key from (present-day)
    Todd and go to the past to talk to past Merchant-bot at his shop.
+   + The friend is the Robot King, who has taken over. In his own
+     timeline, the Robot King was Merchant-bot 2.0, who took over the
+     world and then got to know the regular world's Merchant-bot. He
+     warned him about the government plan, allowing Merchant-bot (the
+     first) to stay in control of his shop until the player shows up.
 ** DONE Bank Card
    Just a small thing. But you should be able to /attempt/ to pay
    Atheena's loan with the Platinum Card. It will fail, of course, but
@@ -2274,7 +2288,7 @@
    When the lions chase the player down after the bank robbery, Steve
    will flee to a safe room in the Ritzy Inn, where the player will
    have to visit her to get the bank vault unlocked.
-** CONSIDERING Harry the Arsonist
+** ACCEPTED Harry the Arsonist
    + I don't really know what I'm planning here. Just might be cool to
      have him if we need someone who does something with fire.
    + It's possible he could play into the evil flame spirit in some
@@ -2463,6 +2477,10 @@
    Certificate and is using it to repeatedly kill Billy. Not sure why.
    You need to get it back, after doing the miscellaneous side quest
    stuff relating to sending Billy to the various locations.
+
+   What if this happens to Dr. Cipher's (or Joe's) Certificate in the
+   inverse world, rather than having regular Dr. Cipher's Certificate
+   stolen twice in rapid succession?
 ** CONSIDERING Star of the Show
    At some point, a major villain (potentially the wizard from
    Atheena's past) will harness the power of a distant star and try to
@@ -2629,7 +2647,7 @@
    instantly, and wakes up in the mystery room of the (original)
    underworld. We'd have to explore what happened to the dream world,
    but I think it may be an interesting plot point.
-** CONSIDERING Johnny Logic
+** ACCEPTED Johnny Logic
    So, based on the way the quest went and the way Johnny has evolved
    as a character, I don't really like the "I want to collect souls"
    motivation for Johnny's initial quest. I like the quest, but the
@@ -2666,6 +2684,14 @@
    - Insurance Adjuster
    - CEO
 
+** CONSIDERING First Time Visitor
+   The train is a bit boring when you encounter it the first time. All
+   it does it take you back to the hub. Odds are, you came from either
+   the prison (in which case is functions as a prison break, at
+   least), or Shabby Jack's (in which case you feel really cheated, as
+   it does nothing for you). I say we have the first train visit give
+   you a reward for being their customer. Something you can get really
+   early-game, as it's very possibly the first thing a player will do.
 * MISCELLANEOUS
 
 ** Test
