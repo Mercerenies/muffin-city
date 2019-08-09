@@ -29,6 +29,9 @@ namespace eval City::District {
         if {[state get merchant-war] eq {crypto1}} then {
             state put merchant-war deciphered
         }
+        if {([state get merchant-bot] eq {rebooting}) && ([state get resolved-todd] ne {no})} then {
+            state put merchant-bot alive
+        }
         prompt {} {
             {"Go to the hotel district" yes hotel}
             {"Go to the shopping district" yes shopping}

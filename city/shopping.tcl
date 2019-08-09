@@ -356,12 +356,30 @@ namespace eval City::Shopping {
     proc marketNoTodd {} {
         puts -nonewline "The market is neatly organized, with shelves full\
         of various objects. "
-        # //// Merchant-bot 2.0?
-        puts "Unfortunately, there doesn't appear to be anyone here to sell you\
-        anything right now."
-        prompt {} {
-            {"Steal everything" yes marketSteal}
-            {"Go back outside" yes ::City::District::shopping}
+        switch [state get merchant-bot] {
+            alive {
+                puts "The humanoid robot from the science lab is standing behind\
+                the counter."
+                prompt {} {
+                    {"Talk to the robot" yes marketNewBot}
+                    {"Go back outside" yes ::City::District::shopping}
+                }
+            }
+            yes {
+                puts "Merchant-bot 2.0 is standing behind the counter."
+                prompt {} {
+                    {"Talk to Merchant-bot 2.0" yes marketNewBot}
+                    {"Go back outside" yes ::City::District::shopping}
+                }
+            }
+            default {
+                puts "Unfortunately, there doesn't appear to be anyone here to sell you\
+                anything right now."
+                prompt {} {
+                    {"Steal everything" yes marketSteal}
+                    {"Go back outside" yes ::City::District::shopping}
+                }
+            }
         }
     }
 
@@ -374,6 +392,22 @@ namespace eval City::Shopping {
         }
         puts {}
         return ::Underworld::Lobby::other
+    }
+
+    proc marketNewBot {} {
+        if {[state get merchant-bot] eq {alive}} then {
+            puts "\"Greetings. I am Merchant-bot 2.0. I understand that my predecessor\
+            may have caused some inconveniences. To ease the situation, I am providing\
+            a discount on one of our items.\""
+            puts "Merchant-bot 2.0's activates a holographic display projected from his\
+            hand."
+            state put merchant-bot yes
+        } else {
+            puts "\"Greetings. Would you like to make a purchase?\""
+        }
+        prompt {} {
+            {"\"Never mind.\"" yes market}
+        }
     }
 
     proc boarded {} {

@@ -126,6 +126,7 @@
 **** marketBrag2
 **** marketNoTodd
 **** marketSteal
+**** marketNewBot
 **** boarded
 **** boardedForce
 *** [Hut]
@@ -1633,6 +1634,7 @@
 **** no
 **** met
 **** rebooting
+**** alive
 **** yes
 *** The Acolyte (~talked-to-acolyte~)
 **** no
@@ -2607,7 +2609,7 @@
    A common criminal who calls himself Mister Midas after the
    mythological figure. Steals exclusively gold jewelry.
 
-   Mister Midas is Mastermind's first victim, in the prison washroom. /////
+   Mister Midas is Mastermind's first victim, in the prison washroom. ////
 ** CONSIDERING Below the Bottom of the Sea
    What's below the bottom? I'm thinking that you can fire the pirate
    cannon and it will blow a hole in one of the merfolk homes. But
@@ -2703,6 +2705,10 @@
 
    Where does the player get the mannequin? Maybe in the other world,
    there's a shop that has them?
+
+   What if the player needs the Postman's help to deliver the
+   mannequin to the other world? Maybe he needs the Postmaster to talk
+   to the Postman for him before he'll listen.
 * MISCELLANEOUS
 
 ** Test

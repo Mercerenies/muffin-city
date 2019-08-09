@@ -167,7 +167,6 @@ namespace eval City::Science {
             puts "As soon as you press the button, several lights on the side of the robot's\
             head begin flashing."
             state put merchant-bot rebooting
-            # //// Then what?
             puts {}
             return spadeRoom
         } else {
