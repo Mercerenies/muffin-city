@@ -145,9 +145,9 @@ namespace eval City::Shopping {
                 items available for purchase."
             }
         }
-        # //// Expensive item as well (possibly the lantern?)
         prompt {} {
             {"Buy a Green Olive (1 Silver Coin)" {![state get olive-bought]} marketOlive}
+            {"Buy a Lantern (999 Silver Coins)" {![state get lantern-bought]} marketLantern}
             {"\"Never mind.\"" yes market}
         }
     }
@@ -171,6 +171,17 @@ namespace eval City::Shopping {
                     puts "\"BZZT! You cannot afford a GREEN OLIVE! BZZT!\""
                 }
             }
+        }
+        puts {}
+        return market
+    }
+
+    proc marketLantern {} {
+        if {[inv count {Silver Coin}] >= 999} then {
+            puts "\"BZZT! There are not even 999 coins available in the game. BZZT!\
+            Cheater! BZZT!\""
+        } else {
+            puts "\"BZZT! You cannot afford a LANTERN! BZZT!\""
         }
         puts {}
         return market
@@ -406,8 +417,40 @@ namespace eval City::Shopping {
             puts "\"Greetings. Would you like to make a purchase?\""
         }
         prompt {} {
+            {"Buy a Green Olive (1 Silver Coin)" {![state get olive-bought]} marketNewOlive}
+            {"Buy a Lantern (1 Silver Coin)" {![state get lantern-bought]} marketNewLantern}
             {"\"Never mind.\"" yes market}
         }
+    }
+
+    proc marketNewOlive {} {
+        if {[inv has {Silver Coin}]} then {
+            puts "You hand Merchant-bot 2.0 a Silver Coin."
+            puts "\"Thank you for your purchase. Please enjoy your Green Olive.\""
+            puts "You collect the Green Olive."
+            inv remove {Silver Coin}
+            inv add {Green Olive}
+            state put olive-bought yes
+        } else {
+            puts "\"I'm terribly sorry, but you can't afford that.\""
+        }
+        puts {}
+        return market
+    }
+
+    proc marketNewLantern {} {
+        if {[inv has {Silver Coin}]} then {
+            puts "You hand Merchant-bot 2.0 a Silver Coin."
+            puts "\"Thank you for your purchase. Please enjoy your Lantern.\""
+            puts "You collect the Lantern."
+            inv remove {Silver Coin}
+            inv add {Lantern}
+            state put lantern-bought yes
+        } else {
+            puts "\"I'm terribly sorry, but you can't afford that.\""
+        }
+        puts {}
+        return market
     }
 
     proc boarded {} {

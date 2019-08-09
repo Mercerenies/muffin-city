@@ -135,6 +135,8 @@ inv add {Merchant-bot's Eye}
 con
 inv add {Spade Key}
 con
-state put merchant-bot rebooting
+state put merchant-bot alive
 con
 state put resolved-todd searching
+con
+inv add {Lantern}

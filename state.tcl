@@ -108,6 +108,7 @@ namespace eval State {
         warehouse-owner no
         owner-key no
         resolved-todd no
+        lantern-bought no
     }]
 
     proc get {args} {

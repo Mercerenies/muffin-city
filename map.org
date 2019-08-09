@@ -114,6 +114,7 @@
 **** market
 **** marketBot
 **** marketOlive
+**** marketLantern
 **** marketTodd
 **** marketToddPassive
 **** marketToddPanic
@@ -127,6 +128,8 @@
 **** marketNoTodd
 **** marketSteal
 **** marketNewBot
+**** marketNewOlive
+**** marketNewLantern
 **** boarded
 **** boardedForce
 *** [Hut]
@@ -763,7 +766,7 @@
  + Club Key
  + Fireproof Suit
  + Green Olive
- + Lantern (TBA)
+ + Lantern
  + Courthouse Key
  + Stolen Suitcase
  + Super Taco
@@ -1583,6 +1586,9 @@
 **** yes
      The washroom coin has been collected and will not appear again.
 *** ~owner-key~
+**** no
+**** yes
+*** ~lantern-bought~
 **** no
 **** yes
 ** Muffin States
