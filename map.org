@@ -2692,6 +2692,17 @@
    it does nothing for you). I say we have the first train visit give
    you a reward for being their customer. Something you can get really
    early-game, as it's very possibly the first thing a player will do.
+** CONSIDERING The Sewer King
+   King Arachnarok, the Spider King, rules over the sewers beneath the
+   city. His son, Prince Arachnarok, is set to marry and take over the
+   throne. Unfortunately, he has not found a significant other. His
+   father kidnaps some poor human to to the Prince's groom. The King
+   won't be reasoned with, so the player has to convince the Prince to
+   help him free the human. They find a mannequin somewhere and put it
+   in place of the human, and the wedding ceremony goes on as planned.
+
+   Where does the player get the mannequin? Maybe in the other world,
+   there's a shop that has them?
 * MISCELLANEOUS
 
 ** Test
@@ -2704,5 +2715,52 @@
  *   Spade Room - Time Machine+ - ???
  *   Heart Room - Shrinking     - Dr. Cipher Quest
  * Diamond Room - Rocket        - Baby Doll in the Forest
+** Science (Revised)
+ +    Club Room - Time Machine     - Free on First Access
+ +   Spade Room - Merchant-bot 2.0 - Owner's Office in the Warehouse
+ +   Heart Room - Shrinking        - Dr. Cipher Quest
+ + Diamond Room - Rocket           - Baby Doll in the Forest
+** Deaths
+*** Murder
+   + Robbery Event
+     - Always available, provided you reset the robber's position
+   + Exercise Field Inmate
+     - Only available until you steal his soul
+   + Mr. Midas in the Prison Washroom
+     - Single-use, as the plot demands
+   + Joe's Necromancy Attack
+     - Very briefly, available when Joe is in the taco shop executing
+       his evil plan before the player asks Atheena for assistance
+     - Paywalled
+   + Pirate Attack
+     - Always available, even after you get the Pirate Hat
+     - Paywalled
+   + Merchant-bot's Battle
+     - Very briefly, available when Merchant-bot is at the warehouse
+       ready to kill the player but before the player has accumulated
+       the correct team to defeat him
+     - Paywalled
+*** Wildlife
+   + Cave Attack
+     - Always available, even after you get the Lantern
+   + Ventilation Rat Attack
+     - Always available
+     - Paywalled
+*** Mercury
+*** Other
+   + Merchant-bot's Security System
+     - Very briefly, between Todd and Merchant-bot 2.0 being at the
+       shop
+     - Paywalled
+   + Out of Oxygen on the Moon
+     - Available until you get the Oxygen Pocket Dimension
+   + The Cursed Chest in the Subspace Temple
+     - Available until you get the Reaper's blessing
+   + Drowning on the Warehouse Island
+     - Always available, provided the player does not have Todd's
+       Scuba Suit
+*** Mystery
+   + Mothka's Rat Attack
+     - Always available
 ** Next
    +Mothka's execution chamber should take you to the other room.+
