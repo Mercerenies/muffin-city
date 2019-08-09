@@ -160,7 +160,7 @@ namespace eval Dream::World {
             puts "You leap into the infinite void and fall. After falling for a time, you land\
             in a strange room where the only sound is the hum of several computers."
             puts {}
-            return {::Empty::back {::Dream::World::pier 1}} ;# //// Console room
+            return ::Console::Terminal::gate ;# //// Console room
         } else {
             puts "You leap into the infinite void and fall. After falling for a time, you land\
             very suddenly in the common area near the pier."

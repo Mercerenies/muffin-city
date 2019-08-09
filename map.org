@@ -712,6 +712,10 @@
 **** office
 **** cabin
 **** future
+*** [Terminal]
+**** gate
+**** forceDoor
+**** fade
 ** [Tiny]
 *** [Vent]
 **** heartRoom
