@@ -274,6 +274,7 @@ namespace eval Underworld::Abyss {
         prompt {} {
             {"Go forward" yes voidDirection}
             {"Go backward" yes voidDirection}
+            {"Turn the Lantern on" {[inv has {Lantern}]} voidLight}
             {"Go to sleep" yes voidSleep}
         }
     }
@@ -289,6 +290,31 @@ namespace eval Underworld::Abyss {
         puts "Giving in to your more primitive instincts, you decide to take a short nap."
         puts {}
         return {::Dream::Transit::awaken ::Dream::Transit::thirdRoom}
+    }
+
+    proc voidLight {} {
+        if {[state get lantern-muffin] eq {yes}} then {
+            puts "Your Lantern reveals very little, only providing you a small amount of\
+            light which shows an empty ground around you."
+            prompt {} {
+                {"Turn the Lantern back off" yes void}
+            }
+        } else {
+            puts "Your Lantern only lights a small area around you, but even that much\
+            is enough to reveal a muffin on the floor at your feet."
+            prompt {} {
+                {"Take the muffin" yes voidMuffin}
+                {"Turn the Lantern back off" yes void}
+            }
+        }
+    }
+
+    proc voidMuffin {} {
+        puts "You got the Mango Muffin!"
+        state put lantern-muffin yes
+        muffin add {Mango Muffin}
+        puts {}
+        return voidLight
     }
 
     proc fork {} {

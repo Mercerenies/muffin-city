@@ -409,6 +409,8 @@
 **** void
 **** voidDirection
 **** voidSleep
+**** voidLight
+**** voidMuffin
 **** fork
 ** [Dream]
 *** [Transit]
@@ -828,6 +830,7 @@
  + Apple Pecan Muffin (~spirit-muffin~)
 ** Underworld
  + Cream Cheese Muffin (~mercury-muffin~)
+ + Mango Muffin (~lantern-muffin~)
 ** Dream World
  + Blueberry Muffin (~muffin-second~)
 ** Subspace
@@ -863,7 +866,6 @@
  + Pumpkin Spice Muffin
  + Coffee Cake Muffin
  + Pineapple Muffin
- + Mango Muffin
  + Oatmeal Raisin Muffin
 * STATES / EVENTS
 
@@ -1626,6 +1628,9 @@
 **** no
 **** yes
      ////
+*** ~lantern-muffin~
+**** no
+**** yes
 ** Dialogue States
 *** ~talked-to-johnny~
 **** no

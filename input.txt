@@ -141,17 +141,12 @@ state put resolved-todd searching
 con
 inv add {Lantern}
 1
+2
 3
 2
-1
-2
-1
-2
+4
 1
 1
 1
-2
-1
-2
-1
-2
+3
+3
