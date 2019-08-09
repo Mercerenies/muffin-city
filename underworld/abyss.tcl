@@ -299,7 +299,7 @@ namespace eval Underworld::Abyss {
         the abyss."
         # //// To the left
         prompt {} {
-            {"Go left" yes ::Empty::place}
+            {"Go left" yes {::Empty::back ::Underworld::Abyss::fork}}
             {"Approach the abyss" yes secondFloor}
         }
     }

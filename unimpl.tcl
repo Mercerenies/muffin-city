@@ -7,4 +7,11 @@ namespace eval Empty {
         return -gameover
     }
 
+    proc back {room} {
+        puts "You briefly drift out of spacetime as you realize that this part of the game has\
+        not been designed yet. Fortunately, the effects subside quickly."
+        puts {}
+        return $room
+    }
+
 }

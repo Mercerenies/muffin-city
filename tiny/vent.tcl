@@ -52,7 +52,7 @@ namespace eval Tiny::Vent {
         # //// Up
         prompt {} {
             {"Go down" yes heartRoom}
-            {"Go up" yes ::Empty::place}
+            {"Go up" yes {::Empty::back ::Tiny::Vent::ventilation}}
             {"Go left" yes deepVent}
             {"Talk to the air conditioning man" {![state get talked-to-grigory]} grigory}
             {"Talk to Grigory" {[state get talked-to-grigory]} grigory}

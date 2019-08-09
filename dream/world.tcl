@@ -159,8 +159,8 @@ namespace eval Dream::World {
         if {$depth >= 3} then {
             puts "You leap into the infinite void and fall. After falling for a time, you land\
             in a strange room where the only sound is the hum of several computers."
-            # //// Console room
-            return -gameover
+            puts {}
+            return {::Empty::back {::Dream::World::pier 1}} ;# //// Console room
         } else {
             puts "You leap into the infinite void and fall. After falling for a time, you land\
             very suddenly in the common area near the pier."

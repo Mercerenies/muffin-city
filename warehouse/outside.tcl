@@ -210,11 +210,11 @@ namespace eval Warehouse::Outside {
             }
             done {
                 # ////
-                return -gameover
+                return {::Empty::back ::Warehouse::Outside::north}
             }
             complete {
                 # ////
-                return -gameover
+                return {::Empty::back ::Warehouse::Outside::north}
             }
         }
     }
