@@ -1283,15 +1283,26 @@
      The player has not spoken to the captain yet. The captain will
      not appear until the second Butler event. When the player speaks
      to him, the captain will mention that his ship is missing its
-     wheel, and the game will move to `spoken`.
+     wheel, and the game will move to ~spoken~.
 **** spoken
-     //// Fill this in
+     The captain has asked the player for a wheel and hinted rather
+     heavily that the Pawnbroker may have one. If the player visits
+     the Pawnbroker in the present, he will say he doesn't have one
+     and that he wishes the player had requested the item earlier that
+     day. If the player visits the Pawnbroker in the past, he can make
+     a request for the wheel, and the game will move to ~requested~ at
+     that time.
 **** requested
-     //// Fill this in
+     The player has requested the wheel. The Pawnbroker in the present
+     will have the item available. It costs the player one Silver Coin
+     to purchase, and upon buying it, the player receives the Ship's
+     Wheel and the game moves to ~obtained~.
 **** obtained
-     //// Fill this in
+     The player has the Ship's Wheel and must deliver it to the
+     captain. Upon delivering it, the game moves to ~yes~.
 **** yes
-     //// Fill this in
+     The captain has the Ship's Wheel and will allow the player to
+     board his ship freely.
 *** Unfinished Business (~motel-ghost~)
 **** no
      The motel ghost is invisible. The player cannot encounter him in
@@ -1442,11 +1453,19 @@
      the hunter. The hunter won't give it up as long as he has a soul.
      Once the player obtains the Cowboy Hat, the game moves to ~hat2~.
 **** hat2
-     ////
+     The player has obtained the Cowboy Hat and must deliver it to the
+     Hatman. When he does so, the game moves to ~disguised~.
 **** disguised
-     ////
+     The player has the Pirate Hat but has not yet used it. The player
+     must encounter the pirates using the captain's ship as before.
+     This time, if the player dons the Pirate Hat and speaks
+     correctly, the pirates will accept him and the game will move to
+     ~yes~.
 **** yes
-     ////
+     The player has befriended the pirates. They will no longer
+     attack. Additionally, when the player speaks to the captain,
+     there will be an additional destination option, allowing the
+     player to visit the pirate ship anytime.
 *** Just a Toy (~baby-doll~)
 **** no
      The player has not encountered the sentient baby doll yet. The
@@ -2754,7 +2773,7 @@
        his evil plan before the player asks Atheena for assistance
      - Paywalled
    + Pirate Attack
-     - Always available, even after you get the Pirate Hat
+     - Available until you use the Pirate Hat to befriend them
      - Paywalled
    + Merchant-bot's Battle
      - Very briefly, available when Merchant-bot is at the warehouse
