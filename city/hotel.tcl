@@ -205,6 +205,7 @@ namespace eval City::Hotel {
         prompt {} {
             {"Go to Room 211" {[inv has {Ritzy Inn Room Key}]} ritzyRoom}
             {"Go to Room 128" {[state get crypto-king] ni {no closer ready met}} ::City::Crypto::firstFloor}
+            {"Go to the dining hall" {[state get dining-hall] eq {yes}} ritzyDining}
             {"Go to the basement" {[state get heard-science] eq {yes}} ::City::Science::mainRoom}
             {"Go back" yes ritzyInn}
         }
@@ -235,6 +236,7 @@ namespace eval City::Hotel {
             {"\"I would like a room.\"" {![state get inn-room]} ritzyGetRoom}
             {"\"Who was that man in the white suit?\"" {[state get crypto-king] eq {met}} ritzySuit}
             {"\"The Butler sent me.\"" {[state get heard-science] eq {told}} ritzyTalkScience}
+            {"Show him the Ritzy Inn Meal Voucher" {[inv has {Ritzy Inn Meal Voucher}] && ([state get dining-hall] eq {no})} ritzyMeal}
             {"\"Never mind.\"" yes ritzyInn}
         }
     }
@@ -371,6 +373,99 @@ namespace eval City::Hotel {
                 puts {}
                 return ritzyInn
             }
+        }
+    }
+
+    proc ritzyMeal {} {
+        puts "\"A meal voucher. The dining hall is through the hallway on the first floor.\
+        Enjoy your meal.\""
+        state put dining-hall yes
+        puts {}
+        return ritzyInn
+    }
+
+    proc ritzyDining {} {
+        puts "== Ritzy Inn - Dining Hall =="
+        puts "The dining hall is enormous, rows and rows of tables stretching back as far\
+        as the eye can see. Happy couples and families are sitting at many of the tables,\
+        and several young waiters and waitresses dressed in the finest garb are serving.\
+        As you enter, a young gentleman approaches you."
+        puts "\"Good evening. Unfortunately, this restaurant is by reservation only. Do\
+        you by chance have a reservation?\""
+        prompt {} {
+            {"Show him the meal voucher" {[inv has {Ritzy Inn Meal Voucher}]} ritzyDining1}
+            {"\"No, sorry.\"" yes ritzyDiningAbort}
+        }
+    }
+
+    proc ritzyDining1 {} {
+        puts "\"Ah, a meal voucher. Right this way, please.\""
+        puts "The gentleman takes your meal voucher and leads you to a table near the\
+        window. As you take a seat, he speaks again."
+        inv remove {Ritzy Inn Meal Voucher}
+        puts "\"Your meal voucher entitles you to a bowl of tonight's special, our\
+        world-famous spicy zucchini soup. Your waiter will be right out with\
+        your soup.\""
+        prompt {} {
+            {"\"Thank you.\"" yes ritzyDining2}
+        }
+    }
+
+    proc ritzyDining2 {} {
+        puts "The gentleman leaves your presence."
+        puts "..."
+        puts "..."
+        puts "Sure enough, moments later, a waiter approaches with a fresh bowl of soup\
+        and places it on your table."
+        puts "\"Enjoy your meal.\""
+        puts "The waiter walks away."
+        prompt {} {
+            {"Eat the soup slowly" yes ritzyDiningSlow}
+            {"Devour the soup quickly" yes ritzyDiningFast}
+        }
+    }
+
+    proc ritzyDiningSlow {} {
+        state put spicy-visit [expr {[state get spicy-visit] + 1}]
+        state put spicy-return hotel
+        puts "You take one slow, cautious bite of the soup. The overwhelming spiciness\
+        of the dish immediately overwhelms you, and your vision fades to white."
+        puts {}
+        return ::Subspace::Higher::hub
+    }
+
+    proc ritzyDiningFast {} {
+        state put spicy-visit [expr {[state get spicy-visit] + 1}]
+        state put spicy-return hotel
+        puts "You take one slow, cautious bite of the soup. The overwhelming spiciness\
+        of the dish immediately overwhelms you, and your vision fades to white."
+        puts {}
+        return ::Subspace::Higher::hub
+    }
+
+    proc ritzyDiningAbort {} {
+        puts "You head back out to the main hallway."
+        puts {}
+        return ritzyHall
+    }
+
+    proc ritzyRecovery {} {
+        puts -nonewline "You awaken on a sofa in the Ritzy Inn main room."
+        if {[state get resolved-todd] ne {no}} then {
+            puts " Todd and Carl are standing over you. Carl speaks first."
+            puts "\"Ah, good, you're awake. You became light headed during your meal,\
+            so they brought you out here to recover.\""
+            puts "Todd sits back down on the adjacent sofa, and Carl returns to the\
+            reception counter."
+            puts {}
+            return ritzyInn
+        } else {
+            puts " Carl is standing over you."
+            puts "\"Ah, good, you're awake. You became light headed during your meal,\
+            so they brought you out here to recover.\""
+            puts "Carl returns to the reception counter."
+            puts {}
+            return ritzyInn
         }
     }
 

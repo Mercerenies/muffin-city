@@ -56,8 +56,16 @@ namespace eval Past::Hotel {
         come back at one o'clock after today's guests have departed.\""
         # //// Something else for Todd to do (show him his note to go to subspace?)
         prompt {} {
+            {"Show him the Ritzy Inn Meal Voucher" {[inv has {Ritzy Inn Meal Voucher}] && ([state get dining-hall] eq {no})} ritzyMeal}
             {"\"Never mind.\"" yes ritzyInn}
         }
+    }
+
+    proc ritzyMeal {} {
+        puts "\"You can use that meal voucher to get a free meal at our dining hall\
+        during the dinner hours. Please come back later to redeem your free meal.\""
+        puts {}
+        return ritzyInn
     }
 
     proc shabbyJack {} {

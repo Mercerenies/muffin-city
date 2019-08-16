@@ -111,6 +111,9 @@ namespace eval State {
         lantern-bought no
         lantern-muffin no
         train-revisit no
+        dining-hall no
+        spicy-visit 0
+        spicy-return no
     }]
 
     proc get {args} {

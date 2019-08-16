@@ -87,6 +87,14 @@
 **** ritzyTodd
 **** ritzyFamily
 **** ritzyTrade
+**** ritzyMeal
+**** ritzyDining
+**** ritzyDining1
+**** ritzyDining2
+**** ritzyDiningSlow
+**** ritzyDiningFast
+**** ritzyDiningAbort
+**** ritzyRecovery
 *** [Science]
 **** mainRoom
 **** talkTo
@@ -556,6 +564,7 @@
 **** ritzyRoom
 **** ritzyInn
 **** ritzyTalk
+**** ritzyMeal
 **** shabbyJack
 **** shabbyAttorney
 **** shabbyAttorney1
@@ -684,6 +693,15 @@
 **** defeated
 **** victory
 **** victory1 <answer>
+*** [Higher]
+**** hub
+**** south
+**** southVisit
+**** southVisit1
+**** west
+**** north
+**** east
+**** exitCondition
 ** [Space]
 *** [Satellite]
 **** elevatorRoom
@@ -799,6 +817,7 @@
  + Portal Diamond (TBA)
  + Merchant-bot's Eye
  + Ritzy Inn Meal Voucher
+ + Strange Business Card
 
 ** Money Sources / Sinks
 
@@ -1553,6 +1572,19 @@
      help him decrypt the message, the game moves to ~yes~.
 **** yes
      The player has met and requested help from Arthur.
+*** Spicy Ascension (~spicy-visit~)
+**** 0
+     The player has eaten no spicy foods. No doors are open yet. When
+     the player eats one spicy food, the game will move to ~1~.
+**** 1
+     Only the Man in the Trenchcoat's door is open. When the player
+     eats a second spicy food, the game will move to ~2~.
+**** 2
+     ////
+**** 3
+     ////
+**** 4
+     ////
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -1806,6 +1838,9 @@
 *** ~warehouse-owner~
 **** no
 **** yes
+*** ~dining-hall~
+**** no
+**** yes
 ** World States
 *** ~trial-reason~
 **** {}
@@ -1967,6 +2002,13 @@
 *** ~train-revisit~
 **** no
 **** yes
+*** ~spicy-return~
+**** no
+     The spicy food event has not triggered yet and thus the player
+     has no location to which to return. When the player eats a spicy
+     food, the game will move to the appropriate state.
+**** hotel
+     ////
 * CHARACTERS
 
 ** The Robber
@@ -2163,6 +2205,12 @@
  + [ ] Steve's Suspicious Briefcase doesn't do anything right now.
  + [ ] The Religious Artifact from the pirate ship does nothing. There
    will also likely be a second (third?) one somewhere.
+ + [ ] Make sure the Mime doesn't disappear before you break the pipe
+   in the past, as he's the only other way to get to that area until
+   you break the pipe.
+ + [ ] The pipe in the past that you expose should appear in some form
+   in the present.
+ + [ ] Trenchcoat Man's Business Card does nothing right now.
 ** CONSIDERING The Flaming Axe
  + The Flaming Axe of Doom was used by the First Reaper to carve out
    the Underworld before time itself. Possibly, we can visit this
@@ -2621,7 +2669,7 @@
    his true plan: to brainwash the entire city and rule over it as
    dictator. I don't know exactly how the player is supposed to stop
    him from there. We'll have to think about it.
-** CONSIDERING Delicious
+** ACCEPTED Delicious
    There could be four different foods in the game that are
    incredibly spicy.
    + Spicy Taco (made with Black Olive from Taco Man)
