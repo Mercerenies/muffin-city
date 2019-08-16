@@ -78,8 +78,17 @@ namespace eval Dream::Destination {
     proc offTrain {} {
         puts "You step off the train and are greeted by a man who could easily be the caption\
         of the dictionary entry for \"train conductor\", complete with the hat and button-down suit."
-        puts "\"Good evening. We sincerely hope you enjoyed your ride.\""
-        puts "The conductor ushers you off the train, before stepping back in and signalling to\
+        if {[state get train-revisit] eq {no}} then {
+            puts "\"Good evening. We sincerely hope you enjoyed your ride. Since this is your\
+            first ride, we'd like to offer you this gift. We have a partnership with the Ritzy\
+            Inn & Suites, so please enjoy this meal voucher on our behalf."
+            puts "You got a Ritzy Inn Meal Voucher!"
+            inv add {Ritzy Inn Meal Voucher}
+            state put train-revisit yes
+        } else {
+            puts "\"Good evening. We sincerely hope you enjoyed your ride.\""
+        }
+        puts "The conductor ushers you off the train, before stepping back in and signaling to\
         the engineer that it is time to go. The train sets off, leaving you alone."
         puts {}
         return ::City::District::entrance

@@ -798,6 +798,7 @@
  + Self-Destruct Chip
  + Portal Diamond (TBA)
  + Merchant-bot's Eye
+ + Ritzy Inn Meal Voucher
 
 ** Money Sources / Sinks
 
@@ -1963,6 +1964,9 @@
 *** ~merchant-starlight~
 **** no
 **** yes
+*** ~train-revisit~
+**** no
+**** yes
 * CHARACTERS
 
 ** The Robber
@@ -2006,6 +2010,7 @@
 ** The Mastermind
 ** Mister Midas
 ** Arthur Miles
+** The Man in the Trenchcoat
 * NOTES
 
 ** ACCEPTED Cave and Lantern
@@ -2025,7 +2030,7 @@
 ** DONE Fire Pits
    Past the fire pits, there should be multiple rooms which are
    accessible, not just the freight elevator
-** ACCEPTED Shop Prices
+** DONE Shop Prices
    Merchant-bot has two items (one at a ridiculous price); there is a
    quest to kill him, which leads to the warehouse office. At that
    time, Merchant-bot 2 takes over and sells the expensive one for
@@ -2034,7 +2039,7 @@
    Going to the past and requesting an item from the pawnbroker will
    result in that item being available the next day
    + Ship's Wheel
-** ACCEPTED The Merchant War
+** DONE The Merchant War
  + Todd wants to rebel against Merchant-bot and leaves clues to help
    you do so
  + So to start with, you see Todd's writing on the warehouse wall. It
@@ -2067,6 +2072,11 @@
    - Together, Starlight can slow Merchant-bot down enough for Atheena
      to stun him, which allows the player to attach the device that
      defeats him.
+ + The final version uses the second plan, involving the key leading
+   directly to the warehouse. The player finds an encrypted message
+   which, when decrypted, tells of a self-destruct chip which can be
+   used to defeat Merchant-bot. The battle then proceeds as the above
+   bullet might suggest.
 ** DONE Escaping the Prison
    Help someone escape from prison by creating a diversion on entry.
    + Harry the Arsonist.
@@ -2612,22 +2622,25 @@
    dictator. I don't know exactly how the player is supposed to stop
    him from there. We'll have to think about it.
 ** CONSIDERING Delicious
-   There could be three different foods in the game that are
+   There could be four different foods in the game that are
    incredibly spicy.
    + Spicy Taco (made with Black Olive from Taco Man)
    + Spicy Chili (made by Dr. Cipher as thanks)
-   + Spicy Burger (made by the hotel or the train chef)
+   + Spicy Burger (made by the train chef)
+   + Spicy Soup (made by the hotel)
 
    Each time the player eats a spicy food, he's taken to a special
-   part of subspace. There are three doors, and each time a new door
+   part of subspace. There are four doors, and each time a new door
    opens. Behind each door is a special character.
-   + First visit: ???
-   + Second visit: ???
-   + Third visit: ???
+   + First visit: The Man in the Trenchcoat
+   + Second visit: The Postmaster
+   + Third visit: The Source
+   + Fourth visit: The Guardian of Time
 
-   + The Guardian of Time?
+   + The Guardian of Time (possibly only allowed during the One Word fiasco)?
    + The Postmaster (manages the Postman)?
    + The Source (magic sentient crystal that can unlock Starlight's true power)?
+   + The Man in the Trenchcoat?
 ** CONSIDERING Headless
    After some time passes (at least after the Green Olive, maybe some
    more prereqs), a man without a head starts hanging out in the taco
@@ -2728,6 +2741,9 @@
    it does nothing for you). I say we have the first train visit give
    you a reward for being their customer. Something you can get really
    early-game, as it's very possibly the first thing a player will do.
+
+   I would believe the train has a deal with the Ritzy Inn. What if
+   the train conductor gives you a meal voucher to the Ritzy Inn?
 ** CONSIDERING The Sewer King
    King Arachnarok, the Spider King, rules over the sewers beneath the
    city. His son, Prince Arachnarok, is set to marry and take over the
@@ -2743,6 +2759,12 @@
    What if the player needs the Postman's help to deliver the
    mannequin to the other world? Maybe he needs the Postmaster to talk
    to the Postman for him before he'll listen.
+** CONSIDERING The Trenchcoat Man
+   I don't really fully know what I want to do with him yet. He's
+   likely to be the first spicy foods visit. But here's one idea.
+   + He gives you a business card that seems initially to serve no
+     purpose. Later, Science Johnson will identify a tracker embedded
+     into it and find out that the Trenchcoat Man is evil.
 * MISCELLANEOUS
 
 ** Test
