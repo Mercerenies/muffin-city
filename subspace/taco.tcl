@@ -53,7 +53,7 @@ namespace eval Subspace::Taco {
                 olive {
                     puts " The Taco Man stands behind the counter, smiling."
                 }
-                fed {
+                fed - doubled {
                     if {[state get pawn-shop-pass] eq {no}} then {
                         puts " The Taco Man stands behind the counter, smiling.\
                         The strange, hungry man from outside is sitting at one\
@@ -242,11 +242,20 @@ namespace eval Subspace::Taco {
                     {"\"I'm sorry.\"" yes shop}
                 }
             }
-            olive - fed {
-                puts "\"Thank you so much! You saved our shop!\""
-                prompt {} {
-                    {"\"Can I get a super special beef 'n' cheese taco?\"" {([state get attorney-man] eq {talked1}) && ![inv has {Super Taco}]} tacoAttorney}
-                    {"\"All in a day's work.\"" yes shop}
+            olive - fed - doubled {
+                if {[inv has {Black Olive}]} then {
+                    puts "\"Is that... do I spy a Black Olive in your inventory?!\""
+                    prompt {} {
+                        {"\"Do you need it?\"" yes secondOlive}
+                        {"\"Can I get a super special beef 'n' cheese taco?\"" {([state get attorney-man] eq {talked1}) && ![inv has {Super Taco}]} tacoAttorney}
+                        {"\"No. Sorry, you're seeing things.\"" yes shop}
+                    }
+                } else {
+                    puts "\"Thank you so much! You saved our shop!\""
+                    prompt {} {
+                        {"\"Can I get a super special beef 'n' cheese taco?\"" {([state get attorney-man] eq {talked1}) && ![inv has {Super Taco}]} tacoAttorney}
+                        {"\"All in a day's work.\"" yes shop}
+                    }
                 }
             }
         }
@@ -278,6 +287,27 @@ namespace eval Subspace::Taco {
         puts {}
         inv remove {Green Olive}
         state put taco-shop olive
+        return shop
+    }
+
+    proc secondOlive {} {
+        puts "\"Aha! With just one olive, this shop can get by, as a run-of-the-mill subspace\
+        taco shop. But imagine! With two olives, we could be the greatest taco shop the world\
+        over! May I have your olive?\""
+        prompt {} {
+            {"Give him the Black Olive" yes secondOlive1}
+            {"\"No, sorry. It's important to me.\"" yes shop}
+        }
+    }
+
+    proc secondOlive1 {} {
+        puts "The Taco Man takes your Black Olive."
+        puts "\"Excellent! You've saved us once again! You just wait! This shop will start\
+        attracting the finest of clientele!\""
+        puts {}
+        inv remove {Black Olive}
+        state put taco-shop doubled
+        state put taco-visitor nobody ;# ////
         return shop
     }
 

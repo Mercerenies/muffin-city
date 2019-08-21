@@ -652,6 +652,8 @@
 **** tacoAttorney
 **** explain
 **** olive
+**** secondOlive
+**** secondOlive1
 **** panicTaco
 **** panicWoman
 **** panicAtheena
@@ -1093,7 +1095,7 @@
      Attorney-Man in the past will continue saying he will embark
      soon. In the present, Attorney-Man remains on the warehouse
      island and continues asking for food. If the player has given the
-     Taco Man an olive (taco-shop is `olive` or `fed`), then the
+     Taco Man an olive (~taco-shop~ is ~olive~ or ~fed~), then the
      player can request a taco from the Taco Man. Delivering this taco
      to Attorney-Man moves to the game to `fed`.
 **** fed
@@ -1129,9 +1131,13 @@
 **** fed
      Joe the Time-Traveler will, upon being asked, tell the player
      about the secret password to the pawn shop in the past. The game
-     will remember that he has done so (~pawn-shop-pass~).
-
-     //// More to this quest (Black Olive)
+     will remember that he has done so (~pawn-shop-pass~). After
+     completing the bulk of the ~necro-cipher~ quest, the player will
+     have the opportunity to acquire the Taco Man's missing Black
+     Olive. When the player returns the Black Olive to him, the game
+     moves to ~doubled~.
+**** doubled
+     The player has delivered the Black Olive to the Taco Man.
 *** The Hunter's Adventure (~hunter-trail~)
 **** no
      The player has not visited the forest outside the prison yet. The
@@ -1585,6 +1591,13 @@
      ////
 **** 4
      ////
+*** Hungry for Tacos (~taco-visitor~)
+**** no
+**** nobody
+**** postman
+**** postman1
+**** taxman
+**** taxman1
 ** Item / Money States
 *** ~stolen-good~
 **** {}

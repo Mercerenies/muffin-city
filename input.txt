@@ -93,8 +93,6 @@ inv add {Platinum Card}
 con
 state put lobby-door yes
 con
-inv add {Black Olive}
-con
 state put pirate-attack disguised
 con
 state put hunter-trail under
@@ -144,7 +142,13 @@ con
 inv add {Ritzy Inn Meal Voucher}
 con
 state put dining-hall yes
+con
+state put taco-visitor nobody
 1
 2
 3
-
+3
+4
+1
+1
+1
