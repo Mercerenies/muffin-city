@@ -2822,10 +2822,16 @@
    to the Postman for him before he'll listen.
 ** CONSIDERING The Trenchcoat Man
    I don't really fully know what I want to do with him yet. He's
-   likely to be the first spicy foods visit. But here's one idea.
+   likely to be the first spicy foods visit. But here are some ideas.
    + He gives you a business card that seems initially to serve no
      purpose. Later, Science Johnson will identify a tracker embedded
      into it and find out that the Trenchcoat Man is evil.
+   + The Trenchcoat Man's business card is shady and will keep you out
+     of some useful area (a bouncer or somebody will smell it on you
+     and not let you in). You can try to throw away / shred it
+     somewhere, but it will keep coming back. You need to find the
+     Trenchcoat Man again, who will show you how to use it properly.
+     Maybe he folds it into a paper crane?
 * MISCELLANEOUS
 
 ** Test
