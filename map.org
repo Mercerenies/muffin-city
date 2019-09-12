@@ -2779,7 +2779,7 @@
    But here's a thought. Johnny gives you a reward every time you
    bring him a soul. So why can't Attorney-Man do the same every time
    you bring him a client?
-   1. First client gets you the Evil Membership Card.
+   1. First client gets you the Evil Membership Card. (Evil Business Card?)
    2. Second client gets you Cloud Shoes (name tbd).
    3. Third client gets you ???
 ** CONSIDERING Evil Club
@@ -2793,6 +2793,21 @@
    - Lawyer (Attorney-Man)
    - Insurance Adjuster
    - CEO
+
+   Okay, so here's a slightly different pitch for the same room. You
+   need any business card to get in. Then there's a door in the back
+   that you can use to go deeper. You need a second business card to
+   go that way. You can keep going deeper, once for each business card
+   in the game. Each room looks the same but is aged more. As you go
+   back to each subsequent room, all of the same people are there, but
+   one of them is gone and the others have no memory of him or her. In
+   the final room, when there's no one left, the lights are very dim
+   and the room looks unkempt, but there's a muffin in it for you.
+
+   Business Cards
+   + Evil Business Card (Attorney-Man)
+   + Shady Business Card (Trenchcoat Man)
+   + Cryptic Business Card (Cryptographer or Lady Lock)
 
 ** CONSIDERING First Time Visitor
    The train is a bit boring when you encounter it the first time. All
@@ -2832,6 +2847,25 @@
      somewhere, but it will keep coming back. You need to find the
      Trenchcoat Man again, who will show you how to use it properly.
      Maybe he folds it into a paper crane?
+** CONSIDERING Cryptography
+   In the regular world, Arthur Miles is in town for a cryptography
+   conference. This isn't explicitly established yet, but I kind of
+   had it in my head.
+
+   In the other world, he's in town for a secret underground
+   over-the-top hacking contest which takes place in a wrestling ring.
+   His hacker name is, of course, the Cryptographer (or Cryptologist,
+   or Cryptanalyst, one of three.
+
+   His opponent is Steve's counterpart in the parallel world: codename
+   Lady Lock. After a dramatic introduction, the two will play out
+   round one of the competition, which ends in a draw. Before round
+   two (possibly a sudden death) will happen, both competitors will
+   independently ask the player to cheat for them. You can only cheat
+   for one of them, but you can pick which one. After the second round
+   of the contest, both will go back to their respective areas. The
+   winner will offer to give you part of the prize (Religious
+   Artifact?), and the loser will give you a Cryptic Business Card.
 * MISCELLANEOUS
 
 ** Test
