@@ -2809,7 +2809,13 @@
    + Shady Business Card (Trenchcoat Man)
    + Cryptic Business Card (Cryptographer or Lady Lock)
 
-** CONSIDERING First Time Visitor
+   People
+   + Bouncer
+   + To-Be-Named Gullible Guy (ends up unknowingly working for Grigory's agency)
+   + ???
+   + ???
+
+** DONE First Time Visitor
    The train is a bit boring when you encounter it the first time. All
    it does it take you back to the hub. Odds are, you came from either
    the prison (in which case is functions as a prison break, at
