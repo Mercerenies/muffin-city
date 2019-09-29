@@ -18,6 +18,7 @@ set mapping {
     Space ./space/base.tcl
     Console ./console/base.tcl
     Tiny ./tiny/base.tcl
+    Inverse ./inverse/base.tcl
 }
 
 proc handleMapping {loc} {

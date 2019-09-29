@@ -774,6 +774,12 @@
 **** mothkaSerialMurder
 **** ratFight
 **** ratDeath
+** [Inverse]
+*** [District]
+**** entrance
+**** education
+**** shopping
+**** castle
 * ITEMS
 
 ** Item List
