@@ -784,6 +784,10 @@
 **** education
 **** shopping
 **** castle
+*** [Shopping]
+**** market
+**** marketBot
+**** marketSteal
 * ITEMS
 
 ** Item List
@@ -2924,11 +2928,6 @@
    + Pirate Attack
      - Available until you use the Pirate Hat to befriend them
      - Paywalled
-   + Merchant-bot's Battle
-     - Very briefly, available when Merchant-bot is at the warehouse
-       ready to kill the player but before the player has accumulated
-       the correct team to defeat him
-     - Paywalled
 *** Wildlife
    + Cave Attack
      - Always available, even after you get the Lantern
@@ -2948,6 +2947,14 @@
    + Drowning on the Warehouse Island
      - Always available, provided the player does not have Todd's
        Scuba Suit
+   + Merchant-bot's Battle
+     - Very briefly, available when Merchant-bot is at the warehouse
+       ready to kill the player but before the player has accumulated
+       the correct team to defeat him
+     - Paywalled
+   + Robot King's Security System
+     - Always available
+     - Paywalled
 *** Mystery
    + Mothka's Rat Attack
      - Always available
