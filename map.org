@@ -237,6 +237,9 @@
 **** riverReach
 **** cave
 **** caveDeath
+**** caveLight
+**** reverseCave
+**** reverseCaveLight
 **** bus
 *** [Fence]
 **** approach

@@ -188,11 +188,11 @@ namespace eval Prison::Forest {
 
     proc cave {} {
         puts "== Cave =="
-        # //// If you have lighting equipment, there is another option available here
         puts "The cave is pitch black, leaving you completely blind. You vaguely hear growling in the\
         distance."
         prompt {} {
             {"Press onward" yes caveDeath}
+            {"Turn the Lantern on and press onward" {[inv has {Lantern}]} caveLight}
             {"Exit the cave" yes trees}
         }
     }
@@ -204,6 +204,32 @@ namespace eval Prison::Forest {
         }
         puts {}
         return ::Underworld::Lobby::wildlife
+    }
+
+    proc caveLight {} {
+        puts "Activating your Lantern, you carefully navigate the cave, avoiding the\
+        deeper and more dangerous tunnels. You reach another exit, which opens into a\
+        large cityscape."
+        puts {}
+        return ::Inverse::District::entrance
+    }
+
+    proc reverseCave {} {
+        puts "== Cave =="
+        puts "The cave is pitch black, and you can vaguely hear a growling sound\
+        off in the distance."
+        prompt {} {
+            {"Press onward" yes caveDeath}
+            {"Turn the Lantern on and press onward" {[inv has {Lantern}]} reverseCaveLight}
+            {"Exit the cave" yes ::Inverse::District::entrance}
+        }
+    }
+
+    proc reverseCaveLight {} {
+        puts "Activating your Lantern, you carefully navigate about the cave, avoiding\
+        the more dangerous tunnels, until you reach another exit into a large forest."
+        puts {}
+        return trees
     }
 
     proc bus {} {
