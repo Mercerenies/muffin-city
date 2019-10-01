@@ -700,6 +700,7 @@
 **** south
 **** southVisit
 **** southVisit1
+**** southVisit2
 **** west
 **** north
 **** east
@@ -2812,7 +2813,7 @@
 
    Business Cards
    + Evil Business Card (Attorney-Man)
-   + Shady Business Card (Trenchcoat Man)
+   + Strange Business Card (Trenchcoat Man)
    + Cryptic Business Card (Cryptographer or Lady Lock)
 
    People

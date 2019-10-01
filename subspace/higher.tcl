@@ -66,8 +66,15 @@ namespace eval ::Subspace::Higher {
 
     proc southVisit1 {} {
         puts "The man speaks in a rhythmic, almost singsongy voice."
-        puts "\"It seems you found me. I'm sure we'll be meeting again before too\
-        long. Take my card.\""
+        puts "\"Ah, hello. I wasn't expecting guests here.\""
+        prompt {} {
+            {"\"What are you doing here?\"" yes southVisit2}
+        }
+    }
+
+    proc southVisit2 {} {
+        puts "\"I am but a visitor here, hailing from a faraway world. I'm sure we'll be\
+        meeting again before too long. Take my card.\""
         puts "You got the Strange Business Card!"
         inv add {Strange Business Card}
         puts "\"For now, however, it's time for you to go.\""
