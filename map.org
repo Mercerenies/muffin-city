@@ -2501,6 +2501,28 @@
    they still are, but they use those meetings to discuss the
    resistance. That's why all of their codenames are themed after
    types of rocks.
+
+   Okay, so we've reached the point where we need to come up with
+   "names" for all the geology club members.
+   + Cinnabar (June) is only a club member in the inverse world.
+   + Limestone is the player's name once he joins the Resistance in
+     the regular world. In the inverse world, he won't really
+     officially join them so much as just help out.
+   + Topaz is the de facto leader of the group, in both worlds. He is
+     level-headed and calmer than his friend Zircon. He tends to
+     almost always be at the base, managing affairs.
+   + Garnet is the only female member in the regular world, and one of
+     two (alongside Granite) in the inverse world. She tends to be the
+     computer expert, tasked with hacking government technology when
+     needed. In the inverse world, she is the only reason the Robot
+     King has not found their digital presence as of yet.
+   + Zircon is largely the group's motivating factor, in the real
+     world. His father worked for a top secret government project and
+     was disappeared one day. They've been investigating conspiracies
+     ever since. In both worlds, he tends to be the most violent and
+     headstrong. In the regular world, he tends to be in charge of
+     recon, and in the inverse world he has become an expert in
+     munitions.
 ** CONSIDERING The Best Tacos
   After the Taco Man has both of his olives, he can make the best
   tacos on the planet. People from all over the multiverse will come
@@ -2867,6 +2889,7 @@
      somewhere, but it will keep coming back. You need to find the
      Trenchcoat Man again, who will show you how to use it properly.
      Maybe he folds it into a paper crane?
+   + Is he an enemy of Wordsmith? Perhaps he came to study him?
 ** CONSIDERING Cryptography
    In the regular world, Arthur Miles is in town for a cryptography
    conference. This isn't explicitly established yet, but I kind of
