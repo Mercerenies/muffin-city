@@ -36,6 +36,7 @@ namespace eval Inverse::District {
         # ////
         prompt {} {
             {"Go back to the plaza" yes entrance}
+            {"Enter the castle" yes ::Inverse::Castle::entrance}
         }
     }
 

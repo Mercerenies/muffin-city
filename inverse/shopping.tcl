@@ -15,7 +15,11 @@ namespace eval Inverse::Shopping {
     }
 
     proc marketBot {} {
-        puts "A robotic voice responds immediately."
+        if {[state get met-robot] eq {no}} then {
+            puts "A robotic voice responds immediately."
+        } else {
+            puts "The Robot King's voice greets you immediately."
+        }
         puts "\"Greetings! Welcome to the state-approved general market, for\
         all your general marketing needs. What would you like to purchase?\""
         # //// Some items

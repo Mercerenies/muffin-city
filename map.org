@@ -788,6 +788,25 @@
 **** market
 **** marketBot
 **** marketSteal
+*** [Castle]
+**** entrance
+**** parlor
+**** throne
+**** hallway
+**** lockedDoor
+**** uniformed
+**** king
+**** kingFar
+**** kingInit
+**** kingLie
+**** kingLie1
+**** julieRoom
+**** julieTalk
+**** mesmeristRoom
+**** mesmeristIntro
+**** mesmeristTalk
+**** mesmeristInit
+**** mesmeristResist
 * ITEMS
 
 ** Item List
@@ -1788,6 +1807,12 @@
      to Todd yet this game, ~talked-to-todd~ will move to ~spoken~.
 **** searching
      The player has spoken to Todd. ////
+*** ~met-robot~
+**** no
+**** yes
+*** ~met-mesmerist~
+**** no
+**** yes
 ** Door / Opening States
 *** ~janitor-door~
 **** no
@@ -2076,7 +2101,7 @@
 ** Ricardo the Cop
 ** The Mime
 ** Mothka the Evil Moth King
-** The Mastermind
+** The Mastermind / The Mesmerist
 ** Mister Midas
 ** Arthur Miles
 ** The Man in the Trenchcoat
@@ -2951,6 +2976,11 @@
    + Pirate Attack
      - Available until you use the Pirate Hat to befriend them
      - Paywalled
+   + Merchant-bot's Battle
+     - Very briefly, available when Merchant-bot is at the warehouse
+       ready to kill the player but before the player has accumulated
+       the correct team to defeat him
+     - Paywalled
 *** Wildlife
    + Cave Attack
      - Always available, even after you get the Lantern
@@ -2970,16 +3000,15 @@
    + Drowning on the Warehouse Island
      - Always available, provided the player does not have Todd's
        Scuba Suit
-   + Merchant-bot's Battle
-     - Very briefly, available when Merchant-bot is at the warehouse
-       ready to kill the player but before the player has accumulated
-       the correct team to defeat him
-     - Paywalled
    + Robot King's Security System
      - Always available
      - Paywalled
 *** Mystery
    + Mothka's Rat Attack
      - Always available
+   + Robot King's Fury
+     - Before liberating the people of the inverse world from the
+       Robot King, the player can be murdered by him by simply saying
+       the wrong things.
 ** Next
    +Mothka's execution chamber should take you to the other room.+

@@ -114,6 +114,8 @@ namespace eval State {
         dining-hall no
         spicy-visit 0
         spicy-return no
+        met-robot no
+        met-mesmerist no
     }]
 
     proc get {args} {
