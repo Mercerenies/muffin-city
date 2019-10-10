@@ -800,13 +800,12 @@
 **** kingInit
 **** kingLie
 **** kingLie1
+**** kingFake
 **** julieRoom
 **** julieTalk
 **** mesmeristRoom
-**** mesmeristIntro
 **** mesmeristTalk
 **** mesmeristInit
-**** mesmeristResist
 * ITEMS
 
 ** Item List
@@ -2061,6 +2060,24 @@
      food, the game will move to the appropriate state.
 **** hotel
      ////
+*** ~robot-hypnotism~
+**** no
+     The player has not been sent to be hypnotized. In this state, the
+     Mesmerist will merely introduce himself but will not otherwise
+     have any interactions available. The Robot King will introduce
+     himself (if needed) and will tell the player to get initiated. At
+     that time, the game moves to ~waiting~.
+**** waiting
+     The player needs to go see the Mesmerist. The Robot King will
+     merely remind the player of this fact if spoken to. The Mesmerist
+     will offer to hypnotize the player. If the player accepts, the
+     hypnotism will proceed to fail and the Mesmerist will apologize,
+     moving the game to ~failed~.
+**** failed
+     The player's hypnotism has failed. The Mesmerist will offer to
+     perform the hypnotism again, which has no effect. The Robot King
+     will decide the player is "faulty" and kill him, moving the game
+     to ~no~.
 * CHARACTERS
 
 ** The Robber

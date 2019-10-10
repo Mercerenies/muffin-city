@@ -116,6 +116,7 @@ namespace eval State {
         spicy-return no
         met-robot no
         met-mesmerist no
+        robot-hypnotism no
     }]
 
     proc get {args} {

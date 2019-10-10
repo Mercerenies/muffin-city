@@ -79,11 +79,33 @@ namespace eval Inverse::Castle {
                 {"\"Nope. Born and raised here.\"" yes kingLie}
             }
         } else {
-            puts "The Robot King's voice is as cheery as ever."
-            puts "\"Remember, hallway, second door on the left. Feel free to come\
-            talk to me again after your initiation.\""
-            prompt {} {
-                {"\"Thank you.\"" yes throne}
+            switch [state get robot-hypnotism] {
+                no {
+                    puts "The Robot King's voice is as cheery as ever."
+                    puts "\"Hello again! Congratulations on surviving my death ray!\
+                    Unfortunately, I still have to insist on your initiation. Please\
+                    go speak to the Mesmerist again.\""
+                    state put robot-hypnotism waiting
+                    prompt {} {
+                        {"\"Goodbye.\"" yes throne}
+                    }
+                }
+                waiting {
+                    puts "The Robot King's voice is as cheery as ever."
+                    puts "\"Remember, hallway, second door on the left. Feel free to come\
+                    talk to me again after your initiation.\""
+                    prompt {} {
+                        {"\"Thank you.\"" yes throne}
+                    }
+                }
+                failed {
+                    puts "\"Hello again! How was your initiation?\""
+                    prompt {} {
+                        {"\"It was good. Thanks.\"" yes kingFake}
+                        {"\"All hail the Robot King!\"" yes kingFake}
+                        {"\"I haven't done it yet.\"" yes throne}
+                    }
+                }
             }
         }
     }
@@ -94,6 +116,7 @@ namespace eval Inverse::Castle {
         initiation. Whenever you're ready, just head down the hallway and take the\
         second door on the left. Tell the nice man in there that you're here for the\
         initiation.\""
+        state put robot-hypnotism waiting
         prompt {} {
             {"\"What's the initiation?\"" yes kingInit}
             {"\"I'll get right on that.\"" yes throne}
@@ -125,11 +148,20 @@ namespace eval Inverse::Castle {
         return ::Underworld::Pits::mysteryRoom
     }
 
+    proc kingFake {} {
+        puts "\"Now, you can't fool me! I can tell you haven't been initiated!\
+        Unfortunately, lying to me is frowned upon in this community.\""
+        puts "Lasers ignite from the Robot King's eyes and vaporize you."
+        puts {}
+        state put robot-hypnotism no
+        return ::Underworld::Pits::mysteryRoom
+    }
+
     proc julieRoom {} {
         puts "=~ Castle - First Room ~="
         puts "The relatively small room has virtually no amenities, only a small chair in\
         the middle of the room. A young woman whose skin is bright green is standing in front\
-        of the chair, staring at you."
+        of the chair, staring at you through a pair of round glasses."
         prompt {} {
             {"Talk to the woman" yes julieTalk}
             {"Leave the room" yes hallway}
@@ -154,33 +186,37 @@ namespace eval Inverse::Castle {
             puts "The Mesmerist is sitting in his revolving chair."
         }
         prompt {} {
-            {"Talk to the man" {[state get met-mesmerist] eq {no}} mesmeristIntro}
+            {"Talk to the man" {[state get met-mesmerist] eq {no}} mesmeristTalk}
             {"Talk to the Mesmerist" {[state get met-mesmerist] ne {no}} mesmeristTalk}
             {"Leave the room" yes hallway}
         }
     }
 
-    proc mesmeristIntro {} {
-        puts "\"Greetings! I am the Mesmerist, loyal servant to the Robot King. I\
-        take it you're here for the initiation.\""
-        state put met-mesmerist yes
-        prompt {} {
-            {"\"That's right.\"" yes mesmeristInit}
-            {"\"Maybe later.\"" yes mesmeristResist}
-        }
-    }
-
     proc mesmeristTalk {} {
-        puts "\"Hello again. Would you like to attempt the initiation again?\""
+        if {[state get met-mesmerist] eq {no}} then {
+            puts "\"Greetings! I am the Mesmerist, loyal servant to the Robot King.\""
+            state put met-mesmerist yes
+        } else {
+            puts "\"Greetings!\""
+        }
         prompt {} {
-            {"\"That's right.\"" yes mesmeristInit}
-            {"\"Not right now.\"" yes mesmeristRoom}
+            {"\"I'm here for the initiation.\"" {[state get robot-hypnotism] eq {waiting}} mesmeristInit}
+            {"\"Can we try the initiation again?\"" {[state get robot-hypnotism] eq {failed}} mesmeristInit}
+            {"\"Goodbye.\"" yes mesmeristRoom}
         }
     }
 
     proc mesmeristInit {} {
+        if {[state get robot-hypnotism] eq {failed}} then {
+            puts "\"Ah, you'd like to try again then. Hold still.\""
+        } else {
+            puts "\"Ah, excellent! Hold still and watch closely.\""
+        }
         puts "The Mesmerist takes a pendulum off the wall and swings it in front of your\
         face."
+        if {[state get robot-hypnotism] eq {waiting}} then {
+            state put robot-hypnotism failed
+        }
         prompt {} {
             {"\"This... isn't doing anything.\"" yes mesmeristNoEffect}
             {"\"Uh... all hail the Robot King... or something.\"" yes mesmeristFake}
@@ -201,14 +237,6 @@ namespace eval Inverse::Castle {
         should try again later.\""
         prompt {} {
             {"\"Later.\"" yes mesmeristRoom}
-        }
-    }
-
-    proc mesmeristResist {} {
-        puts "\"Ah, but I'm afraid I must insist. The Robot King asserts that all\
-        newcomers must experience the initiation.\""
-        prompt {} {
-            {"\"I suppose.\"" yes mesmeristInit}
         }
     }
 
