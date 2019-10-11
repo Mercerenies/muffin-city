@@ -86,6 +86,7 @@ namespace eval Inverse::Castle {
                     Unfortunately, I still have to insist on your initiation. Please\
                     go speak to the Mesmerist again.\""
                     state put robot-hypnotism waiting
+                    # ///// He should send you forcibly to the school here
                     prompt {} {
                         {"\"Goodbye.\"" yes throne}
                     }
