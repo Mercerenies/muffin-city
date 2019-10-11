@@ -806,6 +806,14 @@
 **** mesmeristRoom
 **** mesmeristTalk
 **** mesmeristInit
+*** [School]
+**** innerGate
+**** south
+**** north
+**** dorms
+**** bathroom
+**** cafeteria
+**** classroom
 * ITEMS
 
 ** Item List
@@ -2961,6 +2969,21 @@
 ** CONSIDERING Cursed Artifact Shop
    In the parallel world? Maybe a cursed artifact shop? Could sell
    cursed objects, like a Cursed Business Card, and other stuff.
+** CONSIDERING Inverse Tower
+   So I hadn't actually written this down. But there will probably be
+   a tower in the inverse city. It has several floors, accessible by
+   different elevators which don't obey the usual notions of "up" and
+   "down". Possible floors:
+   + Rooftop :: One exit
+   + Cafeteria :: X exits (possibly also accessible from the school somehow?)
+   + Office Building :: X exits outside + 1 exit inside
+   + Laundry Room :: X exits
+   + Basement :: One exit
+   + Balcony :: 2-ish exits
+   + Garden :: 1 exit inside + 1 exit outside
+   + Library :: X exits
+   + Lobby :: X exits (each is stateful)
+   If possible, each elevator has exactly three floors it can access.
 * MISCELLANEOUS
 
 ** Test
