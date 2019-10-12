@@ -181,7 +181,7 @@ namespace eval Inverse::Castle {
         street. He walks you two districts over into the education district, where a\
         bright yellow school bus pulls up. The man shoves you onto the bus as soon as\
         it stops. The bus driver, whose nametag identifies him as \"Carl\", greets you\
-        with an eerily friendly smile and invites you to take a seat."
+        with a friendly smile and invites you to take a seat."
         # //// Should we be able to cause a ruckus here? Should it do anything?
         prompt {} {
             {"Take a seat" yes ::Inverse::School::bus}

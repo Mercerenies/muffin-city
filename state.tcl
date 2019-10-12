@@ -117,6 +117,8 @@ namespace eval State {
         met-robot no
         met-mesmerist no
         robot-hypnotism no
+        been-to-school no
+        school-period no
     }]
 
     proc get {args} {

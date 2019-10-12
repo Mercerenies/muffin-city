@@ -821,6 +821,11 @@
 **** cafeteria
 **** classroom
 **** bus
+**** bus1
+**** bus2
+**** busFun
+**** busNo
+**** busDepart
 * ITEMS
 
 ** Item List
@@ -1645,6 +1650,11 @@
 **** postman1
 **** taxman
 **** taxman1
+*** School Day (~school-period~)
+**** no
+**** first
+**** second
+**** third
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -2096,6 +2106,9 @@
 **** killed
      The player has been "killed" by the Robot King. The Mesmerist
      will still offer to perform the hypnotism
+*** ~been-to-school~
+**** no
+**** yes
 * CHARACTERS
 
 ** The Robber
@@ -2995,6 +3008,34 @@
    + Library :: X exits
    + Lobby :: X exits (each is stateful)
    If possible, each elevator has exactly three floors it can access.
+** ACCEPTED Reeducation
+   The Robot King's school. There's one classroom, and which teacher
+   is there depends on the time of day. When you first arrive for the
+   first time, it's first period. You can go to the classroom and
+   participate in class, which involves answering some questions about
+   the Robot King, then the game moves to the next period. After third
+   period, you get a "grade" based on how many classes you "passed".
+
+   + Three passes (A) - You get a special audience with the Robot King
+     for exceptional performance. Good stuff happens. Not sure exactly
+     what yet.
+   + Two passes (B) - You are released back into the world, as you've
+     still passed.
+   + One pass (C) - You fail and are required to complete the courses
+     again. Reset to first period.
+   + Zero passes (F) - Supreme failure. Taken to a special room for
+     additional reeducation. Something fun happens here too.
+
+   The first time you get a grade better than C, the rebellion will
+   take notice of you and approach you when you get back to the city.
+
+   + First Period (Governance) is taught by the Judge. When he's not
+     at the school, he's ////
+   + Second Period (English) is taught by Mavis Morrow (Ezekial's
+     wife). When she's not at the school, she's at the library with
+     Ezekial.
+   + Third Period (History) is taught by Todd and Carl. Carl drives
+     the bus when he's not teaching, and Todd is ////
 * MISCELLANEOUS
 
 ** Test

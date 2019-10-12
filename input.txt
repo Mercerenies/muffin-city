@@ -148,6 +148,8 @@ con
 state put met-robot yes
 con
 state put robot-hypnotism killed
+con
+state put been-to-school yes
 3
 2
 3
@@ -160,3 +162,7 @@ state put robot-hypnotism killed
 1
 4
 2
+3
+2
+1
+1
