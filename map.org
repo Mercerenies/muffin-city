@@ -784,6 +784,8 @@
 **** education
 **** shopping
 **** castle
+**** sleepDeath
+**** sleepDeath1
 *** [Shopping]
 **** market
 **** marketBot
@@ -801,6 +803,10 @@
 **** kingLie
 **** kingLie1
 **** kingFake
+**** kingGloat
+**** kingKillLie
+**** kingToSchool
+**** bouncer
 **** julieRoom
 **** julieTalk
 **** mesmeristRoom
@@ -814,6 +820,7 @@
 **** bathroom
 **** cafeteria
 **** classroom
+**** bus
 * ITEMS
 
 ** Item List
@@ -2085,7 +2092,10 @@
      The player's hypnotism has failed. The Mesmerist will offer to
      perform the hypnotism again, which has no effect. The Robot King
      will decide the player is "faulty" and kill him, moving the game
-     to ~no~.
+     to ~killed~.
+**** killed
+     The player has been "killed" by the Robot King. The Mesmerist
+     will still offer to perform the hypnotism
 * CHARACTERS
 
 ** The Robber
@@ -2130,6 +2140,7 @@
 ** Mister Midas
 ** Arthur Miles
 ** The Man in the Trenchcoat
+** The Bouncer
 * NOTES
 
 ** ACCEPTED Cave and Lantern

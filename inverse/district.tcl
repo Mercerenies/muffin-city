@@ -40,4 +40,31 @@ namespace eval Inverse::District {
         }
     }
 
+    proc sleepDeath {} {
+        puts "You fall asleep easily..."
+        puts {}
+        puts "...And awaken sometime later in a flaming wasteland."
+        puts {}
+        puts "=~ Flaming Wasteland ~="
+        puts "A large grassy field surrounds you, as far as the eye can see. The\
+        horizon is coated in a thick layer of flame and smoke, and all of the trees\
+        along the way have long sense been burned to ash and branches. The air is\
+        oddly suffocating, as though there is something in it that shouldn't be\
+        there."
+        prompt {} {
+            {"Look for shelter" yes sleepDeath1}
+            {"Examine the trees" yes sleepDeath1}
+            {"Find a water source" yes sleepDeath1}
+        }
+    }
+
+    proc sleepDeath1 {} {
+        puts "The more you breathe of the strange air, the more it feels wrong."
+        puts {}
+        puts "After a moment, you pass out."
+        puts {}
+        return ::Underworld::Pits::mysteryRoom
+
+    }
+
 }

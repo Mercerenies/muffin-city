@@ -27,7 +27,10 @@ namespace eval Inverse::Castle {
     proc throne {} {
         puts "=~ Castle Throne Room ~="
         puts -nonewline "The throne room is as elaborate as the parlor, with a\
-        single narrow red carpet leading up a small set of stairs to a gold-adorned throne."
+        single narrow red carpet leading up a small set of stairs to a gold-adorned\
+        throne. Next to the door through which you entered, a large bald man with\
+        excessive muscles and thick eyebrows is standing guard. He makes no move to stop\
+        you from entering."
         if {[state get met-robot] eq {no}} then {
             puts " Atop the throne sits a large humanoid robot. There are several more\
             uniformed individuals standing by the throne, motionless."
@@ -37,6 +40,7 @@ namespace eval Inverse::Castle {
         }
         prompt {} {
             {"Approach the throne" yes king}
+            {"Talk to the bald man" yes bouncer}
             {"Go back" yes parlor}
         }
     }
@@ -80,15 +84,13 @@ namespace eval Inverse::Castle {
             }
         } else {
             switch [state get robot-hypnotism] {
-                no {
+                no - killed {
                     puts "The Robot King's voice is as cheery as ever."
-                    puts "\"Hello again! Congratulations on surviving my death ray!\
-                    Unfortunately, I still have to insist on your initiation. Please\
-                    go speak to the Mesmerist again.\""
-                    state put robot-hypnotism waiting
-                    # ///// He should send you forcibly to the school here
+                    puts "\"Greetings, human! ... ... Didn't I vaporize you recently?\""
                     prompt {} {
-                        {"\"Goodbye.\"" yes throne}
+                        {"\"You can't kill me that easily!\"" yes kingGloat}
+                        {"\"Well, you tried.\"" yes kingGloat}
+                        {"\"Uhh... no...\"" yes kingKillLie}
                     }
                 }
                 waiting {
@@ -154,8 +156,42 @@ namespace eval Inverse::Castle {
         Unfortunately, lying to me is frowned upon in this community.\""
         puts "Lasers ignite from the Robot King's eyes and vaporize you."
         puts {}
-        state put robot-hypnotism no
+        state put robot-hypnotism killed
         return ::Underworld::Pits::mysteryRoom
+    }
+
+    proc kingGloat {} {
+        puts "\"Hah! Well, fortunately, I have remedies for people like you. Bouncer,\
+        take this human to be reeducated!\""
+        return kingToSchool
+    }
+
+    proc kingKillLie {} {
+        puts "\"You should realize by now how much I despise being lied to.\""
+        puts "Lasers ignite from the Robot King's eyes and vaporize you."
+        puts {}
+        state put robot-hypnotism killed
+        return ::Underworld::Pits::mysteryRoom
+    }
+
+    proc kingToSchool {} {
+        # //// If the bus is already there (from Carl doing things),
+        # slightly different text here regarding the bus
+        puts "The burly man at the entrance steps forward and drags you out onto the\
+        street. He walks you two districts over into the education district, where a\
+        bright yellow school bus pulls up. The man shoves you onto the bus as soon as\
+        it stops. The bus driver, whose nametag identifies him as \"Carl\", greets you\
+        with an eerily friendly smile and invites you to take a seat."
+        # //// Should we be able to cause a ruckus here? Should it do anything?
+        prompt {} {
+            {"Take a seat" yes ::Inverse::School::bus}
+        }
+    }
+
+    proc bouncer {} {
+        puts "\"All hail the Robot King!\""
+        puts {}
+        return throne
     }
 
     proc julieRoom {} {
@@ -202,7 +238,7 @@ namespace eval Inverse::Castle {
         }
         prompt {} {
             {"\"I'm here for the initiation.\"" {[state get robot-hypnotism] eq {waiting}} mesmeristInit}
-            {"\"Can we try the initiation again?\"" {[state get robot-hypnotism] eq {failed}} mesmeristInit}
+            {"\"Can we try the initiation again?\"" {[state get robot-hypnotism] in {failed killed}} mesmeristInit}
             {"\"Goodbye.\"" yes mesmeristRoom}
         }
     }

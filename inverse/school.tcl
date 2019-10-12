@@ -4,6 +4,7 @@ namespace eval Inverse::School {
     proc innerGate {} {
         puts "=~ School Gate ~="
         # ////
+        # //// The bus might still be here
         prompt {} {
             {"Go inside" yes south}
         }
@@ -35,6 +36,7 @@ namespace eval Inverse::School {
         puts "=~ Dormitories ~="
         # ////
         prompt {} {
+            {"Go to sleep in one of the beds" yes ::Inverse::District::sleepDeath}
             {"Go back to the hallway" yes south}
         }
     }
@@ -60,6 +62,21 @@ namespace eval Inverse::School {
         # ////
         prompt {} {
             {"Back to the hallway" yes north}
+        }
+    }
+
+    proc bus {} {
+        puts "You take a seat on the bus, which is already mostly filled with\
+        other people."
+        # //// Right now, we're just skipping this segment, but the
+        # person you sit next to will want to have a conversation with
+        # you, and that conversation will happen on the way to the
+        # school.
+        puts {}
+        puts "Some time later, the bus pulls into a large gated school,\
+        and everyone begins to disembark and head inside."
+        prompt {} {
+            {"Disembark" yes innerGate}
         }
     }
 

@@ -144,6 +144,10 @@ con
 state put dining-hall yes
 con
 state put taco-visitor nobody
+con
+state put met-robot yes
+con
+state put robot-hypnotism killed
 3
 2
 3
