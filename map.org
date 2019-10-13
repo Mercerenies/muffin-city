@@ -820,6 +820,8 @@
 **** bathroom
 **** cafeteria
 **** classroom
+**** carl
+**** carlLeave
 **** bus
 **** bus1
 **** bus2

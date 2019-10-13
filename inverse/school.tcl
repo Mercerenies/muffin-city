@@ -3,9 +3,19 @@ namespace eval Inverse::School {
 
     proc innerGate {} {
         puts "=~ School Gate ~="
-        # ////
-        # //// The bus might still be here
+        puts -nonewline "The front of the school campus is gated\
+        off, likely to prevent undesired escape by students.\
+        The main building itself is tall and foreboding, tiled\
+        with red brick but obviously kept up well. There is\
+        a single entrance into the front of the school."
+        if {[state get school-period] in {first third}} then {
+            puts " A large yellow bus is sitting by the closed gate.\
+            Standing at the door to the bus is Carl."
+        } else {
+            puts {}
+        }
         prompt {} {
+            {"Talk to Carl" {[state get school-period] in {first third}} carl}
             {"Go inside" yes south}
         }
     }
@@ -63,6 +73,27 @@ namespace eval Inverse::School {
         prompt {} {
             {"Back to the hallway" yes north}
         }
+    }
+
+    proc carl {} {
+        if {[state get school-period] eq {third}} then {
+            puts "\"Go ahead and head over to the classroom. I'll be one of\
+            the instructors in your next class.\""
+        } else {
+            puts "\"Welcome to the Robot King's reeducation facility. Please\
+            head on inside.\""
+        }
+        prompt {} {
+            {"\"Can I leave?\"" yes carlLeave}
+            {"\"Will do.\"" yes innerGate}
+        }
+    }
+
+    proc carlLeave {} {
+        puts "\"You are welcome on the next bus out, as soon as you pass your\
+        classes.\""
+        puts {}
+        return innerGate
     }
 
     proc bus {} {
