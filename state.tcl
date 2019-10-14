@@ -119,6 +119,9 @@ namespace eval State {
         robot-hypnotism no
         been-to-school no
         school-period no
+        first-period-pass no
+        second-period-pass no
+        third-period-pass no
     }]
 
     proc get {args} {

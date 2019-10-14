@@ -69,8 +69,33 @@ namespace eval Inverse::School {
 
     proc classroom {} {
         puts "=~ Classroom ~="
-        # ////
+        puts -nonewline "An expansive chalkboard takes up the front half of the room,\
+        standing before a podium and several rows of desks."
+        switch [state get school-period] {
+            no {
+                puts " The room itself is empty, no teacher or students. It seems as\
+                though nothing is happening here right now."
+            }
+            first {
+                puts " There are several students occupying the seats, waiting\
+                patiently and silently. No one is yet at the podium."
+                # //// You can try to occupy the podium and challenge the Judge
+            }
+            second {
+                puts " Several students occupy seats sporadically throughout the\
+                room, sitting silently and staring forward. Nobody is occupying\
+                the podium."
+                # //// You can try to occupy the podium and challenge Mavis
+            }
+            third {
+                puts " There are a handful of students in the room, waiting patiently.\
+                A man wearing glasses with a nametag marked \"Todd\" is standing at the\
+                podium in the front."
+                # //// Talking to Todd
+            }
+        }
         prompt {} {
+            {"Take a seat" yes ::Inverse::Class::seat}
             {"Back to the hallway" yes north}
         }
     }

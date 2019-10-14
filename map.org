@@ -828,6 +828,16 @@
 **** busFun
 **** busNo
 **** busDepart
+*** [Class]
+**** seat
+**** firstPeriod
+**** firstPeriod1 <correct>
+**** firstPeriod2 <correct>
+**** firstPeriod3 <correct>
+**** firstPeriod4 <correct>
+**** firstPeriod5 <correct>
+**** firstPeriodResult <correct>
+**** firstPeriodResult1 <correct>
 * ITEMS
 
 ** Item List
@@ -2109,6 +2119,15 @@
      The player has been "killed" by the Robot King. The Mesmerist
      will still offer to perform the hypnotism
 *** ~been-to-school~
+**** no
+**** yes
+*** ~first-period-pass~
+**** no
+**** yes
+*** ~second-period-pass~
+**** no
+**** yes
+*** ~third-period-pass~
 **** no
 **** yes
 * CHARACTERS
