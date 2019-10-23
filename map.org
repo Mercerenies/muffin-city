@@ -819,6 +819,7 @@
 **** dorms
 **** bathroom
 **** cafeteria
+**** classroomEntry
 **** classroom
 **** carl
 **** carlLeave
@@ -1665,8 +1666,11 @@
 *** School Day (~school-period~)
 **** no
 **** first
+**** first1
 **** second
+**** second1
 **** third
+**** third1
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -2123,12 +2127,15 @@
 **** yes
 *** ~first-period-pass~
 **** no
+**** partial
 **** yes
 *** ~second-period-pass~
 **** no
+**** partial
 **** yes
 *** ~third-period-pass~
 **** no
+**** partial
 **** yes
 * CHARACTERS
 

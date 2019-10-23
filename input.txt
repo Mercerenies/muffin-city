@@ -150,6 +150,8 @@ con
 state put robot-hypnotism killed
 con
 state put been-to-school yes
+con
+state put school-period second
 3
 2
 3

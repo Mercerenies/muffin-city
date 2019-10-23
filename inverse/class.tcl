@@ -22,7 +22,7 @@ namespace eval Inverse::Class {
                 }
             }
             second {
-                # //// First period neighbor
+                # //// Second period neighbor
                 # ////
                 prompt {} {
                     {"Wait for class to start" yes {::Empty::back ::Inverse::Class::seat}}
@@ -30,12 +30,24 @@ namespace eval Inverse::Class {
                 }
             }
             third {
-                # //// First period neighbor
+                # //// Third period neighbor
                 # ////
                 prompt {} {
                     {"Wait for class to start" yes {::Empty::back ::Inverse::Class::seat}}
                     {"Get back up" yes ::Inverse::School::classroom}
                 }
+            }
+            first1 {
+                # This shouldn't happen as you shouldn't even be allowed in the classroom
+                return ::Inverse::School::north
+            }
+            second1 {
+                # ////
+                return ::Inverse::School::north
+            }
+            third1 {
+                # ////
+                return ::Inverse::School::north
             }
         }
     }
@@ -127,18 +139,18 @@ namespace eval Inverse::Class {
             3 {
                 puts "\"You got three questions right. I'll pass you, but make sure to study\
                 harder.\""
-                state put first-period-pass yes
+                state put first-period-pass partial
             }
             4 {
                 puts "\"You got one question wrong. That's a pass in my book!\""
-                state put first-period-pass yes
+                state put first-period-pass partial
             }
             5 {
                 puts "\"You got a perfect score! Congratulations!\""
                 state put first-period-pass yes
             }
         }
-        state put school-period second
+        state put school-period first1
         prompt {} {
             {"Leave the classroom" yes ::Inverse::School::north}
         }

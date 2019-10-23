@@ -3,6 +3,17 @@ namespace eval Inverse::School {
 
     proc innerGate {} {
         puts "=~ School Gate ~="
+        switch [state get school-period] {
+            first1 {
+                state put school-period second
+            }
+            second1 {
+                state put school-period third
+            }
+            third1 {
+                # //// Based on your grade, fun stuff
+            }
+        }
         puts -nonewline "The front of the school campus is gated\
         off, likely to prevent undesired escape by students.\
         The main building itself is tall and foreboding, tiled\
@@ -34,11 +45,13 @@ namespace eval Inverse::School {
     proc north {} {
         puts "=~ School Hall - North ~="
         # ////
+        # //// (Remember, the classroom door may or may not be
+        # closed depending on school-period)
         prompt {} {
             {"Walk down the hallway" yes south}
             {"Enter the bathroom" yes bathroom}
             {"Go to the cafeteria" yes cafeteria}
-            {"Head into the classroom" yes classroom}
+            {"Head into the classroom" yes classroomEntry}
         }
     }
 
@@ -67,6 +80,28 @@ namespace eval Inverse::School {
         }
     }
 
+    proc classroomEntry {} {
+        switch [state get school-period] {
+            first1 {
+                puts "The door seems to be locked while everyone else finishes\
+                their quizzes."
+                puts {}
+                return north
+            }
+            second1 {
+                # ////
+                return north
+            }
+            third1 {
+                # ////
+                return north
+            }
+            default {
+                return classroom
+            }
+        }
+    }
+
     proc classroom {} {
         puts "=~ Classroom ~="
         puts -nonewline "An expansive chalkboard takes up the front half of the room,\
@@ -92,6 +127,9 @@ namespace eval Inverse::School {
                 A man wearing glasses with a nametag marked \"Todd\" is standing at the\
                 podium in the front."
                 # //// Talking to Todd
+            }
+            default {
+                return north
             }
         }
         prompt {} {
