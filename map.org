@@ -839,6 +839,13 @@
 **** firstPeriod5 <correct>
 **** firstPeriodResult <correct>
 **** firstPeriodResult1 <correct>
+**** secondPeriod
+**** secondPeriodBegin
+**** secondPeriod1 <correct>
+**** secondPeriod2 <correct>
+**** secondPeriod3 <correct>
+**** secondPeriod4 <correct>
+**** secondPeriod5 <correct>
 * ITEMS
 
 ** Item List

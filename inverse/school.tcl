@@ -3,17 +3,6 @@ namespace eval Inverse::School {
 
     proc innerGate {} {
         puts "=~ School Gate ~="
-        switch [state get school-period] {
-            first1 {
-                state put school-period second
-            }
-            second1 {
-                state put school-period third
-            }
-            third1 {
-                # //// Based on your grade, fun stuff
-            }
-        }
         puts -nonewline "The front of the school campus is gated\
         off, likely to prevent undesired escape by students.\
         The main building itself is tall and foreboding, tiled\
@@ -35,6 +24,17 @@ namespace eval Inverse::School {
         puts "=~ School Hall - South ~="
         # ////
         # //// Janitor's Closet (or equivalent)
+        switch [state get school-period] {
+            first1 {
+                state put school-period second
+            }
+            second1 {
+                state put school-period third
+            }
+            third1 {
+                # //// Based on your grade, fun stuff
+            }
+        }
         prompt {} {
             {"Walk down the hallway" yes north}
             {"Go to the dorms" yes dorms}
@@ -88,10 +88,6 @@ namespace eval Inverse::School {
                 puts {}
                 return north
             }
-            second1 {
-                # ////
-                return north
-            }
             third1 {
                 # ////
                 return north
@@ -128,12 +124,15 @@ namespace eval Inverse::School {
                 podium in the front."
                 # //// Talking to Todd
             }
+            second1 {
+                puts " Mavis is still testing the other students' diction."
+            }
             default {
                 return north
             }
         }
         prompt {} {
-            {"Take a seat" yes ::Inverse::Class::seat}
+            {"Take a seat" {[state get school-period] ni {second1}} ::Inverse::Class::seat}
             {"Back to the hallway" yes north}
         }
     }

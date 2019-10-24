@@ -15,7 +15,6 @@ namespace eval Inverse::Class {
             }
             first {
                 # //// First period neighbor
-                # ////
                 prompt {} {
                     {"Wait for class to start" yes firstPeriod}
                     {"Get back up" yes ::Inverse::School::classroom}
@@ -23,9 +22,8 @@ namespace eval Inverse::Class {
             }
             second {
                 # //// Second period neighbor
-                # ////
                 prompt {} {
-                    {"Wait for class to start" yes {::Empty::back ::Inverse::Class::seat}}
+                    {"Wait for class to start" yes secondPeriod}
                     {"Get back up" yes ::Inverse::School::classroom}
                 }
             }
@@ -37,12 +35,8 @@ namespace eval Inverse::Class {
                     {"Get back up" yes ::Inverse::School::classroom}
                 }
             }
-            first1 {
-                # This shouldn't happen as you shouldn't even be allowed in the classroom
-                return ::Inverse::School::north
-            }
-            second1 {
-                # ////
+            first1 - second1 {
+                # This shouldn't happen as you shouldn't even be allowed this far
                 return ::Inverse::School::north
             }
             third1 {
@@ -151,6 +145,82 @@ namespace eval Inverse::Class {
             }
         }
         state put school-period first1
+        prompt {} {
+            {"Leave the classroom" yes ::Inverse::School::north}
+        }
+    }
+
+    proc secondPeriod {} {
+        puts "After a bit, a conservatively-dressed woman with short\
+        black hair and glasses walks in."
+        puts "\"Hello, class. My name is Mavis, and I'll be teaching your language\
+        arts class today. Now, I'd like everybody to form a line. I'm going to have\
+        you practice your diction.\""
+        puts "All of the other students get out of their seats and begin to form\
+        a line behind Mavis' podium."
+        prompt {} {
+            {"Get in line" yes secondPeriodBegin}
+        }
+    }
+
+    proc secondPeriodBegin {} {
+        puts "You get in line relatively close to the front and wait your turn."
+        puts "..."
+        puts "Before much time has passed, you reach the front of the line. Mavis\
+        glances at you for a moment before speaking."
+        puts "\"Alright, I need you to repeat after me. 'All hail the Robot King.'\""
+        return {secondPeriod1 0}
+    }
+
+    proc secondPeriod1 {correct} {
+        set a "{\"I'll\"} yes {secondPeriod2 $correct}"
+        set b "{\"All\"} yes {secondPeriod2 [expr {$correct + 1}]}"
+        set c "{\"Ill\"} yes {secondPeriod2 $correct}"
+        set d "{\"Y'all\"} yes {secondPeriod2 $correct}"
+        prompt {} [list $a $b $c $d]
+    }
+
+    proc secondPeriod2 {correct} {
+        set a "{\"Yell\"} yes {secondPeriod3 $correct}"
+        set b "{\"Ail\"} yes {secondPeriod3 $correct}"
+        set c "{\"Hail\"} yes {secondPeriod3 [expr {$correct + 1}]}"
+        set d "{\"Bail\"} yes {secondPeriod3 $correct}"
+        prompt {} [list $a $b $c $d]
+    }
+
+    proc secondPeriod3 {correct} {
+        set a "{\"The\"} yes {secondPeriod4 [expr {$correct + 1}]}"
+        set b "{\"Ye\"} yes {secondPeriod4 $correct}"
+        set c "{\"Me\"} yes {secondPeriod4 $correct}"
+        set d "{\"Spree\"} yes {secondPeriod4 $correct}"
+        prompt {} [list $a $b $c $d]
+    }
+
+    proc secondPeriod4 {correct} {
+        set a "{\"Onion ring\"} yes {secondPeriod5 $correct}"
+        set b "{\"Robot King\"} yes {secondPeriod5 [expr {$correct + 1}]}"
+        set c "{\"Laser beam\"} yes {secondPeriod5 $correct}"
+        set d "{\"Strawberry ice cream\"} yes {secondPeriod5 $correct}"
+        prompt {} [list $a $b $c $d]
+    }
+
+    proc secondPeriod5 {correct} {
+        switch $correct {
+            0 - 1 - 2 {
+                puts "\"Hm... I'm sorry. That doesn't sound quite right. You need to try\
+                harder next time.\""
+                state put second-period-pass no
+            }
+            3 {
+                puts "\"That's... pretty close. I believe you passed the class.\""
+                state put second-period-pass partial
+            }
+            4 {
+                puts "\"Very good! That sounded perfect!\""
+                state put second-period-pass yes
+            }
+        }
+        state put school-period second1
         prompt {} {
             {"Leave the classroom" yes ::Inverse::School::north}
         }
