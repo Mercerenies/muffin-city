@@ -7,6 +7,12 @@ namespace eval Inverse::Castle {
         return parlor
     }
 
+    # //// Let's rewrite a bit of this so that the Robot King gives
+    # you a chance to be "reeducated" after the first initiation fail,
+    # rather than having him insta-kill you then (which is boring and
+    # just sends you to the Underworld and makes you come all the way
+    # back).
+
     proc parlor {} {
         puts "=~ Castle Parlor ~="
         puts "The parlor is as extravagant as it is large. A red carpet\
