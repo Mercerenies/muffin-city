@@ -90,13 +90,13 @@ namespace eval Inverse::Castle {
             }
         } else {
             switch [state get robot-hypnotism] {
-                no - killed {
+                no {
                     puts "The Robot King's voice is as cheery as ever."
-                    puts "\"Greetings, human! ... ... Didn't I vaporize you recently?\""
+                    puts "\"Greetings, human! Welcome to my lovely city! I'm the Robot\
+                    King! You don't look like you're from around here. Is that right?\""
                     prompt {} {
-                        {"\"You can't kill me that easily!\"" yes kingGloat}
-                        {"\"Well, you tried.\"" yes kingGloat}
-                        {"\"Uhh... no...\"" yes kingKillLie}
+                        {"\"I'm from a far away place.\"" yes kingFar}
+                        {"\"Nope. Born and raised here.\"" yes kingLie}
                     }
                 }
                 waiting {
@@ -114,6 +114,21 @@ namespace eval Inverse::Castle {
                         {"\"All hail the Robot King!\"" yes kingFake}
                         {"\"I haven't done it yet.\"" yes throne}
                     }
+                }
+                killed {
+                    puts "The Robot King's voice is as cheery as ever."
+                    puts "\"Greetings, human! ... ... Didn't I vaporize you\
+                    recently?\""
+                    prompt {} {
+                        {"\"You tried.\"" yes kingGloat}
+                        {"\"I don't go down that easily.\"" yes kingGloat}
+                        {"\"Um... that must've been someone else.\"" yes kingKillLie}
+                    }
+                }
+                reeducated {
+                    puts "\"Greetings, human! ... ... Now, I think you're supposed to\
+                    be going through my reeducation facility. Bouncer!\""
+                    return {kingToSchool no}
                 }
             }
         }
@@ -158,8 +173,23 @@ namespace eval Inverse::Castle {
     }
 
     proc kingFake {} {
-        puts "\"Now, you can't fool me! I can tell you haven't been initiated!\
-        Unfortunately, lying to me is frowned upon in this community.\""
+        puts "\"Now, you can't fool me! The initiation failed! I can see it in your\
+        eyes!\""
+        prompt {} {
+            {"\"Yeah... it failed.\"" yes kingFake1}
+            {"\"All hail the Robot King!\"" yes kingFakeLie}
+        }
+    }
+
+    proc kingFake1 {} {
+        puts "\"That's fine, human! We have remedies for this. Bouncer! Take this human\
+        to the reeducation facility.\""
+        state put robot-hypnotism reeducated
+        return {kingToSchool yes}
+    }
+
+    proc kingFakeLie {} {
+        puts "\"Have it your way.\""
         puts "Lasers ignite from the Robot King's eyes and vaporize you."
         puts {}
         state put robot-hypnotism killed
@@ -169,7 +199,8 @@ namespace eval Inverse::Castle {
     proc kingGloat {} {
         puts "\"Hah! Well, fortunately, I have remedies for people like you. Bouncer,\
         take this human to be reeducated!\""
-        return kingToSchool
+        state put robot-hypnotism reeducated
+        return {kingToSchool yes}
     }
 
     proc kingKillLie {} {
@@ -180,7 +211,7 @@ namespace eval Inverse::Castle {
         return ::Underworld::Pits::mysteryRoom
     }
 
-    proc kingToSchool {} {
+    proc kingToSchool {reset} {
         # //// If the bus is already there (from Carl doing things),
         # slightly different text here regarding the bus
         puts "The burly man at the entrance steps forward and drags you out onto the\
@@ -189,6 +220,9 @@ namespace eval Inverse::Castle {
         it stops. The bus driver, whose nametag identifies him as \"Carl\", greets you\
         with a friendly smile and invites you to take a seat."
         # //// Should we be able to cause a ruckus here? Should it do anything?
+        if {$reset ne {no}} then {
+            state put school-period first
+        }
         prompt {} {
             {"Take a seat" yes ::Inverse::School::bus}
         }
@@ -244,7 +278,7 @@ namespace eval Inverse::Castle {
         }
         prompt {} {
             {"\"I'm here for the initiation.\"" {[state get robot-hypnotism] eq {waiting}} mesmeristInit}
-            {"\"Can we try the initiation again?\"" {[state get robot-hypnotism] in {failed killed}} mesmeristInit}
+            {"\"Can we try the initiation again?\"" {[state get robot-hypnotism] in {failed killed reeducated}} mesmeristInit}
             {"\"Goodbye.\"" yes mesmeristRoom}
         }
     }

@@ -58,6 +58,9 @@ namespace eval Inverse::Class {
         }
     }
 
+    # //// We'll shuffle these around soon. Right now, all of the
+    # right answers are always D.
+
     proc firstPeriod1 {correct} {
         puts "** Question 1 **"
         puts "When do you have the right to speak ill of the Robot King?"

@@ -145,11 +145,13 @@ state put dining-hall yes
 con
 state put taco-visitor nobody
 con
+state put been-to-school yes
+con
+state put robot-hypnotism reeducated
+con
 state put met-robot yes
 con
-state put robot-hypnotism killed
-con
-state put been-to-school yes
+state put school-period first
 3
 2
 3
@@ -164,13 +166,3 @@ state put been-to-school yes
 2
 3
 2
-1
-1
-2
-1
-1
-2
-1
-4
-con
-state put school-period second1

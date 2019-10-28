@@ -803,9 +803,11 @@
 **** kingLie
 **** kingLie1
 **** kingFake
+**** kingFake1
+**** kingFakeLie
 **** kingGloat
 **** kingKillLie
-**** kingToSchool
+**** kingToSchool <reset>
 **** bouncer
 **** julieRoom
 **** julieTalk
@@ -2124,11 +2126,20 @@
 **** failed
      The player's hypnotism has failed. The Mesmerist will offer to
      perform the hypnotism again, which has no effect. The Robot King
-     will decide the player is "faulty" and kill him, moving the game
-     to ~killed~.
+     will force the player to be reeducated, moving the game to
+     ~reeducated~ and resetting ~school-period~ to ~first~.
 **** killed
-     The player has been "killed" by the Robot King. The Mesmerist
-     will still offer to perform the hypnotism
+     The Robot King killed the player. If the player visits the
+     Mesmerist, he will offer to perform the hypnotism again, which
+     has no effect. The Robot King will forcibly reeducate the player,
+     moving the game to ~reeducated~. On the other hand, the player
+     can lie to the Robot King, which will result in his death once
+     again.
+**** reeducated
+     The Robot King expects the player to be reeducated at the school.
+     If the player speaks to the Robot King in this state, he will
+     simply send the player back to the school, without resetting the
+     class period. ////
 *** ~been-to-school~
 **** no
 **** yes

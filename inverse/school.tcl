@@ -159,7 +159,6 @@ namespace eval Inverse::School {
     }
 
     proc bus {} {
-        state put school-period first
         if {[state get been-to-school] eq {yes}} then {
             puts "You take a seat on the bus, which is mostly empty. The bus ride is\
             fairly uneventful, and some time later the bus pulls into a large gated\
