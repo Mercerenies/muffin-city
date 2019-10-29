@@ -30,6 +30,7 @@ namespace eval City::Shopping {
             {"\"Okay.\"" yes pawnShop}
             {"\"Do you have a pirate costume?\"" {[state get pirate-attack] eq {hat}} pawnHat}
             {"\"Do you have a ship's wheel?\"" {[state get captain-boat] eq {spoken}} pawnWheel}
+            {"\"Do you have a paperclip?\"" {[state get the-fence] eq {paperclip}} pawnPaper}
             {"\"Ship's wheel?\"" {[state get captain-boat] eq {requested}} pawnWheelBuy}
         }
     }
@@ -42,7 +43,7 @@ namespace eval City::Shopping {
     }
 
     proc pawnWheelBuy {} {
-        puts "\"Oh, yeah. Your wheel got here a few hours ago. That'll be one silver coin.\""
+        puts "\"Oh, yeah. Your wheel got here a few hours ago. That'll be one Silver Coin.\""
         prompt {} {
             {"Hand him a Silver Coin" {[inv has {Silver Coin}]} pawnWheelBuy1}
             {"\"I'll be back.\"" yes pawnShop}
@@ -63,6 +64,13 @@ namespace eval City::Shopping {
         puts "\"Costume's ain't really my thing. But there is a guy who may be\
         able to help. He lives in a basement in the forest by the prison. Guy's\
         obsessed with hats. He may be able to help.\""
+        puts {}
+        return pawnShop
+    }
+
+    proc pawnPaper {} {
+        puts "\"Can't say that I have one o' those. I hear the courthouse has 'em though.\
+        Might check there.\""
         puts {}
         return pawnShop
     }

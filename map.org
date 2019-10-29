@@ -118,6 +118,7 @@
 **** pawnWheelBuy
 **** pawnWheelBuy1
 **** pawnHat
+**** pawnPaper
 **** pawnButler
 **** market
 **** marketBot
@@ -593,6 +594,7 @@
 **** pawnWheel
 **** pawnWheelNotYet
 **** pawnHat
+**** pawnPaper
 **** locksmithEntry
 **** locksmith
 **** locksmithCurse
@@ -848,6 +850,7 @@
 **** secondPeriod3 <correct>
 **** secondPeriod4 <correct>
 **** secondPeriod5 <correct>
+**** thirdPeriod
 * ITEMS
 
 ** Item List
@@ -1473,9 +1476,10 @@
      goal of building something and ask the player for a paperclip.
      The game moves to ~paperclip~.
 **** paperclip
-     The Fence wants a paperclip. If the player offers the Brass
-     Paperclip, the Fence will take it and the game will move to
-     ~paperclip1~.
+     The Fence wants a paperclip. In this state, the pawnbroker will
+     give the player a vague hint as to the location of the paperclip
+     if asked. If the player offers the Brass Paperclip, the Fence
+     will take it and the game will move to ~paperclip1~.
 **** paperclip1
      The Fence has the paperclip. When the player enters the north
      prison hallway, the game moves to ~shovel~.
@@ -1612,7 +1616,7 @@
      prison cafeteria, already hypnotized. In order for the Mastermind
      quest to start, the player must have satisfied several criteria.
      + The player must be entering the prison washroom.
-     + The washroom coin muqt have already been collected
+     + The washroom coin must have already been collected
        (~washroom-coin~ is ~yes~).
      + Harry must already have escaped (~harry-location~ is ~freedom~
        or beyond).

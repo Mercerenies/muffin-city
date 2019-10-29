@@ -46,6 +46,7 @@ namespace eval Past::Shopping {
         prompt {} {
             {"\"Can you get me a ship's wheel?\"" {[state get captain-boat] eq {spoken}} pawnWheel}
             {"\"Do you have a pirate costume?\"" {[state get pirate-attack] eq {hat}} pawnHat}
+            {"\"Do you have a paperclip?\"" {[state get the-fence] eq {paperclip}} pawnPaper}
             {"\"The wheel?\"" {[state get captain-boat] eq {requested}} pawnWheelNotYet}
             {"\"Thank you.\"" yes pawnShop}
         }
@@ -68,6 +69,13 @@ namespace eval Past::Shopping {
         puts "\"Costume's ain't really my thing. But there is a guy who may be\
         able to help. He lives in a basement in the forest by the prison. Guy's\
         obsessed with hats. He may be able to help.\""
+        puts {}
+        return pawnShop
+    }
+
+    proc pawnPaper {} {
+        puts "\"Can't say that I have one o' those. I hear the courthouse has 'em though.\
+        Might check there.\""
         puts {}
         return pawnShop
     }
