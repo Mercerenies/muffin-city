@@ -27,20 +27,8 @@ namespace eval Inverse::Class {
                     {"Get back up" yes ::Inverse::School::classroom}
                 }
             }
-            third {
-                # //// Third period neighbor
-                # ////
-                prompt {} {
-                    {"Wait for class to start" yes {::Empty::back ::Inverse::Class::seat}}
-                    {"Get back up" yes ::Inverse::School::classroom}
-                }
-            }
-            first1 - second1 {
-                # This shouldn't happen as you shouldn't even be allowed this far
-                return ::Inverse::School::north
-            }
-            third1 {
-                # ////
+            default {
+                # This shouldn't happen as you shouldn't even be allowed into this state
                 return ::Inverse::School::north
             }
         }

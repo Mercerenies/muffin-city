@@ -151,7 +151,9 @@ state put robot-hypnotism reeducated
 con
 state put met-robot yes
 con
-state put school-period first
+state put first-period-pass no
+con
+state put second-period-pass no
 3
 2
 3
@@ -166,3 +168,14 @@ state put school-period first
 2
 3
 2
+1
+1
+1
+1
+1
+con
+state put school-period third
+1
+4
+1
+1

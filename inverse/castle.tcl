@@ -130,6 +130,13 @@ namespace eval Inverse::Castle {
                     be going through my reeducation facility. Bouncer!\""
                     return {kingToSchool no}
                 }
+                passed {
+                    puts "\"Greetings, human! I understand you passed your reeducation!\
+                    Congratulations!\""
+                    prompt {} {
+                        {"\"Thank you!\"" yes kingTryAgain}
+                    }
+                }
             }
         }
     }
@@ -225,6 +232,15 @@ namespace eval Inverse::Castle {
         }
         prompt {} {
             {"Take a seat" yes ::Inverse::School::bus}
+        }
+    }
+
+    proc kingTryAgain {} {
+        puts "\"You're very welcome, human. Now you can go try the initiation again.\
+        Remember, down the hall, second door on the left.\""
+        state put robot-hypnotism waiting
+        prompt {} {
+            {"\"I'll do that.\"" yes throne}
         }
     }
 

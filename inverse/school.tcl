@@ -15,7 +15,7 @@ namespace eval Inverse::School {
             puts {}
         }
         prompt {} {
-            {"Talk to Carl" {[state get school-period] in {first third}} carl}
+            {"Talk to Carl" {[state get school-period] in {first third third1}} carl}
             {"Go inside" yes south}
         }
     }
@@ -30,9 +30,6 @@ namespace eval Inverse::School {
             }
             second1 {
                 state put school-period third
-            }
-            third1 {
-                # //// Based on your grade, fun stuff
             }
         }
         prompt {} {
@@ -88,10 +85,6 @@ namespace eval Inverse::School {
                 puts {}
                 return north
             }
-            third1 {
-                # ////
-                return north
-            }
             default {
                 return classroom
             }
@@ -100,8 +93,10 @@ namespace eval Inverse::School {
 
     proc classroom {} {
         puts "=~ Classroom ~="
-        puts -nonewline "An expansive chalkboard takes up the front half of the room,\
-        standing before a podium and several rows of desks."
+        if {[state get school-period] ni {third third1}} then {
+            puts -nonewline "An expansive chalkboard takes up the front half of the room,\
+            standing before a podium and several rows of desks."
+        }
         switch [state get school-period] {
             no {
                 puts " The room itself is empty, no teacher or students. It seems as\
@@ -119,25 +114,36 @@ namespace eval Inverse::School {
                 # //// You can try to occupy the podium and challenge Mavis
             }
             third {
-                puts " There are a handful of students in the room, waiting patiently.\
-                A man wearing glasses with a nametag marked \"Todd\" is standing at the\
-                podium in the front."
+                puts "An expansive chalkboard takes up the front half of the room. Oddly\
+                the desks and podium have all been pushed up against the walls of the room.\
+                There are a handful of students standing in the room, waiting patiently.\
+                A man wearing glasses with a nametag marked \"Todd\" is standing at\
+                the podium in the front."
                 # //// Talking to Todd
             }
             second1 {
                 puts " Mavis is still testing the other students' diction."
+            }
+            third1 {
+                puts "An expansive chalkboard takes up the front half of the room. The\
+                desks and podium have all been pushed up against the walls of the room.\
+                Todd is still giving out final grades to the other students."
             }
             default {
                 return north
             }
         }
         prompt {} {
-            {"Take a seat" {[state get school-period] ni {second1}} ::Inverse::Class::seat}
+            {"Take a seat" {[state get school-period] ni {second1 third third1}} ::Inverse::Class::seat}
+            {"Wait patiently for class to start" {[state get school-period] eq {third}} ::Inverse::Dodgeball::intro}
             {"Back to the hallway" yes north}
         }
     }
 
     proc carl {} {
+        if {[state get school-period] eq {third1}} then {
+            return carlFinal
+        }
         if {[state get school-period] eq {third}} then {
             puts "\"Go ahead and head over to the classroom. I'll be one of\
             the instructors in your next class.\""
@@ -156,6 +162,43 @@ namespace eval Inverse::School {
         classes.\""
         puts {}
         return innerGate
+    }
+
+    proc carlFinal {} {
+        if {[state get authorized-to-bus] eq {yes}} then {
+            puts "\"Congratulations! I heard you were cleared to be released.\
+            Are you ready to get on the bus?\""
+            prompt {} {
+                {"\"I'm ready.\"" yes carlFinalExit}
+                {"\"Not yet.\"" yes innerGate}
+            }
+        } else {
+            puts "\"I was sorry to hear you didn't pass. But you'll do better\
+            next time I'm sure.\""
+            state put school-period first
+            prompt {} {
+                {"\"Thanks.\"" yes innerGate}
+            }
+        }
+    }
+
+    proc carlFinalExit {} {
+        puts "You get on the bus once again. It seems you're the only passenger\
+        this time around. The bus ride is fairly unexciting, and the bus soon\
+        pulls back into the city."
+        puts "\"Well, you're here. Congratulations on your release!\""
+        state put school-period first
+        state put robot-hypnotism passed
+        prompt {} {
+            {"Get off the bus" yes carlFinalExit1}
+        }
+    }
+
+    proc carlFinalExit1 {} {
+        puts "You step off the bus back into the city. The doors close behind you as\
+        Carl drives off."
+        puts {}
+        return ::Inverse::District::education
     }
 
     proc bus {} {
