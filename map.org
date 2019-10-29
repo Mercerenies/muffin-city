@@ -2964,6 +2964,7 @@
    + Evil Business Card (Attorney-Man)
    + Strange Business Card (Trenchcoat Man)
    + Cryptic Business Card (Cryptographer or Lady Lock)
+   + Cursed Business Card (Cursed Artifact Shop)
 
    People
    + Bouncer
