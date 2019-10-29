@@ -910,6 +910,7 @@
  + Shabby Jack's (~motel-room~)
  + Merchant-bot Cheap Item (~olive-bought~)
  + Ship's Wheel (~captain-boat~)
+ + Merchant-bot Expensive Item (~lantern-bought~)
 
 * MUFFINS
 
@@ -2202,7 +2203,7 @@
 ** The Bouncer
 * NOTES
 
-** ACCEPTED Cave and Lantern
+** DONE Cave and Lantern
    Cave will lead somewhere cool if you have a light (inverse city)
 ** ACCEPTED False Imprisonment
    Given gift if falsely imprisoned (according to Warden), maybe
@@ -2298,6 +2299,11 @@
    Steve break open the vault lock to get Atheena's crystal back.
    Also, Steve may give you a Suspicious Briefcase that you must
    deliver to present-day Steve in the prison.
+
+   Note that Steve will be dead by the time you get to the portal
+   diamond quest, as the cursed chest of the Reaper killed her. But
+   since the Reaper resurrected her, you can find her in the
+   underworld working across the hall from Dr. Cipher.
 ** ACCEPTED The Flame Spirit
    Evil flame spirit appears in the fire pits after N visits. After
    appeasing him by giving him something, ... I dunno, something
@@ -2344,8 +2350,8 @@
    Reaper), sealed away by the Ancient Minister? //// (This hasn't
    been explicitly established)
 ** Missing Rewards, etc.
- + [ ] Attorney-Man's reward?
- + [ ] The Black Olive needs to do something (double subspace???)
+ + [ ] Attorney-Man's reward? (see below)
+ + [ ] The Black Olive needs to do something +(double subspace???)+
  + [X] Heart Room in the past does something? (possibly just an easter
    egg; exit blocked off?)
    - The Heart Room in the past is now the source of Mothka.
@@ -2357,7 +2363,8 @@
    you break the pipe.
  + [ ] The pipe in the past that you expose should appear in some form
    in the present.
- + [ ] Trenchcoat Man's Business Card does nothing right now.
+ + [ ] Trenchcoat Man's Business Card does nothing right now. (see
+   below)
 ** CONSIDERING The Flaming Axe
  + The Flaming Axe of Doom was used by the First Reaper to carve out
    the Underworld before time itself. Possibly, we can visit this
@@ -2461,11 +2468,12 @@
    that the player may or may not eventually access. Then the
    corporate office is somewhere (in space? subspace?) and eventually
    the player will meet the corporate branch.
+   + There's a branch office on the moon?
 ** CONSIDERING The Top Floor
    The top floor of the Ritzy Inn is where some sort of sinister
    government agency meets to have its meetings. They all have robots
    or something. Idk. Perhaps to get in you have to get a fake
-   government ID (from Grigor?) and show it to Carl.
+   government ID (from Grigory?) and show it to Carl.
 ** CONSIDERING Fighting Mummies
    A secret underground room in the warehouse houses an Egyptian tomb
    with a bunch of mummies (or maybe skeletons) that will jump out at
@@ -2508,6 +2516,7 @@
    I'm thinking /maybe/ in the prehistoric jungle, but that's also
    really late game, so I'm not sure if I want to put it off that
    long. We'll see.
+   + The Source in Higher Subspace, perhaps?
 ** CANCELED The Crystal Ball
    - Note taken on [2018-11-04 Sun 13:06] \\
      Canceled; I want the Silver Starlight event to be fairly
@@ -2528,7 +2537,9 @@
 
    When the lions chase the player down after the bank robbery, Steve
    will flee to a safe room in the Ritzy Inn, where the player will
-   have to visit her to get the bank vault unlocked.
+   have to visit her to get the bank vault unlocked. All things
+   considered, she may have fled somewhere else for safety then,
+   perhaps a safe room at the Ritzy Inn.
 ** ACCEPTED Harry the Arsonist
    + I don't really know what I'm planning here. Just might be cool to
      have him if we need someone who does something with fire.
@@ -2643,7 +2654,7 @@
      headstrong. In the regular world, he tends to be in charge of
      recon, and in the inverse world he has become an expert in
      munitions.
-** CONSIDERING The Best Tacos
+** ACCEPTED The Best Tacos
   After the Taco Man has both of his olives, he can make the best
   tacos on the planet. People from all over the multiverse will come
   to his shop. The visitors will rotate out after the player has
@@ -2744,7 +2755,7 @@
    What if this happens to Dr. Cipher's (or Joe's) Certificate in the
    inverse world, rather than having regular Dr. Cipher's Certificate
    stolen twice in rapid succession?
-** CONSIDERING Star of the Show
+** ACCEPTED Star of the Show
    At some point, a major villain (potentially the wizard from
    Atheena's past) will harness the power of a distant star and try to
    use it to destroy the world. Likely, you will (of course) need
@@ -2798,7 +2809,7 @@
    But what if he's the third spicy food visit, and you have to have
    done the other two before getting there. Then the taco man cooks
    something to help you.
-** CONSIDERING One Word
+** ACCEPTED One Word
    A bad guy has discovered an ancient word which, if said in the
    right conditions, will destroy the planet instantly. You go back in
    time and enlist that bad guy's help in fighting him in the present
@@ -2900,7 +2911,7 @@
    luck-based powers as a valuable asset. June went underground, began
    training with her abilities, and started (or joined?) a resistance
    movement against the Robot King.
-** CONSIDERING No More Dreams
+** ACCEPTED No More Dreams
    We have the open question of what the dream world in the parallel
    dimension looks like. One option is to have there just be one dream
    world, and if you fall asleep in the other world, the train still
@@ -3011,6 +3022,8 @@
      Trenchcoat Man again, who will show you how to use it properly.
      Maybe he folds it into a paper crane?
    + Is he an enemy of Wordsmith? Perhaps he came to study him?
+   + Is he just here to study the Wordsmith? Not to stop him but to
+     find out how he did it?
 ** CONSIDERING Cryptography
    In the regular world, Arthur Miles is in town for a cryptography
    conference. This isn't explicitly established yet, but I kind of
@@ -3080,7 +3093,7 @@
      at the school, he's ////
    + Second Period (English) is taught by Mavis Morrow (Ezekial's
      wife). When she's not at the school, she's at the library with
-     Ezekial.
+     Ezekial. ////
    + Third Period (History) is taught by Todd and Carl. Carl drives
      the bus when he's not teaching, and Todd is ////
 * MISCELLANEOUS
