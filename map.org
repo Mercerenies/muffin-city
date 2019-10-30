@@ -3179,9 +3179,6 @@
    + Drowning on the Warehouse Island
      - Always available, provided the player does not have Todd's
        Scuba Suit
-   + Robot King's Security System
-     - Always available
-     - Paywalled
 *** Mystery
    + Mothka's Rat Attack
      - Always available
@@ -3189,5 +3186,8 @@
      - Before liberating the people of the inverse world from the
        Robot King, the player can be murdered by him by simply saying
        the wrong things.
+   + Robot King's Security System
+     - Always available
+     - Paywalled
 ** Next
    +Mothka's execution chamber should take you to the other room.+

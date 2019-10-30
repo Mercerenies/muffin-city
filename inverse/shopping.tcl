@@ -32,11 +32,8 @@ namespace eval Inverse::Shopping {
         puts "As soon as you touch anything, a piercing alarm\
         screeches in your ears, and the walls open to reveal\
         several hidden lasers, which instantly vaporize you."
-        if {[state get lobby-door] ne {yes}} then {
-            state put lobby-door other
-        }
         puts {}
-        return ::Underworld::Lobby::other
+        return ::Underworld::Pits::mysteryRoom
     }
 
 }

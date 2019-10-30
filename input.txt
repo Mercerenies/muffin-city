@@ -166,16 +166,3 @@ state put second-period-pass no
 1
 4
 2
-3
-2
-1
-1
-1
-1
-1
-con
-state put school-period third
-1
-4
-1
-1
