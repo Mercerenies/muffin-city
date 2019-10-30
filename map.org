@@ -2670,10 +2670,10 @@
      level-headed and calmer than his friend Zircon. He tends to
      almost always be at the base, managing affairs.
    + Garnet is the only female member in the regular world, and one of
-     two (alongside Granite) in the inverse world. She tends to be the
-     computer expert, tasked with hacking government technology when
-     needed. In the inverse world, she is the only reason the Robot
-     King has not found their digital presence as of yet.
+     two (alongside Cinnabar) in the inverse world. She tends to be
+     the computer expert, tasked with hacking government technology
+     when needed. In the inverse world, she is the only reason the
+     Robot King has not found their digital presence as of yet.
    + Zircon is largely the group's motivating factor, in the real
      world. His father worked for a top secret government project and
      was disappeared one day. They've been investigating conspiracies
@@ -2896,6 +2896,12 @@
    + The Postmaster (manages the Postman)?
    + The Source (magic sentient crystal that can unlock Starlight's true power)?
    + The Man in the Trenchcoat?
+
+   Considering switching the order of the second and third visit. The
+   Source should be useful with Starlight as soon as Butler 3, whereas
+   the Postmaster is only useful after Arachnarok is triggered (and I
+   don't necessarily know when that is yet), possibly but not
+   necessarily after the Robot King's overthrow.
 ** CONSIDERING Headless
    After some time passes (at least after the Green Olive, maybe some
    more prereqs), a man without a head starts hanging out in the taco
@@ -3080,6 +3086,10 @@
 ** CONSIDERING Cursed Artifact Shop
    In the parallel world? Maybe a cursed artifact shop? Could sell
    cursed objects, like a Cursed Business Card, and other stuff.
+
+   Since there's already a state-sponsored shop selling stuff in the
+   inverse world, maybe the cursed shop doesn't take actual money. It
+   requires odd things in exchange for the items in the shop.
 ** CONSIDERING Inverse Tower
    So I hadn't actually written this down. But there will probably be
    a tower in the inverse city. It has several floors, accessible by
