@@ -124,6 +124,7 @@ namespace eval State {
         third-period-pass no
         authorized-to-bus no
         school-flying-colors no
+        topaz-rescue no
     }]
 
     proc get {args} {

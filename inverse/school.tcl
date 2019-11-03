@@ -189,6 +189,9 @@ namespace eval Inverse::School {
         puts "\"Well, you're here. Congratulations on your release!\""
         state put school-period first
         state put robot-hypnotism passed
+        if {[state get topaz-rescue] eq {no}} then {
+            state put topaz-rescue noticed
+        }
         prompt {} {
             {"Get off the bus" yes carlFinalExit1}
         }

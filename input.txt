@@ -151,9 +151,13 @@ state put robot-hypnotism reeducated
 con
 state put met-robot yes
 con
-state put first-period-pass no
+state put school-period third
+con
+state put first-period-pass partial
 con
 state put second-period-pass no
+con
+state put topaz-rescue noticed
 3
 2
 3

@@ -1697,6 +1697,13 @@
 **** second1
 **** third
 **** third1
+*** Rescue of Topaz (~topaz-rescue~)
+**** no
+     The quest to rescue Topaz from the clutches of the Robot King has
+     not yet begun. When the player leaves the school day on the bus
+     (after getting a grade of B or better), the game moves to
+     ~noticed~.
+**** noticed
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -2643,7 +2650,7 @@
       castle gates are now open to you. A new area to explore, some
       new characters, fun stuff. Go to 1.
 
-** CONSIDERING The Resistance
+** ACCEPTED The Resistance
    To fight the sinister government agents (probably those in the
    Ritzy Inn), a resistance has been formed. Their secret base, for
    safety reasons, exists in the dream plane. With a specific item,
