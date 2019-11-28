@@ -206,6 +206,9 @@ namespace eval Prison::North {
         puts -nonewline "The dining hall consists of a small collection of tables\
         opposite a cafeteria-like buffet. The stand is unfortunately empty, as it\
         is not meal time, but there are a few prisoners socializing in the corner."
+        if {[state get city-thug] in {hunted caught}} then {
+            puts -nonewline " Sitting among the prisoners is the man who robbed you."
+        }
         if {[state get brain-control] eq {no}} then {
             puts " On the other side of the room, a bald man with a goatee is staring\
             at the palm of his hand."
@@ -214,6 +217,8 @@ namespace eval Prison::North {
         }
         prompt {} {
             {"Talk to the prisoners" yes diningTalk}
+            {"Confront the robber" {[state get city-thug] eq {hunted}} diningConfront}
+            {"Talk to the robber" {[state get city-thug] eq {caught}} diningRobber}
             {"Talk to the bald man" {[state get brain-control] eq {no}} diningBald}
             {"Go back to the hall" yes hallway}
         }
@@ -226,16 +231,21 @@ namespace eval Prison::North {
             who robbed you."
         }
         prompt {} {
-            {"Confront the robber" {[state get city-thug] eq {hunted}} diningConfront}
             {"Leave" yes dining}
         }
     }
 
     proc diningConfront {} {
-        puts "\"Oi! My friend said dis is... oh, it's you. Yeah, dey caught me. Da cops have\
+        puts "\"Oi! Get lost... oh, it's you. Yeah, dey caught me. Da cops have\
         yer [state get stolen-good] now. But hey, no hard feelings for turnin' me in. I'll get\
         outta here soon enough.\""
         state put city-thug caught
+        puts {}
+        return dining
+    }
+
+    proc diningRobber {} {
+        puts "\"I'll get outta here soon enough.\""
         puts {}
         return dining
     }
