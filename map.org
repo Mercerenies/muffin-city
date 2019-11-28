@@ -242,6 +242,7 @@
 **** caveLight
 **** reverseCave
 **** reverseCaveLight
+**** reverseCaveExit
 **** bus
 *** [Fence]
 **** approach
@@ -867,6 +868,21 @@
 **** result1
 **** result2
 **** result3
+*** [Hideout]
+**** firstEntryCoop
+**** firstEntryRemoval
+**** firstEntryFlee
+**** gunpoint
+**** gunpoint1
+**** gunpointPanic
+**** gunpoint2
+**** gunpoint3
+**** gunpoint4
+**** gunpointFinished
+**** gunpointFinished1
+**** gunpointRefusal
+**** mainRoom
+**** reaccept
 * ITEMS
 
 ** Item List
@@ -1709,6 +1725,8 @@
      (after getting a grade of B or better), the game moves to
      ~noticed~.
 **** noticed
+**** met
+**** accepted
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -1969,6 +1987,9 @@
 **** no
 **** yes
 *** ~dining-hall~
+**** no
+**** yes
+*** ~cave-hideout~
 **** no
 **** yes
 ** World States

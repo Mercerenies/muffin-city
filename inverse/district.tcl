@@ -5,12 +5,23 @@ namespace eval Inverse::District {
         puts "=~ City Plaza ~="
         puts "The neon lights of the city are blinding in contract to the dark of the\
         night sky. There is no one out on the street, and the city is eerily quiet."
-        # //// The cave
-        prompt {} {
-            {"Go to the education district" yes education}
-            {"Go to the shopping district" yes shopping}
-            {"Go to the castle district" yes castle}
-            {"Go to the dark cave" yes ::Prison::Forest::reverseCave}
+        if {[state get topaz-rescue] eq {noticed}} then {
+            puts {}
+            puts "Someone abruptly grabs you from behind and places a sack over your\
+            head. A young male voice speaks from behind."
+            puts "\"Don't make a sound. Come with me.\""
+            prompt {} {
+                {"Cooperate and follow his directions" yes ::Inverse::Hideout::firstEntryCoop}
+                {"Remove the sack" yes ::Inverse::Hideout::firstEntryRemoval}
+                {"Run blindly away" yes ::Inverse::Hideout::firstEntryFlee}
+            }
+        } else {
+            prompt {} {
+                {"Go to the education district" yes education}
+                {"Go to the shopping district" yes shopping}
+                {"Go to the castle district" yes castle}
+                {"Go to the dark cave" yes ::Prison::Forest::reverseCave}
+            }
         }
     }
 

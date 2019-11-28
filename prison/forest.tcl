@@ -226,9 +226,23 @@ namespace eval Prison::Forest {
     }
 
     proc reverseCaveLight {} {
-        puts "Activating your Lantern, you carefully navigate about the cave, avoiding\
-        the more dangerous tunnels. Before too much longer, you find yourself back at the\
-        city where you started."
+        if {[state get cave-hideout] eq {yes}} then {
+            puts "Activating your Lantern, you carefully navigate about the cave and\
+            find yourself at the secret hideout."
+            puts {}
+            return ::Inverse::Hideout::mainRoom
+        } else {
+            puts "Activating your Lantern, you carefully navigate about the cave, avoiding\
+            the more dangerous tunnels. Before too much longer, you find yourself back at the\
+            city where you started."
+            puts {}
+            return ::Inverse::District::entrance
+        }
+    }
+
+    proc reverseCaveExit {} {
+        puts "You wander out of the hideout and into a dark cave. After wandering for a bit,\
+        you find youtself back in the city."
         puts {}
         return ::Inverse::District::entrance
     }
