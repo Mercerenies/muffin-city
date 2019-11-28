@@ -205,6 +205,8 @@ namespace eval Warehouse::Outside {
                 prompt {} {
                     {"\"You could represent me.\"" {[state get attorney-self] eq {no}} northSelf}
                     {"\"There's a madman raising the dead. Can you stop him?\"" {[state get necro-cipher] in {rising help}} northCrazy}
+                    {"\"Thanks for representing me.\"" {[state get attorney-self] eq {yes}} northSelfDone}
+                    {"\"Did the prison guard contact you?\"" {[state get attorney-guard] eq {yes}} northGuardDone}
                     {"\"Okay.\"" yes north}
                 }
             }
@@ -253,13 +255,17 @@ namespace eval Warehouse::Outside {
         if {[state get attorney-thug] eq {no}} then {
             state put attorney-thug yes
             state put attorney-man [switch [state get attorney-man] {
-                fed 1
-                1 2
-                2 done
+                fed {expr 1}
+                1 {expr 2}
+                2 {expr {done}}
             }]
-        }
-        prompt {} {
-            {"\"Thank you.\"" yes north}
+            prompt {} {
+                {"\"Thank you.\"" yes northReward}
+            }
+        } else {
+            prompt {} {
+                {"\"Thank you.\"" yes north}
+            }
         }
     }
 
@@ -277,6 +283,45 @@ namespace eval Warehouse::Outside {
         for justice in the courtroom!\""
         prompt {} {
             {"\"Okay.\"" yes north}
+        }
+    }
+
+    proc northSelfDone {} {
+        puts "\"Ah, you are very welcome! The fist of justice will always fight for\
+        truth!\""
+        state put attorney-self complete
+        return northReward
+    }
+
+    proc northGuardDone {} {
+        puts "\"Indeed he did! His was a typical case of injustice in the justice system.\
+        But injustice is no match for Attorney-Man!\""
+        state put attorney-guard complete
+        return northReward
+    }
+
+    proc northReward {} {
+        set self [expr {[state get attorney-self] eq {complete}}]
+        set guard [expr {[state get attorney-guard] eq {complete}}]
+        set thug [expr {[state get attorney-thug] eq {yes}}]
+        set count [expr {$self + $guard + $thug}]
+        switch $count {
+            1 {
+                puts "\"By the way, they gave me this Evil Business Card when I passed\
+                the bar. Since I only fight for justice, I have no use for evil objects.\
+                You can have it if you want.\""
+                puts "You got the Evil Business Card!"
+                inv add {Evil Business Card}
+            }
+            2 {
+                # ////
+            }
+            3 {
+                # ////
+            }
+        }
+        prompt {} {
+            {"\"Thank you.\"" yes north}
         }
     }
 

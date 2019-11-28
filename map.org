@@ -498,6 +498,9 @@
 **** northEncounter
 **** northCrazy
 **** northCrazy1
+**** northSelfDone
+**** northGuardDone
+**** northReward
 **** eastMessage
 *** [Undersea]
 **** undersea
@@ -910,6 +913,7 @@
  + Merchant-bot's Eye
  + Ritzy Inn Meal Voucher
  + Strange Business Card
+ + Evil Business Card
 
 ** Money Sources / Sinks
 
@@ -1191,10 +1195,10 @@
      to Attorney-Man moves to the game to `fed`.
 **** fed
      In this state, Attorney-Man will wait for cases. The player can
-     deliver his own case (attorney-self), the robber's case
-     (attorney-thug), and the prison guard's case (attorney-guard).
-     Each of these moves the game forward, first into `1`, then `2`,
-     then `done`.
+     deliver his own case (~attorney-self~), the robber's case
+     (~attorney-thug~), and the prison guard's case
+     (~attorney-guard~). Each of these moves the game forward, first
+     into ~1~, then ~2~, then ~done~.
 **** 1
      See `fed`.
 **** 2
@@ -2015,6 +2019,7 @@
 **** no
 **** okay
 **** yes
+**** complete
 *** ~attorney-thug~
 **** no
 **** yes
@@ -2023,6 +2028,7 @@
 **** okay
 **** seen
 **** yes
+**** complete
 *** ~guard-soul~
 **** no
 **** yes
@@ -2995,7 +3001,7 @@
      his wish was so much greater scope than the others, Johnny just
      went ahead and claimed his soul immediately to teach him a
      lesson.
-** CONSIDERING Attorney-Man's Reward
+** ACCEPTED Attorney-Man's Reward
    So, whether or not we accept this idea, Attorney-Man needs a
    reward. He literally has none right now.
 
@@ -3005,7 +3011,7 @@
    1. First client gets you the Evil Membership Card. (Evil Business Card?)
    2. Second client gets you Cloud Shoes (name tbd).
    3. Third client gets you ???
-** CONSIDERING Evil Club
+** ACCEPTED Evil Club
    A club in the underworld where all of the stereotypically "evil"
    professions get together and chat and have a good time.
    Attorney-Man got a membership card when he got his law degree, but

@@ -99,9 +99,9 @@ namespace eval City::Courthouse {
         if {[state get attorney-self] eq {okay}} then {
             state put attorney-self yes
             state put attorney-man [switch [state get attorney-man] {
-                fed 1
-                1 2
-                2 done
+                fed {expr 1}
+                1 {expr 2}
+                2 {expr {done}}
             }]
         }
         puts {}
