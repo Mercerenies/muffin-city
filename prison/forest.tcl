@@ -227,9 +227,10 @@ namespace eval Prison::Forest {
 
     proc reverseCaveLight {} {
         puts "Activating your Lantern, you carefully navigate about the cave, avoiding\
-        the more dangerous tunnels, until you reach another exit into a large forest."
+        the more dangerous tunnels. Before too much longer, you find yourself back at the\
+        city where you started."
         puts {}
-        return trees
+        return ::Inverse::District::entrance
     }
 
     proc bus {} {
