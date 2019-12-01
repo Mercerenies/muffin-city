@@ -157,7 +157,9 @@ state put first-period-pass partial
 con
 state put second-period-pass no
 con
-state put topaz-rescue noticed
+state put topaz-rescue accepted
+con
+state put cave-hideout yes
 3
 2
 3
@@ -168,5 +170,7 @@ state put topaz-rescue noticed
 2
 1
 1
+4
+2
 4
 2

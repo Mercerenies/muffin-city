@@ -882,7 +882,9 @@
 **** gunpointFinished1
 **** gunpointRefusal
 **** mainRoom
-**** reaccept
+**** zircon
+**** garnet
+**** zirconReexplain
 * ITEMS
 
 ** Item List

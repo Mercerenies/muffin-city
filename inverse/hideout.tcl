@@ -124,18 +124,51 @@ namespace eval Inverse::Hideout {
         On the various tables are situated many varieties of firearms and explosives.\
         Zircon is staring at some of the munitions, seemingly frustrated. Garnet is\
         sitting in the corner of the room on a laptop."
-        # //// Talking to Zircon and Garnet in state `accepted`
         prompt {} {
-            {"Talk to Zircon" {[state get topaz-rescue] eq {met}} reaccept}
+            {"Talk to Zircon" {[state get topaz-rescue] ni {no noticed}} zircon}
+            {"Talk to Garnet" {[state get topaz-rescue] ni {no noticed met}} garnet}
             {"Exit the hideout" yes ::Prison::Forest::reverseCaveExit}
         }
     }
 
-    proc reaccept {} {
-        puts "\"Did you change your mind?\""
+    proc zircon {} {
+        switch [state get topaz-rescue] {
+            met {
+                puts "\"Did you change your mind?\""
+                prompt {} {
+                    {"\"How can I help?\"" yes gunpoint3}
+                    {"\"Goodbye.\"" yes mainRoom}
+                }
+            }
+            accepted {
+                puts "\"Is something wrong?\""
+                prompt {} {
+                    {"\"What am I supposed to do?\"" yes zirconReexplain}
+                    {"\"Nothing.\"" yes mainRoom}
+                }
+            }
+        }
+    }
+
+    proc garnet {} {
+        switch [state get topaz-rescue] {
+            accepted {
+                puts "\"Once Topaz gets back, we'll be more coordinated. We're just\
+                not used to planning operations without him. In the meantime, I'll\
+                be here making sure our secret base stays a secret.\""
+                prompt {} {
+                    {"\"Alright.\"" yes mainRoom}
+                }
+            }
+        }
+    }
+
+    proc zirconReexplain {} {
+        puts "\"You need to go back to the reeducation facility and fail all of\
+        your classes. When you get to the basement, Cinnabar will be waiting for\
+        you. Create a diversion and get Topaz to safety with Cinnabar's help.\""
         prompt {} {
-            {"\"How can I help?\"" yes gunpoint3}
-            {"\"Goodbye.\"" yes mainRoom}
+            {"\"Will do.\"" yes mainRoom}
         }
     }
 
