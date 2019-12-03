@@ -101,8 +101,72 @@ namespace eval Inverse::Deluxe {
     }
 
     proc unrealized {} {
-        # ////
-        return -gameover
+        puts "\"I'm Topaz. Is it your first time here?\""
+        prompt {} {
+            {"\"Yeah.\"" yes unrealized1}
+        }
+    }
+
+    proc unrealized1 {} {
+        puts "\"In that case, good luck. This dark fog seems to sap the life out of\
+        you over time. It definitely isn't natural. I think there's someone else in\
+        this room, but I can't really tell. If there is, then they're quiet. Eerily\
+        quiet.\""
+        prompt {} {
+            {"\"Can we get out of here?\"" yes unrealized2}
+        }
+    }
+
+    proc unrealized2 {} {
+        puts "\"I don't know-\""
+        puts "Topaz can scarcely finish his sentence when a massive burst of red light\
+        smashes the back wall of the room. The dark fog blinding your vision fades as\
+        sunlight bursts into the room, and a young woman with bright red skin marches\
+        in."
+        puts "\"Let's go!\""
+        prompt {} {
+            {"Flee the scene" yes unrealized3}
+        }
+    }
+
+    proc unrealized3 {} {
+        puts "As you and Topaz make a motion to escape, a tall dark-haired gentleman\
+        with cold eyes emerges from the darkness, carrying a bronze walking cane.\
+        Without a word, he raises his cane, and the room begins to darken again.\
+        The red-skinned woman reacts immediately and begins projecting beams of\
+        red light at the gentleman. Topaz looks at you."
+        puts "\"She'll be fine. She can hold her own. We need to go.\""
+        prompt {} {
+            {"Follow Topaz" yes unrealized4}
+        }
+    }
+
+    proc unrealized4 {} {
+        puts "The two of you sneak around the back of the school and notice Carl's bus\
+        just leaving."
+        puts "\"We need to catch that bus! Come on!\""
+        puts "You and Topaz break into a run and manage to latch onto the back of the\
+        bus at the last moment, seemingly unnoticed. The bus ride is seemingly longer\
+        on the back than inside, but eventually the bus arrives back in the city."
+        puts "\"Listen. I know a place we can hide out. There's a cave just on\
+        the edge of town. Meet me there, and I'll explain.\""
+        puts "Topaz runs off as the bus slows to a stop."
+        if {[state get topaz-rescue] eq {met}} then {
+            state put topaz-rescue rescuedmet
+        } else {
+            state put topaz-rescue rescuedunmet
+        }
+        state put cave-hideout yes
+        prompt {} {
+            {"Dismount the bus" yes unrealized5}
+        }
+    }
+
+    proc unrealized5 {} {
+        puts "As the regular passengers are stepping off the bus, you dismount the back.\
+        Once the bus is empty, Carl steps back inside and drives off, leaving you alone."
+        puts {}
+        return ::Inverse::District::education
     }
 
 }

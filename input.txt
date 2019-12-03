@@ -157,7 +157,7 @@ state put first-period-pass no
 con
 state put second-period-pass no
 con
-state put topaz-rescue accepted
+state put topaz-rescue met
 con
 state put cave-hideout yes
 3

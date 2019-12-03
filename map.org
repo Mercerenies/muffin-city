@@ -900,6 +900,11 @@
 **** realized4
 **** realized5
 **** unrealized
+**** unrealized1
+**** unrealized2
+**** unrealized3
+**** unrealized4
+**** unrealized5
 * ITEMS
 
 ** Item List
@@ -1759,6 +1764,10 @@
      escape the facility while Cinnabar stays back. The game moves to
      ~rescued~ and the player is deposited at the education district.
 **** rescued
+     ///// (Need to make sure the introduction is different in this and the next two cases)
+**** rescuedmet
+     ////
+**** rescuedunmet
      ////
 ** Item / Money States
 *** ~stolen-good~
