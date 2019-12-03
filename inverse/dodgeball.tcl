@@ -128,11 +128,14 @@ namespace eval Inverse::Dodgeball {
             0 {
                 # F
                 puts "\"You failed all of your classes. That's an F. I'm afraid you\
-                need the Robot King's deluxe reeducation. Come with me.\""
-                # ////
-                puts "(Debug note: Deluxe reeducation has not been programmed yet)"
-                state put school-period third1
+                need the Robot King's deluxe reeducation. Please wait outside and\
+                I'll be with you in a moment.\""
+                state put school-period first
                 state put authorized-to-bus no
+                # //// What happens if you've already rescued Topaz?
+                prompt {} {
+                    {"Head outside" yes ::Inverse::School::northWaiting}
+                }
             }
             1 {
                 # C
@@ -140,6 +143,9 @@ namespace eval Inverse::Dodgeball {
                 you'll have to stay here and do it again. Classes will start anew soon.\""
                 state put school-period third1
                 state put authorized-to-bus no
+                prompt {} {
+                    {"Exit the classroom" yes ::Inverse::School::north}
+                }
             }
             2 {
                 # B
@@ -148,6 +154,9 @@ namespace eval Inverse::Dodgeball {
                 bus whenever you're ready to go.\""
                 state put school-period third1
                 state put authorized-to-bus yes
+                prompt {} {
+                    {"Exit the classroom" yes ::Inverse::School::north}
+                }
             }
             3 {
                 if {([state get first-period-pass] eq {yes}) &&
@@ -163,6 +172,9 @@ namespace eval Inverse::Dodgeball {
                     state put school-flying-colors passed
                     state put school-period third1
                     state put authorized-to-bus yes
+                    prompt {} {
+                        {"Exit the classroom" yes ::Inverse::School::north}
+                    }
                 } else {
                     # B
                     puts "\"So you passed all three classes. I give you a B. That means\
@@ -170,11 +182,11 @@ namespace eval Inverse::Dodgeball {
                     bus whenever you're ready to go.\""
                     state put school-period third1
                     state put authorized-to-bus yes
+                    prompt {} {
+                        {"Exit the classroom" yes ::Inverse::School::north}
+                    }
                 }
             }
-        }
-        prompt {} {
-            {"Exit the classroom" yes ::Inverse::School::north}
         }
     }
 

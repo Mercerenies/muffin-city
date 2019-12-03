@@ -52,6 +52,17 @@ namespace eval Inverse::School {
         }
     }
 
+    proc northWaiting {} {
+        puts "=~ School Hall - North =~"
+        # //// (Same description as above, basically)
+        prompt {} {
+            {"Walk down the hallway" yes northCaught}
+            {"Enter the bathroom" yes northCaught}
+            {"Go to the cafeteria" yes northCaught}
+            {"Wait patiently for Todd" yes northWaited}
+        }
+    }
+
     proc dorms {} {
         puts "=~ Dormitories ~="
         # ////
@@ -268,6 +279,28 @@ namespace eval Inverse::School {
         puts "\"See you in class!\""
         prompt {} {
             {"Step off the bus" yes innerGate}
+        }
+    }
+
+    proc northWaited {} {
+        puts "Several other students exit the classroom, and after some time Todd\
+        steps out as well. He presses a button on his computer, and a hidden\
+        passage in the wall opens up."
+        puts "\"They're waiting for you downstairs. Please go on in.\""
+        prompt {} {
+            {"Enter the passage" yes ::Inverse::Deluxe::entry}
+        }
+    }
+
+    proc northCaught {} {
+        puts "You make a move to leave, but Todd steps out a moment too soon and\
+        stops you."
+        puts "\"I'm afraid the deluxe reeducation is not optional.\""
+        puts "Todd presses a button on his computer, and a hidden passage in the\
+        wall opens up."
+        puts "\"They're waiting for you downstairs. Please go on in.\""
+        prompt {} {
+            {"Enter the passage" yes ::Inverse::Deluxe::entry}
         }
     }
 

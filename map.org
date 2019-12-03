@@ -826,6 +826,7 @@
 **** innerGate
 **** south
 **** north
+**** northWaiting
 **** dorms
 **** bathroom
 **** cafeteria
@@ -842,6 +843,8 @@
 **** busFun
 **** busNo
 **** busDepart
+**** northWaited
+**** northCaught
 *** [Class]
 **** seat
 **** firstPeriod
@@ -885,6 +888,18 @@
 **** zircon
 **** garnet
 **** zirconReexplain
+*** [Deluxe]
+**** entry
+**** topOfStairs
+**** lanternFailed
+**** downstairs
+**** realized
+**** realized1
+**** realized2
+**** realized3
+**** realized4
+**** realized5
+**** unrealized
 * ITEMS
 
 ** Item List
@@ -1727,8 +1742,24 @@
      (after getting a grade of B or better), the game moves to
      ~noticed~.
 **** noticed
+     Zircon and Garnet have noticed the player. When he next enters
+     the inverse city plaza for any reason, Zircon will sneak out and
+     grab the player. He then has no choice from here except to follow
+     him to their secret hideout, at which time, after a brief
+     introduction, the game moves to ~met~.
 **** met
+     Zircon and Garnet have introduced themselves. Zircon will
+     subsequently ask for the player's help rescuing Topaz. When he
+     accepts the quest, the game moves to ~accepted~.
 **** accepted
+     Zircon has tasked the player with rescuing Topaz. He must fail
+     all of his classes at the reeducation facility, at which time he
+     will be taken to the deluxe reeducation in the basement. Cinnabar
+     and the player will rescue Topaz together, and the two will
+     escape the facility while Cinnabar stays back. The game moves to
+     ~rescued~ and the player is deposited at the education district.
+**** rescued
+     ////
 ** Item / Money States
 *** ~stolen-good~
 **** {}
