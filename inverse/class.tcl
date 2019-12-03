@@ -132,7 +132,7 @@ namespace eval Inverse::Class {
             }
             5 {
                 puts "\"You got a perfect score! Congratulations!\""
-                state put first-period-pass yes
+                state put first-period-pass partial
             }
         }
         state put school-period first1
@@ -208,7 +208,7 @@ namespace eval Inverse::Class {
             }
             4 {
                 puts "\"Very good! That sounded perfect!\""
-                state put second-period-pass yes
+                state put second-period-pass partial
             }
         }
         state put school-period second1
