@@ -887,7 +887,18 @@
 **** mainRoom
 **** zircon
 **** garnet
+**** topaz
+**** garnetCap
 **** zirconReexplain
+**** reunion
+**** reunion1
+**** reunionMet
+**** reunionUnmet
+**** reunionUnmet1
+**** reunionMeeting
+**** reunionMeeting1
+**** reunionMeeting2
+**** reunionMeeting3
 *** [Deluxe]
 **** entry
 **** topOfStairs
@@ -1745,13 +1756,18 @@
      The quest to rescue Topaz from the clutches of the Robot King has
      not yet begun. When the player leaves the school day on the bus
      (after getting a grade of B or better), the game moves to
-     ~noticed~.
+     ~noticed~. In this state, if the player is taken to the deluxe
+     reeducation facility, he will semi-accidentally rescue Topaz, and
+     the game will move to ~rescuedunmet~.
 **** noticed
      Zircon and Garnet have noticed the player. When he next enters
      the inverse city plaza for any reason, Zircon will sneak out and
      grab the player. He then has no choice from here except to follow
      him to their secret hideout, at which time, after a brief
-     introduction, the game moves to ~met~.
+     introduction, the game moves to ~met~. Like in the case of ~no~,
+     if the player is taken to the deluxe reeducation facility in this
+     state, he will rescue Topaz inadvertently, and the game will move
+     in this case to ~rescuedmet~.
 **** met
      Zircon and Garnet have introduced themselves. Zircon will
      subsequently ask for the player's help rescuing Topaz. When he
@@ -1764,11 +1780,24 @@
      escape the facility while Cinnabar stays back. The game moves to
      ~rescued~ and the player is deposited at the education district.
 **** rescued
-     ///// (Need to make sure the introduction is different in this and the next two cases)
+     The player has rescued Topaz and has been instructed to return to
+     the cave. Upon doing so, the team will convene briefly and have a
+     meeting, after which the game will move to ~yes~.
 **** rescuedmet
-     ////
+     The player has rescued Topaz and has been instructed to return to
+     the cave. Upon doing so, the team will convene briefly and have a
+     meeting, after which the game will move to ~yes~. The dialogue is
+     slightly different, as the player has not officially accepted the
+     quest to rescue Topaz, but the result is the same.
 **** rescuedunmet
-     ////
+     The player has rescued Topaz and has been instructed to return to
+     a secret hideout belonging to him. Upon doing so, he will be
+     introduced to the rebellion group, who will convene briefly and
+     have a meeting, after which the game will move to ~yes~.
+**** yes
+     The player has rescued Topaz and been introduced to the rebellion
+     organization. //// Where are Zircon and Cinnabar now? They have
+     no physical presence on the map as of right now.
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -2260,6 +2289,9 @@
 *** ~school-flying-colors~
 **** no
 **** passed
+*** ~escape-debriefed~
+**** no
+**** yes
 * CHARACTERS
 
 ** The Robber

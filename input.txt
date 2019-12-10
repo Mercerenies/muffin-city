@@ -157,9 +157,11 @@ state put first-period-pass no
 con
 state put second-period-pass no
 con
-state put topaz-rescue met
+state put topaz-rescue yes
 con
 state put cave-hideout yes
+con
+state put escape-debriefed yes
 3
 2
 3
@@ -172,16 +174,3 @@ state put cave-hideout yes
 1
 4
 2
-3
-2
-1
-1
-1
-1
-2
-1
-4
-1
-1
-3
-1

@@ -126,6 +126,7 @@ namespace eval State {
         school-flying-colors no
         topaz-rescue no
         cave-hideout no
+        escape-debriefed no
     }]
 
     proc get {args} {
