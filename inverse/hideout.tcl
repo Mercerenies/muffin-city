@@ -212,6 +212,7 @@ namespace eval Inverse::Hideout {
                             {"\"What about the Mesmerist?\"" yes reconMesmerist}
                             {"\"Can I research Hex?\"" yes reconHex}
                             {"\"I'll look into the Bouncer.\"" yes reconBouncer}
+                            {"\"I lost my Shower Cap.\"" {![inv has {Shower Cap}]} garnetExtraCap}
                             {"\"Not right now.\"" yes mainRoom}
                         }
                     }
@@ -237,6 +238,14 @@ namespace eval Inverse::Hideout {
         return mainRoom
     }
 
+    proc garnetExtraCap {} {
+        puts "\"No problem. Here's another.\""
+        puts "You got the Shower Cap!"
+        inv add {Shower Cap}
+        puts {}
+        return mainRoom
+    }
+
     proc zirconReexplain {} {
         puts "\"You need to go back to the reeducation facility and fail all of\
         your classes. When you get to the basement, Cinnabar will be waiting for\
@@ -247,7 +256,25 @@ namespace eval Inverse::Hideout {
     }
 
     proc reconIntro {} {
-        puts "\"Sounds good! We have five major known adversaries: The Robot King, the\
+        puts "\"Sounds good! If you're going to be doing recon work, you'll need one\
+        of these shower caps. Normally, servants of the Robot King won't talk to you\
+        unless you're hypnotized or at the reeducation facility. But the fabric in\
+        this cap is specifically designed to confuse them. They'll think you're\
+        one of them and talk to you normally.\""
+        puts "You got the Shower Cap!"
+        inv add {Shower Cap}
+        # //// Shower Cap does nothing right now.
+        # //// Robot King, Mesmerist, and school don't respond to it right now either.
+        puts "\"Just one word of warning. The Robot King and the Mesmerist won't be\
+        fooled by the cap, and if you go to the reeducation facility they'll confiscate\
+        it. If that happens, just come talk to me. We have plenty of extras.\""
+        prompt {} {
+            {"\"Okay.\"" yes reconIntro1}
+        }
+    }
+
+    proc reconIntro1 {} {
+        puts "\"Alright. We have five major known adversaries: The Robot King, the\
         Mesmerist, Hex, the Bouncer, and Midnight. I'm researching Midnight right now,\
         but you can take any of the other four you want.\""
         state put king-war understood

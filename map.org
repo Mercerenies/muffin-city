@@ -889,8 +889,10 @@
 **** garnet
 **** topaz
 **** garnetCap
+**** garnetExtraCap
 **** zirconReexplain
 **** reconIntro
+**** reconIntro1
 **** reconRobot
 **** reconMesmerist
 **** reconHex
@@ -968,6 +970,7 @@
  + Ritzy Inn Meal Voucher
  + Strange Business Card
  + Evil Business Card
+ + Shower Cap
 
 ** Money Sources / Sinks
 
@@ -3285,7 +3288,7 @@
    (which works on the player but doesn't exactly have the intended
    effect). The player may have to stop her at some point. With a
    soccer game, perhaps? I don't know.
-** CONSIDERING In the Shadows
+** ACCEPTED In the Shadows
    An assassin who can literally disappear into people's shadows.
    Like, he just falls into the shadow and then can stay in their
    shadow until later, when he pops out and kills them. Perhaps he's
@@ -3298,6 +3301,16 @@
 
    Assassin party at a mansion? Idk. Also, he might have a
    "girlfriend"?
+** ACCEPTED The Drawbridge
+   Most players, when confronted with the Robot King's city, will go
+   straight for the castle, as it's likely to be the most
+   exciting-seeming area (when you're choices are "the shopping mall",
+   "the library", and "the evil king's castle", which one sounds the
+   most exciting?). To circumvent this and make sure the player sees
+   the Robot King's oppression before encountering him, we could have
+   a drawbridge blocking you from the castle. The drawbridge will
+   lower once you talk to anyone in the city. Really, anyone. Just so
+   you see what's going on before meeting him.
 * MISCELLANEOUS
 
 ** Test
