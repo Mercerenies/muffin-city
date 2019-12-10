@@ -890,6 +890,11 @@
 **** topaz
 **** garnetCap
 **** zirconReexplain
+**** reconIntro
+**** reconRobot
+**** reconMesmerist
+**** reconHex
+**** reconBouncer
 **** reunion
 **** reunion1
 **** reunionMet
@@ -1798,6 +1803,20 @@
      The player has rescued Topaz and been introduced to the rebellion
      organization. //// Where are Zircon and Cinnabar now? They have
      no physical presence on the map as of right now.
+*** The Second Great Robot War (~king-war~)
+**** no
+     The player has not accepted Garnet's request for information yet.
+     In order to do so, he must have successfully rescued Topaz
+     (~topaz-rescue~ is ~yes~) and have been debriefed regarding the
+     rescue (~escape-debrief~ is ~yes~). Then, upon talking to Garnet,
+     he may request work in the rebellion, at which time the game
+     moves to ~understood~.
+**** understood
+     Garnet has debriefed the player on the Robot King's primary
+     allies. He now has the option to try to learn about each of them.
+     He can talk to Garnet to accept any of these quests.
+
+     //// Obviously not done
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -2337,6 +2356,7 @@
 ** Arthur Miles
 ** The Man in the Trenchcoat
 ** The Bouncer
+** Midnight
 * NOTES
 
 ** DONE Cave and Lantern

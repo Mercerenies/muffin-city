@@ -197,9 +197,24 @@ namespace eval Inverse::Hideout {
                 }
             }
             rescued - rescuedmet - rescuedunmet - yes {
-                puts "\"Hey, what's up?\""
-                prompt {} {
-                    {"\"Nothing right now.\"" yes mainRoom}
+                switch [state get king-war] {
+                    no {
+                        puts "\"Hey, what's up?\""
+                        prompt {} {
+                            {"\"I'm looking for recon work.\"" {[state get escape-debriefed] eq {yes}} reconIntro}
+                            {"\"Nothing right now.\"" yes mainRoom}
+                        }
+                    }
+                    understood {
+                        puts "\"Want to talk about intel?\""
+                        prompt {} {
+                            {"\"The Robot King?\"" yes reconRobot}
+                            {"\"What about the Mesmerist?\"" yes reconMesmerist}
+                            {"\"Can I research Hex?\"" yes reconHex}
+                            {"\"I'll look into the Bouncer.\"" yes reconBouncer}
+                            {"\"Not right now.\"" yes mainRoom}
+                        }
+                    }
                 }
             }
         }
@@ -229,6 +244,39 @@ namespace eval Inverse::Hideout {
         prompt {} {
             {"\"Will do.\"" yes mainRoom}
         }
+    }
+
+    proc reconIntro {} {
+        puts "\"Sounds good! We have five major known adversaries: The Robot King, the\
+        Mesmerist, Hex, the Bouncer, and Midnight. I'm researching Midnight right now,\
+        but you can take any of the other four you want.\""
+        state put king-war understood
+        prompt {} {
+            {"\"How about the Robot King?\"" yes reconRobot}
+            {"\"I can look into the Mesmerist.\"" yes reconMesmerist}
+            {"\"Who is Hex?\"" yes reconHex}
+            {"\"What about the Bouncer?\"" yes reconBouncer}
+        }
+    }
+
+    proc reconRobot {} {
+        # ////
+        return {::Empty::back ::Inverse::Hideout::mainRoom}
+    }
+
+    proc reconMesmerist {} {
+        # ////
+        return {::Empty::back ::Inverse::Hideout::mainRoom}
+    }
+
+    proc reconHex {} {
+        # ////
+        return {::Empty::back ::Inverse::Hideout::mainRoom}
+    }
+
+    proc reconBouncer {} {
+        # ////
+        return {::Empty::back ::Inverse::Hideout::mainRoom}
     }
 
     proc reunion {} {

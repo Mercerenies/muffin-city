@@ -127,6 +127,7 @@ namespace eval State {
         topaz-rescue no
         cave-hideout no
         escape-debriefed no
+        king-war no
     }]
 
     proc get {args} {
