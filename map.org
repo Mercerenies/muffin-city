@@ -2325,7 +2325,7 @@
 ** Shabby Jack
 ** Carl the Employee
 ** The Butler
-** Pawnbroker
+** Pawnbroker / Collector
 ** Merchant-bot
 ** Todd the Office Worker
 ** Attorney-Man
@@ -3311,6 +3311,62 @@
    a drawbridge blocking you from the castle. The drawbridge will
    lower once you talk to anyone in the city. Really, anyone. Just so
    you see what's going on before meeting him.
+** CONSIDERING Hint System
+   Something I've been thinking about for awhile but haven't written
+   down.
+
+   Muffins are hard to find. Some of them are stupidly hard to find.
+   Once you get to the console room, we could have an area there where
+   you can pay in, say, hint tokens, to get hints as to the locations
+   of muffins on the map. Hint tokens could be obtained as optional
+   conveniences throughout the map or maybe just automatically given
+   the more areas of the map you explore.
+** CONSIDERING Muffin Naming
+   Right now, the muffin names don't have a lot to do with the muffins
+   themselves. While it's cool and all to use "real" muffin names, I
+   honestly don't feel like the names are doing that much good. I
+   still remember the Banana Nut Muffin as "the judge's muffin", so
+   what if we changed the official names to be the more memorable ones.
+
+   + Banana Nut Muffin -> Judge's Muffin
+   + Maple Muffin -> Waterlogged Muffin
+   + Apple Pecan Muffin -> Baker's Muffin
+   + Cream Cheese Muffin -> Mercury Muffin
+   + Mango Muffin -> Despair Muffin (?)
+   + Blueberry Muffin -> Second Class Muffin (?)
+** CONSIDERING The Endgame
+   Okay, this is a big one, and it could change the framing device of
+   the game a bit.
+
+   So the original plan for the game was: collect all of the muffins
+   and bring them to the console room to win. But let's be honest.
+   Collecting all of the muffins is a daunting task. Lots of players
+   will get almost all the way to the end but won't be able to find
+   them all at that rate.
+
+   So here's my very tentative alternate pitch. Wordsmith is the
+   closest thing this game has to an overarching plot (introduced very
+   early on, only resolved at the end), so we make that official. We
+   make the official goal of the game "collect the Supreme Muffin".
+   Then Man in the Trenchcoat hints very heavily that the Supreme
+   Muffin will be given to whoever defeats the Wordsmith. You've
+   "beaten" the game when you collect the Supreme Muffin. The other
+   muffins are still definitely worth something, and there could be a
+   postgame where you bring the other muffins to the console room to
+   get extra points. 100% completion would be given by getting all of
+   the muffins to the console room. So, basically, take the original
+   pitch of the game and make it be considered 100% completion, and
+   add a new, easier objective to be considered beating the game.
+** CONSIDERING Wordsmith's Muffin
+   So, whether or not we take the above suggestion, the Wordsmith will
+   obviously lead to a muffin (possibly the Supreme Muffin). But how?
+   The player will likely need Atheena's help to defeat the Wordsmith.
+   Maybe she travels back to her own time somehow and stops him
+   personally, staying in the medieval era afterwards. She finds the
+   (Supreme?) muffin of her own accord and shares its location with a
+   trusted ally, who coincidentally is Dr. Louis' ancestor. When the
+   player returns to Dr. Louis later, she tells him of this tale,
+   passed down through the ages.
 * MISCELLANEOUS
 
 ** Test
