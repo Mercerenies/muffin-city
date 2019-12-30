@@ -2524,6 +2524,7 @@
    in the present.
  + [ ] Trenchcoat Man's Business Card does nothing right now. (see
    below)
+ + [ ] ... ... ... Persimmons
 ** CONSIDERING The Flaming Axe
  + The Flaming Axe of Doom was used by the First Reaper to carve out
    the Underworld before time itself. Possibly, we can visit this
@@ -3367,6 +3368,26 @@
    trusted ally, who coincidentally is Dr. Louis' ancestor. When the
    player returns to Dr. Louis later, she tells him of this tale,
    passed down through the ages.
+** CONSIDERING Assassination Party
+   A party at some mansion (reachable by bus) where assassins get
+   together and meet to try to kill each other for fun. You get there
+   by running into some assassin by chance who invites you there.
+
+   Assassins:
+   + Midnight (can conceal himself in one's shadow)
+   + Unnamed contortionist (can fit into backpacks and briefcases of
+     any size)
+   + Unnamed female assassin (specializes in using valuable gemstones
+     and crystals to commit murder)
+** CONSIDERING The Hotel of Seasons
+   In the inverse world, maybe one of the floors of the tower takes
+   you to a hotel, where you can get into four different swimming
+   pools, each one taking you to the same beachside hotel but in a
+   different season. So, overall, you get to see it at four different
+   times in the same year. All of the same people are there, and
+   causality is flimsy in that area. Would give us a chance to have a
+   lot more characters show up in the inverse world who aren't there
+   right now.
 * MISCELLANEOUS
 
 ** Test
