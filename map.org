@@ -3231,6 +3231,17 @@
    which sends you either forward in time or to another world or
    something, where there's an evil tyrant in place and everything is
    evil.
+
+   Possibly multiple black holes?
+   + One takes you to a future world where there's an evil tyrant in
+     place. You have to stop him. Possibly show Joe in the future or
+     something (before going crazy, of course). Or maybe we're not
+     that far into the future.
+   + One takes you to the Hotel of Seasons (see below). You crash into
+     the top floor, from which you can access all of the seasons.
+     Perhaps the elevator key that takes you to this floor is only
+     accessible /inside/ the hotel, hence having to come this way
+     first.
 ** CONSIDERING Cursed Artifact Shop
    In the parallel world? Maybe a cursed artifact shop? Could sell
    cursed objects, like a Cursed Business Card, and other stuff.
@@ -3388,6 +3399,25 @@
    causality is flimsy in that area. Would give us a chance to have a
    lot more characters show up in the inverse world who aren't there
    right now.
+** CONSIDERING Young Love
+   Heavily related to Hotel of Seasons above. So in the inverse world,
+   a young teenage couple does something slightly dangerous. The boy's
+   father works for the government and developed a portable time
+   travel device, so the couple steals this device for a bit of fun.
+   Unfortunately, both the government and several enemy spies begin to
+   pursue them. They flee to the hotel mentioned above and use time
+   travel to evade their captors. Unfortunately, doing so somehow gets
+   the hotel's timeline caught in a loop. No one inside ages or can
+   leave, and the same year repeats itself forever. The player must
+   help them undo the changes they made to the timeline that created
+   this loop. Nobody else in the hotel even knows anything is wrong;
+   they all just stay there blindly. Only the couple and the spies
+   recognize a problem, and the spies are too busy trying to steal the
+   time machine to worry about it.
+
+   In the regular world, the father (Dr. Harris?) may be from a
+   partner lab to Dr. Louis' and may come to visit at some point. Not
+   sure where his son or his son's girlfriend are in this world.
 * MISCELLANEOUS
 
 ** Test
