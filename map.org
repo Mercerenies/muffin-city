@@ -3242,6 +3242,8 @@
      Perhaps the elevator key that takes you to this floor is only
      accessible /inside/ the hotel, hence having to come this way
      first.
+   + One takes you to a fractal version of the prison area, where
+     physics doesn't necessarily apply normally.
 ** CONSIDERING Cursed Artifact Shop
    In the parallel world? Maybe a cursed artifact shop? Could sell
    cursed objects, like a Cursed Business Card, and other stuff.
