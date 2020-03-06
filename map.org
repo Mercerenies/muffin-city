@@ -2489,6 +2489,8 @@
    hints once he has X muffins.
 ** ACCEPTED Crispy Joe
    Crispy Joe's Sandwich Shop...? (Prehistory?)
+   + Is this the same Joe as Necromancer Joe? Hiding out in prehistory
+     after he fled the future and crashed a time machine in the past?
 ** CONSIDERING The Prehistoric Maze
    Prehistory contains a grocery store with a labyrinth underneath it.
    At the base of the labyrinth (explorable by subspace map? what if
@@ -2562,6 +2564,8 @@
 ** CONSIDERING The Twins
  + Twins: the mailman and the taxman. Taxman collects a silver coin at
    some point for tax purposes. Mailman... I dunno, delivers mail?
+   - Perhaps the mailman / postman is involved in delivering the
+     mannequin for the Arachnarok subplot.
 ** DONE Turn-Based Combat
    Turn-based RPG-style combat for Joe and Merchant-bot
 ** DONE Johnny's Souls
@@ -2731,6 +2735,7 @@
    one task, the player has to get the item in the mirror room by
    luring the monster out. Separately, as another task, he has to get
    to the bottom of the factory's evil intentions.
+   + Is the guy Billy from the inverse world's necromancy plotline?
 ** CONSIDERING Shark Attack
    So, there's this empty area between the warehouse docks and the
    merfolk kingdom. If you wander around there blindly, a shark will
@@ -2915,6 +2920,12 @@
    What if this happens to Dr. Cipher's (or Joe's) Certificate in the
    inverse world, rather than having regular Dr. Cipher's Certificate
    stolen twice in rapid succession?
+
+   Oooohh boy... what if this is in the inverse world. But not just
+   the inverse world: the beachside resort. Think about it. A couple
+   of kids are messing with a time machine, and at the same time, this
+   woman is manipulating the fabric of reality with the stolen
+   Certificate. It's the perfect storm for a time loop.
 ** ACCEPTED Star of the Show
    At some point, a major villain (potentially the wizard from
    Atheena's past) will harness the power of a distant star and try to
@@ -3054,7 +3065,9 @@
 ** CONSIDERING Below the Bottom of the Sea
    What's below the bottom? I'm thinking that you can fire the pirate
    cannon and it will blow a hole in one of the merfolk homes. But
-   where does that hole lead? The parallel world perhaps?
+   where does that hole lead? The parallel world perhaps? Or maybe the
+   prehistoric pyramid? You know, just a random portal through time at
+   the bottom of the ocean... nothing to see here.
 ** CONSIDERING Twin Studies
    So we already know the aliens are experimenting on humans. How
    about this?
@@ -3119,7 +3132,10 @@
    + Science - Maybe Science also made his deal with Johnny. But since
      his wish was so much greater scope than the others, Johnny just
      went ahead and claimed his soul immediately to teach him a
-     lesson.
+     lesson. Or perhaps Science made his deal, and Johnny accepted,
+     thinking the sheer knowledge would overwhelm him. But when
+     Science was actually happy with the result, the Reaper became
+     infuriated and claimed Science's soul as retribution.
 ** ACCEPTED Attorney-Man's Reward
    So, whether or not we accept this idea, Attorney-Man needs a
    reward. He literally has none right now.
@@ -3160,8 +3176,10 @@
 
    People
    + Bouncer
-   + To-Be-Named Gullible Guy (ends up unknowingly working for Grigory's agency)
-   + Shadow assassin
+   + To-Be-Named Gullible Guy (ends up unknowingly working for
+     Grigory's agency)
+   + Shadow assassin (called Midnight in the inverse world, maybe here
+     too)
    + ???
 
 ** DONE First Time Visitor
@@ -3213,7 +3231,7 @@
    In the other world, he's in town for a secret underground
    over-the-top hacking contest which takes place in a wrestling ring.
    His hacker name is, of course, the Cryptographer (or Cryptologist,
-   or Cryptanalyst, one of three.
+   or Cryptanalyst, one of the three).
 
    His opponent is Steve's counterpart in the parallel world: codename
    Lady Lock. After a dramatic introduction, the two will play out
@@ -3224,6 +3242,10 @@
    of the contest, both will go back to their respective areas. The
    winner will offer to give you part of the prize (Religious
    Artifact?), and the loser will give you a Cryptic Business Card.
+   + Is this happening in the beachside resort? It would explain why
+     they keep doing it over and over again. And you may even be able
+     to get them both to win. Ya know, if it's happening every six
+     months or something (twice in the infinite year of the resort).
 ** CONSIDERING Black Holes
    So at some point on the moon, you steal / hijack / are given a
    spaceship (not sure which). You can fly it to the aliens' home
@@ -3392,6 +3414,8 @@
      any size)
    + Unnamed female assassin (specializes in using valuable gemstones
      and crystals to commit murder)
+   + The Referee (retired from assassination but manages the assassin
+     party now)
 ** CONSIDERING The Hotel of Seasons
    In the inverse world, maybe one of the floors of the tower takes
    you to a hotel, where you can get into four different swimming
