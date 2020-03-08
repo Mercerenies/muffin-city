@@ -798,6 +798,7 @@
 **** market
 **** marketBot
 **** marketSteal
+**** elevator
 *** [Castle]
 **** entrance
 **** parlor

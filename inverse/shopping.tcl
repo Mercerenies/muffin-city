@@ -36,4 +36,18 @@ namespace eval Inverse::Shopping {
         return ::Underworld::Pits::mysteryRoom
     }
 
+    proc elevator {} {
+        puts "=~ Elevator Shaft ~="
+        puts "Upon closer inspection, the elevator shaft seems to have\
+        been filled with concrete and likely hasn't been used in some\
+        time."
+        prompt {} {
+            {"Go back" yes ::Inverse::District::shopping}
+        }
+    }
+
+    proc collector {} {
+
+    }
+
 }
