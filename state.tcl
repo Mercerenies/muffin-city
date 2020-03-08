@@ -128,6 +128,7 @@ namespace eval State {
         cave-hideout no
         escape-debriefed no
         king-war no
+        drawbridge-down no
     }]
 
     proc get {args} {

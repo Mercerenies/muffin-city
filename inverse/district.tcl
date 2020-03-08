@@ -44,10 +44,22 @@ namespace eval Inverse::District {
 
     proc castle {} {
         puts "=~ Castle District ~="
-        # ////
+        if {[state get drawbridge-down] eq {no}} then {
+            puts "Compared to the relative normalcy of the rest of\
+            the city, the massive traditional castle stands in stark contrast\
+            in the middle of the city. Unfortunately, the castle is surrounded by\
+            a large moat, and the drawbridge, seemingly the only viable entrance,\
+            is raised."
+        } else {
+            puts "Compared to the relative normalcy of the rest of\
+            the city, the massive traditional castle stands in stark contrast\
+            in the middle of the city. The castle is surrounded by a large moat,\
+            but the drawbridge seems to be lowered and the front entrance unguarded."
+        }
         prompt {} {
             {"Go back to the plaza" yes entrance}
-            {"Enter the castle" yes ::Inverse::Castle::entrance}
+            {"Enter the castle" {[state get drawbridge-down] eq {yes}} ::Inverse::Castle::entrance}
+            {"Dive into the moat" yes moat}
         }
     }
 
@@ -75,7 +87,13 @@ namespace eval Inverse::District {
         puts "After a moment, you pass out."
         puts {}
         return ::Underworld::Pits::mysteryRoom
+    }
 
+    proc moat {} {
+        puts "You dive into the moat headfirst."
+        # //// Does this do something different with the Scuba Suit?
+        puts {}
+        return ::Underworld::Pits::mysteryRoom
     }
 
 }

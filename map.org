@@ -793,6 +793,7 @@
 **** castle
 **** sleepDeath
 **** sleepDeath1
+**** moat
 *** [Shopping]
 **** market
 **** marketBot
@@ -2085,6 +2086,14 @@
 *** ~cave-hideout~
 **** no
 **** yes
+*** ~drawbridge-down~
+**** no
+     The drawbridge to the Robot King's lair is not yet down. The
+     player needs to talk to any human in the inverse town, at which
+     time the game moves to ~yes~.
+**** yes
+     The drawbridge is down and the player can enter the Robot King's
+     lair freely.
 ** World States
 *** ~trial-reason~
 **** {}
@@ -3273,7 +3282,7 @@
    Since there's already a state-sponsored shop selling stuff in the
    inverse world, maybe the cursed shop doesn't take actual money. It
    requires odd things in exchange for the items in the shop.
-** CONSIDERING Inverse Tower
+** ACCEPTED Inverse Tower
    So I hadn't actually written this down. But there will probably be
    a tower in the inverse city. It has several floors, accessible by
    different elevators which don't obey the usual notions of "up" and
@@ -3444,6 +3453,19 @@
    In the regular world, the father (Dr. Harris?) may be from a
    partner lab to Dr. Louis' and may come to visit at some point. Not
    sure where his son or his son's girlfriend are in this world.
+** ACCEPTED Inverse City Planning
+   I've had this written down for a bit. Realized I didn't have it
+   here. This is a rough sketch of the inverse city layout.
+   + Education District
+     - Tower (see Inverse Tower above)
+     - School (see Reeducation above)
+   + Shopping District
+     - Robot King's Shop
+     - Cursed Artifact Shop
+     - Collector's Shop
+   + Castle District
+     - Castle and Moat
+   + Dark Cave
 * MISCELLANEOUS
 
 ** Test
@@ -3508,6 +3530,9 @@
        Robot King, the player can be murdered by him by simply saying
        the wrong things.
    + Robot King's Security System
+     - Always available
+     - Paywalled
+   + The Robot King's Moat
      - Always available
      - Paywalled
 ** Next
