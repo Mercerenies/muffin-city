@@ -1357,19 +1357,19 @@
      Dr. Cipher will seem mildly alarmed by something. If the player
      asks what is wrong, Dr. Cipher will explain that his Necromancy
      Certificate has been stolen. The game will then proceed to
-     `spoken`.
+     ~spoken~.
 **** spoken
      The player has been sent to look for the Necromancy Certificate.
      Joe the Time-Traveler will have it at the taco shop in subspace.
      When the player approaches him, Joe will insist that it is a
      family heirloom, not a cursed artifact. If the player presses
-     him, he will not give, but the game will move to `found`.
+     him, he will not give, but the game will move to ~found~.
 **** found
      The player has found the Certificate, but Joe will not give it
      up. The player must return to Dr. Cipher and share his findings.
      When the player tells Dr. Cipher, he will confirm that Joe's
      scroll is in fact the Certificate and tell the player to claim
-     the Certificate at all costs. The game will move to `encouraged`.
+     the Certificate at all costs. The game will move to ~encouraged~.
 **** encouraged
      Having been reassured that Joe definitely has the Certificate,
      the player must confront Joe again. When he does so, Joe will
@@ -1377,7 +1377,7 @@
      Cipher is the villain. The player has the option of buying into
      his story, but it doesn't matter, because either way, Joe will
      decide that the player knows too much. Joe activates the
-     Necromancy Certificate and the game moves to `rising`.
+     Necromancy Certificate and the game moves to ~rising~.
 **** rising
      Joe has activated the Certificate and is summoning the spirits of
      the dead. The player has the option to fight him then and there.
@@ -1385,14 +1385,14 @@
      with Joe, who will proceed to summarily curbstomp him, sending
      the player to the underworld. Instead, if the player visits
      Atheena the Hero, she will offer to help in the fight against
-     Joe, moving the game to `help`.
+     Joe, moving the game to ~help~.
 **** help
      Atheena is at the taco shop waiting to confront Joe with the
      player. The battle will now go much more smoothly, and the player
      and Atheena will win. Joe will be banished to the underworld,
      where Dr. Cipher will see that justice is served. The Necromancy
      Certificate falls into a void which leads to the abyss. Atheena
-     will return to the portal room. The game moves to `beaten`.
+     will return to the portal room. The game moves to ~beaten~.
 **** beaten
      Joe has been defeated, but the Certificate has not been
      recovered. It has fallen into the hands of the Reaper in the
@@ -1400,14 +1400,14 @@
      player either the Black Olive or the Necromancy Certificate. The
      player must choose one (~reaper-has-item~) to take for free. The
      other item will become available after completing a quest for the
-     Reaper. Upon choosing the first item, the game moves to `item`.
+     Reaper. Upon choosing the first item, the game moves to ~item~.
 **** item
      The player has the option to give Dr. Cipher the Certificate, if
      he has it. If the player chose the Olive from the Reaper, he will
      have to wait until he completes the Reaper's quest to get the
      other. Regardless, once the player returns the Certificate, Dr.
      Cipher will give him the Heart Key and the game will move to
-     `yes`.
+     ~yes~.
 **** yes
      Dr. Cipher has the Certificate, Joe has been captured, and the
      player has the Heart Key. Mission accomplished.
@@ -3544,5 +3544,61 @@
    + The Robot King's Moat
      - Always available
      - Paywalled
+** The Butler
+   This section is an attempt to summarize all of the Butler events
+   and the things directly triggered by them.
+*** Butler 0
+    The game begins in this state. The Butler will appear in the
+    player's prison cell when all of the following conditions have
+    been met.
+    + The player has just been arrested and moved to the prison.
+    + The player has been arrested before (~been-to-prison~).
+    + The player has at least one item. (Note that muffins do not
+      count as items)
+    Obviously, since Butler 0 is the starting state of the game, it
+    does not directly trigger any subplots or quests.
+*** Butler 1
+    The player has at least reasonably explored some portion of the
+    starting area. When the game moves to Butler 1, the following
+    opportunities are directly made available by this trigger.
+    + The Butler's gift to the player is information on how to get to
+      the science lab beneath the Ritzy Inn, which opens up the past
+      city and subspace.
+    + Silver Starlight will appear at the cottage.
+    + Harry will ask the player to help him escape from prison.
+
+    The Butler will appear in the (present-day) pawn shop when all of
+    the following conditions are met.
+    + The player has just entered the pawn shop in the present day.
+    + The player has talked to Dr. Louis (~talked-to-louis~).
+    + The player has jumped into the fire pits in the underworld (~jumped-into-fire~).
+*** Butler 2
+    The player has been to the science lab in the Ritzy Inn basement
+    and has been to the underworld at least once. When the game moves
+    to Butler 2, the following are made available.
+    + The Butler gives the player the Fireproof Suit, which opens up
+      the warehouse island area.
+    + Dr. Cipher will allow the player to initiate the Necromancy
+      Certificate quest.
+    + The ship's captain in the dream world will appear by the dock.
+    + The Hatman will appear in the cottage basement.
+
+    The Butler will move to Shabby Jack's Streetside Motel in the
+    past when the following conditions are met.
+    + The player has just entered Shabby Jack's in the past.
+    + The player has the Soul Crystal.
+    + The player has read the note on the warehouse wall
+      (~merchant-war~ is not ~no~).
+    + The player has initiated discussion with Attorney-Man on the
+      island (~attorney-man~ is ~talked1~ or beyond).
+*** Butler 3
+    By this point, the player has initiated three of the major
+    early-game quests: Attorney-Man, the Merchant-bot war, and Johnny
+    Death. When the game moves to Butler 3, the following become
+    available.
+    + The Butler gives the player the Crystal Ball, which allows the
+      player to proceed on Silver Starlight's Pastel Town quest.
+    + The Reaper will now allow the player to recover the cursed chest
+      from the Ancient Minister.
 ** Next
    +Mothka's execution chamber should take you to the other room.+
