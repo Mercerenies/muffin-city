@@ -43,6 +43,7 @@ namespace eval Inverse::District {
             {"Go back to the plaza" yes entrance}
             {"Enter the general market" yes ::Inverse::Shopping::market}
             {"Approach the collector's stand" yes ::Inverse::Shopping::collector}
+            {"Approach the accursed tent" yes ::Inverse::Shopping::cursedShop}
             {"Approach the elevator shaft" yes ::Inverse::Shopping::elevator}
         }
     }

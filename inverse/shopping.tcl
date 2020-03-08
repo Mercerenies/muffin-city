@@ -69,4 +69,26 @@ namespace eval Inverse::Shopping {
         return collector
     }
 
+    proc cursedShop {} {
+        puts "=~ Cursed Artifact Shop ~="
+        puts "Several potions and mysterious occult objects surround the\
+        display of the cursed artifact shop's fearful tent. An old crone\
+        stands behind the displays, hunched over a large cauldron. She\
+        barely seems to notice you."
+        prompt {} {
+            {"Talk to the crone" yes cursedShopTalk}
+            {"Go back outside" yes ::Inverse::District::shopping}
+        }
+    }
+
+    proc cursedShopTalk {} {
+        # //// Shower cap?
+        puts "\"All hail the Robot King!\""
+        puts {}
+        if {[state get drawbridge-down] eq {no}} then {
+            state put drawbridge-down yes
+        }
+        return cursedShop
+    }
+
 }

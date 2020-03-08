@@ -801,6 +801,8 @@
 **** elevator
 **** collector
 **** collectorTalk
+**** cursedShop
+**** cursedShopTalk
 *** [Castle]
 **** entrance
 **** parlor
@@ -2372,6 +2374,7 @@
 ** The Man in the Trenchcoat
 ** The Bouncer
 ** Midnight
+** The Witch / The Crone
 * NOTES
 
 ** DONE Cave and Lantern
@@ -3464,9 +3467,9 @@
    + [-] Education District
      - [ ] Tower (see Inverse Tower above)
      - [X] School (see Reeducation above)
-   + [-] Shopping District
+   + [X] Shopping District
      - [X] Robot King's Shop
-     - [ ] Cursed Artifact Shop
+     - [X] Cursed Artifact Shop
      - [X] Collector's Shop
      - [X] Elevator Shaft
    + [X] Castle District
