@@ -35,12 +35,14 @@ namespace eval Inverse::District {
 
     proc shopping {} {
         puts "=~ Shopping District ~="
-        puts "There are several shops that appear to be open, despite the\
-        eerie silence blanketing the city, as well as a rather unusual elevator\
-        shaft sitting off to the side of the street."
+        puts "Only one brick-and-mortar shop appears to still be operating:\
+        a general market. However, there are several stands and tents beside\
+        the street that appear to be operating, as well as a rather\
+        unusual elevator shaft sitting off to the side of the street."
         prompt {} {
             {"Go back to the plaza" yes entrance}
-            {"Enter the market" yes ::Inverse::Shopping::market}
+            {"Enter the general market" yes ::Inverse::Shopping::market}
+            {"Approach the collector's stand" yes ::Inverse::Shopping::collector}
             {"Approach the elevator shaft" yes ::Inverse::Shopping::elevator}
         }
     }

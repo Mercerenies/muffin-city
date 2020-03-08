@@ -257,6 +257,7 @@ namespace eval Inverse::Castle {
 
     proc julieTalk {} {
         puts "\"All hail the Robot King!\""
+        # //// Shower Cap?
         puts {}
         return julieRoom
     }

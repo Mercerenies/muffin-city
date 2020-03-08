@@ -41,13 +41,32 @@ namespace eval Inverse::Shopping {
         puts "Upon closer inspection, the elevator shaft seems to have\
         been filled with concrete and likely hasn't been used in some\
         time."
+        # //// Does anything more interesting happen here?
         prompt {} {
             {"Go back" yes ::Inverse::District::shopping}
         }
     }
 
     proc collector {} {
+        puts "=~ Collector's Stand ~="
+        puts "There are various exotic ceramics and works of art on\
+        display at the stand, likely all very expensive and valuable\
+        in the right hands. The collector himself stands behind them,\
+        looking a bit shady and staring at you impatiently."
+        prompt {} {
+            {"Talk to the collector" yes collectorTalk}
+            {"Go back outside" yes ::Inverse::District::shopping}
+        }
+    }
 
+    proc collectorTalk {} {
+        # //// Shower cap?
+        puts "\"All hail the Robot King!\""
+        puts {}
+        if {[state get drawbridge-down] eq {no}} then {
+            state put drawbridge-down yes
+        }
+        return collector
     }
 
 }

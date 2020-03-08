@@ -799,6 +799,8 @@
 **** marketBot
 **** marketSteal
 **** elevator
+**** collector
+**** collectorTalk
 *** [Castle]
 **** entrance
 **** parlor
@@ -3456,17 +3458,20 @@
    sure where his son or his son's girlfriend are in this world.
 ** ACCEPTED Inverse City Planning
    I've had this written down for a bit. Realized I didn't have it
-   here. This is a rough sketch of the inverse city layout.
-   + Education District
-     - Tower (see Inverse Tower above)
-     - School (see Reeducation above)
-   + Shopping District
-     - Robot King's Shop
-     - Cursed Artifact Shop
-     - Collector's Shop
-   + Castle District
-     - Castle and Moat
-   + Dark Cave
+   here. This is a rough sketch of the inverse city layout. (The
+   checkmark indicates that the area exists, not that it is 100%
+   complete)
+   + [-] Education District
+     - [ ] Tower (see Inverse Tower above)
+     - [X] School (see Reeducation above)
+   + [-] Shopping District
+     - [X] Robot King's Shop
+     - [ ] Cursed Artifact Shop
+     - [X] Collector's Shop
+     - [X] Elevator Shaft
+   + [X] Castle District
+     - [X] Castle and Moat
+   + [X] Dark Cave
 * MISCELLANEOUS
 
 ** Test
