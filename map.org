@@ -3281,7 +3281,7 @@
      first.
    + One takes you to a fractal version of the prison area, where
      physics doesn't necessarily apply normally.
-** CONSIDERING Cursed Artifact Shop
+** ACCEPTED Cursed Artifact Shop
    In the parallel world? Maybe a cursed artifact shop? Could sell
    cursed objects, like a Cursed Business Card, and other stuff.
 
@@ -3352,7 +3352,7 @@
 
    Assassin party at a mansion? Idk. Also, he might have a
    "girlfriend"?
-** ACCEPTED The Drawbridge
+** DONE The Drawbridge
    Most players, when confronted with the Robot King's city, will go
    straight for the castle, as it's likely to be the most
    exciting-seeming area (when you're choices are "the shopping mall",
