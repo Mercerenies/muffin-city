@@ -57,9 +57,13 @@ namespace eval Space::Outpost {
 
     proc prisonTopFloor {} {
         puts "== Military Prison - Top Floor =="
-        # ////
+        puts "The top area of the prison consists of a single large,\
+        round, open room. There are no windows, and the only door\
+        leading outside is sealed shut. An older purple alien is\
+        sitting on a bench near the outer wall, looking at you."
         prompt {} {
             {"Walk down the ramp" yes prisonMiddleFloor}
+            {"Talk to the purple elder" yes purpleElder}
         }
     }
 
@@ -88,6 +92,45 @@ namespace eval Space::Outpost {
             {"Exit the sleeping chambers" yes prisonMiddleFloor}
             {"Step into a pod and go to sleep" yes {::Dream::Transit::awaken ::Dream::Transit::thirdRoom}}
         }
+    }
+
+    proc purpleElder {} {
+        puts "\"Good day to you.\""
+        prompt {} {
+            {"\"You can speak English?\"" yes purpleElderEnglish}
+            {"\"What is this place?\"" yes purpleElderWar}
+            {"\"Goodbye.\"" yes prisonTopFloor}
+        }
+    }
+
+    proc purpleElderEnglish {} {
+        puts "The alien motions to a small cylindrical contraption attached\
+        to his belt."
+        puts "\"Not natively. But my Universal Translator allows us to\
+        communicate.\""
+        # //// Asking about the translator
+        prompt {} {
+            {"\"Interesting.\"" yes prisonTopFloor}
+        }
+    }
+
+    proc purpleElderWar {} {
+        puts "\"A military prison. An artifact of an endless, pointless\
+        war.\""
+        prompt {} {
+            {"\"What war?\"" yes purpleElderWar1}
+        }
+    }
+
+    proc purpleElderWar1 {} {
+        puts "\"We're all proud Semotians at heart. But for many decades, a dividing\
+        line has been drawn between the races, the green and the purple. The war\
+        began several years ago, but it feels like centuries. I was drafted as a\
+        spy and sent here to discern our enemies' plan with regard to the humans\
+        on earth. Unfortunately, I was captured and left here to rot.\""
+        # /////
+        puts {}
+        return {::Empty::back ::Space::Outpost::purpleElder}
     }
 
 }

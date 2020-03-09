@@ -752,6 +752,10 @@
 **** prisonMiddleFloor
 **** prisonBottomFloor
 **** prisonSleepingChambers
+**** purpleElder
+**** purpleElderEnglish
+**** purpleElderWar
+**** purpleElderWar1
 ** [Console]
 *** [Hall]
 **** main
