@@ -739,6 +739,10 @@
 **** crater <oxygen>
 **** rocks <oxygen>
 **** darkSide <oxygen>
+**** flatlands <oxygen>
+**** plantDeath
+**** plantDeathFight
+**** plantDeathRun
 ** [Console]
 *** [Hall]
 **** main
@@ -2375,6 +2379,7 @@
 ** The Bouncer
 ** Midnight
 ** The Witch / The Crone
+** Plant Monster
 * NOTES
 
 ** DONE Cave and Lantern
@@ -3518,6 +3523,8 @@
    + Ventilation Rat Attack
      - Always available
      - Paywalled
+   + The Plant Monster on the Moon
+     - Always available
 *** Mercury
 *** Other
    + Merchant-bot's Security System

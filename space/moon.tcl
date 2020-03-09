@@ -101,12 +101,14 @@ namespace eval Space::Moon {
         puts "== Moon - Light Side =="
         puts "The dust creates a thin, misty layer across the rough ground as you\
         walk. The small pod containing the teleporter is just behind you. In one\
-        direction, the surface of the moon gets darker."
+        direction, the surface of the moon gets darker. In the other, the terrain\
+        flattens out somewhat."
         switch $oxygen {
             high {
                 prompt {} {
                     {"Head toward the dark side" yes {crater low}}
                     {"Head into the pod" yes humanBase}
+                    {"Head toward the flatlands" yes {flatlands low}}
                 }
             }
             low {
@@ -114,6 +116,7 @@ namespace eval Space::Moon {
                 prompt {} {
                     {"Head toward the dark side" yes {crater none}}
                     {"Head into the pod" yes humanBase}
+                    {"Head toward the flatlands" yes {flatlands none}}
                 }
             }
         }
@@ -220,6 +223,64 @@ namespace eval Space::Moon {
                 }
             }
         }
+    }
+
+    proc flatlands {oxygen} {
+        if {[inv has {Oxygen Pocket Dimension}]} then {
+            set oxygen high
+        }
+        if {![inv has {Oxygen Tank}] && ![inv has {Oxygen Pocket Dimension}]} then {
+            return noOxygen
+        }
+        if {$oxygen eq {none}} then {
+            return noOxygen
+        }
+        puts "== Moon - Flatlands =="
+        puts "The moon's terrain flattens out somewhat, allowing you to see off into\
+        the distance better. In one direction, you can spot the teleporter pod in the\
+        distance. Nothing but empty moon dust inhabits the other direction."
+        switch $oxygen {
+            high {
+                prompt {} {
+                    {"Head toward the teleporter pod" yes plantDeath}
+                }
+            }
+            low {
+                puts "... You are running low on oxygen."
+                prompt {} {
+                    {"Head toward the teleporter pod" yes plantDeath}
+                }
+            }
+        }
+    }
+
+    proc plantDeath {} {
+        puts "As you turn to leave the flatlands, a large carnivorous plant\
+        monster emerges from the ground before you, with thick vines for\
+        arms and legs."
+        prompt {} {
+            {"Attack the monster" yes plantDeathFight}
+            {"Run away from the monster" yes plantDeathRun}
+        }
+    }
+
+    proc plantDeathFight {} {
+        puts "You stay and assault the enormous vine monster, launching\
+        yourself at its torso. With one swipe of its enormous arms,\
+        the monster launches you across the moonscape, instantly killing\
+        you."
+        if {[state get lobby-door] ne {yes}} then {
+            state put lobby-door wildlife
+        }
+        puts {}
+        return ::Underworld::Lobby::wildlife
+    }
+
+    proc plantDeathRun {} {
+        puts "Without hesitation, you turn and bolt from the plant monster,\
+        fleeing back to the light side of the moon."
+        puts {}
+        return {lightSide low}
     }
 
     # //// The rest of the moon
