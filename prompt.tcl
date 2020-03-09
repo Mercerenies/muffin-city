@@ -39,8 +39,9 @@ proc handleSpecial {answer} {
                 puts -nonewline {> }
                 flush stdout
                 gets stdin answer
-                catch {eval $answer} val
-                puts $val
+                if {[catch {eval $answer} val] != 0} then {
+                    puts $val
+                }
             }
         }
     }
