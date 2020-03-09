@@ -213,12 +213,14 @@ namespace eval Space::Moon {
         switch $oxygen {
             high {
                 prompt {} {
+                    {"Head toward the fortress" yes ::Space::Outpost::outside}
                     {"Head toward the light side" yes {rocks low}}
                 }
             }
             low {
                 puts "... You are running low on oxygen."
                 prompt {} {
+                    {"Head toward the fortress" yes ::Space::Outpost::outside}
                     {"Head toward the light side" yes {rocks none}}
                 }
             }
@@ -282,7 +284,5 @@ namespace eval Space::Moon {
         puts {}
         return {lightSide low}
     }
-
-    # //// The rest of the moon
 
 }

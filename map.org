@@ -743,6 +743,15 @@
 **** plantDeath
 **** plantDeathFight
 **** plantDeathRun
+*** [Outpost]
+**** outside
+**** outsideFlee
+**** outsideSurrender
+**** outsideArgue
+**** prisonTopFloor
+**** prisonMiddleFloor
+**** prisonBottomFloor
+**** prisonSleepingChambers
 ** [Console]
 *** [Hall]
 **** main
@@ -981,6 +990,7 @@
  + Strange Business Card
  + Evil Business Card
  + Shower Cap
+ + Universal Translator (TBA)
 
 ** Money Sources / Sinks
 
@@ -2332,6 +2342,13 @@
 *** ~escape-debriefed~
 **** no
 **** yes
+*** ~moon-research~
+**** no
+     The player is not a research assistant on the moon yet. If any of
+     the green aliens encounter him, they will immediately arrest him
+     and send him to the military prison. ////
+**** yes
+     ////
 * CHARACTERS
 
 ** The Robber
@@ -2547,6 +2564,9 @@
  + [ ] Trenchcoat Man's Business Card does nothing right now. (see
    below)
  + [ ] ... ... ... Persimmons
+ + [ ] I'm not totally happy with the Minister's memory being tied to
+   Dr. Cipher's machine. What if the Minister's memory reset at some
+   other (sufficiently liberal) condition?
 ** CONSIDERING The Flaming Axe
  + The Flaming Axe of Doom was used by the First Reaper to carve out
    the Underworld before time itself. Possibly, we can visit this
@@ -3517,6 +3537,8 @@
        ready to kill the player but before the player has accumulated
        the correct team to defeat him
      - Paywalled
+   + Running from the Alien Soldiers on the Moon
+     - Available until becoming a research assistant for the aliens
 *** Wildlife
    + Cave Attack
      - Always available, even after you get the Lantern
