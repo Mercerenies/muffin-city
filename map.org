@@ -756,6 +756,11 @@
 **** purpleElderEnglish
 **** purpleElderWar
 **** purpleElderWar1
+**** purpleElderWar2
+**** purpleElderResearch
+**** purpleElderResearch1
+**** purpleElderResearch2
+**** purpleElderResearch3
 ** [Console]
 *** [Hall]
 **** main
@@ -1844,6 +1849,11 @@
      He can talk to Garnet to accept any of these quests.
 
      //// Obviously not done
+*** Sisters on the Run (~abduction-escape~)
+**** no
+     ////
+**** rumors
+     ////
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -2024,6 +2034,9 @@
 **** no
 **** yes
 *** ~met-mesmerist~
+**** no
+**** yes
+*** ~know-about-moon-war~
 **** no
 **** yes
 ** Door / Opening States

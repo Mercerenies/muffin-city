@@ -130,6 +130,8 @@ namespace eval State {
         king-war no
         drawbridge-down no
         moon-research no
+        know-about-moon-war no
+        abduction-escape no
     }]
 
     proc get {args} {

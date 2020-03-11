@@ -98,7 +98,9 @@ namespace eval Space::Outpost {
         puts "\"Good day to you.\""
         prompt {} {
             {"\"You can speak English?\"" yes purpleElderEnglish}
-            {"\"What is this place?\"" yes purpleElderWar}
+            {"\"What is this place?\"" {[state get know-about-moon-war] eq {no}} purpleElderWar}
+            {"\"Why is this place here on earth's moon?\"" {([state get know-about-moon-war] eq {yes}) && ([state get abduction-escape] eq {no})} purpleElderResearch}
+            {"\"The human escapees?\"" {[state get abduction-escape] eq {rumors}} purpleElderResearch1}
             {"\"Goodbye.\"" yes prisonTopFloor}
         }
     }
@@ -123,14 +125,70 @@ namespace eval Space::Outpost {
     }
 
     proc purpleElderWar1 {} {
-        puts "\"We're all proud Semotians at heart. But for many decades, a dividing\
-        line has been drawn between the races, the green and the purple. The war\
-        began several years ago, but it feels like centuries. I was drafted as a\
-        spy and sent here to discern our enemies' plan with regard to the humans\
+        puts "\"We're really all the same. I don't know how we became so divided.\
+        But for many decades, a line has been drawn between the races,\
+        the green and the purple. The war began several years ago,\
+        but it feels like centuries. I was drafted as a spy and\
+        sent here to discern our enemies' plan with regard to the humans\
         on earth. Unfortunately, I was captured and left here to rot.\""
-        # /////
+        prompt {} {
+            {"\"I'm sorry.\"" yes purpleElderWar2}
+        }
+    }
+
+    proc purpleElderWar2 {} {
+        puts "\"I appreciate your sympathy. But I've made my peace with it.\
+        If there's anything you need from me, don't hesitate to ask. I don't\
+        have much in the way of material goods to offer, but I am an open\
+        book if you have any questions.\""
+        state put know-about-moon-war yes
+        prompt {} {
+            {"\"Why are the green aliens here on earth's moon?\"" yes purpleElderResearch}
+            {"\"Thank you.\"" yes prisonTopFloor}
+        }
+    }
+
+    proc purpleElderResearch {} {
+        puts "\"There's a research facility adjacent to this prison. It\
+        seems they're abducting humans and performing experiments in an\
+        effort to create the perfect soldier. I wasn't able to find out\
+        too many specifics, sadly.\""
+        puts "The elder looks at you for a moment."
+        puts "\"Unfortunately, they'll probably send you there soon.\
+        Once they determine that you have no military ties, you'll\
+        be nothing more valuable than a lab rat to them.\""
+        prompt {} {
+            {"\"Has any human ever escaped the facility?\"" yes purpleElderResearch1}
+        }
+    }
+
+    proc purpleElderResearch1 {} {
+        puts "\"There are rumors, yes. I understand that two human girls managed to\
+        subdue the scientists, steal a shuttle, and escape back to earth. Since you\
+        seem to be interested in the facility, those two girls might be able to\
+        tell you more. But alas, we have no way of contacting them from up here.\""
+        prompt {} {
+            {"\"Do you know where they are now?\"" yes purpleElderResearch2}
+        }
+    }
+
+    proc purpleElderResearch2 {} {
+        puts "\"Soldiers were, of course, immediately sent to investigate the stolen\
+        shuttle crash site and the humans' place of residence. They're likely still\
+        monitoring the girls' home and the homes of any known acquaintances. Given\
+        that the two haven't been recaptured, they're likely constantly moving, from\
+        motel to motel, to evade capture.\""
+        prompt {} {
+            {"\"Thank you.\"" yes purpleElderResearch3}
+        }
+    }
+
+    proc purpleElderResearch3 {} {
+        puts "\"You're welcome. I'm not sure what you intend to do with that\
+        information here. But I'm glad to have been of some assistance.\""
+        state put abduction-escape rumors
         puts {}
-        return {::Empty::back ::Space::Outpost::purpleElder}
+        return prisonTopFloor
     }
 
 }
