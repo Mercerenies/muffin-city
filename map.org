@@ -75,6 +75,9 @@
 **** shabbyGhostIntro2
 **** shabbyGhost
 **** shabbyGhost1 <location>
+**** shabbyAbduction
+**** shabbyAbduction1
+**** shabbyAbductees
 **** ritzyInn
 **** ritzyHall
 **** ritzyRoom
@@ -95,6 +98,7 @@
 **** ritzyDiningFast
 **** ritzyDiningAbort
 **** ritzyRecovery
+**** ritzyAbduction
 *** [Science]
 **** mainRoom
 **** talkTo
@@ -574,6 +578,7 @@
 **** ritzyInn
 **** ritzyTalk
 **** ritzyMeal
+**** ritzyAbduction
 **** shabbyJack
 **** shabbyAttorney
 **** shabbyAttorney1
@@ -582,6 +587,8 @@
 **** shabbyButler
 **** shabbyTalk
 **** shabbyRoom
+**** shabbyAbduction
+**** shabbyAbduction1
 *** [District]
 **** entrance
 **** hotel
@@ -590,6 +597,7 @@
 **** shadyAlley
 **** alleyTalk
 **** marketClosed
+**** hotelAbduction
 *** [Shopping]
 **** pawnShopEntry
 **** pawnShopKick
@@ -1851,9 +1859,28 @@
      //// Obviously not done
 *** Sisters on the Run (~abduction-escape~)
 **** no
-     ////
+     The player knows nothing of the lives of June and Julie yet. He
+     will gain the first information on them from the purple elder in
+     the moon prison, who will divulge that they escaped from the
+     research lab and are currently on earth, moving from motel to
+     motel. At this point, the game moves to ~rumors~.
 **** rumors
-     ////
+     The player has heard rumors of the two from the purple elder. He
+     may question Carl or Todd at the Ritzy Inn about the girls,
+     unsuccessfully since they were never there. If he questions
+     Shabby Jack in the present, he will simply find out that they
+     were there recently. Upon entering Shabby Jack's in the past, the
+     player will accidentally encounter the two. A brief, awkward
+     exchange will ensue, and the two will step outside. The game
+     moves to ~confirmed~.
+**** confirmed
+     June and Julie are outside of Shabby Jack's in the past. When the
+     player enters the hotel district in the past (likely by simply
+     walking out the door of Shabby Jack's), the two will have a brief
+     exchange about the forest before fleeing again. The game moves to
+     ~forest~ at this time.
+**** forest
+     /////
 ** Item / Money States
 *** ~stolen-good~
 **** {}

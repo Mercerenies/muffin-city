@@ -14,6 +14,9 @@ namespace eval Past::District {
     }
 
     proc hotel {} {
+        if {[state get abduction-escape] eq {confirmed}} then {
+            return hotelAbduction
+        }
         puts "== Hotel District - Past =="
         puts "The light of the morning sun illuminates the hotel district. The two hotels\
         you recognize are open now."
@@ -93,6 +96,15 @@ namespace eval Past::District {
         puts "The market has a sign on the door indicating that it is currently closed."
         puts {}
         return shopping
+    }
+
+    proc hotelAbduction {} {
+        puts "The two young women from Shabby Jack's are standing outside talking. You\
+        only hear the tail end of the conversation, something about a hidden alcove by\
+        a river in a forest. They spot you and run off, before you can stop them."
+        state put abduction-escape forest
+        puts {}
+        return hotel
     }
 
 }

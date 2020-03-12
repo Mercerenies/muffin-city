@@ -57,6 +57,7 @@ namespace eval Past::Hotel {
         # //// Something else for Todd to do (show him his note to go to subspace?)
         prompt {} {
             {"Show him the Ritzy Inn Meal Voucher" {[inv has {Ritzy Inn Meal Voucher}] && ([state get dining-hall] eq {no})} ritzyMeal}
+            {"Ask him about the two abductee girls" {[state get abduction-escape] eq {rumors}} ritzyAbduction}
             {"\"Never mind.\"" yes ritzyInn}
         }
     }
@@ -66,6 +67,14 @@ namespace eval Past::Hotel {
         during the dinner hours. Please come back later to redeem your free meal.\""
         puts {}
         return ritzyInn
+    }
+
+    proc ritzyAbduction {} {
+        puts "\"I can't think of anyone I've seen recently by that description.\
+        Sorry I can't be of more help.\""
+        prompt {} {
+            {"\"Thank you anyway.\"" yes ritzyInn}
+        }
     }
 
     proc shabbyJack {} {
@@ -94,6 +103,9 @@ namespace eval Past::Hotel {
             puts -nonewline " A man in a butler's uniform is leaning against the counter."
         }
         puts {}
+        if {[state get abduction-escape] eq {rumors}} then {
+            return shabbyAbduction
+        }
         prompt {} {
             {"Talk to Shabby Jack" yes shabbyTalk}
             {"Talk to the superhero" {[state get attorney-man] eq {no}} shabbyAttorney}
@@ -178,6 +190,7 @@ namespace eval Past::Hotel {
         puts "\"Welcome to Shabby Jack's Streetside Motel! We haven't finished cleaning\
         the rooms yet, so you'll have to come back in a few hours.\""
         prompt {} {
+            {"\"Who were those girls?\"" {[state get abduction-escape] eq {confirmed}} shabbyAbductees}
             {"\"Oh, okay.\"" yes shabbyJack}
         }
     }
@@ -185,6 +198,37 @@ namespace eval Past::Hotel {
     proc shabbyRoom {} {
         puts "\"Whoa, hold on there! We still need to clean up the rooms before we can\
         have any guests back there. You'll have to come back in a bit.\""
+        puts {}
+        return shabbyJack
+    }
+
+    proc shabbyAbduction {} {
+        puts {}
+        puts "Shabby Jack is talking to two rather unusual folks, covered head to toe\
+        in full-body hooded cloaks. One of the two hands Shabby Jack a key, and the\
+        two turn around and nearly run into you."
+        puts "\"E-excuse us.\""
+        puts "A closer look reveals that the two are young women with unusual\
+        complexions. The woman who just spoke has bright red skin, and the other's\
+        skin is bright green. The red-skinned girl notices you looking."
+        puts "\"You weren't supposed to see that.\""
+        prompt {} {
+            {"\"Who are you?\"" yes shabbyAbduction1}
+            {"\"Are you the two abductees I'm looking for?\"" yes shabbyAbduction1}
+        }
+    }
+
+    proc shabbyAbduction1 {} {
+        puts "\"Please... just forget you saw us. We're nobody.\""
+        puts "The two push past you and out the door without waiting for\
+        your response."
+        state put abduction-escape confirmed
+        puts {}
+        return shabbyJack
+    }
+
+    proc shabbyAbductees {} {
+        puts "\"No idea, honestly. They didn't give me their names.\""
         puts {}
         return shabbyJack
     }

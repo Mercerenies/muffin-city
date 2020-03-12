@@ -69,6 +69,7 @@ namespace eval City::Hotel {
         if {[state get motel-room]} then {
             puts "\"Welcome back. Your room is back in the hall to the left.\""
             prompt {} {
+                {"Ask him about the two abductee girls" {[state get abduction-escape] eq {rumors}} shabbyAbduction}
                 {"\"Thank you.\"" yes shabbyJack}
             }
         } else {
@@ -77,6 +78,7 @@ namespace eval City::Hotel {
             prompt {} {
                 {"Give him a Silver Coin" {[inv has {Silver Coin}]} shabbyPay}
                 {"Show him your Platinum Card" {[inv has {Platinum Card}]} shabbyNoPay}
+                {"Ask him about the two abductee girls" {[state get abduction-escape] eq {rumors}} shabbyAbduction}
                 {"\"No thank you.\"" yes shabbyJack}
             }
         }
@@ -167,6 +169,23 @@ namespace eval City::Hotel {
         }
     }
 
+    proc shabbyAbduction {} {
+        puts "\"You know, now that you mention it, I did recently have two\
+        unusual customers. They wore full cloaks, refused to show their faces,\
+        and barely spoke to me.\""
+        prompt {} {
+            {"\"Are they still here?\"" yes shabbyAbduction1}
+            {"\"Where are they now?\"" yes shabbyAbduction1}
+        }
+    }
+
+    proc shabbyAbduction1 {} {
+        puts "\"They checked out this morning. Didn't say where they were going.\""
+        prompt {} {
+            {"\"Thank you.\"" yes shabbyJack}
+        }
+    }
+
     proc ritzyInn {} {
         puts "== Ritzy Inn =="
         puts -nonewline "This is obviously a high-class building. There are several people\
@@ -236,6 +255,7 @@ namespace eval City::Hotel {
             {"\"I would like a room.\"" {![state get inn-room]} ritzyGetRoom}
             {"\"Who was that man in the white suit?\"" {[state get crypto-king] eq {met}} ritzySuit}
             {"\"The Butler sent me.\"" {[state get heard-science] eq {told}} ritzyTalkScience}
+            {"Ask him about the two abductee girls" {[state get abduction-escape] eq {rumors}} ritzyAbduction}
             {"Show him the Ritzy Inn Meal Voucher" {[inv has {Ritzy Inn Meal Voucher}] && ([state get dining-hall] eq {no})} ritzyMeal}
             {"\"Never mind.\"" yes ritzyInn}
         }
@@ -466,6 +486,14 @@ namespace eval City::Hotel {
             puts "Carl returns to the reception counter."
             puts {}
             return ritzyInn
+        }
+    }
+
+    proc ritzyAbduction {} {
+        puts "\"I'm sorry. I can't think of any current guests that would fit\
+        that description.\""
+        prompt {} {
+            {"\"Well thank you anyway.\"" yes ritzyInn}
         }
     }
 
