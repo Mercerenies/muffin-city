@@ -3544,6 +3544,12 @@
    + [X] Castle District
      - [X] Castle and Moat
    + [X] Dark Cave
+** CONSIDERING Sisters' Initial Appearance
+   June and Julie currently first appear (in the regular world)
+   triggered by the player talking to the purple elder. We could
+   always have them appear earlier. I'd want the trigger to be
+   strictly before talking to the purple elder, so that they are
+   definitely available at that time. We'll see.
 * MISCELLANEOUS
 
 ** Test
