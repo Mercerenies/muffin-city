@@ -3498,6 +3498,8 @@
      any size)
    + Unnamed female assassin (specializes in using valuable gemstones
      and crystals to commit murder)
+   + Unnamed time traveling assassin (see below; can travel back in
+     time a few minutes to kill someone)
    + The Referee (retired from assassination but manages the assassin
      party now)
 ** CONSIDERING The Hotel of Seasons
@@ -3550,6 +3552,61 @@
    always have them appear earlier. I'd want the trigger to be
    strictly before talking to the purple elder, so that they are
    definitely available at that time. We'll see.
+** CONSIDERING Bugging the Ball
+   What about this? The geology club heard that there was to be an
+   important ball in the Ritzy Inn ballroom (the same ballroom that
+   will later be used for Mastermind's plan). The rumor is that some
+   important government people will be there, and that they may
+   exchange some sort of coded message about their future plans. The
+   geology club deems it too tightly secured to get into the ball
+   proper, but they decide that they may be able to bug the place for
+   sound beforehand. Zircon and the player head into the ballroom in
+   advance to bug the place. Unfortunately, they are stopped by the
+   hotel employees. To get in, they need a labor union card (see
+   below), which the player will get from somewhere (Grigory, someone
+   at the evil club, or somewhere else?). The union card grants the
+   player access to the ballroom, where he and Zircon rig the place.
+
+   (Perhaps the player and Zircon have to clear the place out somehow,
+   getting rid of the ballroom staff and anybody else in the room to
+   plant their bug. Not sure.)
+
+   Some time later (strictly before Mastermind does his thing), the
+   ball happens and the geology club records the audio. They run
+   through it and find some sort of encoded message which directs
+   their next move.
+** CONSIDERING Unionized
+   More details on the union card from Bugging the Ball above: It
+   actually grants you rapport with all hotel employees (this excludes
+   government workers who happen to work in the hotel, such as Dr.
+   Louis or the top floor suits).
+   + Ballroom staff - The player will be allowed entry into the
+     ballroom to bug the place (see above).
+   + Carl - Carl will grant the player a gift in support of the union.
+   + Todd - In the morning, ???
+   + Restaurant Waiter - The waiter will give the player access to the
+     restaurant kitchen, which results in ???
+   + Cleaning Staff - ??? (There is no cleaning staff in the game
+     right now, but this could be interesting. It could also play into
+     the stolen luggage, maybe?)
+** CONSIDERING Used Cars
+   Maybe there's a used car salesman. Yes, in a world where cars don't
+   exist. There's a guy who sells used cars. Try and work that one
+   out. Maybe he wants something really oddly specific about a car,
+   like the door or an alternator or something.
+
+   Is he in the ballroom with the hotel staff?
+** CONSIDERING Backwards Assassination
+   How about a time traveling assassin? He can travel back, like, at
+   most five minutes, to be able to kill you while he's talking to
+   you. For some reason, the Guardian of Time is okay with letting him
+   continue existing, and the Minister doesn't want to touch him.
+   Maybe he's just super careful about it. In the inverse world, he
+   could be at the Hotel of Seasons, either stuck in a local time loop
+   (and thus only in one season) or traveling backward along the loop,
+   since his time abilities don't interact well with the loop. Or
+   maybe he's just really nauseous and doesn't feel well because the
+   loop is messing with him.
 * MISCELLANEOUS
 
 ** Test
