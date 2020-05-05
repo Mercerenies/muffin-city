@@ -2926,11 +2926,25 @@
    his main quest.
 
    Once you have the Cloud Shoes, the cloud people will tell you of
-   the prophecy that the cloud shoes will only show themselves to the
+   the prophecy that the Cloud Shoes will only show themselves to the
    chosen hero of legend, whom they believe to be you.
 
    For those of you following along at home, yes, that means the
    chosen hero of the cloud people is Attorney-Man.
+
+   Okay, more thoughts on the cloud world. The cloud people have
+   existed for a long time, before humanity. They stand above the
+   earth and maintain its peaceful weather. Unfortunately, they have
+   one dark mystical artifact, possibly a box of sorts. If any cloud
+   folk is to interact with this artifact, it unleashes the
+   thundercloud, which slowly converts their entire species into
+   thunderclouds and covers the earth in perpetual downpour. Sure
+   enough, somebody has triggered the thundercloud prophecy, and the
+   player must put a stop to it.
+
+   Does this result in the end of the cloud people? Perhaps the only
+   way to stop their prophecy is to return them all to (non-sentient)
+   cloud form.
 ** ACCEPTED Beneath the Police
    There's a small, suspicious hut in the police district next to the
    otherwise tall buildings. It belongs to a mysterious criminal (the
@@ -3077,7 +3091,8 @@
    humble professor (which is admittedly true but not the whole truth).
    + One history book from the city
    + One history book from the prison, perhaps?
-   + One history book from the parallel world
+   + One history book from the parallel world (maybe a hidden room
+     only accessible after Robot King's defeat)
    + One history book from somewhere in space
 ** ACCEPTED Mind Control
    At some point early in the game (Butler 1, maybe), the player will
@@ -3338,7 +3353,8 @@
    something, where there's an evil tyrant in place and everything is
    evil.
 
-   Possibly multiple black holes?
+   Possibly multiple black holes? Three is a good number, so we may
+   have to remove one of these, but we could always do four.
    + One takes you to a future world where there's an evil tyrant in
      place. You have to stop him. Possibly show Joe in the future or
      something (before going crazy, of course). Or maybe we're not
@@ -3350,6 +3366,7 @@
      first.
    + One takes you to a fractal version of the prison area, where
      physics doesn't necessarily apply normally.
+   + What about a school of witches?
 ** ACCEPTED Cursed Artifact Shop
    In the parallel world? Maybe a cursed artifact shop? Could sell
    cursed objects, like a Cursed Business Card, and other stuff.
@@ -3607,6 +3624,80 @@
    since his time abilities don't interact well with the loop. Or
    maybe he's just really nauseous and doesn't feel well because the
    loop is messing with him.
+** CONSIDERING Born of Spacetime
+   Two twins, maybe teenagers, live in the subspace temple. A boy and
+   a girl. In the original timeline, there were complications during
+   (or perhaps shortly after) their birth, and they didn't survive
+   (the mother likely didn't either). Despondent, the father somehow
+   got his hands on a time machine, went back in time, and tried to
+   save his family. He ended up causing a (fairly straightforward)
+   paradox. I'm not sure if the Minister was able to save him or not,
+   but the Minister was able to save the two kids. The subspace temple
+   raised them, and due to the unique circumstances of their birth
+   (namely, being dragged through time itself at such a young age),
+   they have special abilities. The girl has short-range telekinesis,
+   and the boy has a sort of echolocation ability so he can see all
+   around him with his eyes closed.
+
+   Sometime later, the government (somehow) gets wind of the twins'
+   abilities. They attempt to seize the children but find the subspace
+   temple's defenses formidable (or perhaps they're simply smart
+   enough not to try). So they reproduce the circumstances,
+   manipulating time to influence the birth of a child. The experiment
+   is successful, and they produce a young child with the ability to
+   control people's minds at a close range. The government was
+   planning to mold this child to their military standards, but the
+   two twins rescued the child. The young one is now a toddler, being
+   protected by the elder two and living in the safety of the subspace
+   temple.
+
+   This could play into Headless, if the toddler ends up wandering off
+   and getting recruited briefly by the headless man's head.
+** CONSIDERING School of Witches
+   Where did the witch get her powers? Maybe there's a school
+   somewhere out there that teaches young witches how to hone their
+   magic. She wasn't originally evil, after all. Something bad
+   happened to her. I haven't decided what yet.
+
+   The school could be reachable via a black hole (we already have
+   three such destinations, but we could have a fourth), and the witch
+   may take/send you there at some point.
+
+   Worth noting that Starlight didn't go to the school. She's probably
+   eligible and may have been able to get in, but she was taught by a
+   lone mentor (probably a family member) and is at least somewhat
+   self-taught. The school of witches is defunct by the time the
+   player gets there.
+
+   Alternative thought (I'm just spitballing at the moment): The
+   player finds the school of witches in the future tyranny world (see
+   Black Holes above), where it's defunct, since most things are by
+   this point. At its heyday, it produced the witch from the above
+   descriptions, but during the player's explorations it's dead.
+** CONSIDERING Thunder Staff
+   Playing off of School of Witches above, what if the player finds a
+   (seemingly non-functional) magic wand in a treasure chest or
+   something at the school? The wand initially does nothing, and the
+   player has to take it to Starlight or the witch (probably the
+   former, given the latter's disagreeable tendencies) for inspection.
+   It is revealed that the wand has a special elemental affinity and
+   will reactivate in the presence of intense amounts of that element.
+
+   That element, as it turns out, is lightning. The wand does nothing
+   until the player squares off against the stormcloud that started
+   the Cloud World prophecy, at which time it activates and becomes an
+   immensely powerful thunderstaff.
+** CONSIDERING The Mouse Thief
+   The subspace bank serves one (very late game) purpose right now. We
+   could change that. What if there was already a bank robbery earlier
+   on? A mouse and her posse (of ordinary humans, mind you) have
+   robbed the bank and fled the scene. They're on the run in the Robot
+   King's dominion (not sure how they ended up there, to be honest,
+   but they're smart enough at least for the moment to evade the Robot
+   King's detection). The mouse thief is hiding in one of the floors
+   of the tower. The remaining members of the gang are scattered
+   elsewhere (or perhaps they were captured by the Robot King and
+   hypnotized, while the mouse escaped).
 * MISCELLANEOUS
 
 ** Test
