@@ -2610,7 +2610,11 @@
  + [ ] ... ... ... Persimmons
  + [ ] I'm not totally happy with the Minister's memory being tied to
    Dr. Cipher's machine. What if the Minister's memory reset at some
-   other (sufficiently liberal) condition?
+   other (sufficiently liberal) condition? Maybe even by simply asking
+   him to reset you and send you back to the city?
+ + [ ] Canonically, cars don't exist in this world (See Rogue
+   Transport). So there shouldn't be a truck taking you from the city
+   to the prison. It should be a bus instead.
 ** CONSIDERING The Flaming Axe
  + The Flaming Axe of Doom was used by the First Reaper to carve out
    the Underworld before time itself. Possibly, we can visit this
@@ -2670,8 +2674,8 @@
    addition to a Black Olive stolen from the Taco Man, is that the
    portal to the underworld will remain open, providing a one-way path
    into a new part of the underworld, filled with dark souls and evil
-   magic. Perhaps the Certificate is torn? You have to get it
-   repaired?
+   magic. +Perhaps the Certificate is torn? You have to get it
+   repaired?+
 ** DONE The Underworld Mystery Room
    Too easy to get to Underworld Mystery Room? Consider changing the
    past button to do something else. +(Currently impossible to get there)+
@@ -2709,7 +2713,7 @@
    Just a small thing. But you should be able to /attempt/ to pay
    Atheena's loan with the Platinum Card. It will fail, of course, but
    it should be an option.
-** CONSIDERING Corporate
+** ACCEPTED Corporate
    Johnny Death mentions offhandedly something about a "corporate"
    office. Perhaps the underworld that we know of is just the earth
    underworld (or maybe this world's underworld) and there are others
@@ -2721,7 +2725,19 @@
    The top floor of the Ritzy Inn is where some sort of sinister
    government agency meets to have its meetings. They all have robots
    or something. Idk. Perhaps to get in you have to get a fake
-   government ID (from Grigory?) and show it to Carl.
+   government ID (from Grigory?) and show it to Carl. (See also The
+   Resistance below)
+
+   So yeah, it's worth asking what the conspiracy actually is. They're
+   sinister, they all have robot servants, they've probably got their
+   hands in several pies (including maybe even being aware of the
+   alien experiments on the moon), but... what's the actual evil plan?
+   They have to be up to something. I just can't decide what.
+
+   Also, Zircon's father definitely worked for them. Something
+   happened to him. I'm pretty sure he's still alive. Was he given to
+   the aliens as part of some sort of deal? Maybe he even volunteered
+   to save humanity by giving himself up to the aliens.
 ** CONSIDERING Fighting Mummies
    A secret underground room in the warehouse houses an Egyptian tomb
    with a bunch of mummies (or maybe skeletons) that will jump out at
@@ -2796,7 +2812,7 @@
    + Maybe Harry is the guy in prison who you need to help break out.
      After you break him out, he burns something down (the police
      district hut?)
-** CONSIDERING The Alien Factory
+** ACCEPTED The Alien Factory
    Alright, so this is sort of two different ideas that I think fit
    well together.
 
@@ -2903,6 +2919,16 @@
      headstrong. In the regular world, he tends to be in charge of
      recon, and in the inverse world he has become an expert in
      munitions.
+
+   It's worth noting that, at least in the regular world, the
+   resistance started out as a couple of friends having fun. Zircon's
+   father disappeared (and he worked for the government), so they
+   formed a resistance movement to investigate crazy conspiracies,
+   mainly as an outlet for Zircon's grief. At the start of the game,
+   they're still mostly fooling around, having fun (Zircon's father
+   disappeared awhile ago, so the grief is at least somewhat dealt
+   with now). Over the course of the game, they stumble upon an
+   /actual/ conspiracy and the plot becomes a bit more serious.
 ** ACCEPTED The Best Tacos
   After the Taco Man has both of his olives, he can make the best
   tacos on the planet. People from all over the multiverse will come
@@ -2913,6 +2939,8 @@
 
   Possible visitors
   + The Postman and the Taxman (together or separately?)
+  + The Headless Man will also visit the taco shop, but possibly with
+    a different trigger so he doesn't depend on the Necromancy quest.
 ** CONSIDERING Cloud World
    A part of prehistory above the clouds. Maybe the space elevator
    hasn't made it to space yet, or maybe it's just a ladder.
@@ -2944,7 +2972,9 @@
 
    Does this result in the end of the cloud people? Perhaps the only
    way to stop their prophecy is to return them all to (non-sentient)
-   cloud form.
+   cloud form. I think we've pretty much decided that the cloud people
+   are extinct in the present-day. This event may or may not be the
+   one that ends their civilization.
 ** ACCEPTED Beneath the Police
    There's a small, suspicious hut in the police district next to the
    otherwise tall buildings. It belongs to a mysterious criminal (the
@@ -2997,7 +3027,8 @@
    Perhaps the robber has the false ID. Maybe it falls out of his
    pocket on the moon? Then the player takes that to Chuck who starts
    a new life, and can be useful in some later quest after meeting
-   again by chance.
+   again by chance. Or maybe Grigory can help with the false ID.
+   Sounds like something he would be good at.
 ** CONSIDERING Obsessed
    All of this happens after ~necro-cipher~ is done (and likely some
    other stuff).
@@ -3075,9 +3106,9 @@
 
    So just a random thought. How do we get to the Guardian of Time?
    Originally, I was thinking he owed Atheena a favor for something.
-   But what if he's the third spicy food visit, and you have to have
-   done the other two before getting there. Then the taco man cooks
-   something to help you.
+   But what if he's the +third+ fourth spicy food visit, and you have
+   to have done the other +two+ three before getting there. Then the
+   taco man cooks something to help you.
 ** ACCEPTED One Word
    A bad guy has discovered an ancient word which, if said in the
    right conditions, will destroy the planet instantly. You go back in
@@ -3122,18 +3153,18 @@
 ** ACCEPTED Delicious
    There could be four different foods in the game that are
    incredibly spicy.
-   + Spicy Taco (made with Black Olive from Taco Man)
-   + Spicy Chili (made by Dr. Cipher as thanks)
-   + Spicy Burger (made by the train chef)
-   + Spicy Soup (made by the hotel)
+   + [ ] Spicy Taco (made with Black Olive from Taco Man)
+   + [ ] Spicy Chili (made by Dr. Cipher as thanks)
+   + [ ] Spicy Burger (made by the train chef)
+   + [X] Spicy Soup (made by the hotel)
 
    Each time the player eats a spicy food, he's taken to a special
    part of subspace. There are four doors, and each time a new door
    opens. Behind each door is a special character.
-   + First visit: The Man in the Trenchcoat
-   + Second visit: The Postmaster
-   + Third visit: The Source
-   + Fourth visit: The Guardian of Time
+   + [X] First visit: The Man in the Trenchcoat
+   + [ ] Second visit: The Postmaster
+   + [ ] Third visit: The Source
+   + [ ] Fourth visit: The Guardian of Time
 
    + The Guardian of Time (possibly only allowed during the One Word fiasco)?
    + The Postmaster (manages the Postman)?
@@ -3156,11 +3187,21 @@
    all of them. The Minister can transfer himself and others between
    the different ones. He also decides which subspace someone ends up
    in when they cause a paradox.
+
+   The Headless Man came from a different subspace. The Minister sent
+   him to the player's subspace to seek help. His head is still in the
+   other subspace. Once the player decipher's the Headless Man's
+   miming (and has the Minister's favor), he'll be able to request
+   that the Minister send him to that other subspace.
 ** ACCEPTED The Midas Touch
    A common criminal who calls himself Mister Midas after the
    mythological figure. Steals exclusively gold jewelry.
 
    Mister Midas is Mastermind's first victim, in the prison washroom. ////
+
+   Something will happen super late game with him, since he only
+   really has any semblance of free will post-Mastermind. Not sure
+   what yet.
 ** CONSIDERING Below the Bottom of the Sea
    What's below the bottom? I'm thinking that you can fire the pirate
    cannon and it will blow a hole in one of the merfolk homes. But
@@ -3189,6 +3230,16 @@
    luck-based powers as a valuable asset. June went underground, began
    training with her abilities, and started (or joined?) a resistance
    movement against the Robot King.
+
+   It's worth at least mentioning that, the way I'm currently
+   interpreting their powers, Julie is one of the most powerful
+   non-god characters in the game. She has no idea how to fully
+   utilize her powers, but if she did she could bend the fabric of
+   reality to her will by the manipulation of chance and fortune. She
+   probably won't ever realize this, but it's worth mentioning. The
+   Robot King might even be vaguely aware of this and doing everything
+   in his power to make sure she (and her sister) never find out about
+   her true power.
 ** ACCEPTED No More Dreams
    We have the open question of what the dream world in the parallel
    dimension looks like. One option is to have there just be one dream
@@ -3229,8 +3280,8 @@
    + Hunter - Wished for the perfect game. So Johnny gave him an
      animal he couldn't win against.
    + Science - Maybe Science also made his deal with Johnny. But since
-     his wish was so much greater scope than the others, Johnny just
-     went ahead and claimed his soul immediately to teach him a
+     his wish was so much greater in scope than the others, Johnny
+     just went ahead and claimed his soul immediately to teach him a
      lesson. Or perhaps Science made his deal, and Johnny accepted,
      thinking the sheer knowledge would overwhelm him. But when
      Science was actually happy with the result, the Reaper became
@@ -3322,6 +3373,22 @@
    + Is he an enemy of Wordsmith? Perhaps he came to study him?
    + Is he just here to study the Wordsmith? Not to stop him but to
      find out how he did it?
+   + Leaning toward the Wordsmith idea, in some form or another. Maybe
+     he's not directly an enemy. Trenchcoat Man came from another
+     universe (further away than the Robot King's world, implied to be
+     closer to the player's origin than most other characters). In his
+     world, like in the game's main world, there is a prophecy that
+     the Wordsmith (whose identity is as yet unknown) will destroy the
+     world, and nothing can stop him. Trenchcoat Man aims to subvert
+     the prophecy in his own world, so he's jumping from universe to
+     universe, watching the Wordsmith make his play in various worlds
+     in the hopes of learning to defeat him.
+   + Similar pitch to the above bulletpoint. Trenchcoat Man is from
+     another universe (again, implied to be much further away than the
+     Robot King's world). He's a scholar and studies the multiverse.
+     He's aware of the Wordsmith prophecy (for him, it's simply an
+     immutable fact of time that he's observing) and wishes to see it
+     play out, for academic purposes.
 ** CONSIDERING Cryptography
    In the regular world, Arthur Miles is in town for a cryptography
    conference. This isn't explicitly established yet, but I kind of
@@ -3411,7 +3478,12 @@
    take notice of you and approach you when you get back to the city.
 
    + First Period (Governance) is taught by the Judge. When he's not
-     at the school, he's ////
+     at the school, he's with Attorney-Man somewhere in the Robot
+     King's castle. Attorney-Man is able to at least partially resist
+     the Mesmerist's hypnosis and has fallen into a catatonic state of
+     repeating "The Robot King is not justice". The Judge is
+     understandably concerned about him. The two are probably friends
+     in the inverse world. ////
    + Second Period (English) is taught by Mavis Morrow (Ezekial's
      wife). When she's not at the school, she's at the library with
      Ezekial. ////
@@ -3698,6 +3770,50 @@
    of the tower. The remaining members of the gang are scattered
    elsewhere (or perhaps they were captured by the Robot King and
    hypnotized, while the mouse escaped).
+** CONSIDERING Rogue Transport
+   There are three ideals of transportation in the dream world. The
+   conductor idealizes trains, the captain for boats, and the (as yet
+   undesigned) pilot for airplanes. Cars don't exist in this world
+   (after all, there's nobody driving one around the dream world, and
+   as we all know, if it doesn't exist in dreams, then it doesn't
+   exist in real life). But we do have buses, to and from the prison
+   as well as serving the Robot King. Why isn't there a bus driver in
+   the dream world?
+
+   How about this? There /was/ a bus driver in the dream world. There
+   may even still be a bus stop in the dream world. But he tried for
+   too much power. He wanted his buses to be the best form of transit,
+   to be faster and better, so he started messing with reality and
+   went crazy. The other three dream inhabitants banished him, and he
+   now wanders... wherever you go if you're banished from dreams. But
+   his buses are still warped across reality. This is why the prison
+   bus can take you across several timezones in what feels like a
+   matter of minutes, and why the Robot King's bus can take you to a
+   faraway school so quickly. (Yes, I realized that the
+   prison-during-the-day / city-at-night thing was a bit of a plot
+   hole. Here's me filling in that hole with an absurd backstory about
+   magic buses)
+** CONSIDERING The Letter H
+   At the dream airport, there's a crazy serial killer with a unique
+   quirk. He wants to kill everybody at the airport, but he can only
+   pass through doors that have the letter "H" written on them. At
+   first, this is fine; the pilot just crosses the "H" off of all the
+   signs (the player will probably notice this before being told), and
+   it's all good. But then the serial killer gets a can of spray paint
+   and suddenly large "H"'s start appearing on the doors. Then we have
+   to deal with him for real.
+
+   Why does he have that quirk? Good question. Answer coming at some
+   point in the future... probably.
+** CONSIDERING Killing on Retainer
+   We've got several hired hitman characters. We also have a vague
+   government conspiracy. What if each government suit (in the top
+   floor of the Ritzy Inn) pays monthly fees to (some of) the
+   assassins, so that if they ever need to kill any of their allies
+   (for knowing too much or for being disagreeable), then it's easy.
+   The net result is a complicated network of several hired guns being
+   paid each month by different subsets of the conspiracy, just in
+   case anyone needs to be subtly eliminated.
 * MISCELLANEOUS
 
 ** Test
