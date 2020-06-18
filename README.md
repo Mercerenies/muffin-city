@@ -13,3 +13,7 @@ Currently, the game is largely a work-in-progress. You can definitely
 play the areas which have been written in, but only six muffins are
 currently attainable. If you get the "You drift away from spacetime"
 prompt, that means that that area has not been written yet.
+
+You'll need a Tcl interpreter version 8.5 or newer to play. Run the
+game with `./run.sh` if you have a Unix shell. On Windows, you can run
+`main.tcl` directly as `tclsh main.tcl`.
