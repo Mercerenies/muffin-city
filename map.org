@@ -2577,7 +2577,23 @@
    At the base of the labyrinth (explorable by subspace map? what if
    the subspace map is just a special map that works in subspace,
    labyrinth, and shrunk ventilation and its not specific to
-   subspace?) there is a jungle dome with a passcode to get in
+   subspace?) there is a jungle dome with a passcode to get in.
+
+   Let's elaborate on this. I'm thinking it's not just a maze. It's a
+   whole sequence of trials. There will be some branching involved.
+   There are a few rewards you can get pretty immediately. Then
+   there's a separate area you can only get to after Wordsmith has
+   made his move, which gives you the ability to (somehow) travel to
+   medieval times. Then a final area only accessible after defeating
+   the Wordsmith, wherein lies the Supreme Muffin itself.
+
+   Possibly also related to Cloud World. Maybe the Cloud Shoes need
+   some kind of upgrade before the player can fulfill the prophecy.
+   The upgrade is one of the rewards in the trials. Perhaps the cloud
+   people designed the trials some time ago, for that reason (and
+   placed some safeguards in just in case someone, say, happened to
+   ignite the earth using a neighboring star). They have to unlock the
+   Cloud Shoes ending (or possibly the whole chamber).
 ** DONE The Reaper's Favor
  + The Reaper calls in the player's favor. Possibly to help retrieve a
    stolen item from the Ancient Minister (do they have a rivalry or
@@ -3543,7 +3559,7 @@
    + Cream Cheese Muffin -> Mercury Muffin
    + Mango Muffin -> Despair Muffin (?)
    + Blueberry Muffin -> Second Class Muffin (?)
-** CONSIDERING The Endgame
+** ACCEPTED The Endgame
    Okay, this is a big one, and it could change the framing device of
    the game a bit.
 
@@ -3814,6 +3830,118 @@
    The net result is a complicated network of several hired guns being
    paid each month by different subsets of the conspiracy, just in
    case anyone needs to be subtly eliminated.
+** CONSIDERING Natural History
+   A museum... yeah, I haven't really fleshed this one out yet. Maybe
+   in other subspace (you know, the place with the headless man's
+   head... I don't really think that explanation clears anything up).
+   There are some live bears running around the place, and there's an
+   area where everything is shrunken down and you have to crawl
+   around.
+
+   Maybe Science will visit the place after you free him of his
+   bargain. The place guarded by bears (which Science can trivially
+   pass through) holds a secret to finding the Console Room?
+
+   (Possibly related to Prophecy Printing Press below)
+** CONSIDERING Nuts
+   An organized crime syndicate centered around selling nuts in an
+   underground market. As in, literal nuts, like pecans and almonds
+   and stuff. Their shtick is that their dialogue is littered with
+   nut-themed puns. This could pretty easily tie in with Steve's plot.
+   (we still don't know where that Suspicious Briefcase was supposed
+   to go)
+** CONSIDERING Prophecy Printing Press
+   A printing press in subspace (probably Other Subspace, with the
+   headless man and the twins). But this is no ordinary printing
+   press. The words printed here are written into the very fabric of
+   reality and become prophecy. These people literally write
+   prophecies which can only be subverted by later prophecies.
+
+   Unfortunately, the device is defunct and has been for many years,
+   meaning it's impossible to write new prophecies. The people who
+   used to use it are long since gone, and the only prophecies
+   remaining are those that are plot-relevant to the game.
+
+   Prophecies
+   + Wordsmith
+
+   A few side notes about this. There's probably some old man
+   character I haven't fleshed out yet who will take you there and
+   explain the point of the place. Or perhaps Science will take you
+   there at some point. Ooh, maybe it's in the museum from Natural
+   History, as a historical, unfixable artifact that Science takes you
+   to see.
+
+   Also, other note. Why can't the Mechanic's Golden Wrench fix it?
+   Surely, there's a reason, but we don't want to just gloss over
+   that. It's supposedly a wrench that can fix anything. Maybe there's
+   a piece missing, that was stolen or lost at some point, and without
+   that its prophecies aren't truly prophetic?
+
+   Here's a narrative. Several versions of reality ago, a bunch of
+   sociopaths got together, found out how to make this typewriter, and
+   started using it to rewrite reality. They didn't make reality
+   better, or worse, specifically; they just wanted to tell
+   interesting stories about good and evil. They played god with the
+   universe for a long time, toying with everyone in it, and then they
+   got bored. Bored of their godlike powers, they opted to challenge
+   an actual god. They hunted down and encountered the Guardian of
+   Time, who promptly wiped them from existence. The typewriter was
+   left floating in subspace. Some time later, the Ancient Minister
+   found the typewriter (before he had a temple, when he was first
+   exploring subspace and discovering the nature of reality). He
+   learned of what it had done and what power it held. So he used it
+   once more to eliminate it. Using the typewriter, the Minister wrote
+   an element out of the periodic table, literally forcing this
+   element to have never existed. This element was one required to
+   power the typewriter, thereby rendering the device unusable. Since
+   then, the device is only an ordinary typewriter, the power source
+   that granted it world-altering abilities having been eliminated
+   from all of time. Only the Ancient Minister and the Guardian of
+   Time himself are aware of these earlier versions of reality and of
+   the typewriters true nature. That is, of course, until Science
+   Johnson makes his deal. He learns of the typewriter's true origins.
+   He eventually takes the player to see the typewriter in the
+   subspace museum and explains all of this to the player. In the
+   museum, there may be several other prophecies available to view,
+   detailing various major stories in the game.
+** CONSIDERING Ring of Renewal
+   At the beachside resort (Hotel of Seasons), there's a family (or
+   maybe just one or two people) standing out staring at the sea in
+   all four areas. They never move, and they don't respond if you talk
+   to them.
+
+   Somewhere in the resort (possibly not in all four seasons), there's
+   someone inside the hotel related to this family. Or possibly some
+   old sailor-type character who sees them. He tells of the curse of
+   the sea, which occasionally latches onto people who stand by the
+   ocean, forcing them into a catatonic state and slowly draining
+   their life force. The only cure is the Ring of Renewal, a
+   one-of-a-kind artifact lost to time. The Ring, meanwhile, is....
+   somewhere. I'm pretty sure I had an idea for where to put it at
+   some point, but I forgot. Well, either witch or Starlight is
+   probably involved. It'll come to me... maybe.
+** CONSIDERING Crystalline Neighborhood
+   This all takes place after the Robot King is defeated and the
+   inverse city is freed.
+
+   Todd's daughter (or possibly some other small child, but probably
+   Todd's daughter) will be standing in the middle of the city,
+   holding a magic crystal ball. Someone gave it to her (Not sure who.
+   I was originally thinking Trenchcoat Man, but it doesn't fit with
+   his story now.) and told her not to drop it. The player can force
+   her to drop it (maybe by scaring her, or maybe by simply taking it
+   from her). The surrounding area floods with a magical energy, and
+   everyone nearby is transported to a strange suburban neighborhood.
+
+   Things in this suburban neighborhood
+   + A house that is secretly a temple to the cat gods.
+   + Later, a zombie invasion which will force the player and other
+     characters into hiding.
+
+   (Side note: If this is a crystal ball, maybe we should change the
+   thing Starlight uses to an Orb of Light or something, just so items
+   are still unique)
 * MISCELLANEOUS
 
 ** Test

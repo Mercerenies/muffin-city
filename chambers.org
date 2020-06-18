@@ -1,0 +1,119 @@
+
+* WHAT IS THIS?
+  This is a /very/ loose plan file. Don't take any of it seriously.
+  It's really just scratchwork. I may throw this whole thing out. I'm
+  not committed to it yet.
+
+  The underground chamber of trials in prehistory (name TBD... I
+  guess?). There's a bunch of trials. Several possible endings. The
+  place has not aged well since it was created. The chambers don't go
+  in linear order like they were originally meant to.
+
+  Also, general rule: Unless otherwise stated, there are escape points
+  at the beginning of each trial where the player can warp out of the
+  whole chamber. And (again, unless otherwise stated) if the player
+  dies or fails a trial, they simply reset back to the start of that
+  trial, rather than going all the way out or to the underworld.
+* TRIALS
+** TRIAL 1 (SPHINX)
+   A small grassy plains area, obviously enclosed in a large metal
+   box. In the center of the room is a large sphinx statue. Several
+   basic riddles are asked of the player. In this particular case
+   (since it's only Trial 1), failing a riddle involves being warped
+   out of the chamber entirely (which is a very minor inconvenience).
+   Once the riddles have been answered, a wall in the back of the room
+   opens, revealing stairs.
+** TRIAL 2
+   ??? (Always exits to Trial 3)
+** TRIAL 3 (BLUE GRID)
+   A 9x9 grid of blue cells. The player starts on one end, centered,
+   and must make it to the exit on the other end. Several of the cells
+   are booby trapped. Traps are revealed when the corresponding cell
+   is stepped on, and they remain revealed after that.
+
+   As it turns out, there's no way to get to the other side. It's
+   impossible. Several of the booby traps will "kill" you (read: send
+   you back to the start of Trial 3). However, several of them are
+   pits in the ground. Once you trigger one of those, you fall into
+   Trial 8.
+** TRIAL 6
+   ???
+** TRIAL 7 (BLOCK PUSHING)
+   Trial 7 is a block-pushing puzzle. Or, at least, it's supposed to
+   be. In the "intended" path, the player would start at the bottom
+   (exiting to Trial 6) and have to push blocks around to build a
+   climbable path to the Trial 8 exit. However, given that the player
+   starts at the top, it's trivial to simply jump down and walk out
+   the other exit.
+
+   However, there is a bonus exit which can be obtained by actual
+   block-pushing, above the Trial 8 exit. This bonus exit leads to ???
+** TRIAL 8 (FISHING)
+   A grassy field enclosing a small pond with some fish in it. The
+   back exit has a net with a sign above it, saying that the door will
+   open once three fish are deposited into the net. The player has to
+   go fishing in the pond to succeed. Once the door is opened, it
+   leads to Trial 9. Alternatively, the player can just take the
+   stairs in the front (already available) to Trial 7.
+** TRIAL 9 (DARK MAZE)
+   A simple Zelda Lost Woods style maze. Each room has four exits, and
+   they're connected in complicated (non-Euclidean) ways. In the first
+   room, there's a trinket of some kind that you can pick up and put
+   in any room as a marker to see if you end up doubling back. If you
+   take the trinket out of the trial, it disappears from your
+   inventory and resets to the original room. Of course, the "back"
+   exit goes upstairs to Trial 8. The "main" (easier to reach) exit
+   goes to Trial 10. The "secret" exit goes to Trial 20.
+
+   Additionally, at one corner of the trial, there's a note scribbled
+   into one of the walls reading: Green, Red, Green, Red, Blue.
+** TRIAL 10 (PEDESTALS)
+   Trial 10 is a simple, dimly lit square room. At the front is the
+   Trial 9 exit. At the back is the sealed door leading to Trial 11.
+   In the middle, there are three pedestals, colored red, green, and
+   blue. The player can stand on any of the pedestals, which causes
+   that pedestal to glow. A sign above the pedestals informs you that
+   you missed something in Trial 9. In Trial 9, an extra room houses
+   the code. If the player steps on the pedestals in the correct
+   order, the sealed door leading to Trial 11 opens. At that time, a
+   digital display appears above the pedestals, indicating the number
+   "3". If the player steps on a pedestal, the number decreases to
+   "2", but only as long as the player is upon the stand.
+
+   Later, when the player, Atheena, and Dr. Louis are together in the
+   chamber, they can simultaneously stand on all three pedestals,
+   opening a secret passage in the wall to ???
+** TRIAL 11 (RUINED)
+   Trial 11 has seen better days. The whole chamber is a wreck. There
+   may be some small clues as to what it used to look like. The front
+   exits upstairs to Trial 10. The back, available immediately, exits
+   to Trial 12. Off to the side, there's a large hole in the wall,
+   obviously from age and the infrastructure collapsing. You may climb
+   through the hole, which leads to a narrow, dark tunnel. ???
+** TRIAL 12
+   A swordfighting simulation. The player (by means of some sort of
+   videogame-style controller) takes control of a small sword-wielding
+   automaton. Another automaton appears and engages in swordplay. If
+   the player loses the fight, he is ejected back out to the entrance
+   to this particular trial. If he wins, the sealed door at the back
+   opens, leading downstairs to Trial 13. The door in the front, of
+   course, leads back up to Trial 11.
+** TRIAL 20
+   ???
+** UNPLACED TRIAL (GROCERY STORE)
+   Something about a grocery store? The player has to collect certain
+   groceries to proceed?
+** UNPLACED TRIAL (SNAKES)
+   A pit of snakes? And fire? Neither of those things sound fun.
+** UNPLACED TRIAL (GROUNDHOG DAY)
+   A small, self-contained repeating scenario. Play till you win.
+   Involves a home break-in and hiding in the closet. You have to
+   defeat the burglar with limited resources to win.
+** UNPLACED TRIAL (MEETING)
+   Some sort of conference room. A presentation is given. Something
+   about navigating a slide show?
+** UNPLACED TRIAL (JUNGLE DOME)
+   A large jungle area. There's a dome in the middle which accepts a
+   passkey. Maybe the cloud people give you the code? Maybe not?
+   Either way, one possible exit is into the dome. Another is
+   elsewhere.
