@@ -3942,6 +3942,69 @@
    (Side note: If this is a crystal ball, maybe we should change the
    thing Starlight uses to an Orb of Light or something, just so items
    are still unique)
+** CONSIDERING Paladin of Dreams
+   Let's take Rogue Transport to its logical conclusion. After the bus
+   driver was banished from the dream world, the other three ideals
+   faded into caricatures, maybe on purpose to prevent another from
+   rebelling, or maybe simply because they were missing a crucial
+   piece of themselves now.
+
+   As they banished him, they created a paladin: a mighty hero riding
+   a dragon who could save them if something ever happened. This hero
+   was planted in the human world with no memory of his true purpose.
+   If the bus driver were to return, or if something else were to ever
+   happen, the dragon buried deep within the earth would arise, find
+   the paladin, and awaken his true memories.
+
+   Naturally, something happens. The paladin awakens, eventually finds
+   the player, and asks for help. Perhaps he needs help fighting the
+   bus driver, or maybe it's about The Letter H guy. The paladin is
+   probably married in the human world, and the player can meet his
+   wife at some point. He told her what he had to do when he recovered
+   his memories, but she doesn't fully understand.
+
+   In the inverse world, the paladin's fate is unfortunately more
+   grim. When the Robot King destroyed the dream world, the paladin
+   and his dragon both collapsed and died immediately. The paladin's
+   wife, in this world, is understandably very confused about what led
+   up to his sudden demise.
+** CONSIDERING Masked Might
+   Somewhere in the forest, there's a man who lives in a mountainside.
+   This man was experimented on by some mad scientists (not sure who).
+   They gave him super strength, but they gave him far too much super
+   strength. He started breaking everything he touched, even when he
+   simply walked. The scientists panicked and exploded the lab, hoping
+   to trap him inside.
+
+   This man escaped and lived in the forest. His power kept growing,
+   so he began to explore the world for a cure to his condition.
+   Eventually, he came upon a mystical mask that, as long as he wore
+   it, would limit his strength to that of a normal man. So he's been
+   living in isolation in his mountain ever since.
+
+   There are a few possible plot points I'm considering with this guy.
+   I may combine them, but I'm not sure how yet.
+   + Two kids who live nearby find the man and befriend him, coming to
+     visit him every once in awhile. Some time later, he disappears
+     from existence due to undetermined time travel shenanigans. The
+     kids have no memory of him, and the player must recover him
+     somehow.
+   + His mask is an ancient artifact he stole from the Fighting
+     Mummies pyramid, which infuriated the mummies. The player has to
+     appease them somehow.
+** CONSIDERING Bus Hijacking
+   On a bus at some point (probably on the way to Assassination
+   Party), three women in cultist outfits briefly hijack the bus and
+   steal something important, cutting the thing into three parts. They
+   flee to various corners of the earth, and the player must find
+   those three objects by hunting the cultists down. Maybe one of the
+   assassins (contortionist guy?) are on the bus with the player.
+
+   The object? It could be...
+   + Something of value to the bus driver (is this the ideal bus driver, or just /a/ bus driver?)
+   + Something of value to the assassin
+   + Something the player just got that gets taken from him
+   + The bus itself, because why not?
 * MISCELLANEOUS
 
 ** Test
