@@ -3938,6 +3938,7 @@
    + A house that is secretly a temple to the cat gods.
    + Later, a zombie invasion which will force the player and other
      characters into hiding.
+   + The Pig King rebellion (See King of Pings below)
 
    (Side note: If this is a crystal ball, maybe we should change the
    thing Starlight uses to an Orb of Light or something, just so items
@@ -3992,6 +3993,16 @@
    + His mask is an ancient artifact he stole from the Fighting
      Mummies pyramid, which infuriated the mummies. The player has to
      appease them somehow.
+   + It is possible that the two kids mentioned above are from King of
+     Pigs. After their parents passed away, they found this man, who
+     offered to take them in and raise them. They grew up alongside
+     him, until years later when the brother went off to begin his
+     martial arts training. If we go with the time travel
+     disappearance, then he would probably remain absent through the
+     Pig King plot (maybe the Pig King was responsible for his
+     disappearance? Unlikely since he doesn't really know he exists).
+     If not, then we have to explain why he doesn't just go solve the
+     Pig King problem himself, since he's obviously more than capable.
 ** CONSIDERING Bus Hijacking
    On a bus at some point (probably on the way to Assassination
    Party), three women in cultist outfits briefly hijack the bus and
@@ -4005,6 +4016,51 @@
    + Something of value to the assassin
    + Something the player just got that gets taken from him
    + The bus itself, because why not?
+** CONSIDERING Sole Survivors
+   There's a family somewhere. They believe that they're the only
+   surviving humans in the universe. So, naturally, they launched
+   themselves into space to find other life. Then they remembered that
+   they hadn't packed any food, so they ordered a pizza. The player
+   will somehow end up needing to deliver this pizza, which will
+   result in a conversation about the survival of the rest of the
+   human race.
+** CONSIDERING King of Pigs
+   Before the start of the game, the Crystalline Neighborhood was
+   ruled over by the evil Pig King (who is, naturally, a large bipedal
+   talking pig, a little bit bigger than the average adult male). At
+   some point, the crystal ball fell into the hands of a pair of kids
+   (a brother and a sister). The parents probably got it for the
+   sister because it looked like a neat decoration. Somehow, she
+   accidentally finds her way into the Crystalline Neighborhood,
+   befriends some locals, learns magic, and mounts a rebellion against
+   the Pig King, permanently expelling him from the land and cursing
+   him to never be able to return. She remains and rules over the
+   Neighborhood as its queen, taking care of the land justly.
+
+   The Pig King, expelled from his kingdom, finds himself in the Robot
+   King's dominion. He briefly challenges the Robot King before
+   finding himself hopelessly outmatched. The Pig King takes the
+   crystal ball and (for reasons I haven't decided yet) entrusts it to
+   a small child or possibly simply hides it somewhere as he flees
+   from the Robot King. He stumbles into the cave and unknowingly
+   finds himself in the regular world. Determined to repeat the Robot
+   King's success, he hides away in the Ritzy Inn by creating a magic
+   floor that can only be visited by some special means, where he
+   begins kidnapping poor hapless individuals and experimenting with
+   mind control on them.
+
+   Meanwhile, in the regular world, the two siblings are... I haven't
+   fully decided yet. It's possible they're orphans, or maybe not.
+   Either way, they're high school age. The brother has been off
+   training with a master martial artist and fighting some vaguely
+   evil force (we may do a separate bullet point on him too). He comes
+   back into town for his sister's graduation, but he gets taken by
+   the Pig King. The Pig King captures the brother and starts working
+   on him, putting him into a deep trance. When he doesn't show up,
+   his sister goes looking for him and stumbles upon the Pig King's
+   secret floor. He recognizes her from the other world and swears
+   vengeance upon who he believes is the queen, resulting in a battle
+   between the two siblings and the Pig King.
 * MISCELLANEOUS
 
 ** Test
