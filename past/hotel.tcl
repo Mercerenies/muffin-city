@@ -103,7 +103,7 @@ namespace eval Past::Hotel {
             puts -nonewline " A man in a butler's uniform is leaning against the counter."
         }
         puts {}
-        if {[state get abduction-escape] eq {rumors}} then {
+        if {[state get abduction-discovered] eq {no}} then {
             return shabbyAbduction
         }
         prompt {} {
@@ -190,7 +190,7 @@ namespace eval Past::Hotel {
         puts "\"Welcome to Shabby Jack's Streetside Motel! We haven't finished cleaning\
         the rooms yet, so you'll have to come back in a few hours.\""
         prompt {} {
-            {"\"Who were those girls?\"" {[state get abduction-escape] eq {confirmed}} shabbyAbductees}
+            {"\"Who were those girls?\"" {[state get abduction-discovered] ne {no}} shabbyAbductees}
             {"\"Oh, okay.\"" yes shabbyJack}
         }
     }
@@ -214,7 +214,7 @@ namespace eval Past::Hotel {
         puts "\"You weren't supposed to see that.\""
         prompt {} {
             {"\"Who are you?\"" yes shabbyAbduction1}
-            {"\"Are you the two abductees I'm looking for?\"" yes shabbyAbduction1}
+            {"\"Are you the two abductees I'm looking for?\"" {[state get abduction-escape] eq {rumors}} shabbyAbduction1}
         }
     }
 
@@ -222,7 +222,7 @@ namespace eval Past::Hotel {
         puts "\"Please... just forget you saw us. We're nobody.\""
         puts "The two push past you and out the door without waiting for\
         your response."
-        state put abduction-escape confirmed
+        state put abduction-discovered met
         puts {}
         return shabbyJack
     }

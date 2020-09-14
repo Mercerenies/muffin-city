@@ -1872,14 +1872,6 @@
      player will accidentally encounter the two. A brief, awkward
      exchange will ensue, and the two will step outside. The game
      moves to ~confirmed~.
-**** confirmed
-     June and Julie are outside of Shabby Jack's in the past. When the
-     player enters the hotel district in the past (likely by simply
-     walking out the door of Shabby Jack's), the two will have a brief
-     exchange about the forest before fleeing again. The game moves to
-     ~forest~ at this time.
-**** forest
-     /////
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -2392,6 +2384,19 @@
      and send him to the military prison. ////
 **** yes
      ////
+*** ~abduction-discovered~
+**** no
+     The player has not met June and Julie yet. They will appear the
+     first time the player enters Shabby Jack's in the past, at which
+     time a brief and awkward exchange will occur and the game will
+     move to ~met~.
+**** met
+     The player has encountered June and Julie. When he exits Shabby
+     Jack's, another brief exchange will occur and the game will move
+     to ~yes~.
+**** yes
+     The player has encountered June and Julie. They are now camping
+     out in a tent in the forest.
 * CHARACTERS
 
 ** The Robber

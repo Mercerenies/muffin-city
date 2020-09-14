@@ -132,6 +132,7 @@ namespace eval State {
         moon-research no
         know-about-moon-war no
         abduction-escape no
+        abduction-discovered no
     }]
 
     proc get {args} {
