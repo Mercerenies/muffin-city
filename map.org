@@ -248,6 +248,9 @@
 **** reverseCaveLight
 **** reverseCaveExit
 **** bus
+**** tent
+**** tentHelp
+**** tentHelp1
 *** [Fence]
 **** approach
 **** climb
@@ -2393,7 +2396,13 @@
 **** met
      The player has encountered June and Julie. When he exits Shabby
      Jack's, another brief exchange will occur and the game will move
-     to ~yes~.
+     to ~forest~.
+**** forest
+     The player has encountered June and Julie. They are now camping
+     out in a tent in the forest. In order for them to be willing to
+     speak to the player, ~abduction-escape~ must be in state
+     ~rumors~. When the player speaks to them, the game moves to
+     ~yes~.
 **** yes
      The player has encountered June and Julie. They are now camping
      out in a tent in the forest.

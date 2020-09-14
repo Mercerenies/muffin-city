@@ -141,15 +141,25 @@ namespace eval Prison::Forest {
         puts -nonewline "A peaceful, flowing river cuts the forest\
         into two parts. The water seems cold enough that you\
         wouldn't want to have to ford it."
-        if {[state get subspace-portal] eq {river}} then {
-            puts " There is a portal floating in the air next to the river. The portal\
-            seems to lead to an empty white void."
-        } else {
-            puts {}
+        switch [state get abduction-discovered] {
+            forest {
+                puts -nonewline " There is a small tent set up beside the river, underneath a\
+                tree. You can see the shadows of two people inside the tent."
+            }
+            yes {
+                # //// Are the two going to acknowledge the subspace portal? Looks kinda alien so it should be cause for concern for them
+                # //// Also, just this in general
+            }
         }
+        if {[state get subspace-portal] eq {river}} then {
+            puts -nonewline " There is a portal floating in the air next to the river. The portal\
+            seems to lead to an empty white void."
+        }
+        puts {}
         prompt {} {
             {"Reach a hand into the river" yes riverReach}
             {"Pass through the portal" {[state get subspace-portal] eq {river}} ::Subspace::Portal::portalRoom}
+            {"Approach the tent" {[state get abduction-discovered] eq {forest}} tent}
             {"Head into the forest" yes trees}
         }
     }
@@ -255,6 +265,29 @@ namespace eval Prison::Forest {
         state put awaiting-bus no
         puts {}
         return ::City::District::entrance
+    }
+
+    proc tent {} {
+        puts "As you approach the tent, a young woman's voice shouts from within."
+        puts "\"Leave us alone!\""
+        puts "It sounds like one of the two women from Shabby Jack's this morning."
+        prompt {} {
+            {"Step away" yes river}
+            {"\"Listen. I need your help.\"" {[state get abduction-escape] eq {rumors}} tentHelp}
+        }
+    }
+
+    proc tentHelp {} {
+        puts "\"What do you want from us?\""
+        prompt {} {
+            {"\"I want to infiltrate the alien research lab.\"" yes tentHelp1}
+        }
+    }
+
+    proc tentHelp1 {} {
+        puts "\"How do you know about that?\""
+        # /////
+        return -gameover
     }
 
 }
