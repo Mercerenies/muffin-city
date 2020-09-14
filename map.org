@@ -251,6 +251,9 @@
 **** tent
 **** tentHelp
 **** tentHelp1
+**** tentHelp2
+**** tentHelp3
+**** juneJulie
 *** [Fence]
 **** approach
 **** climb
@@ -986,7 +989,7 @@
  + Guard's Soul
  + Hunter's Soul
  + Oxygen Tank
- + Oxygen Pocket Dimension (TBA)
+ + Oxygen Pocket Dimension
  + Necromancy Certificate
  + Black Olive
  + Scuba Suit
@@ -1009,7 +1012,7 @@
  + Strange Business Card
  + Evil Business Card
  + Shower Cap
- + Universal Translator (TBA)
+ + Intern's Badge
 
 ** Money Sources / Sinks
 
@@ -1862,19 +1865,22 @@
 *** Sisters on the Run (~abduction-escape~)
 **** no
      The player knows nothing of the lives of June and Julie yet. He
-     will gain the first information on them from the purple elder in
-     the moon prison, who will divulge that they escaped from the
-     research lab and are currently on earth, moving from motel to
-     motel. At this point, the game moves to ~rumors~.
+     will gain the first information on them from Masnin Alja, the
+     purple elder in the moon prison, who will divulge that they
+     escaped from the research lab and are currently on earth, moving
+     from motel to motel. At this point, the game moves to ~rumors~.
 **** rumors
-     The player has heard rumors of the two from the purple elder. He
-     may question Carl or Todd at the Ritzy Inn about the girls,
+     The player has heard rumors of the two from Masnin. He may
+     question Carl or Todd at the Ritzy Inn about the girls,
      unsuccessfully since they were never there. If he questions
      Shabby Jack in the present, he will simply find out that they
-     were there recently. Upon entering Shabby Jack's in the past, the
-     player will accidentally encounter the two. A brief, awkward
-     exchange will ensue, and the two will step outside. The game
-     moves to ~confirmed~.
+     were there recently. Once ~abduction-discovered~ is equal to
+     ~forest~, the player can visit the two in the forest and ask for
+     their help, at which point he will receive the Oxygen Pocket
+     Dimension and the Intern's Badge, and the game will move to
+     ~acquired~.
+**** acquired
+     ////
 ** Item / Money States
 *** ~stolen-good~
 **** {}
@@ -2454,6 +2460,12 @@
 ** Midnight
 ** The Witch / The Crone
 ** Plant Monster
+** Masnin Alja
+** June / Cinnabar
+** Julie / Hex
+** Topaz
+** Garnet
+** Zircon
 * NOTES
 
 ** DONE Cave and Lantern
@@ -3237,7 +3249,7 @@
    where does that hole lead? The parallel world perhaps? Or maybe the
    prehistoric pyramid? You know, just a random portal through time at
    the bottom of the ocean... nothing to see here.
-** CONSIDERING Twin Studies
+** ACCEPTED Twin Studies
    So we already know the aliens are experimenting on humans. How
    about this?
 
@@ -3664,7 +3676,7 @@
    + [X] Castle District
      - [X] Castle and Moat
    + [X] Dark Cave
-** CONSIDERING Sisters' Initial Appearance
+** DONE Sisters' Initial Appearance
    June and Julie currently first appear (in the regular world)
    triggered by the player talking to the purple elder. We could
    always have them appear earlier. I'd want the trigger to be

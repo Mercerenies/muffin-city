@@ -148,7 +148,8 @@ namespace eval Prison::Forest {
             }
             yes {
                 # //// Are the two going to acknowledge the subspace portal? Looks kinda alien so it should be cause for concern for them
-                # //// Also, just this in general
+                puts -nonewline " June and Julie are sitting just outside their tent, talking\
+                amongst themselves."
             }
         }
         if {[state get subspace-portal] eq {river}} then {
@@ -160,6 +161,7 @@ namespace eval Prison::Forest {
             {"Reach a hand into the river" yes riverReach}
             {"Pass through the portal" {[state get subspace-portal] eq {river}} ::Subspace::Portal::portalRoom}
             {"Approach the tent" {[state get abduction-discovered] eq {forest}} tent}
+            {"Talk to June and Julie" {[state get abduction-discovered] eq {yes}} juneJulie}
             {"Head into the forest" yes trees}
         }
     }
@@ -273,21 +275,93 @@ namespace eval Prison::Forest {
         puts "It sounds like one of the two women from Shabby Jack's this morning."
         prompt {} {
             {"Step away" yes river}
-            {"\"Listen. I need your help.\"" {[state get abduction-escape] eq {rumors}} tentHelp}
+            {"\"I need your help. Masnin Alja sent me.\"" {[state get abduction-escape] eq {rumors}} tentHelp}
         }
     }
 
     proc tentHelp {} {
-        puts "\"What do you want from us?\""
+        puts "The voice is silent for a moment, and you can hear both of them whispering\
+        for a few seconds. Then the two emerge from the tent slowly. You can now get a better\
+        look at them, without their cloaks on. The two girls definitely look unusual. The first,\
+        presumably the one who was speaking, has bright red skin and a look of fear mixed\
+        with determination in her eyes. The second has bright green skin, is slightly shorter\
+        than the first, and wears classes. The first woman steps in front of the other and\
+        speaks again after a moment."
+        puts "\"Did you also escape the lab?\""
         prompt {} {
-            {"\"I want to infiltrate the alien research lab.\"" yes tentHelp1}
+            {"Explain" yes tentHelp1}
         }
     }
 
     proc tentHelp1 {} {
-        puts "\"How do you know about that?\""
-        # /////
-        return -gameover
+        puts "You explain your situation to the two, who listen intently the whole time and\
+        seem to understand. As you finish the story, they both start to look a little more\
+        relaxed."
+        puts "\"I understand. It's good to meet you. My name is June.\""
+        puts "June gestures to the green-skilled woman."
+        puts "\"And this is my sister, Julie. We were both abducted several months ago.\
+        The aliens took us to some sort of science lab, where they started experimenting\
+        on us. That's when we started looking like... this.\""
+        puts "June pauses for a moment."
+        prompt {} {
+            {"\"I understand they were trying to create soldiers...\"" yes tentHelp2}
+        }
+    }
+
+    proc tentHelp2 {} {
+        puts "\"I think so. Julie and I reacted differently to their tests. I\
+        can fire beams of light from my body. And Julie, she can manipulate the\
+        hand of Lady Luck herself. Once we learned how to use these abilities,\
+        we planned our escape. I took care of all the guards, and with Julie's\
+        good luck all of the electronic locks on the doors failed. We stole some\
+        credentials and an oxygen tank off one of the scientists and headed to\
+        the place where they keep the ships.\""
+        prompt {} {
+            {"\"And then you met Masnin?\"" yes tentHelp3}
+        }
+    }
+
+    proc tentHelp3 {} {
+        puts "\"Right. He was there investigating their technology. At first\
+        we thought he was one of them. But he led us to a craft and showed us\
+        how to get away. I don't know if Julie's power brought him to us, but\
+        we wouldn't be here without his help.\""
+        puts "June takes a breath, and Julie takes over telling the story."
+        puts "\"Once we crashed back on earth, we knew we couldn't go home. We\
+        stay in this tent most of the time, occasionally moving to a motel if\
+        we get enough money somehow. We swore off using our powers the day we\
+        go back; it's just a painful reminder of all we went through.\""
+        prompt {} {
+            {"\"I'm sorry.\"" yes tentHelp4}
+        }
+    }
+
+    proc tentHelp4 {} {
+        puts "\"Thank you.\""
+        puts "June steps in once again."
+        puts "\"We can't offer you much. But if you're looking to go back up there somehow,\
+        we can give you the things we stole from the lab. Surely, they'll do more good for\
+        you than they're doing for us right now.\""
+        puts "June returns to the tent to collect some items and then steps back out to\
+        hand them to you."
+        puts "\"Here. It's a badge that should let you move around the military base\
+        freely. And here's the oxygen tank we took. It must be some sort of advanced\
+        tech, because it never seems to run out of oxygen.\""
+        puts "You got the Intern's Badge and the Oxygen Pocket Dimension!"
+        inv add {Intern's Badge}
+        inv add {Oxygen Pocket Dimension}
+        state put abduction-escape acquired
+        state put abduction-discovered yes
+        prompt {} {
+            {"\"Thank you.\"" yes river}
+        }
+    }
+
+    proc juneJulie {} {
+        puts "\"I hope you find what you're looking for on the moon.\""
+        prompt {} {
+            {"Leave them" yes river}
+        }
     }
 
 }

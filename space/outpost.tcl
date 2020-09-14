@@ -54,13 +54,21 @@ namespace eval Space::Outpost {
 
     proc prisonTopFloor {} {
         puts "== Military Prison - Top Floor =="
-        puts "The top area of the prison consists of a single large,\
-        round, open room. There are no windows, and the only door\
-        leading outside is sealed shut. An older purple alien is\
-        sitting on a bench near the outer wall, looking at you."
+        puts -nonewline "The top area of the prison consists\
+        of a single large, round, open room. There\
+        are no windows, and the only door leading outside is\
+        sealed shut."
+        if {[state get know-about-moon-war] eq {yes}} then {
+            puts "Masnin is sitting on a bench near the outer wall,\
+            looking at you."
+        } else {
+            puts "An older purple alien is sitting on a bench near the outer\
+            wall, looking at you."
+        }
         prompt {} {
             {"Walk down the ramp" yes prisonMiddleFloor}
-            {"Talk to the purple elder" yes purpleElder}
+            {"Talk to the purple elder" {[state get know-about-moon-war] eq {no}} purpleElder}
+            {"Talk to Masnin" {[state get know-about-moon-war] eq {yes}} purpleElder}
         }
     }
 
@@ -113,7 +121,9 @@ namespace eval Space::Outpost {
         puts "\"We're really all the same. I don't know how we became so divided.\
         But for many decades, a line has been drawn between the races,\
         the green and the purple. The war began several years ago,\
-        but it feels like centuries. I was drafted as a spy and\
+        but it feels like centuries.\""
+        puts "The purple alien pauses for a moment and takes a breath."
+        puts "\"My name is Masnin Alja. I was drafted as a spy and\
         sent here to discern our enemies' plan with regard to the humans\
         on earth. Unfortunately, I was captured and left here to rot.\""
         prompt {} {
@@ -138,7 +148,7 @@ namespace eval Space::Outpost {
         seems they're abducting humans and performing experiments in an\
         effort to create the perfect soldier. I wasn't able to find out\
         too many specifics, sadly.\""
-        puts "The elder looks at you for a moment."
+        puts "Masnin looks at you for a moment."
         puts "\"Unfortunately, they'll probably send you there soon.\
         Once they determine that you have no military ties, you'll\
         be nothing more valuable than a lab rat to them.\""
@@ -148,8 +158,9 @@ namespace eval Space::Outpost {
     }
 
     proc purpleElderResearch1 {} {
-        puts "\"There are rumors, yes. I understand that two human girls managed to\
-        subdue the scientists, steal a shuttle, and escape back to earth. Since you\
+        puts "\"Only once. Two human girls managed to subdue the scientists, steal\
+        a shuttle, and escape back to earth. As it happens, I ran into them during\
+        their escape, over by the main docking station. Since you\
         seem to be interested in the facility, those two girls might be able to\
         tell you more. But alas, we have no way of contacting them from up here.\""
         prompt {} {
@@ -170,7 +181,9 @@ namespace eval Space::Outpost {
 
     proc purpleElderResearch3 {} {
         puts "\"You're welcome. I'm not sure what you intend to do with that\
-        information here. But I'm glad to have been of some assistance.\""
+        information here. But I'm glad to have been of some assistance. If you\
+        ever do encounter those two girls, tell them Masnin Alja sent you. I\
+        believe they may trust you then.\""
         state put abduction-escape rumors
         puts {}
         return prisonTopFloor

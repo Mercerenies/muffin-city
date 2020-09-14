@@ -161,8 +161,16 @@ state put topaz-rescue yes
 con
 state put cave-hideout yes
 con
-state put escape-debriefed yes
-con
 state put abduction-escape rumors
 con
-state put know-about-moon-war yes
+state put abduction-discovered forest
+3
+5
+2
+3
+2
+3
+5
+1
+1
+2
