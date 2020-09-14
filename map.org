@@ -761,7 +761,6 @@
 **** prisonBottomFloor
 **** prisonSleepingChambers
 **** purpleElder
-**** purpleElderEnglish
 **** purpleElderWar
 **** purpleElderWar1
 **** purpleElderWar2

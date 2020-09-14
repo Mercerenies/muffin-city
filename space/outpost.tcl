@@ -2,17 +2,18 @@
 namespace eval Space::Outpost {
 
     proc outside {} {
+        # //// Since Butler 4 is going to give us access to the space
+        # prison in another way, we need some way to reward the player
+        # for getting there this way. I was thinking some kind of "can
+        # you clear the moon" type race.
         if {[state get moon-research] eq {no}} then {
             puts -nonewline "As you approach the fortress, you are greeted by several tall,\
             lanky, green aliens with large heads. They are dressed in matching\
             white uniforms and are all carrying some sort of two-handed alien\
             firearm."
-            if {[inv has {Universal Translator}]} then {
-                puts " The aliens begin yelling at you."
-                puts "\"Human intruder! Surrender yourself to our custody now, human!\""
-            } else {
-                puts " The aliens begin yelling at you in an unknown language."
-            }
+            puts "One of the aliens begins yelling at you."
+            puts "\"Human intruder! You are trespassing on military territory!\
+            Surrender yourself into our custody now!\""
             prompt {} {
                 {"Run away" yes outsideFlee}
                 {"Put your hands in the air" yes outsideSurrender}
@@ -43,11 +44,7 @@ namespace eval Space::Outpost {
     }
 
     proc outsideArgue {} {
-        if {[inv has {Universal Translator}]} then {
-            puts "\"You're trespassing on a military outpost!\""
-        } else {
-            puts -nonewline "The aliens begin yelling at you in an unknown language. "
-        }
+        puts "\"You're trespassing on a military outpost!\""
         puts "The aliens approach you and rather roughly force you inside the\
         fortress and into a nearby large cylindrical building, before exiting\
         and sealing the door behind you."
@@ -97,22 +94,10 @@ namespace eval Space::Outpost {
     proc purpleElder {} {
         puts "\"Good day to you.\""
         prompt {} {
-            {"\"You can speak English?\"" yes purpleElderEnglish}
             {"\"What is this place?\"" {[state get know-about-moon-war] eq {no}} purpleElderWar}
             {"\"Why is this place here on earth's moon?\"" {([state get know-about-moon-war] eq {yes}) && ([state get abduction-escape] eq {no})} purpleElderResearch}
             {"\"The human escapees?\"" {[state get abduction-escape] eq {rumors}} purpleElderResearch1}
             {"\"Goodbye.\"" yes prisonTopFloor}
-        }
-    }
-
-    proc purpleElderEnglish {} {
-        puts "The alien motions to a small cylindrical contraption attached\
-        to his belt."
-        puts "\"Not natively. But my Universal Translator allows us to\
-        communicate.\""
-        # //// Asking about the translator
-        prompt {} {
-            {"\"Interesting.\"" yes prisonTopFloor}
         }
     }
 
