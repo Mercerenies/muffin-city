@@ -105,6 +105,7 @@ namespace eval Space::Outpost {
             {"\"What is this place?\"" {[state get know-about-moon-war] eq {no}} purpleElderWar}
             {"\"Why is this place here on earth's moon?\"" {([state get know-about-moon-war] eq {yes}) && ([state get abduction-escape] eq {no})} purpleElderResearch}
             {"\"The human escapees?\"" {[state get abduction-escape] eq {rumors}} purpleElderResearch1}
+            {"\"I found the two girls.\"" {[state get abduction-escape] eq {acquired}} purpleElderFound}
             {"\"Goodbye.\"" yes prisonTopFloor}
         }
     }
@@ -187,6 +188,34 @@ namespace eval Space::Outpost {
         state put abduction-escape rumors
         puts {}
         return prisonTopFloor
+    }
+
+    proc purpleElderFound {} {
+        puts "\"Ah, I trust they're doing well?\""
+        prompt {} {
+            {"\"It seems that way.\"" yes {purpleElderFound1 good}}
+            {"\"They seemed to really trust you.\"" yes {purpleElderFound1 trust}}
+        }
+    }
+
+    proc purpleElderFound1 {resp} {
+        switch $resp {
+            good {
+                puts "\"Ah, good.\""
+            }
+            trust {
+                puts "\"I'm glad I could be of assistance.\""
+            }
+        }
+        # /////
+        puts "Masnin notices your Intern's Badge and Oxygen Pocket Dimension."
+        puts "\"You know, with that badge, you could probably get into the research\
+        lab next door. Not from here, of course. But if you could find some other\
+        way onto the moon, you surely have enough oxygen to make it to the outpost\
+        now.\""
+        prompt {} {
+            {"\"I'll keep that in mind.\"" yes prisonTopFloor}
+        }
     }
 
 }

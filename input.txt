@@ -161,16 +161,21 @@ state put topaz-rescue yes
 con
 state put cave-hideout yes
 con
-state put abduction-escape rumors
+state put abduction-escape acquired
 con
-state put abduction-discovered forest
-3
-5
+state put abduction-discovered yes
+con
+inv add {Oxygen Pocket Dimension}
+con
+inv add {Intern's Badge}
+con
+state put know-about-moon-war yes
 2
 3
-2
 3
-5
+1
+4
 1
 1
-2
+1
+1

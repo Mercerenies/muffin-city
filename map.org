@@ -774,6 +774,8 @@
 **** purpleElderResearch1
 **** purpleElderResearch2
 **** purpleElderResearch3
+**** purpleElderFound
+**** purpleElderFound1 <resp>
 ** [Console]
 *** [Hall]
 **** main
