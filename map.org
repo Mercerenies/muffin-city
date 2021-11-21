@@ -3373,7 +3373,7 @@
      Grigory's agency)
    + Shadow assassin (called Midnight in the inverse world, maybe here
      too)
-   + ???
+   + To-Be-Named Serpent Scholar (falls into The Serpent's Prison)
 
 ** DONE First Time Visitor
    The train is a bit boring when you encounter it the first time. All
@@ -3468,7 +3468,7 @@
    + One takes you to a future world where there's an evil tyrant in
      place. You have to stop him. Possibly show Joe in the future or
      something (before going crazy, of course). Or maybe we're not
-     that far into the future.
+     that far into the future. (related to Alien Apocalypse below)
    + One takes you to the Hotel of Seasons (see below). You crash into
      the top floor, from which you can access all of the seasons.
      Perhaps the elevator key that takes you to this floor is only
@@ -3490,13 +3490,16 @@
    different elevators which don't obey the usual notions of "up" and
    "down". Possible floors:
    + Rooftop :: One exit
-   + Cafeteria :: X exits (possibly also accessible from the school somehow?)
+   + Cafeteria :: X exits (possibly also accessible from the school
+                  somehow?)
    + Office Building :: X exits outside + 1 exit inside
    + Laundry Room :: X exits
    + Basement :: One exit
    + Balcony :: 2-ish exits
-   + Garden :: 1 exit inside + 1 exit outside
-   + Library :: X exits
+   + Garden :: 1 exit inside + 1 exit outside (see Garden at the Top)
+   + Library :: X exits (is there some secret literature that the
+                Robot King banned in a back room? Maybe something you
+                have to bring to regular world Ezekial?)
    + Lobby :: X exits (each is stateful)
    If possible, each elevator has exactly three floors it can access.
 ** ACCEPTED Reeducation
@@ -3626,12 +3629,12 @@
 
    Assassins:
    + Midnight (can conceal himself in one's shadow)
-   + Unnamed contortionist (can fit into backpacks and briefcases of
-     any size)
-   + Unnamed female assassin (specializes in using valuable gemstones
-     and crystals to commit murder)
-   + Unnamed time traveling assassin (see below; can travel back in
-     time a few minutes to kill someone)
+   + Ragtime (can fit into backpacks and briefcases of any size)
+   + Crystal (specializes in using valuable gemstones and crystals to
+     commit murder)
+   + Backflip (see below; can travel back in time a few minutes to
+     kill someone)
+   + Caveman (a bat-wielding brute)
    + The Referee (retired from assassination but manages the assassin
      party now)
 ** CONSIDERING The Hotel of Seasons
@@ -3643,6 +3646,20 @@
    causality is flimsy in that area. Would give us a chance to have a
    lot more characters show up in the inverse world who aren't there
    right now.
+
+   The eventual goal, as the Young Love characters will tell you, is
+   to get all of the below characters to get out of the hotel. They're
+   all trapped in their own time loops for various reasons, and the
+   only way to break the cycle is to get them out of the hotel.
+
+   Things which might interact with the Hotel of Seasons
+   + Two young teenagers stole a time machine (Young Love)
+   + Backflip the assassin (Backwards Assassination)
+   + A family gazing at the sea (Ring of Renewal)
+   + A trickster evading capture (Shifty Mischief)
+   + A woman getting revenge on her boyfriend (Obsessed)
+   + An obnoxious fan and a cop (Catching Heat)
+   + A high school girl and a pink locker (The Pink Locker)
 ** CONSIDERING Young Love
    Heavily related to Hotel of Seasons above. So in the inverse world,
    a young teenage couple does something slightly dangerous. The boy's
@@ -3739,6 +3756,14 @@
    since his time abilities don't interact well with the loop. Or
    maybe he's just really nauseous and doesn't feel well because the
    loop is messing with him.
+
+   Maybe he's in the Hotel of Seasons and is nauseous. To get him out,
+   you have to convince him you're a doctor (get a stethoscope from
+   someone, perhaps by helping the doctors in King of the Hospital),
+   and then tell him that your medical advice is to leave the hotel,
+   which he'll then oblige to.
+
+   We'll call the guy Backflip, I think.
 ** CONSIDERING Born of Spacetime
    Two twins, maybe teenagers, live in the subspace temple. A boy and
    a girl. In the original timeline, there were complications during
@@ -3877,6 +3902,15 @@
    nut-themed puns. This could pretty easily tie in with Steve's plot.
    (we still don't know where that Suspicious Briefcase was supposed
    to go)
+
+   Perhaps one of the mobsters is an informant for the government
+   (suits at Ritzy Inn, perhaps). He carries around an obvious
+   camcorder from the 90s and records everything, yet no one suspects
+   him.
+
+   Someone high up in the nut mafia is either a giant insect or some
+   kind of sentient plant. Either way, she can shoot poisonous barbs
+   from her fingertips.
 ** CONSIDERING Prophecy Printing Press
    A printing press in subspace (probably Other Subspace, with the
    headless man and the twins). But this is no ordinary printing
@@ -3948,6 +3982,11 @@
    somewhere. I'm pretty sure I had an idea for where to put it at
    some point, but I forgot. Well, either witch or Starlight is
    probably involved. It'll come to me... maybe.
+
+   Other idea for the Ring of Renewal. Perhaps the inverse world Ring
+   of Renewal is genuinely lost to time. But the merfolk in the cavern
+   in the /regular/ world have their own Ring of Renewal which works
+   just as well.
 ** CONSIDERING Crystalline Neighborhood
    This all takes place after the Robot King is defeated and the
    inverse city is freed.
@@ -4051,6 +4090,28 @@
    will somehow end up needing to deliver this pizza, which will
    result in a conversation about the survival of the rest of the
    human race.
+
+   A man is casually shopping at the local store one day, when he
+   encounters the Mastermind. The Mastermind is early in his career,
+   still working out the quirks of his hypnotism powers, and decides
+   to test them out on the man. He tries to hypnotize the man but, in
+   the process, the man goes crazy and becomes completely convinced
+   that all life on earth is dead. He runs home in a panic, grabs his
+   family, steals a spaceship (how did he manage that?!), and flies
+   off into space in search for more life. Some time later, his kids
+   complain that they're hungry, and he realizes he forgot to pack any
+   food. So he uses the telephone on the spaceship to order a pizza.
+   At no point does it occur to him that he's ordering a pizza from
+   the supposedly extinct planet earth.
+
+   The ship that they're on looks like a spacecraft, but the inside
+   looks like an ordinary living room, complete with an old-fashioned
+   desk telephone. The only entrance to the craft is an ordinary white
+   front door with a doorbell, the sort that you'd find on a house in
+   the suburbs. The wife and kids seem surprisingly willing to go
+   along with this delusion. The kids might just think it's a game,
+   I'm not sure. The wife... maybe she's concerned, or maybe a bit of
+   the crazy rubbed off on her.
 ** CONSIDERING King of Pigs
    Before the start of the game, the Crystalline Neighborhood was
    ruled over by the evil Pig King (who is, naturally, a large bipedal
@@ -4088,6 +4149,325 @@
    secret floor. He recognizes her from the other world and swears
    vengeance upon who he believes is the queen, resulting in a battle
    between the two siblings and the Pig King.
+** CONSIDERING King of the Hospital
+   So there's a hospital somewhere (in the airport, Ritzy Inn, Hotel
+   of Seasons, the tower, somewhere?). Some main-ish character ends up
+   in the hospital due to unrelated events. When the player goes to
+   visit, he finds that the people there are being infected by an
+   ancient classical king (Related to Atheena? Related to Fighting
+   Mummies?) whose touch drains the life of the victim. Some of the
+   members of the hospital have formed an impromptu detective group to
+   investigate the events, during which time they end up finding this
+   king. To get him to stop, they have to satisfy some request (again,
+   possibly related to Fighting Mummies).
+
+   The man who founded the detective group is a brilliant inventor
+   (either Arthur Miles or someone who is friends with Arthur Miles).
+   When the king finds himself getting investigated, he starts to form
+   a cult which ends up killing the founder of the group.
+
+   (Does the geology club join this detective group? Honestly, it
+   seems like something they'd be interested in and good at, if it's
+   happening in their dimension) (Maybe not; they might be a candidate
+   for the /other/ side of the Calamity Coin)
+** CONSIDERING Faraway Mine
+   On one of the planets in space, there's a mine where aliens
+   (perhaps the same aliens as the ones on the moon, perhaps not) are
+   forced to work by some other aliens (not the same as the ones on
+   the moon). The player winds up near there or possibly made to work
+   at the mine and must liberate them.
+** CONSIDERING Conspiracy in a Truck
+   Okay, this one is /really/ not fleshed out at all. But basically,
+   at some point the player is investigating (probably for the
+   government) what's going on with an association probably either
+   directly or indirectly related to Grigory's shtick. In doing so,
+   the player ends up in an armored truck, where one of the
+   conspirators reveals themselves to be a giant fungus monster (see
+   below, believe it or not: Forces of Nature) and kills the player.
+   The player has to find some immunity to this.
+** CONSIDERING Forces of Nature
+   Shortly after the earth formed into something resembling a planet,
+   three abstract forces of nature came into being: the Animal, the
+   Plant, and the Fungus. These three forces of nature protected their
+   respective domains and helped them grow for a time, and they
+   coexisted in peace. Then the Animal became experimental. He took
+   human form and granted humankind intelligence. This infuriated the
+   Plant and the Fungus (who are intelligent but biologically cannot
+   speak), and the two declared war.
+
+   Fast-forward to the prehistoric era. The war is still raging, and
+   the Plant and Fungus have announced their explicit intention to
+   wipe out all of humanity. The player encounters the Animal and
+   helps him to repel the other two. In the climax, the Animal uses
+   all of his power to launch the Plant into space. The Plant winds up
+   on the moon, where it remains until it is probably destroyed by the
+   Fence's laser in the present day. The Fungus flees in a panic at
+   seeing the Animal's true power. The Animal, having exhausted his
+   power, lay dying, and as a final gift to humanity grants the player
+   his power to resist the Fungus' infection powers.
+
+   Fast-forward once again to the present day. The Fungus has assumed
+   human form and infiltrated humanity to identify their weaknesses.
+   Eventually, there's a climax in an armored truck (see Conspiracy in
+   a Truck). The only way the player can win this fight is with the
+   Animal's resistance.
+** CONSIDERING Alien Apocalypse
+   On one of the several alien planets the player will visit, there
+   are three divine siblings: the Evil Eye, the Great Gown, and the
+   Beast of End. The Beast of End has awoken from its long slumber
+   and, according to legend, will destroy the planet now that it's
+   awake. The player, along with the Evil Eye and the Great Gown, must
+   appease the Beast of End and put it back to sleep.
+
+   More expansion on this. Millions of years ago, an ancient alien
+   warrior race did battle with a giant immortal beast that had eaten
+   countless planets before. After many years, they couldn't defeat
+   the beast altogether and had only managed to remove one of its
+   eyes, so they sealed it away. Using their advanced technology, they
+   trapped the beast in a parallel dimension, using a giant spinning
+   coin as the lock. The coin was placed on a planet that was, at the
+   time, unpopulated. They took the beast's eye and animated it. The
+   eye was left on the planet alongside the coin, to guard it for all
+   eternity.
+
+   The coin used life itself to keep the seal powered. On each side of
+   the coin is an entire world (King of the Hospital on one side, and
+   The Mayor's Tyranny on the other). One world is always at peace and
+   the other is always in despair. When the coins flip, the worlds'
+   roles flip. At present, the King of the Hospital world is on top
+   and (thanks to the Plague King) will soon reverse, while The
+   Mayor's Tyranny is on the bottom and (thanks to a future revolt)
+   will soon reverse.
+
+   Many years later, an alien species wound up settling on this
+   planet, unaware of the eye, the coin, or the beast. The coin, when
+   it spins, causes massive earthquakes, so the locals dubbed it the
+   Calamity Coin. During the quakes, they would hear roars from the
+   Beast of End as it tried to escape. All attempts by the locals to
+   approach the Coin were thwarted by the eye, who sent them away
+   unharmed. As such, they began to refer to the eye as the Evil Eye.
+   Due to a quirk in the Eye's design, it can only communicate with
+   people who have been to both sides of the coin. As such, it will be
+   unable to communicate with the player until then.
+
+   Naturally, the player will help both sides of the coin. For the
+   tyrant, this poses no issues, as the tyrant's reign was at an end.
+   But for the Plague King, his rise was meant to be inevitable, and
+   his premature defeat will upset the balance of the Coin and allow
+   the Beast to escape. The Evil Eye will realize his true role as an
+   eye of the Beast itself and use its power to slow the Beast's
+   rampage until the player can find a permanent way to defeat the
+   Beast.
+** CONSIDERING The Minister's Demon
+   Many years ago, the Ancient Minister (when he wasn't quite so
+   ancient) was an adventurer, traveling through time and space saving
+   lives and helping people. At one point, he met a young boy whose
+   parents had been killed, and he took the boy under his wing,
+   raising him as his own. At the boy's repeated insistence, he agreed
+   to start training the boy as his pupil, so that he could become an
+   adventurer too.
+
+   Many years later, the pupil had grown into a man, and the two had
+   many adventures together. One day, a powerful demon appeared
+   suddenly on earth, as if from nowhere at all. This demon took the
+   form of a giant black monster, roughly the size of a skyscraper,
+   with horns and wings, and ravaged the landscape. The Minister and
+   his pupil stepped in, fighting the demon but finding him too
+   powerful to kill. After conventional methods of sealing the demon
+   away failed, the Minister concocted a plan. He would imprison the
+   demon in his own body and exile himself to a faraway land. His body
+   would act as a prison, and the demon would be unable to escape
+   provided the Minister never lost control of his emotions. The
+   Minister set up the trap, and everything was ready. But his pupil
+   refused to sit idly by. He believed the Minister was meant to do
+   more good for the world, so he took the Minister's place and sealed
+   the demon in his own body instead.
+
+   The pupil exiled himself to an island (possibly the warehouse
+   island? Or possibly another planet?). For ten long years, he and
+   the demon were in a constant struggle that always ended in a
+   stalemate. Then the demon got crafty. He reversed the pupil's aging
+   process, forcing him to get younger instead of older, reasoning
+   that if he could age the pupil out of existence, his prison would
+   be no more. The pupil had no defense against this and requested one
+   final favor of the Minister. He chose to live out his remaining
+   childhood on the island in peace, and when he was a baby again, the
+   Minister was to seal him away, freezing his body in time and the
+   demon with him. The Minister obliged, and he sealed the baby in a
+   stasis chamber beneath his temple. The player will learn all of
+   this from Matthew when he finds the baby underneath the temple.
+
+   Sometime after the player discovers this, an angry old man (who?)
+   gets wind of the baby and its power, breaks into the subspace
+   temple, and eats the baby, thereby acquiring the demon's power. The
+   Minister, whose power has waned greatly since his first battle with
+   the demon, sends the old man into deep space to stall for time. The
+   man makes it back to earth and uses his newfound demonic powers,
+   first to make himself younger, then to exact revenge on old
+   enemies, and finally to carry out the most petty of grudges.
+   Eventually, his anger consumes him, and the demon escapes, using
+   the old man's life force to assume his original demonic form and
+   continue his rampage.
+
+   Then... what? Maybe he faces off against the Headless Man in his
+   mech suit, and the two wipe each other out? Maybe not?
+** CONSIDERING The Minister's Origin
+   The Minister started his adventure and began learning about time
+   travel because someone close to him was erased from history due to
+   a time travel accident. I'm not sure who it was, and the Minister
+   probably remembers the previous timeline due to a natural affinity
+   for time-related abilities. This will need some expansion.
+** CONSIDERING Groceries
+   Elaborating on the grocery store from The Prehistoric Maze a bit.
+   Maybe the store itself exists as part of Alien Apocalypse's
+   hospital side of the coin (i.e. across the street from the
+   hospital) and the version in The Prehistoric Maze is a revisit to
+   the area.
+
+   In the "original" one in the hospital world, there's a strange man
+   trying to sell ancient Egyptian artifacts to you. May tie into
+   Fighting Mummies or Masked Might somehow. Maybe he's selling a
+   magic sword that can cut through anything?
+
+   Also, there's two guys who have gotten into a dispute over a woman.
+   They both have special flame powers and are ready to go nuclear in
+   a fight that the player has to break up.
+** CONSIDERING Shifty Mischief
+   There's a trickster (probably a demigod or something) causing
+   mayhem. Eventually, some government types caught him and were
+   taking him into custody. Unfortunately, they wound up getting
+   routed through the Hotel of Seasons. In the Hotel, he repeatedly
+   evades capture using his magic tricks and is later recaptured. The
+   player must capture him and secure him in order to break the cycle.
+** CONSIDERING Catching Heat
+   There's a stadium in the Hotel of Seasons. There's this guy who,
+   whenever you get near him, is obnoxious and attacks you in various
+   ways. A few feet away, there's a cop who refuses to get involved
+   unless he /sees/ the crime happen. You have to trick the guy into
+   attacking you in plain view of the cop in order to get him in
+   trouble.
+
+   Perhaps the cop is our favorite mustached prison security guard?
+   Fits with his character.
+** CONSIDERING Garden at the Top
+   There's a kind old woman tending a garden at the top of the Inverse
+   Tower. She doesn't trust you if you come up the elevator the
+   "regular" way, so you have to come up the interior elevator for her
+   to trust you.
+
+   She's Todd's mother. When the Robot King took over, Todd hid his
+   mother and daughter in the Inverse Tower to keep them safe from the
+   Robot King's influence, and it seems to have actually worked.
+** CONSIDERING The Mayor's Tyranny
+   On one side of the Calamity Coin, an evil tyrant rules a dystopian
+   future.
+
+   Here's the long and short of it. Mostly the long. Several years ago
+   (last time this side of the Coin was face-down), an unnamed evil
+   tyrant ruled over the city with an iron fist. The geology club
+   (Topaz, Garnet, and Zircon) banded together and overthrew this
+   tyrant, establishing democracy once and for all.
+
+   The democracy lasted several years (the duration of the Calamity
+   Coin's face-up time), but then the Mayor appeared. The Mayor is a
+   demagogue who ran for office and then seized control of the
+   election and all bodies of government. To ensure that the geology
+   club couldn't stop him, he released a special rage-inducing fungus
+   into their water supply, turning them against each other in a
+   drug-fueled fury.
+
+   The Mayor takes over the city. The geology club disbands, and its
+   three members go their separate ways. Zircon finds himself in a fit
+   of paranoia and lines his entire house with deadly, explosive
+   traps. Garnet finds herself lonely and begins building robots to
+   keep her company. Topaz is intensely focused and discovers that
+   they've been treated with a fungus. He discovers an antidote
+   formula but requires Zircon's chemistry knowledge to mix it. Topaz
+   goes to visit Zircon, and an altercation ensues, ending in the two
+   former friends limping away from the explosive battleground.
+
+   Some time later, the player finds this world. If he visits Zircon
+   or Garnet first, they'll simply kill him. If he visits Topaz, he'll
+   fill the player in on what's happened. The player must befriend
+   Zircon and get his help. Zircon, then, will need a couple of
+   ingredients. One of them will be easy (maybe the Crone in the
+   inverse world will sell it). The other is only available at a black
+   market store and requires Garnet's knowledge of criminal technology
+   to buy. The player will befriend Garnet as well and get the group
+   back together, creating the antidote and curing them all.
+
+   Shortly thereafter, Garnet will hack into the Mayor's computers and
+   send his secret police away. Zircon will blow up his panic bunker.
+   And Topaz will publicly expose the Mayor and run against him in the
+   next election, thereby ending the tyranny and completing the turn
+   of the Calamity Coin.
+** CONSIDERING The Serpent's Prison
+   There is a hole in the ground somewhere. This hole has existed for
+   all of eternity. Either it moves around, or it's simply magical
+   enough that most people don't notice it. Any attempt to use a
+   ladder or other tool to get down into it will result in the victim
+   falling in without their ladder.
+
+   The hole itself is a large black void with no lights, and the only
+   features are the skeletons of previous victims. The hole keeps its
+   victim alive. When a prisoner is hungry, there is miraculously a
+   piece of bread in the corner. When thirsty, the troughs will be
+   full of water. There is a staircase on the opposite side of the
+   wall that leads out of the prison and back to the normal world.
+   Unfortunately, an immortal Serpent sleeps by the staircase and
+   awakens to attack anyone who approaches, rendering the prison
+   inescapable.
+
+   At some point, the player notices the hole in the city (or perhaps
+   the hole /moves/ to the city) and falls in. There are two people in
+   it. One is younger, fell in recently, and doesn't fully understand
+   what's happening (he might even be someone we meet in the overworld
+   before he falls in). The other is a slightly older scholarly
+   gentleman and has been studying the Serpent's prison his entire
+   life. He knows its history and is happy to provide narrative. (The
+   latter character might be at Evil Club at first)
+
+   Thousands of years ago (i.e. in prehistory), the hole also exists
+   somewhere. A dashing rogue fell into the hole. He tried to kill the
+   Serpent but discovered its immortality quickly, when the Serpent
+   resurrected itself and bit off his right hand. Sure enough, the
+   prison's magic provided him with the necessary bandages to stay
+   alive.
+
+   Now, the scholarly gentleman in the present day has heard about the
+   dashing rogue. The scholarly gentleman tells the player that the
+   dashing rogue stunned the Serpent with a silver dagger tipped in a
+   special poison and suggests that they could use something similar
+   to escape. Being a scholar, he has studied the dashing rogue's
+   notes and knows how to make the poison. He gives the player the
+   instructions.
+
+   The player returns to prehistory and suggests the poisoned dagger
+   to the rogue. The rogue takes to the idea but laments that he has
+   neither poison nor dagger. The player must collect a silver dagger
+   (whereabouts unknown) and concoct the poison (sounds like something
+   that Zircon of The Mayor's Tyranny could help with). He uses this
+   poison to save both the rogue, as well as the scholarly gentleman
+   and his friend.
+** CONSIDERING The Pink Locker
+   Probably at the Hotel of Seasons, though it doesn't have to be.
+   There's a young girl on a beach with a pink locker (like the kind
+   of locker you find in a high school) that she guards. Separately,
+   at the Hotel, there's an antigravity machine made by... somebody.
+   Turning the antigravity machine on causes her and her locker (and
+   probably everybody else in the Hotel) to float up. This persists at
+   least until the player dies, maybe even until the player makes it
+   back to turn the device off (the effect is localized to the Hotel,
+   but it carries across the seasons freely).
+
+   The girl will be upset after you turn it on and off once, because
+   you destroyed her locker. She'll bicycle up to the room the machine
+   is on. (Using a bike that can fly? Go figure. Not even on the top
+   ten list of weirdest unexplained things in this game) She'll demand
+   a new locker. The player has to get a new locker for her somehow.
+   Probably involves stealing one from the Reeducation school and
+   getting the Postman to ship it to her. Also, it needs to be painted
+   pink. Where are we going to get spray paint?
 * MISCELLANEOUS
 
 ** Test
