@@ -2472,7 +2472,9 @@
    Cave will lead somewhere cool if you have a light (inverse city)
 ** ACCEPTED False Imprisonment
    Given gift if falsely imprisoned (according to Warden), maybe
-   Religious Artifact
+   Religious Artifact. Maybe not according to Warden, since he'll be
+   involved in some other shady dealings. Maybe according to guard?
+   Consider how this fits together with Election Season.
 ** DONE Pirates
  + Pirates will eventually attack the dream ship, and if you raid them
    you'll get a Religious Artifact
@@ -3016,6 +3018,10 @@
    cloud form. I think we've pretty much decided that the cloud people
    are extinct in the present-day. This event may or may not be the
    one that ends their civilization.
+
+   Were the cloud people created by the First Reaper to guard
+   humanity? Maybe the artifact is a way to end humanity if they get
+   out of hand.
 ** ACCEPTED Beneath the Police
    There's a small, suspicious hut in the police district next to the
    otherwise tall buildings. It belongs to a mysterious criminal (the
@@ -3335,7 +3341,7 @@
    bring him a soul. So why can't Attorney-Man do the same every time
    you bring him a client?
    1. First client gets you the Evil Membership Card. (Evil Business Card?)
-   2. Second client gets you Cloud Shoes (name tbd).
+   2. Second client gets you Cloud Shoes.
    3. Third client gets you ???
 ** ACCEPTED Evil Club
    A club in the underworld where all of the stereotypically "evil"
@@ -4466,6 +4472,131 @@
    Probably involves stealing one from the Reeducation school and
    getting the Postman to ship it to her. Also, it needs to be painted
    pink. Where are we going to get spray paint?
+** CONSIDERING The Engineer
+   The Mechanic from the inverse world is a mad scientist who calls
+   himself the Engineer. He doesn't work for the Robot King. He's
+   running his own evil empire where he experiments with cybernetic
+   modifications to the human body. He eventually plans to lead an
+   army of cyborgs /against/ the Robot King.
+
+   Where is the Engineer stationed? I could see him fitting well in a
+   hidden area of the dream world airport. Probably not Hotel of
+   Seasons (just doesn't feel right).
+** CONSIDERING Legacy of the Clouds
+   The Cloud People are extinct, naturally. Their own Thundercloud
+   prophecy ended their kind in prehistory. However, one young Cloud
+   Person resisted the end of their race, falling to earth and
+   drinking ocean water to keep his body's composure. He kept himself
+   alive over the years by drinking gallons of water every day and
+   mainly kept to himself, laying low by the seaside.
+
+   Over the years, as humanity advanced and the quality and purity of
+   ocean water diminished, he started to change color, his billowy
+   white turning an awkward green-blue shade. Eventually, his demeanor
+   begins to suffer as well, shifting gradually from a friendly
+   wanderer to a disgruntled old man to a radical revenge-seeker. He
+   learns to channel the impurities in the water into his right hand,
+   forming a sort of makeshift gun that fires a potent acid, and he
+   begins using it to take out humans he deems as impure.
+
+   Naturally, the police (or military, or one of the many paramilitary
+   groups this game seems to have) get involved and corner him in...
+   some kind of large mansion? They can't get too close to him,
+   because of his acid gun that eats through any defenses they can
+   muster. The player shows up and is asked to reason with him. The
+   player can't reason with him until after he's personally completed
+   the Cloud People's prophecy (see Cloud World above). After that,
+   the last Cloud Person cries out that his kind died so that humanity
+   could live and that his body is proof that humanity is corrupt. The
+   player must talk him down and then take him to the museum, where he
+   can see that the legacy of his people is remembered fondly and that
+   he is not forgotten. The last Cloud Person, seeing this, will
+   choose to die in peace.
+** CONSIDERING Election Season
+   In the regular city, the mayor is, to put it mildly, rather dull.
+   He's not very bright, and he's regularly manipulated by all manner
+   of external interests, most namely the prison warden. The warden of
+   the prison is the real leader of the city behind the scenes,
+   manipulating the mayor at every turn. Up till now, the warden has
+   been strategically bribing or bullying any political opponents into
+   submission, allowing his pawn to remain in power. It's election
+   season now!
+
+   There's a mermaid (from the merfolk kingdom) running against the
+   mayor this time. She seeks to improve relations between her kind
+   and humanity. She also won't accept bribes from the warden. Nobody
+   knows she's a mermaid (save for the warden, who has done his
+   homework, and a key group of aides who are in on the masquerade),
+   and she's been strategically only appearing behind walls or in
+   camera shots from the chest up, in order to hide her fin. The
+   warden is finding ever more creative ways to try to eliminate her.
+   At some point, the player will get caught in the crossfire and end
+   up helping her. Together, the two will expose the warden for who he
+   really is.
+** CONSIDERING Arctic Demons
+   Near the south pole, a high level of demonic activity has caused
+   problems in the past. To remedy the situation, the government set
+   up a base around the problem area and leaves two trained
+   professionals to guard it at all times, exorcising any threats that
+   approach.
+
+   At the moment, two folks, a man and a woman, are stationed there.
+   Unfortunately, and by sheer coincidence, two demons have
+   simultaneously possessed the two people, without being aware of one
+   another. The player will eventually arrive and find these two
+   demons trying to fool each other into believing that they're human.
+
+   These demons might be related to The Minister's Demon above.
+** CONSIDERING A Peaceful Cruise
+   In addition to the Captain's ship, at some point a cruise ship will
+   dock on the warehouse island. To board the cruise ship, the player
+   must have a ticket, which can be obtained... somehow (???). Once
+   boarded, the ship goes out to sea.
+
+   If the player dies, sleeps, or otherwise leaves the ship, he can
+   return to it by asking the Captain to go there. The Captain will be
+   able to go to the cruise ship, like he can the other destinations
+   (including the pirate ship).
+
+   On the ship, someone will fairly quickly be murdered. The player
+   will have to solve the murder and capture whoever did it.
+
+   Passengers
+   + The player
+   + The murder victim (details???)
+   + The Plumber (the Mechanic's younger brother; plumbing is a very
+     lucrative career in this world)
+   + The two young women from Contraband (see below)
+   + Someone from Evil Club (???)
+** CONSIDERING Contraband
+   Two young women work for the Nuts mafia. They smuggle nuts from
+   Merchant-bot's warehouse to the mainland using the cruise ship
+   (from A Peaceful Cruise).
+
+   The first woman, Victoria, is quiet. She's deeply invested in the
+   mafia business (maybe she knows the leader personally, or maybe her
+   family was involved?). For unknown reasons, she has the useful
+   ability to walk on water.
+
+   The second woman, Cherry, is more vocal. She's Victoria's childhood
+   friend, and the only person she really confides in. She is less
+   directly involved in the mafia business and only does it to help
+   her friend (this might be her first time being involved). She has a
+   quirk that she hasn't discovered yet, where objects will be
+   duplicated on her person at random. Specifically, if she places
+   something in her pocket, sometimes she'll reach in later and find
+   two copies of the same thing.
+
+   The mafia has funded Cherry's ticket on the cruise ship. She boards
+   the ship like an ordinary passenger and checks into her room. Then
+   Victoria takes a briefcase full of nuts and walks it out to the
+   ship once it's a short way out at sea, delivering it to Cherry.
+   Victoria has done this many times, but it's Cherry's first time
+   being involved in the operation (Victoria previously did it with
+   relative strangers).
+
+   The player will likely stumble upon Victoria and Cherry making the
+   exchange, some time after the murder occurs.
 * MISCELLANEOUS
 
 ** Test
