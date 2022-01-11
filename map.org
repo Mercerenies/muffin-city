@@ -3335,6 +3335,50 @@
      thinking the sheer knowledge would overwhelm him. But when
      Science was actually happy with the result, the Reaper became
      infuriated and claimed Science's soul as retribution.
+
+   I'm thinking now that we're going to scrap the "capture souls" idea
+   entirely.
+   + The prison inmate can just... not get his soul taken. He'll still
+     be in prison. I'll decide on some other subplot for him (he
+     needed his own thing anyway, even if Johnny has his soul plot).
+     And his own plot will render him unable to send you to the
+     Underworld for part of it.
+   + The hunter will still want to go to the forest. Once he gets
+     there, he'll consider going in the cave. Playing by reverse
+     psychology rules, if you encourage him, he chickens out, but if
+     you tell him it's not safe, then he'll run in headfirst. You'll
+     get his hat later... somehow? Probably have to do something for
+     him. (Also need to explain why he goes to the hub side of the
+     Underworld, when even someone Johnny needed like Steve required a
+     special request to get over there; is he important somehow?)
+   + The female prison guard works like she already did. Joins the
+     prison, gets fired after Attorney-Man has his say, and then goes
+     somewhere. Maybe not subspace. Maybe she just goes to the hotel
+     or somewhere to hang out.
+   + Science made his deal with some other (unnamed) demon and still
+     infuriated the Reaper. Basically, this plotline is the same but
+     it wasn't Johnny who made the deal. Johnny is still aware of it
+     though.
+   + Johnny himself is pursuing his dog. He'll give you hints on where
+     to find the dog. If you go find the dog, it kills you. You need
+     to collect a chew toy. Each time you encounter the dog, it'll eat
+     one of your chew toys and run to the next destination. To
+     completely finish catching it, you have to exhaust all of the
+     locations. Johnny's reward tiers probably stay the same.
+
+   With the above plan in mind, here are the reward tiers
+   + First capture: You get to meet Dr. Cipher. (Be sure to make this
+     one easy)
+   + Second capture: You get to go to space.
+   + Third capture: All hub doors are open.
+
+   And the chew toys (these can be collected in any order)
+   + Bone-shaped chew toy: Johnny gives this one to you for free.
+   + Rope-shaped chew toy: ???
+   + Squid-shaped chew toy: ???
+
+   Note: Could have more than three encounters; just need new reward
+   tiers for Johnny below the hub door reward.
 ** ACCEPTED Attorney-Man's Reward
    So, whether or not we accept this idea, Attorney-Man needs a
    reward. He literally has none right now.
