@@ -4643,6 +4643,31 @@
 
    The player will likely stumble upon Victoria and Cherry making the
    exchange, some time after the murder occurs.
+** CONSIDERING Pasttime Prison
+   If you turn yourself into the cops in the past, you go to jail for
+   the day and await trial that night. If you do nothing and simply
+   wait, then you go to trial the following night as though you turned
+   yourself in at night. But you can try to escape (??)
+
+   Basically, just make "turn yourself in in the past" more
+   interesting that "awkward way to get to subspace".
+** CONSIDERING Clandestine Affairs
+   A secret cabal meets regularly at different locations to discuss
+   their affairs. Each meeting is in a different place, and when
+   they're done with their meeting, they throw a grenade at the
+   meeting spot to destroy any evidence. The player will keep
+   accidentally happening upon their various meeting spots.
+
+   (Do they meet in the Traveling Circus? Is that their cover?)
+** CONSIDERING Going Viral
+   An organization (maybe the government, maybe the group from
+   Clandestine Affairs) has acquired a dangerous machine from a
+   foreign intelligence agency. This machine, if connected to the Web,
+   will spread a computer virus the likes of which the world has never
+   known. They seek to hide it away and keep it safe.
+
+   A man who can shoot pulses of sound waves from his hands hears
+   about it and tries to take the machine for himself.
 * MISCELLANEOUS
 
 ** Test
