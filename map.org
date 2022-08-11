@@ -3710,6 +3710,7 @@
    + A woman getting revenge on her boyfriend (Obsessed)
    + An obnoxious fan and a cop (Catching Heat)
    + A high school girl and a pink locker (The Pink Locker)
+   + A murder at an opera show (Endless Opera)
 ** CONSIDERING Young Love
    Heavily related to Hotel of Seasons above. So in the inverse world,
    a young teenage couple does something slightly dangerous. The boy's
@@ -3944,6 +3945,9 @@
    bargain. The place guarded by bears (which Science can trivially
    pass through) holds a secret to finding the Console Room?
 
+   I wonder if there's a creepy movie theater in the museum. Maybe a
+   hidden chamber off to the side.
+
    (Possibly related to Prophecy Printing Press below)
 ** CONSIDERING Nuts
    An organized crime syndicate centered around selling nuts in an
@@ -4059,6 +4063,8 @@
    (Side note: If this is a crystal ball, maybe we should change the
    thing Starlight uses to an Orb of Light or something, just so items
    are still unique)
+
+   (I think this one is a Snow Globe now, so Starlight's is fine)
 ** CONSIDERING Paladin of Dreams
    Let's take Rogue Transport to its logical conclusion. After the bus
    driver was banished from the dream world, the other three ideals
@@ -4308,6 +4314,9 @@
    eye of the Beast itself and use its power to slow the Beast's
    rampage until the player can find a permanent way to defeat the
    Beast.
+
+   (Is the Flaming Axe of Death the only thing capable of defeating
+   the Beast of End?)
 ** CONSIDERING The Minister's Demon
    Many years ago, the Ancient Minister (when he wasn't quite so
    ancient) was an adventurer, traveling through time and space saving
@@ -4382,6 +4391,13 @@
    Also, there's two guys who have gotten into a dispute over a woman.
    They both have special flame powers and are ready to go nuclear in
    a fight that the player has to break up.
+
+   In one of the aisles of the grocery store, there are floating
+   paintbrushes painting all of the merchandise, and for that matter
+   all of the people, solid black. Any attempts to stop the brushes
+   are ineffectual. In the back room, the player will find a genie in
+   a lamp, who admits that they are painting the whole place black
+   after a small child wished for it.
 ** CONSIDERING Shifty Mischief
    There's a trickster (probably a demigod or something) causing
    mayhem. Eventually, some government types caught him and were
@@ -4650,7 +4666,7 @@
    yourself in at night. But you can try to escape (??)
 
    Basically, just make "turn yourself in in the past" more
-   interesting that "awkward way to get to subspace".
+   interesting than "awkward way to get to subspace".
 ** CONSIDERING Clandestine Affairs
    A secret cabal meets regularly at different locations to discuss
    their affairs. Each meeting is in a different place, and when
@@ -4668,6 +4684,59 @@
 
    A man who can shoot pulses of sound waves from his hands hears
    about it and tries to take the machine for himself.
+** CONSIDERING Resurrection at the Church
+   There's a church or some other kind of religious temple. They're
+   sacrificing a young woman in order to resurrect an evil demon.
+
+   Meanwhile, another woman is taking a hot air balloon voyage to an
+   ancient temple (perhaps Masked Might's temple?), where she seeks an
+   artifact with the power to reverse time. She wants to use it to go
+   back and stop something bad from happening to her family. She
+   acquires the artifact and is ballooning back home.
+
+   The demon is resurrected successfully and grows to a massive size,
+   destroying the church in the process and shrouding the sun,
+   covering the land in darkness. The ballooning woman is flying by at
+   the time, and the chaos causes her to fall to the ground. The
+   artifact activates and jumps time back 24 hours, giving the player
+   time to preemptively rescue the sacrificed girl.
+** CONSIDERING Frozen Castle
+   There's a castle made of solid ice at the south pole. The castle is
+   abandoned and is structured like a maze. It houses the finest ice
+   cubes in the land: cubes of ice that will literally never melt.
+   Unfortunately, this treasure is hidden in a secret room that can
+   only be reached with... something? Subspace map? Or something else?
+** CONSIDERING Endless Opera
+   This is probably in the Hotel of Seasons. There are two sisters
+   sitting and watching an opera, when the eldest sister is suddenly
+   killed. The killer escapes before anyone can ID them.
+
+   Since this is in the Hotel of Seasons, the event is forced to
+   repeat. For some reason, the younger sister and the killer seem to
+   become aware of the repetition, unlike most of the Hotel's other
+   inhabitants. The two continually one-up each other over the
+   seasons, one trying to complete her job and the other trying to
+   stop her. This culminates in a battle on a balcony, where the
+   player must help the younger sister win.
+
+   Why is the older sister being targeted? Is she involved in some
+   clandestine activity? Or was it collateral damage and someone else
+   was the true target?
+** CONSIDERING The Water Supply
+   There's a big water tower somewhere. I don't know if it's
+   somewhere, or everywhere, or outside of spacetime, or underwater.
+   All of those make equal amounts of sense in this game (though I do
+   love the irony of a water tower underwater). The player will end up
+   inside of it at several points, and there are also some other
+   people in there. Once inside, the player has nowhere to go and the
+   only option is to fall asleep. If the water level is low enough,
+   this takes the player to the train. If it's high enough, it results
+   in the player's death.
+
+   The water level starts completely empty and will rise to full over
+   the course of the game. Might be triggered by muffins, might be by
+   Butler events, or maybe something else. But something happens when
+   it gets full.
 * MISCELLANEOUS
 
 ** Test
