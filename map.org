@@ -3525,7 +3525,8 @@
      accessible /inside/ the hotel, hence having to come this way
      first.
    + One takes you to a fractal version of the prison area, where
-     physics doesn't necessarily apply normally.
+     physics doesn't necessarily apply normally. (see The Fractal
+     Dimension below)
    + What about a school of witches?
 ** ACCEPTED Cursed Artifact Shop
    In the parallel world? Maybe a cursed artifact shop? Could sell
@@ -4737,6 +4738,26 @@
    the course of the game. Might be triggered by muffins, might be by
    Butler events, or maybe something else. But something happens when
    it gets full.
+
+   (Is the water tower the dream world of the Calamity Coin?)
+** CONSIDERING The Fractal Dimension
+   One of the places you can crash into in space is a fractal prison.
+   It looks just like the regular prison, at least as far as the
+   prison gates and hallways are concerned. The four exits from the
+   hallways lead to self-similar deeper prisons just like it. You can
+   go arbitrarily deep like this.
+
+   Once you go three layers deep, there will be a bed in the outside
+   area at all times which you can use to sleep and escape.
+
+   There is a "correct" path through the fractal dimension. The
+   correct path is constant and is about three layers deep. Following
+   the correct path leads to a small white chamber with a muffin.
+   After collecting the muffin, the player falls asleep automatically,
+   similar to the underworld abyss.
+
+   The correct path is indicated by a large sign left by a stranger in
+   the museum (see Natural History above).
 * MISCELLANEOUS
 
 ** Test
