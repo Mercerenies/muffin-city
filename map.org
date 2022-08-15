@@ -2623,6 +2623,32 @@
    placed some safeguards in just in case someone, say, happened to
    ignite the earth using a neighboring star). They have to unlock the
    Cloud Shoes ending (or possibly the whole chamber).
+
+   Summary of the ideas we have for different prehistory chambers (the
+   resulting chambers will be numbered but you will not go through
+   them in numerical order):
+   + A grocery store with a labyrinth underneath
+   + A jungle dome with a passcode needed to get in
+   + A door that requires the fully activated Primordial Wands to get
+     through (see Thunder Staff)
+   + A sphinx who asks riddles
+   + A blue grid with booby traps scattered throughout; there's no
+     "correct" way through and you must hit one of the traps that
+     drops you down into the chamber below
+   + A block-pushing puzzle with multiple exits.
+   + A fishing pond.
+   + A dark maze, Lost Woods style
+   + Three pedestals that must be stood on in the correct order to
+     open the way forward (the correct order is indicated in another
+     trial). Later, when Atheena, Dr. Louis, and the player are here
+     to stop the Wordsmith, they step on all three and open a secret
+     exit.
+   + A destroyed chamber. It's completely broken.
+   + A swordfighting simulation.
+   + A pit of snakes and fire
+   + A groundhog day loop involving a home break-in and hiding in the
+     closet
+   + A conference room with a presentation
 ** DONE The Reaper's Favor
  + The Reaper calls in the player's favor. Possibly to help retrieve a
    stolen item from the Ancient Minister (do they have a rivalry or
@@ -3879,6 +3905,25 @@
    until the player squares off against the stormcloud that started
    the Cloud World prophecy, at which time it activates and becomes an
    immensely powerful thunderstaff.
+
+   Going further. What if there are actually /four/ wands. The four
+   Primordial Wands, respectively, of Fire, Water, Earth, and Thunder.
+   Each one is located somewhere different (with one located in the
+   School of Witches and the others scattered, or perhaps all
+   scattered and the true description of them in a textbook at the
+   School of Witches). Each Wand must be reactivated by exposing it to
+   its natural element.
+
+   + The Evil Flame Spirit can reactivate the Primordial Wand of Fire.
+   + Someone in the merfolk kingdom can activate the Primordial Wand
+     of Water.
+   + The Primordial Wand of Thunder reactivates when battling the
+     Thundercloud prophecy.
+   + The Primordial Wand of Earth... I haven't decided yet.
+
+   After reactivating all four, there is a special chamber in The
+   Prehistoric Maze that accepts all of the Primordial Wands in
+   exchange for something (possibly a muffin)
 ** CONSIDERING The Mouse Thief
    The subspace bank serves one (very late game) purpose right now. We
    could change that. What if there was already a bank robbery earlier
@@ -4758,6 +4803,23 @@
 
    The correct path is indicated by a large sign left by a stranger in
    the museum (see Natural History above).
+** CONSIDERING Observing your Doom
+   I imagine this happening on the hospital side of the Calamity Coin,
+   though I'm not totally married to that if something better comes
+   along. Also, there might be a portal to this place from the
+   abandoned school of witches.
+
+   In this world, June and Julie were abducted just as usual, but when
+   they got back to earth, they came to terms with their powers and
+   became sort of local superheroes. June is... somewhere. She might
+   be at the hospital, or she might be in a faraway land somewhere.
+   Julie is with a tour group of an ancient observatory, when the
+   witch attacks. The witch seals the observatory and turns the
+   interior into a labyrinth, trapping everyone inside and slowly
+   draining their life force. Julie, of course, assumes her superhero
+   identity and fights back.
+
+   She calls herself Lucky Lass. What is June's super name?
 * MISCELLANEOUS
 
 ** Test
