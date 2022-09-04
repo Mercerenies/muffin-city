@@ -2415,59 +2415,206 @@
      The player has encountered June and Julie. They are now camping
      out in a tent in the forest.
 * CHARACTERS
+** FULL CHARACTER LIST
+*** The Robber
+*** The Judge
+*** Mustached Guard
+*** Johnny Death
+*** Exercise Field Inmate
+*** Dr. Cipher
+*** Shabby Jack
+*** Carl the Employee
+*** The Butler
+*** Pawnbroker / Collector
+*** Merchant-bot
+*** Todd the Office Worker
+*** Attorney-Man
+*** The Taco Man
+*** Joe the Time-Traveler
+*** Atheena the Hero
+*** Train Conductor
+*** Female Prison Guard
+*** The Hunter
+*** Dr. Louis
+*** The Mechanic
+*** Matthew the Acolyte
+*** The Ancient Minister
+*** Steve (Steve's Smash-a-Lock)
+*** The Reaper
+*** Grigory the AC Repairman
+*** The Motel Ghost
+*** Ship Captain
+*** Kingdom Gatekeeper
+*** The Fence
+*** Silver Starlight
+*** The True Reaper
+*** The Hatman
+*** Harry the Arsonist
+*** Sentient Baby Doll
+*** Ricardo the Cop
+*** The Mime
+*** Mothka the Evil Moth King
+*** The Mastermind / The Mesmerist
+*** Mister Midas
+*** Arthur Miles
+*** The Man in the Trenchcoat
+*** The Bouncer
+*** Midnight
+*** The Witch / The Crone
+*** Plant Monster
+*** Masnin Alja
+*** June / Cinnabar
+*** Julie / Hex
+*** Topaz
+*** Garnet
+*** Zircon
+** TIERS
+   Just for a bit of fun, we're going to (attempt to) classify these
+   characters using the Tvtropes Super Weight chart.
+   + Chart: https://tvtropes.org/pmwiki/pmwiki.php/Main/SuperWeight
 
-** The Robber
-** The Judge
-** Mustached Guard
-** Johnny Death
-** Exercise Field Inmate
-** Dr. Cipher
-** Shabby Jack
-** Carl the Employee
-** The Butler
-** Pawnbroker / Collector
-** Merchant-bot
-** Todd the Office Worker
-** Attorney-Man
-** The Taco Man
-** Joe the Time-Traveler
-** Atheena the Hero
-** Train Conductor
-** Female Prison Guard
-** The Hunter
-** Dr. Louis
-** The Mechanic
-** Matthew the Acolyte
-** The Ancient Minister
-** Steve (Steve's Smash-a-Lock)
-** The Reaper
-** Grigory the AC Repairman
-** The Motel Ghost
-** Ship Captain
-** Kingdom Gatekeeper
-** The Fence
-** Silver Starlight
-** The True Reaper
-** The Hatman
-** Harry the Arsonist
-** Sentient Baby Doll
-** Ricardo the Cop
-** The Mime
-** Mothka the Evil Moth King
-** The Mastermind / The Mesmerist
-** Mister Midas
-** Arthur Miles
-** The Man in the Trenchcoat
-** The Bouncer
-** Midnight
-** The Witch / The Crone
-** Plant Monster
-** Masnin Alja
-** June / Cinnabar
-** Julie / Hex
-** Topaz
-** Garnet
-** Zircon
+   Obviously, all placements are estimates, nothing should be read
+   into here, this is all just for fun. Also, unless otherwise stated,
+   the ranking applies to all incarnations of a character across the
+   several universes we encounter.
+*** FRAGILE (-1)
+    + The Fence
+    + Headless Man's Head (without power suit)
+    + Ring of Renewal Family (hypnotized)
+    + Minister's Pupil (present-day)
+*** MUGGLE (0)
+    + The Robber
+    + The Judge
+    + Mustached Guard
+    + Exercise Field Inmate
+    + Shabby Jack
+    + Carl the Employee
+    + Pawnbroker / Collector
+    + Todd the Office Worker
+    + Attorney-Man
+    + The Taco Man
+    + Female Prison Guard
+    + The Hunter
+    + The Mechanic (without the Golden Wrench)
+    + Matthew the Acolyte
+    + Steve (Steve's Smash-a-Lock)
+    + Grigory the AC Repairman
+    + The Hatman
+    + Mothka the Evil Moth King
+    + Arthur Miles
+    + Masnin Alja
+    + Geology Club (regular world)
+    + Postman / Taxman
+    + Billy (inverse world)
+    + Headless Man
+    + Chuck
+    + Billy's Girlfriend (without Necromancy Certificate)
+    + Mavis Morrow
+    + Serpent Scholar
+    + Prince Arachnarok's Groom
+    + Young Love Couple
+    + Used Car Salesman
+    + Ring of Renewal Old Sailor
+    + Sole Survivors Family
+    + King of Pigs Sister (regular world)
+    + The Mayor
+    + Serpent Prisoner
+*** IRON (1)
+    + Dr. Louis
+    + Kingdom Gatekeeper
+    + Harry the Arsonist
+    + Ricardo the Cop
+    + Mister Midas
+    + The Bouncer
+    + Midnight (regular world)
+    + Plant Monster
+    + Geology Club (inverse world / tyrant world)
+    + Pirates
+    + Bank Security Lions
+    + King Arachnarok
+    + Prince Arachnarok
+    + Dr. Ezekiel Morrow (without future tech)
+    + Johnny Death's Dog
+    + Crystal
+    + Caveman
+    + The Referee
+    + Mouse Thief
+    + The Letter "H" Serial Killer
+    + Most Nuts Grunts
+    + King of Pigs Sister (inverse world)
+    + Fungus Monster (prehistory)
+    + The Warden
+*** EXTRANORMAL (2)
+    + Johnny Death
+    + Dr. Cipher
+    + The Motel Ghost
+    + Sentient Baby Doll
+    + Chief of Bank Security Lions
+    + The Mechanic (with the Golden Wrench)
+    + Evil Flame Spirit
+    + Dr. Ezekiel Morrow (with future tech)
+    + Ragtime
+    + Born of Spacetime Boy
+    + The Paladin
+    + King of Pigs Brother
+    + Serpent Rogue
+    + The Last Cloud Person
+    + Victoria
+    + Cherry
+*** SUPER (3)
+    + The Butler
+    + Merchant-bot
+    + Atheena the Hero (normal power)
+    + Silver Starlight (without the Source)
+    + The Mime
+    + The Mastermind / The Mesmerist
+    + The Man in the Trenchcoat
+    + Midnight (inverse world)
+    + The Witch / The Crone
+    + June / Cinnabar
+    + Flaming Axe of Doom
+    + Robot King
+    + Mummies
+    + Evil Spirits of the Pocket Dimension
+    + Billy (normal world)
+    + Headless Man's Head (with power suit)
+    + Backflip
+    + Born of Spacetime Girl
+    + Born of Spacetime Toddler
+    + The Paladin's Dragon
+    + Masked Might Hero
+    + King of Pigs
+    + Fungus Monster (present day)
+    + Human Monster
+    + Evil Eye
+    + Serpent
+*** HYPER (4)
+    + Joe the Time-Traveler
+    + Atheena the Hero (facing true evil)
+    + Silver Starlight (with the Source)
+    + Julie / Hex
+    + The Thundercloud
+    + Billy's Girlfriend (with Necromancy Certificate)
+    + Evil Wizard (Atheena's nemesis)
+    + Primordial Wands
+    + Plague King
+*** WORLD (5)
+    + Train Conductor
+    + The Ancient Minister
+    + The Reaper
+    + Ship Captain
+    + The True Reaper
+    + Science Johnson
+    + Man in the Black Mask
+    + The Pilot
+    + The Bus Driver
+    + Beast of End
+    + Minister's Demon
+*** COSMIC (6)
+    + Guardian of Time
+    + Postmaster
+    + Prophecy Printing Press
+*** AUTHOR (7)
 * NOTES
 
 ** DONE Cave and Lantern
@@ -2649,6 +2796,8 @@
    + A groundhog day loop involving a home break-in and hiding in the
      closet
    + A conference room with a presentation
+   + A murder mystery like the one in A Peaceful Cruise but more
+     elaborate (Man in the Black Mask is there?)
 ** DONE The Reaper's Favor
  + The Reaper calls in the player's favor. Possibly to help retrieve a
    stolen item from the Ancient Minister (do they have a rivalry or
@@ -3245,6 +3394,7 @@
    + The Postmaster (manages the Postman)?
    + The Source (magic sentient crystal that can unlock Starlight's true power)?
    + The Man in the Trenchcoat?
+   + The Man in the Black Mask (see Alien Apocalypse)
 
    Considering switching the order of the second and third visit. The
    Source should be useful with Starlight as soon as Butler 3, whereas
@@ -4251,6 +4401,9 @@
    secret floor. He recognizes her from the other world and swears
    vengeance upon who he believes is the queen, resulting in a battle
    between the two siblings and the Pig King.
+
+   "King of Pigs" doesn't quite roll off the tongue. What about
+   "Swinelord"?
 ** CONSIDERING King of the Hospital
    So there's a hospital somewhere (in the airport, Ritzy Inn, Hotel
    of Seasons, the tower, somewhere?). Some main-ish character ends up
@@ -4360,6 +4513,18 @@
    eye of the Beast itself and use its power to slow the Beast's
    rampage until the player can find a permanent way to defeat the
    Beast.
+
+   The Man in the Black Mask is a lesser god, capable of manipulating
+   things around him but not of altering reality itself. He created
+   the Beast of End in an experiment a long time ago and immediately
+   regretted it. He had no power to defeat his creation, so he ran
+   away to Higher Subspace and lived in self-exile. After the player
+   encounters him in Higher Subspace, he'll flee once again to a
+   deserted planet somewhere in space. To defeat the Beast, the player
+   might need the Man in the Black Mask's help or a clue from him.
+   (Note: The Black Mask may or may not be related to the Masked Might
+   mask; did the Man use it to contain his own powers and make sure he
+   doesn't create another Beast?)
 
    (Is the Flaming Axe of Death the only thing capable of defeating
    the Beast of End?)
