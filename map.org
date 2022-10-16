@@ -5012,8 +5012,8 @@
    Possible locations the slide could visit:
    + The river at the prison
    + The main city hub area
-   + The hotel of seasons in summer (it can also be accessed in
-     spring/fall but is frozen in winter)
+   + The hotel of seasons in summer (it can also be accessed in most
+     seasons but is frozen in winter)
 * MISCELLANEOUS
 
 ** Test
