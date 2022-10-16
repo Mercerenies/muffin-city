@@ -2615,6 +2615,19 @@
     + Postmaster
     + Prophecy Printing Press
 *** AUTHOR (7)
+    + (No one, currently)
+** ALIGNMENTS
+   Just for a bit of fun...
+*** LAWFUL GOOD
+*** LAWFUL NEUTRAL
+*** LAWFUL EVIL
+*** NEUTRAL GOOD
+*** TRUE NEUTRAL
+*** NEUTRAL EVIL
+*** CHAOTIC GOOD
+*** CHAOTIC NEUTRAL
+*** CHAOTIC EVIL
+    + The Fence
 * NOTES
 
 ** DONE Cave and Lantern
